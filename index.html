@@ -239,6 +239,21 @@
     .footer-small{grid-column:1/-1;display:flex;justify-content:space-between;gap:30px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;font-size:11px;line-height:1.6;color:#8792a9}
     .footer-small p{margin:0}
 
+    .dashboard-promo{background:#101a33;color:#fff;padding:90px 0;border-top:1px solid #a1aed02b}
+    .dashboard-promo-inner{display:grid;grid-template-columns:1fr minmax(270px,.38fr);gap:clamp(30px,6vw,110px);align-items:end}
+    .dashboard-promo .eyebrow{color:#a4b9ff;margin:0 0 22px}
+    .dashboard-promo h2{font:800 clamp(55px,6.1vw,93px)/.96 var(--display);letter-spacing:-.063em;margin:0}
+    .dashboard-promo h2 span{color:#a4b9ff}
+    .dashboard-promo-inner>div>p:last-child{font-size:16px;line-height:1.6;color:#c3cce0;max-width:640px;margin:25px 0 0}
+    .dashboard-promo-cta{background:#2340c2;padding:27px;display:flex;flex-direction:column;gap:16px}
+    .dashboard-promo-cta .eyebrow{color:#dce4ff;margin:0}
+    .dashboard-promo-cta strong{font:800 clamp(70px,8vw,105px)/1 var(--display);letter-spacing:-.075em}
+    .dashboard-promo-cta strong small{display:block;font:700 12px var(--mono);letter-spacing:.04em;margin-top:7px;color:#dce4ff}
+    .dashboard-promo-cta a{border-top:1px solid #ffffff66;padding-top:17px;display:flex;justify-content:space-between;gap:15px;text-decoration:none;font-weight:700;font-size:15px}
+    .dashboard-promo-cta a:hover{color:#cfd9ff}
+    .dashboard-promo-cta p{font-size:11px;color:#d0dcff;line-height:1.5;margin:0}
+    @media(max-width:830px){.dashboard-promo-inner{grid-template-columns:1fr}.dashboard-promo-cta{max-width:470px}}
+    @media(max-width:560px){.dashboard-promo{padding:73px 0}.dashboard-promo h2{font-size:54px}}
     @media(max-width:1150px){
       .nav-grid{grid-template-columns:1fr auto}
       .desktop-nav{display:none}
@@ -377,13 +392,13 @@
         <span class="logo-word">ATLAS <span>DATA</span></span>
       </a>
       <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#approche">Notre regard</a><a href="#analyse">Étude de marché</a><a href="#solutions">Solutions</a>
+        <a href="#approche">Notre regard</a><a href="#analyse">Étude de marché</a><a href="dashboard.html">Dashboard ↗</a><a href="#solutions">Solutions</a>
       </nav>
       <a class="nav-contact" href="#contact">Parlons données <span class="arrow-box" aria-hidden="true">↗</span></a>
       <button class="mobile-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
     <nav class="mobile-nav" id="mobile-navigation" aria-label="Navigation mobile" hidden>
-      <a href="#approche">Notre regard</a><a href="#analyse">Étude de marché</a><a href="#solutions">Solutions</a><a href="#contact">Contact</a>
+      <a href="#approche">Notre regard</a><a href="#analyse">Étude de marché</a><a href="dashboard.html">Dashboard ↗</a><a href="#solutions">Solutions</a><a href="#contact">Contact</a>
     </nav>
   </header>
   <main id="main">
@@ -404,7 +419,7 @@
         <div class="hero-layout">
           <div class="hero-left">
             <h1 class="hero-title" id="hero-heading"><span>Le marché</span><span>immobilier</span><span>marocain,</span><span class="accent">en données.</span></h1>
-            <div class="hero-subrow"><p class="hero-lede">Observer les annonces ne suffit pas. Atlas Data les collecte, les structure et les met en perspective pour donner du sens au marché immobilier marocain.</p><a class="text-cta" href="#analyse">Découvrir notre première étude <span class="arrow" aria-hidden="true">↗</span></a></div>
+            <div class="hero-subrow"><p class="hero-lede">Observer les annonces ne suffit pas. Atlas Data les collecte, les structure et les met en perspective pour donner du sens au marché immobilier marocain.</p><a class="text-cta" href="dashboard.html">Explorer le dashboard <span class="arrow" aria-hidden="true">↗</span></a></div>
           </div>
           <aside class="hero-insight" aria-label="Un chiffre clé de l'étude à Marrakech">
             <div class="insight-header"><p class="eyebrow">Observation / 001</p><span class="insight-index">MA / 26</span></div>
@@ -480,6 +495,8 @@
       <div class="study-insights"><blockquote>« D'un quartier à l'autre, les écarts de prix peuvent être <em>considérables.</em> Encore faut-il savoir ce que l'on compare. »</blockquote><div class="insight-context"><p class="eyebrow">Ce que révèle ce relevé</p><p>Guéliz concentre 95 annonces de l'échantillon, avec des prix très dispersés. Les médianes donnent un repère utile, mais ne remplacent pas l'analyse du type de bien, de sa surface et de son emplacement. Seuls les quartiers avec au moins huit annonces figurent ici.</p></div></div>
     </div></section>
 
+    <section class="dashboard-promo" aria-labelledby="dashboard-promo-heading"><div class="shell dashboard-promo-inner"><div><p class="eyebrow">LE LABORATOIRE / NOUVEAU RELEVÉ</p><h2 id="dashboard-promo-heading">De l'étude à<br><span>l'exploration.</span></h2><p>319 annonces collectées le 8 octobre 2026. Filtrez les quartiers, comparez les prix au m² et remontez jusqu'aux annonces d'origine, en toute transparence.</p></div><div class="dashboard-promo-cta"><span class="eyebrow">MARRAKECH / MARKET INTELLIGENCE</span><strong>319 <small>ANNONCES</small></strong><a href="dashboard.html">Ouvrir le dashboard <span aria-hidden="true">↗</span></a><p>Un autre échantillon que l'étude éditoriale ci-dessus, basé sur le relevé du 08.10.2026.</p></div></div></section>
+
     <section class="solutions" id="solutions" aria-labelledby="solutions-heading"><div class="shell solutions-layout"><div><p class="section-index eyebrow">03 / Nos solutions</p><h2 id="solutions-heading">De la donnée.<br>À la décision.</h2><p class="solutions-intro">Deux manières d'exploiter l'information immobilière : récupérer les annonces structurées ou construire une lecture du marché adaptée à votre question.</p></div><div class="solution-list">
       <article class="solution-item"><span class="eyebrow">01 / Data access</span><div><h3>Les données, à votre main.</h3><p>Pour les analystes, développeurs et équipes qui souhaitent intégrer les annonces dans leurs propres outils et traitements.</p><p class="solution-meta">CSV / JSON &nbsp; • &nbsp; API APIFY &nbsp; • &nbsp; EXPORT</p><a class="text-cta" href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Explorer le scraper Sarouty <span class="arrow" aria-hidden="true">↗</span></a></div></article>
       <article class="solution-item"><span class="eyebrow">02 / Market insight</span><div><h3>Une lecture du marché, sur mesure.</h3><p>Pour les investisseurs, professionnels et agences qui veulent comparer des secteurs ou situer un bien au sein de l'offre actuellement publiée.</p><p class="solution-meta">COMPARAISON &nbsp; • &nbsp; PRIX AU M² &nbsp; • &nbsp; ÉTUDE PONCTUELLE</p><a class="text-cta" href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Discuter d'une analyse <span class="arrow" aria-hidden="true">↗</span></a></div></article>
@@ -493,7 +510,7 @@
 
     <section class="contact" id="contact" aria-labelledby="contact-heading"><div class="shell contact-grid"><div><p class="section-index eyebrow">05 / Entrons en contact</p><h2 id="contact-heading">À chaque marché,<br>une autre lecture.</h2></div><div class="contact-text"><p>Une ville, un quartier, un type de bien à explorer ? Parlons des décisions que vos données pourraient éclairer.</p><a class="contact-mail" href="mailto:othman@atlas-data.fr?subject=Projet%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%3A%0AQuartier%20%3A%0AType%20de%20bien%20%3A%0A">othman@atlas-data.fr <span aria-hidden="true">↗</span></a></div></div></section>
   </main>
-  <footer class="footer"><div class="shell footer-grid"><div class="footer-brand">ATLAS <span>DATA</span></div><nav class="footer-links" aria-label="Navigation de pied de page"><a href="#approche">Notre regard</a><a href="#analyse">Étude</a><a href="#solutions">Solutions</a><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Apify ↗</a><a href="#top">Retour en haut ↑</a></nav><div class="footer-small"><p>© <span id="year">2026</span> Atlas Data. Intelligence immobilière / Maroc.</p><p>Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p></div></div></footer>
+  <footer class="footer"><div class="shell footer-grid"><div class="footer-brand">ATLAS <span>DATA</span></div><nav class="footer-links" aria-label="Navigation de pied de page"><a href="#approche">Notre regard</a><a href="#analyse">Étude</a><a href="dashboard.html">Dashboard</a><a href="#solutions">Solutions</a><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Apify ↗</a><a href="#top">Retour en haut ↑</a></nav><div class="footer-small"><p>© <span id="year">2026</span> Atlas Data. Intelligence immobilière / Maroc.</p><p>Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p></div></div></footer>
   <!-- Avant publication officielle : ajouter les mentions légales de l'éditeur (identité, statut, coordonnées, immatriculation si applicable, hébergeur) et un lien en pied de page. -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
