@@ -4,20 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101a33">
-  <meta name="description" content="Atlas Data analyse 319 annonces d’appartements à vendre à Marrakech, relevé Sarouty du 8 octobre 2026. Comparez sept quartiers et explorez le marché avec un dashboard interactif.">
+  <meta name="description" content="Prix au m² des appartements à vendre à Marrakech, quartier par quartier : Hivernage, Agdal, Guéliz, Palmeraie, Targa, Semlalia. Étude et dashboard gratuits, relevé du 8 octobre 2026.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Atlas Data">
-  <meta property="og:title" content="Atlas Data — Le marché immobilier marocain, en données">
-  <meta property="og:description" content="319 annonces collectées au 8 octobre 2026, 316 exploitables : comparez les prix demandés et explorez les quartiers dans notre dashboard interactif.">
+  <meta property="og:title" content="Prix au m² à Marrakech par quartier - Atlas Data">
+  <meta property="og:description" content="De 14 286 MAD/m² à Semlalia à 24 880 MAD/m² à l'Hivernage : les prix demandés des appartements à Marrakech, quartier par quartier.">
+  <meta property="og:image" content="https://atlas-data.fr/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Prix médian au m² des appartements à Marrakech par quartier">
   <meta property="og:url" content="https://atlas-data.fr/">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://atlas-data.fr/">
-  <title>Atlas Data — Intelligence immobilière au Maroc</title>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://atlas-data.fr/#org", "name": "Atlas Data", "url": "https://atlas-data.fr/", "email": "othman@atlas-data.fr", "description": "Données et analyses du marché immobilier marocain.", "areaServed": "MA"}, {"@type": "WebSite", "@id": "https://atlas-data.fr/#site", "url": "https://atlas-data.fr/", "name": "Atlas Data", "inLanguage": "fr", "publisher": {"@id": "https://atlas-data.fr/#org"}}, {"@type": "Dataset", "name": "Prix des appartements à vendre à Marrakech par quartier, octobre 2026", "description": "Prix demandés de 316 annonces d'appartements à vendre à Marrakech, relevées sur Sarouty le 8 octobre 2026 : prix, surface, prix au m², chambres et quartier. Médianes par quartier pour les secteurs comptant au moins huit annonces.", "url": "https://atlas-data.fr/#analyse", "creator": {"@id": "https://atlas-data.fr/#org"}, "isAccessibleForFree": true, "temporalCoverage": "2026-10-08", "spatialCoverage": {"@type": "Place", "name": "Marrakech, Maroc"}, "keywords": ["prix immobilier Marrakech", "prix au m² Marrakech", "immobilier Maroc", "appartements à vendre"], "variableMeasured": ["prix demandé (MAD)", "surface (m²)", "prix au m² (MAD/m²)", "nombre de chambres", "quartier"]}]}</script>
+  <title>Prix au m² à Marrakech par quartier - Atlas Data</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='3' fill='%232340C2'/%3E%3Cpath d='M14 48 32 14l18 34M22 36h20' fill='none' stroke='white' stroke-width='6' stroke-linecap='square'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@1,8..60,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@1,8..60,500&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy:#101a33;
@@ -32,9 +37,9 @@
       --line:#dcdedc;
       --subtle:#e9e9e5;
       --display:'Archivo','Arial Narrow',Arial,sans-serif;
-      --body:'Source Sans 3',Helvetica,Arial,sans-serif;
+      --body:'Roboto',Arial,sans-serif;
       --serif:'Source Serif 4',Georgia,serif;
-      --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+      --mono:'Roboto',Arial,sans-serif;
       --max:1340px;
       --gutter:clamp(22px,4.6vw,78px);
     }
@@ -378,7 +383,35 @@
     }
     @media(max-width:360px){.hero-title{font-size:45px}.insight-figure{font-size:101px}.frame-meta{display:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
-  </style>
+  
+/* Roboto partout pour le texte courant et les étiquettes; chiffres à chasse fixe pour garder les colonnes alignées */
+body{font-variant-numeric:tabular-nums}
+/* Hero sur une seule colonne après retrait de la carte chiffrée */
+.hero-layout{grid-template-columns:minmax(0,1fr)!important}
+.hero-subrow{justify-content:start}
+.hero .text-cta{justify-self:start}
+
+/* Offres */
+.solutions-note{margin:26px 0 0;font-size:14px;line-height:1.6;color:var(--muted)}
+.solutions-note a{color:var(--blue);font-weight:700}
+.solution-item p strong{color:var(--ink)}
+/* FAQ */
+.faq{padding:120px 0 125px;background:var(--paper)}
+.faq-layout{display:grid;grid-template-columns:.75fr 1fr;gap:clamp(45px,8vw,130px)}
+.faq h2{margin:30px 0 0;max-width:470px;font:800 clamp(38px,4.2vw,62px)/.98 var(--display);letter-spacing:-.04em;color:var(--ink)}
+.faq-list{border-top:1px solid var(--ink)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{cursor:pointer;list-style:none;position:relative;padding:22px 44px 22px 0;font:700 18px/1.35 var(--body);color:var(--ink)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:4px;top:16px;font:400 28px/1 var(--body);color:var(--blue)}
+.faq-item[open] summary::after{content:"\2212"}
+.faq-item p{margin:0 0 24px;max-width:640px;color:var(--muted);font-size:16px;line-height:1.65}
+@media (max-width:860px){.faq{padding:80px 0}.faq-layout{grid-template-columns:1fr;gap:30px}}
+/* Mentions légales */
+.legal{grid-column:1/-1;margin-top:14px;font-size:12px;line-height:1.6;color:#8792a9}
+.legal summary{cursor:pointer;color:#c5cbdb;width:fit-content}
+.legal p{margin:8px 0 0;max-width:760px}
+</style>
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"Atlas Data","url":"https://atlas-data.fr/","email":"othman@atlas-data.fr","description":"Collecte et structuration d'annonces immobilières publiques au Maroc, et analyses de marché."}
   </script>
@@ -415,25 +448,13 @@
 <ellipse cx="510" cy="420" rx="575" ry="420"/>
 <ellipse cx="510" cy="420" rx="652" ry="476"/></g><path d="M0 790H900M0 140H900" stroke="#7183bf" stroke-width="1" opacity=".09"/></svg></div>
       <div class="shell hero-inner">
-        <div class="hero-topline"><p class="eyebrow">Atlas Data &nbsp; / &nbsp; Intelligence immobilière</p><p class="eyebrow">Maroc &nbsp; — &nbsp; 2026</p></div>
         <div class="hero-layout">
           <div class="hero-left">
             <h1 class="hero-title" id="hero-heading"><span>Le marché</span><span>immobilier</span><span>marocain,</span><span class="accent">en données.</span></h1>
             <div class="hero-subrow"><p class="hero-lede">Observer les annonces ne suffit pas. Atlas Data les collecte, les structure et les met en perspective pour donner du sens au marché immobilier marocain.</p><a class="text-cta" href="dashboard.html">Explorer le dashboard <span class="arrow" aria-hidden="true">↗</span></a></div>
           </div>
-          <aside class="hero-insight" aria-label="Un écart de prix observé dans le relevé du 8 octobre à Marrakech">
-            <div class="insight-header"><p class="eyebrow">Relevé / 08.10.26</p><span class="insight-index">MA / 26</span></div>
-            <div class="insight-middle"><p class="insight-kicker">À Marrakech, un écart de</p><strong class="insight-figure">74<small>%</small></strong><p class="insight-description">de prix médian affiché au m² <span>entre l'Hivernage et Semlalia.</span></p></div>
-            <div class="insight-comparison"><div>Hivernage<strong>24 880</strong></div><div>Semlalia<strong>14 286</strong></div></div>
-          </aside>
         </div>
       </div>
-      <div class="hero-foot"><div class="shell hero-foot-inner">
-        <div class="hero-foot-cell"><span class="eyebrow">Collecte / 01</span><strong>319</strong><p>annonces uniques relevées</p></div>
-        <div class="hero-foot-cell"><span class="eyebrow">Contrôle / 02</span><strong>316</strong><p>annonces exploitables</p></div>
-        <div class="hero-foot-cell"><span class="eyebrow">Collecte / 03</span><strong>08.10.26</strong><p>photographie à date fixe</p></div>
-        <div class="hero-foot-cell foot-source"><span class="eyebrow">Notre source / 04</span><strong>Sarouty, annonces publiques.</strong><p>Prix demandés, pas prix de vente réalisés.</p></div>
-      </div></div>
     </section>
 
     <section class="principle" id="approche" aria-labelledby="approche-heading"><div class="shell principle-grid">
@@ -442,7 +463,7 @@
     </div></section>
 
     <section class="study" id="analyse" aria-labelledby="study-heading"><div class="shell">
-      <div class="study-heading"><div><p class="section-index eyebrow">02 / Étude de terrain &nbsp; — &nbsp; n°001</p><h2 id="study-heading">Marrakech.<br>Quartier par quartier.</h2></div><div class="study-heading-right"><p>Le <strong>8 octobre 2026</strong>, nous avons collecté 319 annonces d’appartements à vendre à Marrakech. Après contrôle, 316 sont exploitables. Cette étude compare 197 annonces réparties dans les sept quartiers disposant d’au moins huit biens.</p></div></div>
+      <div class="study-heading"><div><p class="section-index eyebrow">02 / Étude de terrain &nbsp; — &nbsp; n°001</p><h2 id="study-heading">Prix au m² à Marrakech,<br>quartier par quartier.</h2></div><div class="study-heading-right"><p>Le <strong>8 octobre 2026</strong>, nous avons collecté 319 annonces d’appartements à vendre à Marrakech. Après contrôle, 316 sont exploitables. Cette étude compare 197 annonces réparties dans les sept quartiers disposant d’au moins huit biens.</p></div></div>
       <div class="study-frame" id="study-frame" data-mode="median">
         <div class="frame-head"><div><p class="eyebrow">Le marché, mesuré</p><h3>Des prix très différents d'un quartier à l'autre.</h3></div><div class="frame-meta">MARRAKECH / VENTE APPARTEMENTS<br>COMPARATIF : 197 ANNONCES / 7 QUARTIERS</div></div>
         <div class="study-controls"><p>Explorez les prix médians ou la dispersion des 197 annonces des sept principaux quartiers de cet échantillon.</p><div class="chart-switch" role="group" aria-label="Affichage du graphique"><button type="button" data-mode="median" aria-pressed="true">Prix médians</button><button type="button" data-mode="distribution" aria-pressed="false">Dispersion</button></div></div>
@@ -498,9 +519,11 @@
 
     <section class="dashboard-promo" aria-labelledby="dashboard-promo-heading"><div class="shell dashboard-promo-inner"><div><p class="eyebrow">LE LABORATOIRE / DASHBOARD INTERACTIF</p><h2 id="dashboard-promo-heading">De l'étude à<br><span>l'exploration.</span></h2><p>Accédez au relevé du 8 octobre 2026 : 319 annonces collectées, 316 exploitables après contrôle. Filtrez les secteurs, comparez les prix demandés au m² et retrouvez les annonces sources.</p></div><div class="dashboard-promo-cta"><span class="eyebrow">MARRAKECH / MARKET INTELLIGENCE</span><strong>319 <small>ANNONCES</small></strong><a href="dashboard.html">Ouvrir le dashboard <span aria-hidden="true">↗</span></a><p>Même relevé que l’étude ci-dessus. Le dashboard présente aussi les quartiers moins représentés, avec 316 annonces exploitables.</p></div></div></section>
 
-    <section class="solutions" id="solutions" aria-labelledby="solutions-heading"><div class="shell solutions-layout"><div><p class="section-index eyebrow">03 / Nos solutions</p><h2 id="solutions-heading">De la donnée.<br>À la décision.</h2><p class="solutions-intro">Deux manières d'exploiter l'information immobilière : récupérer les annonces structurées ou construire une lecture du marché adaptée à votre question.</p></div><div class="solution-list">
-      <article class="solution-item"><span class="eyebrow">01 / Data access</span><div><h3>Les données, à votre main.</h3><p>Pour les analystes, développeurs et équipes qui souhaitent intégrer les annonces dans leurs propres outils et traitements.</p><p class="solution-meta">CSV / JSON &nbsp; • &nbsp; API APIFY &nbsp; • &nbsp; EXPORT</p><a class="text-cta" href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Explorer le scraper Sarouty <span class="arrow" aria-hidden="true">↗</span></a></div></article>
-      <article class="solution-item"><span class="eyebrow">02 / Market insight</span><div><h3>Une lecture du marché, sur mesure.</h3><p>Pour les investisseurs, professionnels et agences qui veulent comparer des secteurs ou situer un bien au sein de l'offre actuellement publiée.</p><p class="solution-meta">COMPARAISON &nbsp; • &nbsp; PRIX AU M² &nbsp; • &nbsp; ÉTUDE PONCTUELLE</p><a class="text-cta" href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Discuter d'une analyse <span class="arrow" aria-hidden="true">↗</span></a></div></article>
+    <section class="solutions" id="solutions" aria-labelledby="solutions-heading"><div class="shell solutions-layout"><div><p class="section-index eyebrow">03 / Nos solutions</p><h2 id="solutions-heading">De la donnée.<br>À la décision.</h2><p class="solutions-intro">Commencez gratuitement avec l'étude et le dashboard. Passez à la version Pro quand vous avez besoin de toutes les annonces chaque semaine, ou confiez-nous directement votre question.</p></div><div class="solution-list" id="offres">
+      <article class="solution-item"><span class="eyebrow">Gratuit</span><div><h3>L'étude et le dashboard, en accès libre.</h3><p>Pour suivre les prix d'un quartier ou se faire une première idée du marché, sans inscription.</p><p class="solution-meta">PRIX AU M² PAR QUARTIER &nbsp; • &nbsp; DISTRIBUTION &nbsp; • &nbsp; COMPARATEUR &nbsp; • &nbsp; 10 ANNONCES EN APERÇU</p><a class="text-cta" href="dashboard.html">Ouvrir le dashboard <span class="arrow" aria-hidden="true">↗</span></a></div></article>
+      <article class="solution-item"><span class="eyebrow">Pro</span><div><h3>Toutes les annonces, chaque semaine.</h3><p><strong>29 € HT par mois, sans engagement.</strong> Pour les agences, les investisseurs et les équipes qui suivent le marché de près : la base complète et à jour, prête à travailler dans Excel.</p><p class="solution-meta">TITRES, AGENCES ET LIENS D'ORIGINE &nbsp; • &nbsp; FICHIER EXCEL HEBDOMADAIRE &nbsp; • &nbsp; NOUVELLES ANNONCES ET BAISSES DE PRIX &nbsp; • &nbsp; VILLE AU CHOIX</p><a class="text-cta" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20activit%C3%A9%20%3A%20%0A">Demander l'accès Pro <span class="arrow" aria-hidden="true">↗</span></a></div></article>
+      <article class="solution-item"><span class="eyebrow">Sur mesure</span><div><h3>Une lecture du marché, adaptée à votre question.</h3><p><strong>Sur devis, première analyse offerte.</strong> Pour comparer des secteurs, situer un bien au sein de l'offre publiée ou préparer un projet.</p><p class="solution-meta">COMPARAISON &nbsp; • &nbsp; POSITIONNEMENT D'UN BIEN &nbsp; • &nbsp; ÉTUDE AVANT PROJET</p><a class="text-cta" href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Demander une analyse <span class="arrow" aria-hidden="true">↗</span></a></div></article>
+      <p class="solutions-note">Développeur ? Les données brutes sont aussi disponibles en libre-service sur Apify, à 1,50 $ pour 1 000 annonces. <a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Voir le scraper</a></p>
     </div></div></section>
 
     <section class="method" id="methode" aria-labelledby="methode-heading"><div class="shell"><p class="section-index eyebrow">04 / La méthode Atlas Data</p><h2 id="methode-heading">Du terrain au signal.<br><em>Sans raccourcis.</em></h2><div class="method-steps">
@@ -509,10 +532,18 @@
       <article class="method-step"><span>ÉTAPE / 03</span><h3>Interpréter.</h3><p>Mettre les annonces en perspective, observer les dispersions et rendre visibles les limites de la comparaison.</p></article>
     </div><div class="method-fineprint"><span class="eyebrow">À savoir / 001</span><p>Relevé unique du 08.10.2026 sur Sarouty : 319 annonces distinctes, 316 exploitables après exclusion de deux catégories suspectes et d’une annonce sans surface. Le graphique de l’étude porte sur sept secteurs comptant au moins huit annonces chacun (197 biens). Les prix demandés ne sont pas des prix de transactions. Le panel ne représente pas l’ensemble du marché et ne permet pas de mesurer une évolution temporelle.</p></div></div></section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-heading"><div class="shell contact-grid"><div><p class="section-index eyebrow">05 / Entrons en contact</p><h2 id="contact-heading">À chaque marché,<br>une autre lecture.</h2></div><div class="contact-text"><p>Une ville, un quartier, un type de bien à explorer ? Parlons des décisions que vos données pourraient éclairer.</p><a class="contact-mail" href="mailto:othman@atlas-data.fr?subject=Projet%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%3A%0AQuartier%20%3A%0AType%20de%20bien%20%3A%0A">othman@atlas-data.fr <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="faq" id="questions" aria-labelledby="faq-heading"><div class="shell faq-layout"><div><p class="section-index eyebrow">05 / Questions fréquentes</p><h2 id="faq-heading">Prix immobilier à Marrakech : vos questions.</h2></div><div class="faq-list">
+<details class="faq-item"><summary>Quel est le prix au m² d'un appartement à Marrakech ?</summary><p>Au 8 octobre 2026, le prix médian demandé est de 18 581 MAD/m² sur les 316 annonces d'appartements à vendre exploitables. Il varie fortement selon le quartier, de 14 286 MAD/m² à Semlalia à 24 880 MAD/m² à l'Hivernage, parmi les quartiers comptant au moins huit annonces.</p></details>
+<details class="faq-item"><summary>Quel est le quartier le plus cher de Marrakech ?</summary><p>Parmi les quartiers comptant au moins huit annonces, l'Hivernage affiche le prix médian le plus élevé, à 24 880 MAD/m², devant Agdal (23 487 MAD/m²) et Guéliz (20 985 MAD/m²).</p></details>
+<details class="faq-item"><summary>Ces prix sont-ils des prix de vente réels ?</summary><p>Non. Ce sont les prix demandés dans les annonces, avant négociation. Ils décrivent l'offre publiée et ses écarts entre quartiers, pas le prix final signé chez le notaire.</p></details>
+<details class="faq-item"><summary>D'où viennent les données ?</summary><p>Des annonces publiques d'appartements à vendre publiées sur Sarouty, relevées à date fixe. Aucune donnée personnelle n'est collectée : ni nom, ni téléphone, ni email d'agent.</p></details>
+<details class="faq-item"><summary>Quelle différence entre l'accès gratuit et la version Pro ?</summary><p>L'étude et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro donne accès à toutes les annonces avec leur titre, leur agence et leur lien d'origine, dans un fichier Excel mis à jour chaque semaine.</p></details>
+</div></div></section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading"><div class="shell contact-grid"><div><p class="section-index eyebrow">06 / Entrons en contact</p><h2 id="contact-heading">À chaque marché,<br>une autre lecture.</h2></div><div class="contact-text"><p>Une ville, un quartier, un type de bien à explorer ? Parlons des décisions que vos données pourraient éclairer.</p><a class="contact-mail" href="mailto:othman@atlas-data.fr?subject=Projet%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%3A%0AQuartier%20%3A%0AType%20de%20bien%20%3A%0A">othman@atlas-data.fr <span aria-hidden="true">↗</span></a></div></div></section>
   </main>
-  <footer class="footer"><div class="shell footer-grid"><div class="footer-brand">ATLAS <span>DATA</span></div><nav class="footer-links" aria-label="Navigation de pied de page"><a href="#approche">Notre regard</a><a href="#analyse">Étude</a><a href="dashboard.html">Dashboard</a><a href="#solutions">Solutions</a><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Apify ↗</a><a href="#top">Retour en haut ↑</a></nav><div class="footer-small"><p>© <span id="year">2026</span> Atlas Data. Intelligence immobilière / Maroc.</p><p>Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p></div></div></footer>
-  <!-- Avant publication officielle : ajouter les mentions légales de l'éditeur (identité, statut, coordonnées, immatriculation si applicable, hébergeur) et un lien en pied de page. -->
+  <footer class="footer"><div class="shell footer-grid"><div class="footer-brand">ATLAS <span>DATA</span></div><nav class="footer-links" aria-label="Navigation de pied de page"><a href="#approche">Notre regard</a><a href="#analyse">Étude</a><a href="dashboard.html">Dashboard</a><a href="#solutions">Solutions</a><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Apify ↗</a><a href="#top">Retour en haut ↑</a></nav><div class="footer-small"><p>© <span id="year">2026</span> Atlas Data. Intelligence immobilière / Maroc.</p><p>Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p></div>
+      <details class="legal" id="mentions-legales"><summary>Mentions légales</summary><p>Éditeur : [NOM PRÉNOM OU RAISON SOCIALE], [ADRESSE], [SIRET SI APPLICABLE]. Contact : othman@atlas-data.fr. Directeur de la publication : [NOM PRÉNOM].</p><p>Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p><p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les polices sont chargées depuis Google Fonts.</p></details></div></footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     (function(){
