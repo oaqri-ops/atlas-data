@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101a33">
-  <meta name="description" content="Prix au m² des appartements à vendre à Marrakech, quartier par quartier : Hivernage, Agdal, Guéliz, Palmeraie, Targa, Semlalia. Étude et dashboard gratuits, relevé du 8 octobre 2026.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Prix au m² des appartements à vendre à Marrakech, quartier par quartier : Hivernage, Agdal, Guéliz, Palmeraie, Targa, Semlalia. Calculez la surface accessible avec votre budget. Étude et dashboard gratuits.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Atlas Data">
   <meta property="og:title" content="Prix au m² à Marrakech par quartier - Atlas Data">
-  <meta property="og:description" content="De 14 286 MAD/m² à Semlalia à 24 880 MAD/m² à l'Hivernage : les prix demandés des appartements à Marrakech, quartier par quartier.">
+  <meta property="og:description" content="Pour 1 million de MAD : environ 40 m² à l'Hivernage, 70 m² à Semlalia. Les prix demandés des appartements à Marrakech, quartier par quartier.">
   <meta property="og:image" content="https://atlas-data.fr/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,548 +22,653 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='3' fill='%232340C2'/%3E%3Cpath d='M14 48 32 14l18 34M22 36h20' fill='none' stroke='white' stroke-width='6' stroke-linecap='square'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@1,8..60,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy:#101a33;
-      --navy-deep:#0d162c;
-      --blue:#2340c2;
-      --blue-light:#bdcaff;
-      --paper:#f8f7f3;
-      --cream:#eeeae1;
-      --white:#fff;
-      --ink:#152039;
-      --muted:#606878;
-      --line:#dcdedc;
-      --subtle:#e9e9e5;
+    :root{
+      --ink:#152039;--muted:#5b6476;--faint:#8a92a3;
+      --blue:#2340c2;--blue-dark:#1a2f94;--navy:#101a33;
+      --tint:#eef1fa;--soft:#f6f7fa;--line:#dfe2ea;--white:#fff;
       --display:'Archivo','Arial Narrow',Arial,sans-serif;
-      --body:'Roboto',Arial,sans-serif;
-      --serif:'Source Serif 4',Georgia,serif;
-      --mono:'Roboto',Arial,sans-serif;
-      --max:1340px;
-      --gutter:clamp(22px,4.6vw,78px);
+      --body:'Roboto',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --shell:1180px;
     }
     *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:100px}
-    body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    body.menu-open{overflow:hidden}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+    img,svg{max-width:100%;display:block}
     a{color:inherit}
-    a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #dc951d;outline-offset:4px}
-    button{font:inherit}
-    ::selection{color:white;background:var(--blue)}
-    .shell{width:min(var(--max),calc(100% - 2 * var(--gutter)));margin-inline:auto}
-    .eyebrow{font:700 10px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-    .display{font-family:var(--display);font-stretch:115%;font-weight:800;letter-spacing:-.063em}
-    .skip-link{position:fixed;top:-100px;left:15px;z-index:200;background:white;color:var(--ink);padding:12px 20px}
-    .skip-link:focus{top:15px}
-    .nav-header{position:sticky;top:0;z-index:50;background:rgba(248,247,243,.985);border-bottom:1px solid rgba(21,32,57,.16);backdrop-filter:blur(16px)}
-    .nav-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:30px;height:84px}
-    .logo{display:inline-flex;align-items:center;gap:13px;width:max-content;text-decoration:none}
-    .logo-symbol{display:grid;place-items:center;width:37px;height:37px;color:white;background:var(--blue)}
-    .logo-symbol svg{width:29px;height:29px}
-    .logo-word{font:800 19px/1 var(--display);letter-spacing:-.055em}
-    .logo-word span{color:var(--blue)}
-    .desktop-nav{display:flex;align-items:center;gap:clamp(24px,3vw,48px)}
-    .desktop-nav a{text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;transition:color .15s}
-    .desktop-nav a:hover,.nav-contact:hover{color:var(--blue)}
-    .nav-contact{justify-self:end;display:inline-flex;align-items:center;gap:21px;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}
-    .arrow-box{display:grid;place-items:center;width:40px;height:40px;color:white;background:var(--blue);font-size:20px;transition:background .2s,transform .2s}
-    .nav-contact:hover .arrow-box{background:var(--navy);transform:translate(2px,-2px)}
-    .mobile-menu-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
-    .mobile-menu-toggle svg{height:21px;width:21px}
-    .mobile-nav{display:none}
+    button,input{font:inherit;color:inherit}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+    .shell{width:100%;max-width:var(--shell);margin:0 auto;padding:0 24px}
+    .skip-link{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 14px;z-index:50}
+    .skip-link:focus{top:12px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    h1,h2,h3{font-family:var(--display);margin:0;color:var(--ink)}
+    p{margin:0}
 
-    /* Opening statement: spacious institutional typography, original sample and its limits. */
-    .hero{position:relative;isolation:isolate;overflow:hidden;background:var(--navy);color:white}
-    .hero-grid-art{position:absolute;pointer-events:none;inset:0 0 0 37%;z-index:-1;opacity:.65;overflow:hidden}
-    .hero-grid-art svg{position:absolute;width:min(900px,90vw);height:900px;max-width:none;right:-210px;top:-75px}
-    .hero-grid-art ellipse{fill:none;stroke:#a9b8ef;stroke-width:1;opacity:.2}
-    .hero-inner{padding-top:46px}
-    .hero-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.21);padding-bottom:24px;color:#c6cee5}
-    .hero-topline .eyebrow{margin:0}
-    .hero-topline .eyebrow:last-child{color:#abb9e3}
-    .hero-layout{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(310px,.57fr);gap:clamp(36px,5vw,88px);align-items:end;padding-top:91px;padding-bottom:88px}
-    .hero-title{font:800 clamp(68px,7.25vw,121px)/.93 var(--display);font-stretch:115%;letter-spacing:-.075em;margin:0;max-width:900px}
-    .hero-title span{display:block}
-    .hero-title .accent{color:#9eb2ff}
-    .hero-subrow{display:grid;grid-template-columns:minmax(0,490px) auto;align-items:end;gap:35px;margin-top:54px}
-    .hero-lede{margin:0;color:#c4cce2;font-size:18px;line-height:1.55;max-width:440px}
-    .text-cta{display:inline-flex;align-items:center;gap:19px;text-decoration:none;font-weight:700;font-size:13px;line-height:1.4;border-bottom:1px solid currentColor;padding-bottom:9px;white-space:nowrap;transition:gap .2s}
-    .text-cta:hover{gap:25px}
-    .hero .text-cta{color:white}
-    .text-cta .arrow{font-size:22px;font-weight:400;line-height:.8}
-    .hero-insight{position:relative;isolation:isolate;background:#2340c2;padding:31px 29px 28px;min-height:402px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:22px 22px 0 rgba(2,7,24,.1)}
-    .hero-insight::before{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(90deg,rgba(255,255,255,.075) 1px,transparent 1px),linear-gradient(0deg,rgba(255,255,255,.075) 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(155deg,transparent,black)}
-    .insight-header{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;color:#d2dcff}
-    .insight-header .eyebrow{margin:0;font-size:9px}
-    .insight-index{font:600 12px var(--mono)}
-    .insight-kicker{margin:32px 0 3px;font-size:13px;color:#e1e7ff}
-    .insight-figure{display:flex;align-items:flex-start;font:800 clamp(104px,10vw,158px)/.88 var(--display);letter-spacing:-.095em;white-space:nowrap;margin-left:-.06em}
-    .insight-figure small{font-size:.43em;letter-spacing:-.075em;margin-top:.13em}
-    .insight-description{margin:11px 0 26px;max-width:290px;font:700 clamp(18px,1.6vw,23px)/1.22 var(--display);letter-spacing:-.042em}
-    .insight-description span{color:#b8c7ff}
-    .insight-comparison{border-top:1px solid rgba(255,255,255,.58);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font-size:12px;color:#e5eaff}
-    .insight-comparison strong{display:block;font:700 19px var(--display);color:white;letter-spacing:-.04em}
-    .insight-comparison>div:last-child{text-align:right}
-    .hero-foot{border-top:1px solid rgba(255,255,255,.23)}
-    .hero-foot-inner{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.28fr;align-items:stretch}
-    .hero-foot-cell{padding:25px 24px 29px 0;border-right:1px solid rgba(255,255,255,.22)}
-    .hero-foot-cell+.hero-foot-cell{padding-left:34px}
-    .hero-foot-cell:last-child{border-right:none}
-    .hero-foot-cell .eyebrow{display:block;color:#9daacb;margin-bottom:10px;font-size:9px}
-    .hero-foot-cell strong{display:block;color:#fff;font:700 27px/1.1 var(--display);letter-spacing:-.05em}
-    .hero-foot-cell p{margin:2px 0 0;color:#adb8d3;font-size:12px}
-    .hero-foot-cell.foot-source strong{font:600 15px/1.35 var(--body);letter-spacing:0}
-    .hero-foot-cell.foot-source p{max-width:210px}
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+    .header-row{display:flex;align-items:center;gap:32px;min-height:68px}
+    .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+    .logo-mark{display:grid;place-items:center;width:32px;height:32px;background:var(--blue);color:#fff;border-radius:3px}
+    .logo-mark svg{width:22px;height:22px}
+    .logo-word{font:800 19px/1 var(--display);letter-spacing:-.03em}
+    .main-nav{display:flex;gap:26px;margin-left:8px}
+    .main-nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted)}
+    .main-nav a:hover{color:var(--ink)}
+    .header-cta{margin-left:auto}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue-dark)}
+    .btn-ghost{border-color:var(--line);background:#fff;color:var(--ink)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .menu-toggle{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:6px;background:#fff}
+    .menu-toggle svg{width:22px;height:22px;margin:auto}
+    .mobile-nav{border-top:1px solid var(--line);padding:8px 24px 18px;background:#fff}
+    .mobile-nav a{display:block;padding:12px 0;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
 
-    /* Point of view */
-    .principle{background:var(--paper);padding:142px 0 152px}
-    .principle-grid{display:grid;grid-template-columns:.36fr 1fr;gap:clamp(60px,10vw,175px)}
-    .section-index{display:inline-flex;align-items:center;gap:15px;margin:0;color:var(--blue)}
-    .section-index::before{content:"";width:28px;height:2px;background:currentColor}
-    .principle-copy{max-width:960px}
-    .principle-quote{font:800 clamp(46px,5.3vw,78px)/1.04 var(--display);letter-spacing:-.063em;margin:-11px 0 33px}
-    .principle-quote em{font:500 italic 1.08em/.98 var(--serif);letter-spacing:-.045em;color:var(--blue)}
-    .principle-bottom{display:grid;grid-template-columns:1fr 1fr;gap:45px;padding-top:23px;border-top:1px solid var(--line)}
-    .principle-bottom p{color:var(--muted);font-size:16px;margin:0;max-width:430px}
-    .principle-bottom .mini-link{justify-self:end;align-self:end;color:var(--blue)}
+    /* Hero */
+    .hero{padding:64px 0 80px;background:linear-gradient(180deg,var(--soft) 0,var(--white) 420px)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:64px;align-items:start}
+    .hero-copy{padding-top:24px;position:sticky;top:110px}
+    .hero h1{font-size:clamp(40px,5.2vw,64px);line-height:1.03;font-weight:800;letter-spacing:-.035em;max-width:11em}
+    .hero-lede{font-size:19px;line-height:1.55;color:var(--muted);max-width:30em;margin-top:24px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .hero-source{margin-top:28px;font-size:14px;color:var(--faint);max-width:34em}
 
-    /* Market note 001 */
-    .study{background:#edece7;padding:116px 0 122px;border-block:1px solid #dddcd5}
-    .study-heading{display:grid;grid-template-columns:1fr .42fr;gap:60px;align-items:end;margin-bottom:54px}
-    .study h2,.solutions h2,.method h2,.contact h2{font:800 clamp(55px,6.8vw,103px)/.95 var(--display);font-stretch:115%;letter-spacing:-.069em}
-    .study h2{margin:23px 0 0;max-width:920px}
-    .study-heading-right{padding-bottom:7px}
-    .study-heading-right p{font-size:16px;line-height:1.62;color:#535b6b;margin:0;max-width:360px}
-    .study-heading-right strong{color:var(--ink)}
-    .study-frame{background:#fff;border:1px solid #d6d8d8;box-shadow:0 18px 52px rgba(18,26,47,.035)}
-    .frame-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:29px 32px;border-bottom:1px solid var(--line)}
-    .frame-head .eyebrow{color:var(--blue);margin:0 0 6px}
-    .frame-head h3{margin:0;font:800 clamp(25px,2.6vw,36px)/1.11 var(--display);letter-spacing:-.049em}
-    .frame-meta{text-align:right;color:var(--muted);font:600 10px/1.6 var(--mono);letter-spacing:.04em}
-    .study-controls{padding:21px 32px 20px;border-bottom:1px solid var(--subtle);display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .study-controls>p{font-size:12px;color:var(--muted);margin:0;max-width:430px}
-    .chart-switch{display:inline-flex;gap:6px;flex-shrink:0}
-    .chart-switch button{background:transparent;border:1px solid #dadde4;color:var(--muted);padding:9px 16px;cursor:pointer;font-size:12px;font-weight:700;transition:background .2s,border .2s,color .2s}
-    .chart-switch button:hover{border-color:var(--blue);color:var(--blue)}
-    .chart-switch button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-    .chart-area{padding:13px 32px 27px}
-    .plot-header,.market-row{display:grid;grid-template-columns:210px minmax(0,1fr) 141px;gap:19px;align-items:center}
-    .plot-header{margin-bottom:1px;padding:3px 0 13px;border-bottom:1px solid #c6cbd0;color:#8a909b;font:600 10px var(--mono)}
-    .plot-axis{position:relative;height:24px;display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
-    .plot-axis span:nth-child(1){text-align:left}
-    .plot-axis span:nth-child(2){margin-left:-12px}
-    .plot-axis span:last-child{text-align:right}
-    .plot-price-label{text-align:right}
-    .market-row{padding:10px 0;border-bottom:1px solid #eceeef;transition:background .2s}
-    .market-row:hover{background:#f8f9fc}
-    .market-area{min-width:0}
-    .market-area strong{display:block;font-size:15px;line-height:1.25;font-weight:700}
-    .market-area span{display:block;font-size:12px;color:var(--muted);line-height:1.3;margin-top:4px}
-    .market-plot{height:46px;position:relative;background-image:linear-gradient(to right,#e9ebf0 1px,transparent 1px);background-size:25% 100%;border-right:1px solid #e9ebf0;overflow:visible}
-    .market-plot::before{content:"";position:absolute;z-index:0;left:0;right:0;top:50%;height:1px;background:#e6e8ed}
-    .median-bar{position:absolute;z-index:1;left:0;top:calc(50% - 4px);height:8px;width:var(--median);background:#ced4e7;transition:width .35s,opacity .22s}
-    .market-row:first-of-type .median-bar{background:var(--blue)}
-    .median-pin{position:absolute;z-index:3;top:calc(50% - 7px);left:var(--median);width:14px;height:14px;border:3px solid var(--blue);border-radius:50%;background:#fff;transform:translateX(-50%);transition:height .25s,top .25s,width .25s}
-    .market-price{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-    .market-price strong{font:800 21px/1 var(--display);letter-spacing:-.04em}
-    .market-price span{display:block;font:600 10px/1.5 var(--mono);color:var(--muted);margin-top:3px}
-    .plot-dots{display:none;position:absolute;z-index:2;inset:0}
-    .plot-dots .dot{position:absolute;width:6px;height:6px;left:var(--x);top:var(--y);margin-left:-3px;background:var(--blue);opacity:.62;border-radius:100%}
-    .plot-dots .dot.outlier{width:0;height:0;border-radius:0;background:none;opacity:1;border-left:7px solid var(--blue);border-top:5px solid transparent;border-bottom:5px solid transparent}
-    .study-frame[data-mode="distribution"] .median-bar{opacity:0}
-    .study-frame[data-mode="distribution"] .median-pin{top:4px;height:38px;width:2px;border:0;border-radius:0;background:var(--navy)}
-    .study-frame[data-mode="distribution"] .plot-dots{display:block}
-    .frame-caption{padding:22px 32px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:40px;align-items:flex-start}
-    .frame-caption p{font-size:12px;line-height:1.55;color:var(--muted);margin:0;max-width:660px}
-    .chart-legend{display:flex;gap:20px;white-space:nowrap;font:600 11px var(--body);color:#5c6473;align-items:center}
-    .chart-legend span{display:inline-flex;align-items:center;gap:8px}
-    .legend-circle{width:8px;height:8px;border-radius:50%;background:var(--blue)}
-    .legend-line{width:3px;height:14px;background:var(--navy)}
-    .chart-table{padding:0 32px 29px}
-    .chart-table summary{color:var(--blue);font-weight:700;font-size:12px;cursor:pointer;display:inline-flex;gap:10px;align-items:center}
-    .chart-table summary::after{content:'↗';font-size:16px}
-    .chart-table[open] summary::after{content:'↘'}
-    .table-wrap{overflow-x:auto;margin-top:14px}
-    .chart-table table{border-collapse:collapse;min-width:480px;width:100%;font-size:13px}
-    .chart-table th,.chart-table td{text-align:left;border-bottom:1px solid var(--line);padding:12px 10px 12px 0}
-    .chart-table thead th{color:var(--muted);font-size:12px}
-    .study-insights{display:grid;grid-template-columns:1fr .58fr;gap:9vw;padding-top:50px;align-items:start}
-    .study-insights blockquote{margin:0;max-width:730px;font:500 italic clamp(25px,2.85vw,40px)/1.3 var(--serif);letter-spacing:-.029em}
-    .study-insights blockquote em{color:var(--blue)}
-    .study-insights .insight-context{max-width:420px;border-top:1px solid #bfc3c6;padding-top:19px}
-    .insight-context .eyebrow{color:var(--blue);margin:0 0 13px}
-    .insight-context p:last-child{font-size:15px;color:#525a68;margin:0}
+    /* Calculator */
+    .calc{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 24px 48px -32px rgba(16,26,51,.45)}
+    .calc-inputs{padding:24px 24px 22px}
+    .field-label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
+    .budget{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+    .budget input{flex:1;min-width:0;border:0;padding:0;background:none;font:700 34px/1.2 var(--display);letter-spacing:-.02em}
+    .budget input:focus{outline:none}
+    .budget:focus-within{border-color:var(--blue)}
+    .budget span{font-weight:700;color:var(--muted)}
+    .presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .presets button{border:1px solid var(--line);background:#fff;border-radius:4px;padding:5px 10px;font-size:13px;color:var(--muted);cursor:pointer}
+    .presets button:hover,.presets button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink)}
+    .quartiers{border:0;margin:22px 0 0;padding:0;min-width:0}
+    .quartiers legend{padding:0}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip input{position:absolute;opacity:0;pointer-events:none}
+    .chip span{display:inline-block;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;cursor:pointer;background:#fff}
+    .chip span:hover{border-color:var(--ink)}
+    .chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+    .chip input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+    .calc-result{background:var(--tint);padding:24px 24px 22px}
+    .result-lead{font-size:16px;color:var(--muted)}
+    .result-m2{font:800 clamp(80px,10.5vw,128px)/.92 var(--display);font-stretch:125%;letter-spacing:-.045em;color:var(--blue);margin:8px 0 10px;font-variant-numeric:tabular-nums}
+    .result-m2 small{font-size:.36em;letter-spacing:0;margin-left:.08em}
+    .result-m2.tick{animation:tick .28s ease-out}
+    @keyframes tick{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+    .result-basis{font-size:15px}
+    .result-real{margin-top:16px;padding-top:14px;border-top:1px solid #d3d9ee;font-size:15px}
+    .result-real a{font-weight:700;color:var(--blue)}
+    .calc-compare{padding:20px 24px 24px}
+    .calc-compare h2{font:700 15px/1.3 var(--body);margin-bottom:12px}
+    .cmp{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+    .cmp button{width:100%;display:grid;grid-template-columns:150px 1fr 56px;gap:12px;align-items:center;border:0;background:none;padding:5px 6px;border-radius:4px;text-align:left;cursor:pointer;font-size:14px}
+    .cmp button:hover{background:var(--soft)}
+    .cmp button[aria-pressed="true"]{background:var(--tint);font-weight:700}
+    .cmp-bar{height:10px;background:var(--soft);border-radius:2px;overflow:hidden}
+    .cmp-bar i{display:block;height:100%;background:#9fb0ee;border-radius:2px}
+    .cmp button[aria-pressed="true"] .cmp-bar i{background:var(--blue)}
+    .cmp-val{text-align:right;font-variant-numeric:tabular-nums}
+    .calc-note{margin-top:14px;font-size:13px;line-height:1.5;color:var(--muted)}
 
-    /* Offering reads like an editorial index, not a SaaS card grid. */
-    .solutions{padding:133px 0 151px;background:var(--paper)}
-    .solutions-layout{display:grid;grid-template-columns:.75fr 1fr;gap:clamp(45px,8vw,130px)}
-    .solutions h2{margin:30px 0 30px;max-width:490px}
-    .solutions-intro{max-width:430px;color:var(--muted);font-size:16px}
-    .solution-list{border-top:1px solid var(--ink)}
-    .solution-item{display:grid;grid-template-columns:86px 1fr;gap:20px;padding:40px 0 46px;border-bottom:1px solid #ced2d5}
-    .solution-item .eyebrow{color:var(--blue);margin-top:7px}
-    .solution-item h3{font:800 clamp(28px,2.7vw,39px)/1.1 var(--display);letter-spacing:-.052em;margin:0 0 13px}
-    .solution-item p{color:var(--muted);margin:0 0 20px;max-width:450px;font-size:15px}
-    .solution-item .solution-meta{color:#404d61;font:600 11px/1.65 var(--mono);letter-spacing:0;margin:0 0 22px}
-    .solution-item .text-cta{color:var(--blue)}
+    /* Sections */
+    .section{padding:96px 0}
+    .section-soft{background:var(--soft)}
+    .section-head{max-width:700px;margin-bottom:40px}
+    .section-head h2,.feature h2,.offers h2,.faq-grid h2,.contact h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08;font-weight:800;letter-spacing:-.03em}
+    .section-head p{margin-top:16px;font-size:18px;color:var(--muted)}
 
-    /* Transparent method, no fabricated brand promises. */
-    .method{position:relative;overflow:hidden;padding:115px 0 121px;color:white;background:var(--navy)}
-    .method::before{content:'03';position:absolute;right:-1%;top:-140px;color:white;opacity:.022;font:800 650px/1 var(--display);letter-spacing:-.13em;pointer-events:none}
-    .method .section-index{color:#a6baff}
-    .method h2{margin:28px 0 69px;max-width:900px}
-    .method h2 em{font:500 italic 1.05em var(--serif);letter-spacing:-.065em;color:#a7b7fa}
-    .method-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.4)}
-    .method-step{padding:30px 36px 13px 0;min-height:255px}
-    .method-step+.method-step{border-left:1px solid rgba(255,255,255,.2);padding-left:35px}
-    .method-step>span{display:block;color:#a7b7fa;font:600 11px var(--mono);margin-bottom:38px}
-    .method-step h3{font:800 clamp(27px,2.9vw,38px)/1.1 var(--display);letter-spacing:-.045em;margin:0 0 15px}
-    .method-step p{color:#bfc8df;font-size:15px;line-height:1.65;margin:0;max-width:320px}
-    .method-fineprint{border-top:1px solid rgba(255,255,255,.21);padding-top:28px;margin-top:36px;display:grid;grid-template-columns:160px 1fr;gap:30px}
-    .method-fineprint .eyebrow{color:#a7b7fa}
-    .method-fineprint p{font-size:12px;line-height:1.7;color:#b7c0d9;margin:0;max-width:990px}
+    /* Chart */
+    .chart{border:1px solid var(--line);border-radius:10px;background:#fff;padding:24px 28px 20px}
+    .chart-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    .chart-top p{font-size:15px;color:var(--muted);max-width:36em}
+    .switch{display:inline-flex;border:1px solid var(--line);border-radius:6px;padding:3px;background:var(--soft)}
+    .switch button{border:0;background:none;padding:7px 14px;border-radius:4px;font-size:14px;font-weight:500;cursor:pointer;color:var(--muted)}
+    .switch button[aria-pressed="true"]{background:#fff;color:var(--ink);font-weight:700;box-shadow:0 1px 2px rgba(16,26,51,.12)}
+    .axis,.mrow{display:grid;grid-template-columns:200px minmax(0,1fr) 150px;gap:20px;align-items:center}
+    .axis{font-size:12px;color:var(--faint);padding-bottom:8px;border-bottom:1px solid var(--line)}
+    .axis-ticks{position:relative;height:16px}
+    .axis-ticks span{position:absolute;left:var(--x);transform:translateX(-50%);white-space:nowrap}
+    .axis-ticks span:first-child{transform:none}
+    .axis-ticks span:last-child{transform:translateX(-100%)}
+    .axis-end{text-align:right}
+    .mlist{list-style:none;margin:0;padding:0}
+    .mrow{padding:12px 0;border-bottom:1px solid var(--line)}
+    .mrow:last-child{border-bottom:0}
+    .mrow-name a{font-weight:700;text-decoration:none}
+    .mrow-name a:hover{color:var(--blue);text-decoration:underline}
+    .mrow-name span{display:block;font-size:13px;color:var(--faint)}
+    .mrow-plot{position:relative;height:36px}
+    .mrow-grid i{position:absolute;top:0;bottom:0;left:var(--x);width:1px;background:var(--line)}
+    .mrow-bar{position:absolute;left:0;top:12px;height:12px;width:var(--median);background:var(--blue);border-radius:0 2px 2px 0;transition:opacity .2s}
+    .mrow-pin{position:absolute;left:var(--median);top:2px;bottom:2px;width:2px;margin-left:-1px;background:var(--ink);opacity:0;transition:opacity .2s}
+    .mrow-dots{opacity:0;transition:opacity .2s}
+    .dot{position:absolute;left:var(--x);top:var(--y);width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--blue);opacity:.5}
+    .dot.outlier{background:#fff;border:1.5px solid var(--blue);opacity:1}
+    .chart[data-mode="distribution"] .mrow-bar{opacity:0}
+    .chart[data-mode="distribution"] .mrow-pin,.chart[data-mode="distribution"] .mrow-dots{opacity:1}
+    .mrow-price{text-align:right;font-size:13px;color:var(--muted);white-space:nowrap}
+    .mrow-price strong{font:700 19px var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+    .chart-foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+    .chart-foot p{max-width:46em}
+    .legend{display:flex;gap:16px;white-space:nowrap}
+    .legend span{display:inline-flex;align-items:center;gap:6px}
+    .legend .l-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);opacity:.5}
+    .legend .l-line{width:2px;height:12px;background:var(--ink)}
+    .chart-table{margin-top:14px;font-size:14px}
+    .chart-table summary{cursor:pointer;color:var(--blue);font-weight:700}
+    .table-wrap{overflow-x:auto;margin-top:12px}
+    table{border-collapse:collapse;width:100%;min-width:480px}
+    caption{text-align:left;color:var(--muted);font-size:13px;padding-bottom:8px}
+    th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+    thead th{font-size:13px;color:var(--muted);font-weight:500}
+    .insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}
+    .insights h3{font-size:20px;line-height:1.25;letter-spacing:-.015em;margin-bottom:8px}
+    .insights p{color:var(--muted);font-size:15px}
 
-    .contact{background:var(--blue);color:white;padding:116px 0 123px;position:relative;overflow:hidden}
-    .contact::before{content:'A';position:absolute;pointer-events:none;right:-55px;bottom:-250px;opacity:.055;color:white;font:800 850px/1 var(--display);letter-spacing:-.1em}
-    .contact-grid{position:relative;display:grid;grid-template-columns:1fr .52fr;align-items:end;gap:75px}
-    .contact .section-index{color:#cfdaff}
-    .contact h2{margin:34px 0 0;max-width:950px}
-    .contact-text{padding-bottom:14px}
-    .contact-text p{margin:0 0 29px;color:#e0e6ff;max-width:410px;font-size:16px;line-height:1.68}
-    .contact-mail{display:inline-flex;align-items:center;gap:18px;color:white;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.92);padding-bottom:8px;font:700 clamp(19px,2.4vw,29px)/1.3 var(--body);letter-spacing:-.025em;overflow-wrap:anywhere}
-    .contact-mail:hover{color:#dae2ff;border-color:#dae2ff}
-    .contact-mail span{font-size:27px;line-height:1}
-    .footer{background:#0b1428;color:#bec6d7;padding:35px 0 38px}
-    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:25px 45px;align-items:start}
-    .footer-brand{font:800 16px var(--display);color:white;letter-spacing:-.04em}
-    .footer-brand span{color:#aabaff}
-    .footer-links{display:flex;gap:24px;flex-wrap:wrap;font-size:12px;font-weight:600}
-    .footer-links a{text-decoration:none}
-    .footer-links a:hover{color:white}
-    .footer-small{grid-column:1/-1;display:flex;justify-content:space-between;gap:30px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;font-size:11px;line-height:1.6;color:#8792a9}
-    .footer-small p{margin:0}
+    /* Features */
+    .feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:72px;align-items:center}
+    .feature+.feature{margin-top:112px}
+    .feature.flip .feature-copy{order:2}
+    .feature-copy p{margin-top:18px;font-size:17px;color:var(--muted);max-width:30em}
+    .feature-copy .btn{margin-top:28px}
+    .mock{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;box-shadow:0 24px 48px -36px rgba(16,26,51,.5)}
+    .mock-bar{display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--soft)}
+    .mock-bar span{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 10px;color:var(--muted)}
+    .mock-bar span.on{background:var(--ink);border-color:var(--ink);color:#fff}
+    .mock-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+    .mock-kpis div{padding:14px 16px;border-right:1px solid var(--line)}
+    .mock-kpis div:last-child{border-right:0}
+    .mock-kpis span{display:block;font-size:11px;color:var(--faint);line-height:1.3}
+    .mock-kpis strong{display:block;font:800 21px/1.2 var(--display);letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}
+    .mock table{min-width:0;font-size:13px;white-space:nowrap}
+    .mock th,.mock td{padding:9px 16px}
+    .mock td:nth-child(n+3),.mock th:nth-child(n+3){text-align:right}
+    .mock tbody tr:last-child td{border-bottom:0}
+    .mock-lock{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--tint);font-size:13px;color:var(--muted)}
+    .mock-lock strong{color:var(--ink)}
+    .roadmap{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+    .roadmap li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+    .roadmap li:last-child{border-bottom:0}
+    .roadmap strong{display:block;font-size:15px}
+    .roadmap small{display:block;font-size:13px;color:var(--muted)}
+    .status{flex:none;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+    .status.ok{background:#e3f4ea;color:#1b6b3e}
+    .status.pro{background:var(--tint);color:var(--blue)}
+    .status.soon{background:var(--soft);color:var(--muted);border:1px dashed #c4c9d4}
 
-    .dashboard-promo{background:#101a33;color:#fff;padding:90px 0;border-top:1px solid #a1aed02b}
-    .dashboard-promo-inner{display:grid;grid-template-columns:1fr minmax(270px,.38fr);gap:clamp(30px,6vw,110px);align-items:end}
-    .dashboard-promo .eyebrow{color:#a4b9ff;margin:0 0 22px}
-    .dashboard-promo h2{font:800 clamp(55px,6.1vw,93px)/.96 var(--display);letter-spacing:-.063em;margin:0}
-    .dashboard-promo h2 span{color:#a4b9ff}
-    .dashboard-promo-inner>div>p:last-child{font-size:16px;line-height:1.6;color:#c3cce0;max-width:640px;margin:25px 0 0}
-    .dashboard-promo-cta{background:#2340c2;padding:27px;display:flex;flex-direction:column;gap:16px}
-    .dashboard-promo-cta .eyebrow{color:#dce4ff;margin:0}
-    .dashboard-promo-cta strong{font:800 clamp(70px,8vw,105px)/1 var(--display);letter-spacing:-.075em}
-    .dashboard-promo-cta strong small{display:block;font:700 12px var(--mono);letter-spacing:.04em;margin-top:7px;color:#dce4ff}
-    .dashboard-promo-cta a{border-top:1px solid #ffffff66;padding-top:17px;display:flex;justify-content:space-between;gap:15px;text-decoration:none;font-weight:700;font-size:15px}
-    .dashboard-promo-cta a:hover{color:#cfd9ff}
-    .dashboard-promo-cta p{font-size:11px;color:#d0dcff;line-height:1.5;margin:0}
-    @media(max-width:830px){.dashboard-promo-inner{grid-template-columns:1fr}.dashboard-promo-cta{max-width:470px}}
-    @media(max-width:560px){.dashboard-promo{padding:73px 0}.dashboard-promo h2{font-size:54px}}
-    @media(max-width:1150px){
-      .nav-grid{grid-template-columns:1fr auto}
-      .desktop-nav{display:none}
-      .hero-layout{grid-template-columns:minmax(0,1.45fr) minmax(290px,.62fr);gap:35px}
-      .hero-title{font-size:clamp(64px,7vw,94px)}
-      .hero-subrow{grid-template-columns:1fr;gap:26px}
-      .hero-insight{min-height:380px}
-      .plot-header,.market-row{grid-template-columns:178px minmax(0,1fr) 115px;gap:15px}
-      .study h2,.solutions h2,.method h2,.contact h2{font-size:clamp(55px,6.3vw,85px)}
+    /* Offers */
+    .offers{background:var(--navy);color:#fff}
+    .offers h2{color:#fff}
+    .offers-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:72px;align-items:start}
+    .offers-intro p{margin-top:18px;color:#c3cbe0;font-size:17px;max-width:30em}
+    .pro-card{background:#fff;color:var(--ink);border-radius:10px;padding:32px}
+    .pro-card h3{font-size:22px;letter-spacing:-.02em}
+    .pro-price{font:800 46px/1 var(--display);letter-spacing:-.03em;margin:16px 0 4px}
+    .pro-price small{font:500 16px var(--body);color:var(--muted);letter-spacing:0}
+    .pro-terms{color:var(--muted);font-size:15px}
+    .checks{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px}
+    .checks li{position:relative;padding-left:28px;font-size:15px}
+    .checks li::before{content:"";position:absolute;left:2px;top:6px;width:13px;height:7px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+    .pro-card .btn{width:100%}
+    .other-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:72px;padding-top:40px;border-top:1px solid #ffffff2b}
+    .other-offers h3{color:#fff;font-size:19px;margin-bottom:8px}
+    .other-offers p{color:#c3cbe0;font-size:15px}
+    .other-offers a{display:inline-block;margin-top:12px;color:#fff;font-weight:700}
+
+    /* Method */
+    .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:step}
+    .steps li{counter-increment:step;border-top:2px solid var(--ink);padding-top:20px}
+    .steps h3{font-size:20px;margin-bottom:8px}
+    .steps h3::before{content:counter(step) ". ";color:var(--blue)}
+    .steps p{color:var(--muted);font-size:15px}
+    .fineprint{margin-top:48px;padding:24px 28px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:15px;color:var(--muted);max-width:860px}
+    .fineprint strong{color:var(--ink)}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
+    .faq-list details{border-bottom:1px solid var(--line)}
+    .faq-list details:first-child{border-top:1px solid var(--line)}
+    .faq-list summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-size:17px;position:relative}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary::after{content:"";position:absolute;right:6px;top:26px;width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+    .faq-list details[open] summary::after{transform:rotate(-135deg);top:30px}
+    .faq-list details p{padding:0 0 22px;color:var(--muted);max-width:40em}
+
+    /* Contact */
+    .contact{padding:80px 0;border-top:1px solid var(--line)}
+    .contact-row{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+    .contact p{margin-top:12px;color:var(--muted);font-size:17px}
+
+    /* Footer */
+    .site-footer{background:var(--soft);border-top:1px solid var(--line);padding:64px 0 32px;font-size:14px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:40px}
+    .footer-about p{color:var(--muted);margin-top:14px;max-width:24em}
+    .site-footer h2{font:700 14px/1.3 var(--body);margin-bottom:14px}
+    .site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+    .site-footer ul a{text-decoration:none;color:var(--muted)}
+    .site-footer ul a:hover{color:var(--ink);text-decoration:underline}
+    .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;display:grid;gap:8px}
+    .legal summary{cursor:pointer;color:var(--muted);font-weight:500}
+    .legal p{margin-top:8px}
+
+    @media (max-width:1040px){
+      .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+      .hero-copy{padding-top:0;position:static}
+      .calc{max-width:620px}
+      .feature,.feature.flip{grid-template-columns:minmax(0,1fr);gap:36px}
+      .feature.flip .feature-copy{order:0}
+      .offers-grid,.faq-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
-    @media(max-width:850px){
-      html{scroll-padding-top:75px}
-      .nav-grid{height:72px}
-      .nav-contact{font-size:12px}
-      .hero-layout{grid-template-columns:1fr;gap:60px;padding:72px 0 65px}
-      .hero-title{font-size:clamp(67px,11vw,110px)}
-      .hero-insight{width:min(510px,100%);min-height:360px;justify-self:end}
-      .insight-figure{font-size:125px}
-      .hero-foot-inner{grid-template-columns:repeat(2,1fr)}
-      .hero-foot-cell:nth-child(2){border-right:none}
-      .hero-foot-cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.22)}
-      .hero-foot-cell:nth-child(3){padding-left:0}
-      .principle{padding:94px 0}
-      .principle-grid{grid-template-columns:1fr;gap:35px}
-      .principle-quote{font-size:clamp(48px,7.8vw,72px)}
-      .study{padding:85px 0}
-      .study-heading{grid-template-columns:1fr;gap:25px}
-      .study-heading-right p{max-width:710px}
-      .study-insights{grid-template-columns:1fr;gap:35px}
-      .solutions{padding:95px 0}
-      .solutions-layout{grid-template-columns:1fr;gap:52px}
-      .solutions h2{max-width:800px}
-      .method{padding:92px 0}
-      .method-step{padding-right:20px}
-      .method-step+.method-step{padding-left:20px}
-      .method h2{margin-bottom:50px}
-      .contact{padding:95px 0}
-      .contact-grid{grid-template-columns:1fr;gap:30px}
+    @media (max-width:820px){
+      .main-nav,.header-cta{display:none}
+      .menu-toggle{display:grid}
+      .axis,.mrow{grid-template-columns:130px minmax(0,1fr) 110px;gap:12px}
+      .insights,.steps,.other-offers{grid-template-columns:minmax(0,1fr);gap:28px}
+      .section{padding:72px 0}
     }
-    @media(max-width:620px){
-      :root{--gutter:21px}
-      .nav-grid{height:68px}
-      .logo-symbol{width:33px;height:33px}
-      .logo-word{font-size:18px}
-      .nav-contact{display:none}
-      .mobile-menu-toggle{display:inline-flex;justify-self:end}
-      .mobile-nav{position:absolute;left:0;right:0;top:calc(100% + 1px);background:var(--paper);padding:11px var(--gutter) 29px;box-shadow:0 18px 35px rgba(0,0,0,.12);border-bottom:1px solid var(--line)}
-      .mobile-nav[hidden]{display:none}
-      .mobile-nav:not([hidden]){display:flex;flex-direction:column}
-      .mobile-nav a{display:block;padding:14px 0;font-size:17px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--line)}
-      .hero-inner{padding-top:30px}
-      .hero-topline{padding-bottom:19px}
-      .hero-topline .eyebrow{font-size:9px}
-      .hero-topline .eyebrow:last-child{display:none}
-      .hero-layout{padding:65px 0 55px;gap:54px}
-      .hero-title{font-size:clamp(49px,11.1vw,72px);letter-spacing:-.066em;line-height:.965}
-      .hero-subrow{margin-top:32px;gap:24px}
-      .hero-lede{font-size:16px}
-      .hero-insight{min-height:343px;padding:27px 25px 26px}
-      .insight-figure{font-size:clamp(112px,30vw,146px)}
-      .insight-description{font-size:22px;max-width:300px}
-      .insight-comparison strong{font-size:17px}
-      .hero-foot-cell{padding:24px 10px 24px 0}
-      .hero-foot-cell+.hero-foot-cell{padding-left:20px}
-      .hero-foot-cell:nth-child(3){padding-left:0}
-      .hero-foot-cell strong{font-size:24px}
-      .hero-foot-cell.foot-source strong{font-size:13px}
-      .hero-foot-cell p{font-size:11px}
-      .principle{padding:82px 0 87px}
-      .principle-grid{gap:33px}
-      .principle-quote{font-size:clamp(43px,10.5vw,61px);margin:0 0 23px}
-      .principle-bottom{grid-template-columns:1fr;gap:23px}
-      .principle-bottom .mini-link{justify-self:start}
-      .study{padding:76px 0}
-      .study-heading{margin-bottom:32px}
-      .study h2,.solutions h2,.method h2,.contact h2{font-size:clamp(50px,12vw,75px);line-height:.98}
-      .study h2{margin-top:18px}
-      .study-heading-right p{font-size:15px}
-      .frame-head{display:block;padding:24px 19px;gap:15px}
-      .frame-head h3{font-size:25px;max-width:360px}
-      .frame-meta{font-size:9px;white-space:normal;text-align:left;margin-top:14px}
-      .study-controls{display:block;padding:20px 19px}
-      .study-controls>p{font-size:11px;margin-bottom:14px}
-      .chart-switch button{font-size:11px;padding:10px 13px}
-      .chart-area{padding:8px 19px 22px}
-      .plot-header{display:none}
-      .market-row{position:relative;display:grid;grid-template-columns:1fr auto;gap:7px 12px;padding:17px 0 15px}
-      .market-area strong{font-size:14px}
-      .market-area span{font-size:11px}
-      .market-price strong{font-size:19px}
-      .market-price span{font-size:9px}
-      .market-plot{grid-column:1/-1;grid-row:2;height:35px}
-      .market-plot .median-bar{height:7px;top:calc(50% - 3.5px)}
-      .market-plot .median-pin{top:calc(50% - 7px)}
-      .plot-dots .dot{transform:translateY(-3px)}
-      .study-frame[data-mode="distribution"] .median-pin{top:1px;height:33px}
-      .frame-caption{display:block;padding:19px}
-      .frame-caption p{margin-bottom:13px}
-      .chart-table{padding:0 19px 26px}
-      .chart-legend{font-size:10px;gap:15px}
-      .study-insights{padding-top:35px;gap:26px}
-      .study-insights blockquote{font-size:28px}
-      .solutions{padding:84px 0}
-      .solutions h2{margin:24px 0}
-      .solution-item{grid-template-columns:1fr;gap:10px;padding:28px 0 34px}
-      .solution-item .eyebrow{margin:0}
-      .solution-item h3{font-size:29px}
-      .method{padding:82px 0 85px}
-      .method h2{margin:24px 0 43px}
-      .method-steps{grid-template-columns:1fr}
-      .method-step,.method-step+.method-step{min-height:auto;padding:24px 0 27px;border-left:none;border-bottom:1px solid rgba(255,255,255,.21)}
-      .method-step>span{margin-bottom:19px}
-      .method-step h3{font-size:30px}
-      .method-fineprint{grid-template-columns:1fr;gap:10px;padding-top:23px;margin-top:28px}
-      .contact{padding:82px 0 94px}
-      .contact h2{margin-top:25px}
-      .contact-mail{font-size:clamp(19px,5.3vw,28px)}
-      .footer{padding:30px 0 32px}
-      .footer-grid{grid-template-columns:1fr;gap:20px}
-      .footer-small{grid-column:auto;display:block}
-      .footer-small p+p{margin-top:8px}
+    @media (max-width:600px){
+      .shell{padding:0 18px}
+      .hero{padding:40px 0 56px}
+      .hero-lede{font-size:17px}
+      .calc-inputs,.calc-result,.calc-compare{padding-left:18px;padding-right:18px}
+      .budget input{font-size:28px}
+      .cmp button{grid-template-columns:118px 1fr 48px;gap:8px;font-size:13px}
+      .chart{padding:18px 16px}
+      .axis{grid-template-columns:1fr}
+      .axis>span{display:none}
+      .mrow{grid-template-columns:1fr auto;grid-template-areas:"name price" "plot plot";row-gap:6px}
+      .mrow-name{grid-area:name}.mrow-price{grid-area:price}.mrow-plot{grid-area:plot}
+      .mock-kpis{grid-template-columns:1fr 1fr}
+      .mock-kpis div:nth-child(2){border-right:0}
+      .mock-kpis div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .mock th:nth-child(4),.mock td:nth-child(4){display:none}
+      .pro-card{padding:24px}
+      .footer-grid{grid-template-columns:1fr}
     }
-    @media(max-width:360px){.hero-title{font-size:45px}.insight-figure{font-size:101px}.frame-meta{display:none}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
-  
-/* Roboto partout pour le texte courant et les étiquettes; chiffres à chasse fixe pour garder les colonnes alignées */
-body{font-variant-numeric:tabular-nums}
-/* Hero sur une seule colonne après retrait de la carte chiffrée */
-.hero-layout{grid-template-columns:minmax(0,1fr)!important}
-.hero-subrow{justify-content:start}
-.hero .text-cta{justify-self:start}
-
-/* Offres */
-.solutions-note{margin:26px 0 0;font-size:14px;line-height:1.6;color:var(--muted)}
-.solutions-note a{color:var(--blue);font-weight:700}
-.solution-item p strong{color:var(--ink)}
-/* FAQ */
-.faq{padding:120px 0 125px;background:var(--paper)}
-.faq-layout{display:grid;grid-template-columns:.75fr 1fr;gap:clamp(45px,8vw,130px)}
-.faq h2{margin:30px 0 0;max-width:470px;font:800 clamp(38px,4.2vw,62px)/.98 var(--display);letter-spacing:-.04em;color:var(--ink)}
-.faq-list{border-top:1px solid var(--ink)}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-item summary{cursor:pointer;list-style:none;position:relative;padding:22px 44px 22px 0;font:700 18px/1.35 var(--body);color:var(--ink)}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";position:absolute;right:4px;top:16px;font:400 28px/1 var(--body);color:var(--blue)}
-.faq-item[open] summary::after{content:"\2212"}
-.faq-item p{margin:0 0 24px;max-width:640px;color:var(--muted);font-size:16px;line-height:1.65}
-@media (max-width:860px){.faq{padding:80px 0}.faq-layout{grid-template-columns:1fr;gap:30px}}
-/* Mentions légales */
-.legal{grid-column:1/-1;margin-top:14px;font-size:12px;line-height:1.6;color:#8792a9}
-.legal summary{cursor:pointer;color:#c5cbdb;width:fit-content}
-.legal p{margin:8px 0 0;max-width:760px}
-</style>
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Organization","name":"Atlas Data","url":"https://atlas-data.fr/","email":"othman@atlas-data.fr","description":"Collecte et structuration d'annonces immobilières publiques au Maroc, et analyses de marché."}
-  </script>
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
-  <header class="nav-header" id="top">
-    <div class="shell nav-grid">
-      <a href="#top" class="logo" aria-label="Atlas Data, retour à l'accueil">
-        <span class="logo-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span>
-        <span class="logo-word">ATLAS <span>DATA</span></span>
+  <header class="site-header" id="top">
+    <div class="shell header-row">
+      <a href="#top" class="logo" aria-label="Atlas Data, retour en haut de la page">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span>
+        <span class="logo-word">Atlas Data</span>
       </a>
-      <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#approche">Notre regard</a><a href="#analyse">Étude de marché</a><a href="dashboard.html">Dashboard ↗</a><a href="#solutions">Solutions</a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a>
       </nav>
-      <a class="nav-contact" href="#contact">Parlons données <span class="arrow-box" aria-hidden="true">↗</span></a>
-      <button class="mobile-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      <a class="btn btn-primary header-cta" href="dashboard.html">Ouvrir le dashboard</a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
-    <nav class="mobile-nav" id="mobile-navigation" aria-label="Navigation mobile" hidden>
-      <a href="#approche">Notre regard</a><a href="#analyse">Étude de marché</a><a href="dashboard.html">Dashboard ↗</a><a href="#solutions">Solutions</a><a href="#contact">Contact</a>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
+      <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
     </nav>
   </header>
+
   <main id="main">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-grid-art" aria-hidden="true"><svg viewBox="0 0 900 900" fill="none" preserveAspectRatio="xMidYMid meet"><g transform="rotate(-22 510 420)"><ellipse cx="510" cy="420" rx="95" ry="69"/>
-<ellipse cx="510" cy="420" rx="135" ry="99"/>
-<ellipse cx="510" cy="420" rx="178" ry="130"/>
-<ellipse cx="510" cy="420" rx="223" ry="163"/>
-<ellipse cx="510" cy="420" rx="270" ry="197"/>
-<ellipse cx="510" cy="420" rx="320" ry="234"/>
-<ellipse cx="510" cy="420" rx="376" ry="274"/>
-<ellipse cx="510" cy="420" rx="438" ry="320"/>
-<ellipse cx="510" cy="420" rx="505" ry="369"/>
-<ellipse cx="510" cy="420" rx="575" ry="420"/>
-<ellipse cx="510" cy="420" rx="652" ry="476"/></g><path d="M0 790H900M0 140H900" stroke="#7183bf" stroke-width="1" opacity=".09"/></svg></div>
-      <div class="shell hero-inner">
-        <div class="hero-layout">
-          <div class="hero-left">
-            <h1 class="hero-title" id="hero-heading"><span>Le marché</span><span>immobilier</span><span>marocain,</span><span class="accent">en données.</span></h1>
-            <div class="hero-subrow"><p class="hero-lede">Observer les annonces ne suffit pas. Atlas Data les collecte, les structure et les met en perspective pour donner du sens au marché immobilier marocain.</p><a class="text-cta" href="dashboard.html">Explorer le dashboard <span class="arrow" aria-hidden="true">↗</span></a></div>
+    <section class="hero" id="budget" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">Combien de mètres carrés pour votre budget à Marrakech&nbsp;?</h1>
+          <p class="hero-lede">Les prix demandés des appartements à vendre, quartier par quartier. Entrez un budget, choisissez un quartier et voyez ce qu'il permet vraiment d'acheter.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="dashboard.html">Explorer les 316 annonces</a>
+            <a class="btn btn-ghost" href="#analyse">Voir les prix par quartier</a>
+          </div>
+          <p class="hero-source">Relevé du 8 octobre 2026 sur Sarouty : 319 annonces collectées, 316 exploitables. Il s'agit de prix demandés, pas de prix de vente.</p>
+        </div>
+
+        <div class="calc" role="region" aria-label="Calculateur de surface selon le budget">
+          <div class="calc-inputs">
+            <label class="field-label" for="budget-input">Votre budget</label>
+            <div class="budget"><input id="budget-input" type="text" inputmode="numeric" autocomplete="off" value="1 000 000" aria-describedby="budget-help"><span>MAD</span></div>
+            <div class="presets" role="group" aria-label="Budgets fréquents" id="budget-help">
+              <button type="button" data-budget="500000">500 000</button>
+              <button type="button" data-budget="1000000">1 000 000</button>
+              <button type="button" data-budget="2000000">2 000 000</button>
+              <button type="button" data-budget="3000000">3 000 000</button>
+            </div>
+            <fieldset class="quartiers">
+              <legend class="field-label">Quartier</legend>
+              <div class="chips">
+<label class="chip"><input type="radio" name="quartier" value="Hivernage" checked><span>Hivernage</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Agdal"><span>Agdal</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Guéliz"><span>Guéliz</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Palmeraie"><span>Palmeraie</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Route de Casablanca"><span>Route de Casablanca</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Targa"><span>Targa</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Semlalia"><span>Semlalia</span></label>
+<label class="chip"><input type="radio" name="quartier" value="Marrakech"><span>Toute la ville</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="calc-result" aria-live="polite">
+            <p class="result-lead" id="result-lead">À l'Hivernage, ce budget correspond à environ</p>
+            <p class="result-m2" id="result-m2">40<small>&nbsp;m²</small></p>
+            <p class="result-basis" id="result-basis">au prix médian demandé de 24 880 MAD/m², calculé sur 22 annonces.</p>
+            <p class="result-real" id="result-real"></p>
+          </div>
+          <div class="calc-compare">
+            <h2>Le même budget dans les autres quartiers</h2>
+            <ul class="cmp" id="cmp"></ul>
+            <p class="calc-note">Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent plus cher au m² : environ 24 000 MAD pour un 1 chambre contre 16 000 MAD pour un 3 chambres, sur l'ensemble de la ville.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="principle" id="approche" aria-labelledby="approche-heading"><div class="shell principle-grid">
-      <p class="section-index eyebrow">01 / Notre regard</p>
-      <div class="principle-copy"><h2 id="approche-heading" class="principle-quote">Les annonces racontent un marché. <em>Les données permettent de le lire.</em></h2><div class="principle-bottom"><p>Sur un marché fragmenté, comparer des biens, des quartiers et des niveaux de prix demande d'abord une base de lecture cohérente. C'est le travail d'Atlas Data.</p><a class="text-cta mini-link" href="#methode">Notre méthode <span class="arrow" aria-hidden="true">↗</span></a></div></div>
-    </div></section>
-
-    <section class="study" id="analyse" aria-labelledby="study-heading"><div class="shell">
-      <div class="study-heading"><div><p class="section-index eyebrow">02 / Étude de terrain &nbsp; — &nbsp; n°001</p><h2 id="study-heading">Prix au m² à Marrakech,<br>quartier par quartier.</h2></div><div class="study-heading-right"><p>Le <strong>8 octobre 2026</strong>, nous avons collecté 319 annonces d’appartements à vendre à Marrakech. Après contrôle, 316 sont exploitables. Cette étude compare 197 annonces réparties dans les sept quartiers disposant d’au moins huit biens.</p></div></div>
-      <div class="study-frame" id="study-frame" data-mode="median">
-        <div class="frame-head"><div><p class="eyebrow">Le marché, mesuré</p><h3>Des prix très différents d'un quartier à l'autre.</h3></div><div class="frame-meta">MARRAKECH / VENTE APPARTEMENTS<br>COMPARATIF : 197 ANNONCES / 7 QUARTIERS</div></div>
-        <div class="study-controls"><p>Explorez les prix médians ou la dispersion des 197 annonces des sept principaux quartiers de cet échantillon.</p><div class="chart-switch" role="group" aria-label="Affichage du graphique"><button type="button" data-mode="median" aria-pressed="true">Prix médians</button><button type="button" data-mode="distribution" aria-pressed="false">Dispersion</button></div></div>
-        <div class="chart-area"><div class="plot-header" aria-hidden="true"><span>QUARTIER / ANNONCES</span><div class="plot-axis"><span>5 000</span><span>15 000</span><span>25 000</span><span>35 000</span><span>40 000</span></div><span class="plot-price-label">MÉDIANE AU M²</span></div>
-          <div class="market-list" role="list">
-<div class="market-row" role="listitem" aria-label="Hivernage : prix médian de 24 880 dirhams par mètre carré pour 22 annonces" style="--median:56.80%">
-          <div class="market-area"><strong>Hivernage</strong><span>22 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:28.57%;--y:6px"></i><i class="dot" style="--x:34.82%;--y:13px"></i><i class="dot" style="--x:40.80%;--y:20px"></i><i class="dot" style="--x:43.83%;--y:27px"></i><i class="dot" style="--x:47.96%;--y:12px"></i><i class="dot" style="--x:52.75%;--y:19px"></i><i class="dot" style="--x:53.05%;--y:26px"></i><i class="dot" style="--x:53.45%;--y:11px"></i><i class="dot" style="--x:53.84%;--y:18px"></i><i class="dot" style="--x:54.29%;--y:25px"></i><i class="dot" style="--x:56.46%;--y:10px"></i><i class="dot" style="--x:57.14%;--y:17px"></i><i class="dot" style="--x:61.90%;--y:24px"></i><i class="dot" style="--x:65.71%;--y:9px"></i><i class="dot" style="--x:67.79%;--y:16px"></i><i class="dot" style="--x:76.31%;--y:23px"></i><i class="dot" style="--x:79.39%;--y:8px"></i><i class="dot" style="--x:82.59%;--y:15px"></i><i class="dot" style="--x:89.88%;--y:22px"></i><i class="dot outlier" style="--x:98.80%;--y:7px"></i><i class="dot outlier" style="--x:98.80%;--y:14px"></i><i class="dot outlier" style="--x:98.80%;--y:21px"></i></div></div>
-          <div class="market-price"><strong>24 880</strong><span>MAD/m²</span></div>
+    <section class="section section-soft" id="analyse" aria-labelledby="analyse-title">
+      <div class="shell">
+        <div class="section-head">
+          <h2 id="analyse-title">Les prix au m² à Marrakech, quartier par quartier</h2>
+          <p>Prix médian demandé au m² dans les sept quartiers qui comptent au moins 8 annonces, soit 197 annonces sur les 316 du relevé. La médiane de la ville est de 18 581 MAD/m².</p>
         </div>
-<div class="market-row" role="listitem" aria-label="Agdal : prix médian de 23 487 dirhams par mètre carré pour 14 annonces" style="--median:52.82%">
-          <div class="market-area"><strong>Agdal</strong><span>14 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:40.66%;--y:6px"></i><i class="dot" style="--x:46.15%;--y:13px"></i><i class="dot" style="--x:49.85%;--y:20px"></i><i class="dot" style="--x:50.27%;--y:27px"></i><i class="dot" style="--x:51.25%;--y:12px"></i><i class="dot" style="--x:51.36%;--y:19px"></i><i class="dot" style="--x:52.11%;--y:26px"></i><i class="dot" style="--x:53.53%;--y:11px"></i><i class="dot" style="--x:55.14%;--y:18px"></i><i class="dot" style="--x:58.60%;--y:25px"></i><i class="dot" style="--x:58.66%;--y:10px"></i><i class="dot" style="--x:61.16%;--y:17px"></i><i class="dot" style="--x:61.25%;--y:24px"></i><i class="dot" style="--x:77.55%;--y:9px"></i></div></div>
-          <div class="market-price"><strong>23 487</strong><span>MAD/m²</span></div>
+        <div class="chart" id="chart" data-mode="median">
+          <div class="chart-top">
+            <p>Passez en mode dispersion pour voir chaque annonce : l'écart à l'intérieur d'un quartier est souvent plus grand qu'entre deux quartiers.</p>
+            <div class="switch" role="group" aria-label="Affichage du graphique">
+              <button type="button" data-mode="median" aria-pressed="true">Prix médians</button>
+              <button type="button" data-mode="distribution" aria-pressed="false">Dispersion</button>
+            </div>
+          </div>
+          <div class="axis" aria-hidden="true"><span>Quartier</span><div class="axis-ticks"><span style="--x:0.00%">0</span><span style="--x:25.00%">10 000</span><span style="--x:50.00%">20 000</span><span style="--x:75.00%">30 000</span><span style="--x:100.00%">40 000</span></div><span class="axis-end">Médiane au m²</span></div>
+          <ol class="mlist">
+<li class="mrow" style="--median:62.20%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Hivernage">Hivernage</a><span>22 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:37.50%;--y:6px"></i><i class="dot" style="--x:42.97%;--y:13px"></i><i class="dot" style="--x:48.20%;--y:20px"></i><i class="dot" style="--x:50.85%;--y:27px"></i><i class="dot" style="--x:54.46%;--y:12px"></i><i class="dot" style="--x:58.66%;--y:19px"></i><i class="dot" style="--x:58.92%;--y:26px"></i><i class="dot" style="--x:59.27%;--y:11px"></i><i class="dot" style="--x:59.61%;--y:18px"></i><i class="dot" style="--x:60.00%;--y:25px"></i><i class="dot" style="--x:61.90%;--y:10px"></i><i class="dot" style="--x:62.50%;--y:17px"></i><i class="dot" style="--x:66.66%;--y:24px"></i><i class="dot" style="--x:70.00%;--y:9px"></i><i class="dot" style="--x:71.82%;--y:16px"></i><i class="dot" style="--x:79.27%;--y:23px"></i><i class="dot" style="--x:81.97%;--y:8px"></i><i class="dot" style="--x:84.77%;--y:15px"></i><i class="dot" style="--x:91.14%;--y:22px"></i><i class="dot outlier" style="--x:98.95%;--y:7px"></i><i class="dot outlier" style="--x:98.95%;--y:14px"></i><i class="dot outlier" style="--x:98.95%;--y:21px"></i></div></div>
+  <div class="mrow-price"><strong>24 880</strong> MAD/m²</div>
+</li>
+<li class="mrow" style="--median:58.72%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Agdal">Agdal</a><span>14 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:48.08%;--y:6px"></i><i class="dot" style="--x:52.88%;--y:13px"></i><i class="dot" style="--x:56.12%;--y:20px"></i><i class="dot" style="--x:56.49%;--y:27px"></i><i class="dot" style="--x:57.34%;--y:12px"></i><i class="dot" style="--x:57.44%;--y:19px"></i><i class="dot" style="--x:58.10%;--y:26px"></i><i class="dot" style="--x:59.34%;--y:11px"></i><i class="dot" style="--x:60.75%;--y:18px"></i><i class="dot" style="--x:63.78%;--y:25px"></i><i class="dot" style="--x:63.83%;--y:10px"></i><i class="dot" style="--x:66.01%;--y:17px"></i><i class="dot" style="--x:66.09%;--y:24px"></i><i class="dot" style="--x:80.36%;--y:9px"></i></div></div>
+  <div class="mrow-price"><strong>23 487</strong> MAD/m²</div>
+</li>
+<li class="mrow" style="--median:52.46%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Guéliz">Guéliz</a><span>96 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:24.14%;--y:6px"></i><i class="dot" style="--x:27.71%;--y:13px"></i><i class="dot" style="--x:28.14%;--y:20px"></i><i class="dot" style="--x:28.71%;--y:27px"></i><i class="dot" style="--x:28.98%;--y:12px"></i><i class="dot" style="--x:30.08%;--y:19px"></i><i class="dot" style="--x:30.49%;--y:26px"></i><i class="dot" style="--x:32.60%;--y:11px"></i><i class="dot" style="--x:33.00%;--y:18px"></i><i class="dot" style="--x:33.33%;--y:25px"></i><i class="dot" style="--x:33.66%;--y:10px"></i><i class="dot" style="--x:34.73%;--y:17px"></i><i class="dot" style="--x:35.40%;--y:24px"></i><i class="dot" style="--x:35.71%;--y:9px"></i><i class="dot" style="--x:36.11%;--y:16px"></i><i class="dot" style="--x:36.36%;--y:23px"></i><i class="dot" style="--x:36.67%;--y:8px"></i><i class="dot" style="--x:37.50%;--y:15px"></i><i class="dot" style="--x:37.73%;--y:22px"></i><i class="dot" style="--x:38.46%;--y:7px"></i><i class="dot" style="--x:38.46%;--y:14px"></i><i class="dot" style="--x:38.82%;--y:21px"></i><i class="dot" style="--x:39.48%;--y:6px"></i><i class="dot" style="--x:42.00%;--y:13px"></i><i class="dot" style="--x:42.16%;--y:20px"></i><i class="dot" style="--x:42.90%;--y:27px"></i><i class="dot" style="--x:43.27%;--y:12px"></i><i class="dot" style="--x:43.75%;--y:19px"></i><i class="dot" style="--x:44.31%;--y:26px"></i><i class="dot" style="--x:45.00%;--y:11px"></i><i class="dot" style="--x:46.25%;--y:18px"></i><i class="dot" style="--x:46.26%;--y:25px"></i><i class="dot" style="--x:46.28%;--y:10px"></i><i class="dot" style="--x:46.43%;--y:17px"></i><i class="dot" style="--x:46.70%;--y:24px"></i><i class="dot" style="--x:46.72%;--y:9px"></i><i class="dot" style="--x:47.50%;--y:16px"></i><i class="dot" style="--x:48.47%;--y:23px"></i><i class="dot" style="--x:48.64%;--y:8px"></i><i class="dot" style="--x:49.02%;--y:15px"></i><i class="dot" style="--x:50.00%;--y:22px"></i><i class="dot" style="--x:50.00%;--y:7px"></i><i class="dot" style="--x:50.61%;--y:14px"></i><i class="dot" style="--x:51.25%;--y:21px"></i><i class="dot" style="--x:51.47%;--y:6px"></i><i class="dot" style="--x:51.54%;--y:13px"></i><i class="dot" style="--x:51.86%;--y:20px"></i><i class="dot" style="--x:52.22%;--y:27px"></i><i class="dot" style="--x:52.72%;--y:12px"></i><i class="dot" style="--x:54.61%;--y:19px"></i><i class="dot" style="--x:54.68%;--y:26px"></i><i class="dot" style="--x:56.50%;--y:11px"></i><i class="dot" style="--x:56.55%;--y:18px"></i><i class="dot" style="--x:56.60%;--y:25px"></i><i class="dot" style="--x:56.64%;--y:10px"></i><i class="dot" style="--x:57.50%;--y:17px"></i><i class="dot" style="--x:58.24%;--y:24px"></i><i class="dot" style="--x:59.29%;--y:9px"></i><i class="dot" style="--x:59.37%;--y:16px"></i><i class="dot" style="--x:59.52%;--y:23px"></i><i class="dot" style="--x:60.41%;--y:8px"></i><i class="dot" style="--x:60.57%;--y:15px"></i><i class="dot" style="--x:61.11%;--y:22px"></i><i class="dot" style="--x:61.81%;--y:7px"></i><i class="dot" style="--x:62.09%;--y:14px"></i><i class="dot" style="--x:62.50%;--y:21px"></i><i class="dot" style="--x:62.50%;--y:6px"></i><i class="dot" style="--x:62.50%;--y:13px"></i><i class="dot" style="--x:63.21%;--y:20px"></i><i class="dot" style="--x:63.32%;--y:27px"></i><i class="dot" style="--x:63.32%;--y:12px"></i><i class="dot" style="--x:63.50%;--y:19px"></i><i class="dot" style="--x:63.74%;--y:26px"></i><i class="dot" style="--x:63.83%;--y:11px"></i><i class="dot" style="--x:64.73%;--y:18px"></i><i class="dot" style="--x:64.99%;--y:25px"></i><i class="dot" style="--x:65.18%;--y:10px"></i><i class="dot" style="--x:65.47%;--y:17px"></i><i class="dot" style="--x:67.48%;--y:24px"></i><i class="dot" style="--x:67.50%;--y:9px"></i><i class="dot" style="--x:67.50%;--y:16px"></i><i class="dot" style="--x:67.50%;--y:23px"></i><i class="dot" style="--x:67.50%;--y:8px"></i><i class="dot" style="--x:67.55%;--y:15px"></i><i class="dot" style="--x:68.75%;--y:22px"></i><i class="dot" style="--x:70.22%;--y:7px"></i><i class="dot" style="--x:72.11%;--y:14px"></i><i class="dot" style="--x:73.53%;--y:21px"></i><i class="dot" style="--x:74.69%;--y:6px"></i><i class="dot" style="--x:75.00%;--y:13px"></i><i class="dot" style="--x:77.50%;--y:20px"></i><i class="dot" style="--x:80.56%;--y:27px"></i><i class="dot" style="--x:82.66%;--y:12px"></i><i class="dot" style="--x:84.82%;--y:19px"></i><i class="dot" style="--x:86.21%;--y:26px"></i><i class="dot" style="--x:93.03%;--y:11px"></i></div></div>
+  <div class="mrow-price"><strong>20 985</strong> MAD/m²</div>
+</li>
+<li class="mrow" style="--median:43.26%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Palmeraie">Palmeraie</a><span>28 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:21.71%;--y:6px"></i><i class="dot" style="--x:23.68%;--y:13px"></i><i class="dot" style="--x:27.56%;--y:20px"></i><i class="dot" style="--x:29.50%;--y:27px"></i><i class="dot" style="--x:30.68%;--y:12px"></i><i class="dot" style="--x:31.57%;--y:19px"></i><i class="dot" style="--x:32.29%;--y:26px"></i><i class="dot" style="--x:33.33%;--y:11px"></i><i class="dot" style="--x:35.71%;--y:18px"></i><i class="dot" style="--x:37.76%;--y:25px"></i><i class="dot" style="--x:38.64%;--y:10px"></i><i class="dot" style="--x:40.00%;--y:17px"></i><i class="dot" style="--x:40.37%;--y:24px"></i><i class="dot" style="--x:41.07%;--y:9px"></i><i class="dot" style="--x:45.45%;--y:16px"></i><i class="dot" style="--x:45.65%;--y:23px"></i><i class="dot" style="--x:46.34%;--y:8px"></i><i class="dot" style="--x:46.43%;--y:15px"></i><i class="dot" style="--x:47.22%;--y:22px"></i><i class="dot" style="--x:47.41%;--y:7px"></i><i class="dot" style="--x:48.33%;--y:14px"></i><i class="dot" style="--x:49.18%;--y:21px"></i><i class="dot" style="--x:49.67%;--y:6px"></i><i class="dot" style="--x:50.00%;--y:13px"></i><i class="dot" style="--x:51.04%;--y:20px"></i><i class="dot" style="--x:51.94%;--y:27px"></i><i class="dot" style="--x:52.00%;--y:12px"></i><i class="dot" style="--x:71.72%;--y:19px"></i></div></div>
+  <div class="mrow-price"><strong>17 305</strong> MAD/m²</div>
+</li>
+<li class="mrow" style="--median:40.18%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Route de Casablanca">Route de Casablanca</a><span>17 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:27.58%;--y:6px"></i><i class="dot" style="--x:28.41%;--y:13px"></i><i class="dot" style="--x:30.36%;--y:20px"></i><i class="dot" style="--x:31.97%;--y:27px"></i><i class="dot" style="--x:32.50%;--y:12px"></i><i class="dot" style="--x:33.39%;--y:19px"></i><i class="dot" style="--x:38.66%;--y:26px"></i><i class="dot" style="--x:38.69%;--y:11px"></i><i class="dot" style="--x:40.18%;--y:18px"></i><i class="dot" style="--x:41.21%;--y:25px"></i><i class="dot" style="--x:44.39%;--y:10px"></i><i class="dot" style="--x:46.35%;--y:17px"></i><i class="dot" style="--x:54.22%;--y:24px"></i><i class="dot" style="--x:55.00%;--y:9px"></i><i class="dot" style="--x:59.32%;--y:16px"></i><i class="dot" style="--x:64.82%;--y:23px"></i><i class="dot" style="--x:65.67%;--y:8px"></i></div></div>
+  <div class="mrow-price"><strong>16 071</strong> MAD/m²</div>
+</li>
+<li class="mrow" style="--median:38.32%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Targa">Targa</a><span>9 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:22.94%;--y:6px"></i><i class="dot" style="--x:25.46%;--y:13px"></i><i class="dot" style="--x:30.00%;--y:20px"></i><i class="dot" style="--x:32.09%;--y:27px"></i><i class="dot" style="--x:38.32%;--y:12px"></i><i class="dot" style="--x:43.96%;--y:19px"></i><i class="dot" style="--x:47.50%;--y:26px"></i><i class="dot" style="--x:49.38%;--y:11px"></i><i class="dot" style="--x:53.57%;--y:18px"></i></div></div>
+  <div class="mrow-price"><strong>15 328</strong> MAD/m²</div>
+</li>
+<li class="mrow" style="--median:35.72%">
+  <div class="mrow-name"><a href="dashboard.html?quartier=Semlalia">Semlalia</a><span>11 annonces</span></div>
+  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid"><i style="--x:0.00%"></i><i style="--x:25.00%"></i><i style="--x:50.00%"></i><i style="--x:75.00%"></i><i style="--x:100.00%"></i></div><div class="mrow-bar"></div><div class="mrow-pin"></div><div class="mrow-dots"><i class="dot" style="--x:25.51%;--y:6px"></i><i class="dot" style="--x:25.84%;--y:13px"></i><i class="dot" style="--x:26.19%;--y:20px"></i><i class="dot" style="--x:28.19%;--y:27px"></i><i class="dot" style="--x:30.66%;--y:12px"></i><i class="dot" style="--x:35.71%;--y:19px"></i><i class="dot" style="--x:37.33%;--y:26px"></i><i class="dot" style="--x:37.79%;--y:11px"></i><i class="dot" style="--x:40.33%;--y:18px"></i><i class="dot" style="--x:47.26%;--y:25px"></i><i class="dot" style="--x:51.56%;--y:10px"></i></div></div>
+  <div class="mrow-price"><strong>14 286</strong> MAD/m²</div>
+</li>
+          </ol>
+          <div class="chart-foot">
+            <p>Échelle de 0 à 40 000 MAD/m². En mode dispersion, chaque point est une annonce ; les trois annonces de l'Hivernage au-delà de 40 000 MAD/m² sont placées en bord de graphique.</p>
+            <div class="legend" aria-hidden="true"><span><i class="l-dot"></i>Annonce</span><span><i class="l-line"></i>Médiane</span></div>
+          </div>
+          <details class="chart-table"><summary>Voir les chiffres en tableau</summary><div class="table-wrap"><table><caption>Prix médians demandés et nombre d'annonces par quartier, relevé du 8 octobre 2026.</caption><thead><tr><th scope="col">Quartier</th><th scope="col">Prix médian demandé</th><th scope="col">Annonces</th><th scope="col">Surface pour 1 million de MAD</th></tr></thead><tbody>
+<tr><th scope="row">Hivernage</th><td>24 880 MAD/m²</td><td>22</td><td>40 m²</td></tr>
+<tr><th scope="row">Agdal</th><td>23 487 MAD/m²</td><td>14</td><td>43 m²</td></tr>
+<tr><th scope="row">Guéliz</th><td>20 985 MAD/m²</td><td>96</td><td>48 m²</td></tr>
+<tr><th scope="row">Palmeraie</th><td>17 305 MAD/m²</td><td>28</td><td>58 m²</td></tr>
+<tr><th scope="row">Route de Casablanca</th><td>16 071 MAD/m²</td><td>17</td><td>62 m²</td></tr>
+<tr><th scope="row">Targa</th><td>15 328 MAD/m²</td><td>9</td><td>65 m²</td></tr>
+<tr><th scope="row">Semlalia</th><td>14 286 MAD/m²</td><td>11</td><td>70 m²</td></tr>
+          </tbody></table></div></details>
         </div>
-<div class="market-row" role="listitem" aria-label="Guéliz : prix médian de 20 985 dirhams par mètre carré pour 96 annonces" style="--median:45.67%">
-          <div class="market-area"><strong>Guéliz</strong><span>96 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:13.30%;--y:6px"></i><i class="dot" style="--x:17.38%;--y:13px"></i><i class="dot" style="--x:17.87%;--y:20px"></i><i class="dot" style="--x:18.53%;--y:27px"></i><i class="dot" style="--x:18.84%;--y:12px"></i><i class="dot" style="--x:20.09%;--y:19px"></i><i class="dot" style="--x:20.56%;--y:26px"></i><i class="dot" style="--x:22.97%;--y:11px"></i><i class="dot" style="--x:23.43%;--y:18px"></i><i class="dot" style="--x:23.81%;--y:25px"></i><i class="dot" style="--x:24.18%;--y:10px"></i><i class="dot" style="--x:25.40%;--y:17px"></i><i class="dot" style="--x:26.17%;--y:24px"></i><i class="dot" style="--x:26.53%;--y:9px"></i><i class="dot" style="--x:26.98%;--y:16px"></i><i class="dot" style="--x:27.27%;--y:23px"></i><i class="dot" style="--x:27.62%;--y:8px"></i><i class="dot" style="--x:28.57%;--y:15px"></i><i class="dot" style="--x:28.84%;--y:22px"></i><i class="dot" style="--x:29.67%;--y:7px"></i><i class="dot" style="--x:29.67%;--y:14px"></i><i class="dot" style="--x:30.08%;--y:21px"></i><i class="dot" style="--x:30.83%;--y:6px"></i><i class="dot" style="--x:33.71%;--y:13px"></i><i class="dot" style="--x:33.90%;--y:20px"></i><i class="dot" style="--x:34.74%;--y:27px"></i><i class="dot" style="--x:35.16%;--y:12px"></i><i class="dot" style="--x:35.71%;--y:19px"></i><i class="dot" style="--x:36.35%;--y:26px"></i><i class="dot" style="--x:37.14%;--y:11px"></i><i class="dot" style="--x:38.57%;--y:18px"></i><i class="dot" style="--x:38.58%;--y:25px"></i><i class="dot" style="--x:38.61%;--y:10px"></i><i class="dot" style="--x:38.78%;--y:17px"></i><i class="dot" style="--x:39.08%;--y:24px"></i><i class="dot" style="--x:39.11%;--y:9px"></i><i class="dot" style="--x:40.00%;--y:16px"></i><i class="dot" style="--x:41.11%;--y:23px"></i><i class="dot" style="--x:41.30%;--y:8px"></i><i class="dot" style="--x:41.74%;--y:15px"></i><i class="dot" style="--x:42.86%;--y:22px"></i><i class="dot" style="--x:42.86%;--y:7px"></i><i class="dot" style="--x:43.55%;--y:14px"></i><i class="dot" style="--x:44.29%;--y:21px"></i><i class="dot" style="--x:44.54%;--y:6px"></i><i class="dot" style="--x:44.62%;--y:13px"></i><i class="dot" style="--x:44.98%;--y:20px"></i><i class="dot" style="--x:45.39%;--y:27px"></i><i class="dot" style="--x:45.96%;--y:12px"></i><i class="dot" style="--x:48.12%;--y:19px"></i><i class="dot" style="--x:48.21%;--y:26px"></i><i class="dot" style="--x:50.29%;--y:11px"></i><i class="dot" style="--x:50.34%;--y:18px"></i><i class="dot" style="--x:50.40%;--y:25px"></i><i class="dot" style="--x:50.45%;--y:10px"></i><i class="dot" style="--x:51.43%;--y:17px"></i><i class="dot" style="--x:52.27%;--y:24px"></i><i class="dot" style="--x:53.48%;--y:9px"></i><i class="dot" style="--x:53.57%;--y:16px"></i><i class="dot" style="--x:53.74%;--y:23px"></i><i class="dot" style="--x:54.76%;--y:8px"></i><i class="dot" style="--x:54.94%;--y:15px"></i><i class="dot" style="--x:55.56%;--y:22px"></i><i class="dot" style="--x:56.36%;--y:7px"></i><i class="dot" style="--x:56.67%;--y:14px"></i><i class="dot" style="--x:57.14%;--y:21px"></i><i class="dot" style="--x:57.14%;--y:6px"></i><i class="dot" style="--x:57.14%;--y:13px"></i><i class="dot" style="--x:57.95%;--y:20px"></i><i class="dot" style="--x:58.08%;--y:27px"></i><i class="dot" style="--x:58.08%;--y:12px"></i><i class="dot" style="--x:58.28%;--y:19px"></i><i class="dot" style="--x:58.56%;--y:26px"></i><i class="dot" style="--x:58.66%;--y:11px"></i><i class="dot" style="--x:59.69%;--y:18px"></i><i class="dot" style="--x:59.99%;--y:25px"></i><i class="dot" style="--x:60.21%;--y:10px"></i><i class="dot" style="--x:60.54%;--y:17px"></i><i class="dot" style="--x:62.84%;--y:24px"></i><i class="dot" style="--x:62.86%;--y:9px"></i><i class="dot" style="--x:62.86%;--y:16px"></i><i class="dot" style="--x:62.86%;--y:23px"></i><i class="dot" style="--x:62.86%;--y:8px"></i><i class="dot" style="--x:62.92%;--y:15px"></i><i class="dot" style="--x:64.29%;--y:22px"></i><i class="dot" style="--x:65.97%;--y:7px"></i><i class="dot" style="--x:68.13%;--y:14px"></i><i class="dot" style="--x:69.75%;--y:21px"></i><i class="dot" style="--x:71.07%;--y:6px"></i><i class="dot" style="--x:71.43%;--y:13px"></i><i class="dot" style="--x:74.29%;--y:20px"></i><i class="dot" style="--x:77.78%;--y:27px"></i><i class="dot" style="--x:80.18%;--y:12px"></i><i class="dot" style="--x:82.65%;--y:19px"></i><i class="dot" style="--x:84.24%;--y:26px"></i><i class="dot" style="--x:92.03%;--y:11px"></i></div></div>
-          <div class="market-price"><strong>20 985</strong><span>MAD/m²</span></div>
+        <div class="insights">
+          <div><h3>30 m² d'écart pour le même budget</h3><p>Pour 1 million de MAD, environ 40 m² à l'Hivernage contre 70 m² à Semlalia, au prix médian demandé.</p></div>
+          <div><h3>Le bien compte plus que l'adresse</h3><p>À Guéliz, les prix demandés vont de moins de 10 000 à plus de 37 000 MAD/m², un écart plus large que celui entre les quartiers.</p></div>
+          <div><h3>Le meublé se paie</h3><p>Les appartements meublés affichent un prix médian au m² supérieur d'environ 18 % aux non meublés, sur les annonces qui le précisent.</p></div>
         </div>
-<div class="market-row" role="listitem" aria-label="Palmeraie : prix médian de 17 305 dirhams par mètre carré pour 28 annonces" style="--median:35.16%">
-          <div class="market-area"><strong>Palmeraie</strong><span>28 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:10.53%;--y:6px"></i><i class="dot" style="--x:12.78%;--y:13px"></i><i class="dot" style="--x:17.21%;--y:20px"></i><i class="dot" style="--x:19.43%;--y:27px"></i><i class="dot" style="--x:20.78%;--y:12px"></i><i class="dot" style="--x:21.80%;--y:19px"></i><i class="dot" style="--x:22.62%;--y:26px"></i><i class="dot" style="--x:23.81%;--y:11px"></i><i class="dot" style="--x:26.53%;--y:18px"></i><i class="dot" style="--x:28.87%;--y:25px"></i><i class="dot" style="--x:29.87%;--y:10px"></i><i class="dot" style="--x:31.43%;--y:17px"></i><i class="dot" style="--x:31.85%;--y:24px"></i><i class="dot" style="--x:32.65%;--y:9px"></i><i class="dot" style="--x:37.66%;--y:16px"></i><i class="dot" style="--x:37.89%;--y:23px"></i><i class="dot" style="--x:38.67%;--y:8px"></i><i class="dot" style="--x:38.78%;--y:15px"></i><i class="dot" style="--x:39.68%;--y:22px"></i><i class="dot" style="--x:39.90%;--y:7px"></i><i class="dot" style="--x:40.95%;--y:14px"></i><i class="dot" style="--x:41.92%;--y:21px"></i><i class="dot" style="--x:42.48%;--y:6px"></i><i class="dot" style="--x:42.86%;--y:13px"></i><i class="dot" style="--x:44.05%;--y:20px"></i><i class="dot" style="--x:45.08%;--y:27px"></i><i class="dot" style="--x:45.14%;--y:12px"></i><i class="dot" style="--x:67.68%;--y:19px"></i></div></div>
-          <div class="market-price"><strong>17 305</strong><span>MAD/m²</span></div>
-        </div>
-<div class="market-row" role="listitem" aria-label="Route de Casablanca : prix médian de 16 071 dirhams par mètre carré pour 17 annonces" style="--median:31.63%">
-          <div class="market-area"><strong>Route de Casablanca</strong><span>17 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:17.23%;--y:6px"></i><i class="dot" style="--x:18.18%;--y:13px"></i><i class="dot" style="--x:20.41%;--y:20px"></i><i class="dot" style="--x:22.25%;--y:27px"></i><i class="dot" style="--x:22.86%;--y:12px"></i><i class="dot" style="--x:23.87%;--y:19px"></i><i class="dot" style="--x:29.90%;--y:26px"></i><i class="dot" style="--x:29.93%;--y:11px"></i><i class="dot" style="--x:31.63%;--y:18px"></i><i class="dot" style="--x:32.81%;--y:25px"></i><i class="dot" style="--x:36.45%;--y:10px"></i><i class="dot" style="--x:38.69%;--y:17px"></i><i class="dot" style="--x:47.68%;--y:24px"></i><i class="dot" style="--x:48.57%;--y:9px"></i><i class="dot" style="--x:53.51%;--y:16px"></i><i class="dot" style="--x:59.79%;--y:23px"></i><i class="dot" style="--x:60.77%;--y:8px"></i></div></div>
-          <div class="market-price"><strong>16 071</strong><span>MAD/m²</span></div>
-        </div>
-<div class="market-row" role="listitem" aria-label="Targa : prix médian de 15 328 dirhams par mètre carré pour 9 annonces" style="--median:29.51%">
-          <div class="market-area"><strong>Targa</strong><span>9 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:11.93%;--y:6px"></i><i class="dot" style="--x:14.81%;--y:13px"></i><i class="dot" style="--x:20.00%;--y:20px"></i><i class="dot" style="--x:22.39%;--y:27px"></i><i class="dot" style="--x:29.51%;--y:12px"></i><i class="dot" style="--x:35.95%;--y:19px"></i><i class="dot" style="--x:40.00%;--y:26px"></i><i class="dot" style="--x:42.15%;--y:11px"></i><i class="dot" style="--x:46.94%;--y:18px"></i></div></div>
-          <div class="market-price"><strong>15 328</strong><span>MAD/m²</span></div>
-        </div>
-<div class="market-row" role="listitem" aria-label="Semlalia : prix médian de 14 286 dirhams par mètre carré pour 11 annonces" style="--median:26.53%">
-          <div class="market-area"><strong>Semlalia</strong><span>11 annonces</span></div>
-          <div class="market-plot" aria-hidden="true"><div class="median-bar"></div><div class="median-pin"></div><div class="plot-dots"><i class="dot" style="--x:14.87%;--y:6px"></i><i class="dot" style="--x:15.24%;--y:13px"></i><i class="dot" style="--x:15.64%;--y:20px"></i><i class="dot" style="--x:17.93%;--y:27px"></i><i class="dot" style="--x:20.75%;--y:12px"></i><i class="dot" style="--x:26.53%;--y:19px"></i><i class="dot" style="--x:28.38%;--y:26px"></i><i class="dot" style="--x:28.90%;--y:11px"></i><i class="dot" style="--x:31.80%;--y:18px"></i><i class="dot" style="--x:39.72%;--y:25px"></i><i class="dot" style="--x:44.64%;--y:10px"></i></div></div>
-          <div class="market-price"><strong>14 286</strong><span>MAD/m²</span></div>
-        </div></div>
-        </div>
-        <div class="frame-caption"><p>Prix affichés en MAD/m². Échelle graphique de 5 000 à 40 000 MAD/m². En mode dispersion, chaque point représente une annonce ; les trois valeurs de l'Hivernage supérieures à 40 000 sont signalées en bord de graphique.</p><div class="chart-legend" aria-label="Légende du graphique"><span><i class="legend-circle"></i>Annonce</span><span><i class="legend-line"></i>Médiane</span></div></div>
-        <details class="chart-table"><summary>Voir les chiffres détaillés en tableau</summary><div class="table-wrap"><table><caption>Prix médians et nombre d'annonces par quartier à Marrakech, relevé du 8 octobre 2026.</caption><thead><tr><th scope="col">Quartier</th><th scope="col">Prix médian affiché</th><th scope="col">Annonces</th></tr></thead><tbody><tr><th scope="row">Hivernage</th><td>24 880 MAD/m²</td><td>22</td></tr>
-<tr><th scope="row">Agdal</th><td>23 487 MAD/m²</td><td>14</td></tr>
-<tr><th scope="row">Guéliz</th><td>20 985 MAD/m²</td><td>96</td></tr>
-<tr><th scope="row">Palmeraie</th><td>17 305 MAD/m²</td><td>28</td></tr>
-<tr><th scope="row">Route de Casablanca</th><td>16 071 MAD/m²</td><td>17</td></tr>
-<tr><th scope="row">Targa</th><td>15 328 MAD/m²</td><td>9</td></tr>
-<tr><th scope="row">Semlalia</th><td>14 286 MAD/m²</td><td>11</td></tr></tbody></table></div></details>
       </div>
-      <div class="study-insights"><blockquote>« D'un quartier à l'autre, les écarts de prix peuvent être <em>considérables.</em> Encore faut-il savoir ce que l'on compare. »</blockquote><div class="insight-context"><p class="eyebrow">Ce que révèle ce relevé</p><p>Guéliz concentre 96 des 197 annonces retenues pour ce comparatif. Les 119 autres annonces exploitables couvrent des secteurs moins représentés, également consultables dans le dashboard. Une médiane constitue un repère, pas une estimation individuelle du prix d’un bien.</p></div></div>
-    </div></section>
+    </section>
 
-    <section class="dashboard-promo" aria-labelledby="dashboard-promo-heading"><div class="shell dashboard-promo-inner"><div><p class="eyebrow">LE LABORATOIRE / DASHBOARD INTERACTIF</p><h2 id="dashboard-promo-heading">De l'étude à<br><span>l'exploration.</span></h2><p>Accédez au relevé du 8 octobre 2026 : 319 annonces collectées, 316 exploitables après contrôle. Filtrez les secteurs, comparez les prix demandés au m² et retrouvez les annonces sources.</p></div><div class="dashboard-promo-cta"><span class="eyebrow">MARRAKECH / MARKET INTELLIGENCE</span><strong>319 <small>ANNONCES</small></strong><a href="dashboard.html">Ouvrir le dashboard <span aria-hidden="true">↗</span></a><p>Même relevé que l’étude ci-dessus. Le dashboard présente aussi les quartiers moins représentés, avec 316 annonces exploitables.</p></div></div></section>
+    <section class="section" aria-label="Fonctionnalités">
+      <div class="shell">
+        <div class="feature">
+          <div class="feature-copy">
+            <h2>Explorez chaque annonce, filtrez comme vous cherchez</h2>
+            <p>Le dashboard reprend les 316 annonces du relevé. Filtrez par quartier, prix, surface, nombre de chambres ou meublé : les médianes et les graphiques se recalculent à chaque filtre. Gratuit et sans inscription.</p>
+            <a class="btn btn-primary" href="dashboard.html">Ouvrir le dashboard</a>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mock-bar"><span class="on">Tous les quartiers</span><span>Prix</span><span>Surface</span><span>Chambres</span><span>Meublé</span></div>
+            <div class="mock-kpis">
+              <div><span>Annonces</span><strong>316</strong></div>
+              <div><span>Prix médian au m²</span><strong>18 581</strong></div>
+              <div><span>Prix médian</span><strong>1,69 M</strong></div>
+              <div><span>Surface médiane</span><strong>94 m²</strong></div>
+            </div>
+            <table>
+              <thead><tr><th>Bien</th><th>Quartier</th><th>Surface</th><th>Prix</th><th>MAD/m²</th></tr></thead>
+              <tbody>
+                <tr><td>Appartement 2 ch.</td><td>Guéliz</td><td>112 m²</td><td>3 800 000</td><td>33 929</td></tr>
+                <tr><td>Appartement 2 ch.</td><td>Agdal</td><td>142 m²</td><td>3 300 000</td><td>23 239</td></tr>
+                <tr><td>Appartement 1 ch.</td><td>Route de Casablanca</td><td>59 m²</td><td>1 400 000</td><td>23 729</td></tr>
+                <tr><td>Appartement 2 ch.</td><td>Targa</td><td>54 m²</td><td>550 000</td><td>10 185</td></tr>
+              </tbody>
+            </table>
+            <div class="mock-lock"><span>Titres, agences et liens d'origine</span><strong>Version Pro</strong></div>
+          </div>
+        </div>
 
-    <section class="solutions" id="solutions" aria-labelledby="solutions-heading"><div class="shell solutions-layout"><div><p class="section-index eyebrow">03 / Nos solutions</p><h2 id="solutions-heading">De la donnée.<br>À la décision.</h2><p class="solutions-intro">Commencez gratuitement avec l'étude et le dashboard. Passez à la version Pro quand vous avez besoin de toutes les annonces chaque semaine, ou confiez-nous directement votre question.</p></div><div class="solution-list" id="offres">
-      <article class="solution-item"><span class="eyebrow">Gratuit</span><div><h3>L'étude et le dashboard, en accès libre.</h3><p>Pour suivre les prix d'un quartier ou se faire une première idée du marché, sans inscription.</p><p class="solution-meta">PRIX AU M² PAR QUARTIER &nbsp; • &nbsp; DISTRIBUTION &nbsp; • &nbsp; COMPARATEUR &nbsp; • &nbsp; 10 ANNONCES EN APERÇU</p><a class="text-cta" href="dashboard.html">Ouvrir le dashboard <span class="arrow" aria-hidden="true">↗</span></a></div></article>
-      <article class="solution-item"><span class="eyebrow">Pro</span><div><h3>Toutes les annonces, chaque semaine.</h3><p><strong>29 € HT par mois, sans engagement.</strong> Pour les agences, les investisseurs et les équipes qui suivent le marché de près : la base complète et à jour, prête à travailler dans Excel.</p><p class="solution-meta">TITRES, AGENCES ET LIENS D'ORIGINE &nbsp; • &nbsp; FICHIER EXCEL HEBDOMADAIRE &nbsp; • &nbsp; NOUVELLES ANNONCES ET BAISSES DE PRIX &nbsp; • &nbsp; VILLE AU CHOIX</p><a class="text-cta" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20activit%C3%A9%20%3A%20%0A">Demander l'accès Pro <span class="arrow" aria-hidden="true">↗</span></a></div></article>
-      <article class="solution-item"><span class="eyebrow">Sur mesure</span><div><h3>Une lecture du marché, adaptée à votre question.</h3><p><strong>Sur devis, première analyse offerte.</strong> Pour comparer des secteurs, situer un bien au sein de l'offre publiée ou préparer un projet.</p><p class="solution-meta">COMPARAISON &nbsp; • &nbsp; POSITIONNEMENT D'UN BIEN &nbsp; • &nbsp; ÉTUDE AVANT PROJET</p><a class="text-cta" href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Demander une analyse <span class="arrow" aria-hidden="true">↗</span></a></div></article>
-      <p class="solutions-note">Développeur ? Les données brutes sont aussi disponibles en libre-service sur Apify, à 1,50 $ pour 1 000 annonces. <a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Voir le scraper</a></p>
-    </div></div></section>
+        <div class="feature flip">
+          <div class="feature-copy">
+            <h2>Suivez le marché semaine après semaine</h2>
+            <p>Chaque lundi, Atlas Data relève les annonces résidentielles à vendre et à louer dans tout le Maroc. Au fil des relevés, de nouveaux indicateurs deviennent possibles : baisses de prix, durée de mise en vente, rendements locatifs par quartier.</p>
+            <a class="btn btn-ghost" href="#offres">Voir l'offre Pro</a>
+          </div>
+          <ul class="roadmap">
+            <li><div><strong>Prix demandés au m² par quartier</strong><small>Marrakech, relevé du 8 octobre 2026</small></div><span class="status ok">Disponible</span></li>
+            <li><div><strong>Toutes les annonces, chaque semaine</strong><small>Fichier Excel, ville au choix</small></div><span class="status pro">Version Pro</span></li>
+            <li><div><strong>Nouvelles annonces et baisses de prix</strong><small>D'un relevé hebdomadaire à l'autre</small></div><span class="status pro">Version Pro</span></li>
+            <li><div><strong>Durée de mise en vente</strong><small>Après plusieurs relevés</small></div><span class="status soon">En préparation</span></li>
+            <li><div><strong>Rendements locatifs par quartier</strong><small>Croisement des annonces à vendre et à louer</small></div><span class="status soon">En préparation</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <section class="method" id="methode" aria-labelledby="methode-heading"><div class="shell"><p class="section-index eyebrow">04 / La méthode Atlas Data</p><h2 id="methode-heading">Du terrain au signal.<br><em>Sans raccourcis.</em></h2><div class="method-steps">
-      <article class="method-step"><span>ÉTAPE / 01</span><h3>Collecter.</h3><p>Extraire les annonces publiques selon la ville, le type de transaction et les filtres disponibles sur le portail.</p></article>
-      <article class="method-step"><span>ÉTAPE / 02</span><h3>Structurer.</h3><p>Rassembler les prix, les surfaces, les quartiers et les caractéristiques utiles dans des formats exploitables.</p></article>
-      <article class="method-step"><span>ÉTAPE / 03</span><h3>Interpréter.</h3><p>Mettre les annonces en perspective, observer les dispersions et rendre visibles les limites de la comparaison.</p></article>
-    </div><div class="method-fineprint"><span class="eyebrow">À savoir / 001</span><p>Relevé unique du 08.10.2026 sur Sarouty : 319 annonces distinctes, 316 exploitables après exclusion de deux catégories suspectes et d’une annonce sans surface. Le graphique de l’étude porte sur sept secteurs comptant au moins huit annonces chacun (197 biens). Les prix demandés ne sont pas des prix de transactions. Le panel ne représente pas l’ensemble du marché et ne permet pas de mesurer une évolution temporelle.</p></div></div></section>
+    <section class="section offers" id="offres" aria-labelledby="offres-title">
+      <div class="shell" id="solutions">
+        <div class="offers-grid">
+          <div class="offers-intro">
+            <h2 id="offres-title">Vous êtes une agence ou un investisseur&nbsp;?</h2>
+            <p>Recevez chaque semaine toutes les annonces de votre ville, prêtes à travailler dans Excel : de quoi repérer les nouveaux biens, suivre les baisses de prix et situer un bien face à l'offre publiée.</p>
+          </div>
+          <div class="pro-card">
+            <h3>Atlas Data Pro</h3>
+            <p class="pro-price">29&nbsp;€ <small>HT par mois</small></p>
+            <p class="pro-terms">Sans engagement.</p>
+            <ul class="checks">
+              <li>Toutes les annonces, avec titres, agences et liens d'origine</li>
+              <li>Un fichier Excel mis à jour chaque semaine</li>
+              <li>Les nouvelles annonces et les baisses de prix</li>
+              <li>La ville de votre choix</li>
+            </ul>
+            <a class="btn btn-primary" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20activit%C3%A9%20%3A%20%0A">Demander l'accès Pro</a>
+          </div>
+        </div>
+        <div class="other-offers">
+          <div><h3>Gratuit</h3><p>L'étude, le dashboard et un aperçu de 10 annonces, sans inscription.</p><a href="dashboard.html">Ouvrir le dashboard</a></div>
+          <div><h3>Sur mesure</h3><p>Une analyse adaptée à votre question : comparer des secteurs, situer un bien, préparer un projet. Sur devis, première analyse offerte.</p><a href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Demander une analyse</a></div>
+          <div><h3>Développeurs</h3><p>Les données brutes en libre-service sur Apify, à 1,50 $ pour 1 000 annonces.</p><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Voir le scraper sur Apify</a></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="faq" id="questions" aria-labelledby="faq-heading"><div class="shell faq-layout"><div><p class="section-index eyebrow">05 / Questions fréquentes</p><h2 id="faq-heading">Prix immobilier à Marrakech : vos questions.</h2></div><div class="faq-list">
-<details class="faq-item"><summary>Quel est le prix au m² d'un appartement à Marrakech ?</summary><p>Au 8 octobre 2026, le prix médian demandé est de 18 581 MAD/m² sur les 316 annonces d'appartements à vendre exploitables. Il varie fortement selon le quartier, de 14 286 MAD/m² à Semlalia à 24 880 MAD/m² à l'Hivernage, parmi les quartiers comptant au moins huit annonces.</p></details>
-<details class="faq-item"><summary>Quel est le quartier le plus cher de Marrakech ?</summary><p>Parmi les quartiers comptant au moins huit annonces, l'Hivernage affiche le prix médian le plus élevé, à 24 880 MAD/m², devant Agdal (23 487 MAD/m²) et Guéliz (20 985 MAD/m²).</p></details>
-<details class="faq-item"><summary>Ces prix sont-ils des prix de vente réels ?</summary><p>Non. Ce sont les prix demandés dans les annonces, avant négociation. Ils décrivent l'offre publiée et ses écarts entre quartiers, pas le prix final signé chez le notaire.</p></details>
-<details class="faq-item"><summary>D'où viennent les données ?</summary><p>Des annonces publiques d'appartements à vendre publiées sur Sarouty, relevées à date fixe. Aucune donnée personnelle n'est collectée : ni nom, ni téléphone, ni email d'agent.</p></details>
-<details class="faq-item"><summary>Quelle différence entre l'accès gratuit et la version Pro ?</summary><p>L'étude et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro donne accès à toutes les annonces avec leur titre, leur agence et leur lien d'origine, dans un fichier Excel mis à jour chaque semaine.</p></details>
-</div></div></section>
+    <section class="section section-soft" id="methode" aria-labelledby="methode-title">
+      <div class="shell">
+        <div class="section-head"><h2 id="methode-title">Comment les chiffres sont construits</h2></div>
+        <ol class="steps">
+          <li><h3>Collecter</h3><p>Les annonces publiques sont relevées à date fixe, par ville et par type de transaction. Aucune donnée personnelle n'est collectée.</p></li>
+          <li><h3>Nettoyer</h3><p>Les annonces en double sont retirées, les prix sous 1 000 MAD et les surfaces sous 5 m² écartés, ainsi que les annonces de catégorie douteuse.</p></li>
+          <li><h3>Mesurer</h3><p>Prix au m² = prix demandé / surface publiée. Une médiane n'est publiée que pour les quartiers d'au moins 8 annonces.</p></li>
+        </ol>
+        <p class="fineprint"><strong>À savoir.</strong> Relevé unique du 8 octobre 2026 sur Sarouty : 319 annonces distinctes, 316 exploitables après exclusion de deux annonces de catégorie douteuse et d'une annonce sans surface. Les prix demandés ne sont pas des prix de vente. Le relevé ne couvre pas l'ensemble du marché et ne mesure pas encore d'évolution dans le temps.</p>
+      </div>
+    </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-heading"><div class="shell contact-grid"><div><p class="section-index eyebrow">06 / Entrons en contact</p><h2 id="contact-heading">À chaque marché,<br>une autre lecture.</h2></div><div class="contact-text"><p>Une ville, un quartier, un type de bien à explorer ? Parlons des décisions que vos données pourraient éclairer.</p><a class="contact-mail" href="mailto:othman@atlas-data.fr?subject=Projet%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%3A%0AQuartier%20%3A%0AType%20de%20bien%20%3A%0A">othman@atlas-data.fr <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="section" id="questions" aria-labelledby="faq-title">
+      <div class="shell faq-grid">
+        <h2 id="faq-title">Prix immobilier à Marrakech : vos questions</h2>
+        <div class="faq-list">
+          <details><summary>Quel est le prix au m² d'un appartement à Marrakech ?</summary><p>Au 8 octobre 2026, le prix médian demandé est de 18 581 MAD/m² sur les 316 annonces d'appartements à vendre exploitables. Il varie fortement selon le quartier, de 14 286 MAD/m² à Semlalia à 24 880 MAD/m² à l'Hivernage, parmi les quartiers comptant au moins 8 annonces.</p></details>
+          <details><summary>Quel est le quartier le plus cher de Marrakech ?</summary><p>Parmi les quartiers comptant au moins 8 annonces, l'Hivernage affiche le prix médian demandé le plus élevé, à 24 880 MAD/m², devant Agdal (23 487 MAD/m²) et Guéliz (20 985 MAD/m²).</p></details>
+          <details><summary>Que peut-on acheter avec 1 million de dirhams à Marrakech ?</summary><p>Au prix médian demandé, environ 40 m² à l'Hivernage, 48 m² à Guéliz, 58 m² à la Palmeraie et 70 m² à Semlalia. Les petites surfaces étant plus chères au m², peu d'annonces affichent réellement ce prix dans les quartiers les plus chers.</p></details>
+          <details><summary>Ces prix sont-ils des prix de vente réels ?</summary><p>Non. Ce sont les prix demandés dans les annonces, avant négociation. Ils décrivent l'offre publiée et ses écarts entre quartiers, pas le prix final signé chez le notaire.</p></details>
+          <details><summary>D'où viennent les données ?</summary><p>Des annonces publiques d'appartements à vendre publiées sur Sarouty, relevées à date fixe. Aucune donnée personnelle n'est collectée : ni nom, ni téléphone, ni email d'agent.</p></details>
+          <details><summary>Quelle différence entre l'accès gratuit et la version Pro ?</summary><p>L'étude et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro donne accès à toutes les annonces avec leur titre, leur agence et leur lien d'origine, dans un fichier Excel mis à jour chaque semaine.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-row">
+        <div><h2 id="contact-title">Une question sur un quartier ou une ville&nbsp;?</h2><p>Écrivez-nous, on vous répond directement.</p></div>
+        <a class="btn btn-primary" href="mailto:othman@atlas-data.fr?subject=Question%20Atlas%20Data">othman@atlas-data.fr</a>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="shell footer-grid"><div class="footer-brand">ATLAS <span>DATA</span></div><nav class="footer-links" aria-label="Navigation de pied de page"><a href="#approche">Notre regard</a><a href="#analyse">Étude</a><a href="dashboard.html">Dashboard</a><a href="#solutions">Solutions</a><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Apify ↗</a><a href="#top">Retour en haut ↑</a></nav><div class="footer-small"><p>© <span id="year">2026</span> Atlas Data. Intelligence immobilière / Maroc.</p><p>Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p></div>
-      <details class="legal" id="mentions-legales"><summary>Mentions légales</summary><p>Éditeur : [NOM PRÉNOM OU RAISON SOCIALE], [ADRESSE], [SIRET SI APPLICABLE]. Contact : othman@atlas-data.fr. Directeur de la publication : [NOM PRÉNOM].</p><p>Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p><p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les polices sont chargées depuis Google Fonts.</p></details></div></footer>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#top" class="logo" aria-label="Atlas Data, retour en haut de la page"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span><span class="logo-word">Atlas Data</span></a>
+          <p>Données et analyses du marché immobilier marocain, à partir d'annonces publiques.</p>
+        </div>
+        <nav aria-labelledby="f-quartiers"><h2 id="f-quartiers">Prix par quartier</h2><ul>
+<li><a href="dashboard.html?quartier=Hivernage">Hivernage</a></li>
+<li><a href="dashboard.html?quartier=Agdal">Agdal</a></li>
+<li><a href="dashboard.html?quartier=Guéliz">Guéliz</a></li>
+<li><a href="dashboard.html?quartier=Palmeraie">Palmeraie</a></li>
+<li><a href="dashboard.html?quartier=Route de Casablanca">Route de Casablanca</a></li>
+<li><a href="dashboard.html?quartier=Targa">Targa</a></li>
+<li><a href="dashboard.html?quartier=Semlalia">Semlalia</a></li>
+        </ul></nav>
+        <nav aria-labelledby="f-outils"><h2 id="f-outils">Outils</h2><ul>
+          <li><a href="#budget">Calculer mon budget</a></li>
+          <li><a href="#analyse">Étude Marrakech</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#methode">Méthode</a></li>
+        </ul></nav>
+        <nav aria-labelledby="f-offres"><h2 id="f-offres">Offres</h2><ul>
+          <li><a href="#offres">Atlas Data Pro</a></li>
+          <li><a href="#offres">Analyse sur mesure</a></li>
+          <li><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Scraper Apify</a></li>
+          <li><a href="mailto:othman@atlas-data.fr">Contact</a></li>
+        </ul></nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Atlas Data. Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p>
+        <details class="legal" id="mentions-legales"><summary>Mentions légales</summary><p>Éditeur : [NOM PRÉNOM OU RAISON SOCIALE], [ADRESSE], [SIRET SI APPLICABLE]. Contact : othman@atlas-data.fr. Directeur de la publication : [NOM PRÉNOM].</p><p>Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p><p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les polices sont chargées depuis Google Fonts.</p></details>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    (function(){
-      const frame = document.getElementById('study-frame');
-      frame.querySelectorAll('[data-mode]').forEach(button=>{
-        button.addEventListener('click',()=>{
-          frame.dataset.mode = button.dataset.mode;
-          frame.querySelectorAll('.chart-switch button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-        });
+  (function(){
+    'use strict';
+    var DATA={"Hivernage":{"median":24880,"n":22,"prep":"À l'Hivernage","prices":[1100000,1260000,1300000,1320000,1693000,1870000,1956000,2000000,2015000,2400000,2498000,2600000,3200000,3500000,3900000,4200000,4510000,4560000,5300000,5900000,11000000,15000000]},"Agdal":{"median":23487,"n":14,"prep":"À Agdal","prices":[1200000,1614000,2200000,2300000,2350000,2350000,2412500,2475000,2500000,2500000,2600000,2615000,3300000,3300000]},"Guéliz":{"median":20985,"n":96,"prep":"À Guéliz","prices":[750000,900000,920000,963500,1065793,1069000,1121365,1192000,1200000,1200000,1270000,1300000,1310407,1332500,1334000,1340000,1400000,1400000,1400000,1400000,1425000,1440000,1450000,1450000,1450000,1450000,1475000,1480000,1500000,1500000,1539000,1566000,1600000,1600000,1600000,1600000,1600000,1600000,1621000,1630000,1650000,1650000,1650000,1690000,1750000,1750000,1750000,1760000,1800000,1813000,1818000,1850000,1870000,1896250,1900000,1900000,1900000,1906500,1980000,2000000,2000000,2050000,2100000,2200000,2200000,2214000,2250000,2400000,2500000,2500000,2500000,2562500,2600000,2600000,2850000,2900000,2900000,2950000,3000000,3100000,3132000,3186000,3200000,3300000,3500000,3590000,3700000,3800000,3850000,3850000,3900000,4200000,4200000,4800000,5000000,7200000]},"Palmeraie":{"median":17305,"n":28,"prep":"À la Palmeraie","prices":[1200000,1450000,1450000,1490000,1550000,1600000,1600000,1700000,1800000,2000000,2000000,2100000,2150000,2200000,2260000,2300000,2400000,2450000,2600000,2600000,2700000,2900000,2950000,3100000,3300000,3400000,3500000,3500000]},"Route de Casablanca":{"median":16071,"n":17,"prep":"Route de Casablanca","prices":[680000,780000,902000,1014000,1250000,1300000,1350000,1400000,1400000,1500000,1500000,1500000,1576000,1800000,1900000,1950000,3100000]},"Targa":{"median":15328,"n":9,"prep":"À Targa","prices":[550000,780000,950000,1200000,1248000,1600000,1600000,2100000,2337000]},"Semlalia":{"median":14286,"n":11,"prep":"À Semlalia","prices":[930000,1000000,1150000,1300000,1400000,1550000,1650000,1762000,1950000,2650000,3000000]},"Marrakech":{"median":18581,"n":316,"prep":"Sur toute la ville","prices":[220000,360000,400000,440000,480000,550000,550000,550000,560000,563750,580000,600000,600000,640000,670000,670000,680000,680000,680000,700000,700000,712600,720000,726000,750000,750000,780000,780000,780000,800000,820000,820000,824000,850000,850000,860000,900000,900000,902000,920000,922500,930000,935000,940000,950000,950000,950000,963500,972000,980000,1000000,1014000,1025000,1050000,1065793,1069000,1100000,1100000,1100000,1100000,1100000,1100000,1100000,1121365,1147500,1150000,1192000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1248000,1250000,1250000,1250000,1250000,1260000,1270000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1310407,1320000,1332500,1334000,1340000,1350000,1350000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1425000,1440000,1450000,1450000,1450000,1450000,1450000,1450000,1475000,1480000,1490000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1520000,1539000,1548000,1550000,1550000,1550000,1550000,1550000,1566000,1576000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1614000,1621000,1630000,1650000,1650000,1650000,1650000,1690000,1693000,1700000,1700000,1750000,1750000,1750000,1750000,1760000,1762000,1800000,1800000,1800000,1800000,1800000,1813000,1818000,1850000,1870000,1870000,1896250,1900000,1900000,1900000,1900000,1900000,1906500,1950000,1950000,1950000,1950000,1950000,1956000,1980000,2000000,2000000,2000000,2000000,2000000,2000000,2000000,2015000,2050000,2050000,2100000,2100000,2100000,2150000,2150000,2185000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2214000,2250000,2250000,2260000,2260000,2260000,2287800,2300000,2300000,2300000,2337000,2350000,2350000,2400000,2400000,2400000,2400000,2400000,2400000,2412500,2450000,2458500,2475000,2498000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2562500,2600000,2600000,2600000,2600000,2600000,2600000,2600000,2615000,2650000,2650000,2700000,2800000,2850000,2900000,2900000,2900000,2900000,2900000,2900000,2950000,2950000,2950000,3000000,3000000,3000000,3000000,3000000,3100000,3100000,3100000,3132000,3186000,3200000,3200000,3300000,3300000,3300000,3300000,3400000,3500000,3500000,3500000,3500000,3500000,3590000,3700000,3800000,3850000,3850000,3900000,3900000,4000000,4200000,4200000,4200000,4510000,4560000,4800000,5000000,5300000,5700000,5900000,6300000,7200000,7500000,9400000,11000000,15000000]}};
+    var QUARTIERS=['Hivernage','Agdal','Guéliz','Palmeraie','Route de Casablanca','Targa','Semlalia'];
+    var nf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
+    var fmt=function(n){return nf.format(n).replace(/\u202f|\u00a0/g,' ')};
+    var $=function(id){return document.getElementById(id)};
+    var input=$('budget-input');
+    var budget=1000000;
+
+    function parse(v){var n=Number(String(v).replace(/[^\d]/g,''));return Number.isFinite(n)?n:0}
+    function selected(){var r=document.querySelector('input[name="quartier"]:checked');return r?r.value:'Hivernage'}
+    function select(q){var r=document.querySelector('input[name="quartier"][value="'+q+'"]');if(r){r.checked=true;update()}}
+
+    function buildCompare(){
+      var ul=$('cmp');
+      QUARTIERS.forEach(function(q){
+        var li=document.createElement('li');var b=document.createElement('button');b.type='button';b.dataset.q=q;
+        b.innerHTML='<span>'+q+'</span><span class="cmp-bar"><i></i></span><span class="cmp-val"></span>';
+        b.addEventListener('click',function(){select(q)});
+        li.appendChild(b);ul.appendChild(li);
       });
-      const toggle = document.querySelector('.mobile-menu-toggle');
-      const nav = document.getElementById('mobile-navigation');
-      if(toggle&&nav){
-        const close=()=>{nav.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Ouvrir le menu');document.body.classList.remove('menu-open')};
-        toggle.addEventListener('click',()=>{const willOpen=nav.hidden;nav.hidden=!willOpen;toggle.setAttribute('aria-expanded',String(willOpen));toggle.setAttribute('aria-label',willOpen?'Fermer le menu':'Ouvrir le menu');document.body.classList.toggle('menu-open',willOpen)});
-        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
-        window.addEventListener('resize',()=>{if(window.innerWidth>620)close()});
-        document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+    }
+
+    function update(animate){
+      var q=selected(),d=DATA[q];
+      var valid=budget>=50000;
+      var m2=valid?Math.round(budget/d.median):0;
+      $('result-lead').textContent=d.prep+', ce budget correspond à environ';
+      var el=$('result-m2');
+      el.innerHTML=(valid?fmt(m2):'-')+'<small>&nbsp;m²</small>';
+      if(animate){el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}
+      $('result-basis').textContent='au prix médian demandé de '+fmt(d.median)+' MAD/m², calculé sur '+d.n+' annonces.';
+      var count=d.prices.filter(function(p){return p<=budget}).length;
+      var where=q==='Marrakech'?'':' dans ce quartier';
+      var link=document.createElement('a');
+      var params=new URLSearchParams();if(q!=='Marrakech')params.set('quartier',q);
+      var real=$('result-real');real.replaceChildren();
+      if(!valid){real.textContent='Entrez un budget pour lancer le calcul.';}
+      else if(count===0){
+        real.appendChild(document.createTextNode('Aucune annonce'+where+' ne demandait '+fmt(budget)+' MAD ou moins le 8 octobre. '));
+        link.textContent=q==='Marrakech'?'Voir toutes les annonces':'Voir les annonces de ce quartier';
+        link.href='dashboard.html'+(params.toString()?'?'+params:'');real.appendChild(link);
+      } else {
+        real.appendChild(document.createTextNode(count+(count>1?' annonces':' annonce')+' sur '+d.n+where+' '+(count>1?'demandaient':'demandait')+' '+fmt(budget)+' MAD ou moins le 8 octobre. '));
+        params.set('prixmax',String(budget));
+        link.textContent=count>1?'Voir ces annonces dans le dashboard':'Voir cette annonce dans le dashboard';
+        link.href='dashboard.html?'+params;real.appendChild(link);
       }
-    })();
+      var max=0;QUARTIERS.forEach(function(k){max=Math.max(max,budget/DATA[k].median)});
+      document.querySelectorAll('#cmp button').forEach(function(b){
+        var k=b.dataset.q,v=valid?budget/DATA[k].median:0;
+        b.setAttribute('aria-pressed',String(k===q));
+        b.querySelector('i').style.width=(max?v/max*100:0).toFixed(1)+'%';
+        b.querySelector('.cmp-val').textContent=valid?fmt(Math.round(v))+' m²':'-';
+        b.setAttribute('aria-label',k+' : environ '+fmt(Math.round(v))+' m²');
+      });
+      document.querySelectorAll('.presets button').forEach(function(b){b.setAttribute('aria-pressed',String(Number(b.dataset.budget)===budget))});
+    }
+
+    input.addEventListener('input',function(){budget=Math.min(parse(input.value),100000000);update(false)});
+    input.addEventListener('blur',function(){if(budget)input.value=fmt(budget)});
+    document.querySelectorAll('.presets button').forEach(function(b){b.addEventListener('click',function(){budget=Number(b.dataset.budget);input.value=fmt(budget);update(true)})});
+    document.querySelectorAll('input[name="quartier"]').forEach(function(r){r.addEventListener('change',function(){update(true)})});
+    buildCompare();update(false);
+
+    var chart=$('chart');
+    chart.querySelectorAll('.switch button').forEach(function(b){b.addEventListener('click',function(){
+      chart.dataset.mode=b.dataset.mode;
+      chart.querySelectorAll('.switch button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    })});
+
+    var toggle=document.querySelector('.menu-toggle'),nav=$('mobile-nav');
+    function close(){nav.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Ouvrir le menu')}
+    toggle.addEventListener('click',function(){var open=nav.hidden;nav.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu')});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+    window.addEventListener('resize',function(){if(window.innerWidth>820)close()});
+    $('year').textContent=new Date().getFullYear();
+  })();
   </script>
 </body>
 </html>
