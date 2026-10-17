@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="{{META_DESC}}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Atlas Data">
+  <meta property="og:title" content="Prix au m² à Marrakech par quartier - Atlas Data">
+  <meta property="og:description" content="{{OG_DESC}}">
+  <meta property="og:image" content="https://atlas-data.fr/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Prix médian au m² des appartements à Marrakech par quartier">
+  <meta property="og:url" content="https://atlas-data.fr/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://atlas-data.fr/">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://atlas-data.fr/#org", "name": "Atlas Data", "url": "https://atlas-data.fr/", "email": "othman@atlas-data.fr", "description": "Données et analyses du marché immobilier marocain.", "areaServed": "MA"}, {"@type": "WebSite", "@id": "https://atlas-data.fr/#site", "url": "https://atlas-data.fr/", "name": "Atlas Data", "inLanguage": "fr", "publisher": {"@id": "https://atlas-data.fr/#org"}}, {"@type": "Dataset", "name": "Prix des appartements à vendre à Marrakech par quartier, {{MONTH_YEAR}}", "description": "{{LD_DESC}}", "url": "https://atlas-data.fr/#analyse", "creator": {"@id": "https://atlas-data.fr/#org"}, "isAccessibleForFree": true, "temporalCoverage": "{{DATE_ISO}}", "spatialCoverage": {"@type": "Place", "name": "Marrakech, Maroc"}, "keywords": ["prix immobilier Marrakech", "prix au m² Marrakech", "immobilier Maroc", "appartements à vendre"], "variableMeasured": ["prix demandé (MAD)", "surface (m²)", "prix au m² (MAD/m²)", "nombre de chambres", "quartier"]}]}</script>
+  <title>Prix au m² à Marrakech par quartier - Atlas Data</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#152039;--muted:#5b6476;--faint:#8a92a3;
+      --blue:#2340c2;--blue-dark:#1a2f94;--navy:#101a33;
+      --tint:#eef1fa;--soft:#f6f7fa;--line:#dfe2ea;--white:#fff;
+      --display:'Archivo','Arial Narrow',Arial,sans-serif;
+      --body:'Roboto',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --shell:1180px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+    img,svg{max-width:100%;display:block}
+    a{color:inherit}
+    button,input{font:inherit;color:inherit}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+    .shell{width:100%;max-width:var(--shell);margin:0 auto;padding:0 24px}
+    .skip-link{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 14px;z-index:50}
+    .skip-link:focus{top:12px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    h1,h2,h3{font-family:var(--display);margin:0;color:var(--ink)}
+    p{margin:0}
+
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+    .header-row{display:flex;align-items:center;gap:32px;min-height:68px}
+    .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+    .logo-mark{display:grid;place-items:center;width:32px;height:32px;background:var(--blue);color:#fff;border-radius:3px}
+    .logo-mark svg{width:22px;height:22px}
+    .logo-word{font:800 19px/1 var(--display);letter-spacing:-.03em}
+    .main-nav{display:flex;gap:26px;margin-left:8px}
+    .main-nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted)}
+    .main-nav a:hover{color:var(--ink)}
+    .header-cta{margin-left:auto}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:0;font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue-dark)}
+    .btn-ghost{border-color:var(--line);background:#fff;color:var(--ink)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .menu-toggle{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:6px;background:#fff}
+    .menu-toggle svg{width:22px;height:22px;margin:auto}
+    .mobile-nav{border-top:1px solid var(--line);padding:8px 24px 18px;background:#fff}
+    .mobile-nav a{display:block;padding:12px 0;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+
+    /* Hero */
+    .hero{padding:64px 0 80px;background:linear-gradient(180deg,var(--soft) 0,var(--white) 420px)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:64px;align-items:start}
+    .hero-copy{padding-top:24px;position:sticky;top:110px}
+    .hero h1{font-size:clamp(40px,5.2vw,64px);line-height:1.03;font-weight:800;letter-spacing:-.035em;max-width:11em}
+    .hero-lede{font-size:19px;line-height:1.55;color:var(--muted);max-width:30em;margin-top:24px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .hero-source{margin-top:28px;font-size:14px;color:var(--faint);max-width:34em}
+
+    /* Calculator */
+    .calc{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 24px 48px -32px rgba(16,26,51,.45)}
+    .calc-inputs{padding:24px 24px 22px}
+    .field-label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
+    .budget{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+    .budget input{flex:1;min-width:0;border:0;padding:0;background:none;font:700 34px/1.2 var(--display);letter-spacing:-.02em}
+    .budget input:focus{outline:none}
+    .budget:focus-within{border-color:var(--blue)}
+    .budget span{font-weight:700;color:var(--muted)}
+    .presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .presets button{border:1px solid var(--line);background:#fff;border-radius:0;padding:5px 10px;font-size:13px;color:var(--muted);cursor:pointer}
+    .presets button:hover,.presets button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink)}
+    .quartiers{border:0;margin:22px 0 0;padding:0;min-width:0}
+    .quartiers legend{padding:0}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip input{position:absolute;opacity:0;pointer-events:none}
+    .chip span{display:inline-block;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;cursor:pointer;background:#fff}
+    .chip span:hover{border-color:var(--ink)}
+    .chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+    .chip input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+    .calc-result{background:var(--tint);padding:24px 24px 22px}
+    .result-lead{font-size:16px;color:var(--muted)}
+    .result-m2{font:800 clamp(80px,10.5vw,128px)/.92 var(--display);font-stretch:125%;letter-spacing:-.045em;color:var(--blue);margin:8px 0 10px;font-variant-numeric:tabular-nums}
+    .result-m2 small{font-size:.36em;letter-spacing:0;margin-left:.08em}
+    .result-m2.tick{animation:tick .28s ease-out}
+    @keyframes tick{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+    .result-basis{font-size:15px}
+    .result-real{margin-top:16px;padding-top:14px;border-top:1px solid #d3d9ee;font-size:15px}
+    .result-real a{font-weight:700;color:var(--blue)}
+    .calc-compare{padding:20px 24px 24px}
+    .calc-compare h2{font:700 15px/1.3 var(--body);margin-bottom:12px}
+    .cmp{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+    .cmp button{width:100%;display:grid;grid-template-columns:150px 1fr 56px;gap:12px;align-items:center;border:0;background:none;padding:5px 6px;border-radius:4px;text-align:left;cursor:pointer;font-size:14px}
+    .cmp button:hover{background:var(--soft)}
+    .cmp button[aria-pressed="true"]{background:var(--tint);font-weight:700}
+    .cmp-bar{height:10px;background:var(--soft);border-radius:2px;overflow:hidden}
+    .cmp-bar i{display:block;height:100%;background:#9fb0ee;border-radius:2px}
+    .cmp button[aria-pressed="true"] .cmp-bar i{background:var(--blue)}
+    .cmp-val{text-align:right;font-variant-numeric:tabular-nums}
+    .calc-note{margin-top:14px;font-size:13px;line-height:1.5;color:var(--muted)}
+
+    /* Sections */
+    .section{padding:96px 0}
+    .section-soft{background:var(--soft)}
+    .section-head{max-width:700px;margin-bottom:40px}
+    .section-head h2,.feature h2,.offers h2,.faq-grid h2,.contact h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08;font-weight:800;letter-spacing:-.03em}
+    .section-head p{margin-top:16px;font-size:18px;color:var(--muted)}
+
+    /* Chart */
+    .chart{border:1px solid var(--line);border-radius:10px;background:#fff;padding:24px 28px 20px}
+    .chart-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    .chart-top p{font-size:15px;color:var(--muted);max-width:36em}
+    .switch{display:inline-flex;border:1px solid var(--line);border-radius:6px;padding:3px;background:var(--soft)}
+    .switch button{border:0;background:none;padding:7px 14px;border-radius:4px;font-size:14px;font-weight:500;cursor:pointer;color:var(--muted)}
+    .switch button[aria-pressed="true"]{background:#fff;color:var(--ink);font-weight:700;box-shadow:0 1px 2px rgba(16,26,51,.12)}
+    .axis,.mrow{display:grid;grid-template-columns:200px minmax(0,1fr) 150px;gap:20px;align-items:center}
+    .axis{font-size:12px;color:var(--faint);padding-bottom:8px;border-bottom:1px solid var(--line)}
+    .axis-ticks{position:relative;height:16px}
+    .axis-ticks span{position:absolute;left:var(--x);transform:translateX(-50%);white-space:nowrap}
+    .axis-ticks span:first-child{transform:none}
+    .axis-ticks span:last-child{transform:translateX(-100%)}
+    .axis-end{text-align:right}
+    .mlist{list-style:none;margin:0;padding:0}
+    .mrow{padding:12px 0;border-bottom:1px solid var(--line)}
+    .mrow:last-child{border-bottom:0}
+    .mrow-name a{font-weight:700;text-decoration:none}
+    .mrow-name a:hover{color:var(--blue);text-decoration:underline}
+    .mrow-name span{display:block;font-size:13px;color:var(--faint)}
+    .mrow-plot{position:relative;height:36px}
+    .mrow-grid i{position:absolute;top:0;bottom:0;left:var(--x);width:1px;background:var(--line)}
+    .mrow-bar{position:absolute;left:0;top:12px;height:12px;width:var(--median);background:var(--blue);border-radius:0 2px 2px 0;transition:opacity .2s}
+    .mrow-pin{position:absolute;left:var(--median);top:2px;bottom:2px;width:2px;margin-left:-1px;background:var(--ink);opacity:0;transition:opacity .2s}
+    .mrow-dots{opacity:0;transition:opacity .2s}
+    .dot{position:absolute;left:var(--x);top:var(--y);width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--blue);opacity:.5}
+    .dot.outlier{background:#fff;border:1.5px solid var(--blue);opacity:1}
+    .chart[data-mode="distribution"] .mrow-bar{opacity:0}
+    .chart[data-mode="distribution"] .mrow-pin,.chart[data-mode="distribution"] .mrow-dots{opacity:1}
+    .mrow-price{text-align:right;font-size:13px;color:var(--muted);white-space:nowrap}
+    .mrow-price strong{font:700 19px var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+    .chart-foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+    .chart-foot p{max-width:46em}
+    .legend{display:flex;gap:16px;white-space:nowrap}
+    .legend span{display:inline-flex;align-items:center;gap:6px}
+    .legend .l-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);opacity:.5}
+    .legend .l-line{width:2px;height:12px;background:var(--ink)}
+    .chart-table{margin-top:14px;font-size:14px}
+    .chart-table summary{cursor:pointer;color:var(--blue);font-weight:700}
+    .table-wrap{overflow-x:auto;margin-top:12px}
+    table{border-collapse:collapse;width:100%;min-width:480px}
+    caption{text-align:left;color:var(--muted);font-size:13px;padding-bottom:8px}
+    th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+    thead th{font-size:13px;color:var(--muted);font-weight:500}
+    .insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}
+    .insights h3{font-size:20px;line-height:1.25;letter-spacing:-.015em;margin-bottom:8px}
+    .insights p{color:var(--muted);font-size:15px}
+
+    /* Features */
+    .feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:72px;align-items:center}
+    .feature+.feature{margin-top:112px}
+    .feature.flip .feature-copy{order:2}
+    .feature-copy p{margin-top:18px;font-size:17px;color:var(--muted);max-width:30em}
+    .feature-copy .btn{margin-top:28px}
+    .mock{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;box-shadow:0 24px 48px -36px rgba(16,26,51,.5)}
+    .mock-bar{display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--soft)}
+    .mock-bar span{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 10px;color:var(--muted)}
+    .mock-bar span.on{background:var(--ink);border-color:var(--ink);color:#fff}
+    .mock-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+    .mock-kpis div{padding:14px 16px;border-right:1px solid var(--line)}
+    .mock-kpis div:last-child{border-right:0}
+    .mock-kpis span{display:block;font-size:11px;color:var(--faint);line-height:1.3}
+    .mock-kpis strong{display:block;font:800 21px/1.2 var(--display);letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}
+    .mock table{min-width:0;font-size:13px;white-space:nowrap}
+    .mock th,.mock td{padding:9px 16px}
+    .mock td:nth-child(n+3),.mock th:nth-child(n+3){text-align:right}
+    .mock tbody tr:last-child td{border-bottom:0}
+    .mock-lock{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--tint);font-size:13px;color:var(--muted)}
+    .mock-lock strong{color:var(--ink)}
+    .roadmap{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+    .roadmap li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+    .roadmap li:last-child{border-bottom:0}
+    .roadmap strong{display:block;font-size:15px}
+    .roadmap small{display:block;font-size:13px;color:var(--muted)}
+    .status{flex:none;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+    .status.ok{background:#e3f4ea;color:#1b6b3e}
+    .status.pro{background:var(--tint);color:var(--blue)}
+    .status.soon{background:var(--soft);color:var(--muted);border:1px dashed #c4c9d4}
+
+    /* Offers */
+    .offers{background:var(--navy);color:#fff}
+    .offers h2{color:#fff}
+    .offers-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:72px;align-items:start}
+    .offers-intro p{margin-top:18px;color:#c3cbe0;font-size:17px;max-width:30em}
+    .pro-card{background:#fff;color:var(--ink);border-radius:10px;padding:32px}
+    .pro-card h3{font-size:22px;letter-spacing:-.02em}
+    .pro-price{font:800 46px/1 var(--display);letter-spacing:-.03em;margin:16px 0 4px}
+    .pro-price small{font:500 16px var(--body);color:var(--muted);letter-spacing:0}
+    .pro-terms{color:var(--muted);font-size:15px}
+    .checks{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px}
+    .checks li{position:relative;padding-left:28px;font-size:15px}
+    .checks li::before{content:"";position:absolute;left:2px;top:6px;width:13px;height:7px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+    .pro-card .btn{width:100%}
+    .other-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:72px;padding-top:40px;border-top:1px solid #ffffff2b}
+    .other-offers h3{color:#fff;font-size:19px;margin-bottom:8px}
+    .other-offers p{color:#c3cbe0;font-size:15px}
+    .other-offers a{display:inline-block;margin-top:12px;color:#fff;font-weight:700}
+
+    /* Method */
+    .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:step}
+    .steps li{counter-increment:step;border-top:2px solid var(--ink);padding-top:20px}
+    .steps h3{font-size:20px;margin-bottom:8px}
+    .steps h3::before{content:counter(step) ". ";color:var(--blue)}
+    .steps p{color:var(--muted);font-size:15px}
+    .fineprint{margin-top:48px;padding:24px 28px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:15px;color:var(--muted);max-width:860px}
+    .fineprint strong{color:var(--ink)}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
+    .faq-list details{border-bottom:1px solid var(--line)}
+    .faq-list details:first-child{border-top:1px solid var(--line)}
+    .faq-list summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-size:17px;position:relative}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary::after{content:"";position:absolute;right:6px;top:26px;width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+    .faq-list details[open] summary::after{transform:rotate(-135deg);top:30px}
+    .faq-list details p{padding:0 0 22px;color:var(--muted);max-width:40em}
+
+    /* Contact */
+    .contact{padding:80px 0;border-top:1px solid var(--line)}
+    .contact-row{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+    .contact p{margin-top:12px;color:var(--muted);font-size:17px}
+
+    /* Footer */
+    .site-footer{background:var(--soft);border-top:1px solid var(--line);padding:64px 0 32px;font-size:14px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:40px}
+    .footer-about p{color:var(--muted);margin-top:14px;max-width:24em}
+    .site-footer h2{font:700 14px/1.3 var(--body);margin-bottom:14px}
+    .site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+    .site-footer ul a{text-decoration:none;color:var(--muted)}
+    .site-footer ul a:hover{color:var(--ink);text-decoration:underline}
+    .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;display:grid;gap:8px}
+    .legal summary{cursor:pointer;color:var(--muted);font-weight:500}
+    .legal p{margin-top:8px}
+
+    @media (max-width:1040px){
+      .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+      .hero-copy{padding-top:0;position:static}
+      .calc{max-width:620px}
+      .feature,.feature.flip{grid-template-columns:minmax(0,1fr);gap:36px}
+      .feature.flip .feature-copy{order:0}
+      .offers-grid,.faq-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:820px){
+      .main-nav,.header-cta{display:none}
+      .menu-toggle{display:grid}
+      .axis,.mrow{grid-template-columns:130px minmax(0,1fr) 110px;gap:12px}
+      .insights,.steps,.other-offers{grid-template-columns:minmax(0,1fr);gap:28px}
+      .section{padding:72px 0}
+    }
+    @media (max-width:600px){
+      .shell{padding:0 18px}
+      .hero{padding:40px 0 56px}
+      .hero-lede{font-size:17px}
+      .calc-inputs,.calc-result,.calc-compare{padding-left:18px;padding-right:18px}
+      .budget input{font-size:28px}
+      .cmp button{grid-template-columns:118px 1fr 48px;gap:8px;font-size:13px}
+      .chart{padding:18px 16px}
+      .axis{grid-template-columns:1fr}
+      .axis>span{display:none}
+      .mrow{grid-template-columns:1fr auto;grid-template-areas:"name price" "plot plot";row-gap:6px}
+      .mrow-name{grid-area:name}.mrow-price{grid-area:price}.mrow-plot{grid-area:plot}
+      .mock-kpis{grid-template-columns:1fr 1fr}
+      .mock-kpis div:nth-child(2){border-right:0}
+      .mock-kpis div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .mock th:nth-child(4),.mock td:nth-child(4){display:none}
+      .pro-card{padding:24px}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+    }
+  </style>
+  <style id="theme">
+    /* Thème Atlas Data 2026 : Public Sans, coins arrondis, accent terracotta, pied de page bleu nuit */
+    :root{
+      --ink:#0f1a33;--muted:#4f5a6e;--faint:#5f687a;--line:#e3e6ec;--soft:#f5f6f8;--navy:#0f1a33;
+      --clay:#b8502a;--clay-ink:#8a3a1c;--clay-tint:#fbede6;--green-ink:#0b5a4b;--green-tint:#e3f3ef;
+      --body:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:var(--body);--radius:6px;
+    }
+    .btn,.ad-btn,.export-btn,dialog .modal-foot a{border-radius:var(--radius)}
+    .btn{min-height:48px;padding:0 22px}
+    .header-cta,.ad-header-cta{background:var(--navy)}
+    .header-cta:hover,.ad-header-cta:hover{background:#1f2c4d}
+    .logo-mark{border-radius:4px}
+    .btn-ghost{border-color:#c9ceda}
+    .presets button{border-radius:var(--radius);min-height:36px;padding:0 12px}
+    .chip span{padding:8px 14px}
+    .calc{border-radius:14px;box-shadow:0 30px 60px -40px rgba(15,26,51,.45);overflow:hidden}
+    .chart,.card,.mock,.roadmap,.fineprint{border-radius:12px}
+    .pro-card{border-radius:14px}
+    .hero{background:var(--soft);border-bottom:1px solid var(--line)}
+    .page-hero{background:var(--soft);border-bottom:1px solid var(--line)}
+    .page-hero + .block{border-top:0}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--clay-ink);background:var(--clay-tint);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+    .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--clay)}
+    .facts{border:0;background:none;gap:12px;overflow:visible}
+    .facts div,.facts div:nth-child(n){border:1px solid var(--line);border-radius:10px;background:#fff}
+    .facts .hl{border-color:#c9d2f2;background:#fff}
+    .facts .hl strong{font-size:40px;font-stretch:115%}
+    .sample-note{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:14px 18px;border-radius:10px;background:#fff8f4;border:1px solid #f1d3c4;color:#5a3020;font-size:15px;max-width:none}
+    .sample-note::before{content:"Échantillon réduit";flex:none;font-weight:700;color:var(--clay-ink)}
+    .pro-band{border-radius:16px;margin:0 auto 72px;max-width:calc(var(--shell) - 48px);padding:48px 0}
+    .pro-band .shell{padding:0 44px}
+    /* Chiffres clés */
+    .keyfigs{border-bottom:1px solid var(--line)}
+    .keyfigs ul{list-style:none;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+    .keyfigs li{padding:28px 24px;border-left:1px solid var(--line)}
+    .keyfigs li:first-child{border-left:0;padding-left:0}
+    .keyfigs strong{display:block;font:800 36px/1.1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+    .keyfigs span{font-size:14px;color:var(--muted)}
+    /* Cartes quartiers */
+    .qcards{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+    .qcard{display:flex;flex-direction:column;gap:12px;height:100%;padding:22px;border:1px solid var(--line);border-radius:12px;background:#fff;text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+    .qcard:hover{border-color:var(--blue);box-shadow:0 16px 32px -24px rgba(15,26,51,.5)}
+    .qcard-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .qcard-rank{font:700 14px var(--display);color:var(--faint)}
+    .delta{font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+    .delta.up{color:var(--clay-ink);background:var(--clay-tint)}
+    .delta.down{color:var(--green-ink);background:var(--green-tint)}
+    .qcard-name{font:800 24px/1.15 var(--display);letter-spacing:-.02em}
+    .qcard-price strong{font:800 34px/1 var(--display);letter-spacing:-.03em;color:var(--blue);font-variant-numeric:tabular-nums}
+    .qcard-price span{font-size:14px;color:var(--muted)}
+    .qcard-bar{height:8px;background:#eef0f4;border-radius:4px;overflow:hidden}
+    .qcard-bar i{display:block;height:100%;background:var(--blue);border-radius:4px}
+    .qcard-foot{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted);margin-top:auto}
+    .qcard-foot em{font-style:normal;color:var(--clay-ink);font-weight:600}
+    .qcard.cta{background:var(--navy);border-color:var(--navy);color:#fff;justify-content:space-between}
+    .qcard.cta .qcard-name{color:#fff}
+    .qcard.cta p{color:#c9cfdc;font-size:15px}
+    .qcard.cta .btn{background:#fff;color:var(--ink)}
+    .chart-title{font:800 22px/1.2 var(--display);letter-spacing:-.02em;margin:0 0 6px}
+    /* Pied de page bleu nuit */
+    .site-footer,.ad-footer{background:var(--navy);border-top:0;color:#c9cfdc}
+    .site-footer h2,.ad-footer h2,.site-footer .logo-word,.ad-footer .logo-word{color:#fff}
+    .site-footer .logo-mark,.ad-footer .logo-mark{background:#fff;color:var(--navy)}
+    .footer-about p,.ad-footer-about p{color:#c9cfdc}
+    .site-footer ul a,.ad-footer ul a,.ad-footer-bottom a,.footer-bottom a{color:#c9cfdc}
+    .site-footer ul a:hover,.ad-footer ul a:hover,.ad-footer-bottom a:hover,.footer-bottom a:hover{color:#fff}
+    .footer-bottom,.ad-footer-bottom{border-top-color:#2a3550;color:#a9b1c2}
+    .legal summary{color:#c9cfdc}
+    @media (max-width:820px){
+      .keyfigs ul{grid-template-columns:1fr 1fr}
+      .keyfigs li:nth-child(3){border-left:0;padding-left:0}
+      .keyfigs li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .pro-band{border-radius:0;margin-bottom:0;max-width:none}
+      .pro-band .shell{padding:0 24px}
+    }
+    @media (max-width:600px){
+      .keyfigs strong{font-size:28px}
+      .keyfigs li{padding:20px 12px}
+      .facts .hl strong{font-size:32px}
+      .qcards{gap:10px}
+      .qcard{padding:16px 18px;gap:8px}
+      .qcard-name{font-size:20px}
+      .qcard-price strong{font-size:28px}
+      .sample-note{flex-direction:column;gap:2px}
+      .pro-band .shell{padding:0 18px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header" id="top">
+    <div class="shell header-row">
+      <a href="/" class="logo" aria-label="Atlas Data, accueil">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span>
+        <span class="logo-word">Atlas Data</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="dashboard.html">Ouvrir le dashboard</a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
+      <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="budget" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="badge">Relevé du {{DATE_LONG}} · {{N}} annonces</p>
+          <h1 id="hero-title">Combien de mètres carrés pour votre budget à Marrakech&nbsp;?</h1>
+          <p class="hero-lede">Les prix demandés des appartements à vendre, quartier par quartier. Entrez un budget, choisissez un quartier et voyez ce qu'il permet vraiment d'acheter.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="dashboard.html">Explorer les {{N}} annonces</a>
+            <a class="btn btn-ghost" href="#analyse">Voir les prix par quartier</a>
+          </div>
+          <p class="hero-source">{{HERO_SOURCE}}</p>
+        </div>
+
+        <div class="calc" role="region" aria-label="Calculateur de surface selon le budget">
+          <div class="calc-inputs">
+            <label class="field-label" for="budget-input">Votre budget</label>
+            <div class="budget"><input id="budget-input" type="text" inputmode="numeric" autocomplete="off" value="1 000 000" aria-describedby="budget-help"><span>MAD</span></div>
+            <div class="presets" role="group" aria-label="Budgets fréquents" id="budget-help">
+              <button type="button" data-budget="500000">500 000</button>
+              <button type="button" data-budget="1000000">1 000 000</button>
+              <button type="button" data-budget="2000000">2 000 000</button>
+              <button type="button" data-budget="3000000">3 000 000</button>
+            </div>
+            <fieldset class="quartiers">
+              <legend class="field-label">Quartier</legend>
+              <div class="chips">
+{{CHIPS}}
+              </div>
+            </fieldset>
+          </div>
+          <div class="calc-result" aria-live="polite">
+{{RESULT_INIT}}
+            <p class="result-real" id="result-real"></p>
+          </div>
+          <div class="calc-compare">
+            <h2>Le même budget dans les autres quartiers</h2>
+            <ul class="cmp" id="cmp"></ul>
+            <p class="calc-note">{{CALC_NOTE}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="keyfigs" aria-label="Chiffres clés">
+      <ul class="shell">
+{{KEYFIGS}}
+      </ul>
+    </section>
+
+    <section class="section section-soft" id="analyse" aria-labelledby="analyse-title">
+      <div class="shell">
+        <div class="section-head">
+          <h2 id="analyse-title">Les prix au m² à Marrakech, quartier par quartier</h2>
+          <p>{{ANALYSE_P}}</p>
+        </div>
+{{QCARDS}}
+          <h3 class="chart-title">Chaque annonce, quartier par quartier</h3>
+        <div class="chart" id="chart" data-mode="median">
+          <div class="chart-top">
+            <p>Passez en mode dispersion pour voir chaque annonce : l'écart à l'intérieur d'un quartier est souvent plus grand qu'entre deux quartiers.</p>
+            <div class="switch" role="group" aria-label="Affichage du graphique">
+              <button type="button" data-mode="median" aria-pressed="true">Prix médians</button>
+              <button type="button" data-mode="distribution" aria-pressed="false">Dispersion</button>
+            </div>
+          </div>
+          <div class="axis" aria-hidden="true"><span>Quartier</span><div class="axis-ticks"><span style="--x:0.00%">0</span><span style="--x:25.00%">10 000</span><span style="--x:50.00%">20 000</span><span style="--x:75.00%">30 000</span><span style="--x:100.00%">40 000</span></div><span class="axis-end">Médiane au m²</span></div>
+          <ol class="mlist">
+{{MLIST}}
+          </ol>
+          <div class="chart-foot">
+            <p>{{CHART_FOOT}}</p>
+            <div class="legend" aria-hidden="true"><span><i class="l-dot"></i>Annonce</span><span><i class="l-line"></i>Médiane</span></div>
+          </div>
+          {{CHART_TABLE}}
+        </div>
+        <div class="insights">
+{{INSIGHTS}}
+        </div>
+      </div>
+    </section>
+
+    <!-- villes:start -->
+    <section class="section" id="villes" aria-labelledby="villes-title">
+      <div class="shell">
+        <div class="section-head"><h2 id="villes-title">Les prix par ville</h2><p>Prix médian demandé au m² des appartements à vendre. Les pages ville détaillent chaque quartier et sont mises à jour chaque semaine.</p></div>
+        <ul class="qcards"><li><a class="qcard" href="/marrakech/"><span class="qcard-name">Marrakech</span><span class="qcard-price"><strong>18 581</strong> <span>MAD/m²</span></span><span class="qcard-foot"><span>316 annonces · 7 quartiers</span></span><span class="qcard-foot"><span>Relevé du 8 octobre 2026</span></span></a></li><li><a class="qcard" href="/casablanca/"><span class="qcard-name">Casablanca</span><span class="qcard-price"><strong>16 272</strong> <span>MAD/m²</span></span><span class="qcard-foot"><span>536 annonces · 18 quartiers</span></span><span class="qcard-foot"><span>Relevé du 17 octobre 2026</span></span></a></li><li><a class="qcard" href="/rabat/"><span class="qcard-name">Rabat</span><span class="qcard-price"><strong>22 892</strong> <span>MAD/m²</span></span><span class="qcard-foot"><span>67 annonces · 1 quartier</span></span><span class="qcard-foot"><span>Relevé du 17 octobre 2026</span></span></a></li><li><a class="qcard" href="/tanger/"><span class="qcard-name">Tanger</span><span class="qcard-price"><strong>14 648</strong> <span>MAD/m²</span></span><span class="qcard-foot"><span>78 annonces · 4 quartiers</span></span><span class="qcard-foot"><span>Relevé du 17 octobre 2026</span></span></a></li></ul>
+      </div>
+    </section>
+    <!-- villes:end -->
+
+    <section class="section" aria-label="Fonctionnalités">
+      <div class="shell">
+        <div class="feature">
+          <div class="feature-copy">
+            <h2>Explorez chaque annonce, filtrez comme vous cherchez</h2>
+            <p>Le dashboard reprend toutes les annonces du dernier relevé, à Marrakech, Casablanca, Rabat et Tanger. Filtrez par ville, quartier, prix, surface, nombre de chambres ou meublé : les médianes et les graphiques se recalculent à chaque filtre. Gratuit et sans inscription.</p>
+            <a class="btn btn-primary" href="dashboard.html">Ouvrir le dashboard</a>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mock-bar"><span class="on">Tous les quartiers</span><span>Prix</span><span>Surface</span><span>Chambres</span><span>Meublé</span></div>
+            <div class="mock-kpis">
+{{MOCK_KPIS}}
+            </div>
+            <table>
+              <thead><tr><th>Bien</th><th>Quartier</th><th>Surface</th><th>Prix</th><th>MAD/m²</th></tr></thead>
+              <tbody>
+                <tr><td>Appartement 2 ch.</td><td>Guéliz</td><td>112 m²</td><td>3 800 000</td><td>33 929</td></tr>
+                <tr><td>Appartement 2 ch.</td><td>Agdal</td><td>142 m²</td><td>3 300 000</td><td>23 239</td></tr>
+                <tr><td>Appartement 1 ch.</td><td>Route de Casablanca</td><td>59 m²</td><td>1 400 000</td><td>23 729</td></tr>
+                <tr><td>Appartement 2 ch.</td><td>Targa</td><td>54 m²</td><td>550 000</td><td>10 185</td></tr>
+              </tbody>
+            </table>
+            <div class="mock-lock"><span>Titres, agences et liens d'origine</span><strong>Version Pro</strong></div>
+          </div>
+        </div>
+
+        <div class="feature flip">
+          <div class="feature-copy">
+            <h2>Suivez le marché semaine après semaine</h2>
+            <p>Chaque lundi, Atlas Data relève les annonces résidentielles à vendre et à louer dans tout le Maroc. Au fil des relevés, de nouveaux indicateurs deviennent possibles : baisses de prix, durée de mise en vente, rendements locatifs par quartier.</p>
+            <a class="btn btn-ghost" href="#offres">Voir l'offre Pro</a>
+          </div>
+          <ul class="roadmap">
+            <li><div><strong>Prix demandés au m² par quartier</strong><small>Marrakech, Casablanca, Rabat et Tanger, mis à jour chaque lundi</small></div><span class="status ok">Disponible</span></li>
+            <li><div><strong>Toutes les annonces, chaque semaine</strong><small>Fichier Excel, ville au choix</small></div><span class="status pro">Version Pro</span></li>
+            <li><div><strong>Nouvelles annonces et baisses de prix</strong><small>D'un relevé hebdomadaire à l'autre</small></div><span class="status pro">Version Pro</span></li>
+            <li><div><strong>Durée de mise en vente</strong><small>Après plusieurs relevés</small></div><span class="status soon">En préparation</span></li>
+            <li><div><strong>Rendements locatifs par quartier</strong><small>Croisement des annonces à vendre et à louer</small></div><span class="status soon">En préparation</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section offers" id="offres" aria-labelledby="offres-title">
+      <div class="shell" id="solutions">
+        <div class="offers-grid">
+          <div class="offers-intro">
+            <h2 id="offres-title">Vous êtes une agence ou un investisseur&nbsp;?</h2>
+            <p>Recevez chaque semaine toutes les annonces de votre ville, prêtes à travailler dans Excel : de quoi repérer les nouveaux biens, suivre les baisses de prix et situer un bien face à l'offre publiée.</p>
+          </div>
+          <div class="pro-card">
+            <h3>Atlas Data Pro</h3>
+            <p class="pro-price">29&nbsp;€ <small>HT par mois</small></p>
+            <p class="pro-terms">Sans engagement.</p>
+            <ul class="checks">
+              <li>Toutes les annonces, avec titres, agences et liens d'origine</li>
+              <li>Un fichier Excel mis à jour chaque semaine</li>
+              <li>Les nouvelles annonces et les baisses de prix</li>
+              <li>La ville de votre choix</li>
+            </ul>
+            <a class="btn btn-primary" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20activit%C3%A9%20%3A%20%0A">Demander l'accès Pro</a>
+          </div>
+        </div>
+        <div class="other-offers">
+          <div><h3>Gratuit</h3><p>L'étude, le dashboard et un aperçu de 10 annonces, sans inscription.</p><a href="dashboard.html">Ouvrir le dashboard</a></div>
+          <div><h3>Sur mesure</h3><p>Une analyse adaptée à votre question : comparer des secteurs, situer un bien, préparer un projet. Sur devis, première analyse offerte.</p><a href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Demander une analyse</a></div>
+          <div><h3>Développeurs</h3><p>Les données brutes en libre-service sur Apify, à 1,50 $ pour 1 000 annonces.</p><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Voir le scraper sur Apify</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="methode" aria-labelledby="methode-title">
+      <div class="shell">
+        <div class="section-head"><h2 id="methode-title">Comment les chiffres sont construits</h2></div>
+        <ol class="steps">
+          <li><h3>Collecter</h3><p>Les annonces publiques sont relevées chaque lundi, ville par ville. Aucune donnée personnelle n'est collectée.</p></li>
+          <li><h3>Nettoyer</h3><p>Les doublons sont retirés, ainsi que les loyers publiés comme des ventes, les surfaces absentes ou hors norme et les prix au m² aberrants.</p></li>
+          <li><h3>Mesurer</h3><p>Prix au m² = prix demandé / surface publiée. Une médiane n'est publiée que pour les quartiers d'au moins 8 annonces.</p></li>
+        </ol>
+        <p class="fineprint"><strong>À savoir.</strong> {{FINEPRINT}}</p>
+      </div>
+    </section>
+
+    <section class="section" id="questions" aria-labelledby="faq-title">
+      <div class="shell faq-grid">
+        <h2 id="faq-title">Prix immobilier à Marrakech : vos questions</h2>
+        <div class="faq-list">
+{{FAQ}}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-row">
+        <div><h2 id="contact-title">Une question sur un quartier ou une ville&nbsp;?</h2><p>Écrivez-nous, on vous répond directement.</p></div>
+        <a class="btn btn-primary" href="mailto:othman@atlas-data.fr?subject=Question%20Atlas%20Data">othman@atlas-data.fr</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo" aria-label="Atlas Data, accueil"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span><span class="logo-word">Atlas Data</span></a>
+          <p>Données et analyses du marché immobilier marocain, à partir d'annonces publiques.</p>
+        </div>
+        <nav aria-labelledby="f-quartiers"><h2 id="f-quartiers">Prix par ville</h2><ul><li><a href="/marrakech/">Marrakech</a></li><li><a href="/casablanca/">Casablanca</a></li><li><a href="/rabat/">Rabat</a></li><li><a href="/tanger/">Tanger</a></li></ul></nav>
+        <nav aria-labelledby="f-outils"><h2 id="f-outils">Outils</h2><ul>
+          <li><a href="#budget">Calculer mon budget</a></li>
+          <li><a href="#analyse">Étude Marrakech</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#methode">Méthode</a></li>
+        </ul></nav>
+        <nav aria-labelledby="f-offres"><h2 id="f-offres">Offres</h2><ul>
+          <li><a href="#offres">Atlas Data Pro</a></li>
+          <li><a href="#offres">Analyse sur mesure</a></li>
+          <li><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Scraper Apify</a></li>
+          <li><a href="mailto:othman@atlas-data.fr">Contact</a></li>
+        </ul></nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Atlas Data. Données issues d'annonces publiques. Atlas Data n'est affilié ni à Sarouty ni aux plateformes citées.</p>
+        <details class="legal" id="mentions-legales"><summary>Mentions légales</summary><p>Éditeur : [NOM PRÉNOM OU RAISON SOCIALE], [ADRESSE], [SIRET SI APPLICABLE]. Contact : othman@atlas-data.fr. Directeur de la publication : [NOM PRÉNOM].</p><p>Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p><p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les polices sont chargées depuis Google Fonts.</p></details>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    'use strict';
+    var DATA={{CALC_DATA}};
+    var QUARTIERS={{CALC_QUARTIERS}};
+    var nf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
+    var fmt=function(n){return nf.format(n).replace(/\u202f|\u00a0/g,' ')};
+    var $=function(id){return document.getElementById(id)};
+    var input=$('budget-input');
+    var budget=1000000;
+
+    function parse(v){var n=Number(String(v).replace(/[^\d]/g,''));return Number.isFinite(n)?n:0}
+    function selected(){var r=document.querySelector('input[name="quartier"]:checked');return r?r.value:'{{TOP_Q}}'}
+    function select(q){var r=document.querySelector('input[name="quartier"][value="'+q+'"]');if(r){r.checked=true;update()}}
+
+    function buildCompare(){
+      var ul=$('cmp');
+      QUARTIERS.forEach(function(q){
+        var li=document.createElement('li');var b=document.createElement('button');b.type='button';b.dataset.q=q;
+        b.innerHTML='<span>'+q+'</span><span class="cmp-bar"><i></i></span><span class="cmp-val"></span>';
+        b.addEventListener('click',function(){select(q)});
+        li.appendChild(b);ul.appendChild(li);
+      });
+    }
+
+    function update(animate){
+      var q=selected(),d=DATA[q];
+      var valid=budget>=50000;
+      var m2=valid?Math.round(budget/d.median):0;
+      $('result-lead').textContent=d.prep+', ce budget correspond à environ';
+      var el=$('result-m2');
+      el.innerHTML=(valid?fmt(m2):'-')+'<small>&nbsp;m²</small>';
+      if(animate){el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}
+      $('result-basis').textContent='au prix médian demandé de '+fmt(d.median)+' MAD/m², calculé sur '+d.n+' annonces.';
+      var count=d.prices.filter(function(p){return p<=budget}).length;
+      var where=q==='Marrakech'?'':' dans ce quartier';
+      var link=document.createElement('a');
+      var params=new URLSearchParams();if(q!=='Marrakech')params.set('quartier',q);
+      var real=$('result-real');real.replaceChildren();
+      if(!valid){real.textContent='Entrez un budget pour lancer le calcul.';}
+      else if(count===0){
+        real.appendChild(document.createTextNode('Aucune annonce'+where+' ne demandait '+fmt(budget)+' MAD ou moins le {{DATE_SHORT}}. '));
+        link.textContent=q==='Marrakech'?'Voir toutes les annonces':'Voir les annonces de ce quartier';
+        link.href='dashboard.html'+(params.toString()?'?'+params:'');real.appendChild(link);
+      } else {
+        real.appendChild(document.createTextNode(count+(count>1?' annonces':' annonce')+' sur '+d.n+where+' '+(count>1?'demandaient':'demandait')+' '+fmt(budget)+' MAD ou moins le {{DATE_SHORT}}. '));
+        params.set('prixmax',String(budget));
+        link.textContent=count>1?'Voir ces annonces dans le dashboard':'Voir cette annonce dans le dashboard';
+        link.href='dashboard.html?'+params;real.appendChild(link);
+      }
+      var max=0;QUARTIERS.forEach(function(k){max=Math.max(max,budget/DATA[k].median)});
+      document.querySelectorAll('#cmp button').forEach(function(b){
+        var k=b.dataset.q,v=valid?budget/DATA[k].median:0;
+        b.setAttribute('aria-pressed',String(k===q));
+        b.querySelector('i').style.width=(max?v/max*100:0).toFixed(1)+'%';
+        b.querySelector('.cmp-val').textContent=valid?fmt(Math.round(v))+' m²':'-';
+        b.setAttribute('aria-label',k+' : environ '+fmt(Math.round(v))+' m²');
+      });
+      document.querySelectorAll('.presets button').forEach(function(b){b.setAttribute('aria-pressed',String(Number(b.dataset.budget)===budget))});
+    }
+
+    input.addEventListener('input',function(){budget=Math.min(parse(input.value),100000000);update(false)});
+    input.addEventListener('blur',function(){if(budget)input.value=fmt(budget)});
+    document.querySelectorAll('.presets button').forEach(function(b){b.addEventListener('click',function(){budget=Number(b.dataset.budget);input.value=fmt(budget);update(true)})});
+    document.querySelectorAll('input[name="quartier"]').forEach(function(r){r.addEventListener('change',function(){update(true)})});
+    buildCompare();update(false);
+
+    var chart=$('chart');
+    chart.querySelectorAll('.switch button').forEach(function(b){b.addEventListener('click',function(){
+      chart.dataset.mode=b.dataset.mode;
+      chart.querySelectorAll('.switch button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    })});
+
+    var toggle=document.querySelector('.menu-toggle'),nav=$('mobile-nav');
+    function close(){nav.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Ouvrir le menu')}
+    toggle.addEventListener('click',function(){var open=nav.hidden;nav.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu')});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+    window.addEventListener('resize',function(){if(window.innerWidth>820)close()});
+    $('year').textContent=new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>

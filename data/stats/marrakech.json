@@ -1,0 +1,235 @@
+{
+ "n": 320,
+ "median": 18655,
+ "median_price": 1700000,
+ "median_surface": 95,
+ "min": 5294,
+ "max": 74830,
+ "raw": 322,
+ "date": "2026-10-17",
+ "quartiers": [
+  {
+   "n": 22,
+   "median": 24880,
+   "median_price": 2549000,
+   "median_surface": 102,
+   "min": 15000,
+   "max": 74830,
+   "name": "Hivernage",
+   "slug": "hivernage",
+   "rank": 1
+  },
+  {
+   "n": 14,
+   "median": 23487,
+   "median_price": 2443750,
+   "median_surface": 104,
+   "min": 19231,
+   "max": 32143,
+   "name": "Agdal",
+   "slug": "agdal",
+   "rank": 2
+  },
+  {
+   "n": 100,
+   "median": 20815,
+   "median_price": 1806500,
+   "median_surface": 100,
+   "min": 9655,
+   "max": 37209,
+   "name": "Guéliz",
+   "slug": "gueliz",
+   "rank": 3
+  },
+  {
+   "n": 29,
+   "median": 18182,
+   "median_price": 2260000,
+   "median_surface": 122,
+   "min": 8684,
+   "max": 28689,
+   "name": "Palmeraie",
+   "slug": "palmeraie",
+   "rank": 4
+  },
+  {
+   "n": 17,
+   "median": 16071,
+   "median_price": 1400000,
+   "median_surface": 84,
+   "min": 11029,
+   "max": 26271,
+   "name": "Route de Casablanca",
+   "slug": "route-de-casablanca",
+   "rank": 5
+  },
+  {
+   "n": 9,
+   "median": 15328,
+   "median_price": 1248000,
+   "median_surface": 85,
+   "min": 9176,
+   "max": 21429,
+   "name": "Targa",
+   "slug": "targa",
+   "rank": 6
+  },
+  {
+   "n": 11,
+   "median": 14286,
+   "median_price": 1550000,
+   "median_surface": 102,
+   "min": 10204,
+   "max": 20625,
+   "name": "Semlalia",
+   "slug": "semlalia",
+   "rank": 7
+  }
+ ],
+ "autres_quartiers": [
+  {
+   "name": "Allal El Fassi",
+   "n": 6
+  },
+  {
+   "name": "Azzouzia",
+   "n": 6
+  },
+  {
+   "name": "Chrifia",
+   "n": 6
+  },
+  {
+   "name": "Majorelle",
+   "n": 6
+  },
+  {
+   "name": "Route de Safi",
+   "n": 6
+  },
+  {
+   "name": "Victor Hugo",
+   "n": 6
+  },
+  {
+   "name": "Hay Izdihar",
+   "n": 5
+  },
+  {
+   "name": "Hay Charaf",
+   "n": 4
+  },
+  {
+   "name": "Mhamid",
+   "n": 4
+  },
+  {
+   "name": "Route Amizmiz",
+   "n": 4
+  },
+  {
+   "name": "Route d'Ourika",
+   "n": 4
+  },
+  {
+   "name": "AIN MEZOUAR",
+   "n": 3
+  },
+  {
+   "name": "Al izdihar",
+   "n": 3
+  },
+  {
+   "name": "Argan Golf Ressort",
+   "n": 3
+  },
+  {
+   "name": "Marrakech Golf City",
+   "n": 3
+  },
+  {
+   "name": "Menara",
+   "n": 3
+  },
+  {
+   "name": "Route de Ouarzazate",
+   "n": 3
+  },
+  {
+   "name": "Annakhil",
+   "n": 2
+  },
+  {
+   "name": "Av Abdelkrim El Khattabi",
+   "n": 2
+  },
+  {
+   "name": "Izdihar",
+   "n": 2
+  },
+  {
+   "name": "Plaza",
+   "n": 2
+  },
+  {
+   "name": "Route de Fès",
+   "n": 2
+  },
+  {
+   "name": "Amerchich",
+   "n": 1
+  },
+  {
+   "name": "Avenue Yacoub El Mansour",
+   "n": 1
+  },
+  {
+   "name": "Bin Lkchali",
+   "n": 1
+  },
+  {
+   "name": "Dar Dmana",
+   "n": 1
+  },
+  {
+   "name": "Fassi",
+   "n": 1
+  },
+  {
+   "name": "Hay Andalous",
+   "n": 1
+  },
+  {
+   "name": "Mabrouka",
+   "n": 1
+  },
+  {
+   "name": "Massira",
+   "n": 1
+  },
+  {
+   "name": "Route d'agadir",
+   "n": 1
+  },
+  {
+   "name": "Route de Tahanaoute",
+   "n": 1
+  },
+  {
+   "name": "Route de Tamansourt",
+   "n": 1
+  },
+  {
+   "name": "Saada",
+   "n": 1
+  },
+  {
+   "name": "Sanaoubar",
+   "n": 1
+  },
+  {
+   "name": "Sidi Youssef Ben Ali",
+   "n": 1
+  }
+ ]
+}
