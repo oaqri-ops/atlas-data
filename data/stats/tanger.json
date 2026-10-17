@@ -1,0 +1,106 @@
+{
+ "n": 78,
+ "median": 14648,
+ "median_price": 1738000,
+ "median_surface": 103,
+ "min": 7077,
+ "max": 53000,
+ "raw": 83,
+ "date": "2026-10-17",
+ "quartiers": [
+  {
+   "n": 12,
+   "median": 23409,
+   "median_price": 2825000,
+   "median_surface": 107,
+   "min": 14062,
+   "max": 35000,
+   "name": "Malabata",
+   "slug": "malabata",
+   "rank": 1
+  },
+  {
+   "n": 24,
+   "median": 14690,
+   "median_price": 1875000,
+   "median_surface": 120,
+   "min": 8000,
+   "max": 53000,
+   "name": "Centre-ville",
+   "slug": "centre-ville",
+   "rank": 2
+  },
+  {
+   "n": 9,
+   "median": 13000,
+   "median_price": 1000000,
+   "median_surface": 82,
+   "min": 10638,
+   "max": 14035,
+   "name": "Mesnana",
+   "slug": "mesnana",
+   "rank": 3
+  },
+  {
+   "n": 8,
+   "median": 12288,
+   "median_price": 1115000,
+   "median_surface": 89,
+   "min": 9767,
+   "max": 15000,
+   "name": "Route de Rabat",
+   "slug": "route-de-rabat",
+   "rank": 4
+  }
+ ],
+ "autres_quartiers": [
+  {
+   "name": "Moujahidine",
+   "n": 4
+  },
+  {
+   "name": "Iberia",
+   "n": 3
+  },
+  {
+   "name": "Nejma",
+   "n": 3
+  },
+  {
+   "name": "Tarifa",
+   "n": 3
+  },
+  {
+   "name": "Boubana",
+   "n": 2
+  },
+  {
+   "name": "Gzenaya",
+   "n": 2
+  },
+  {
+   "name": "Marjane",
+   "n": 2
+  },
+  {
+   "name": "Marshan",
+   "n": 2
+  },
+  {
+   "name": "Avenue Mohammed VI",
+   "n": 1
+  },
+  {
+   "name": "California",
+   "n": 1
+  },
+  {
+   "name": "Place Mozart",
+   "n": 1
+  },
+  {
+   "name": "Tanja Balia",
+   "n": 1
+  }
+ ]
+}

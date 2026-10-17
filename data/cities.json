@@ -1,0 +1,39 @@
+{
+  "actor": "atlasdata-labs~sarouty-scraper-morocco-real-estate",
+  "min_listings_per_quartier": 8,
+  "cities": [
+    {
+      "slug": "marrakech",
+      "name": "Marrakech",
+      "location": "Marrakech",
+      "generate": false,
+      "published": {"median": 18581, "n": 316, "quartiers": 7, "date": "2026-10-08"}
+    },
+    {"slug": "casablanca", "name": "Casablanca", "location": "Casablanca", "generate": true},
+    {"slug": "rabat", "name": "Rabat", "location": "Rabat", "generate": true},
+    {"slug": "tanger", "name": "Tanger", "location": "Tanger", "generate": true}
+  ],
+  "district_names": {
+    "Centre ville": "Centre-ville",
+    "Centre Ville Casablanca": "Centre-ville",
+    "Guich oudayas": "Guich Oudaya",
+    "Yacoub El Mansour": "Yacoub El Mansour",
+    "Boulevard Ghandi": "Boulevard Ghandi",
+    "Les Cretes": "Les Crêtes",
+    "Quartier Agdal Haut": "Agdal Haut",
+    "Quartier Agdal Bas": "Agdal Bas",
+    "gzenaya": "Gzenaya",
+    "Place mozart": "Place Mozart"
+  },
+  "district_prepositions": {
+    "Centre-ville": "au centre-ville",
+    "Les Princesses": "aux Princesses",
+    "Les Crêtes": "aux Crêtes",
+    "Quartier des Hôpitaux": "au Quartier des Hôpitaux",
+    "Palmier": "au Palmier",
+    "Maarif": "au Maarif",
+    "Maarif Extension": "au Maarif Extension",
+    "Route de Rabat": "route de Rabat"
+  },
+  "excluded_districts": ["indéfini", "Autre", ""]
+}

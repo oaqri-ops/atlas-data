@@ -1,0 +1,376 @@
+{
+ "n": 536,
+ "median": 16272,
+ "median_price": 2250000,
+ "median_surface": 137,
+ "min": 6223,
+ "max": 51327,
+ "raw": 557,
+ "date": "2026-10-17",
+ "quartiers": [
+  {
+   "n": 27,
+   "median": 29259,
+   "median_price": 1740000,
+   "median_surface": 67,
+   "min": 10145,
+   "max": 51327,
+   "name": "Les Princesses",
+   "slug": "les-princesses",
+   "rank": 1
+  },
+  {
+   "n": 21,
+   "median": 27311,
+   "median_price": 4200000,
+   "median_surface": 180,
+   "min": 14000,
+   "max": 43478,
+   "name": "Ain Diab",
+   "slug": "ain-diab",
+   "rank": 2
+  },
+  {
+   "n": 15,
+   "median": 20941,
+   "median_price": 1960000,
+   "median_surface": 104,
+   "min": 13312,
+   "max": 29140,
+   "name": "Oasis",
+   "slug": "oasis",
+   "rank": 3
+  },
+  {
+   "n": 11,
+   "median": 20833,
+   "median_price": 2450000,
+   "median_surface": 120,
+   "min": 16471,
+   "max": 23750,
+   "name": "Ferme Bretone",
+   "slug": "ferme-bretone",
+   "rank": 4
+  },
+  {
+   "n": 58,
+   "median": 17969,
+   "median_price": 3175000,
+   "median_surface": 176,
+   "min": 12800,
+   "max": 36082,
+   "name": "Anfa",
+   "slug": "anfa",
+   "rank": 5
+  },
+  {
+   "n": 36,
+   "median": 17550,
+   "median_price": 2965000,
+   "median_surface": 174,
+   "min": 8130,
+   "max": 26170,
+   "name": "Racine",
+   "slug": "racine",
+   "rank": 6
+  },
+  {
+   "n": 21,
+   "median": 17518,
+   "median_price": 1780000,
+   "median_surface": 107,
+   "min": 10750,
+   "max": 40833,
+   "name": "Sidi Belyout",
+   "slug": "sidi-belyout",
+   "rank": 7
+  },
+  {
+   "n": 87,
+   "median": 15714,
+   "median_price": 2040000,
+   "median_surface": 123,
+   "min": 6223,
+   "max": 33784,
+   "name": "Dar Bouazza",
+   "slug": "dar-bouazza",
+   "rank": 8
+  },
+  {
+   "n": 8,
+   "median": 15310,
+   "median_price": 1130500,
+   "median_surface": 89,
+   "min": 11444,
+   "max": 20000,
+   "name": "Zenata",
+   "slug": "zenata",
+   "rank": 9
+  },
+  {
+   "n": 19,
+   "median": 15207,
+   "median_price": 3300000,
+   "median_surface": 205,
+   "min": 9333,
+   "max": 23000,
+   "name": "Gauthier",
+   "slug": "gauthier",
+   "rank": 10
+  },
+  {
+   "n": 25,
+   "median": 15030,
+   "median_price": 4400000,
+   "median_surface": 235,
+   "min": 6633,
+   "max": 21533,
+   "name": "Bouskoura",
+   "slug": "bouskoura",
+   "rank": 11
+  },
+  {
+   "n": 51,
+   "median": 15000,
+   "median_price": 2100000,
+   "median_surface": 145,
+   "min": 9223,
+   "max": 26087,
+   "name": "Maarif",
+   "slug": "maarif",
+   "rank": 12
+  },
+  {
+   "n": 9,
+   "median": 14966,
+   "median_price": 2150000,
+   "median_surface": 140,
+   "min": 12573,
+   "max": 27778,
+   "name": "Val Fleuri",
+   "slug": "val-fleuri",
+   "rank": 13
+  },
+  {
+   "n": 9,
+   "median": 14500,
+   "median_price": 2150000,
+   "median_surface": 137,
+   "min": 8759,
+   "max": 18319,
+   "name": "Californie",
+   "slug": "californie",
+   "rank": 14
+  },
+  {
+   "n": 10,
+   "median": 14016,
+   "median_price": 1989000,
+   "median_surface": 143,
+   "min": 10855,
+   "max": 22388,
+   "name": "Maarif Extension",
+   "slug": "maarif-extension",
+   "rank": 15
+  },
+  {
+   "n": 13,
+   "median": 13881,
+   "median_price": 1590000,
+   "median_surface": 110,
+   "min": 9767,
+   "max": 30000,
+   "name": "Bourgogne",
+   "slug": "bourgogne",
+   "rank": 16
+  },
+  {
+   "n": 13,
+   "median": 13542,
+   "median_price": 1250000,
+   "median_surface": 91,
+   "min": 6250,
+   "max": 28409,
+   "name": "Hay Hassani",
+   "slug": "hay-hassani",
+   "rank": 17
+  },
+  {
+   "n": 12,
+   "median": 13184,
+   "median_price": 1875000,
+   "median_surface": 138,
+   "min": 8791,
+   "max": 19355,
+   "name": "Quartier des Hôpitaux",
+   "slug": "quartier-des-hopitaux",
+   "rank": 18
+  }
+ ],
+ "autres_quartiers": [
+  {
+   "name": "Palmier",
+   "n": 7
+  },
+  {
+   "name": "2 Mars",
+   "n": 5
+  },
+  {
+   "name": "Ain Chock",
+   "n": 5
+  },
+  {
+   "name": "Tamaris",
+   "n": 5
+  },
+  {
+   "name": "Casablanca Finance City",
+   "n": 4
+  },
+  {
+   "name": "Centre-ville",
+   "n": 4
+  },
+  {
+   "name": "Mers Sultan",
+   "n": 4
+  },
+  {
+   "name": "Almaz",
+   "n": 3
+  },
+  {
+   "name": "Beauséjour",
+   "n": 3
+  },
+  {
+   "name": "Boulevard Ghandi",
+   "n": 3
+  },
+  {
+   "name": "CIL",
+   "n": 3
+  },
+  {
+   "name": "Oulfa",
+   "n": 3
+  },
+  {
+   "name": "Socrate",
+   "n": 3
+  },
+  {
+   "name": "Ain Diab Extension",
+   "n": 2
+  },
+  {
+   "name": "Boulevard Anfa",
+   "n": 2
+  },
+  {
+   "name": "Errahma",
+   "n": 2
+  },
+  {
+   "name": "Nassim",
+   "n": 2
+  },
+  {
+   "name": "Nouaceur",
+   "n": 2
+  },
+  {
+   "name": "Riviera",
+   "n": 2
+  },
+  {
+   "name": "Roches Noires",
+   "n": 2
+  },
+  {
+   "name": "Sidi Bernoussi",
+   "n": 2
+  },
+  {
+   "name": "Sidi Maarouf",
+   "n": 2
+  },
+  {
+   "name": "Triangle d'Or",
+   "n": 2
+  },
+  {
+   "name": "Yacoub El Mansour",
+   "n": 2
+  },
+  {
+   "name": "Abdelmoumen",
+   "n": 1
+  },
+  {
+   "name": "Ain Borja",
+   "n": 1
+  },
+  {
+   "name": "Alsace Lorraine",
+   "n": 1
+  },
+  {
+   "name": "Belvédère",
+   "n": 1
+  },
+  {
+   "name": "Benjdia",
+   "n": 1
+  },
+  {
+   "name": "Boulevard Al Massira Al Khadra",
+   "n": 1
+  },
+  {
+   "name": "Casa Marina",
+   "n": 1
+  },
+  {
+   "name": "Derb Ghallef",
+   "n": 1
+  },
+  {
+   "name": "Derb Omar",
+   "n": 1
+  },
+  {
+   "name": "Derb Sultan",
+   "n": 1
+  },
+  {
+   "name": "Habous",
+   "n": 1
+  },
+  {
+   "name": "Ibn tachfine",
+   "n": 1
+  },
+  {
+   "name": "Les Crêtes",
+   "n": 1
+  },
+  {
+   "name": "Mandarona",
+   "n": 1
+  },
+  {
+   "name": "Marina Casablanca",
+   "n": 1
+  },
+  {
+   "name": "Sidi Moumen",
+   "n": 1
+  },
+  {
+   "name": "Zerktouni",
+   "n": 1
+  }
+ ]
+}

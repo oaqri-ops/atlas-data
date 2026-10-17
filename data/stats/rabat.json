@@ -1,0 +1,65 @@
+{
+ "n": 67,
+ "median": 22892,
+ "median_price": 4000000,
+ "median_surface": 175,
+ "min": 8128,
+ "max": 38806,
+ "raw": 70,
+ "date": "2026-10-17",
+ "quartiers": [
+  {
+   "n": 42,
+   "median": 24680,
+   "median_price": 4200000,
+   "median_surface": 172,
+   "min": 17857,
+   "max": 38806,
+   "name": "Hay Riad",
+   "slug": "hay-riad",
+   "rank": 1
+  }
+ ],
+ "autres_quartiers": [
+  {
+   "name": "Agdal Haut",
+   "n": 5
+  },
+  {
+   "name": "Souissi",
+   "n": 5
+  },
+  {
+   "name": "Agdal Bas",
+   "n": 3
+  },
+  {
+   "name": "Guich Oudaya",
+   "n": 3
+  },
+  {
+   "name": "Plage des Nations",
+   "n": 3
+  },
+  {
+   "name": "El Menzeh",
+   "n": 1
+  },
+  {
+   "name": "Hay Al Fath",
+   "n": 1
+  },
+  {
+   "name": "Kebibat",
+   "n": 1
+  },
+  {
+   "name": "Mabella",
+   "n": 1
+  },
+  {
+   "name": "Plage des Nations Golf City",
+   "n": 1
+  }
+ ]
+}
