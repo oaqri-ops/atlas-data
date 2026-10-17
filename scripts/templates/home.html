@@ -219,7 +219,9 @@
     .checks li{position:relative;padding-left:28px;font-size:15px}
     .checks li::before{content:"";position:absolute;left:2px;top:6px;width:13px;height:7px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
     .pro-card .btn{width:100%}
-    .other-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:72px;padding-top:40px;border-top:1px solid #ffffff2b}
+    .pro-card .btn+.btn{margin-top:10px}
+    .pro-sample{margin-top:12px;font-size:13px;color:var(--muted);text-align:center}
+    .other-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:72px;padding-top:40px;border-top:1px solid #ffffff2b}
     .other-offers h3{color:#fff;font-size:19px;margin-bottom:8px}
     .other-offers p{color:#c3cbe0;font-size:15px}
     .other-offers a{display:inline-block;margin-top:12px;color:#fff;font-weight:700}
@@ -545,26 +547,27 @@
       <div class="shell" id="solutions">
         <div class="offers-grid">
           <div class="offers-intro">
-            <h2 id="offres-title">Vous êtes une agence ou un investisseur&nbsp;?</h2>
-            <p>Recevez chaque semaine toutes les annonces de votre ville, prêtes à travailler dans Excel : de quoi repérer les nouveaux biens, suivre les baisses de prix et situer un bien face à l'offre publiée.</p>
+            <h2 id="offres-title">Vous êtes une agence à Marrakech, Casablanca, Rabat ou Tanger&nbsp;?</h2>
+            <p>Chaque lundi, toutes les annonces d'appartements publiées sur Sarouty dans votre ville, dans un fichier Excel prêt à filtrer. Repérez les nouveaux biens sans passer vos matinées sur les portails.</p>
           </div>
           <div class="pro-card">
             <h3>Atlas Data Pro</h3>
             <p class="pro-price">29&nbsp;€ <small>HT par mois</small></p>
-            <p class="pro-terms">Sans engagement.</p>
+            <p class="pro-terms">Sans engagement. Une ville au choix.</p>
             <ul class="checks">
-              <li>Toutes les annonces, avec titres, agences et liens d'origine</li>
-              <li>Un fichier Excel mis à jour chaque semaine</li>
-              <li>Les nouvelles annonces et les baisses de prix</li>
-              <li>La ville de votre choix</li>
+              <li>Toutes les annonces Sarouty de votre ville : titre, agence, prix, surface, prix au m², lien</li>
+              <li>Un nouveau fichier chaque lundi</li>
+              <li>Les nouvelles annonces de la semaine signalées</li>
+              <li>Les baisses de prix, dès le 4<sup>e</sup> relevé</li>
             </ul>
-            <a class="btn btn-primary" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20activit%C3%A9%20%3A%20%0A">Demander l'accès Pro</a>
+            <a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un fichier d'exemple</a>
+            <a class="btn btn-ghost" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a>
+            <p class="pro-sample">Exemple : 20 annonces de Guéliz, au format Excel.</p>
           </div>
         </div>
         <div class="other-offers">
           <div><h3>Gratuit</h3><p>L'étude, le dashboard et un aperçu de 10 annonces, sans inscription.</p><a href="dashboard.html">Ouvrir le dashboard</a></div>
           <div><h3>Sur mesure</h3><p>Une analyse adaptée à votre question : comparer des secteurs, situer un bien, préparer un projet. Sur devis, première analyse offerte.</p><a href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Demander une analyse</a></div>
-          <div><h3>Développeurs</h3><p>Les données brutes en libre-service sur Apify, à 1,50 $ pour 1 000 annonces.</p><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Voir le scraper sur Apify</a></div>
         </div>
       </div>
     </section>
