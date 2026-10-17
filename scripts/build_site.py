@@ -18,6 +18,7 @@ import os
 import re
 import statistics
 import unicodedata
+from urllib.parse import urlencode
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://atlas-data.fr"
@@ -181,6 +182,15 @@ def named(name, cfg):
         if p.startswith(a):
             return b + p[len(a):]
     return name
+
+
+def of_form(name, cfg):
+    """« de l'Hivernage », « des Princesses », « du Maarif », « de Guéliz »."""
+    p = prep(name, cfg)
+    for a, b in (("aux ", "des "), ("au ", "du "), ("à la ", "de la "), ("à l'", "de l'"), ("à ", "de ")):
+        if p.startswith(a):
+            return b + p[len(a):]
+    return "de " + p
 
 
 def cap(s):
@@ -429,7 +439,7 @@ def quartier_page(city, st, q, cfg):
             <thead><tr><th scope="col">Budget (MAD)</th><th scope="col" class="num">Surface</th><th scope="col" class="num">Annonces</th></tr></thead>
             <tbody>{budget_rows(q['rows'], q['median'], budgets)}</tbody>
           </table></div>
-          <p class="card-foot">Surface au prix médian demandé ; annonces dont le prix demandé est inférieur ou égal au budget.</p>
+          <p class="card-foot">Surface au prix médian demandé ; annonces dont le prix demandé est inférieur ou égal au budget. <a href="/dashboard.html?{e(urlencode({'ville': city['slug'], 'quartier': name}))}">Voir les annonces {e(q['prep'])} dans le dashboard</a></p>
         </div>
       </div>
     </section>
@@ -587,6 +597,179 @@ def city_page(city, st, cfg):
 """ + footer(cfg)
 
 
+# ---------- accueil (étude Marrakech) ----------
+
+NUMBER_WORDS = {2: "deux", 3: "trois", 4: "quatre", 5: "cinq", 6: "six", 7: "sept", 8: "huit", 9: "neuf", 10: "dix",
+                11: "onze", 12: "douze"}
+HOME_SCALE = 40_000
+
+
+def join_fr(items):
+    return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " et " + items[-1]
+
+
+def home_cards(city, st):
+    out = ['<ul class="qcards">']
+    top = st["ranked"][0]["median"]
+    for q in st["ranked"]:
+        d = round((q["median"] / st["median"] - 1) * 100)
+        note = "<em>Échantillon réduit</em>" if q["n"] < 15 else ""
+        out.append(f'<li><a class="qcard" href="/{city["slug"]}/{q["slug"]}/"><span class="qcard-top"><span class="qcard-rank">{q["rank"]:02d}</span>'
+                   f'<span class="delta {"up" if d >= 0 else "down"}">{pct(q["median"] / st["median"] - 1)} vs ville</span></span>'
+                   f'<span class="qcard-name">{e(q["name"])}</span><span class="qcard-price"><strong>{n(q["median"])}</strong> <span>MAD/m²</span></span>'
+                   f'<span class="qcard-bar" aria-hidden="true"><i style="width:{q["median"] / top * 100:.1f}%"></i></span>'
+                   f'<span class="qcard-foot"><span>{q["n"]} annonces</span>{note}</span></a></li>')
+    out.append(f'<li><div class="qcard cta"><span class="qcard-name">Comparez les {st["n"]} annonces, une par une</span>'
+               '<p>Filtrez par quartier, prix, surface et chambres dans le dashboard gratuit.</p>'
+               '<a class="btn" href="dashboard.html">Ouvrir le dashboard</a></div></li>')
+    out.append("</ul>")
+    return "\n".join(out)
+
+
+def home_mlist(city, st):
+    rows = []
+    grid = "".join(f'<i style="--x:{x:.2f}%"></i>' for x in (0, 25, 50, 75, 100))
+    for q in st["ranked"]:
+        dots = []
+        for i, r in enumerate(sorted(q["rows"], key=lambda r: r["ppm2"])):
+            out = r["ppm2"] > HOME_SCALE
+            x = 98.95 if out else r["ppm2"] / HOME_SCALE * 100
+            dots.append(f'<i class="dot{" outlier" if out else ""}" style="--x:{x:.2f}%;--y:{6 + (7 * i) % 22}px"></i>')
+        rows.append(f'<li class="mrow" style="--median:{q["median"] / HOME_SCALE * 100:.2f}%">\n'
+                    f'  <div class="mrow-name"><a href="/{city["slug"]}/{q["slug"]}/">{e(q["name"])}</a><span>{q["n"]} annonces</span></div>\n'
+                    f'  <div class="mrow-plot" aria-hidden="true"><div class="mrow-grid">{grid}</div><div class="mrow-bar"></div><div class="mrow-pin"></div>'
+                    f'<div class="mrow-dots">{"".join(dots)}</div></div>\n'
+                    f'  <div class="mrow-price"><strong>{n(q["median"])}</strong> MAD/m²</div>\n</li>')
+    return "\n".join(rows)
+
+
+def render_home(cfg, city, st):
+    ranked, date = st["ranked"], st["date"]
+    top, bot = ranked[0], ranked[-1]
+    for q in ranked:
+        q["prep"] = prep(q["name"], cfg)
+    m2 = lambda v, b=1_000_000: round(b / v)
+    out_by_q = [(q, sum(1 for r in q["rows"] if r["ppm2"] > HOME_SCALE)) for q in ranked]
+    outliers = [(q, k) for q, k in out_by_q if k]
+    beds = bedroom_groups(st["rows"])
+    furn = [r["ppm2"] for r in st["rows"] if r["furnished"] == "1"]
+    unfurn = [r["ppm2"] for r in st["rows"] if r["furnished"] == "0"]
+    biggest = max(ranked, key=lambda q: q["n"])
+    spread = top["median"] / bot["median"] - 1
+    short = long_date(date).rsplit(" ", 1)[0]
+
+    calc = {q["name"]: {"median": q["median"], "n": q["n"], "prep": cap(q["prep"]),
+                        "prices": sorted(r["price"] for r in q["rows"])} for q in ranked}
+    calc["Marrakech"] = {"median": st["median"], "n": st["n"], "prep": "Sur toute la ville",
+                         "prices": sorted(r["price"] for r in st["rows"])}
+    chips = "\n".join(f'<label class="chip"><input type="radio" name="quartier" value="{e(q["name"])}"{" checked" if q is top else ""}><span>{e(q["name"])}</span></label>'
+                      for q in ranked)
+    chips += '\n<label class="chip"><input type="radio" name="quartier" value="Marrakech"><span>Toute la ville</span></label>'
+
+    if 1 in beds and 3 in beds:
+        calc_note = (f"Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : "
+                     f"environ {n(round(beds[1]['median'], -3))} MAD pour un 1 chambre contre {n(round(beds[3]['median'], -3))} MAD pour un 3 chambres, sur l'ensemble de la ville.")
+    else:
+        calc_note = "Calcul au prix médian demandé au m², sur les annonces du dernier relevé."
+
+    if outliers:
+        parts = [f"{k} annonce{'s' if k > 1 else ''} {of_form(q['name'], cfg)}" for q, k in outliers]
+        total = sum(k for _, k in outliers)
+        foot = (f"Échelle de 0 à {n(HOME_SCALE)} MAD/m². En mode dispersion, chaque point est une annonce ; "
+                f"{'les ' if total > 1 else 'l’'}{join_fr(parts)} au-delà de {n(HOME_SCALE)} MAD/m² {'sont placées' if total > 1 else 'est placée'} en bord de graphique.")
+    else:
+        foot = f"Échelle de 0 à {n(HOME_SCALE)} MAD/m². En mode dispersion, chaque point est une annonce."
+
+    table_rows = "\n".join(f'<tr><th scope="row">{e(q["name"])}</th><td>{n(q["median"])} MAD/m²</td><td>{q["n"]}</td><td>{m2(q["median"])} m²</td></tr>' for q in ranked)
+    chart_table = ('<details class="chart-table"><summary>Voir les chiffres en tableau</summary><div class="table-wrap"><table>'
+                   f'<caption>Prix médians demandés et nombre d\'annonces par quartier, relevé du {long_date(date)}.</caption>'
+                   '<thead><tr><th scope="col">Quartier</th><th scope="col">Prix médian demandé</th><th scope="col">Annonces</th><th scope="col">Surface pour 1 million de MAD</th></tr></thead><tbody>\n'
+                   f'{table_rows}\n          </tbody></table></div></details>')
+
+    if furn and unfurn:
+        fp = round((statistics.median(furn) / statistics.median(unfurn) - 1) * 100)
+        if fp >= 5:
+            furn_ins = ("Le meublé se paie", f"Les appartements meublés affichent un prix médian au m² supérieur d'environ {fp}{NBSP}% aux non meublés, sur les annonces qui le précisent.")
+        elif fp <= -5:
+            furn_ins = ("Le meublé ne se paie pas", f"Les appartements meublés affichent un prix médian au m² inférieur d'environ {-fp}{NBSP}% aux non meublés, sur les annonces qui le précisent.")
+        else:
+            furn_ins = ("Meublé ou non, peu d'écart", f"Le prix médian au m² des appartements meublés est proche de celui des non meublés ({pct(fp / 100)}), sur les annonces qui le précisent.")
+    else:
+        furn_ins = ("Le meublé", "Trop peu d'annonces précisent si le bien est meublé pour comparer les prix.")
+    within = biggest["max"] - biggest["min"] > top["median"] - bot["median"]
+    insights = "\n".join([
+        f'          <div><h3>{m2(bot["median"]) - m2(top["median"])} m² d\'écart pour le même budget</h3><p>Pour 1 million de MAD, environ {m2(top["median"])} m² {e(top["prep"])} contre {m2(bot["median"])} m² {e(bot["prep"])}, au prix médian demandé.</p></div>',
+        f'          <div><h3>Le bien compte plus que l\'adresse</h3><p>{e(cap(biggest["prep"]))}, les prix demandés vont de {n(biggest["min"])} à {n(biggest["max"])} MAD/m²'
+        + (", un écart plus large que celui entre les quartiers.</p></div>" if within else ".</p></div>"),
+        f'          <div><h3>{furn_ins[0]}</h3><p>{furn_ins[1]}</p></div>'])
+
+    faq = [
+        ("Quel est le prix au m² d'un appartement à Marrakech ?",
+         f"Au {long_date(date)}, le prix médian demandé est de {n(st['median'])} MAD/m² sur les {st['n']} annonces d'appartements à vendre exploitables. "
+         f"Il varie fortement selon le quartier, de {n(bot['median'])} MAD/m² {bot['prep']} à {n(top['median'])} MAD/m² {top['prep']}, parmi les quartiers comptant au moins {cfg['min_listings_per_quartier']} annonces."),
+        ("Quel est le quartier le plus cher de Marrakech ?",
+         f"Parmi les quartiers comptant au moins {cfg['min_listings_per_quartier']} annonces, {named(top['name'], cfg)} affiche le prix médian demandé le plus élevé, à {n(top['median'])} MAD/m²"
+         + (f", devant {join_fr([f'{named(q['name'], cfg)} ({n(q['median'])} MAD/m²)' for q in ranked[1:3]])}." if len(ranked) > 1 else ".")),
+        ("Que peut-on acheter avec 1 million de dirhams à Marrakech ?",
+         f"Au prix médian demandé, environ {join_fr([f'{m2(q['median'])} m² {q['prep']}' for q in ranked])}. Les petites surfaces étant plus chères au m², peu d'annonces affichent réellement ce prix dans les quartiers les plus chers."),
+        ("Ces prix sont-ils des prix de vente réels ?",
+         "Non. Ce sont les prix demandés dans les annonces, avant négociation. Ils décrivent l'offre publiée et ses écarts entre quartiers, pas le prix final signé chez le notaire."),
+        ("D'où viennent les données ?",
+         "Des annonces publiques d'appartements à vendre publiées sur Sarouty, relevées chaque lundi. Aucune donnée personnelle n'est collectée : ni nom, ni téléphone, ni email d'agent."),
+        ("Quelle différence entre l'accès gratuit et la version Pro ?",
+         "L'étude et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro donne accès à toutes les annonces avec leur titre, leur agence et leur lien d'origine, dans un fichier Excel mis à jour chaque semaine."),
+    ]
+    faq_html = "\n".join(f"          <details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
+
+    names = ", ".join(q["name"] for q in ranked)
+    tokens = {
+        "META_DESC": e(f"Prix au m² des appartements à vendre à Marrakech, quartier par quartier : {names}. Calculez la surface accessible avec votre budget."),
+        "OG_DESC": e(f"Pour 1 million de MAD : environ {m2(top['median'])} m² {top['prep']}, {m2(bot['median'])} m² {bot['prep']}. Les prix demandés des appartements à Marrakech, quartier par quartier."),
+        "MONTH_YEAR": f"{MONTHS[int(date[5:7]) - 1]} {date[:4]}",
+        "LD_DESC": e(f"Prix demandés de {st['n']} annonces d'appartements à vendre à Marrakech, relevées sur Sarouty le {long_date(date)} : prix, surface, prix au m², chambres et quartier. "
+                     f"Médianes par quartier pour les secteurs comptant au moins {cfg['min_listings_per_quartier']} annonces."),
+        "DATE_ISO": date,
+        "DATE_LONG": long_date(date),
+        "DATE_SHORT": short,
+        "N": str(st["n"]),
+        "HERO_SOURCE": f"Relevé du {long_date(date)} sur Sarouty : {st['raw']} annonces collectées, {st['n']} exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi.",
+        "CHIPS": chips,
+        "RESULT_INIT": (f'            <p class="result-lead" id="result-lead">{e(cap(top["prep"]))}, ce budget correspond à environ</p>\n'
+                        f'            <p class="result-m2" id="result-m2">{m2(top["median"])}<small>&nbsp;m²</small></p>\n'
+                        f'            <p class="result-basis" id="result-basis">au prix médian demandé de {n(top["median"])} MAD/m², calculé sur {top["n"]} annonces.</p>'),
+        "CALC_NOTE": calc_note,
+        "KEYFIGS": (f'        <li><strong>{n(st["median"])}</strong><span>MAD/m², médiane de Marrakech</span></li>\n'
+                    f'        <li><strong>{st["n"]}</strong><span>annonces d\'appartements analysées</span></li>\n'
+                    f'        <li><strong>+{round(spread * 100)}&nbsp;%</strong><span>d\'écart entre {e(named(bot["name"], cfg))} et {e(named(top["name"], cfg))}</span></li>\n'
+                    f'        <li><strong>{len(ranked)}</strong><span>quartiers d\'au moins {cfg["min_listings_per_quartier"]} annonces</span></li>'),
+        "ANALYSE_P": (f"Prix médian demandé au m² dans les {NUMBER_WORDS.get(len(ranked), len(ranked))} quartiers qui comptent au moins {cfg['min_listings_per_quartier']} annonces, "
+                      f"soit {sum(q['n'] for q in ranked)} annonces sur les {st['n']} du relevé. La médiane de la ville est de {n(st['median'])} MAD/m²."),
+        "QCARDS": home_cards(city, st),
+        "MLIST": home_mlist(city, st),
+        "CHART_FOOT": foot,
+        "CHART_TABLE": chart_table,
+        "INSIGHTS": insights,
+        "MOCK_KPIS": (f'              <div><span>Annonces</span><strong>{st["n"]}</strong></div>\n'
+                      f'              <div><span>Prix médian au m²</span><strong>{n(st["median"])}</strong></div>\n'
+                      f'              <div><span>Prix médian</span><strong>{millions(st["median_price"])}</strong></div>\n'
+                      f'              <div><span>Surface médiane</span><strong>{n(st["median_surface"])} m²</strong></div>'),
+        "FINEPRINT": (f"Relevé du {long_date(date)} sur Sarouty, mis à jour chaque lundi : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons, "
+                      f"des loyers publiés comme des ventes, des surfaces absentes ou hors norme et des prix au m² aberrants. Les prix demandés ne sont pas des prix de vente. "
+                      f"Le relevé ne couvre pas l'ensemble du marché."),
+        "FAQ": faq_html,
+        "CALC_DATA": json.dumps(calc, ensure_ascii=False, separators=(",", ":")),
+        "CALC_QUARTIERS": json.dumps([q["name"] for q in ranked], ensure_ascii=False),
+        "TOP_Q": top["name"].replace("'", "\\'"),
+    }
+    page = read_template("home.html")
+    for k, v in tokens.items():
+        page = page.replace("{{" + k + "}}", v)
+    left = re.findall(r"\{\{[A-Z_]+\}\}", page)
+    assert not left, left
+    with open(os.path.join(ROOT, "index.html"), "w", encoding="utf8") as f:
+        f.write(page)
+
+
 # ---------- accueil, pied de page, sitemap ----------
 
 def cities_section(cfg, all_stats):
@@ -700,6 +883,8 @@ def main():
             json.dump(public, f, ensure_ascii=False, indent=1)
         print(f"{city['name']}: {st['n']}/{st['raw']} annonces exploitables, médiane {st['median']} MAD/m², "
               f"{len(st['ranked'])} quartiers : {', '.join(q['name'] + ' (' + str(q['n']) + ')' for q in st['ranked'])}")
+    if "marrakech" in all_stats:
+        render_home(cfg, next(c for c in cfg["cities"] if c["slug"] == "marrakech"), all_stats["marrakech"])
     update_home(cfg, all_stats)
     update_dashboard(cfg)
     update_footers(cfg)

@@ -6,12 +6,26 @@
       "slug": "marrakech",
       "name": "Marrakech",
       "location": "Marrakech",
-      "generate": false,
-      "published": {"median": 18581, "n": 316, "quartiers": 7, "date": "2026-10-08"}
+      "generate": true
     },
-    {"slug": "casablanca", "name": "Casablanca", "location": "Casablanca", "generate": true},
-    {"slug": "rabat", "name": "Rabat", "location": "Rabat", "generate": true},
-    {"slug": "tanger", "name": "Tanger", "location": "Tanger", "generate": true}
+    {
+      "slug": "casablanca",
+      "name": "Casablanca",
+      "location": "Casablanca",
+      "generate": true
+    },
+    {
+      "slug": "rabat",
+      "name": "Rabat",
+      "location": "Rabat",
+      "generate": true
+    },
+    {
+      "slug": "tanger",
+      "name": "Tanger",
+      "location": "Tanger",
+      "generate": true
+    }
   ],
   "district_names": {
     "Centre ville": "Centre-ville",
@@ -33,7 +47,14 @@
     "Palmier": "au Palmier",
     "Maarif": "au Maarif",
     "Maarif Extension": "au Maarif Extension",
-    "Route de Rabat": "route de Rabat"
+    "Route de Rabat": "route de Rabat",
+    "Hivernage": "à l'Hivernage",
+    "Palmeraie": "à la Palmeraie",
+    "Route de Casablanca": "route de Casablanca"
   },
-  "excluded_districts": ["indéfini", "Autre", ""]
+  "excluded_districts": [
+    "indéfini",
+    "Autre",
+    ""
+  ]
 }
