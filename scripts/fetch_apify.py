@@ -46,7 +46,7 @@ def main():
         items = run_actor(cfg["actor"], token, city["location"])
         path = os.path.join(ROOT, "data", "raw", f"{city['slug']}-{args.date}.csv")
         with open(path, "w", newline="", encoding="utf8") as f:
-            w = csv.writer(f)
+            w = csv.writer(f, lineterminator="\n")
             w.writerow(FIELDS)
             for it in items:
                 w.writerow([cell(it.get("source_listing_id")), cell(it.get("district")), cell(it.get("price_mad")),
