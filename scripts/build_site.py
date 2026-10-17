@@ -3,8 +3,8 @@
 Lit data/cities.json et data/raw/<ville>-<date>.csv, écrit :
   - <ville>/index.html et <ville>/<quartier>/index.html (villes avec "generate": true)
   - data/stats/<ville>.json
-  - la section « Prix dans les autres villes » de l'accueil, le menu « Prix par ville »
-    du pied de page de toutes les pages, et sitemap.xml.
+  - la section « Les prix par ville » de l'accueil, les données du dashboard (toutes les villes),
+    le menu « Prix par ville » du pied de page de toutes les pages, et sitemap.xml.
 Les pages existantes ne sont jamais supprimées.
 
 Usage : python scripts/build_site.py
@@ -58,28 +58,33 @@ def to_int(v):
         return None
 
 
-def clean(path, cfg):
+def read_listings(path, cfg):
+    """Toutes les annonces du relevé ; kept=True pour celles qui entrent dans les statistiques."""
     names = cfg["district_names"]
-    raw, rows, seen = 0, [], set()
+    rows, seen = [], set()
     with open(path, encoding="utf8") as f:
         for r in csv.DictReader(f):
-            raw += 1
             district = " ".join((r.get("district") or "").split())
             district = names.get(district, district)
             price, surface = to_int(r.get("price_mad")), to_int(r.get("surface_m2"))
-            if not price or not surface or price < MIN_PRICE or not MIN_SURFACE <= surface <= MAX_SURFACE:
-                continue
-            ppm2 = price / surface
-            if not PPM2_RANGE[0] <= ppm2 <= PPM2_RANGE[1]:
-                continue
+            ppm2 = price / surface if price and surface else None
             bedrooms = to_int(r.get("bedrooms"))
+            kept = bool(ppm2 and price >= MIN_PRICE and MIN_SURFACE <= surface <= MAX_SURFACE
+                        and PPM2_RANGE[0] <= ppm2 <= PPM2_RANGE[1])
             key = (district.lower(), price, surface, bedrooms)
-            if key in seen:
-                continue
+            if kept and key in seen:
+                kept = False
             seen.add(key)
-            rows.append({"district": district, "price": price, "surface": surface, "ppm2": ppm2,
-                         "bedrooms": bedrooms, "furnished": r.get("furnished") or ""})
-    return raw, rows
+            rows.append({"id": r.get("id") or "", "district": district, "price": price, "surface": surface,
+                         "ppm2": ppm2, "bedrooms": bedrooms, "furnished": r.get("furnished") or "",
+                         "bathrooms": to_int(r.get("bathrooms")), "published": (r.get("publication_date") or "")[:10],
+                         "kept": kept})
+    return rows
+
+
+def clean(path, cfg):
+    rows = read_listings(path, cfg)
+    return len(rows), [r for r in rows if r["kept"]]
 
 
 def summarize(rows):
@@ -646,6 +651,27 @@ def update_sitemap(generated):
                                            + "\n".join(lines) + "\n</urlset>\n")
 
 
+def update_dashboard(cfg):
+    cities, rows = [], []
+    for c in cfg["cities"]:
+        path, date = latest_raw(c["slug"])
+        if not path:
+            continue
+        cities.append({"slug": c["slug"], "name": c["name"], "date": date, "date_label": long_date(date)})
+        for r in read_listings(path, cfg):
+            rows.append({"city": c["slug"], "source_listing_id": r["id"], "district": r["district"] or "indéfini",
+                         "price_mad": r["price"], "surface_m2": r["surface"], "bedrooms": r["bedrooms"],
+                         "bathrooms": r["bathrooms"], "furnished": {"1": True, "0": False}.get(r["furnished"]),
+                         "publication_date": r["published"] or None, "suspect_category": not r["kept"],
+                         "price_per_m2": round(r["ppm2"], 2) if r["ppm2"] else None})
+    data = json.dumps({"cities": cities, "rows": rows}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    path = os.path.join(ROOT, "dashboard.html")
+    s = open(path, encoding="utf8").read()
+    s = re.sub(r'(<script type="application/json" id="market-dataset">).*?(</script>)',
+               lambda m: m.group(1) + data + m.group(2), s, count=1, flags=re.S)
+    open(path, "w", encoding="utf8").write(s)
+
+
 def write(path, content):
     full = os.path.join(ROOT, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -675,6 +701,7 @@ def main():
         print(f"{city['name']}: {st['n']}/{st['raw']} annonces exploitables, médiane {st['median']} MAD/m², "
               f"{len(st['ranked'])} quartiers : {', '.join(q['name'] + ' (' + str(q['n']) + ')' for q in st['ranked'])}")
     update_home(cfg, all_stats)
+    update_dashboard(cfg)
     update_footers(cfg)
     update_sitemap(generated)
 
