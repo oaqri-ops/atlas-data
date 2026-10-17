@@ -481,8 +481,8 @@ def quartier_page(city, st, q, cfg):
 
     <section class="pro-band" aria-labelledby="pro-title">
       <div class="shell">
-        <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>Recevez chaque semaine toutes les annonces du quartier dans un fichier Excel, avec titres, agences et liens d'origine, nouvelles annonces et baisses de prix. 29 € HT par mois, sans engagement.</p></div>
-        <a class="btn btn-primary" href="{mail}">Demander l'accès Pro</a>
+        <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>Chaque lundi, toutes les annonces Sarouty de {e(cname)} dans un fichier Excel : titre, agence, prix, surface, lien, et les nouvelles annonces de la semaine signalées. 29 € HT par mois, sans engagement.</p></div>
+        <div class="pro-actions"><a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple</a><a class="btn btn-ghost" href="{mail}">Demander l'accès Pro</a></div>
       </div>
     </section>
 
@@ -717,7 +717,7 @@ def render_home(cfg, city, st):
         ("D'où viennent les données ?",
          "Des annonces publiques d'appartements à vendre publiées sur Sarouty, relevées chaque lundi. Aucune donnée personnelle n'est collectée : ni nom, ni téléphone, ni email d'agent."),
         ("Quelle différence entre l'accès gratuit et la version Pro ?",
-         "L'étude et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro donne accès à toutes les annonces avec leur titre, leur agence et leur lien d'origine, dans un fichier Excel mis à jour chaque semaine."),
+         "L'étude et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro, à 29 € HT par mois, envoie chaque lundi toutes les annonces Sarouty de la ville choisie, avec leur titre, leur agence et leur lien d'origine, dans un fichier Excel. Un fichier d'exemple est téléchargeable dans la section Offres."),
     ]
     faq_html = "\n".join(f"          <details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
 
