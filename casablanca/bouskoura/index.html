@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/forms.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -98,6 +99,37 @@
           <ul class="rank"><li class=""><a href="/casablanca/les-princesses/"><span>Les Princesses</span><span class="bar"><i style="width:100.0%"></i></span><span class="v">29 259</span></a></li><li class=""><a href="/casablanca/ain-diab/"><span>Ain Diab</span><span class="bar"><i style="width:93.3%"></i></span><span class="v">27 311</span></a></li><li class=""><a href="/casablanca/oasis/"><span>Oasis</span><span class="bar"><i style="width:71.6%"></i></span><span class="v">20 941</span></a></li><li class=""><a href="/casablanca/ferme-bretone/"><span>Ferme Bretone</span><span class="bar"><i style="width:71.2%"></i></span><span class="v">20 833</span></a></li><li class=""><a href="/casablanca/anfa/"><span>Anfa</span><span class="bar"><i style="width:61.4%"></i></span><span class="v">17 969</span></a></li><li class=""><a href="/casablanca/racine/"><span>Racine</span><span class="bar"><i style="width:60.0%"></i></span><span class="v">17 550</span></a></li><li class=""><a href="/casablanca/sidi-belyout/"><span>Sidi Belyout</span><span class="bar"><i style="width:59.9%"></i></span><span class="v">17 518</span></a></li><li class=""><a href="/casablanca/dar-bouazza/"><span>Dar Bouazza</span><span class="bar"><i style="width:53.7%"></i></span><span class="v">15 714</span></a></li><li class=""><a href="/casablanca/zenata/"><span>Zenata</span><span class="bar"><i style="width:52.3%"></i></span><span class="v">15 310</span></a></li><li class=""><a href="/casablanca/gauthier/"><span>Gauthier</span><span class="bar"><i style="width:52.0%"></i></span><span class="v">15 207</span></a></li><li class="me"><a href="/casablanca/bouskoura/" aria-current="page"><span>Bouskoura</span><span class="bar"><i style="width:51.4%"></i></span><span class="v">15 030</span></a></li><li class=""><a href="/casablanca/maarif/"><span>Maarif</span><span class="bar"><i style="width:51.3%"></i></span><span class="v">15 000</span></a></li><li class=""><a href="/casablanca/val-fleuri/"><span>Val Fleuri</span><span class="bar"><i style="width:51.2%"></i></span><span class="v">14 966</span></a></li><li class=""><a href="/casablanca/californie/"><span>Californie</span><span class="bar"><i style="width:49.6%"></i></span><span class="v">14 500</span></a></li><li class=""><a href="/casablanca/maarif-extension/"><span>Maarif Extension</span><span class="bar"><i style="width:47.9%"></i></span><span class="v">14 016</span></a></li><li class=""><a href="/casablanca/bourgogne/"><span>Bourgogne</span><span class="bar"><i style="width:47.4%"></i></span><span class="v">13 881</span></a></li><li class=""><a href="/casablanca/hay-hassani/"><span>Hay Hassani</span><span class="bar"><i style="width:46.3%"></i></span><span class="v">13 542</span></a></li><li class=""><a href="/casablanca/quartier-des-hopitaux/"><span>Quartier des Hôpitaux</span><span class="bar"><i style="width:45.1%"></i></span><span class="v">13 184</span></a></li></ul>
           <p class="card-foot">Prix médian demandé en MAD/m², quartiers d'au moins 8 annonces.</p>
         </div>
+      </div>
+    </section>
+
+
+    <section class="demand" aria-labelledby="demand-title">
+      <div class="shell">
+        <div class="demand-head"><h2 id="demand-title">Vous êtes propriétaire à Bouskoura&nbsp;?</h2><p>Les 25 annonces du quartier permettent de situer votre bien. Demandez une estimation, ou suivez l'évolution des prix chaque mois.</p></div>
+        <div class="demand-grid">
+          <form class="demand-card" action="https://formsubmit.co/othman@atlas-data.fr" method="POST">
+            <h3>Estimer mon appartement</h3>
+            <p>Recevez sous 48 h ouvrées une estimation gratuite, calculée à partir des annonces comparables du quartier.</p>
+            <input type="hidden" name="_subject" value="Estimation - Bouskoura, Casablanca"><input type="hidden" name="_next" value="https://atlas-data.fr/merci/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="demande" value="estimation"><input type="hidden" name="ville" value="Casablanca"><input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="quartier" value="Bouskoura">
+            <div class="row">
+              <label>Surface (m²)<input type="number" name="surface_m2" min="15" max="1000" required inputmode="numeric"></label>
+              <label>Chambres<select name="chambres" required><option value="">Choisir</option><option>1</option><option>2</option><option>3</option><option>4 ou plus</option></select></label>
+            </div>
+            <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+            <label class="consent"><input type="checkbox" name="mise_en_relation" value="oui">J'envisage de vendre et j'accepte d'être mis en relation avec une agence du quartier.</label>
+            <button class="btn btn-primary" type="submit">Recevoir mon estimation</button>
+          </form>
+          <form class="demand-card" action="https://formsubmit.co/othman@atlas-data.fr" method="POST">
+            <h3>Suivre les prix chaque mois</h3>
+            <p>Un e-mail par mois avec l'évolution du prix au m², les nouvelles annonces et les baisses de prix du quartier. Gratuit, désinscription en un clic.</p>
+            <input type="hidden" name="_subject" value="Alerte prix - Bouskoura, Casablanca"><input type="hidden" name="_next" value="https://atlas-data.fr/merci/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="demande" value="alerte"><input type="hidden" name="ville" value="Casablanca"><input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="quartier" value="Bouskoura">
+            <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+            <button class="btn btn-ghost" type="submit">M'abonner</button>
+          </form>
+        </div>
+        <p class="demand-note">Vos informations servent uniquement à vous répondre. Elles ne sont transmises à une agence que si vous cochez la case prévue. Formulaires acheminés par FormSubmit.</p>
       </div>
     </section>
 

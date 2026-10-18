@@ -235,6 +235,7 @@ def head(title, description, path, ld, og_type="article"):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/forms.css">
 </head>
 <body>
 """
@@ -329,6 +330,79 @@ def set_city_nav(page, cfg):
     items = "".join(f'<li><a href="/{c["slug"]}/">{e(c["name"])}</a></li>' for c in cfg["cities"])
     return re.sub(r'(<nav aria-labelledby="adf-q"><h2 id="adf-q">)[^<]*(</h2><ul>).*?(</ul></nav>)',
                   lambda m: m.group(1) + "Prix par ville" + m.group(2) + items + m.group(3), page, count=1, flags=re.S)
+
+
+# ---------- formulaires de demande ----------
+
+FORM_ACTION = "https://formsubmit.co/othman@atlas-data.fr"
+
+
+def demand_section(city, title, intro, quartier=None, quartiers=()):
+    """Deux formulaires : estimation (vendeurs) et suivi mensuel des prix. Ils testent la demande
+    avant de construire les services ; chaque envoi arrive par e-mail via FormSubmit."""
+    def hidden(kind, subject):
+        return (f'<input type="hidden" name="_subject" value="{e(subject)}">'
+                f'<input type="hidden" name="_next" value="{SITE}/merci/">'
+                '<input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">'
+                f'<input type="hidden" name="demande" value="{kind}"><input type="hidden" name="ville" value="{e(city["name"])}">'
+                '<input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">')
+    if quartier:
+        where = f'<input type="hidden" name="quartier" value="{e(quartier)}">'
+        where_alert = where
+        tag = f"{quartier}, {city['name']}"
+    else:
+        opts = "".join(f"<option>{e(q)}</option>" for q in quartiers) + "<option>Autre quartier</option>"
+        where = f'<label>Quartier<select name="quartier" required><option value="">Choisir</option>{opts}</select></label>'
+        where_alert = f'<label>Quartier<select name="quartier" required><option value="">Choisir</option>{opts}</select></label>'
+        tag = city["name"]
+    return f"""
+    <section class="demand" aria-labelledby="demand-title">
+      <div class="shell">
+        <div class="demand-head"><h2 id="demand-title">{title}</h2><p>{intro}</p></div>
+        <div class="demand-grid">
+          <form class="demand-card" action="{FORM_ACTION}" method="POST">
+            <h3>Estimer mon appartement</h3>
+            <p>Recevez sous 48 h ouvrées une estimation gratuite, calculée à partir des annonces comparables du quartier.</p>
+            {hidden("estimation", "Estimation - " + tag)}
+            {where}
+            <div class="row">
+              <label>Surface (m²)<input type="number" name="surface_m2" min="15" max="1000" required inputmode="numeric"></label>
+              <label>Chambres<select name="chambres" required><option value="">Choisir</option><option>1</option><option>2</option><option>3</option><option>4 ou plus</option></select></label>
+            </div>
+            <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+            <label class="consent"><input type="checkbox" name="mise_en_relation" value="oui">J'envisage de vendre et j'accepte d'être mis en relation avec une agence du quartier.</label>
+            <button class="btn btn-primary" type="submit">Recevoir mon estimation</button>
+          </form>
+          <form class="demand-card" action="{FORM_ACTION}" method="POST">
+            <h3>Suivre les prix chaque mois</h3>
+            <p>Un e-mail par mois avec l'évolution du prix au m², les nouvelles annonces et les baisses de prix du quartier. Gratuit, désinscription en un clic.</p>
+            {hidden("alerte", "Alerte prix - " + tag)}
+            {where_alert}
+            <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+            <button class="btn btn-ghost" type="submit">M'abonner</button>
+          </form>
+        </div>
+        <p class="demand-note">Vos informations servent uniquement à vous répondre. Elles ne sont transmises à une agence que si vous cochez la case prévue. Formulaires acheminés par FormSubmit.</p>
+      </div>
+    </section>
+"""
+
+
+def thanks_page(cfg):
+    ld = {"@context": "https://schema.org", "@type": "WebPage", "name": "Merci"}
+    page = head("Demande envoyée - Atlas Data", "Votre demande a bien été envoyée.", "/merci/", ld, "website")
+    page = page.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n  <meta name="viewport"', 1)
+    return page + read_template("header.html") + """  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="shell">
+        <h1 id="page-title">Merci, c'est bien reçu</h1>
+        <p class="hero-lede">Pour une estimation, nous vous répondons par e-mail sous 48 h ouvrées. Pour le suivi des prix, le premier e-mail arrive au début du mois prochain.</p>
+        <p style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-primary" href="/">Retour à l'accueil</a><a class="btn btn-ghost" href="/dashboard.html">Explorer les annonces</a></p>
+      </div>
+    </section>
+  </main>
+
+""" + footer(cfg)
 
 
 # ---------- pages ----------
@@ -472,6 +546,7 @@ def quartier_page(city, st, q, cfg):
       </div>
     </section>
 
+{demand_section(city, f"Vous êtes propriétaire {e(q['prep'])}&nbsp;?", f"Les {q['n']} annonces du quartier permettent de situer votre bien. Demandez une estimation, ou suivez l'évolution des prix chaque mois.", quartier=name)}
     <section class="block" id="questions" aria-labelledby="faq-title">
       <div class="shell faq-grid">
         <h2 id="faq-title">{e(name)} : vos questions</h2>
@@ -586,7 +661,7 @@ def city_page(city, st, cfg):
         </table></div></div>
       </div>
     </section>
-{small_block}
+{small_block}{demand_section(city, f"Vous êtes propriétaire à {e(cname)}&nbsp;?", "Demandez une estimation gratuite de votre appartement, ou suivez l'évolution des prix de votre quartier chaque mois.", quartiers=[q["name"] for q in ranked] + [q["name"] for q in st["small"] if q["n"] >= 3])}
     <section class="block" aria-label="Méthode">
       <div class="shell">
         <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur Sarouty : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
@@ -760,6 +835,9 @@ def render_home(cfg, city, st):
         "CALC_DATA": json.dumps(calc, ensure_ascii=False, separators=(",", ":")),
         "CALC_QUARTIERS": json.dumps([q["name"] for q in ranked], ensure_ascii=False),
         "TOP_Q": top["name"].replace("'", "\\'"),
+        "DEMAND": demand_section(city, "Vous êtes propriétaire à Marrakech&nbsp;?",
+                                 "Demandez une estimation gratuite de votre appartement, ou suivez l'évolution des prix de votre quartier chaque mois.",
+                                 quartiers=[q["name"] for q in ranked] + [q["name"] for q in st["small"] if q["n"] >= 3]),
     }
     page = read_template("home.html")
     for k, v in tokens.items():
@@ -825,7 +903,8 @@ def update_sitemap(generated):
     urls = {SITE + "/": None, SITE + "/dashboard.html": None}
     for p in glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True):
         rel = os.path.relpath(os.path.dirname(p), ROOT).replace(os.sep, "/")
-        urls[SITE + "/" + ("" if rel == "." else rel + "/")] = None
+        if rel != "merci":
+            urls[SITE + "/" + ("" if rel == "." else rel + "/")] = None
     urls.update({SITE + k: v for k, v in generated.items()})
     order = sorted(urls, key=lambda u: (u.count("/"), u))
     lines = [f"  <url><loc>{u}</loc><lastmod>{urls[u] or old.get(u, '2026-10-17')}</lastmod></url>" for u in order]
@@ -886,6 +965,7 @@ def main():
     if "marrakech" in all_stats:
         render_home(cfg, next(c for c in cfg["cities"] if c["slug"] == "marrakech"), all_stats["marrakech"])
     update_home(cfg, all_stats)
+    write("/merci/", thanks_page(cfg))
     update_dashboard(cfg)
     update_footers(cfg)
     update_sitemap(generated)

@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/forms.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -79,6 +80,36 @@
       <div class="shell block-grid">
         <div class="block-copy"><h2 id="autres-title">Les autres quartiers</h2><p>Ces quartiers comptent entre 3 et 7 annonces dans ce relevé : trop peu pour publier une médiane fiable. Ils entreront dans le classement dès qu'un relevé hebdomadaire en comptera assez.</p></div>
         <div class="card"><ul class="small-list"><li>Moujahidine <span>4 annonces</span></li><li>Iberia <span>3 annonces</span></li><li>Nejma <span>3 annonces</span></li><li>Tarifa <span>3 annonces</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="demand" aria-labelledby="demand-title">
+      <div class="shell">
+        <div class="demand-head"><h2 id="demand-title">Vous êtes propriétaire à Tanger&nbsp;?</h2><p>Demandez une estimation gratuite de votre appartement, ou suivez l'évolution des prix de votre quartier chaque mois.</p></div>
+        <div class="demand-grid">
+          <form class="demand-card" action="https://formsubmit.co/othman@atlas-data.fr" method="POST">
+            <h3>Estimer mon appartement</h3>
+            <p>Recevez sous 48 h ouvrées une estimation gratuite, calculée à partir des annonces comparables du quartier.</p>
+            <input type="hidden" name="_subject" value="Estimation - Tanger"><input type="hidden" name="_next" value="https://atlas-data.fr/merci/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="demande" value="estimation"><input type="hidden" name="ville" value="Tanger"><input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label>Quartier<select name="quartier" required><option value="">Choisir</option><option>Malabata</option><option>Centre-ville</option><option>Mesnana</option><option>Route de Rabat</option><option>Moujahidine</option><option>Iberia</option><option>Nejma</option><option>Tarifa</option><option>Autre quartier</option></select></label>
+            <div class="row">
+              <label>Surface (m²)<input type="number" name="surface_m2" min="15" max="1000" required inputmode="numeric"></label>
+              <label>Chambres<select name="chambres" required><option value="">Choisir</option><option>1</option><option>2</option><option>3</option><option>4 ou plus</option></select></label>
+            </div>
+            <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+            <label class="consent"><input type="checkbox" name="mise_en_relation" value="oui">J'envisage de vendre et j'accepte d'être mis en relation avec une agence du quartier.</label>
+            <button class="btn btn-primary" type="submit">Recevoir mon estimation</button>
+          </form>
+          <form class="demand-card" action="https://formsubmit.co/othman@atlas-data.fr" method="POST">
+            <h3>Suivre les prix chaque mois</h3>
+            <p>Un e-mail par mois avec l'évolution du prix au m², les nouvelles annonces et les baisses de prix du quartier. Gratuit, désinscription en un clic.</p>
+            <input type="hidden" name="_subject" value="Alerte prix - Tanger"><input type="hidden" name="_next" value="https://atlas-data.fr/merci/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="demande" value="alerte"><input type="hidden" name="ville" value="Tanger"><input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label>Quartier<select name="quartier" required><option value="">Choisir</option><option>Malabata</option><option>Centre-ville</option><option>Mesnana</option><option>Route de Rabat</option><option>Moujahidine</option><option>Iberia</option><option>Nejma</option><option>Tarifa</option><option>Autre quartier</option></select></label>
+            <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+            <button class="btn btn-ghost" type="submit">M'abonner</button>
+          </form>
+        </div>
+        <p class="demand-note">Vos informations servent uniquement à vous répondre. Elles ne sont transmises à une agence que si vous cochez la case prévue. Formulaires acheminés par FormSubmit.</p>
       </div>
     </section>
 

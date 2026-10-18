@@ -1,0 +1,19 @@
+/* Formulaires « Estimer mon appartement » et « Suivre les prix » (envoyés par FormSubmit) */
+.demand{padding:72px 0;border-top:1px solid var(--line);background:var(--soft)}
+.demand-head{max-width:640px;margin-bottom:28px}
+.demand-head h2{font-size:clamp(26px,3vw,36px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.demand-head p{margin-top:12px;color:var(--muted);font-size:17px}
+.demand-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.demand-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.demand-card h3{font-size:22px;letter-spacing:-.02em}
+.demand-card>p{color:var(--muted);font-size:15px}
+.demand-card .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.demand-card label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.demand-card input[type=email],.demand-card input[type=number],.demand-card select{min-height:44px;padding:0 12px;border:1px solid #c9ceda;border-radius:6px;background:#fff;font:inherit;font-weight:400;color:var(--ink)}
+.demand-card input:focus,.demand-card select:focus{outline:3px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+.demand-card .consent{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;color:var(--muted)}
+.demand-card .consent input{margin-top:3px;width:18px;height:18px;flex:none}
+.demand-card .btn{align-self:flex-start;margin-top:4px}
+.demand-card .honey{position:absolute;left:-9999px}
+.demand-note{margin-top:18px;font-size:13px;color:var(--muted);max-width:60em}
+@media (max-width:820px){.demand-grid,.demand-card .row{grid-template-columns:minmax(0,1fr)}}

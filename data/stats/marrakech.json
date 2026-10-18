@@ -84,6 +84,17 @@
    "name": "Semlalia",
    "slug": "semlalia",
    "rank": 7
+  },
+  {
+   "n": 10,
+   "median": 13000,
+   "median_price": 995000,
+   "median_surface": 74,
+   "min": 9921,
+   "max": 15278,
+   "name": "Izdihar",
+   "slug": "izdihar",
+   "rank": 8
   }
  ],
  "autres_quartiers": [
@@ -112,10 +123,6 @@
    "n": 6
   },
   {
-   "name": "Hay Izdihar",
-   "n": 5
-  },
-  {
    "name": "Hay Charaf",
    "n": 4
   },
@@ -132,15 +139,11 @@
    "n": 4
   },
   {
-   "name": "AIN MEZOUAR",
-   "n": 3
-  },
-  {
-   "name": "Al izdihar",
-   "n": 3
-  },
-  {
    "name": "Argan Golf Ressort",
+   "n": 3
+  },
+  {
+   "name": "Aïn Mezouar",
    "n": 3
   },
   {
@@ -161,10 +164,6 @@
   },
   {
    "name": "Av Abdelkrim El Khattabi",
-   "n": 2
-  },
-  {
-   "name": "Izdihar",
    "n": 2
   },
   {
