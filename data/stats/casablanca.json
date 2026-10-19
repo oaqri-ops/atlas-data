@@ -1,12 +1,12 @@
 {
- "n": 536,
- "median": 16272,
+ "n": 539,
+ "median": 16279,
  "median_price": 2250000,
  "median_surface": 137,
  "min": 6223,
  "max": 51327,
- "raw": 557,
- "date": "2026-10-17",
+ "raw": 562,
+ "date": "2026-10-19",
  "quartiers": [
   {
    "n": 27,
@@ -53,10 +53,10 @@
    "rank": 4
   },
   {
-   "n": 58,
-   "median": 17969,
-   "median_price": 3175000,
-   "median_surface": 176,
+   "n": 59,
+   "median": 17800,
+   "median_price": 3150000,
+   "median_surface": 175,
    "min": 12800,
    "max": 36082,
    "name": "Anfa",
@@ -64,10 +64,10 @@
    "rank": 5
   },
   {
-   "n": 36,
-   "median": 17550,
-   "median_price": 2965000,
-   "median_surface": 174,
+   "n": 37,
+   "median": 17687,
+   "median_price": 2950000,
+   "median_surface": 173,
    "min": 8130,
    "max": 26170,
    "name": "Racine",
@@ -97,9 +97,9 @@
    "rank": 8
   },
   {
-   "n": 8,
+   "n": 10,
    "median": 15310,
-   "median_price": 1130500,
+   "median_price": 1239938,
    "median_surface": 89,
    "min": 11444,
    "max": 20000,
@@ -108,10 +108,10 @@
    "rank": 9
   },
   {
-   "n": 19,
-   "median": 15207,
-   "median_price": 3300000,
-   "median_surface": 205,
+   "n": 18,
+   "median": 15034,
+   "median_price": 3250000,
+   "median_surface": 196,
    "min": 9333,
    "max": 23000,
    "name": "Gauthier",

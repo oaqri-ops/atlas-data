@@ -1,39 +1,39 @@
 {
- "n": 320,
- "median": 18655,
- "median_price": 1700000,
- "median_surface": 95,
+ "n": 316,
+ "median": 18509,
+ "median_price": 1691500,
+ "median_surface": 96,
  "min": 5294,
- "max": 74830,
- "raw": 322,
- "date": "2026-10-17",
+ "max": 60241,
+ "raw": 319,
+ "date": "2026-10-19",
  "quartiers": [
   {
-   "n": 22,
-   "median": 24880,
-   "median_price": 2549000,
-   "median_surface": 102,
+   "n": 21,
+   "median": 24759,
+   "median_price": 2498000,
+   "median_surface": 97,
    "min": 15000,
-   "max": 74830,
+   "max": 60241,
    "name": "Hivernage",
    "slug": "hivernage",
    "rank": 1
   },
   {
-   "n": 14,
-   "median": 23487,
-   "median_price": 2443750,
+   "n": 13,
+   "median": 23239,
+   "median_price": 2412500,
    "median_surface": 104,
    "min": 19231,
-   "max": 32143,
+   "max": 26437,
    "name": "Agdal",
    "slug": "agdal",
    "rank": 2
   },
   {
-   "n": 100,
-   "median": 20815,
-   "median_price": 1806500,
+   "n": 95,
+   "median": 20500,
+   "median_price": 1760000,
    "median_surface": 100,
    "min": 9655,
    "max": 37209,
@@ -42,8 +42,8 @@
    "rank": 3
   },
   {
-   "n": 29,
-   "median": 18182,
+   "n": 31,
+   "median": 16429,
    "median_price": 2260000,
    "median_surface": 122,
    "min": 8684,
@@ -152,6 +152,10 @@
    "n": 3
   },
   {
+   "name": "Route de Fès",
+   "n": 3
+  },
+  {
    "name": "Route de Ouarzazate",
    "n": 3
   },
@@ -169,10 +173,6 @@
   },
   {
    "name": "Plaza",
-   "n": 2
-  },
-  {
-   "name": "Route de Fès",
    "n": 2
   },
   {
