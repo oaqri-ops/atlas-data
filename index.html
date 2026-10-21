@@ -35,6 +35,7 @@
       --shell:1180px;
     }
     *,*::before,*::after{box-sizing:border-box}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
     img,svg{max-width:100%;display:block}
@@ -391,6 +392,8 @@
     .qcard.cta .qcard-name{color:#fff}
     .qcard.cta p{color:#c9cfdc;font-size:15px}
     .qcard.cta .btn{background:#fff;color:var(--ink)}
+    .analyse-other{margin-top:14px;padding:12px 16px;border-radius:8px;background:var(--tint);font-size:15px;color:var(--ink)}
+    .analyse-other a{font-weight:700;color:var(--blue)}
     .chart-title{font:800 22px/1.2 var(--display);letter-spacing:-.02em;margin:0 0 6px}
     /* Pied de page bleu nuit */
     .site-footer,.ad-footer{background:var(--navy);border-top:0;color:#c9cfdc}
@@ -519,6 +522,7 @@
         <div class="section-head">
           <h2 id="analyse-title">Les prix au m² à Marrakech, quartier par quartier</h2>
           <p>Prix médian demandé au m² dans les sept quartiers qui comptent au moins 8 annonces, soit 197 annonces sur les 316 du relevé. La médiane de la ville est de 18 509 MAD/m².</p>
+          <p class="analyse-other" id="analyse-other" hidden>Cette étude porte sur Marrakech. <a id="analyse-other-link" href="/">Voir les prix par quartier à <span id="analyse-other-city"></span></a>.</p>
         </div>
 <ul class="qcards">
 <li><a class="qcard" href="/marrakech/hivernage/"><span class="qcard-top"><span class="qcard-rank">01</span><span class="delta up">+34 % vs ville</span></span><span class="qcard-name">Hivernage</span><span class="qcard-price"><strong>24 759</strong> <span>MAD/m²</span></span><span class="qcard-bar" aria-hidden="true"><i style="width:100.0%"></i></span><span class="qcard-foot"><span>21 annonces</span></span></a></li>
@@ -755,7 +759,7 @@
     var input=$('budget-input');
     var budget=1000000;
     var city=(new URLSearchParams(location.search).get('ville')||'').toLowerCase();
-    if(!CITIES[city])city='marrakech';
+    if(!Object.prototype.hasOwnProperty.call(CITIES,city))city='marrakech';
     var C=CITIES[city];
 
     function parse(v){var n=Number(String(v).replace(/[^\d]/g,''));return Number.isFinite(n)?n:0}
@@ -785,6 +789,7 @@
       $('hero-badge').textContent='Relevé du '+C.date+' · '+C.n+' annonces';
       var ex=$('hero-explore');ex.textContent='Explorer les '+C.n+' annonces';ex.href='dashboard.html?ville='+slug;
       $('hero-city-link').href='/'+slug+'/';
+      $('analyse-other').hidden=slug==='marrakech';$('analyse-other-link').href='/'+slug+'/';$('analyse-other-city').textContent=C.name;
       var figs=$('hero-figs');figs.replaceChildren();
       C.figs.forEach(function(f){var li=el('li');li.appendChild(el('strong',null,f[0]));li.appendChild(el('span',null,f[1]));figs.appendChild(li)});
       $('hero-source').textContent=C.source;
