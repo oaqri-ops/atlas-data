@@ -7,6 +7,32 @@
  "max": 38806,
  "raw": 70,
  "date": "2026-10-19",
+ "changes": {
+  "new": 0,
+  "gone": 0,
+  "cuts": [],
+  "rises": [],
+  "trend": {
+   "before": 22892,
+   "after": 22892,
+   "pct": 0.0
+  },
+  "prev_date": "2026-10-17",
+  "days": 2,
+  "quartiers": {
+   "Hay Riad": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 24680,
+     "after": 24680,
+     "pct": 0.0
+    }
+   }
+  }
+ },
  "quartiers": [
   {
    "n": 42,

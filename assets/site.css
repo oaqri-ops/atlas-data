@@ -447,3 +447,21 @@
 .strip .pt{top:calc(85px + var(--y))}
 @media (min-width:1041px){.block-copy{position:sticky;top:100px}}
 @media (max-width:600px){.page-hero .hero-lede{font-size:16px}.block{padding:56px 0}.block-copy .btn{width:100%}.pro-actions .btn{flex:1 1 100%}}
+
+/* Évolution depuis le relevé précédent */
+.since{margin-top:16px;padding:12px 16px;border-left:3px solid var(--blue);background:#fff;border-radius:0 8px 8px 0;font-size:15px;color:var(--muted);max-width:none}
+.since strong{color:var(--ink)}
+.since a{font-weight:700;color:var(--blue)}
+.moves-col{display:grid;gap:16px}
+.moves{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.moves div{padding:18px 20px;border-right:1px solid var(--line)}
+.moves div:last-child{border-right:0}
+.moves strong{display:block;font:800 32px/1.1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.moves span{display:block;margin-top:4px;font-size:13px;line-height:1.35;color:var(--muted)}
+.moves .down strong{color:var(--green-ink)}
+.moves .up strong{color:var(--clay-ink)}
+.card td.down{color:var(--green-ink);font-weight:700}
+.card s{color:var(--faint);margin-right:6px}
+@media (max-width:600px){.moves{grid-template-columns:1fr 1fr}.moves div:nth-child(2){border-right:0}.moves div:nth-child(-n+2){border-bottom:1px solid var(--line)}.moves strong{font-size:26px}.since{font-size:14px}}
+.moves-col table{min-width:0}
+@media (max-width:600px){.moves-col th,.moves-col td,.moves-col .card th:first-child,.moves-col .card td:first-child{padding:11px 10px;font-size:14px}.moves-col .card th:first-child,.moves-col .card td:first-child{padding-left:14px}.cuts-table th:nth-child(2),.cuts-table td:nth-child(2){display:none}.card s{display:block;margin:0}}
