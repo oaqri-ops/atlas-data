@@ -235,6 +235,8 @@ def head(title, description, path, ld, og_type="article"):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <script src="/assets/components.js" defer></script>
 </head>
 <body>
 """
@@ -489,7 +491,7 @@ def quartier_page(city, st, q, cfg):
     <section class="pro-band" aria-labelledby="pro-title">
       <div class="shell">
         <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>Chaque lundi, toutes les annonces Sarouty de {e(cname)} dans un fichier Excel : titre, agence, prix, surface, lien, et les nouvelles annonces de la semaine signalées. 29 € HT par mois, sans engagement.</p></div>
-        <div class="pro-actions"><a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple</a><a class="btn btn-ghost" href="{mail}">Demander l'accès Pro</a></div>
+        <div class="pro-actions"><a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple</a><a class="btn btn-ghost" data-pro-contact data-ville="{e(cname)}" href="{mail}">Demander l'accès Pro</a></div>
       </div>
     </section>
 
@@ -650,7 +652,38 @@ def home_mlist(city, st):
     return "\n".join(rows)
 
 
-def render_home(cfg, city, st):
+def bedroom_note(rows):
+    beds = bedroom_groups(rows)
+    if 1 in beds and 3 in beds:
+        return (f"Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : "
+                f"environ {n(round(beds[1]['median'], -3))} MAD pour un 1 chambre contre {n(round(beds[3]['median'], -3))} MAD pour un 3 chambres, sur l'ensemble de la ville.")
+    return "Calcul au prix médian demandé au m², sur les annonces du dernier relevé."
+
+
+def calc_city(c, st, cfg):
+    """Données du calculateur de l'accueil pour une ville : quartiers classés, chiffres clés, source."""
+    ranked = st["ranked"]
+    for q in ranked:
+        q["prep"] = prep(q["name"], cfg)
+    data = {q["name"]: {"median": q["median"], "n": q["n"], "prep": cap(q["prep"]),
+                        "prices": sorted(r["price"] for r in q["rows"])} for q in ranked}
+    data["__all"] = {"median": st["median"], "n": st["n"], "prep": f"Sur l'ensemble de {c['name']}",
+                     "prices": sorted(r["price"] for r in st["rows"])}
+    figs = [[n(st["median"]), f"MAD/m², médiane de {c['name']}"],
+            [str(st["n"]), "annonces d'appartements analysées"]]
+    if len(ranked) >= 2:
+        spread = ranked[0]["median"] / ranked[-1]["median"] - 1
+        figs.append([f"+{round(spread * 100)}{NBSP}%", f"d'écart entre {named(ranked[-1]['name'], cfg)} et {named(ranked[0]['name'], cfg)}"])
+    else:
+        figs.append([millions(st["median_price"]), f"MAD, prix médian d'un appartement de {n(st['median_surface'])} m²"])
+    figs.append([str(len(ranked)), f"quartier{'s' if len(ranked) > 1 else ''} d'au moins {cfg['min_listings_per_quartier']} annonces"])
+    return {"name": c["name"], "date": long_date(st["date"]), "short": long_date(st["date"]).rsplit(" ", 1)[0], "n": st["n"],
+            "quartiers": [q["name"] for q in ranked], "data": data, "note": bedroom_note(st["rows"]), "figs": figs,
+            "source": f"Relevé du {long_date(st['date'])} sur Sarouty : {st['raw']} annonces collectées, {st['n']} exploitables. "
+                      "Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi."}
+
+
+def render_home(cfg, city, st, all_stats):
     ranked, date = st["ranked"], st["date"]
     top, bot = ranked[0], ranked[-1]
     for q in ranked:
@@ -658,26 +691,19 @@ def render_home(cfg, city, st):
     m2 = lambda v, b=1_000_000: round(b / v)
     out_by_q = [(q, sum(1 for r in q["rows"] if r["ppm2"] > HOME_SCALE)) for q in ranked]
     outliers = [(q, k) for q, k in out_by_q if k]
-    beds = bedroom_groups(st["rows"])
     furn = [r["ppm2"] for r in st["rows"] if r["furnished"] == "1"]
     unfurn = [r["ppm2"] for r in st["rows"] if r["furnished"] == "0"]
     biggest = max(ranked, key=lambda q: q["n"])
-    spread = top["median"] / bot["median"] - 1
     short = long_date(date).rsplit(" ", 1)[0]
 
-    calc = {q["name"]: {"median": q["median"], "n": q["n"], "prep": cap(q["prep"]),
-                        "prices": sorted(r["price"] for r in q["rows"])} for q in ranked}
-    calc["Marrakech"] = {"median": st["median"], "n": st["n"], "prep": "Sur toute la ville",
-                         "prices": sorted(r["price"] for r in st["rows"])}
+    calc = {c["slug"]: calc_city(c, all_stats[c["slug"]], cfg) for c in cfg["cities"]
+            if c["slug"] in all_stats and all_stats[c["slug"]]["ranked"]}
     chips = "\n".join(f'<label class="chip"><input type="radio" name="quartier" value="{e(q["name"])}"{" checked" if q is top else ""}><span>{e(q["name"])}</span></label>'
                       for q in ranked)
-    chips += '\n<label class="chip"><input type="radio" name="quartier" value="Marrakech"><span>Toute la ville</span></label>'
-
-    if 1 in beds and 3 in beds:
-        calc_note = (f"Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : "
-                     f"environ {n(round(beds[1]['median'], -3))} MAD pour un 1 chambre contre {n(round(beds[3]['median'], -3))} MAD pour un 3 chambres, sur l'ensemble de la ville.")
-    else:
-        calc_note = "Calcul au prix médian demandé au m², sur les annonces du dernier relevé."
+    chips += '\n<label class="chip"><input type="radio" name="quartier" value="__all"><span>Toute la ville</span></label>'
+    city_tabs = "\n".join(f'<label class="city-tab"><input type="radio" name="ville" value="{s}"{" checked" if s == city["slug"] else ""}><span>{e(d["name"])}</span></label>'
+                          for s, d in calc.items())
+    calc_note = calc[city["slug"]]["note"]
 
     if outliers:
         parts = [f"{k} annonce{'s' if k > 1 else ''} {of_form(q['name'], cfg)}" for q, k in outliers]
@@ -745,10 +771,10 @@ def render_home(cfg, city, st):
                         f'            <p class="result-m2" id="result-m2">{m2(top["median"])}<small>&nbsp;m²</small></p>\n'
                         f'            <p class="result-basis" id="result-basis">au prix médian demandé de {n(top["median"])} MAD/m², calculé sur {top["n"]} annonces.</p>'),
         "CALC_NOTE": calc_note,
-        "KEYFIGS": (f'        <li><strong>{n(st["median"])}</strong><span>MAD/m², médiane de Marrakech</span></li>\n'
-                    f'        <li><strong>{st["n"]}</strong><span>annonces d\'appartements analysées</span></li>\n'
-                    f'        <li><strong>+{round(spread * 100)}&nbsp;%</strong><span>d\'écart entre {e(named(bot["name"], cfg))} et {e(named(top["name"], cfg))}</span></li>\n'
-                    f'        <li><strong>{len(ranked)}</strong><span>quartiers d\'au moins {cfg["min_listings_per_quartier"]} annonces</span></li>'),
+        "KEYFIGS": "\n".join(f'        <li><strong>{v}</strong><span>{e(lbl)}</span></li>' for v, lbl in calc[city["slug"]]["figs"]),
+        "CITY_TABS": city_tabs,
+        "CITY_NAME": e(city["name"]),
+        "CITY_SLUG": city["slug"],
         "ANALYSE_P": (f"Prix médian demandé au m² dans les {NUMBER_WORDS.get(len(ranked), len(ranked))} quartiers qui comptent au moins {cfg['min_listings_per_quartier']} annonces, "
                       f"soit {sum(q['n'] for q in ranked)} annonces sur les {st['n']} du relevé. La médiane de la ville est de {n(st['median'])} MAD/m²."),
         "QCARDS": home_cards(city, st),
@@ -764,9 +790,7 @@ def render_home(cfg, city, st):
                       f"des loyers publiés comme des ventes, des surfaces absentes ou hors norme et des prix au m² aberrants. Les prix demandés ne sont pas des prix de vente. "
                       f"Le relevé ne couvre pas l'ensemble du marché."),
         "FAQ": faq_html,
-        "CALC_DATA": json.dumps(calc, ensure_ascii=False, separators=(",", ":")),
-        "CALC_QUARTIERS": json.dumps([q["name"] for q in ranked], ensure_ascii=False),
-        "TOP_Q": top["name"].replace("'", "\\'"),
+        "CALC_DATA": json.dumps(calc, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
     }
     page = read_template("home.html")
     for k, v in tokens.items():
@@ -816,12 +840,36 @@ def update_home(cfg, all_stats):
     open(path, "w", encoding="utf8").write(s)
 
 
-def update_footers(cfg):
+def city_medians(cfg, all_stats):
+    for c in cfg["cities"]:
+        st = all_stats.get(c["slug"])
+        if st:
+            yield c, st["median"]
+        elif c.get("published"):
+            yield c, c["published"]["median"]
+
+
+def set_city_menus(page, cfg, all_stats):
+    """Menu « Villes » de l'en-tête (bureau et mobile), avec la médiane de chaque ville."""
+    items = "".join(f'<li><a href="/{c["slug"]}/"><span>{e(c["name"])}</span><small>{n(m)} MAD/m²</small></a></li>'
+                    for c, m in city_medians(cfg, all_stats))
+    menu = (f'<details class="nav-cities"><summary>Villes</summary><ul>{items}'
+            '<li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details>')
+    mobile = '<p class="mobile-nav-title">Prix par ville</p>' + "".join(
+        f'<a class="mobile-nav-city" href="/{c["slug"]}/">{e(c["name"])} <small>{n(m)} MAD/m²</small></a>'
+        for c, m in city_medians(cfg, all_stats))
+    page = re.sub(r"<!-- villes-menu -->.*?<!-- /villes-menu -->",
+                  lambda _: f"<!-- villes-menu -->{menu}<!-- /villes-menu -->", page, flags=re.S)
+    return re.sub(r"<!-- villes-mobile -->.*?<!-- /villes-mobile -->",
+                  lambda _: f"<!-- villes-mobile -->{mobile}<!-- /villes-mobile -->", page, flags=re.S)
+
+
+def update_footers(cfg, all_stats):
     for path in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True):
         if os.sep + "scripts" + os.sep in path:
             continue
         s = open(path, encoding="utf8").read()
-        t = set_city_nav(s, cfg)
+        t = set_city_menus(set_city_nav(s, cfg), cfg, all_stats)
         if t != s:
             open(path, "w", encoding="utf8").write(t)
 
@@ -891,10 +939,10 @@ def main():
         print(f"{city['name']}: {st['n']}/{st['raw']} annonces exploitables, médiane {st['median']} MAD/m², "
               f"{len(st['ranked'])} quartiers : {', '.join(q['name'] + ' (' + str(q['n']) + ')' for q in st['ranked'])}")
     if "marrakech" in all_stats:
-        render_home(cfg, next(c for c in cfg["cities"] if c["slug"] == "marrakech"), all_stats["marrakech"])
+        render_home(cfg, next(c for c in cfg["cities"] if c["slug"] == "marrakech"), all_stats["marrakech"], all_stats)
     update_home(cfg, all_stats)
     update_dashboard(cfg)
-    update_footers(cfg)
+    update_footers(cfg, all_stats)
     update_sitemap(generated)
 
 

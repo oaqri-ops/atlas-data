@@ -339,6 +339,15 @@
     .hero-figs strong{display:block;font:800 28px/1.1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
     .hero-figs span{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:var(--muted)}
     .hero-source{margin-top:20px;font-size:13px}
+    /* Choix de la ville */
+    .villes{border:0;margin:0 0 16px;padding:0;min-width:0}
+    .villes legend{padding:0}
+    .city-tabs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;padding:3px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}
+    .city-tab input{position:absolute;opacity:0;pointer-events:none}
+    .city-tab span{display:block;text-align:center;padding:8px 4px;border-radius:6px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer}
+    .city-tab span:hover{color:var(--ink)}
+    .city-tab input:checked+span{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(15,26,51,.14)}
+    .city-tab input:focus-visible+span{outline:3px solid var(--blue);outline-offset:1px}
     /* Calculateur plus compact : le résultat reste visible sans défiler */
     .calc-inputs{padding:20px 24px 18px}
     .budget input{font-size:30px}
@@ -415,6 +424,8 @@
       .pro-band .shell{padding:0 18px}
     }
   </style>
+  <link rel="stylesheet" href="/assets/components.css">
+  <script src="/assets/components.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -425,13 +436,13 @@
         <span class="logo-word">Atlas Data</span>
       </a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a>
+        <a href="#budget">Calculer mon budget</a><!-- villes-menu --><details class="nav-cities"><summary>Villes</summary><ul><li><a href="/marrakech/"><span>Marrakech</span><small>18 509 MAD/m²</small></a></li><li><a href="/casablanca/"><span>Casablanca</span><small>16 279 MAD/m²</small></a></li><li><a href="/rabat/"><span>Rabat</span><small>22 892 MAD/m²</small></a></li><li><a href="/tanger/"><span>Tanger</span><small>14 648 MAD/m²</small></a></li><li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details><!-- /villes-menu --><a href="#offres">Offres</a><a href="#methode">Méthode</a>
       </nav>
       <a class="btn btn-primary header-cta" href="dashboard.html">Ouvrir le dashboard</a>
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
-      <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
+      <a href="#budget">Calculer mon budget</a><!-- villes-mobile --><p class="mobile-nav-title">Prix par ville</p><a class="mobile-nav-city" href="/marrakech/">Marrakech <small>18 509 MAD/m²</small></a><a class="mobile-nav-city" href="/casablanca/">Casablanca <small>16 279 MAD/m²</small></a><a class="mobile-nav-city" href="/rabat/">Rabat <small>22 892 MAD/m²</small></a><a class="mobile-nav-city" href="/tanger/">Tanger <small>14 648 MAD/m²</small></a><!-- /villes-mobile --><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -439,24 +450,33 @@
     <section class="hero" id="budget" aria-labelledby="hero-title">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="badge">Relevé du 19 octobre 2026 · 316 annonces</p>
-          <h1 id="hero-title">Combien de mètres carrés pour votre budget à Marrakech&nbsp;?</h1>
-          <p class="hero-lede">Les prix demandés des appartements à vendre, quartier par quartier. Entrez un budget, choisissez un quartier et voyez ce qu'il permet vraiment d'acheter.</p>
+          <p class="badge" id="hero-badge">Relevé du 19 octobre 2026 · 316 annonces</p>
+          <h1 id="hero-title">Combien de mètres carrés pour votre budget à <span id="hero-city">Marrakech</span>&nbsp;?</h1>
+          <p class="hero-lede">Les prix demandés des appartements à vendre à Marrakech, Casablanca, Rabat et Tanger, quartier par quartier. Choisissez une ville, entrez un budget et voyez ce qu'il permet vraiment d'acheter.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="dashboard.html">Explorer les 316 annonces</a>
-            <a class="btn btn-ghost" href="#analyse">Voir les prix par quartier</a>
+            <a class="btn btn-primary" id="hero-explore" href="dashboard.html?ville=marrakech">Explorer les 316 annonces</a>
+            <a class="btn btn-ghost" id="hero-city-link" href="/marrakech/">Voir les prix par quartier</a>
           </div>
-          <ul class="hero-figs" aria-label="Chiffres clés">
+          <ul class="hero-figs" id="hero-figs" aria-label="Chiffres clés">
         <li><strong>18 509</strong><span>MAD/m², médiane de Marrakech</span></li>
-        <li><strong>316</strong><span>annonces d'appartements analysées</span></li>
-        <li><strong>+73&nbsp;%</strong><span>d'écart entre Semlalia et l&#x27;Hivernage</span></li>
-        <li><strong>7</strong><span>quartiers d'au moins 8 annonces</span></li>
+        <li><strong>316</strong><span>annonces d&#x27;appartements analysées</span></li>
+        <li><strong>+73 %</strong><span>d&#x27;écart entre Semlalia et l&#x27;Hivernage</span></li>
+        <li><strong>7</strong><span>quartiers d&#x27;au moins 8 annonces</span></li>
           </ul>
-          <p class="hero-source">Relevé du 19 octobre 2026 sur Sarouty : 319 annonces collectées, 316 exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi.</p>
+          <p class="hero-source" id="hero-source">Relevé du 19 octobre 2026 sur Sarouty : 319 annonces collectées, 316 exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi.</p>
         </div>
 
         <div class="calc" role="region" aria-label="Calculateur de surface selon le budget">
           <div class="calc-inputs">
+            <fieldset class="villes">
+              <legend class="field-label">Ville</legend>
+              <div class="city-tabs">
+<label class="city-tab"><input type="radio" name="ville" value="marrakech" checked><span>Marrakech</span></label>
+<label class="city-tab"><input type="radio" name="ville" value="casablanca"><span>Casablanca</span></label>
+<label class="city-tab"><input type="radio" name="ville" value="rabat"><span>Rabat</span></label>
+<label class="city-tab"><input type="radio" name="ville" value="tanger"><span>Tanger</span></label>
+              </div>
+            </fieldset>
             <label class="field-label" for="budget-input">Votre budget</label>
             <div class="budget"><input id="budget-input" type="text" inputmode="numeric" autocomplete="off" value="1 000 000" aria-describedby="budget-help"><span>MAD</span></div>
             <div class="presets" role="group" aria-label="Budgets fréquents" id="budget-help">
@@ -467,7 +487,7 @@
             </div>
             <fieldset class="quartiers">
               <legend class="field-label">Quartier</legend>
-              <div class="chips">
+              <div class="chips" id="chips">
 <label class="chip"><input type="radio" name="quartier" value="Hivernage" checked><span>Hivernage</span></label>
 <label class="chip"><input type="radio" name="quartier" value="Agdal"><span>Agdal</span></label>
 <label class="chip"><input type="radio" name="quartier" value="Guéliz"><span>Guéliz</span></label>
@@ -475,7 +495,7 @@
 <label class="chip"><input type="radio" name="quartier" value="Route de Casablanca"><span>Route de Casablanca</span></label>
 <label class="chip"><input type="radio" name="quartier" value="Targa"><span>Targa</span></label>
 <label class="chip"><input type="radio" name="quartier" value="Semlalia"><span>Semlalia</span></label>
-<label class="chip"><input type="radio" name="quartier" value="Marrakech"><span>Toute la ville</span></label>
+<label class="chip"><input type="radio" name="quartier" value="__all"><span>Toute la ville</span></label>
               </div>
             </fieldset>
           </div>
@@ -486,9 +506,9 @@
             <p class="result-real" id="result-real"></p>
           </div>
           <div class="calc-compare">
-            <h2>Le même budget dans les autres quartiers</h2>
+            <h2 id="cmp-title">Le même budget dans les autres quartiers</h2>
             <ul class="cmp" id="cmp"></ul>
-            <p class="calc-note">Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : environ 23 000 MAD pour un 1 chambre contre 16 000 MAD pour un 3 chambres, sur l'ensemble de la ville.</p>
+            <p class="calc-note" id="calc-note">Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : environ 23 000 MAD pour un 1 chambre contre 16 000 MAD pour un 3 chambres, sur l'ensemble de la ville.</p>
           </div>
         </div>
       </div>
@@ -652,7 +672,7 @@
               <li>Les baisses de prix, dès le 4<sup>e</sup> relevé</li>
             </ul>
             <a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un fichier d'exemple</a>
-            <a class="btn btn-ghost" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a>
+            <a class="btn btn-ghost" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a>
             <p class="pro-sample">Exemple : 20 annonces de Guéliz, au format Excel.</p>
           </div>
         </div>
@@ -728,59 +748,81 @@
   <script>
   (function(){
     'use strict';
-    var DATA={"Hivernage":{"median":24759,"n":21,"prep":"À l'Hivernage","prices":[1100000,1260000,1300000,1320000,1693000,1870000,1956000,2000000,2015000,2400000,2498000,2600000,3200000,3500000,3900000,4200000,4510000,4560000,5300000,5900000,15000000]},"Agdal":{"median":23239,"n":13,"prep":"À Agdal","prices":[1200000,1614000,2200000,2300000,2350000,2350000,2412500,2500000,2500000,2600000,2615000,3300000,3300000]},"Guéliz":{"median":20500,"n":95,"prep":"À Guéliz","prices":[750000,900000,920000,963500,990000,1065793,1069000,1121365,1192000,1200000,1200000,1270000,1300000,1310407,1332500,1334000,1340000,1390000,1400000,1400000,1400000,1400000,1425000,1440000,1450000,1450000,1450000,1450000,1480000,1500000,1500000,1539000,1600000,1600000,1600000,1600000,1600000,1621000,1630000,1650000,1650000,1650000,1650000,1690000,1750000,1750000,1750000,1760000,1800000,1813000,1818000,1850000,1870000,1896250,1900000,1900000,1900000,2000000,2000000,2100000,2200000,2200000,2250000,2400000,2450000,2500000,2500000,2500000,2500000,2562500,2600000,2600000,2850000,2900000,2900000,2900000,3000000,3000000,3100000,3132000,3186000,3200000,3300000,3500000,3590000,3700000,3800000,3850000,3850000,3900000,4200000,4200000,4800000,5000000,7200000]},"Palmeraie":{"median":16429,"n":31,"prep":"À la Palmeraie","prices":[1200000,1450000,1490000,1500000,1550000,1600000,1600000,1700000,1800000,2000000,2000000,2060000,2100000,2150000,2200000,2260000,2300000,2400000,2450000,2550000,2600000,2600000,2700000,2900000,2950000,3100000,3300000,3400000,3500000,3500000,6900000]},"Route de Casablanca":{"median":16071,"n":17,"prep":"Route de Casablanca","prices":[680000,780000,902000,1014000,1250000,1300000,1350000,1400000,1400000,1500000,1500000,1500000,1576000,1800000,1900000,1950000,3100000]},"Targa":{"median":15328,"n":9,"prep":"À Targa","prices":[550000,780000,950000,1200000,1248000,1600000,1600000,2100000,2337000]},"Semlalia":{"median":14286,"n":11,"prep":"À Semlalia","prices":[930000,1000000,1150000,1300000,1400000,1550000,1650000,1762000,1950000,2650000,3000000]},"Marrakech":{"median":18509,"n":316,"prep":"Sur toute la ville","prices":[360000,400000,440000,480000,550000,550000,550000,560000,563750,580000,600000,600000,640000,670000,670000,680000,680000,680000,700000,700000,712600,720000,726000,750000,750000,780000,780000,780000,790000,800000,820000,820000,824000,850000,850000,860000,900000,900000,902000,920000,922500,930000,935000,940000,950000,950000,950000,963500,972000,980000,990000,1000000,1014000,1025000,1050000,1065793,1069000,1100000,1100000,1100000,1100000,1100000,1100000,1121365,1147500,1150000,1192000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1248000,1250000,1250000,1250000,1250000,1260000,1270000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1310407,1320000,1332500,1334000,1340000,1350000,1350000,1390000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1425000,1440000,1450000,1450000,1450000,1450000,1450000,1480000,1490000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1520000,1539000,1548000,1550000,1550000,1550000,1550000,1550000,1576000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1614000,1621000,1630000,1650000,1650000,1650000,1650000,1650000,1690000,1693000,1700000,1700000,1750000,1750000,1750000,1750000,1760000,1762000,1800000,1800000,1800000,1800000,1800000,1813000,1818000,1850000,1870000,1870000,1896250,1900000,1900000,1900000,1900000,1900000,1950000,1950000,1950000,1950000,1950000,1956000,2000000,2000000,2000000,2000000,2000000,2000000,2000000,2015000,2050000,2060000,2100000,2100000,2100000,2150000,2150000,2185000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2250000,2250000,2260000,2260000,2260000,2287800,2300000,2300000,2300000,2300000,2337000,2350000,2350000,2400000,2400000,2400000,2400000,2400000,2412500,2450000,2450000,2458500,2498000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2550000,2562500,2600000,2600000,2600000,2600000,2600000,2600000,2600000,2615000,2650000,2650000,2700000,2800000,2850000,2900000,2900000,2900000,2900000,2900000,2900000,2900000,2950000,2950000,3000000,3000000,3000000,3000000,3000000,3000000,3100000,3100000,3100000,3132000,3186000,3200000,3200000,3300000,3300000,3300000,3300000,3400000,3500000,3500000,3500000,3500000,3500000,3590000,3700000,3800000,3850000,3850000,3900000,3900000,4000000,4200000,4200000,4200000,4510000,4560000,4800000,5000000,5300000,5700000,5900000,6300000,6900000,7200000,7500000,9400000,15000000]}};
-    var QUARTIERS=["Hivernage", "Agdal", "Guéliz", "Palmeraie", "Route de Casablanca", "Targa", "Semlalia"];
+    var CITIES={"marrakech":{"name":"Marrakech","date":"19 octobre 2026","short":"19 octobre","n":316,"quartiers":["Hivernage","Agdal","Guéliz","Palmeraie","Route de Casablanca","Targa","Semlalia"],"data":{"Hivernage":{"median":24759,"n":21,"prep":"À l'Hivernage","prices":[1100000,1260000,1300000,1320000,1693000,1870000,1956000,2000000,2015000,2400000,2498000,2600000,3200000,3500000,3900000,4200000,4510000,4560000,5300000,5900000,15000000]},"Agdal":{"median":23239,"n":13,"prep":"À Agdal","prices":[1200000,1614000,2200000,2300000,2350000,2350000,2412500,2500000,2500000,2600000,2615000,3300000,3300000]},"Guéliz":{"median":20500,"n":95,"prep":"À Guéliz","prices":[750000,900000,920000,963500,990000,1065793,1069000,1121365,1192000,1200000,1200000,1270000,1300000,1310407,1332500,1334000,1340000,1390000,1400000,1400000,1400000,1400000,1425000,1440000,1450000,1450000,1450000,1450000,1480000,1500000,1500000,1539000,1600000,1600000,1600000,1600000,1600000,1621000,1630000,1650000,1650000,1650000,1650000,1690000,1750000,1750000,1750000,1760000,1800000,1813000,1818000,1850000,1870000,1896250,1900000,1900000,1900000,2000000,2000000,2100000,2200000,2200000,2250000,2400000,2450000,2500000,2500000,2500000,2500000,2562500,2600000,2600000,2850000,2900000,2900000,2900000,3000000,3000000,3100000,3132000,3186000,3200000,3300000,3500000,3590000,3700000,3800000,3850000,3850000,3900000,4200000,4200000,4800000,5000000,7200000]},"Palmeraie":{"median":16429,"n":31,"prep":"À la Palmeraie","prices":[1200000,1450000,1490000,1500000,1550000,1600000,1600000,1700000,1800000,2000000,2000000,2060000,2100000,2150000,2200000,2260000,2300000,2400000,2450000,2550000,2600000,2600000,2700000,2900000,2950000,3100000,3300000,3400000,3500000,3500000,6900000]},"Route de Casablanca":{"median":16071,"n":17,"prep":"Route de Casablanca","prices":[680000,780000,902000,1014000,1250000,1300000,1350000,1400000,1400000,1500000,1500000,1500000,1576000,1800000,1900000,1950000,3100000]},"Targa":{"median":15328,"n":9,"prep":"À Targa","prices":[550000,780000,950000,1200000,1248000,1600000,1600000,2100000,2337000]},"Semlalia":{"median":14286,"n":11,"prep":"À Semlalia","prices":[930000,1000000,1150000,1300000,1400000,1550000,1650000,1762000,1950000,2650000,3000000]},"__all":{"median":18509,"n":316,"prep":"Sur l'ensemble de Marrakech","prices":[360000,400000,440000,480000,550000,550000,550000,560000,563750,580000,600000,600000,640000,670000,670000,680000,680000,680000,700000,700000,712600,720000,726000,750000,750000,780000,780000,780000,790000,800000,820000,820000,824000,850000,850000,860000,900000,900000,902000,920000,922500,930000,935000,940000,950000,950000,950000,963500,972000,980000,990000,1000000,1014000,1025000,1050000,1065793,1069000,1100000,1100000,1100000,1100000,1100000,1100000,1121365,1147500,1150000,1192000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1248000,1250000,1250000,1250000,1250000,1260000,1270000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1310407,1320000,1332500,1334000,1340000,1350000,1350000,1390000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1425000,1440000,1450000,1450000,1450000,1450000,1450000,1480000,1490000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1520000,1539000,1548000,1550000,1550000,1550000,1550000,1550000,1576000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1600000,1614000,1621000,1630000,1650000,1650000,1650000,1650000,1650000,1690000,1693000,1700000,1700000,1750000,1750000,1750000,1750000,1760000,1762000,1800000,1800000,1800000,1800000,1800000,1813000,1818000,1850000,1870000,1870000,1896250,1900000,1900000,1900000,1900000,1900000,1950000,1950000,1950000,1950000,1950000,1956000,2000000,2000000,2000000,2000000,2000000,2000000,2000000,2015000,2050000,2060000,2100000,2100000,2100000,2150000,2150000,2185000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2250000,2250000,2260000,2260000,2260000,2287800,2300000,2300000,2300000,2300000,2337000,2350000,2350000,2400000,2400000,2400000,2400000,2400000,2412500,2450000,2450000,2458500,2498000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2550000,2562500,2600000,2600000,2600000,2600000,2600000,2600000,2600000,2615000,2650000,2650000,2700000,2800000,2850000,2900000,2900000,2900000,2900000,2900000,2900000,2900000,2950000,2950000,3000000,3000000,3000000,3000000,3000000,3000000,3100000,3100000,3100000,3132000,3186000,3200000,3200000,3300000,3300000,3300000,3300000,3400000,3500000,3500000,3500000,3500000,3500000,3590000,3700000,3800000,3850000,3850000,3900000,3900000,4000000,4200000,4200000,4200000,4510000,4560000,4800000,5000000,5300000,5700000,5900000,6300000,6900000,7200000,7500000,9400000,15000000]}},"note":"Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : environ 23 000 MAD pour un 1 chambre contre 16 000 MAD pour un 3 chambres, sur l'ensemble de la ville.","figs":[["18 509","MAD/m², médiane de Marrakech"],["316","annonces d'appartements analysées"],["+73 %","d'écart entre Semlalia et l'Hivernage"],["7","quartiers d'au moins 8 annonces"]],"source":"Relevé du 19 octobre 2026 sur Sarouty : 319 annonces collectées, 316 exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi."},"casablanca":{"name":"Casablanca","date":"19 octobre 2026","short":"19 octobre","n":539,"quartiers":["Les Princesses","Ain Diab","Oasis","Ferme Bretone","Anfa","Racine","Sidi Belyout","Dar Bouazza","Zenata","Gauthier","Bouskoura","Maarif","Val Fleuri","Californie","Maarif Extension","Bourgogne","Hay Hassani","Quartier des Hôpitaux"],"data":{"Les Princesses":{"median":29259,"n":27,"prep":"Aux Princesses","prices":[900000,1125000,1145000,1276600,1390000,1400000,1460000,1470000,1490000,1547000,1580000,1690000,1700000,1740000,1750000,1775000,1780000,1850000,1850000,1935000,1980000,2300000,2500000,3500000,4100000,4250000,5800000]},"Ain Diab":{"median":27311,"n":21,"prep":"À Ain Diab","prices":[2200000,2400000,3200000,3500000,3800000,3900000,4000000,4000000,4200000,4200000,4200000,4950000,5000000,5170000,5200000,5500000,6000000,6500000,6500000,7500000,11000000]},"Oasis":{"median":20941,"n":15,"prep":"À Oasis","prices":[1101600,1275000,1340000,1350000,1550000,1650000,1690000,1960000,2050000,2115000,2400000,2730000,3050000,3322000,4900000]},"Ferme Bretone":{"median":20833,"n":11,"prep":"À Ferme Bretone","prices":[1229800,1400000,1870000,1920000,1980000,2450000,2500000,2640000,3100000,3800000,3950000]},"Anfa":{"median":17800,"n":59,"prep":"À Anfa","prices":[1200000,1250000,1400000,1500000,1700000,1750000,1750000,1800000,2100000,2100000,2200000,2200000,2300000,2300000,2300000,2300000,2500000,2560000,2600000,2600000,2700000,2700000,2700000,2900000,2970000,2980000,3000000,3000000,3100000,3150000,3200000,3200000,3300000,3400000,3500000,3500000,3500000,3500000,3500000,3500000,3600000,3600000,3950000,3950000,4000000,4000000,4300000,4450000,4700000,4800000,4900000,5000000,5000000,5300000,5400000,5400000,6000000,6200000,13000000]},"Racine":{"median":17687,"n":37,"prep":"À Racine","prices":[1000000,1200000,1200000,1230000,1250000,1300000,1799000,2000000,2350000,2350000,2450000,2500000,2600000,2615000,2700000,2800000,2900000,2900000,2950000,2980000,3000000,3100000,3200000,3400000,3400000,3440000,3500000,3600000,3600000,3700000,3750000,3900000,4500000,4800000,4900000,5000000,7300000]},"Sidi Belyout":{"median":17518,"n":21,"prep":"À Sidi Belyout","prices":[880000,900000,986000,1003000,1100000,1600000,1700000,1741500,1750000,1750000,1780000,1900000,2000000,2350000,2400000,2400000,2450000,2500000,3300000,6200000,11500000]},"Dar Bouazza":{"median":15714,"n":87,"prep":"À Dar Bouazza","prices":[500000,650000,890000,900000,980000,980000,1080000,1150000,1200000,1250000,1250000,1290000,1300000,1320000,1350000,1400000,1450000,1500000,1500000,1500000,1600000,1600000,1600000,1650000,1650000,1670000,1690000,1700000,1700000,1750000,1750000,1800000,1800000,1800000,1800000,1800000,1850000,1850000,1850000,1900000,1950000,1950000,2000000,2040000,2050000,2100000,2100000,2150000,2150000,2200000,2200000,2250000,2300000,2300000,2400000,2400000,2400000,2400000,2430000,2500000,2500000,2550000,2650000,2700000,2700000,2800000,2800000,2900000,2900000,2900000,3000000,3000000,3200000,3300000,3410000,3500000,3500000,3500000,3600000,3700000,3700000,3750000,3750000,4500000,4600000,6000000,6600000]},"Zenata":{"median":15310,"n":10,"prep":"À Zenata","prices":[830000,850000,880000,927000,1145875,1334000,1356500,1380000,1442000,1730000]},"Gauthier":{"median":15034,"n":18,"prep":"À Gauthier","prices":[1150000,1450000,1800000,1900000,2400000,2600000,2700000,2800000,3100000,3400000,3550000,3600000,3990000,4000000,4200000,4750000,5000000,5500000]},"Bouskoura":{"median":15030,"n":25,"prep":"À Bouskoura","prices":[516000,630000,2300000,2800000,2800000,2850000,2950000,3200000,3250000,3300000,3400000,3500000,4400000,4500000,4695000,4800000,4900000,5000000,5000000,5000000,5000000,5200000,5350000,7500000,9000000]},"Maarif":{"median":15000,"n":51,"prep":"Au Maarif","prices":[950000,980000,1020000,1120000,1200000,1200000,1250000,1300000,1350000,1500000,1500000,1600000,1700000,1700000,1750000,1750000,1800000,1800000,1850000,1900000,1920000,1950000,2000000,2000000,2100000,2100000,2200000,2200000,2300000,2300000,2350000,2400000,2400000,2400000,2400000,2500000,2500000,2600000,2600000,2650000,2700000,2800000,2900000,2950000,3120000,3200000,3300000,3300000,3700000,4000000,4600000]},"Val Fleuri":{"median":14966,"n":9,"prep":"À Val Fleuri","prices":[1250000,1500000,1900000,1900000,2150000,2200000,2300000,2300000,3000000]},"Californie":{"median":14500,"n":9,"prep":"À Californie","prices":[1200000,1250000,1450000,1690000,2150000,2550000,2700000,4250000,4500000]},"Maarif Extension":{"median":14016,"n":10,"prep":"Au Maarif Extension","prices":[1180000,1450000,1500000,1650000,1778000,2200000,3000000,3000000,3300000,3400000]},"Bourgogne":{"median":13881,"n":13,"prep":"À Bourgogne","prices":[840000,950000,1150000,1260000,1350000,1450000,1590000,1620000,1850000,1950000,2250000,2790000,2800000]},"Hay Hassani":{"median":13542,"n":13,"prep":"À Hay Hassani","prices":[450000,500000,855000,1054100,1200000,1200000,1250000,1300000,1350000,1950000,2200000,6900000,12000000]},"Quartier des Hôpitaux":{"median":13184,"n":12,"prep":"Au Quartier des Hôpitaux","prices":[1480000,1550000,1700000,1750000,1800000,1800000,1950000,1998000,2100000,2250000,2400000,2500000]},"__all":{"median":16279,"n":539,"prep":"Sur l'ensemble de Casablanca","prices":[300000,450000,500000,500000,500000,516000,540000,550000,630000,650000,720000,780000,798000,800000,830000,840000,850000,850000,850000,855000,860000,880000,880000,888000,890000,900000,900000,900000,900000,912000,920000,927000,950000,950000,950000,980000,980000,980000,986000,1000000,1000000,1003000,1020000,1054100,1060000,1080000,1080000,1080000,1100000,1100000,1101600,1120000,1125000,1145000,1145875,1150000,1150000,1150000,1180000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1200000,1229800,1230000,1235000,1250000,1250000,1250000,1250000,1250000,1250000,1250000,1250000,1250000,1260000,1275000,1276600,1290000,1290000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1300000,1320000,1334000,1340000,1350000,1350000,1350000,1350000,1350000,1350000,1356500,1380000,1390000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1400000,1410000,1440000,1442000,1450000,1450000,1450000,1450000,1450000,1460000,1470000,1475000,1480000,1490000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1547000,1550000,1550000,1580000,1590000,1590000,1590000,1600000,1600000,1600000,1600000,1600000,1600000,1620000,1620000,1650000,1650000,1650000,1650000,1650000,1650000,1670000,1690000,1690000,1690000,1690000,1700000,1700000,1700000,1700000,1700000,1700000,1700000,1700000,1730000,1740000,1741500,1750000,1750000,1750000,1750000,1750000,1750000,1750000,1750000,1750000,1750000,1775000,1776000,1778000,1780000,1780000,1799000,1800000,1800000,1800000,1800000,1800000,1800000,1800000,1800000,1800000,1800000,1800000,1800000,1850000,1850000,1850000,1850000,1850000,1850000,1850000,1850000,1870000,1900000,1900000,1900000,1900000,1900000,1900000,1920000,1920000,1935000,1950000,1950000,1950000,1950000,1950000,1950000,1960000,1980000,1980000,1998000,2000000,2000000,2000000,2000000,2000000,2000000,2010000,2040000,2050000,2050000,2050000,2062000,2100000,2100000,2100000,2100000,2100000,2100000,2100000,2100000,2100000,2115000,2150000,2150000,2150000,2150000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2200000,2250000,2250000,2250000,2290000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2300000,2350000,2350000,2350000,2350000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2400000,2430000,2450000,2450000,2450000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2500000,2550000,2550000,2560000,2590000,2600000,2600000,2600000,2600000,2600000,2600000,2600000,2600000,2615000,2640000,2650000,2650000,2650000,2650000,2654000,2690000,2700000,2700000,2700000,2700000,2700000,2700000,2700000,2700000,2700000,2700000,2709500,2730000,2790000,2800000,2800000,2800000,2800000,2800000,2800000,2800000,2800000,2800000,2820000,2850000,2900000,2900000,2900000,2900000,2900000,2900000,2900000,2950000,2950000,2950000,2970000,2980000,2980000,2980000,3000000,3000000,3000000,3000000,3000000,3000000,3000000,3000000,3000000,3050000,3100000,3100000,3100000,3100000,3120000,3150000,3200000,3200000,3200000,3200000,3200000,3200000,3200000,3250000,3300000,3300000,3300000,3300000,3300000,3300000,3300000,3322000,3360000,3400000,3400000,3400000,3400000,3400000,3400000,3410000,3440000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3500000,3550000,3600000,3600000,3600000,3600000,3600000,3600000,3700000,3700000,3700000,3700000,3750000,3750000,3750000,3800000,3800000,3800000,3900000,3900000,3900000,3950000,3950000,3950000,3990000,4000000,4000000,4000000,4000000,4000000,4000000,4000000,4100000,4200000,4200000,4200000,4200000,4250000,4250000,4300000,4400000,4450000,4500000,4500000,4500000,4500000,4500000,4500000,4600000,4600000,4695000,4700000,4750000,4800000,4800000,4800000,4900000,4900000,4900000,4900000,4950000,5000000,5000000,5000000,5000000,5000000,5000000,5000000,5000000,5000000,5170000,5200000,5200000,5300000,5300000,5350000,5400000,5400000,5500000,5500000,5700000,5800000,6000000,6000000,6000000,6200000,6200000,6500000,6500000,6600000,6700000,6800000,6900000,7200000,7300000,7500000,7500000,7600000,9000000,11000000,11500000,12000000,13000000,13000000]}},"note":"Calcul au prix médian demandé au m². En pratique, les petites surfaces coûtent souvent plus cher au m² : environ 21 000 MAD pour un 1 chambre contre 16 000 MAD pour un 3 chambres, sur l'ensemble de la ville.","figs":[["16 279","MAD/m², médiane de Casablanca"],["539","annonces d'appartements analysées"],["+122 %","d'écart entre le Quartier des Hôpitaux et les Princesses"],["18","quartiers d'au moins 8 annonces"]],"source":"Relevé du 19 octobre 2026 sur Sarouty : 562 annonces collectées, 539 exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi."},"rabat":{"name":"Rabat","date":"19 octobre 2026","short":"19 octobre","n":67,"quartiers":["Hay Riad"],"data":{"Hay Riad":{"median":24680,"n":42,"prep":"À Hay Riad","prices":[2400000,2500000,2600000,2600000,2650000,2800000,2850000,2900000,3200000,3300000,3400000,3450000,3600000,3600000,3650000,3800000,3950000,4000000,4150000,4200000,4200000,4200000,4200000,4300000,4500000,4500000,4500000,4700000,4800000,4800000,5000000,5250000,5400000,5400000,5500000,6000000,6000000,6000000,6100000,6300000,6500000,11500000]},"__all":{"median":22892,"n":67,"prep":"Sur l'ensemble de Rabat","prices":[1750000,1900000,2000000,2060000,2200000,2400000,2497000,2500000,2600000,2600000,2600000,2600000,2650000,2700000,2800000,2850000,2900000,3150000,3200000,3300000,3350000,3400000,3450000,3500000,3500000,3500000,3600000,3600000,3650000,3800000,3800000,3850000,3950000,4000000,4150000,4200000,4200000,4200000,4200000,4300000,4500000,4500000,4500000,4500000,4500000,4700000,4800000,4800000,5000000,5100000,5250000,5400000,5400000,5500000,5500000,5500000,6000000,6000000,6000000,6100000,6300000,6500000,7600000,7750000,7750000,8000000,11500000]}},"note":"Calcul au prix médian demandé au m², sur les annonces du dernier relevé.","figs":[["22 892","MAD/m², médiane de Rabat"],["67","annonces d'appartements analysées"],["4 M","MAD, prix médian d'un appartement de 175 m²"],["1","quartier d'au moins 8 annonces"]],"source":"Relevé du 19 octobre 2026 sur Sarouty : 70 annonces collectées, 67 exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi."},"tanger":{"name":"Tanger","date":"19 octobre 2026","short":"19 octobre","n":78,"quartiers":["Malabata","Centre-ville","Mesnana","Route de Rabat"],"data":{"Malabata":{"median":23409,"n":12,"prep":"À Malabata","prices":[1200000,1300000,1350000,2200000,2500000,2550000,3100000,3400000,3420000,3500000,3900000,5500000]},"Centre-ville":{"median":14690,"n":24,"prep":"Au centre-ville","prices":[680000,700000,740000,960000,1000000,1200000,1250000,1300000,1350000,1550000,1780000,1800000,1950000,2200000,2500000,2700000,2750000,3000000,3100000,3420000,3577500,4000000,4000000,5300000]},"Mesnana":{"median":13000,"n":9,"prep":"À Mesnana","prices":[702000,825000,936000,988000,1000000,1000000,1066000,1326000,1600000]},"Route de Rabat":{"median":12288,"n":8,"prep":"Route de Rabat","prices":[720000,800000,840000,1050000,1180000,1255500,1334000,1455000]},"__all":{"median":14648,"n":78,"prep":"Sur l'ensemble de Tanger","prices":[460000,680000,700000,702000,720000,740000,750000,800000,800000,825000,840000,850000,936000,960000,988000,1000000,1000000,1000000,1050000,1066000,1180000,1200000,1200000,1200000,1250000,1250000,1250000,1255500,1300000,1300000,1300000,1326000,1334000,1350000,1350000,1455000,1550000,1600000,1700000,1776000,1780000,1800000,1920000,1950000,2200000,2200000,2240000,2250000,2280000,2340000,2409000,2500000,2500000,2550000,2697750,2700000,2737000,2750000,3000000,3000000,3100000,3100000,3100000,3400000,3420000,3420000,3500000,3577500,3740000,3900000,4000000,4000000,4100000,4900000,5300000,5500000,5500000,6500000]}},"note":"Calcul au prix médian demandé au m², sur les annonces du dernier relevé.","figs":[["14 648","MAD/m², médiane de Tanger"],["78","annonces d'appartements analysées"],["+91 %","d'écart entre Route de Rabat et Malabata"],["4","quartiers d'au moins 8 annonces"]],"source":"Relevé du 19 octobre 2026 sur Sarouty : 83 annonces collectées, 78 exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi."}};
     var nf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
-    var fmt=function(n){return nf.format(n).replace(/\u202f|\u00a0/g,' ')};
+    var fmt=function(n){return nf.format(n).replace(/ | /g,' ')};
     var $=function(id){return document.getElementById(id)};
     var input=$('budget-input');
     var budget=1000000;
+    var city=(new URLSearchParams(location.search).get('ville')||'').toLowerCase();
+    if(!CITIES[city])city='marrakech';
+    var C=CITIES[city];
 
     function parse(v){var n=Number(String(v).replace(/[^\d]/g,''));return Number.isFinite(n)?n:0}
-    function selected(){var r=document.querySelector('input[name="quartier"]:checked');return r?r.value:'Hivernage'}
-    function select(q){var r=document.querySelector('input[name="quartier"][value="'+q+'"]');if(r){r.checked=true;update()}}
+    function selected(){var r=document.querySelector('input[name="quartier"]:checked');return r&&C.data[r.value]?r.value:C.quartiers[0]}
+    function select(q){var r=document.querySelector('input[name="quartier"][value="'+CSS.escape(q)+'"]');if(r){r.checked=true;update(true)}}
+    function el(tag,cls,text){var x=document.createElement(tag);if(cls)x.className=cls;if(text!=null)x.textContent=text;return x}
 
-    function buildCompare(){
-      var ul=$('cmp');
-      QUARTIERS.forEach(function(q){
-        var li=document.createElement('li');var b=document.createElement('button');b.type='button';b.dataset.q=q;
-        b.innerHTML='<span>'+q+'</span><span class="cmp-bar"><i></i></span><span class="cmp-val"></span>';
+    // Quartiers, comparaison et textes du héros pour la ville choisie
+    function setCity(slug){
+      city=slug;C=CITIES[slug];
+      var chips=$('chips');chips.replaceChildren();
+      C.quartiers.concat(['__all']).forEach(function(q,i){
+        var l=el('label','chip'),r=el('input');r.type='radio';r.name='quartier';r.value=q;r.checked=i===0;
+        r.addEventListener('change',function(){update(true)});
+        l.appendChild(r);l.appendChild(el('span',null,q==='__all'?'Toute la ville':q));chips.appendChild(l);
+      });
+      var ul=$('cmp');ul.replaceChildren();
+      C.quartiers.forEach(function(q){
+        var li=el('li'),b=el('button');b.type='button';b.dataset.q=q;
+        b.appendChild(el('span',null,q));var bar=el('span','cmp-bar');bar.appendChild(el('i'));b.appendChild(bar);b.appendChild(el('span','cmp-val'));
         b.addEventListener('click',function(){select(q)});
         li.appendChild(b);ul.appendChild(li);
       });
+      $('cmp').hidden=$('cmp-title').hidden=C.quartiers.length<2;
+      $('calc-note').textContent=C.note;
+      $('hero-city').textContent=C.name;
+      $('hero-badge').textContent='Relevé du '+C.date+' · '+C.n+' annonces';
+      var ex=$('hero-explore');ex.textContent='Explorer les '+C.n+' annonces';ex.href='dashboard.html?ville='+slug;
+      $('hero-city-link').href='/'+slug+'/';
+      var figs=$('hero-figs');figs.replaceChildren();
+      C.figs.forEach(function(f){var li=el('li');li.appendChild(el('strong',null,f[0]));li.appendChild(el('span',null,f[1]));figs.appendChild(li)});
+      $('hero-source').textContent=C.source;
+      document.querySelectorAll('[data-pro-contact]').forEach(function(a){a.setAttribute('data-ville',C.name)});
+      document.querySelectorAll('input[name="ville"]').forEach(function(r){r.checked=r.value===slug});
     }
 
     function update(animate){
-      var q=selected(),d=DATA[q];
+      var q=selected(),d=C.data[q],all=q==='__all';
       var valid=budget>=50000;
       var m2=valid?Math.round(budget/d.median):0;
       $('result-lead').textContent=d.prep+', ce budget correspond à environ';
-      var el=$('result-m2');
-      el.innerHTML=(valid?fmt(m2):'-')+'<small>&nbsp;m²</small>';
-      if(animate){el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}
+      var m=$('result-m2');
+      m.innerHTML=(valid?fmt(m2):'-')+'<small>&nbsp;m²</small>';
+      if(animate){m.classList.remove('tick');void m.offsetWidth;m.classList.add('tick')}
       $('result-basis').textContent='au prix médian demandé de '+fmt(d.median)+' MAD/m², calculé sur '+d.n+' annonces.';
       var count=d.prices.filter(function(p){return p<=budget}).length;
-      var where=q==='Marrakech'?'':' dans ce quartier';
+      var where=all?'':' dans ce quartier';
       var link=document.createElement('a');
-      var params=new URLSearchParams();if(q!=='Marrakech')params.set('quartier',q);
+      var params=new URLSearchParams({ville:city});if(!all)params.set('quartier',q);
       var real=$('result-real');real.replaceChildren();
       real.className='result-real'+(!valid?'':count===0?' is-none':' is-some');
       if(!valid){real.textContent='Entrez un budget pour lancer le calcul.';}
       else if(count===0){
-        var label=document.createElement('strong');label.textContent='Aucune annonce à ce prix. ';real.appendChild(label);
-        real.appendChild(document.createTextNode('Ce chiffre est théorique : la moins chère'+where+' demandait '+fmt(d.prices[0])+' MAD le 19 octobre. '));
-        link.textContent=q==='Marrakech'?'Voir toutes les annonces':'Voir les annonces de ce quartier';
-        link.href='dashboard.html'+(params.toString()?'?'+params:'');real.appendChild(link);
+        real.appendChild(el('strong',null,'Aucune annonce à ce prix. '));
+        real.appendChild(document.createTextNode('Ce chiffre est théorique : la moins chère'+where+' demandait '+fmt(d.prices[0])+' MAD le '+C.short+'. '));
+        link.textContent=all?'Voir toutes les annonces':'Voir les annonces de ce quartier';
+        link.href='dashboard.html?'+params;real.appendChild(link);
       } else {
-        var found=document.createElement('strong');found.textContent=count+(count>1?' annonces':' annonce')+' à ce prix. ';real.appendChild(found);
-        real.appendChild(document.createTextNode(count+' sur '+d.n+where+' '+(count>1?'demandaient':'demandait')+' '+fmt(budget)+' MAD ou moins le 19 octobre. '));
+        real.appendChild(el('strong',null,count+(count>1?' annonces':' annonce')+' à ce prix. '));
+        real.appendChild(document.createTextNode('Sur les '+d.n+' annonces'+(all?' de la ville':' de ce quartier')+', '+count+' '+(count>1?'demandaient':'demandait')+' '+fmt(budget)+' MAD ou moins le '+C.short+'. '));
         params.set('prixmax',String(budget));
         link.textContent=count>1?'Voir ces annonces dans le dashboard':'Voir cette annonce dans le dashboard';
         link.href='dashboard.html?'+params;real.appendChild(link);
       }
-      var max=0;QUARTIERS.forEach(function(k){max=Math.max(max,budget/DATA[k].median)});
+      var max=0;C.quartiers.forEach(function(k){max=Math.max(max,budget/C.data[k].median)});
       document.querySelectorAll('#cmp button').forEach(function(b){
-        var k=b.dataset.q,v=valid?budget/DATA[k].median:0;
+        var k=b.dataset.q,v=valid?budget/C.data[k].median:0;
         b.setAttribute('aria-pressed',String(k===q));
         b.querySelector('i').style.width=(max?v/max*100:0).toFixed(1)+'%';
         b.querySelector('.cmp-val').textContent=valid?fmt(Math.round(v))+' m²':'-';
@@ -792,8 +834,11 @@
     input.addEventListener('input',function(){budget=Math.min(parse(input.value),100000000);update(false)});
     input.addEventListener('blur',function(){if(budget)input.value=fmt(budget)});
     document.querySelectorAll('.presets button').forEach(function(b){b.addEventListener('click',function(){budget=Number(b.dataset.budget);input.value=fmt(budget);update(true)})});
-    document.querySelectorAll('input[name="quartier"]').forEach(function(r){r.addEventListener('change',function(){update(true)})});
-    buildCompare();update(false);
+    document.querySelectorAll('input[name="ville"]').forEach(function(r){r.addEventListener('change',function(){
+      setCity(r.value);update(true);
+      var u=new URL(location.href);u.searchParams.set('ville',r.value);history.replaceState(null,'',u);
+    })});
+    setCity(city);update(false);
 
     var chart=$('chart');
     chart.querySelectorAll('.switch button').forEach(function(b){b.addEventListener('click',function(){
