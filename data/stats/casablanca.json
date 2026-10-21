@@ -7,6 +7,187 @@
  "max": 51327,
  "raw": 562,
  "date": "2026-10-19",
+ "changes": {
+  "new": 6,
+  "gone": 2,
+  "cuts": [],
+  "rises": [],
+  "trend": {
+   "before": 16272,
+   "after": 16279,
+   "pct": 0.00043047783039185106
+  },
+  "prev_date": "2026-10-17",
+  "days": 2,
+  "quartiers": {
+   "Les Princesses": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 29259,
+     "after": 29259,
+     "pct": 0.0
+    }
+   },
+   "Ain Diab": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 27311,
+     "after": 27311,
+     "pct": 0.0
+    }
+   },
+   "Oasis": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 20941,
+     "after": 20941,
+     "pct": 0.0
+    }
+   },
+   "Ferme Bretone": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Anfa": {
+    "new": 3,
+    "gone": 1,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 17969,
+     "after": 17800,
+     "pct": -0.009389064421987059
+    }
+   },
+   "Racine": {
+    "new": 1,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 17550,
+     "after": 17687,
+     "pct": 0.007810240092565701
+    }
+   },
+   "Sidi Belyout": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 17518,
+     "after": 17518,
+     "pct": 0.0
+    }
+   },
+   "Dar Bouazza": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 15714,
+     "after": 15714,
+     "pct": 0.0
+    }
+   },
+   "Zenata": {
+    "new": 2,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Gauthier": {
+    "new": 0,
+    "gone": 1,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 15207,
+     "after": 15034,
+     "pct": -0.011372255489021987
+    }
+   },
+   "Bouskoura": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 15030,
+     "after": 15030,
+     "pct": 0.0
+    }
+   },
+   "Maarif": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 15000,
+     "after": 15000,
+     "pct": 0.0
+    }
+   },
+   "Val Fleuri": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Californie": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Maarif Extension": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Bourgogne": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Hay Hassani": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Quartier des Hôpitaux": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   }
+  }
+ },
  "quartiers": [
   {
    "n": 27,

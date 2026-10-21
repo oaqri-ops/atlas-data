@@ -17,6 +17,15 @@ Il peut aussi être lancé à la main depuis l'onglet Actions (« Run workflow �
 Ajouter une ville : une ligne dans `data/cities.json`, avec `"generate": true`. Elle apparaît ensuite
 dans le calculateur de l'accueil, le menu « Villes » et le pied de page.
 
+## Évolution d'un relevé à l'autre
+
+`build_site.py` compare le dernier relevé de chaque ville au précédent (`data/raw/`), en reliant les
+annonces par leur référence Sarouty : nouvelles annonces, annonces retirées, baisses et hausses de prix,
+et variation de la médiane quand chaque relevé compte au moins 15 annonces (`MIN_LISTINGS_FOR_TREND`).
+Le résultat s'affiche sur les pages villes (section « Ce qui a changé »), les pages quartiers et les
+cartes villes de l'accueil, et il est enregistré dans `data/stats/<ville>.json` (clé `changes`).
+Garder au moins les deux derniers CSV de chaque ville.
+
 ## Interface
 
 `DESIGN.md` décrit le système visuel (couleurs, typographie, composants, règles). Le menu « Villes » et

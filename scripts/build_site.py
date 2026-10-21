@@ -10,6 +10,7 @@ Les pages existantes ne sont jamais supprimées.
 Usage : python scripts/build_site.py
 """
 import csv
+import datetime
 import glob
 import html
 import json
@@ -50,6 +51,15 @@ def latest_raw(slug):
         return None, None
     path = files[-1]
     return path, re.search(r"(\d{4}-\d{2}-\d{2})\.csv$", path).group(1)
+
+
+def previous_raw(slug, date):
+    """Relevé précédent de la ville (le plus récent avant date), ou (None, None)."""
+    files = [f for f in sorted(glob.glob(os.path.join(ROOT, "data", "raw", f"{slug}-*.csv")))
+             if re.search(r"(\d{4}-\d{2}-\d{2})\.csv$", f).group(1) < date]
+    if not files:
+        return None, None
+    return files[-1], re.search(r"(\d{4}-\d{2}-\d{2})\.csv$", files[-1]).group(1)
 
 
 def to_int(v):
@@ -128,7 +138,60 @@ def city_stats(city, cfg):
         q["rank"] = i + 1
     stats = summarize(rows)
     stats.update(raw=raw, date=date, rows=rows, ranked=ranked, small=small)
+    stats["changes"] = changes_since_previous(city, cfg, stats)
     return stats
+
+
+# Une variation de médiane n'est publiée qu'au-delà de ce nombre d'annonces dans chaque relevé :
+# en dessous, quelques annonces entrées ou sorties suffisent à la déplacer.
+MIN_LISTINGS_FOR_TREND = 15
+
+
+def changes_since_previous(city, cfg, st):
+    """Ce qui a changé depuis le relevé précédent : annonces nouvelles, retirées, prix modifiés.
+
+    Les annonces sont reliées d'un relevé à l'autre par leur identifiant Sarouty. Seules les annonces
+    exploitables du relevé courant comptent comme nouvelles ; une annonce retirée est une annonce
+    exploitable du relevé précédent qui n'apparaît plus du tout.
+    """
+    prev_path, prev_date = previous_raw(city["slug"], st["date"])
+    if not prev_path:
+        return None
+    prev_all = read_listings(prev_path, cfg)
+    prev_ids = {r["id"] for r in prev_all if r["id"]}
+    prev_kept = {r["id"]: r for r in prev_all if r["kept"] and r["id"]}
+    cur_path, _ = latest_raw(city["slug"])
+    cur_ids = {r["id"] for r in read_listings(cur_path, cfg) if r["id"]}
+    excluded = set(cfg["excluded_districts"])
+
+    def scope(rows, district):
+        return [r for r in rows if district is None or r["district"] == district]
+
+    def block(district=None):
+        cur = scope(st["rows"], district)
+        prev = scope(list(prev_kept.values()), district)
+        new = [r for r in cur if r["id"] and r["id"] not in prev_ids]
+        gone = [r for r in prev if r["id"] not in cur_ids]
+        cuts, rises = [], []
+        for r in cur:
+            p = prev_kept.get(r["id"])
+            if p and p["price"] and r["price"] and r["price"] != p["price"]:
+                move = {"id": r["id"], "district": r["district"], "surface": r["surface"], "bedrooms": r["bedrooms"],
+                        "before": p["price"], "after": r["price"], "pct": r["price"] / p["price"] - 1}
+                (cuts if r["price"] < p["price"] else rises).append(move)
+        cuts.sort(key=lambda m: m["pct"])
+        trend = None
+        if len(cur) >= MIN_LISTINGS_FOR_TREND and len(prev) >= MIN_LISTINGS_FOR_TREND:
+            before = statistics.median(r["ppm2"] for r in prev)
+            trend = {"before": round(before), "after": round(statistics.median(r["ppm2"] for r in cur)),
+                     "pct": statistics.median(r["ppm2"] for r in cur) / before - 1}
+        return {"new": len(new), "gone": len(gone), "cuts": cuts, "rises": rises, "trend": trend}
+
+    days = (datetime.date.fromisoformat(st["date"]) - datetime.date.fromisoformat(prev_date)).days
+    out = block()
+    out.update(prev_date=prev_date, days=days,
+               quartiers={q["name"]: block(q["name"]) for q in st["ranked"] if q["name"] not in excluded})
+    return out
 
 
 # ---------- mise en forme ----------
@@ -324,6 +387,106 @@ def bedroom_table(groups):
             f'<tbody>{rows}</tbody></table></div><p class="card-foot">Types comptant au moins 5 annonces.</p></div>')
 
 
+def plural(k, one, many, zero=None):
+    if k == 0 and zero:
+        return zero
+    return f"{k} {one if k == 1 else many}"
+
+
+def since(ch):
+    """« depuis le 17 octobre » : date du relevé précédent, sans l'année."""
+    return f"depuis le {long_date(ch['prev_date']).rsplit(' ', 1)[0]}"
+
+
+def between(ch, date):
+    """« Entre les relevés du 17 et du 19 octobre 2026, à 2 jours d'intervalle »."""
+    a, b = long_date(ch["prev_date"]), long_date(date)
+    if a.rsplit(" ", 1)[1] == b.rsplit(" ", 1)[1]:
+        a = a.rsplit(" ", 1)[0]
+        if a.split(" ", 1)[1] == b.split(" ", 2)[1]:
+            a = a.split(" ", 1)[0]
+    gap = "une semaine" if ch["days"] == 7 else f"{ch['days']} jour{'s' if ch['days'] > 1 else ''}"
+    return f"Entre les relevés du {a} et du {b}, à {gap} d'intervalle"
+
+
+def change_summary(b):
+    """« 7 nouvelles annonces, 2 retirées et aucune baisse de prix »."""
+    return (f"{plural(b['new'], 'nouvelle annonce', 'nouvelles annonces', 'aucune nouvelle annonce')}, "
+            f"{plural(b['gone'], 'retirée', 'retirées', 'aucune retirée')} et "
+            f"{plural(len(b['cuts']), 'baisse de prix', 'baisses de prix', 'aucune baisse de prix')}")
+
+
+def trend_text(t, where):
+    if not t:
+        return ""
+    if t["before"] == t["after"]:
+        return f" La médiane {where} est inchangée, à {n(t['after'])} MAD/m²."
+    return (f" La médiane {where} passe de {n(t['before'])} à {n(t['after'])} MAD/m² "
+            f"({pct(t['pct'])}).")
+
+
+def since_line(ch, b, where, anchor=None):
+    """Ligne courte sous les chiffres clés d'une page ville ou quartier."""
+    if not ch:
+        return ""
+    more = f' <a href="{anchor}">Le détail</a>' if anchor else ""
+    return (f'\n        <p class="since"><strong>{cap(since(ch))} :</strong> {change_summary(b)}.'
+            f'{trend_text(b["trend"], where)}{more}</p>')
+
+
+def bed_label(b):
+    return f"{b} ch." if b else "appartement"
+
+
+def changes_block(city, st):
+    ch = st["changes"]
+    if not ch:
+        return ""
+    cname = city["name"]
+    tiles = (f'<div class="moves">'
+             f'<div><strong>{ch["new"]}</strong><span>{"nouvelle annonce" if ch["new"] == 1 else "nouvelles annonces"}</span></div>'
+             f'<div><strong>{ch["gone"]}</strong><span>{"annonce retirée" if ch["gone"] == 1 else "annonces retirées"}</span></div>'
+             f'<div class="down"><strong>{len(ch["cuts"])}</strong><span>{"baisse de prix" if len(ch["cuts"]) == 1 else "baisses de prix"}</span></div>'
+             f'<div class="up"><strong>{len(ch["rises"])}</strong><span>{"hausse de prix" if len(ch["rises"]) == 1 else "hausses de prix"}</span></div>'
+             f'</div>')
+    if ch["cuts"]:
+        rows = "".join(f'<tr><th scope="row">{e(m["district"] or "Non précisé")}</th><td>{bed_label(m["bedrooms"])}, {n(m["surface"])} m²</td>'
+                       f'<td class="num"><s>{n(m["before"])}</s> {n(m["after"])}</td><td class="num down">{pct(m["pct"])}</td></tr>'
+                       for m in ch["cuts"][:6])
+        more = len(ch["cuts"]) - 6
+        cuts = ('<div class="table-wrap"><table class="cuts-table"><caption class="sr-only">Baisses de prix entre les deux relevés</caption>'
+                '<thead><tr><th scope="col">Quartier</th><th scope="col">Bien</th><th scope="col" class="num">Prix demandé (MAD)</th><th scope="col" class="num">Écart</th></tr></thead>'
+                f'<tbody>{rows}</tbody></table></div>'
+                + (f'<p class="card-foot">Et {plural(more, "autre baisse", "autres baisses")} : la liste complète, avec le lien de chaque annonce, est dans la version Pro.</p>' if more > 0 else
+                   '<p class="card-foot">Le lien de chaque annonce est dans la version Pro.</p>'))
+    else:
+        cuts = f'<p class="card-foot">Aucune annonce n\'a baissé son prix {since(ch)}.</p>'
+    active = [(q, b) for q, b in ch["quartiers"].items() if b["new"] or b["gone"] or b["cuts"] or b["rises"]]
+    by_q = ""
+    if active:
+        rows = "".join(f'<tr><th scope="row"><a href="/{city["slug"]}/{slugify(q)}/">{e(q)}</a></th><td class="num">{b["new"]}</td>'
+                       f'<td class="num">{b["gone"]}</td><td class="num">{len(b["cuts"])}</td></tr>' for q, b in active)
+        by_q = ('<div class="card"><div class="table-wrap"><table><caption class="sr-only">Mouvements par quartier</caption>'
+                '<thead><tr><th scope="col">Quartier</th><th scope="col" class="num">Nouvelles</th><th scope="col" class="num">Retirées</th>'
+                f'<th scope="col" class="num">Baisses</th></tr></thead><tbody>{rows}</tbody></table></div>'
+                '<p class="card-foot">Quartiers classés ayant au moins un mouvement.</p></div>')
+    return f"""
+    <section class="block" id="evolution" aria-labelledby="evolution-title">
+      <div class="shell block-grid">
+        <div class="block-copy">
+          <h2 id="evolution-title">Ce qui a changé {e(since(ch))}</h2>
+          <p>{between(ch, st['date'])} : {change_summary(ch)}.{trend_text(ch['trend'], 'de ' + e(cname))}</p>
+          <p>Les annonces sont suivies d'un relevé à l'autre par leur référence Sarouty. Une annonce retirée peut avoir été vendue, louée ou simplement dépubliée. Une variation de médiane reflète aussi les annonces qui entrent et sortent du relevé : ce n'est pas une évolution des prix de vente.</p>
+        </div>
+        <div class="moves-col">
+          <div class="card">{tiles}{cuts}</div>
+          {by_q}
+        </div>
+      </div>
+    </section>
+"""
+
+
 def footer(cfg):
     return set_city_nav(read_template("footer.html"), cfg)
 
@@ -431,7 +594,7 @@ def quartier_page(city, st, q, cfg):
           <div><span>Annonces analysées</span><strong>{q['n']}</strong><small>appartements à vendre</small></div>
           <div><span>Écart à la médiane de {e(cname)}</span><strong>{pct(delta)}</strong><small>ville : {n(st['median'])} MAD/m²</small></div>
           <div><span>Prix médian d'un appartement</span><strong>{millions(q['median_price'])}</strong><small>MAD, pour {n(q['median_surface'])} m² en médiane</small></div>
-        </div>{sample}
+        </div>{since_line(st['changes'], st['changes']['quartiers'].get(name), 'du quartier') if st['changes'] and st['changes']['quartiers'].get(name) else ''}{sample}
       </div>
     </section>
 
@@ -571,7 +734,7 @@ def city_page(city, st, cfg):
           <div class="hl"><span>Prix médian à {e(cname)}</span><strong>{n(st['median'])}</strong><small>MAD/m²</small></div>
           <div><span>Annonces analysées</span><strong>{st['n']}</strong><small>appartements à vendre</small></div>
           {facts_extra}
-        </div>
+        </div>{since_line(st['changes'], st['changes'], 'de ' + e(cname), '#evolution') if st['changes'] else ''}
       </div>
     </section>
 
@@ -584,7 +747,7 @@ def city_page(city, st, cfg):
         {rank_block}
       </div>
     </section>
-
+{changes_block(city, st)}
     <section class="block" aria-labelledby="tableau-title">
       <div class="shell">
         <h2 id="tableau-title" style="margin-bottom:20px">Ce que permet 1 million de MAD</h2>
@@ -802,6 +965,14 @@ def render_home(cfg, city, st, all_stats):
 
 # ---------- accueil, pied de page, sitemap ----------
 
+def home_moves(st):
+    ch = st and st.get("changes")
+    if not ch:
+        return ""
+    return (f'<span class="qcard-moves">{plural(ch["new"], "nouvelle annonce", "nouvelles annonces", "Aucune nouvelle annonce")}'
+            f', {plural(len(ch["cuts"]), "baisse de prix", "baisses de prix", "aucune baisse de prix")} {e(since(ch))}</span>')
+
+
 def cities_section(cfg, all_stats):
     cards = []
     for c in cfg["cities"]:
@@ -815,7 +986,7 @@ def cities_section(cfg, all_stats):
             f'<li><a class="qcard" href="/{c["slug"]}/"><span class="qcard-name">{e(c["name"])}</span>'
             f'<span class="qcard-price"><strong>{n(median)}</strong> <span>MAD/m²</span></span>'
             f'<span class="qcard-foot"><span>{count} annonces · {nq} quartier{"s" if nq > 1 else ""}</span></span>'
-            f'<span class="qcard-foot"><span>Relevé du {long_date(date)}</span></span></a></li>')
+            f'<span class="qcard-foot"><span>Relevé du {long_date(date)}</span></span>{home_moves(st if c.get("generate") else None)}</a></li>')
     return ("<!-- villes:start -->\n"
             '    <section class="section" id="villes" aria-labelledby="villes-title">\n'
             '      <div class="shell">\n'
