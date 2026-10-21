@@ -259,20 +259,27 @@ def crumbs(items):
     return '<nav class="crumbs" aria-label="Fil d\'Ariane">' + '<span aria-hidden="true">/</span>'.join(parts) + "</nav>"
 
 
-def rank_list(city, ranked, current=None):
+def rank_list(city, ranked, city_median, current=None):
+    """Classement en barres, avec un trait vertical à la médiane de la ville."""
     top = ranked[0]["median"]
+    ref = f'<b class="ref" style="left:{min(city_median / top * 100, 100):.1f}%"></b>'
     items = []
     for q in ranked:
         me = q is current
         items.append(f'<li class="{"me" if me else ""}"><a href="/{city["slug"]}/{q["slug"]}/"'
                      f'{" aria-current=\"page\"" if me else ""}><span>{e(q["name"])}</span>'
-                     f'<span class="bar"><i style="width:{q["median"] / top * 100:.1f}%"></i></span>'
+                     f'<span class="bar"><i style="width:{q["median"] / top * 100:.1f}%"></i>{ref}</span>'
                      f'<span class="v">{n(q["median"])}</span></a></li>')
-    return '<ul class="rank">' + "".join(items) + "</ul>"
+    return f'<ul class="rank{" has-me" if current else ""}">' + "".join(items) + "</ul>"
+
+
+def rank_legend(city, city_median):
+    return (f'<span class="rank-legend"><b class="ref-key" aria-hidden="true"></b>'
+            f'médiane de {e(city["name"])} ({n(city_median)} MAD/m²)</span>')
 
 
 def strip_chart(q, scale):
-    lanes = [0, -14, 14, -28, 28, -42, 42]
+    lanes = [0, -14, 14, -28, 28, -42, 42, -56, 56]
     last = {}
     pts = []
     for r in sorted(q["rows"], key=lambda r: r["ppm2"]):
@@ -466,8 +473,8 @@ def quartier_page(city, st, q, cfg):
           <a class="btn btn-ghost" href="/{city['slug']}/">Tous les quartiers de {e(cname)}</a>
         </div>
         <div class="card">
-          {rank_list(city, ranked, q)}
-          <p class="card-foot">Prix médian demandé en MAD/m², quartiers d'au moins {cfg['min_listings_per_quartier']} annonces.</p>
+          {rank_list(city, ranked, st['median'], q)}
+          <p class="card-foot">Prix médian demandé en MAD/m², quartiers d'au moins {cfg['min_listings_per_quartier']} annonces. {rank_legend(city, st['median'])}</p>
         </div>
       </div>
     </section>
@@ -532,7 +539,7 @@ def city_page(city, st, cfg):
     else:
         rank_text = f"Aucun quartier de {cname} ne compte encore au moins {cfg['min_listings_per_quartier']} annonces dans ce relevé."
 
-    rank_block = (f'<div class="card">{rank_list(city, ranked)}<p class="card-foot">Prix médian demandé en MAD/m², relevé du {long_date(date)}.</p></div>'
+    rank_block = (f'<div class="card">{rank_list(city, ranked, st["median"])}<p class="card-foot">Prix médian demandé en MAD/m², relevé du {long_date(date)}. {rank_legend(city, st["median"])}</p></div>'
                   if ranked else "<div></div>")
     table_rows = "".join(
         f'<tr><th scope="row"><a href="/{city["slug"]}/{q["slug"]}/">{e(q["name"])}</a></th><td class="num">{n(q["median"])}</td>'
@@ -613,7 +620,7 @@ def home_cards(city, st):
     top = st["ranked"][0]["median"]
     for q in st["ranked"]:
         d = round((q["median"] / st["median"] - 1) * 100)
-        note = "<em>Échantillon réduit</em>" if q["n"] < 15 else ""
+        note = '<em title="Moins de 15 annonces : la médiane donne un ordre de grandeur">Échantillon réduit</em>' if q["n"] < 15 else ""
         out.append(f'<li><a class="qcard" href="/{city["slug"]}/{q["slug"]}/"><span class="qcard-top"><span class="qcard-rank">{q["rank"]:02d}</span>'
                    f'<span class="delta {"up" if d >= 0 else "down"}">{pct(q["median"] / st["median"] - 1)} vs ville</span></span>'
                    f'<span class="qcard-name">{e(q["name"])}</span><span class="qcard-price"><strong>{n(q["median"])}</strong> <span>MAD/m²</span></span>'
