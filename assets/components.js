@@ -48,7 +48,8 @@
           '<button type="submit" class="btn btn-primary">Envoyer la demande</button>' +
           (PRO.whatsapp ? '<button type="button" class="btn btn-whatsapp" data-wa>Écrire sur WhatsApp</button>' : '') +
         '</div>' +
-        '<div class="pro-fallback" hidden><strong>Votre messagerie ne s\'est pas ouverte&nbsp;?</strong> Écrivez-nous directement :' +
+        '<div class="pro-fallback" hidden><strong>Dernière étape : envoyez l\'email préparé dans votre messagerie.</strong> ' +
+          'Rien ne s\'est ouvert&nbsp;? Envoyez votre demande à cette adresse :' +
           '<div class="pro-copy"><code>' + esc(PRO.email) + '</code><button type="button" data-copy>Copier</button></div></div>' +
       '</div>' +
       '<div class="pro-done" hidden><h2>Demande envoyée</h2><p>Merci, nous revenons vers vous sous 24 h.</p></div>' +
@@ -71,7 +72,12 @@
     a.addEventListener('click', function(e){
       e.preventDefault();
       var v = a.getAttribute('data-ville');
-      if (v) form.elements.ville.value = v;
+      var sel = form.elements.ville;
+      if (v){
+        // Ville absente de la liste (page sans menu « Villes ») : on l'ajoute plutôt que de laisser le choix vide
+        if (!Array.prototype.some.call(sel.options, function(o){ return o.value === v; })) sel.add(new Option(v, v));
+        sel.value = v;
+      }
       d.querySelector('.pro-step').hidden = false; d.querySelector('.pro-done').hidden = true; fallback.hidden = true;
       d.showModal();
       form.elements.agence.focus();
@@ -88,7 +94,10 @@
       var data = new FormData(form);
       fetch(PRO.endpoint, {method: 'POST', body: data, headers: {Accept: 'application/json'}})
         .then(function(r){ if (!r.ok) throw r; d.querySelector('.pro-step').hidden = true; d.querySelector('.pro-done').hidden = false; })
-        .catch(function(){ fallback.hidden = false; });
+        .catch(function(){
+          fallback.querySelector('strong').textContent = 'L\'envoi a échoué.';
+          fallback.hidden = false;
+        });
       return;
     }
     location.href = 'mailto:' + PRO.email + '?subject=' + encodeURIComponent('Accès Pro Atlas Data - ' + field('ville')) +

@@ -35,6 +35,7 @@
       --shell:1180px;
     }
     *,*::before,*::after{box-sizing:border-box}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
     img,svg{max-width:100%;display:block}
@@ -391,6 +392,8 @@
     .qcard.cta .qcard-name{color:#fff}
     .qcard.cta p{color:#c9cfdc;font-size:15px}
     .qcard.cta .btn{background:#fff;color:var(--ink)}
+    .analyse-other{margin-top:14px;padding:12px 16px;border-radius:8px;background:var(--tint);font-size:15px;color:var(--ink)}
+    .analyse-other a{font-weight:700;color:var(--blue)}
     .chart-title{font:800 22px/1.2 var(--display);letter-spacing:-.02em;margin:0 0 6px}
     /* Pied de page bleu nuit */
     .site-footer,.ad-footer{background:var(--navy);border-top:0;color:#c9cfdc}
@@ -452,7 +455,7 @@
         <div class="hero-copy">
           <p class="badge" id="hero-badge">Relevé du {{DATE_LONG}} · {{N}} annonces</p>
           <h1 id="hero-title">Combien de mètres carrés pour votre budget à <span id="hero-city">{{CITY_NAME}}</span>&nbsp;?</h1>
-          <p class="hero-lede">Les prix demandés des appartements à vendre à Marrakech, Casablanca, Rabat et Tanger, quartier par quartier. Choisissez une ville, entrez un budget et voyez ce qu'il permet vraiment d'acheter.</p>
+          <p class="hero-lede">Les prix demandés des appartements à vendre à {{CITY_LIST}}, quartier par quartier. Choisissez une ville, entrez un budget et voyez ce qu'il permet vraiment d'acheter.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" id="hero-explore" href="dashboard.html?ville={{CITY_SLUG}}">Explorer les {{N}} annonces</a>
             <a class="btn btn-ghost" id="hero-city-link" href="/{{CITY_SLUG}}/">Voir les prix par quartier</a>
@@ -504,6 +507,7 @@
         <div class="section-head">
           <h2 id="analyse-title">Les prix au m² à Marrakech, quartier par quartier</h2>
           <p>{{ANALYSE_P}}</p>
+          <p class="analyse-other" id="analyse-other" hidden>Cette étude porte sur {{CITY_NAME}}. <a id="analyse-other-link" href="/">Voir les prix par quartier à <span id="analyse-other-city"></span></a>.</p>
         </div>
 {{QCARDS}}
           <h3 class="chart-title">Chaque annonce, quartier par quartier</h3>
@@ -679,7 +683,7 @@
     var input=$('budget-input');
     var budget=1000000;
     var city=(new URLSearchParams(location.search).get('ville')||'').toLowerCase();
-    if(!CITIES[city])city='{{CITY_SLUG}}';
+    if(!Object.prototype.hasOwnProperty.call(CITIES,city))city='{{CITY_SLUG}}';
     var C=CITIES[city];
 
     function parse(v){var n=Number(String(v).replace(/[^\d]/g,''));return Number.isFinite(n)?n:0}
@@ -709,6 +713,7 @@
       $('hero-badge').textContent='Relevé du '+C.date+' · '+C.n+' annonces';
       var ex=$('hero-explore');ex.textContent='Explorer les '+C.n+' annonces';ex.href='dashboard.html?ville='+slug;
       $('hero-city-link').href='/'+slug+'/';
+      $('analyse-other').hidden=slug==='{{CITY_SLUG}}';$('analyse-other-link').href='/'+slug+'/';$('analyse-other-city').textContent=C.name;
       var figs=$('hero-figs');figs.replaceChildren();
       C.figs.forEach(function(f){var li=el('li');li.appendChild(el('strong',null,f[0]));li.appendChild(el('span',null,f[1]));figs.appendChild(li)});
       $('hero-source').textContent=C.source;

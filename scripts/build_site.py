@@ -694,7 +694,6 @@ def render_home(cfg, city, st, all_stats):
     furn = [r["ppm2"] for r in st["rows"] if r["furnished"] == "1"]
     unfurn = [r["ppm2"] for r in st["rows"] if r["furnished"] == "0"]
     biggest = max(ranked, key=lambda q: q["n"])
-    short = long_date(date).rsplit(" ", 1)[0]
 
     calc = {c["slug"]: calc_city(c, all_stats[c["slug"]], cfg) for c in cfg["cities"]
             if c["slug"] in all_stats and all_stats[c["slug"]]["ranked"]}
@@ -763,7 +762,7 @@ def render_home(cfg, city, st, all_stats):
                      f"Médianes par quartier pour les secteurs comptant au moins {cfg['min_listings_per_quartier']} annonces."),
         "DATE_ISO": date,
         "DATE_LONG": long_date(date),
-        "DATE_SHORT": short,
+        "CITY_LIST": join_fr([e(calc[k]["name"]) for k in calc]),
         "N": str(st["n"]),
         "HERO_SOURCE": f"Relevé du {long_date(date)} sur Sarouty : {st['raw']} annonces collectées, {st['n']} exploitables. Il s'agit de prix demandés, pas de prix de vente. Mis à jour chaque lundi.",
         "CHIPS": chips,
@@ -849,15 +848,21 @@ def city_medians(cfg, all_stats):
             yield c, c["published"]["median"]
 
 
-def set_city_menus(page, cfg, all_stats):
-    """Menu « Villes » de l'en-tête (bureau et mobile), avec la médiane de chaque ville."""
+def city_menus(cfg, all_stats):
+    """Menu « Villes » de l'en-tête (bureau, mobile), avec la médiane de chaque ville."""
+    cities = list(city_medians(cfg, all_stats))
     items = "".join(f'<li><a href="/{c["slug"]}/"><span>{e(c["name"])}</span><small>{n(m)} MAD/m²</small></a></li>'
-                    for c, m in city_medians(cfg, all_stats))
+                    for c, m in cities)
     menu = (f'<details class="nav-cities"><summary>Villes</summary><ul>{items}'
             '<li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details>')
     mobile = '<p class="mobile-nav-title">Prix par ville</p>' + "".join(
         f'<a class="mobile-nav-city" href="/{c["slug"]}/">{e(c["name"])} <small>{n(m)} MAD/m²</small></a>'
-        for c, m in city_medians(cfg, all_stats))
+        for c, m in cities)
+    return menu, mobile
+
+
+def set_city_menus(page, menus):
+    menu, mobile = menus
     page = re.sub(r"<!-- villes-menu -->.*?<!-- /villes-menu -->",
                   lambda _: f"<!-- villes-menu -->{menu}<!-- /villes-menu -->", page, flags=re.S)
     return re.sub(r"<!-- villes-mobile -->.*?<!-- /villes-mobile -->",
@@ -865,11 +870,12 @@ def set_city_menus(page, cfg, all_stats):
 
 
 def update_footers(cfg, all_stats):
+    menus = city_menus(cfg, all_stats)
     for path in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True):
         if os.sep + "scripts" + os.sep in path:
             continue
         s = open(path, encoding="utf8").read()
-        t = set_city_menus(set_city_nav(s, cfg), cfg, all_stats)
+        t = set_city_menus(set_city_nav(s, cfg), menus)
         if t != s:
             open(path, "w", encoding="utf8").write(t)
 
@@ -938,8 +944,12 @@ def main():
             json.dump(public, f, ensure_ascii=False, indent=1)
         print(f"{city['name']}: {st['n']}/{st['raw']} annonces exploitables, médiane {st['median']} MAD/m², "
               f"{len(st['ranked'])} quartiers : {', '.join(q['name'] + ' (' + str(q['n']) + ')' for q in st['ranked'])}")
-    if "marrakech" in all_stats:
+    if all_stats.get("marrakech", {}).get("ranked"):
         render_home(cfg, next(c for c in cfg["cities"] if c["slug"] == "marrakech"), all_stats["marrakech"], all_stats)
+    else:
+        # L'accueil est l'étude de Marrakech (textes, FAQ, données structurées) : sans relevé exploitable,
+        # il n'est pas régénéré et garde ses chiffres précédents.
+        print("ATTENTION : pas de relevé exploitable pour Marrakech, accueil non régénéré.")
     update_home(cfg, all_stats)
     update_dashboard(cfg)
     update_footers(cfg, all_stats)
