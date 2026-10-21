@@ -339,6 +339,15 @@
     .hero-figs strong{display:block;font:800 28px/1.1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
     .hero-figs span{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:var(--muted)}
     .hero-source{margin-top:20px;font-size:13px}
+    /* Choix de la ville */
+    .villes{border:0;margin:0 0 16px;padding:0;min-width:0}
+    .villes legend{padding:0}
+    .city-tabs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;padding:3px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}
+    .city-tab input{position:absolute;opacity:0;pointer-events:none}
+    .city-tab span{display:block;text-align:center;padding:8px 4px;border-radius:6px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer}
+    .city-tab span:hover{color:var(--ink)}
+    .city-tab input:checked+span{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(15,26,51,.14)}
+    .city-tab input:focus-visible+span{outline:3px solid var(--blue);outline-offset:1px}
     /* Calculateur plus compact : le résultat reste visible sans défiler */
     .calc-inputs{padding:20px 24px 18px}
     .budget input{font-size:30px}
@@ -415,6 +424,8 @@
       .pro-band .shell{padding:0 18px}
     }
   </style>
+  <link rel="stylesheet" href="/assets/components.css">
+  <script src="/assets/components.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -425,13 +436,13 @@
         <span class="logo-word">Atlas Data</span>
       </a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a>
+        <a href="#budget">Calculer mon budget</a><!-- villes-menu --><!-- /villes-menu --><a href="#offres">Offres</a><a href="#methode">Méthode</a>
       </nav>
       <a class="btn btn-primary header-cta" href="dashboard.html">Ouvrir le dashboard</a>
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
-      <a href="#budget">Calculer mon budget</a><a href="#analyse">Prix par quartier</a><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
+      <a href="#budget">Calculer mon budget</a><!-- villes-mobile --><!-- /villes-mobile --><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -439,21 +450,27 @@
     <section class="hero" id="budget" aria-labelledby="hero-title">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="badge">Relevé du {{DATE_LONG}} · {{N}} annonces</p>
-          <h1 id="hero-title">Combien de mètres carrés pour votre budget à Marrakech&nbsp;?</h1>
-          <p class="hero-lede">Les prix demandés des appartements à vendre, quartier par quartier. Entrez un budget, choisissez un quartier et voyez ce qu'il permet vraiment d'acheter.</p>
+          <p class="badge" id="hero-badge">Relevé du {{DATE_LONG}} · {{N}} annonces</p>
+          <h1 id="hero-title">Combien de mètres carrés pour votre budget à <span id="hero-city">{{CITY_NAME}}</span>&nbsp;?</h1>
+          <p class="hero-lede">Les prix demandés des appartements à vendre à Marrakech, Casablanca, Rabat et Tanger, quartier par quartier. Choisissez une ville, entrez un budget et voyez ce qu'il permet vraiment d'acheter.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="dashboard.html">Explorer les {{N}} annonces</a>
-            <a class="btn btn-ghost" href="#analyse">Voir les prix par quartier</a>
+            <a class="btn btn-primary" id="hero-explore" href="dashboard.html?ville={{CITY_SLUG}}">Explorer les {{N}} annonces</a>
+            <a class="btn btn-ghost" id="hero-city-link" href="/{{CITY_SLUG}}/">Voir les prix par quartier</a>
           </div>
-          <ul class="hero-figs" aria-label="Chiffres clés">
+          <ul class="hero-figs" id="hero-figs" aria-label="Chiffres clés">
 {{KEYFIGS}}
           </ul>
-          <p class="hero-source">{{HERO_SOURCE}}</p>
+          <p class="hero-source" id="hero-source">{{HERO_SOURCE}}</p>
         </div>
 
         <div class="calc" role="region" aria-label="Calculateur de surface selon le budget">
           <div class="calc-inputs">
+            <fieldset class="villes">
+              <legend class="field-label">Ville</legend>
+              <div class="city-tabs">
+{{CITY_TABS}}
+              </div>
+            </fieldset>
             <label class="field-label" for="budget-input">Votre budget</label>
             <div class="budget"><input id="budget-input" type="text" inputmode="numeric" autocomplete="off" value="1 000 000" aria-describedby="budget-help"><span>MAD</span></div>
             <div class="presets" role="group" aria-label="Budgets fréquents" id="budget-help">
@@ -464,7 +481,7 @@
             </div>
             <fieldset class="quartiers">
               <legend class="field-label">Quartier</legend>
-              <div class="chips">
+              <div class="chips" id="chips">
 {{CHIPS}}
               </div>
             </fieldset>
@@ -474,9 +491,9 @@
             <p class="result-real" id="result-real"></p>
           </div>
           <div class="calc-compare">
-            <h2>Le même budget dans les autres quartiers</h2>
+            <h2 id="cmp-title">Le même budget dans les autres quartiers</h2>
             <ul class="cmp" id="cmp"></ul>
-            <p class="calc-note">{{CALC_NOTE}}</p>
+            <p class="calc-note" id="calc-note">{{CALC_NOTE}}</p>
           </div>
         </div>
       </div>
@@ -584,7 +601,7 @@
               <li>Les baisses de prix, dès le 4<sup>e</sup> relevé</li>
             </ul>
             <a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un fichier d'exemple</a>
-            <a class="btn btn-ghost" href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a>
+            <a class="btn btn-ghost" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a>
             <p class="pro-sample">Exemple : 20 annonces de Guéliz, au format Excel.</p>
           </div>
         </div>
@@ -655,59 +672,81 @@
   <script>
   (function(){
     'use strict';
-    var DATA={{CALC_DATA}};
-    var QUARTIERS={{CALC_QUARTIERS}};
+    var CITIES={{CALC_DATA}};
     var nf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
-    var fmt=function(n){return nf.format(n).replace(/\u202f|\u00a0/g,' ')};
+    var fmt=function(n){return nf.format(n).replace(/ | /g,' ')};
     var $=function(id){return document.getElementById(id)};
     var input=$('budget-input');
     var budget=1000000;
+    var city=(new URLSearchParams(location.search).get('ville')||'').toLowerCase();
+    if(!CITIES[city])city='{{CITY_SLUG}}';
+    var C=CITIES[city];
 
     function parse(v){var n=Number(String(v).replace(/[^\d]/g,''));return Number.isFinite(n)?n:0}
-    function selected(){var r=document.querySelector('input[name="quartier"]:checked');return r?r.value:'{{TOP_Q}}'}
-    function select(q){var r=document.querySelector('input[name="quartier"][value="'+q+'"]');if(r){r.checked=true;update()}}
+    function selected(){var r=document.querySelector('input[name="quartier"]:checked');return r&&C.data[r.value]?r.value:C.quartiers[0]}
+    function select(q){var r=document.querySelector('input[name="quartier"][value="'+CSS.escape(q)+'"]');if(r){r.checked=true;update(true)}}
+    function el(tag,cls,text){var x=document.createElement(tag);if(cls)x.className=cls;if(text!=null)x.textContent=text;return x}
 
-    function buildCompare(){
-      var ul=$('cmp');
-      QUARTIERS.forEach(function(q){
-        var li=document.createElement('li');var b=document.createElement('button');b.type='button';b.dataset.q=q;
-        b.innerHTML='<span>'+q+'</span><span class="cmp-bar"><i></i></span><span class="cmp-val"></span>';
+    // Quartiers, comparaison et textes du héros pour la ville choisie
+    function setCity(slug){
+      city=slug;C=CITIES[slug];
+      var chips=$('chips');chips.replaceChildren();
+      C.quartiers.concat(['__all']).forEach(function(q,i){
+        var l=el('label','chip'),r=el('input');r.type='radio';r.name='quartier';r.value=q;r.checked=i===0;
+        r.addEventListener('change',function(){update(true)});
+        l.appendChild(r);l.appendChild(el('span',null,q==='__all'?'Toute la ville':q));chips.appendChild(l);
+      });
+      var ul=$('cmp');ul.replaceChildren();
+      C.quartiers.forEach(function(q){
+        var li=el('li'),b=el('button');b.type='button';b.dataset.q=q;
+        b.appendChild(el('span',null,q));var bar=el('span','cmp-bar');bar.appendChild(el('i'));b.appendChild(bar);b.appendChild(el('span','cmp-val'));
         b.addEventListener('click',function(){select(q)});
         li.appendChild(b);ul.appendChild(li);
       });
+      $('cmp').hidden=$('cmp-title').hidden=C.quartiers.length<2;
+      $('calc-note').textContent=C.note;
+      $('hero-city').textContent=C.name;
+      $('hero-badge').textContent='Relevé du '+C.date+' · '+C.n+' annonces';
+      var ex=$('hero-explore');ex.textContent='Explorer les '+C.n+' annonces';ex.href='dashboard.html?ville='+slug;
+      $('hero-city-link').href='/'+slug+'/';
+      var figs=$('hero-figs');figs.replaceChildren();
+      C.figs.forEach(function(f){var li=el('li');li.appendChild(el('strong',null,f[0]));li.appendChild(el('span',null,f[1]));figs.appendChild(li)});
+      $('hero-source').textContent=C.source;
+      document.querySelectorAll('[data-pro-contact]').forEach(function(a){a.setAttribute('data-ville',C.name)});
+      document.querySelectorAll('input[name="ville"]').forEach(function(r){r.checked=r.value===slug});
     }
 
     function update(animate){
-      var q=selected(),d=DATA[q];
+      var q=selected(),d=C.data[q],all=q==='__all';
       var valid=budget>=50000;
       var m2=valid?Math.round(budget/d.median):0;
       $('result-lead').textContent=d.prep+', ce budget correspond à environ';
-      var el=$('result-m2');
-      el.innerHTML=(valid?fmt(m2):'-')+'<small>&nbsp;m²</small>';
-      if(animate){el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}
+      var m=$('result-m2');
+      m.innerHTML=(valid?fmt(m2):'-')+'<small>&nbsp;m²</small>';
+      if(animate){m.classList.remove('tick');void m.offsetWidth;m.classList.add('tick')}
       $('result-basis').textContent='au prix médian demandé de '+fmt(d.median)+' MAD/m², calculé sur '+d.n+' annonces.';
       var count=d.prices.filter(function(p){return p<=budget}).length;
-      var where=q==='Marrakech'?'':' dans ce quartier';
+      var where=all?'':' dans ce quartier';
       var link=document.createElement('a');
-      var params=new URLSearchParams();if(q!=='Marrakech')params.set('quartier',q);
+      var params=new URLSearchParams({ville:city});if(!all)params.set('quartier',q);
       var real=$('result-real');real.replaceChildren();
       real.className='result-real'+(!valid?'':count===0?' is-none':' is-some');
       if(!valid){real.textContent='Entrez un budget pour lancer le calcul.';}
       else if(count===0){
-        var label=document.createElement('strong');label.textContent='Aucune annonce à ce prix. ';real.appendChild(label);
-        real.appendChild(document.createTextNode('Ce chiffre est théorique : la moins chère'+where+' demandait '+fmt(d.prices[0])+' MAD le {{DATE_SHORT}}. '));
-        link.textContent=q==='Marrakech'?'Voir toutes les annonces':'Voir les annonces de ce quartier';
-        link.href='dashboard.html'+(params.toString()?'?'+params:'');real.appendChild(link);
+        real.appendChild(el('strong',null,'Aucune annonce à ce prix. '));
+        real.appendChild(document.createTextNode('Ce chiffre est théorique : la moins chère'+where+' demandait '+fmt(d.prices[0])+' MAD le '+C.short+'. '));
+        link.textContent=all?'Voir toutes les annonces':'Voir les annonces de ce quartier';
+        link.href='dashboard.html?'+params;real.appendChild(link);
       } else {
-        var found=document.createElement('strong');found.textContent=count+(count>1?' annonces':' annonce')+' à ce prix. ';real.appendChild(found);
-        real.appendChild(document.createTextNode(count+' sur '+d.n+where+' '+(count>1?'demandaient':'demandait')+' '+fmt(budget)+' MAD ou moins le {{DATE_SHORT}}. '));
+        real.appendChild(el('strong',null,count+(count>1?' annonces':' annonce')+' à ce prix. '));
+        real.appendChild(document.createTextNode('Sur les '+d.n+' annonces'+(all?' de la ville':' de ce quartier')+', '+count+' '+(count>1?'demandaient':'demandait')+' '+fmt(budget)+' MAD ou moins le '+C.short+'. '));
         params.set('prixmax',String(budget));
         link.textContent=count>1?'Voir ces annonces dans le dashboard':'Voir cette annonce dans le dashboard';
         link.href='dashboard.html?'+params;real.appendChild(link);
       }
-      var max=0;QUARTIERS.forEach(function(k){max=Math.max(max,budget/DATA[k].median)});
+      var max=0;C.quartiers.forEach(function(k){max=Math.max(max,budget/C.data[k].median)});
       document.querySelectorAll('#cmp button').forEach(function(b){
-        var k=b.dataset.q,v=valid?budget/DATA[k].median:0;
+        var k=b.dataset.q,v=valid?budget/C.data[k].median:0;
         b.setAttribute('aria-pressed',String(k===q));
         b.querySelector('i').style.width=(max?v/max*100:0).toFixed(1)+'%';
         b.querySelector('.cmp-val').textContent=valid?fmt(Math.round(v))+' m²':'-';
@@ -719,8 +758,11 @@
     input.addEventListener('input',function(){budget=Math.min(parse(input.value),100000000);update(false)});
     input.addEventListener('blur',function(){if(budget)input.value=fmt(budget)});
     document.querySelectorAll('.presets button').forEach(function(b){b.addEventListener('click',function(){budget=Number(b.dataset.budget);input.value=fmt(budget);update(true)})});
-    document.querySelectorAll('input[name="quartier"]').forEach(function(r){r.addEventListener('change',function(){update(true)})});
-    buildCompare();update(false);
+    document.querySelectorAll('input[name="ville"]').forEach(function(r){r.addEventListener('change',function(){
+      setCity(r.value);update(true);
+      var u=new URL(location.href);u.searchParams.set('ville',r.value);history.replaceState(null,'',u);
+    })});
+    setCity(city);update(false);
 
     var chart=$('chart');
     chart.querySelectorAll('.switch button').forEach(function(b){b.addEventListener('click',function(){
