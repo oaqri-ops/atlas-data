@@ -78,7 +78,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .ad-menu svg{width:22px;height:22px;margin:auto}
 .ad-mobile-nav{border-top:1px solid var(--line);padding:8px 24px 18px;background:#fff}
 .ad-mobile-nav a{display:block;padding:12px 0;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
-.ad-hero{padding:48px 0 40px;background:linear-gradient(180deg,var(--white) 0,var(--soft) 100%);border-bottom:1px solid var(--line)}
+.ad-hero{padding:32px 0 28px;background:linear-gradient(180deg,var(--white) 0,var(--soft) 100%);border-bottom:1px solid var(--line)}
 .ad-crumbs{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--faint);margin-bottom:14px}.ad-crumbs a{color:var(--blue);font-weight:700;text-decoration:none}.ad-crumbs a:hover{text-decoration:underline}.ad-crumbs [aria-current]{color:var(--muted)}
 .ad-hero h1{font:800 clamp(32px,4vw,48px)/1.06 var(--display);letter-spacing:-.035em;margin:0;max-width:16em}
 .ad-hero-lede{font-size:18px;line-height:1.55;color:var(--muted);max-width:36em;margin:16px 0 0}
@@ -254,15 +254,16 @@ dialog .modal-foot a{border-radius:0;font-size:14px}
       .pro-band .shell{padding:0 18px}
     }
     .ad-hero-actions{margin:20px 0 0}
-    .ad-home-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid #c9ceda;border-radius:var(--radius);background:#fff;color:var(--ink);font-weight:700;font-size:15px;text-decoration:none}
-    .ad-home-btn:hover{border-color:var(--ink)}
+    .ad-hero h1{font-size:clamp(30px,3.4vw,42px)}
+    .ad-hero-lede{font-size:17px;margin-top:12px}
+    .ad-hero-source{margin-top:10px;font-size:13px}
   </style>
 </head>
 <body>
 <noscript><p style="padding:24px;font:16px/1.5 Arial,sans-serif">Ce dashboard des prix immobiliers au Maroc nécessite JavaScript. Les prix médians au m² par quartier sont aussi présentés sur la <a href="https://atlas-data.fr/#analyse">page d'accueil d'Atlas Data</a>.</p></noscript>
 <header class="ad-header" id="top"><div class="ad-shell ad-header-row"><a class="ad-logo" href="/" aria-label="Atlas Data, accueil"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span><span class="logo-word">Atlas Data</span></a><nav class="ad-nav" aria-label="Navigation principale"><a href="/">Accueil</a><a href="/#budget">Calculer mon budget</a><a href="/#analyse">Prix par quartier</a><a href="/dashboard.html" aria-current="page">Dashboard</a><a href="/#offres">Offres</a></nav><a class="ad-btn ad-header-cta" href="/#offres">Accès Pro</a><button class="ad-menu" type="button" aria-label="Ouvrir le menu" aria-controls="ad-mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div><nav class="ad-mobile-nav" id="ad-mobile-nav" aria-label="Navigation mobile" hidden><a href="/">Accueil</a><a href="/#budget">Calculer mon budget</a><a href="/#analyse">Prix par quartier</a><a href="/#offres">Offres</a><a href="mailto:othman@atlas-data.fr">Contact</a></nav></header>
 <main>
-<section class="ad-hero" aria-labelledby="main-heading"><div class="ad-shell"><nav class="ad-crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Dashboard</span></nav><h1 id="main-heading">Dashboard des prix immobiliers au Maroc</h1><p class="ad-hero-lede">Choisissez une ville, puis filtrez les annonces d'appartements à vendre par quartier, prix, surface ou nombre de chambres. Les médianes et les graphiques se recalculent à chaque filtre.</p><p class="ad-hero-source">Relevé du <span id="mast-date"></span> sur Sarouty à <span id="mast-city"></span> : <span id="mast-total"></span> annonces collectées, <span id="mast-valid"></span> exploitables. Il s'agit de prix demandés, pas de prix de vente.</p><p class="ad-hero-actions"><a class="ad-home-btn" href="/"><span aria-hidden="true">←</span> Retour à l'accueil</a></p></div></section>
+<section class="ad-hero" aria-labelledby="main-heading"><div class="ad-shell"><nav class="ad-crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Dashboard</span></nav><h1 id="main-heading">Dashboard des prix immobiliers au Maroc</h1><p class="ad-hero-lede">Choisissez une ville, puis filtrez les annonces d'appartements à vendre par quartier, prix, surface ou nombre de chambres. Les médianes et les graphiques se recalculent à chaque filtre.</p><p class="ad-hero-source">Relevé du <span id="mast-date"></span> sur Sarouty à <span id="mast-city"></span> : <span id="mast-total"></span> annonces collectées, <span id="mast-valid"></span> exploitables. Il s'agit de prix demandés, pas de prix de vente.</p></div></section>
 <div class="workspace shell"><div class="workspace-grid">
 <aside aria-label="Filtres du marché"><div class="filters panel" id="filters-panel"><div class="filters-head"><h2>Filtres</h2><button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filters-body">Afficher</button><button class="reset-inline" type="button" id="reset-filters">Effacer</button></div><div class="filters-body" id="filters-body">
 <div class="filter-group"><label class="filter-label" for="f-search">Rechercher</label><input class="control" type="search" id="f-search" placeholder="Secteur ou référence…" autocomplete="off"></div>

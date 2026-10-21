@@ -430,3 +430,20 @@
 .small-list li:last-child{border-bottom:0}
 .small-list span{color:var(--muted);white-space:nowrap}
 .pro-actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Affinage 2026-10 : hiérarchie des graphiques, colonnes de texte, nuage de points plus lisible */
+.rank .bar{position:relative;overflow:visible}
+.rank .bar i{background:var(--blue);border-radius:2px}
+.rank.has-me .bar i{background:#b7c3f1}
+.rank.has-me .me .bar i{background:var(--blue)}
+.rank .ref{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--ink);opacity:.55;margin-left:-1px}
+.rank-legend{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.ref-key{display:inline-block;width:0;height:12px;border-left:2px dashed var(--ink);opacity:.55}
+.card tbody th a{color:var(--blue);font-weight:600;text-decoration:none}
+.card tbody th a:hover{text-decoration:underline}
+.card tbody tr:hover{background:var(--soft)}
+.strip{height:170px}
+.strip .axis-line{top:85px}
+.strip .pt{top:calc(85px + var(--y))}
+@media (min-width:1041px){.block-copy{position:sticky;top:100px}}
+@media (max-width:600px){.page-hero .hero-lede{font-size:16px}.block{padding:56px 0}.block-copy .btn{width:100%}.pro-actions .btn{flex:1 1 100%}}
