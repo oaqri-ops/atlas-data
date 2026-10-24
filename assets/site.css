@@ -339,11 +339,11 @@
     .strip-scale .ticks span:last-child{transform:translateX(-100%)}
     .sample-note{margin-top:16px;font-size:14px;color:var(--muted);max-width:48em}
   
-    /* Thème Atlas Data 2026 : Public Sans, coins arrondis, accent terracotta, pied de page bleu nuit */
+    /* Thème Atlas Data 2026 : Roboto, coins arrondis, accent terracotta, pied de page bleu nuit */
     :root{
       --ink:#0f1a33;--muted:#4f5a6e;--faint:#5f687a;--line:#e3e6ec;--soft:#f5f6f8;--navy:#0f1a33;
       --clay:#b8502a;--clay-ink:#8a3a1c;--clay-tint:#fbede6;--green-ink:#0b5a4b;--green-tint:#e3f3ef;
-      --body:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:var(--body);--radius:6px;
+      --body:'Roboto',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:var(--body);--radius:6px;
     }
     .btn,.ad-btn,.export-btn,dialog .modal-foot a{border-radius:var(--radius)}
     .btn{min-height:48px;padding:0 22px}
