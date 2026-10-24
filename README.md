@@ -1,5 +1,5 @@
 # atlas-data
-Atlas Data — Moroccan Real Estate Intelligence &amp; Market Analytics
+Atlas Data - Moroccan Real Estate Intelligence &amp; Market Analytics
 
 ## Mise à jour des données
 
