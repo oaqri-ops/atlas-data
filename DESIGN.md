@@ -5,7 +5,7 @@ description: >
   Data journalism for the Moroccan property market. A calm, numbers-first interface: navy ink on
   white and cool-grey surfaces, one confident royal blue for data and primary actions, terracotta
   and green only to say "above / below the city". Archivo (wide, heavy) for headlines and figures,
-  Public Sans for reading. Every number is honest about its source, its date and its sample size.
+  Roboto for reading. Every number is honest about its source, its date and its sample size.
 
 colors:
   ink: "#0f1a33"          # text, headings, dark buttons
@@ -31,7 +31,7 @@ typography:
     fontFamily: "'Archivo', 'Arial Narrow', Arial, sans-serif"
     usage: headings, all prominent numbers, logo word
   body:
-    fontFamily: "'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif"
     usage: everything else
   scale:
     hero-h1:     { size: "clamp(40px, 5.2vw, 64px)", weight: 800, lineHeight: 1.03, letterSpacing: -0.035em }
@@ -88,7 +88,7 @@ components in `assets/components.css`. When a token changes here, change it in a
 
 ## Components
 
-- **Buttons**: 48px high, 6px radius, Public Sans 700 15px. Primary = blue fill. Ghost = white with
+- **Buttons**: 48px high, 6px radius, Roboto 700 15px. Primary = blue fill. Ghost = white with
   `line-strong` border, ink border on hover. Header CTA = navy fill. Full width under 600px.
 - **Chips** (neighbourhood picker): pill, 1px `line` border, ink fill when selected.
 - **Segmented control** (city picker, chart mode): `soft` track with 3px padding, selected segment white

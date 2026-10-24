@@ -1,5 +1,5 @@
 # atlas-data
-Atlas Data — Moroccan Real Estate Intelligence &amp; Market Analytics
+Atlas Data - Moroccan Real Estate Intelligence &amp; Market Analytics
 
 ## Mise à jour des données
 
@@ -15,7 +15,8 @@ Le workflow a besoin du secret `APIFY_TOKEN` (Settings › Secrets and variables
 Il peut aussi être lancé à la main depuis l'onglet Actions (« Run workflow »).
 
 Ajouter une ville : une ligne dans `data/cities.json`, avec `"generate": true`. Elle apparaît ensuite
-dans le calculateur de l'accueil, le menu « Villes » et le pied de page.
+sur l'accueil (tableau de la semaine, cartes villes, aperçu Pro), dans le menu « Villes » et le pied de page,
+et elle a sa page avec calculateur de budget, graphique des quartiers et FAQ.
 
 ## Évolution d'un relevé à l'autre
 
