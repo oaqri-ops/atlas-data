@@ -465,3 +465,27 @@
 @media (max-width:600px){.moves{grid-template-columns:1fr 1fr}.moves div:nth-child(2){border-right:0}.moves div:nth-child(-n+2){border-bottom:1px solid var(--line)}.moves strong{font-size:26px}.since{font-size:14px}}
 .moves-col table{min-width:0}
 @media (max-width:600px){.moves-col th,.moves-col td,.moves-col .card th:first-child,.moves-col .card td:first-child{padding:11px 10px;font-size:14px}.moves-col .card th:first-child,.moves-col .card td:first-child{padding-left:14px}.cuts-table th:nth-child(2),.cuts-table td:nth-child(2){display:none}.card s{display:block;margin:0}}
+
+/* Pages villes : calculateur (#budget) et graphique des quartiers (#analyse), repris de l'accueil */
+[hidden]{display:none!important}
+.block .calc{max-width:none}
+.calc-inputs{padding:20px 24px 18px}
+.budget input{font-size:30px}
+.presets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.presets button{padding:0 6px;min-height:34px}
+.quartiers{margin-top:16px}
+.calc-result{padding:18px 24px}
+.result-m2{font-size:clamp(72px,8vw,104px);margin:4px 0 8px}
+.result-real{display:block;margin-top:14px;padding:12px 14px;border:1px solid transparent;border-radius:8px;font-size:14px;line-height:1.5;background:#fff}
+.result-real strong{color:var(--ink)}
+.result-real.is-none{background:var(--clay-tint);border-color:#f1d3c4;color:#5a3020}
+.result-real.is-none strong{color:var(--clay-ink)}
+.result-real.is-some{background:var(--green-tint);border-color:#c4e6dd;color:#123f36}
+.result-real.is-some strong{color:var(--green-ink)}
+.calc-compare{padding:16px 24px 20px}
+.calc-compare h3{font:700 15px/1.3 var(--body);margin:0 0 12px;letter-spacing:0}
+.cmp{gap:2px}
+.cmp button{padding:4px 6px}
+#analyse .section-head{margin-bottom:28px}
+#analyse .insights{margin-top:40px}
+@media (max-width:600px){.presets button{font-size:12px;padding:0 2px}.result-m2{font-size:76px}#analyse .chart{padding:16px 14px}}
