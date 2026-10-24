@@ -3,22 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Calculateur, graphique et FAQ acheteur ont quitté l'accueil : les anciens liens /#budget, /#analyse et /#questions mènent à /marrakech/ -->
+  <script>if(['#budget','#analyse','#questions'].indexOf(location.hash)>-1)location.replace('/marrakech/'+location.hash)</script>
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Prix au m² des appartements à vendre à Marrakech, quartier par quartier : Hivernage, Agdal, Guéliz, Palmeraie, Route de Casablanca, Targa, Semlalia. Calculez la surface accessible avec votre budget.">
+  <meta name="description" content="Pour les agences : chaque lundi, toutes les annonces d&#x27;appartements à vendre de Marrakech, Casablanca, Rabat ou Tanger dans un fichier Excel, avec les nouvelles annonces et les baisses de prix.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Atlas Data">
-  <meta property="og:title" content="Prix au m² à Marrakech par quartier - Atlas Data">
-  <meta property="og:description" content="Pour 1 million de MAD : environ 40 m² à l&#x27;Hivernage, 70 m² à Semlalia. Les prix demandés des appartements à Marrakech, quartier par quartier.">
+  <meta property="og:title" content="Atlas Data - Annonces immobilières du Maroc en Excel, chaque lundi">
+  <meta property="og:description" content="1 000 annonces d&#x27;appartements à vendre au relevé du 19 octobre 2026, ville par ville : prix demandés, nouvelles annonces et baisses de prix, chaque lundi dans un fichier Excel.">
   <meta property="og:image" content="https://atlas-data.fr/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Prix médian au m² des appartements à Marrakech par quartier">
+  <meta property="og:image:alt" content="Atlas Data, prix immobiliers demandés au Maroc">
   <meta property="og:url" content="https://atlas-data.fr/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://atlas-data.fr/">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://atlas-data.fr/#org", "name": "Atlas Data", "url": "https://atlas-data.fr/", "email": "othman@atlas-data.fr", "description": "Données et analyses du marché immobilier marocain.", "areaServed": "MA"}, {"@type": "WebSite", "@id": "https://atlas-data.fr/#site", "url": "https://atlas-data.fr/", "name": "Atlas Data", "inLanguage": "fr", "publisher": {"@id": "https://atlas-data.fr/#org"}}, {"@type": "Dataset", "name": "Prix des appartements à vendre à Marrakech par quartier, octobre 2026", "description": "Prix demandés de 316 annonces d&#x27;appartements à vendre à Marrakech, relevées sur Sarouty le 19 octobre 2026.", "url": "https://atlas-data.fr/#analyse", "creator": {"@id": "https://atlas-data.fr/#org"}, "isAccessibleForFree": true, "temporalCoverage": "2026-10-19", "spatialCoverage": {"@type": "Place", "name": "Marrakech, Maroc"}, "keywords": ["prix immobilier Marrakech", "prix au m² Marrakech", "immobilier Maroc", "appartements à vendre"], "variableMeasured": ["prix demandé (MAD)", "surface (m²)", "prix au m² (MAD/m²)", "nombre de chambres", "quartier"]}]}</script>
-  <title>Prix au m² à Marrakech par quartier - Atlas Data</title>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://atlas-data.fr/#org", "name": "Atlas Data", "url": "https://atlas-data.fr/", "email": "othman@atlas-data.fr", "description": "Données et analyses du marché immobilier marocain, à partir d'annonces publiques.", "areaServed": "MA"}, {"@type": "WebSite", "@id": "https://atlas-data.fr/#site", "url": "https://atlas-data.fr/", "name": "Atlas Data", "inLanguage": "fr", "publisher": {"@id": "https://atlas-data.fr/#org"}}, {"@type": "Product", "@id": "https://atlas-data.fr/#pro", "name": "Atlas Data Pro", "brand": {"@id": "https://atlas-data.fr/#org"}, "description": "Chaque lundi, toutes les annonces d'appartements à vendre publiées sur Sarouty dans une ville au choix (Marrakech, Casablanca, Rabat ou Tanger), dans un fichier Excel : titre, agence, prix demandé, surface, prix au m², lien, nouvelles annonces et baisses de prix signalées.", "offers": {"@type": "Offer", "url": "https://atlas-data.fr/#offres", "price": "29.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "seller": {"@id": "https://atlas-data.fr/#org"}, "priceSpecification": {"@type": "UnitPriceSpecification", "price": "29.00", "priceCurrency": "EUR", "valueAddedTaxIncluded": false, "unitText": "mois", "referenceQuantity": {"@type": "QuantitativeValue", "value": 1, "unitCode": "MON"}}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "D'où viennent les données, et à quelle fréquence ?", "acceptedAnswer": {"@type": "Answer", "text": "Des annonces publiques d'appartements à vendre publiées sur Sarouty à Marrakech, Casablanca, Rabat et Tanger, relevées chaque lundi. Les chiffres du site et le fichier Pro viennent du même relevé."}}, {"@type": "Question", "name": "Collectez-vous des données personnelles ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Le relevé ne collecte ni nom, ni téléphone, ni email d'agent ou de particulier. Le fichier Pro reprend l'annonce telle qu'elle est publiée : titre, agence, prix, surface, quartier et lien."}}, {"@type": "Question", "name": "Sous quel format arrive le fichier Pro ?", "acceptedAnswer": {"@type": "Answer", "text": "Un fichier Excel (.xlsx) par ville, chaque lundi. Colonnes : référence Sarouty, titre, agence, quartier, prix demandé, surface, prix au m², chambres, meublé, date de publication, nouvelle annonce, baisse de prix et lien. Le fichier d'exemple de Guéliz montre le format exact."}}, {"@type": "Question", "name": "Quelle différence entre l'accès gratuit et la version Pro ?", "acceptedAnswer": {"@type": "Answer", "text": "Les pages villes et quartiers, le calculateur de budget et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. La version Pro, à 29 € HT par mois, envoie chaque lundi toutes les annonces Sarouty de la ville choisie, avec leur titre, leur agence et leur lien, dans un fichier Excel."}}]}]}</script>
+  <title>Atlas Data - Annonces immobilières du Maroc en Excel, chaque lundi</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -94,13 +96,13 @@
         <span class="logo-word">Atlas Data</span>
       </a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#budget">Calculer mon budget</a><!-- villes-menu --><details class="nav-cities"><summary>Villes</summary><ul><li><a href="/marrakech/"><span>Marrakech</span><small>18 509 MAD/m²</small></a></li><li><a href="/casablanca/"><span>Casablanca</span><small>16 279 MAD/m²</small></a></li><li><a href="/rabat/"><span>Rabat</span><small>22 892 MAD/m²</small></a></li><li><a href="/tanger/"><span>Tanger</span><small>14 648 MAD/m²</small></a></li><li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details><!-- /villes-menu --><a href="#offres">Offres</a><a href="#methode">Méthode</a>
+        <!-- villes-menu --><details class="nav-cities"><summary>Villes</summary><ul><li><a href="/marrakech/"><span>Marrakech</span><small>18 509 MAD/m²</small></a></li><li><a href="/casablanca/"><span>Casablanca</span><small>16 279 MAD/m²</small></a></li><li><a href="/rabat/"><span>Rabat</span><small>22 892 MAD/m²</small></a></li><li><a href="/tanger/"><span>Tanger</span><small>14 648 MAD/m²</small></a></li><li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details><!-- /villes-menu --><a href="#apercu">Aperçu du fichier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a>
       </nav>
-      <a class="btn btn-primary header-cta" href="dashboard.html">Ouvrir le dashboard</a>
+      <a class="btn btn-primary header-cta" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data">Demander l'accès Pro</a>
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
-      <a href="#budget">Calculer mon budget</a><!-- villes-mobile --><p class="mobile-nav-title">Prix par ville</p><a class="mobile-nav-city" href="/marrakech/">Marrakech <small>18 509 MAD/m²</small></a><a class="mobile-nav-city" href="/casablanca/">Casablanca <small>16 279 MAD/m²</small></a><a class="mobile-nav-city" href="/rabat/">Rabat <small>22 892 MAD/m²</small></a><a class="mobile-nav-city" href="/tanger/">Tanger <small>14 648 MAD/m²</small></a><!-- /villes-mobile --><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
+      <!-- villes-mobile --><p class="mobile-nav-title">Prix par ville</p><a class="mobile-nav-city" href="/marrakech/">Marrakech <small>18 509 MAD/m²</small></a><a class="mobile-nav-city" href="/casablanca/">Casablanca <small>16 279 MAD/m²</small></a><a class="mobile-nav-city" href="/rabat/">Rabat <small>22 892 MAD/m²</small></a><a class="mobile-nav-city" href="/tanger/">Tanger <small>14 648 MAD/m²</small></a><!-- /villes-mobile --><a href="#apercu">Aperçu du fichier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a><a href="/marrakech/#budget">Calculer mon budget</a><a href="dashboard.html">Dashboard</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -250,15 +252,14 @@
         </div>
         <nav aria-labelledby="f-quartiers"><h2 id="f-quartiers">Prix par ville</h2><ul><li><a href="/marrakech/">Marrakech</a></li><li><a href="/casablanca/">Casablanca</a></li><li><a href="/rabat/">Rabat</a></li><li><a href="/tanger/">Tanger</a></li></ul></nav>
         <nav aria-labelledby="f-outils"><h2 id="f-outils">Outils</h2><ul>
-          <li><a href="#budget">Calculer mon budget</a></li>
-          <li><a href="#analyse">Étude Marrakech</a></li>
+          <li><a href="/marrakech/#budget">Calculer mon budget</a></li>
+          <li><a href="/marrakech/#analyse">Étude Marrakech</a></li>
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="#methode">Méthode</a></li>
         </ul></nav>
         <nav aria-labelledby="f-offres"><h2 id="f-offres">Offres</h2><ul>
           <li><a href="#offres">Atlas Data Pro</a></li>
           <li><a href="#offres">Analyse sur mesure</a></li>
-          <li><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Scraper Apify</a></li>
           <li><a href="mailto:othman@atlas-data.fr">Contact</a></li>
         </ul></nav>
       </div>

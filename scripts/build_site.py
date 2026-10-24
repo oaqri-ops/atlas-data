@@ -487,6 +487,11 @@ def changes_block(city, st):
 """
 
 
+def city_header(city):
+    """En-tête des pages d'une ville : « Calculer mon budget » mène au calculateur de cette ville."""
+    return read_template("header.html").replace('href="/marrakech/#budget"', f'href="/{city["slug"]}/#budget"')
+
+
 def footer(cfg):
     return set_city_nav(read_template("footer.html"), cfg)
 
@@ -583,7 +588,7 @@ def quartier_page(city, st, q, cfg):
     faq_html = "".join(f"<details><summary>{e(qq)}</summary><p>{e(a)}</p></details>" for qq, a in faq)
     mail = "mailto:othman@atlas-data.fr?subject=" + "Acc%C3%A8s%20Pro%20Atlas%20Data%20-%20" + slugify(name)
 
-    return head(title, desc, path, ld) + read_template("header.html") + f"""  <main id="main">
+    return head(title, desc, path, ld) + city_header(city) + f"""  <main id="main">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="shell">
         {crumbs([("Accueil", "/"), (cname, f"/{city['slug']}/"), (name, path)])}
@@ -854,12 +859,13 @@ def city_page(city, st, cfg):
     path = f"/{city['slug']}/"
     for q in ranked:
         q["prep"] = prep(q["name"], cfg)
-    title = f"Prix immobilier {cname} par quartier ({short_month(date)}) - Atlas Data"
+    title = f"Prix au m² à {cname} par quartier ({short_month(date)}) - Atlas Data"
     if len(ranked) >= 2:
         span = f"de {n(ranked[-1]['median'])} MAD/m² {prep(ranked[-1]['name'], cfg)} à {n(ranked[0]['median'])} MAD/m² {prep(ranked[0]['name'], cfg)}"
-        desc = f"Prix au m² des appartements à {cname} : {span}. {st['n']} annonces, mises à jour chaque semaine."
     else:
-        desc = f"Prix au m² des appartements à vendre à {cname} : {n(st['median'])} MAD/m² en médiane sur {st['n']} annonces, mises à jour chaque semaine."
+        span = f"{n(st['median'])} MAD/m² en médiane"
+    desc = (f"Prix au m² des appartements à {cname} : {span}, prix demandés sur {st['n']} annonces. "
+            "Calculez la surface accessible avec votre budget.")
     ld = {"@context": "https://schema.org", "@graph": [
         breadcrumb_ld([("Accueil", "/"), (f"Prix au m² à {cname}", path)]),
         {"@type": "ItemList", "name": f"Prix au m² par quartier à {cname}", "itemListElement": [
@@ -869,6 +875,8 @@ def city_page(city, st, cfg):
                    f"Prix demandés de {st['n']} annonces d'appartements à vendre à {cname}, relevées sur Sarouty le {long_date(date)}. "
                    f"Médianes par quartier pour les secteurs comptant au moins {cfg['min_listings_per_quartier']} annonces.",
                    path, f"{cname}, Maroc", date)]}
+    faq_section, faq_ld = city_faq(city, st, cfg)
+    ld["@graph"].append(faq_ld)
 
     if ranked:
         facts_extra = (f'<div><span>Quartier le plus cher</span><strong>{n(ranked[0]["median"])}</strong><small>MAD/m², {e(ranked[0]["name"])}</small></div>'
@@ -892,7 +900,6 @@ def city_page(city, st, cfg):
         f'<td class="num">≈ {n(1_000_000 / q["median"])} m²</td><td class="num">{q["n"]}</td></tr>' for q in ranked)
     table_rows += (f'<tr><th scope="row">Toute la ville</th><td class="num">{n(st["median"])}</td>'
                    f'<td class="num">≈ {n(1_000_000 / st["median"])} m²</td><td class="num">{st["n"]}</td></tr>')
-    faq_section, faq_ld = city_faq(city, st, cfg)
     small = [q for q in st["small"] if q["n"] >= 3]
     small_block = ""
     if small:
@@ -906,7 +913,7 @@ def city_page(city, st, cfg):
     </section>
 """
 
-    return head(title, desc, path, ld, "website") + read_template("header.html") + f"""  <main id="main">
+    return head(title, desc, path, ld, "website") + city_header(city) + f"""  <main id="main">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="shell">
         {crumbs([("Accueil", "/"), (cname, path)])}
@@ -1087,17 +1094,28 @@ def render_home(cfg, all_stats):
     ]
     faq_html = "\n".join(f"          <details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
 
-    # Balises d'en-tête de l'ancienne étude Marrakech, reprises telles quelles en attendant le commit SEO
-    mk = all_stats.get("marrakech")
-    ranked = mk["ranked"] if mk else []
-    for q in ranked:
-        q["prep"] = prep(q["name"], cfg)
+    org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Atlas Data", "url": SITE + "/", "email": "othman@atlas-data.fr",
+           "description": "Données et analyses du marché immobilier marocain, à partir d'annonces publiques.", "areaServed": "MA"}
+    pro = {"@type": "Product", "@id": SITE + "/#pro", "name": "Atlas Data Pro", "brand": {"@id": SITE + "/#org"},
+           "description": (f"Chaque lundi, toutes les annonces d'appartements à vendre publiées sur Sarouty dans une ville au choix ({join_fr([c['name'] for c, _ in cities]).replace(' et ', ' ou ')}), "
+                           "dans un fichier Excel : titre, agence, prix demandé, surface, prix au m², lien, nouvelles annonces et baisses de prix signalées."),
+           "offers": {"@type": "Offer", "url": SITE + "/#offres", "price": "29.00", "priceCurrency": "EUR",
+                      "availability": "https://schema.org/InStock", "seller": {"@id": SITE + "/#org"},
+                      "priceSpecification": {"@type": "UnitPriceSpecification", "price": "29.00", "priceCurrency": "EUR",
+                                             "valueAddedTaxIncluded": False, "unitText": "mois",
+                                             "referenceQuantity": {"@type": "QuantitativeValue", "value": 1, "unitCode": "MON"}}}}
+    ld = {"@context": "https://schema.org", "@graph": [
+        org,
+        {"@type": "WebSite", "@id": SITE + "/#site", "url": SITE + "/", "name": "Atlas Data", "inLanguage": "fr", "publisher": {"@id": SITE + "/#org"}},
+        pro,
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]}
+    or_list = join_fr([c["name"] for c, _ in cities]).replace(" et ", " ou ")
     tokens = {
-        "META_DESC": e(f"Prix au m² des appartements à vendre à Marrakech, quartier par quartier : {', '.join(q['name'] for q in ranked)}. Calculez la surface accessible avec votre budget."),
-        "OG_DESC": e(f"Pour 1 million de MAD : environ {round(1e6 / ranked[0]['median'])} m² {ranked[0]['prep']}, {round(1e6 / ranked[-1]['median'])} m² {ranked[-1]['prep']}. Les prix demandés des appartements à Marrakech, quartier par quartier.") if ranked else "",
-        "MONTH_YEAR": f"{MONTHS[int(date[5:7]) - 1]} {date[:4]}",
-        "LD_DESC": e(f"Prix demandés de {mk['n']} annonces d'appartements à vendre à Marrakech, relevées sur Sarouty le {long_date(mk['date'])}.") if mk else "",
-        "DATE_ISO": date,
+        "META_DESC": e(f"Pour les agences : chaque lundi, toutes les annonces d'appartements à vendre de {or_list} dans un fichier Excel, "
+                       "avec les nouvelles annonces et les baisses de prix."),
+        "OG_DESC": e(f"{n(total)} annonces d'appartements à vendre {when}, ville par ville : prix demandés, nouvelles annonces et baisses de prix, "
+                     "chaque lundi dans un fichier Excel."),
+        "LD_JSON": json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"),
         "HERO_LEDE": (f"Pour les agences et les professionnels de l'immobilier à {e(city_list)} : {n(total)} annonces d'appartements à vendre {when}, "
                       "avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur Sarouty, pas des prix de vente."),
         "WEEK_INTRO": f"Relevé du {long_date(date)}, annonces exploitables par ville.",

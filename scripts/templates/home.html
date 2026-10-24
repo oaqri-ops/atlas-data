@@ -3,22 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Calculateur, graphique et FAQ acheteur ont quitté l'accueil : les anciens liens /#budget, /#analyse et /#questions mènent à /marrakech/ -->
+  <script>if(['#budget','#analyse','#questions'].indexOf(location.hash)>-1)location.replace('/marrakech/'+location.hash)</script>
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="{{META_DESC}}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Atlas Data">
-  <meta property="og:title" content="Prix au m² à Marrakech par quartier - Atlas Data">
+  <meta property="og:title" content="Atlas Data - Annonces immobilières du Maroc en Excel, chaque lundi">
   <meta property="og:description" content="{{OG_DESC}}">
   <meta property="og:image" content="https://atlas-data.fr/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Prix médian au m² des appartements à Marrakech par quartier">
+  <meta property="og:image:alt" content="Atlas Data, prix immobiliers demandés au Maroc">
   <meta property="og:url" content="https://atlas-data.fr/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://atlas-data.fr/">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://atlas-data.fr/#org", "name": "Atlas Data", "url": "https://atlas-data.fr/", "email": "othman@atlas-data.fr", "description": "Données et analyses du marché immobilier marocain.", "areaServed": "MA"}, {"@type": "WebSite", "@id": "https://atlas-data.fr/#site", "url": "https://atlas-data.fr/", "name": "Atlas Data", "inLanguage": "fr", "publisher": {"@id": "https://atlas-data.fr/#org"}}, {"@type": "Dataset", "name": "Prix des appartements à vendre à Marrakech par quartier, {{MONTH_YEAR}}", "description": "{{LD_DESC}}", "url": "https://atlas-data.fr/#analyse", "creator": {"@id": "https://atlas-data.fr/#org"}, "isAccessibleForFree": true, "temporalCoverage": "{{DATE_ISO}}", "spatialCoverage": {"@type": "Place", "name": "Marrakech, Maroc"}, "keywords": ["prix immobilier Marrakech", "prix au m² Marrakech", "immobilier Maroc", "appartements à vendre"], "variableMeasured": ["prix demandé (MAD)", "surface (m²)", "prix au m² (MAD/m²)", "nombre de chambres", "quartier"]}]}</script>
-  <title>Prix au m² à Marrakech par quartier - Atlas Data</title>
+  <script type="application/ld+json">{{LD_JSON}}</script>
+  <title>Atlas Data - Annonces immobilières du Maroc en Excel, chaque lundi</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -94,13 +96,13 @@
         <span class="logo-word">Atlas Data</span>
       </a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#budget">Calculer mon budget</a><!-- villes-menu --><!-- /villes-menu --><a href="#offres">Offres</a><a href="#methode">Méthode</a>
+        <!-- villes-menu --><!-- /villes-menu --><a href="#apercu">Aperçu du fichier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a>
       </nav>
-      <a class="btn btn-primary header-cta" href="dashboard.html">Ouvrir le dashboard</a>
+      <a class="btn btn-primary header-cta" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data">Demander l'accès Pro</a>
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
-      <a href="#budget">Calculer mon budget</a><!-- villes-mobile --><!-- /villes-mobile --><a href="dashboard.html">Dashboard</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#contact">Contact</a>
+      <!-- villes-mobile --><!-- /villes-mobile --><a href="#apercu">Aperçu du fichier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a><a href="/marrakech/#budget">Calculer mon budget</a><a href="dashboard.html">Dashboard</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -236,15 +238,14 @@
         </div>
         <nav aria-labelledby="f-quartiers"><h2 id="f-quartiers">Prix par ville</h2><ul><li><a href="/marrakech/">Marrakech</a></li><li><a href="/casablanca/">Casablanca</a></li><li><a href="/rabat/">Rabat</a></li><li><a href="/tanger/">Tanger</a></li></ul></nav>
         <nav aria-labelledby="f-outils"><h2 id="f-outils">Outils</h2><ul>
-          <li><a href="#budget">Calculer mon budget</a></li>
-          <li><a href="#analyse">Étude Marrakech</a></li>
+          <li><a href="/marrakech/#budget">Calculer mon budget</a></li>
+          <li><a href="/marrakech/#analyse">Étude Marrakech</a></li>
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="#methode">Méthode</a></li>
         </ul></nav>
         <nav aria-labelledby="f-offres"><h2 id="f-offres">Offres</h2><ul>
           <li><a href="#offres">Atlas Data Pro</a></li>
           <li><a href="#offres">Analyse sur mesure</a></li>
-          <li><a href="https://apify.com/atlasdata-labs/sarouty-scraper-morocco-real-estate" target="_blank" rel="noopener noreferrer">Scraper Apify</a></li>
           <li><a href="mailto:othman@atlas-data.fr">Contact</a></li>
         </ul></nav>
       </div>
