@@ -5,7 +5,7 @@ description: >
   Data journalism for the Moroccan property market. A calm, numbers-first interface: navy ink on
   white and cool-grey surfaces, one confident royal blue for data and primary actions, terracotta
   and green only to say "above / below the city". Archivo (wide, heavy) for headlines and figures,
-  Roboto for reading. Every number is honest about its source, its date and its sample size.
+  Roboto for reading, Roboto Mono for data labels. Every number is honest about its source, its date and its sample size.
 
 colors:
   ink: "#0f1a33"          # text, headings, dark buttons
@@ -33,6 +33,12 @@ typography:
   body:
     fontFamily: "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif"
     usage: everything else
+  mono:
+    fontFamily: "'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    usage: >
+      data labels only: eyebrows, column heads and figures of the hero ticket, offer table labels.
+      11px, weight 500, uppercase, letter-spacing .06-.08em for labels; 14px for figures. Never for
+      sentences or headings. Loaded on the home page and the dashboard (variable --mono).
   scale:
     hero-h1:     { size: "clamp(40px, 5.2vw, 64px)", weight: 800, lineHeight: 1.03, letterSpacing: -0.035em }
     page-h1:     { size: "clamp(36px, 4.6vw, 58px)", weight: 800, lineHeight: 1.04, letterSpacing: -0.035em }
@@ -101,6 +107,15 @@ components in `assets/components.css`. When a token changes here, change it in a
 - **Result box** (calculator): `clay-tint` when no listing matches, `green-tint` when some do; bold
   first sentence, then one plain-language explanation, then a link to the matching listings.
 - **Cards**: white, 1px `line`, 12px radius, `soft` foot strip for captions and legends.
+- **Relevé ticket** (home hero): white card, 14px radius, floating shadow. Mono label row on top
+  ("Relevé hebdomadaire" in blue, source in faint), then title and intro; table with mono uppercase
+  heads, mono tabular figures and dashed `line-strong` row dividers; total row on `tint`; source line
+  in the foot.
+- **Offer comparison table** (home, navy Pro band): white panel, 14px radius, scrolls horizontally
+  under its min width. Columns: criterion (muted) / Gratuit / Atlas Data Pro. The Pro header is blue
+  with white text, Pro cells on `tint`. "Oui" carries a blue check, "Non" is `faint` text, never red.
+  Price row in Archivo 800. Actions in the foot row: primary button for Pro, plain link for free.
+  Other offers (Sur mesure, Développeurs) stay as text blocks under the table.
 - **Header**: sticky, white at 96% with blur, 68px. Nav: Calculer mon budget, Villes (dropdown listing
   every city with its median), Offres, Méthode. On mobile, a "Prix par ville" group in the menu.
 - **Footer and Pro band**: navy background, `#c9cfdc` text, white headings.
