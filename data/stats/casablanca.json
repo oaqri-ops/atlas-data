@@ -1,24 +1,34 @@
 {
- "n": 539,
- "median": 16279,
- "median_price": 2250000,
+ "n": 533,
+ "median": 16364,
+ "median_price": 2300000,
  "median_surface": 137,
  "min": 6223,
  "max": 51327,
- "raw": 562,
- "date": "2026-10-19",
+ "raw": 555,
+ "date": "2026-10-26",
  "changes": {
-  "new": 6,
-  "gone": 2,
-  "cuts": [],
+  "new": 9,
+  "gone": 15,
+  "cuts": [
+   {
+    "id": "895715",
+    "district": "Benjdia",
+    "surface": 134,
+    "bedrooms": 3,
+    "before": 1290000,
+    "after": 1250000,
+    "pct": -0.03100775193798455
+   }
+  ],
   "rises": [],
   "trend": {
-   "before": 16272,
-   "after": 16279,
-   "pct": 0.00043047783039185106
+   "before": 16279,
+   "after": 16364,
+   "pct": 0.0051948051948051965
   },
-  "prev_date": "2026-10-17",
-  "days": 2,
+  "prev_date": "2026-10-19",
+  "days": 7,
   "quartiers": {
    "Les Princesses": {
     "new": 0,
@@ -55,43 +65,57 @@
    },
    "Ferme Bretone": {
     "new": 0,
-    "gone": 0,
+    "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": null
    },
-   "Anfa": {
-    "new": 3,
+   "Hay Hassani": {
+    "new": 2,
+    "gone": 1,
+    "cuts": [],
+    "rises": [],
+    "trend": null
+   },
+   "Racine": {
+    "new": 0,
     "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": {
-     "before": 17969,
-     "after": 17800,
-     "pct": -0.009389064421987059
+     "before": 17687,
+     "after": 17832,
+     "pct": 0.00821089023336219
     }
    },
-   "Racine": {
-    "new": 1,
-    "gone": 0,
+   "Anfa": {
+    "new": 4,
+    "gone": 2,
     "cuts": [],
     "rises": [],
     "trend": {
-     "before": 17550,
-     "after": 17687,
-     "pct": 0.007810240092565701
+     "before": 17800,
+     "after": 17800,
+     "pct": 0.0
     }
    },
    "Sidi Belyout": {
     "new": 0,
-    "gone": 0,
+    "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": {
      "before": 17518,
-     "after": 17518,
-     "pct": 0.0
+     "after": 17594,
+     "pct": 0.004307644110275621
     }
+   },
+   "Zenata": {
+    "new": 0,
+    "gone": 1,
+    "cuts": [],
+    "rises": [],
+    "trend": null
    },
    "Dar Bouazza": {
     "new": 0,
@@ -104,23 +128,23 @@
      "pct": 0.0
     }
    },
-   "Zenata": {
-    "new": 2,
+   "Gauthier": {
+    "new": 1,
     "gone": 0,
     "cuts": [],
     "rises": [],
-    "trend": null
+    "trend": {
+     "before": 15034,
+     "after": 15207,
+     "pct": 0.011503071355383865
+    }
    },
-   "Gauthier": {
+   "Val Fleuri": {
     "new": 0,
     "gone": 1,
     "cuts": [],
     "rises": [],
-    "trend": {
-     "before": 15207,
-     "after": 15034,
-     "pct": -0.011372255489021987
-    }
+    "trend": null
    },
    "Bouskoura": {
     "new": 0,
@@ -134,8 +158,8 @@
     }
    },
    "Maarif": {
-    "new": 0,
-    "gone": 0,
+    "new": 1,
+    "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": {
@@ -144,13 +168,6 @@
      "pct": 0.0
     }
    },
-   "Val Fleuri": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": null
-   },
    "Californie": {
     "new": 0,
     "gone": 0,
@@ -158,21 +175,14 @@
     "rises": [],
     "trend": null
    },
-   "Maarif Extension": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": null
-   },
    "Bourgogne": {
-    "new": 0,
+    "new": 1,
     "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": null
    },
-   "Hay Hassani": {
+   "Maarif Extension": {
     "new": 0,
     "gone": 0,
     "cuts": [],
@@ -223,9 +233,9 @@
    "rank": 3
   },
   {
-   "n": 11,
-   "median": 20833,
-   "median_price": 2450000,
+   "n": 10,
+   "median": 19866,
+   "median_price": 2475000,
    "median_surface": 120,
    "min": 16471,
    "max": 23750,
@@ -234,21 +244,21 @@
    "rank": 4
   },
   {
-   "n": 59,
-   "median": 17800,
-   "median_price": 3150000,
-   "median_surface": 175,
-   "min": 12800,
-   "max": 36082,
-   "name": "Anfa",
-   "slug": "anfa",
+   "n": 14,
+   "median": 18950,
+   "median_price": 1275000,
+   "median_surface": 87,
+   "min": 6250,
+   "max": 28409,
+   "name": "Hay Hassani",
+   "slug": "hay-hassani",
    "rank": 5
   },
   {
-   "n": 37,
-   "median": 17687,
-   "median_price": 2950000,
-   "median_surface": 173,
+   "n": 36,
+   "median": 17832,
+   "median_price": 2965000,
+   "median_surface": 174,
    "min": 8130,
    "max": 26170,
    "name": "Racine",
@@ -256,15 +266,37 @@
    "rank": 6
   },
   {
-   "n": 21,
-   "median": 17518,
-   "median_price": 1780000,
-   "median_surface": 107,
+   "n": 61,
+   "median": 17800,
+   "median_price": 3200000,
+   "median_surface": 178,
+   "min": 12800,
+   "max": 36082,
+   "name": "Anfa",
+   "slug": "anfa",
+   "rank": 7
+  },
+  {
+   "n": 20,
+   "median": 17594,
+   "median_price": 1825000,
+   "median_surface": 106,
    "min": 10750,
    "max": 40833,
    "name": "Sidi Belyout",
    "slug": "sidi-belyout",
-   "rank": 7
+   "rank": 8
+  },
+  {
+   "n": 9,
+   "median": 16635,
+   "median_price": 1145875,
+   "median_surface": 81,
+   "min": 11444,
+   "max": 20000,
+   "name": "Zenata",
+   "slug": "zenata",
+   "rank": 9
   },
   {
    "n": 87,
@@ -275,29 +307,29 @@
    "max": 33784,
    "name": "Dar Bouazza",
    "slug": "dar-bouazza",
-   "rank": 8
+   "rank": 10
   },
   {
-   "n": 10,
-   "median": 15310,
-   "median_price": 1239938,
-   "median_surface": 89,
-   "min": 11444,
-   "max": 20000,
-   "name": "Zenata",
-   "slug": "zenata",
-   "rank": 9
-  },
-  {
-   "n": 18,
-   "median": 15034,
-   "median_price": 3250000,
-   "median_surface": 196,
+   "n": 19,
+   "median": 15207,
+   "median_price": 3300000,
+   "median_surface": 205,
    "min": 9333,
    "max": 23000,
    "name": "Gauthier",
    "slug": "gauthier",
-   "rank": 10
+   "rank": 11
+  },
+  {
+   "n": 8,
+   "median": 15144,
+   "median_price": 2175000,
+   "median_surface": 136,
+   "min": 12573,
+   "max": 27778,
+   "name": "Val Fleuri",
+   "slug": "val-fleuri",
+   "rank": 12
   },
   {
    "n": 25,
@@ -308,29 +340,18 @@
    "max": 21533,
    "name": "Bouskoura",
    "slug": "bouskoura",
-   "rank": 11
+   "rank": 13
   },
   {
    "n": 51,
    "median": 15000,
    "median_price": 2100000,
-   "median_surface": 145,
-   "min": 9223,
-   "max": 26087,
+   "median_surface": 144,
+   "min": 9231,
+   "max": 27027,
    "name": "Maarif",
    "slug": "maarif",
-   "rank": 12
-  },
-  {
-   "n": 9,
-   "median": 14966,
-   "median_price": 2150000,
-   "median_surface": 140,
-   "min": 12573,
-   "max": 27778,
-   "name": "Val Fleuri",
-   "slug": "val-fleuri",
-   "rank": 13
+   "rank": 14
   },
   {
    "n": 9,
@@ -341,7 +362,18 @@
    "max": 18319,
    "name": "Californie",
    "slug": "californie",
-   "rank": 14
+   "rank": 15
+  },
+  {
+   "n": 14,
+   "median": 14128,
+   "median_price": 1520000,
+   "median_surface": 100,
+   "min": 9767,
+   "max": 30000,
+   "name": "Bourgogne",
+   "slug": "bourgogne",
+   "rank": 16
   },
   {
    "n": 10,
@@ -352,28 +384,6 @@
    "max": 22388,
    "name": "Maarif Extension",
    "slug": "maarif-extension",
-   "rank": 15
-  },
-  {
-   "n": 13,
-   "median": 13881,
-   "median_price": 1590000,
-   "median_surface": 110,
-   "min": 9767,
-   "max": 30000,
-   "name": "Bourgogne",
-   "slug": "bourgogne",
-   "rank": 16
-  },
-  {
-   "n": 13,
-   "median": 13542,
-   "median_price": 1250000,
-   "median_surface": 91,
-   "min": 6250,
-   "max": 28409,
-   "name": "Hay Hassani",
-   "slug": "hay-hassani",
    "rank": 17
   },
   {
@@ -390,31 +400,27 @@
  ],
  "autres_quartiers": [
   {
-   "name": "Palmier",
-   "n": 7
-  },
-  {
-   "name": "2 Mars",
-   "n": 5
-  },
-  {
    "name": "Ain Chock",
    "n": 5
   },
   {
-   "name": "Tamaris",
+   "name": "Palmier",
    "n": 5
+  },
+  {
+   "name": "2 Mars",
+   "n": 4
   },
   {
    "name": "Casablanca Finance City",
    "n": 4
   },
   {
-   "name": "Centre-ville",
+   "name": "Mers Sultan",
    "n": 4
   },
   {
-   "name": "Mers Sultan",
+   "name": "Tamaris",
    "n": 4
   },
   {
@@ -431,6 +437,10 @@
   },
   {
    "name": "CIL",
+   "n": 3
+  },
+  {
+   "name": "Centre-ville",
    "n": 3
   },
   {
@@ -511,10 +521,6 @@
   },
   {
    "name": "Casa Marina",
-   "n": 1
-  },
-  {
-   "name": "Derb Ghallef",
    "n": 1
   },
   {

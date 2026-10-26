@@ -1,111 +1,83 @@
 {
- "n": 316,
- "median": 18509,
- "median_price": 1691500,
- "median_surface": 96,
+ "n": 317,
+ "median": 18515,
+ "median_price": 1690000,
+ "median_surface": 95,
  "min": 5294,
  "max": 60241,
- "raw": 319,
- "date": "2026-10-19",
+ "raw": 320,
+ "date": "2026-10-26",
  "changes": {
-  "new": 6,
-  "gone": 10,
+  "new": 2,
+  "gone": 1,
   "cuts": [
    {
-    "id": "906855",
+    "id": "905539",
     "district": "Guéliz",
-    "surface": 73,
+    "surface": 64,
     "bedrooms": 1,
-    "before": 1650000,
-    "after": 1390000,
-    "pct": -0.1575757575757576
-   },
-   {
-    "id": "906934",
-    "district": "Guéliz",
-    "surface": 118,
-    "bedrooms": 2,
-    "before": 2950000,
-    "after": 2500000,
-    "pct": -0.15254237288135597
+    "before": 1450000,
+    "after": 1350000,
+    "pct": -0.06896551724137934
    }
   ],
-  "rises": [
-   {
-    "id": "906935",
-    "district": "Allal El Fassi",
-    "surface": 59,
-    "bedrooms": 1,
-    "before": 1100000,
-    "after": 1300000,
-    "pct": 0.18181818181818188
-   }
-  ],
+  "rises": [],
   "trend": {
-   "before": 18655,
-   "after": 18509,
-   "pct": -0.007871202193716398
+   "before": 18509,
+   "after": 18515,
+   "pct": 0.00034170309535874743
   },
-  "prev_date": "2026-10-17",
-  "days": 2,
+  "prev_date": "2026-10-19",
+  "days": 7,
   "quartiers": {
    "Hivernage": {
     "new": 0,
-    "gone": 1,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": {
-     "before": 24880,
+     "before": 24759,
      "after": 24759,
-     "pct": -0.004833375731365996
+     "pct": 0.0
     }
    },
    "Agdal": {
     "new": 0,
-    "gone": 1,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": null
    },
    "Guéliz": {
     "new": 2,
-    "gone": 7,
+    "gone": 0,
     "cuts": [
      {
-      "id": "906855",
+      "id": "905539",
       "district": "Guéliz",
-      "surface": 73,
+      "surface": 64,
       "bedrooms": 1,
-      "before": 1650000,
-      "after": 1390000,
-      "pct": -0.1575757575757576
-     },
-     {
-      "id": "906934",
-      "district": "Guéliz",
-      "surface": 118,
-      "bedrooms": 2,
-      "before": 2950000,
-      "after": 2500000,
-      "pct": -0.15254237288135597
+      "before": 1450000,
+      "after": 1350000,
+      "pct": -0.06896551724137934
      }
     ],
     "rises": [],
     "trend": {
-     "before": 20815,
+     "before": 20500,
      "after": 20500,
-     "pct": -0.015151221090085598
+     "pct": 0.0
     }
    },
    "Palmeraie": {
-    "new": 3,
+    "new": 0,
     "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": {
-     "before": 18182,
-     "after": 16429,
-     "pct": -0.09642857142857142
+     "before": 16429,
+     "after": 16287,
+     "pct": -0.00860507246376796
     }
    },
    "Route de Casablanca": {
@@ -159,7 +131,7 @@
    "rank": 2
   },
   {
-   "n": 95,
+   "n": 97,
    "median": 20500,
    "median_price": 1760000,
    "median_surface": 100,
@@ -170,10 +142,10 @@
    "rank": 3
   },
   {
-   "n": 31,
-   "median": 16429,
-   "median_price": 2260000,
-   "median_surface": 122,
+   "n": 30,
+   "median": 16287,
+   "median_price": 2230000,
+   "median_surface": 124,
    "min": 8684,
    "max": 28689,
    "name": "Palmeraie",

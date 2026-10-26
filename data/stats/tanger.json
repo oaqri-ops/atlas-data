@@ -6,7 +6,7 @@
  "min": 7077,
  "max": 53000,
  "raw": 83,
- "date": "2026-10-19",
+ "date": "2026-10-26",
  "changes": {
   "new": 0,
   "gone": 0,
@@ -17,8 +17,8 @@
    "after": 14648,
    "pct": 0.0
   },
-  "prev_date": "2026-10-17",
-  "days": 2,
+  "prev_date": "2026-10-19",
+  "days": 7,
   "quartiers": {
    "Malabata": {
     "new": 0,
