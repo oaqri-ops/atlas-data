@@ -23,6 +23,7 @@
 
   function el(tag, cls, text){ var x = document.createElement(tag); if (cls) x.className = cls; if (text != null) x.textContent = text; return x; }
   function parse(v){ var n = Number(String(v).replace(/[^\d]/g, '')); return Number.isFinite(n) ? n : 0; }
+  var sel = $('quartier-select');
   function selected(){
     var r = document.querySelector('input[name="quartier"]:checked');
     return r && Object.prototype.hasOwnProperty.call(C.data, r.value) ? r.value : C.quartiers[0] || '__all';
@@ -31,6 +32,8 @@
     var r = document.querySelector('input[name="quartier"][value="' + CSS.escape(q) + '"]');
     if (r){ r.checked = true; update(true); }
   }
+  // Le menu déroulant (mobile, villes à nombreux quartiers) pilote les mêmes boutons radio.
+  if (sel) sel.addEventListener('change', function(){ select(sel.value); });
 
   function update(animate){
     var q = selected(), d = C.data[q], all = q === '__all';
@@ -61,7 +64,8 @@
       link.href = '/dashboard.html?' + params; real.appendChild(link);
     }
     var max = 0; C.quartiers.forEach(function(k){ max = Math.max(max, budget / C.data[k].median); });
-    document.querySelectorAll('#cmp button').forEach(function(b){
+    if (sel) sel.value = q;
+    document.querySelectorAll('.cmp button').forEach(function(b){
       var k = b.dataset.q, v = valid ? budget / C.data[k].median : 0;
       b.setAttribute('aria-pressed', String(k === q));
       b.querySelector('i').style.width = (max ? v / max * 100 : 0).toFixed(1) + '%';
@@ -77,6 +81,6 @@
     b.addEventListener('click', function(){ budget = Number(b.dataset.budget); input.value = fmt(budget); update(true); });
   });
   document.querySelectorAll('input[name="quartier"]').forEach(function(r){ r.addEventListener('change', function(){ update(true); }); });
-  document.querySelectorAll('#cmp button').forEach(function(b){ b.addEventListener('click', function(){ select(b.dataset.q); }); });
+  document.querySelectorAll('.cmp button').forEach(function(b){ b.addEventListener('click', function(){ select(b.dataset.q); }); });
   update(false);
 })();

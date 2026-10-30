@@ -489,3 +489,19 @@
 #analyse .section-head{margin-bottom:28px}
 #analyse .insights{margin-top:40px}
 @media (max-width:600px){.presets button{font-size:12px;padding:0 2px}.result-m2{font-size:76px}#analyse .chart{padding:16px 14px}}
+/* Audit UX (octobre 2026) : cibles tactiles d'au moins 44 px, contour du champ budget, calculateur des villes à nombreux quartiers */
+.budget:focus-within{outline:3px solid var(--blue);outline-offset:6px;border-radius:2px}
+.budget input,.presets button,.switch button,.cmp button{min-height:44px}
+.crumbs a{display:inline-block;padding:11px 0;margin:-11px 0}
+tbody th a{display:inline-block;padding:12px 0;margin:-12px 0}
+.site-footer ul a{display:inline-block;padding:4px 0}
+.quartier-select{display:none;width:100%;min-height:48px;padding:0 12px;border:1px solid var(--line-strong,#c9ceda);border-radius:8px;background:#fff;font:500 16px var(--body);color:var(--ink)}
+.quartier-select:focus{outline:3px solid var(--blue);outline-offset:2px}
+.cmp-more{margin-top:4px}
+.cmp-more summary{cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 6px;color:var(--blue);font-weight:700;font-size:14px}
+@media (max-width:600px){
+  .quartiers.many .chips{display:none}
+  .quartiers.many .quartier-select{display:block}
+}
+.chip span{min-height:44px;display:inline-flex;align-items:center}
+.legal summary{min-height:44px;display:flex;align-items:center}
