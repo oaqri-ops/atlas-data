@@ -676,6 +676,8 @@ def quartier_page(city, st, q, cfg):
 # ---------- pages villes : calculateur, graphique, constats, FAQ ----------
 
 CALC_BUDGET = 1_000_000
+CALC_MANY_QUARTIERS = 10   # boutons de quartier au-delà desquels le mobile affiche un menu
+CALC_CMP_VISIBLE = 8       # quartiers visibles dans « Le même budget dans les autres quartiers »
 
 
 def city_calc_section(city, st, cfg):
@@ -699,13 +701,27 @@ def city_calc_section(city, st, cfg):
                     f'<span>{e(q["name"])}</span></label>' for i, q in enumerate(ranked))
     chips += (f'<label class="chip"><input type="radio" name="quartier" value="__all"{"" if ranked else " checked"}>'
               '<span>Toute la ville</span></label>')
+    # Au-delà de CALC_MANY_QUARTIERS, un menu déroulant remplace les boutons sur mobile.
+    many = len(ranked) + 1 > CALC_MANY_QUARTIERS
+    select = ""
+    if many:
+        opts = "".join(f'<option value="{e(q["name"])}"{" selected" if i == 0 else ""}>{e(q["name"])}</option>' for i, q in enumerate(ranked))
+        select = (f'<select class="quartier-select" id="quartier-select" aria-label="Quartier">{opts}'
+                  '<option value="__all">Toute la ville</option></select>')
     cmp = ""
     if len(ranked) >= 2:
         top_m2 = max(CALC_BUDGET / q["median"] for q in ranked)
-        items = "".join(f'<li><button type="button" data-q="{e(q["name"])}" aria-pressed="{"true" if i == 0 else "false"}">'
-                        f'<span>{e(q["name"])}</span><span class="cmp-bar"><i style="width:{CALC_BUDGET / q["median"] / top_m2 * 100:.1f}%"></i></span>'
-                        f'<span class="cmp-val">{n(CALC_BUDGET / q["median"])} m²</span></button></li>' for i, q in enumerate(ranked))
-        cmp = (f'<h3 id="cmp-title">Le même budget dans les autres quartiers</h3><ul class="cmp" id="cmp">{items}</ul>')
+        lis = [f'<li><button type="button" data-q="{e(q["name"])}" aria-pressed="{"true" if i == 0 else "false"}">'
+               f'<span>{e(q["name"])}</span><span class="cmp-bar"><i style="width:{CALC_BUDGET / q["median"] / top_m2 * 100:.1f}%"></i></span>'
+               f'<span class="cmp-val">{n(CALC_BUDGET / q["median"])} m²</span></button></li>' for i, q in enumerate(ranked)]
+        # Les CALC_CMP_VISIBLE premiers quartiers restent visibles, les autres sont repliés.
+        more = ""
+        if len(lis) > CALC_CMP_VISIBLE + 2:
+            rest = len(lis) - CALC_CMP_VISIBLE
+            more = (f'<details class="cmp-more"><summary>Voir les {rest} autres quartiers</summary>'
+                    f'<ul class="cmp">{"".join(lis[CALC_CMP_VISIBLE:])}</ul></details>')
+            lis = lis[:CALC_CMP_VISIBLE]
+        cmp = (f'<h3 id="cmp-title">Le même budget dans les autres quartiers</h3><ul class="cmp" id="cmp">{"".join(lis)}</ul>{more}')
     data = json.dumps({k: calc[k] for k in ("slug", "name", "short", "quartiers", "data")},
                       ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return f"""
@@ -722,7 +738,7 @@ def city_calc_section(city, st, cfg):
             <div class="presets" role="group" aria-label="Budgets fréquents">
               <button type="button" data-budget="500000" aria-pressed="false">500 000</button><button type="button" data-budget="1000000" aria-pressed="true">1 000 000</button><button type="button" data-budget="2000000" aria-pressed="false">2 000 000</button><button type="button" data-budget="3000000" aria-pressed="false">3 000 000</button>
             </div>
-            <fieldset class="quartiers"><legend class="field-label">Quartier</legend><div class="chips" id="chips">{chips}</div></fieldset>
+            <fieldset class="quartiers{' many' if many else ''}"><legend class="field-label">Quartier</legend><div class="chips" id="chips">{chips}</div>{select}</fieldset>
           </div>
           <div class="calc-result" aria-live="polite">
             <p class="result-lead" id="result-lead">{e(d['prep'])}, ce budget correspond à environ</p>

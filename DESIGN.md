@@ -37,7 +37,7 @@ typography:
     fontFamily: "'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
     usage: >
       data labels only: eyebrows, column heads and figures of the hero ticket, offer table labels.
-      11px, weight 500, uppercase, letter-spacing .06-.08em for labels; 14px for figures. Never for
+      12px, weight 500, uppercase, letter-spacing .06-.08em for labels; 14px for figures. Never for
       sentences or headings. Loaded on the home page and the dashboard (variable --mono).
   scale:
     hero-h1:     { size: "clamp(40px, 5.2vw, 64px)", weight: 800, lineHeight: 1.03, letterSpacing: -0.035em }
@@ -96,7 +96,7 @@ components in `assets/components.css`. When a token changes here, change it in a
 
 - **Buttons**: 48px high, 6px radius, Roboto 700 15px. Primary = blue fill. Ghost = white with
   `line-strong` border, ink border on hover. Header CTA = navy fill. Full width under 600px.
-- **Chips** (neighbourhood picker): pill, 1px `line` border, ink fill when selected.
+- **Chips** (neighbourhood picker): pill, 1px `line` border, ink fill when selected. Above 10 neighbourhoods, a select replaces the chips under 600px, and the « same budget » list shows 8 rows then folds the rest.
 - **Segmented control** (city picker, chart mode): `soft` track with 3px padding, selected segment white
   with a 1px shadow.
 - **Key-figure tiles**: white, 1px `line`, 12px radius; label 13px muted above or below a 28-40px figure.
@@ -121,6 +121,9 @@ components in `assets/components.css`. When a token changes here, change it in a
 - **Footer and Pro band**: navy background, `#c9cfdc` text, white headings.
 - **Dialog** (Pro request): 14px radius, navy 55% backdrop, labelled fields 44px high, 16px text so iOS
   does not zoom.
+
+- **Touch targets**: every control is at least 44px high (buttons, presets, inputs, segmented controls); links in table headers, breadcrumbs and the footer get vertical padding so their tap area reaches 44px.
+- **Scrolling charts and tables** on mobile say so in visible text ("faites glisser"), never only by being cut off.
 
 ## Voice
 
