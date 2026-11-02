@@ -1,44 +1,44 @@
 {
- "n": 63,
- "median": 22892,
+ "n": 64,
+ "median": 23148,
  "median_price": 4200000,
- "median_surface": 179,
+ "median_surface": 180,
  "min": 8128,
  "max": 38806,
- "raw": 66,
- "date": "2026-10-26",
+ "raw": 67,
+ "date": "2026-11-02",
  "changes": {
-  "new": 0,
-  "gone": 4,
+  "new": 1,
+  "gone": 0,
   "cuts": [],
   "rises": [],
   "trend": {
    "before": 22892,
-   "after": 22892,
-   "pct": 0.0
+   "after": 23148,
+   "pct": 0.01119820828667395
   },
-  "prev_date": "2026-10-19",
+  "prev_date": "2026-10-26",
   "days": 7,
   "quartiers": {
    "Hay Riad": {
-    "new": 0,
-    "gone": 3,
+    "new": 1,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": {
-     "before": 24680,
-     "after": 25444,
-     "pct": 0.030930771754847042
+     "before": 25444,
+     "after": 25579,
+     "pct": 0.0053156146179402786
     }
    }
   }
  },
  "quartiers": [
   {
-   "n": 39,
-   "median": 25444,
-   "median_price": 4200000,
-   "median_surface": 174,
+   "n": 40,
+   "median": 25579,
+   "median_price": 4250000,
+   "median_surface": 176,
    "min": 17857,
    "max": 38806,
    "name": "Hay Riad",

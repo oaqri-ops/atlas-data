@@ -1,40 +1,105 @@
 {
- "n": 533,
- "median": 16364,
+ "n": 540,
+ "median": 16388,
  "median_price": 2300000,
  "median_surface": 137,
  "min": 6223,
  "max": 51327,
- "raw": 555,
- "date": "2026-10-26",
+ "raw": 561,
+ "date": "2026-11-02",
  "changes": {
-  "new": 9,
-  "gone": 15,
+  "new": 12,
+  "gone": 5,
   "cuts": [
    {
-    "id": "895715",
-    "district": "Benjdia",
-    "surface": 134,
+    "id": "907192",
+    "district": "Oasis",
+    "surface": 114,
     "bedrooms": 3,
-    "before": 1290000,
-    "after": 1250000,
-    "pct": -0.03100775193798455
+    "before": 3322000,
+    "after": 2662000,
+    "pct": -0.19867549668874174
+   },
+   {
+    "id": "903999",
+    "district": "Bouskoura",
+    "surface": 188,
+    "bedrooms": 3,
+    "before": 3200000,
+    "after": 2900000,
+    "pct": -0.09375
+   },
+   {
+    "id": "897505",
+    "district": "Val Fleuri",
+    "surface": 171,
+    "bedrooms": 3,
+    "before": 2150000,
+    "after": 1950000,
+    "pct": -0.09302325581395354
+   },
+   {
+    "id": "906546",
+    "district": "Anfa",
+    "surface": 179,
+    "bedrooms": 3,
+    "before": 3600000,
+    "after": 3500000,
+    "pct": -0.02777777777777779
    }
   ],
-  "rises": [],
+  "rises": [
+   {
+    "id": "908724",
+    "district": "Hay Hassani",
+    "surface": 44,
+    "bedrooms": 1,
+    "before": 1250000,
+    "after": 1400000,
+    "pct": 0.1200000000000001
+   },
+   {
+    "id": "904889",
+    "district": "Anfa",
+    "surface": 225,
+    "bedrooms": 3,
+    "before": 3150000,
+    "after": 3600000,
+    "pct": 0.1428571428571428
+   },
+   {
+    "id": "904429",
+    "district": "Les Princesses",
+    "surface": 153,
+    "bedrooms": 3,
+    "before": 1980000,
+    "after": 2200000,
+    "pct": 0.11111111111111116
+   }
+  ],
   "trend": {
-   "before": 16279,
-   "after": 16364,
-   "pct": 0.0051948051948051965
+   "before": 16364,
+   "after": 16388,
+   "pct": 0.0014810292588069984
   },
-  "prev_date": "2026-10-19",
+  "prev_date": "2026-10-26",
   "days": 7,
   "quartiers": {
    "Les Princesses": {
     "new": 0,
     "gone": 0,
     "cuts": [],
-    "rises": [],
+    "rises": [
+     {
+      "id": "904429",
+      "district": "Les Princesses",
+      "surface": 153,
+      "bedrooms": 3,
+      "before": 1980000,
+      "after": 2200000,
+      "pct": 0.11111111111111116
+     }
+    ],
     "trend": {
      "before": 29259,
      "after": 29259,
@@ -42,20 +107,30 @@
     }
    },
    "Ain Diab": {
-    "new": 0,
+    "new": 1,
     "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": {
      "before": 27311,
-     "after": 27311,
-     "pct": 0.0
+     "after": 27261,
+     "pct": -0.0018380566801619036
     }
    },
    "Oasis": {
     "new": 0,
     "gone": 0,
-    "cuts": [],
+    "cuts": [
+     {
+      "id": "907192",
+      "district": "Oasis",
+      "surface": 114,
+      "bedrooms": 3,
+      "before": 3322000,
+      "after": 2662000,
+      "pct": -0.19867549668874174
+     }
+    ],
     "rises": [],
     "trend": {
      "before": 20941,
@@ -65,118 +140,151 @@
    },
    "Ferme Bretone": {
     "new": 0,
-    "gone": 1,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": null
    },
    "Hay Hassani": {
-    "new": 2,
-    "gone": 1,
+    "new": 1,
+    "gone": 0,
     "cuts": [],
-    "rises": [],
+    "rises": [
+     {
+      "id": "908724",
+      "district": "Hay Hassani",
+      "surface": 44,
+      "bedrooms": 1,
+      "before": 1250000,
+      "after": 1400000,
+      "pct": 0.1200000000000001
+     }
+    ],
     "trend": null
    },
-   "Racine": {
-    "new": 0,
-    "gone": 1,
-    "cuts": [],
-    "rises": [],
-    "trend": {
-     "before": 17687,
-     "after": 17832,
-     "pct": 0.00821089023336219
-    }
-   },
    "Anfa": {
-    "new": 4,
-    "gone": 2,
-    "cuts": [],
-    "rises": [],
+    "new": 0,
+    "gone": 0,
+    "cuts": [
+     {
+      "id": "906546",
+      "district": "Anfa",
+      "surface": 179,
+      "bedrooms": 3,
+      "before": 3600000,
+      "after": 3500000,
+      "pct": -0.02777777777777779
+     }
+    ],
+    "rises": [
+     {
+      "id": "904889",
+      "district": "Anfa",
+      "surface": 225,
+      "bedrooms": 3,
+      "before": 3150000,
+      "after": 3600000,
+      "pct": 0.1428571428571428
+     }
+    ],
     "trend": {
      "before": 17800,
      "after": 17800,
      "pct": 0.0
     }
    },
-   "Sidi Belyout": {
-    "new": 0,
-    "gone": 1,
+   "Racine": {
+    "new": 1,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": {
-     "before": 17518,
+     "before": 17832,
+     "after": 17687,
+     "pct": -0.008144020574367805
+    }
+   },
+   "Sidi Belyout": {
+    "new": 0,
+    "gone": 0,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 17594,
      "after": 17594,
-     "pct": 0.004307644110275621
+     "pct": 0.0
     }
    },
    "Zenata": {
     "new": 0,
-    "gone": 1,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": null
    },
    "Dar Bouazza": {
     "new": 0,
-    "gone": 0,
+    "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": {
      "before": 15714,
-     "after": 15714,
-     "pct": 0.0
+     "after": 15836,
+     "pct": 0.007736943907156624
     }
-   },
-   "Gauthier": {
-    "new": 1,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": {
-     "before": 15034,
-     "after": 15207,
-     "pct": 0.011503071355383865
-    }
-   },
-   "Val Fleuri": {
-    "new": 0,
-    "gone": 1,
-    "cuts": [],
-    "rises": [],
-    "trend": null
    },
    "Bouskoura": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
+    "new": 2,
+    "gone": 1,
+    "cuts": [
+     {
+      "id": "903999",
+      "district": "Bouskoura",
+      "surface": 188,
+      "bedrooms": 3,
+      "before": 3200000,
+      "after": 2900000,
+      "pct": -0.09375
+     }
+    ],
     "rises": [],
     "trend": {
      "before": 15030,
-     "after": 15030,
-     "pct": 0.0
+     "after": 15321,
+     "pct": 0.019387912426765297
     }
    },
    "Maarif": {
-    "new": 1,
-    "gone": 1,
+    "new": 3,
+    "gone": 0,
     "cuts": [],
     "rises": [],
     "trend": {
      "before": 15000,
-     "after": 15000,
-     "pct": 0.0
+     "after": 15119,
+     "pct": 0.007936507936507908
     }
    },
-   "Californie": {
-    "new": 0,
-    "gone": 0,
+   "Bourgogne": {
+    "new": 1,
+    "gone": 1,
     "cuts": [],
     "rises": [],
     "trend": null
    },
-   "Bourgogne": {
+   "Gauthier": {
     "new": 1,
+    "gone": 1,
+    "cuts": [],
+    "rises": [],
+    "trend": {
+     "before": 15207,
+     "after": 14615,
+     "pct": -0.03892773892773893
+    }
+   },
+   "Californie": {
+    "new": 0,
     "gone": 0,
     "cuts": [],
     "rises": [],
@@ -211,8 +319,8 @@
    "rank": 1
   },
   {
-   "n": 21,
-   "median": 27311,
+   "n": 22,
+   "median": 27261,
    "median_price": 4200000,
    "median_surface": 180,
    "min": 14000,
@@ -227,7 +335,7 @@
    "median_price": 1960000,
    "median_surface": 104,
    "min": 13312,
-   "max": 29140,
+   "max": 25000,
    "name": "Oasis",
    "slug": "oasis",
    "rank": 3
@@ -244,26 +352,15 @@
    "rank": 4
   },
   {
-   "n": 14,
-   "median": 18950,
-   "median_price": 1275000,
-   "median_surface": 87,
+   "n": 15,
+   "median": 18400,
+   "median_price": 1300000,
+   "median_surface": 91,
    "min": 6250,
-   "max": 28409,
+   "max": 31818,
    "name": "Hay Hassani",
    "slug": "hay-hassani",
    "rank": 5
-  },
-  {
-   "n": 36,
-   "median": 17832,
-   "median_price": 2965000,
-   "median_surface": 174,
-   "min": 8130,
-   "max": 26170,
-   "name": "Racine",
-   "slug": "racine",
-   "rank": 6
   },
   {
    "n": 61,
@@ -274,6 +371,17 @@
    "max": 36082,
    "name": "Anfa",
    "slug": "anfa",
+   "rank": 6
+  },
+  {
+   "n": 37,
+   "median": 17687,
+   "median_price": 2980000,
+   "median_surface": 175,
+   "min": 8130,
+   "max": 26170,
+   "name": "Racine",
+   "slug": "racine",
    "rank": 7
   },
   {
@@ -299,9 +407,9 @@
    "rank": 9
   },
   {
-   "n": 87,
-   "median": 15714,
-   "median_price": 2040000,
+   "n": 86,
+   "median": 15836,
+   "median_price": 2045000,
    "median_surface": 123,
    "min": 6223,
    "max": 33784,
@@ -310,47 +418,47 @@
    "rank": 10
   },
   {
-   "n": 19,
-   "median": 15207,
-   "median_price": 3300000,
-   "median_surface": 205,
-   "min": 9333,
-   "max": 23000,
-   "name": "Gauthier",
-   "slug": "gauthier",
+   "n": 26,
+   "median": 15321,
+   "median_price": 3950000,
+   "median_surface": 232,
+   "min": 6633,
+   "max": 23200,
+   "name": "Bouskoura",
+   "slug": "bouskoura",
    "rank": 11
   },
   {
-   "n": 8,
-   "median": 15144,
-   "median_price": 2175000,
-   "median_surface": 136,
-   "min": 12573,
-   "max": 27778,
-   "name": "Val Fleuri",
-   "slug": "val-fleuri",
-   "rank": 12
-  },
-  {
-   "n": 25,
-   "median": 15030,
-   "median_price": 4400000,
-   "median_surface": 235,
-   "min": 6633,
-   "max": 21533,
-   "name": "Bouskoura",
-   "slug": "bouskoura",
-   "rank": 13
-  },
-  {
-   "n": 51,
-   "median": 15000,
+   "n": 54,
+   "median": 15119,
    "median_price": 2100000,
-   "median_surface": 144,
+   "median_surface": 140,
    "min": 9231,
    "max": 27027,
    "name": "Maarif",
    "slug": "maarif",
+   "rank": 12
+  },
+  {
+   "n": 14,
+   "median": 14727,
+   "median_price": 1400000,
+   "median_surface": 90,
+   "min": 9767,
+   "max": 30000,
+   "name": "Bourgogne",
+   "slug": "bourgogne",
+   "rank": 13
+  },
+  {
+   "n": 19,
+   "median": 14615,
+   "median_price": 3400000,
+   "median_surface": 214,
+   "min": 9333,
+   "max": 23000,
+   "name": "Gauthier",
+   "slug": "gauthier",
    "rank": 14
   },
   {
@@ -365,17 +473,6 @@
    "rank": 15
   },
   {
-   "n": 14,
-   "median": 14128,
-   "median_price": 1520000,
-   "median_surface": 100,
-   "min": 9767,
-   "max": 30000,
-   "name": "Bourgogne",
-   "slug": "bourgogne",
-   "rank": 16
-  },
-  {
    "n": 10,
    "median": 14016,
    "median_price": 1989000,
@@ -384,7 +481,7 @@
    "max": 22388,
    "name": "Maarif Extension",
    "slug": "maarif-extension",
-   "rank": 17
+   "rank": 16
   },
   {
    "n": 12,
@@ -395,16 +492,24 @@
    "max": 19355,
    "name": "Quartier des Hôpitaux",
    "slug": "quartier-des-hopitaux",
-   "rank": 18
+   "rank": 17
   }
  ],
  "autres_quartiers": [
+  {
+   "name": "Val Fleuri",
+   "n": 7
+  },
   {
    "name": "Ain Chock",
    "n": 5
   },
   {
    "name": "Palmier",
+   "n": 5
+  },
+  {
+   "name": "Tamaris",
    "n": 5
   },
   {
@@ -417,10 +522,6 @@
   },
   {
    "name": "Mers Sultan",
-   "n": 4
-  },
-  {
-   "name": "Tamaris",
    "n": 4
   },
   {
@@ -445,6 +546,10 @@
   },
   {
    "name": "Oulfa",
+   "n": 3
+  },
+  {
+   "name": "Roches Noires",
    "n": 3
   },
   {
@@ -473,10 +578,6 @@
   },
   {
    "name": "Riviera",
-   "n": 2
-  },
-  {
-   "name": "Roches Noires",
    "n": 2
   },
   {
