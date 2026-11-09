@@ -1,310 +1,585 @@
 {
- "n": 316,
- "median": 18525,
- "median_price": 1670000,
- "median_surface": 95,
- "min": 5294,
- "max": 60241,
- "raw": 319,
- "date": "2026-11-02",
- "source": "sarouty",
- "source_name": "Sarouty",
- "changes": {
-  "new": 4,
-  "gone": 5,
-  "cuts": [
-   {
-    "id": "908496",
-    "district": "indéfini",
-    "surface": 51,
-    "bedrooms": 2,
-    "before": 550000,
-    "after": 490000,
-    "pct": -0.10909090909090913
-   }
-  ],
-  "rises": [
-   {
-    "id": "907007",
-    "district": "Guéliz",
-    "surface": 65,
-    "bedrooms": 1,
-    "before": 1340000,
-    "after": 1450000,
-    "pct": 0.08208955223880587
-   }
-  ],
-  "trend": {
-   "before": 18515,
-   "after": 18525,
-   "pct": 0.0005301493638207866
-  },
-  "prev_date": "2026-10-26",
-  "days": 7,
-  "quartiers": {
-   "Hivernage": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": {
-     "before": 24759,
-     "after": 24759,
-     "pct": 0.0
-    }
-   },
-   "Agdal": {
-    "new": 0,
-    "gone": 1,
-    "cuts": [],
-    "rises": [],
-    "trend": null
-   },
-   "Guéliz": {
-    "new": 2,
-    "gone": 1,
-    "cuts": [],
-    "rises": [
-     {
-      "id": "907007",
-      "district": "Guéliz",
-      "surface": 65,
-      "bedrooms": 1,
-      "before": 1340000,
-      "after": 1450000,
-      "pct": 0.08208955223880587
-     }
-    ],
-    "trend": {
-     "before": 20500,
-     "after": 20666,
-     "pct": 0.008119905980035869
-    }
-   },
-   "Palmeraie": {
-    "new": 1,
-    "gone": 2,
-    "cuts": [],
-    "rises": [],
-    "trend": {
-     "before": 16287,
-     "after": 17606,
-     "pct": 0.08094891872937016
-    }
-   },
-   "Route de Casablanca": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": {
-     "before": 16071,
-     "after": 16071,
-     "pct": 0.0
-    }
-   },
-   "Targa": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": null
-   },
-   "Semlalia": {
-    "new": 0,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": null
-   }
-  }
- },
+ "n": 2663,
+ "median": 12687,
+ "median_price": 1040000,
+ "median_surface": 76,
+ "min": 2000,
+ "max": 100000,
+ "raw": 4572,
+ "date": "2026-11-09",
+ "source": "avito",
+ "source_name": "Avito",
+ "changes": null,
  "quartiers": [
   {
-   "n": 21,
-   "median": 24759,
-   "median_price": 2498000,
-   "median_surface": 97,
-   "min": 15000,
-   "max": 60241,
-   "name": "Hivernage",
-   "slug": "hivernage",
+   "n": 28,
+   "median": 26667,
+   "median_price": 2350000,
+   "median_surface": 82,
+   "min": 11000,
+   "max": 35227,
+   "name": "Av Mohammed VI",
+   "slug": "av-mohammed-vi",
    "rank": 1
   },
   {
-   "n": 12,
-   "median": 23108,
-   "median_price": 2456250,
-   "median_surface": 104,
-   "min": 19231,
-   "max": 26437,
+   "n": 65,
+   "median": 23750,
+   "median_price": 2300000,
+   "median_surface": 92,
+   "min": 11217,
+   "max": 33929,
    "name": "Agdal",
    "slug": "agdal",
    "rank": 2
   },
   {
-   "n": 98,
-   "median": 20666,
-   "median_price": 1780000,
-   "median_surface": 100,
-   "min": 9655,
-   "max": 37209,
-   "name": "Guéliz",
-   "slug": "gueliz",
+   "n": 73,
+   "median": 21552,
+   "median_price": 1500000,
+   "median_surface": 76,
+   "min": 4545,
+   "max": 63333,
+   "name": "Hivernage",
+   "slug": "hivernage",
    "rank": 3
   },
   {
-   "n": 29,
-   "median": 17606,
-   "median_price": 2200000,
-   "median_surface": 122,
-   "min": 8684,
-   "max": 28689,
-   "name": "Palmeraie",
-   "slug": "palmeraie",
+   "n": 37,
+   "median": 20000,
+   "median_price": 1450000,
+   "median_surface": 75,
+   "min": 11029,
+   "max": 31579,
+   "name": "Victor Hugo",
+   "slug": "victor-hugo",
    "rank": 4
   },
   {
-   "n": 17,
-   "median": 16071,
-   "median_price": 1400000,
-   "median_surface": 84,
-   "min": 11029,
-   "max": 26271,
-   "name": "Route de Casablanca",
-   "slug": "route-de-casablanca",
+   "n": 539,
+   "median": 19658,
+   "median_price": 1480000,
+   "median_surface": 76,
+   "min": 2000,
+   "max": 92593,
+   "name": "Guéliz",
+   "slug": "gueliz",
    "rank": 5
   },
   {
-   "n": 9,
-   "median": 15328,
-   "median_price": 1248000,
-   "median_surface": 85,
-   "min": 9176,
-   "max": 21429,
-   "name": "Targa",
-   "slug": "targa",
+   "n": 24,
+   "median": 19469,
+   "median_price": 1650000,
+   "median_surface": 88,
+   "min": 4545,
+   "max": 37778,
+   "name": "Centre Ville",
+   "slug": "centre-ville",
    "rank": 6
   },
   {
-   "n": 11,
-   "median": 14286,
-   "median_price": 1550000,
-   "median_surface": 102,
-   "min": 10204,
-   "max": 20625,
+   "n": 28,
+   "median": 17078,
+   "median_price": 1307455,
+   "median_surface": 88,
+   "min": 7800,
+   "max": 25000,
+   "name": "Majorelle",
+   "slug": "majorelle",
+   "rank": 7
+  },
+  {
+   "n": 70,
+   "median": 16437,
+   "median_price": 1440000,
+   "median_surface": 90,
+   "min": 6277,
+   "max": 25275,
    "name": "Semlalia",
    "slug": "semlalia",
-   "rank": 7
+   "rank": 8
+  },
+  {
+   "n": 25,
+   "median": 16190,
+   "median_price": 1400000,
+   "median_surface": 85,
+   "min": 8182,
+   "max": 25025,
+   "name": "Av Abdelkrim El Khattabi",
+   "slug": "av-abdelkrim-el-khattabi",
+   "rank": 9
+  },
+  {
+   "n": 26,
+   "median": 16102,
+   "median_price": 1675000,
+   "median_surface": 110,
+   "min": 7333,
+   "max": 19134,
+   "name": "Palmeraie",
+   "slug": "palmeraie",
+   "rank": 10
+  },
+  {
+   "n": 18,
+   "median": 15336,
+   "median_price": 1600000,
+   "median_surface": 111,
+   "min": 7031,
+   "max": 24138,
+   "name": "Annakhil",
+   "slug": "annakhil",
+   "rank": 11
+  },
+  {
+   "n": 42,
+   "median": 15114,
+   "median_price": 1210000,
+   "median_surface": 79,
+   "min": 2656,
+   "max": 83333,
+   "name": "Route d'Amezmiz",
+   "slug": "route-d-amezmiz",
+   "rank": 12
+  },
+  {
+   "n": 165,
+   "median": 14744,
+   "median_price": 1100000,
+   "median_surface": 71,
+   "min": 5556,
+   "max": 90000,
+   "name": "Route de Casablanca",
+   "slug": "route-de-casablanca",
+   "rank": 13
+  },
+  {
+   "n": 55,
+   "median": 13265,
+   "median_price": 1100000,
+   "median_surface": 80,
+   "min": 4286,
+   "max": 22277,
+   "name": "Route de Safi",
+   "slug": "route-de-safi",
+   "rank": 14
+  },
+  {
+   "n": 19,
+   "median": 12587,
+   "median_price": 1750000,
+   "median_surface": 140,
+   "min": 4125,
+   "max": 28333,
+   "name": "Route de Fès",
+   "slug": "route-de-fes",
+   "rank": 15
+  },
+  {
+   "n": 10,
+   "median": 12164,
+   "median_price": 1125000,
+   "median_surface": 92,
+   "min": 10000,
+   "max": 30263,
+   "name": "Sidi Abbad",
+   "slug": "sidi-abbad",
+   "rank": 16
+  },
+  {
+   "n": 81,
+   "median": 12000,
+   "median_price": 1040000,
+   "median_surface": 80,
+   "min": 5806,
+   "max": 21649,
+   "name": "Targa",
+   "slug": "targa",
+   "rank": 17
+  },
+  {
+   "n": 104,
+   "median": 12000,
+   "median_price": 860000,
+   "median_surface": 72,
+   "min": 6250,
+   "max": 21304,
+   "name": "Hay Izdihar",
+   "slug": "hay-izdihar",
+   "rank": 18
+  },
+  {
+   "n": 65,
+   "median": 11364,
+   "median_price": 855600,
+   "median_surface": 75,
+   "min": 7000,
+   "max": 15957,
+   "name": "Hay Charaf",
+   "slug": "hay-charaf",
+   "rank": 19
+  },
+  {
+   "n": 74,
+   "median": 11330,
+   "median_price": 1000000,
+   "median_surface": 87,
+   "min": 4444,
+   "max": 94488,
+   "name": "Allal El Fassi",
+   "slug": "allal-el-fassi",
+   "rank": 20
+  },
+  {
+   "n": 11,
+   "median": 11250,
+   "median_price": 1330000,
+   "median_surface": 107,
+   "min": 5833,
+   "max": 19048,
+   "name": "Issil",
+   "slug": "issil",
+   "rank": 21
+  },
+  {
+   "n": 9,
+   "median": 11184,
+   "median_price": 960000,
+   "median_surface": 87,
+   "min": 8509,
+   "max": 17500,
+   "name": "Rouidat",
+   "slug": "rouidat",
+   "rank": 22
+  },
+  {
+   "n": 18,
+   "median": 11137,
+   "median_price": 915000,
+   "median_surface": 78,
+   "min": 8116,
+   "max": 61875,
+   "name": "Bouaakkaz",
+   "slug": "bouaakkaz",
+   "rank": 23
+  },
+  {
+   "n": 26,
+   "median": 11105,
+   "median_price": 930000,
+   "median_surface": 86,
+   "min": 5455,
+   "max": 18000,
+   "name": "Daoudiate",
+   "slug": "daoudiate",
+   "rank": 24
+  },
+  {
+   "n": 24,
+   "median": 10834,
+   "median_price": 895000,
+   "median_surface": 86,
+   "min": 2333,
+   "max": 27273,
+   "name": "Route d'Ourika",
+   "slug": "route-d-ourika",
+   "rank": 25
+  },
+  {
+   "n": 14,
+   "median": 10700,
+   "median_price": 625000,
+   "median_surface": 64,
+   "min": 6716,
+   "max": 14159,
+   "name": "Hay Targa",
+   "slug": "hay-targa",
+   "rank": 26
+  },
+  {
+   "n": 23,
+   "median": 10000,
+   "median_price": 1000000,
+   "median_surface": 100,
+   "min": 3333,
+   "max": 95238,
+   "name": "Amerchich",
+   "slug": "amerchich",
+   "rank": 27
+  },
+  {
+   "n": 44,
+   "median": 10000,
+   "median_price": 650000,
+   "median_surface": 66,
+   "min": 3514,
+   "max": 23469,
+   "name": "Ain Mezouar",
+   "slug": "ain-mezouar",
+   "rank": 28
+  },
+  {
+   "n": 110,
+   "median": 10000,
+   "median_price": 650000,
+   "median_surface": 65,
+   "min": 6429,
+   "max": 18421,
+   "name": "Mabrouka",
+   "slug": "mabrouka",
+   "rank": 29
+  },
+  {
+   "n": 37,
+   "median": 9412,
+   "median_price": 500000,
+   "median_surface": 55,
+   "min": 2759,
+   "max": 80357,
+   "name": "Es Saada",
+   "slug": "es-saada",
+   "rank": 30
+  },
+  {
+   "n": 10,
+   "median": 9071,
+   "median_price": 635000,
+   "median_surface": 70,
+   "min": 6667,
+   "max": 10698,
+   "name": "Azli",
+   "slug": "azli",
+   "rank": 31
+  },
+  {
+   "n": 18,
+   "median": 8897,
+   "median_price": 700000,
+   "median_surface": 79,
+   "min": 6044,
+   "max": 12333,
+   "name": "Massira 1",
+   "slug": "massira-1",
+   "rank": 32
+  },
+  {
+   "n": 14,
+   "median": 8684,
+   "median_price": 555000,
+   "median_surface": 67,
+   "min": 6000,
+   "max": 11429,
+   "name": "Massira 2",
+   "slug": "massira-2",
+   "rank": 33
+  },
+  {
+   "n": 10,
+   "median": 8562,
+   "median_price": 660000,
+   "median_surface": 84,
+   "min": 7051,
+   "max": 9231,
+   "name": "Socoma",
+   "slug": "socoma",
+   "rank": 34
+  },
+  {
+   "n": 53,
+   "median": 8438,
+   "median_price": 600000,
+   "median_surface": 72,
+   "min": 2708,
+   "max": 97143,
+   "name": "Azzouzia",
+   "slug": "azzouzia",
+   "rank": 35
+  },
+  {
+   "n": 11,
+   "median": 8427,
+   "median_price": 800000,
+   "median_surface": 96,
+   "min": 2000,
+   "max": 20000,
+   "name": "Sidi Youssef Ben Ali",
+   "slug": "sidi-youssef-ben-ali",
+   "rank": 36
+  },
+  {
+   "n": 246,
+   "median": 8333,
+   "median_price": 585000,
+   "median_surface": 64,
+   "min": 2941,
+   "max": 100000,
+   "name": "M'Hamid",
+   "slug": "m-hamid",
+   "rank": 37
+  },
+  {
+   "n": 21,
+   "median": 8205,
+   "median_price": 540000,
+   "median_surface": 71,
+   "min": 5926,
+   "max": 61856,
+   "name": "Massira 3",
+   "slug": "massira-3",
+   "rank": 38
+  },
+  {
+   "n": 10,
+   "median": 7802,
+   "median_price": 655000,
+   "median_surface": 74,
+   "min": 5583,
+   "max": 15187,
+   "name": "Massira",
+   "slug": "massira",
+   "rank": 39
+  },
+  {
+   "n": 10,
+   "median": 7639,
+   "median_price": 540000,
+   "median_surface": 71,
+   "min": 6000,
+   "max": 17500,
+   "name": "Route d'Agadir - Essaouira",
+   "slug": "route-d-agadir-essaouira",
+   "rank": 40
+  },
+  {
+   "n": 60,
+   "median": 7457,
+   "median_price": 430000,
+   "median_surface": 60,
+   "min": 2188,
+   "max": 27273,
+   "name": "Les Portes de Marrakech",
+   "slug": "les-portes-de-marrakech",
+   "rank": 41
+  },
+  {
+   "n": 13,
+   "median": 6667,
+   "median_price": 430000,
+   "median_surface": 64,
+   "min": 4167,
+   "max": 17500,
+   "name": "Route de Ouarzazate",
+   "slug": "route-de-ouarzazate",
+   "rank": 42
+  },
+  {
+   "n": 26,
+   "median": 5343,
+   "median_price": 300000,
+   "median_surface": 58,
+   "min": 4000,
+   "max": 10000,
+   "name": "Route de Tamansourt",
+   "slug": "route-de-tamansourt",
+   "rank": 43
   }
  ],
  "autres_quartiers": [
   {
-   "name": "Allal El Fassi",
+   "name": "Bd Moulay Abdellah",
    "n": 7
   },
   {
-   "name": "Azzouzia",
-   "n": 6
+   "name": "Route de Tahanaoute",
+   "n": 7
   },
   {
-   "name": "Chrifia",
-   "n": 6
-  },
-  {
-   "name": "Majorelle",
-   "n": 6
-  },
-  {
-   "name": "Route de Safi",
-   "n": 6
-  },
-  {
-   "name": "Victor Hugo",
-   "n": 6
-  },
-  {
-   "name": "Hay Izdihar",
+   "name": "Assif",
    "n": 5
   },
   {
-   "name": "Hay Charaf",
+   "name": "Hay Massira",
+   "n": 5
+  },
+  {
+   "name": "El Ghoul",
    "n": 4
   },
   {
-   "name": "Mhamid",
+   "name": "Masmoudi",
    "n": 4
   },
   {
-   "name": "Route Amizmiz",
+   "name": "Sanaoubar",
    "n": 4
   },
   {
-   "name": "Route d'Ourika",
-   "n": 4
-  },
-  {
-   "name": "AIN MEZOUAR",
+   "name": "Akioud",
    "n": 3
   },
   {
-   "name": "Al izdihar",
+   "name": "Amelkis",
    "n": 3
   },
   {
-   "name": "Argan Golf Ressort",
+   "name": "Av Mohammed V",
    "n": 3
   },
   {
-   "name": "Marrakech Golf City",
+   "name": "Bab Doukkala",
    "n": 3
   },
   {
-   "name": "Menara",
+   "name": "Hay Al Bahja",
    "n": 3
   },
   {
-   "name": "Route de Fès",
+   "name": "Hay Al Massar",
    "n": 3
   },
   {
-   "name": "Route de Ouarzazate",
+   "name": "Jemaa El Fna",
    "n": 3
   },
   {
-   "name": "Annakhil",
+   "name": "Afaq",
    "n": 2
   },
   {
-   "name": "Av Abdelkrim El Khattabi",
+   "name": "Ancienne Médina",
    "n": 2
   },
   {
-   "name": "Izdihar",
+   "name": "Berrima",
    "n": 2
-  },
-  {
-   "name": "Plaza",
-   "n": 2
-  },
-  {
-   "name": "Amerchich",
-   "n": 1
-  },
-  {
-   "name": "Avenue Yacoub El Mansour",
-   "n": 1
   },
   {
    "name": "Bin Lkchali",
+   "n": 2
+  },
+  {
+   "name": "Hay Al Hassani",
+   "n": 2
+  },
+  {
+   "name": "Bab Atlas",
    "n": 1
   },
   {
-   "name": "Dar Dmana",
+   "name": "Bab Ghmat",
    "n": 1
   },
   {
-   "name": "Fassi",
+   "name": "El Moukef",
+   "n": 1
+  },
+  {
+   "name": "Harti",
+   "n": 1
+  },
+  {
+   "name": "Hay Al Haouz",
    "n": 1
   },
   {
@@ -312,35 +587,23 @@
    "n": 1
   },
   {
-   "name": "Mabrouka",
+   "name": "Hôpital Militaire",
    "n": 1
   },
   {
-   "name": "Massira",
+   "name": "Ksibat Nhas",
    "n": 1
   },
   {
-   "name": "Route d'agadir",
+   "name": "Sakar",
    "n": 1
   },
   {
-   "name": "Route de Tahanaoute",
+   "name": "Sidi Mimoun",
    "n": 1
   },
   {
-   "name": "Route de Tamansourt",
-   "n": 1
-  },
-  {
-   "name": "Saada",
-   "n": 1
-  },
-  {
-   "name": "Sanaoubar",
-   "n": 1
-  },
-  {
-   "name": "Sidi Youssef Ben Ali",
+   "name": "Sofia",
    "n": 1
   }
  ]

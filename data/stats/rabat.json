@@ -1,88 +1,218 @@
 {
- "n": 64,
- "median": 23148,
- "median_price": 4200000,
- "median_surface": 180,
- "min": 8128,
- "max": 38806,
- "raw": 67,
- "date": "2026-11-02",
- "source": "sarouty",
- "source_name": "Sarouty",
- "changes": {
-  "new": 1,
-  "gone": 0,
-  "cuts": [],
-  "rises": [],
-  "trend": {
-   "before": 22892,
-   "after": 23148,
-   "pct": 0.01119820828667395
-  },
-  "prev_date": "2026-10-26",
-  "days": 7,
-  "quartiers": {
-   "Hay Riad": {
-    "new": 1,
-    "gone": 0,
-    "cuts": [],
-    "rises": [],
-    "trend": {
-     "before": 25444,
-     "after": 25579,
-     "pct": 0.0053156146179402786
-    }
-   }
-  }
- },
+ "n": 650,
+ "median": 19138,
+ "median_price": 2300000,
+ "median_surface": 120,
+ "min": 2857,
+ "max": 81633,
+ "raw": 1137,
+ "date": "2026-11-09",
+ "source": "avito",
+ "source_name": "Avito",
+ "changes": null,
  "quartiers": [
   {
-   "n": 40,
+   "n": 25,
+   "median": 26016,
+   "median_price": 4900000,
+   "median_surface": 160,
+   "min": 14189,
+   "max": 48077,
+   "name": "Souissi",
+   "slug": "souissi",
+   "rank": 1
+  },
+  {
+   "n": 28,
    "median": 25579,
-   "median_price": 4250000,
+   "median_price": 4200000,
    "median_surface": 176,
-   "min": 17857,
+   "min": 18182,
    "max": 38806,
+   "name": "Riyad",
+   "slug": "riyad",
+   "rank": 2
+  },
+  {
+   "n": 139,
+   "median": 24699,
+   "median_price": 3600000,
+   "median_surface": 153,
+   "min": 10000,
+   "max": 40698,
    "name": "Hay Riad",
    "slug": "hay-riad",
-   "rank": 1
+   "rank": 3
+  },
+  {
+   "n": 126,
+   "median": 19831,
+   "median_price": 2675000,
+   "median_surface": 142,
+   "min": 9111,
+   "max": 65116,
+   "name": "Agdal",
+   "slug": "agdal",
+   "rank": 4
+  },
+  {
+   "n": 11,
+   "median": 19231,
+   "median_price": 6000000,
+   "median_surface": 210,
+   "min": 10101,
+   "max": 28571,
+   "name": "Haut Agdal",
+   "slug": "haut-agdal",
+   "rank": 5
+  },
+  {
+   "n": 50,
+   "median": 18601,
+   "median_price": 1850000,
+   "median_surface": 94,
+   "min": 3000,
+   "max": 50781,
+   "name": "Hassan",
+   "slug": "hassan",
+   "rank": 6
+  },
+  {
+   "n": 31,
+   "median": 16667,
+   "median_price": 1260000,
+   "median_surface": 78,
+   "min": 8000,
+   "max": 22436,
+   "name": "Guich Oudaya",
+   "slug": "guich-oudaya",
+   "rank": 7
+  },
+  {
+   "n": 34,
+   "median": 16288,
+   "median_price": 1575000,
+   "median_surface": 90,
+   "min": 8557,
+   "max": 23214,
+   "name": "Quartier de l'Océan",
+   "slug": "quartier-de-l-ocean",
+   "rank": 8
+  },
+  {
+   "n": 24,
+   "median": 15778,
+   "median_price": 1520000,
+   "median_surface": 97,
+   "min": 9223,
+   "max": 41989,
+   "name": "Hay el Fath",
+   "slug": "hay-el-fath",
+   "rank": 9
+  },
+  {
+   "n": 27,
+   "median": 15351,
+   "median_price": 1500000,
+   "median_surface": 110,
+   "min": 6000,
+   "max": 20482,
+   "name": "Diour Jamaa",
+   "slug": "diour-jamaa",
+   "rank": 10
+  },
+  {
+   "n": 10,
+   "median": 15066,
+   "median_price": 1567500,
+   "median_surface": 109,
+   "min": 6632,
+   "max": 30508,
+   "name": "Médina de Rabat",
+   "slug": "medina-de-rabat",
+   "rank": 11
+  },
+  {
+   "n": 8,
+   "median": 14644,
+   "median_price": 1200000,
+   "median_surface": 91,
+   "min": 5797,
+   "max": 15306,
+   "name": "Aakkari",
+   "slug": "aakkari",
+   "rank": 12
+  },
+  {
+   "n": 42,
+   "median": 12489,
+   "median_price": 1150000,
+   "median_surface": 88,
+   "min": 2857,
+   "max": 81633,
+   "name": "Yacoub El Mansour",
+   "slug": "yacoub-el-mansour",
+   "rank": 13
+  },
+  {
+   "n": 26,
+   "median": 9762,
+   "median_price": 855000,
+   "median_surface": 90,
+   "min": 7143,
+   "max": 23333,
+   "name": "Hay Nahda",
+   "slug": "hay-nahda",
+   "rank": 14
   }
  ],
  "autres_quartiers": [
   {
-   "name": "Agdal Haut",
+   "name": "Kébibat",
+   "n": 7
+  },
+  {
+   "name": "El Youssoufia",
    "n": 5
   },
   {
-   "name": "Souissi",
-   "n": 5
-  },
-  {
-   "name": "Agdal Bas",
-   "n": 3
-  },
-  {
-   "name": "Guich Oudaya",
-   "n": 3
-  },
-  {
-   "name": "Plage des Nations",
-   "n": 3
-  },
-  {
-   "name": "El Menzeh",
-   "n": 1
-  },
-  {
-   "name": "Kebibat",
-   "n": 1
+   "name": "Aviation - Mabella",
+   "n": 4
   },
   {
    "name": "Mabella",
+   "n": 2
+  },
+  {
+   "name": "Riyad Extension",
+   "n": 2
+  },
+  {
+   "name": "Abi Ragrag",
    "n": 1
   },
   {
-   "name": "Plage des Nations Golf City",
+   "name": "Al Irfane",
+   "n": 1
+  },
+  {
+   "name": "Aviation",
+   "n": 1
+  },
+  {
+   "name": "Hay Al Farah",
+   "n": 1
+  },
+  {
+   "name": "Les Orangers",
+   "n": 1
+  },
+  {
+   "name": "Massira",
+   "n": 1
+  },
+  {
+   "name": "Taqaddoum",
    "n": 1
   }
  ]

@@ -1,0 +1,1138 @@
+id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication_date,seller_type
+58984948,avito,Agdal,8200000,900,6,,5,2026-11-09T13:38:33Z,professional
+59001708,avito,Hassan,7000,,2,1,2,2026-11-09T18:59:20Z,professional
+59014949,avito,Yacoub El Mansour,,,3,,2,2026-11-09T17:40:18Z,professional
+57781042,avito,Hay Riad,,156,4,,3,2026-11-09T20:11:12Z,professional
+57812272,avito,Autre secteur,1200000,107,3,,2,2026-11-09T20:02:45Z,professional
+59041006,avito,Hay Riad,14000,129,3,,2,2026-11-09T20:04:36Z,professional
+58890653,avito,Agdal,1000,90,1,1,2,2026-11-09T20:01:48Z,professional
+57803950,avito,Agdal,2900000,143,3,,2,2026-11-09T19:56:50Z,professional
+58971484,avito,Agdal,3200000,173,3,,2,2026-11-09T19:55:13Z,professional
+58551146,avito,Agdal,2900000,120,2,,1,2026-11-09T19:25:04Z,professional
+58969035,avito,Hay Riad,3400000,122,3,,3,2026-11-09T18:46:48Z,professional
+58089282,avito,Agdal,3200000,,3,1,2,2026-11-09T18:25:27Z,professional
+59040071,avito,Hay el Fath,1900000,98,2,,2,2026-11-09T18:15:02Z,professional
+58724171,avito,Hay Riad,2600000,,2,,,2026-11-09T17:58:26Z,professional
+59027429,avito,Souissi,4290000,,2,,2,2026-11-09T17:47:46Z,professional
+58981361,avito,Haut Agdal,6000000,210,3,,4,2026-11-09T17:46:25Z,professional
+58687577,avito,Agdal,2200000,150,2,,1,2026-11-09T17:35:43Z,professional
+58888050,avito,Agdal,,,1,1,,2026-11-09T17:10:30Z,professional
+59039699,avito,Hassan,,,2,,,2026-11-09T17:04:51Z,private
+58768635,avito,Haut Agdal,6000000,306,4,,4,2026-11-09T16:59:08Z,professional
+58987072,avito,Hassan,850000,34,1,,1,2026-11-09T16:59:21Z,private
+56341059,avito,Autre secteur,4200000,158,6,,4,2026-11-09T16:53:03Z,professional
+58371912,avito,Hay Riad,,137,3,,2,2026-11-09T16:39:32Z,professional
+59039333,avito,Agdal,2400000,87,2,,1,2026-11-09T16:02:01Z,professional
+58768506,avito,Riyad,3000000,148,3,,2,2026-11-09T15:59:26Z,professional
+58677370,avito,Autre secteur,3350000,,2,,2,2026-11-09T15:59:16Z,professional
+57141354,avito,Agdal,1750000,89,2,,1,2026-11-09T15:51:46Z,professional
+59039254,avito,Hay Riad,,150,3,,2,2026-11-09T15:50:26Z,private
+57775055,avito,Agdal,23500,178,3,,2,2026-11-09T15:41:44Z,professional
+59039195,avito,Al Irfane,2900000,132,3,,2,2026-11-09T15:43:02Z,private
+58324271,avito,Agdal,1360000,89,2,,1,2026-11-09T15:31:08Z,professional
+57546044,avito,Hassan,2500000,121,2,,2,2026-11-09T15:30:00Z,professional
+58540479,avito,Hay Riad,8700000,427,4,,3,2026-11-09T15:29:15Z,professional
+58951732,avito,Hay Riad,,182,3,,2,2026-11-09T15:13:56Z,professional
+58992910,avito,Hay Riad,2600000,,3,,,2026-11-09T14:53:46Z,professional
+58019081,avito,Agdal,960000,91,2,,1,2026-11-09T14:50:51Z,private
+57895436,avito,Hay Riad,,156,4,,3,2026-11-08T23:36:51Z,professional
+58909978,avito,Hay Riad,10000,150,3,,2,2026-11-08T22:50:38Z,professional
+59003326,avito,Hay Nahda,12500,76,2,,2,2026-11-08T22:52:53Z,private
+58925877,avito,Agdal,2700000,165,3,,2,2026-11-08T20:52:46Z,professional
+59034534,avito,Hay Riad,1300000,65,1,1,1,2026-11-08T20:30:01Z,private
+59034312,avito,Agdal,,86,2,,2,2026-11-08T19:55:04Z,private
+56837447,avito,Agdal,3900000,274,3,,3,2026-11-08T19:42:26Z,professional
+57878495,avito,Hay el Fath,7600000,181,3,,2,2026-11-08T19:22:39Z,professional
+56395244,avito,Aakkari,1500000,98,3,,2,2026-11-08T17:58:48Z,professional
+58953567,avito,Hassan,850000,49,1,,1,2026-11-08T14:08:33Z,private
+59030344,avito,Hassan,1200000,86,2,,1,2026-11-08T11:25:01Z,private
+59030327,avito,Hassan,2000000,94,2,,1,2026-11-08T11:21:03Z,private
+59029451,avito,Hay Nahda,,65,1,,0,2026-11-08T01:16:01Z,private
+59029120,avito,Guich Oudaya,1260000,64,2,,2,2026-11-07T23:03:08Z,professional
+59029056,avito,Hassan,3020000,147,3,,1,2026-11-07T22:46:01Z,private
+58845564,avito,Souissi,9000000,313,3,,2,2026-11-07T17:44:51Z,professional
+58825288,avito,Agdal,3400000,160,3,,2,2026-11-07T14:43:30Z,professional
+59026032,avito,Hay Riad,5700000,215,2,1,3,2026-11-07T14:34:04Z,private
+57375940,avito,Quartier de l'Océan,1400000,80,2,,1,2026-11-07T12:39:35Z,professional
+58904982,avito,Yacoub El Mansour,1250000,85,2,,,2026-11-07T10:59:49Z,professional
+59024384,avito,Souissi,1400000,70,2,,1,2026-11-07T10:34:02Z,private
+58821316,avito,Autre secteur,2650000,125,2,1,3,2026-11-07T08:02:17Z,professional
+59023414,avito,Autre secteur,,82,2,,1,2026-11-06T23:45:01Z,private
+59022060,avito,Hay Riad,3800000,147,4,,3,2026-11-06T20:02:02Z,private
+59021486,avito,Hay Riad,3200000,116,3,,2,2026-11-06T18:20:03Z,professional
+59018674,avito,Yacoub El Mansour,1180000,71,2,,1,2026-11-06T12:02:23Z,private
+58071338,avito,Quartier de l'Océan,800000,88,3,,2,2026-11-06T08:32:04Z,professional
+59017753,avito,Autre secteur,3800000,101,4,1,1,2026-11-06T07:45:23Z,private
+59017123,avito,Hassan,,100,2,,1,2026-11-05T22:56:16Z,private
+59016686,avito,Diour Jamaa,1400000,117,2,,1,2026-11-05T21:23:02Z,private
+59016172,avito,Hay Riad,4500000,,3,,,2026-11-05T20:12:01Z,private
+59016021,avito,Hay Riad,3600000,,3,,,2026-11-05T19:48:01Z,private
+59015264,avito,Hay Riad,5500000,165,3,,3,2026-11-05T18:05:04Z,private
+58358371,avito,Agdal,1950000,95,2,,2,2026-11-05T17:49:11Z,professional
+58563992,avito,Hassan,2300000,120,2,,1,2026-11-05T17:22:29Z,professional
+58991804,avito,Autre secteur,75000000,48,2,1,1,2026-11-02T12:10:16Z,private
+58990503,avito,Yacoub El Mansour,40000,,3,1,2,2026-11-02T07:56:03Z,professional
+58781164,avito,Souissi,4600000,178,2,,2,2026-11-01T23:25:51Z,professional
+58989275,avito,Yacoub El Mansour,6000,200,3,,2,2026-11-01T21:50:14Z,professional
+58103569,avito,Quartier de l'Océan,3000000,210,3,,2,2026-11-01T18:58:16Z,professional
+58985835,avito,Agdal,4000000,315,3,,3,2026-11-01T14:21:04Z,private
+58985680,avito,Médina de Rabat,1100000,91,2,,1,2026-11-01T13:49:05Z,private
+58984585,avito,Agdal,,,3,,3,2026-11-01T11:47:02Z,private
+57287714,avito,Hay Riad,5500000,2505,3,,2,2026-10-31T22:59:02Z,professional
+58981973,avito,Hay Riad,3000000,141,4,,3,2026-10-31T19:35:04Z,private
+58981624,avito,Hassan,1900000,83,2,,1,2026-10-31T18:24:05Z,private
+58927841,avito,Hay Riad,5100000,230,3,,3,2026-10-31T14:55:51Z,professional
+58977862,avito,Médina de Rabat,800000,30,1,,1,2026-10-31T08:34:01Z,private
+58977377,avito,Hassan,1650000,70,2,,1,2026-10-31T00:03:54Z,private
+58974183,avito,Hay Riad,2340000,117,2,,2,2026-10-30T15:02:02Z,private
+58927026,avito,Agdal,3500000,,3,,,2026-10-30T13:12:01Z,professional
+58631404,avito,Agdal,2200000,89,2,,2,2026-10-30T10:56:27Z,professional
+58250224,avito,Guich Oudaya,2200000,135,3,,3,2026-10-30T10:53:18Z,professional
+58970185,avito,Autre secteur,2500,,,,,2026-10-29T20:43:02Z,private
+58969149,avito,Hay Riad,3900000,143,3,,3,2026-10-29T18:54:01Z,private
+58966255,avito,Hay Nahda,,,4,,2,2026-10-29T12:23:02Z,private
+58965803,avito,El Youssoufia,510000000,456,5,,3,2026-10-29T11:15:11Z,private
+58965580,avito,Yacoub El Mansour,860000,30,4,,2,2026-10-29T10:52:02Z,private
+58918902,avito,Yacoub El Mansour,1250000,108,3,,2,2026-10-29T10:47:35Z,professional
+58620121,avito,Guich Oudaya,850000,60,1,,2,2026-10-29T08:22:43Z,professional
+58869513,avito,Agdal,3700000,255,4,,3,2026-10-28T21:49:19Z,professional
+58962298,avito,Yacoub El Mansour,,108,2,,2,2026-10-28T17:37:02Z,private
+56720703,avito,Riyad,5400000,214,4,,2,2026-10-28T14:34:28Z,professional
+58959361,avito,Aakkari,1450000,98,3,,2,2026-10-28T11:32:02Z,private
+58958211,avito,Agdal,,173,3,,3,2026-10-28T08:30:56Z,private
+58210191,avito,Agdal,3800000,174,3,,2,2026-10-28T07:56:53Z,professional
+58957527,avito,Hay Riad,5300000,166,3,,3,2026-10-27T22:57:04Z,private
+58956416,avito,Hay Riad,,156,3,,3,2026-10-27T20:03:05Z,professional
+58954456,avito,Agdal,1600000,75,2,,2,2026-10-27T15:45:03Z,private
+58954400,avito,Hay el Fath,800000,50,1,,1,2026-10-27T15:40:15Z,private
+58905670,avito,Hay Riad,6000000,212,4,,1,2026-10-27T12:50:49Z,professional
+58949968,avito,Agdal,2300000,98,4,,2,2026-10-26T21:39:01Z,professional
+58949845,avito,Agdal,1550000,86,2,,1,2026-10-26T21:27:14Z,professional
+58949530,avito,Hassan,1200000,,1,,2,2026-10-26T20:37:01Z,private
+58948694,avito,Hay Riad,,219,3,,2,2026-10-26T18:11:02Z,professional
+58853411,avito,Haut Agdal,6000000,,4,,2,2026-10-26T17:31:08Z,professional
+58812994,avito,Mabella,2500000,,3,,2,2026-10-26T14:51:31Z,professional
+58946701,avito,Agdal,6000000,,1,,0,2026-10-26T14:19:05Z,private
+58741358,avito,Agdal,2900000,210,3,,1,2026-10-26T10:51:00Z,professional
+58944474,avito,Médina de Rabat,2000000,100,3,,2,2026-10-26T09:33:01Z,private
+58944180,avito,Agdal,13000,130,2,,1,2026-10-26T07:53:36Z,private
+58940623,avito,Diour Jamaa,35000000,,3,,2,2026-10-25T15:31:26Z,private
+58936104,avito,Hay Riad,3600000,134,3,,2,2026-10-24T19:57:10Z,private
+58935769,avito,Aakkari,,73,1,,2,2026-10-24T18:45:58Z,private
+58935202,avito,Aakkari,,73,2,,2,2026-10-24T17:23:10Z,private
+58933741,avito,Abi Ragrag,50000,133,6,,3,2026-10-24T14:05:36Z,private
+58932824,avito,Hay Riad,2500000,112,2,,2,2026-10-24T11:56:42Z,private
+58512682,avito,Mabella,2850000,128,3,,3,2026-10-24T09:08:21Z,professional
+58930963,avito,Médina de Rabat,,132,3,,2,2026-10-23T22:37:02Z,private
+58930226,avito,Yacoub El Mansour,,,,,,2026-10-23T20:42:05Z,private
+58926706,avito,Guich Oudaya,1170000,66,2,,1,2026-10-23T12:24:01Z,professional
+58926635,avito,Agdal,,92,2,,2,2026-10-23T12:17:50Z,private
+58926214,avito,Guich Oudaya,1170000,66,2,,1,2026-10-23T11:14:01Z,professional
+58923964,avito,Agdal,3300000,200,3,,3,2026-10-22T23:00:01Z,professional
+58768178,avito,Quartier de l'Océan,900000,61,2,,1,2026-10-22T20:45:33Z,private
+58923114,avito,Quartier de l'Océan,1900000,103,2,1,2,2026-10-22T20:18:02Z,private
+58921739,avito,Hassan,1200000,36,1,,2,2026-10-22T16:40:01Z,private
+58920231,avito,Agdal,,95,4,,2,2026-10-22T13:05:02Z,private
+58918720,avito,Hay Riad,3900000,150,2,1,2,2026-10-22T10:19:03Z,private
+58918094,avito,Autre secteur,390000000,150,3,1,2,2026-10-22T08:48:20Z,private
+57324311,avito,Agdal,2200000,,3,,2,2026-10-21T23:15:21Z,professional
+58914148,avito,Hay Nahda,900000,118,2,,0,2026-10-21T15:36:02Z,private
+58663266,avito,Hay Riad,2750000,110,2,,1,2026-10-21T14:58:06Z,professional
+58913673,avito,Hay Riad,4500000,204,3,,3,2026-10-21T14:36:10Z,professional
+58912085,avito,,,,,,,2026-10-21T11:49:03Z,private
+57760408,avito,Hay Riad,4300000,210,3,,3,2026-10-20T22:49:07Z,professional
+58907985,avito,Hassan,,36,1,,1,2026-10-20T17:07:07Z,private
+58906086,avito,Aakkari,1450000,98,3,,2,2026-10-20T12:49:02Z,private
+58906006,avito,Agdal,3800000,274,3,,3,2026-10-20T12:43:03Z,private
+58698309,avito,Hay el Fath,2500000,130,3,,2,2026-10-20T11:49:27Z,private
+58904837,avito,Agdal,3800000,274,3,,3,2026-10-20T10:27:03Z,private
+58904134,avito,Quartier de l'Océan,,115,2,,2,2026-10-20T07:53:01Z,private
+58900117,avito,Quartier de l'Océan,830000,97,3,,1,2026-10-19T14:26:02Z,private
+58895762,avito,Hay Riad,3600000,120,3,,2,2026-10-18T20:12:01Z,professional
+58895164,avito,Yacoub El Mansour,320000,55,2,,1,2026-10-18T18:32:20Z,private
+58894353,avito,Hassan,,30,1,1,1,2026-10-18T16:39:02Z,private
+58680970,avito,Quartier de l'Océan,2200000,138,3,,2,2026-10-18T14:04:31Z,professional
+58892452,avito,Agdal,,,1,1,1,2026-10-18T13:05:57Z,professional
+58891288,avito,Quartier de l'Océan,2000000,145,2,,2,2026-10-18T09:54:23Z,private
+58890517,avito,Hay Nahda,,,,,,2026-10-18T00:40:03Z,private
+58682778,avito,Hassan,2260000,,2,,2,2026-10-17T22:55:28Z,professional
+58890081,avito,Hay Riad,3900000,156,4,,3,2026-10-17T22:28:01Z,private
+58681687,avito,Kébibat,950000,54,2,,2,2026-10-17T19:51:24Z,professional
+58887849,avito,Agdal,,145,2,,1,2026-10-17T16:51:08Z,private
+58099564,avito,Hassan,3000000,165,3,,2,2026-10-17T14:53:59Z,professional
+58732317,avito,Hay Riad,5000000,,3,,,2026-10-17T12:54:35Z,professional
+58885400,avito,Hay Riad,4800000,170,3,,2,2026-10-17T11:43:10Z,private
+58885397,avito,Aakkari,1450000,98,3,,2,2026-10-17T11:43:09Z,private
+58621320,avito,Kébibat,1400000,,2,,2,2026-10-17T10:58:04Z,professional
+58884162,avito,Autre secteur,1550000,90,2,,1,2026-10-17T02:05:01Z,private
+58883574,avito,Taqaddoum,,,,,,2026-10-16T22:33:05Z,private
+58832468,avito,Guich Oudaya,1140000,66,2,,1,2026-10-16T15:55:26Z,professional
+58878999,avito,Massira,,,2,,1,2026-10-16T12:12:02Z,private
+58510177,avito,Kébibat,,180,3,,2,2026-10-16T11:47:00Z,private
+58878712,avito,Yacoub El Mansour,1450000,98,3,,2,2026-10-16T11:31:04Z,private
+58782241,avito,Hay Riad,5500000,,3,,3,2026-10-16T10:26:07Z,professional
+58874963,avito,Autre secteur,700000,72,2,,1,2026-10-15T17:51:02Z,professional
+58873553,avito,Hay Riad,1950000,,1,,1,2026-10-15T14:31:05Z,private
+58873198,avito,Agdal,3800000,314,3,,3,2026-10-15T13:55:02Z,private
+58869785,avito,Médina de Rabat,850000,93,3,,2,2026-10-14T22:24:01Z,private
+58971629,avito,Agdal,12500,,3,1,2,2026-11-09T12:53:01Z,professional
+58003327,avito,Hay Riad,3800000,150,3,,1,2026-11-09T14:44:11Z,professional
+58984945,avito,Riyad,6000000,198,3,,2,2026-11-09T13:54:07Z,professional
+58927240,avito,Agdal,1000000,34,1,,1,2026-11-09T13:45:14Z,private
+58986148,avito,Aviation - Mabella,1750000,,3,,2,2026-11-09T13:36:22Z,professional
+58111271,avito,Hay Riad,,100,2,,2,2026-11-09T12:58:03Z,professional
+57550432,avito,Médina de Rabat,3600000,118,3,,1,2026-11-09T12:52:54Z,professional
+58138127,avito,Hay Riad,3300000,106,3,,1,2026-11-09T12:48:57Z,professional
+58992041,avito,Hay Riad,3500000,154,3,,2,2026-11-09T12:47:17Z,professional
+58274537,avito,Hay Riad,3700000,116,3,,2,2026-11-09T12:45:29Z,professional
+59037622,avito,Agdal,2000000,98,2,,2,2026-11-09T12:17:09Z,private
+58912184,avito,Agdal,,129,3,,2,2026-11-09T11:52:20Z,professional
+59024749,avito,Yacoub El Mansour,,100,3,,,2026-11-09T11:51:41Z,private
+58991513,avito,Souissi,15000,90,2,1,2,2026-11-09T11:50:04Z,professional
+58995301,avito,Hay Riad,9000,80,2,1,2,2026-11-09T11:46:50Z,professional
+57895633,avito,Hay Riad,,,4,,3,2026-11-09T11:42:05Z,professional
+53939444,avito,Hay Riad,3850000,,4,,3,2026-11-09T11:36:05Z,professional
+58136431,avito,Hay Riad,,156,4,,3,2026-11-09T11:32:18Z,professional
+58802582,avito,Guich Oudaya,1850000,150,3,,2,2026-11-09T11:31:02Z,private
+57442574,avito,Massira,1200000,,2,1,3,2026-11-09T11:27:34Z,professional
+59037054,avito,Agdal,2200000,135,3,,2,2026-11-09T11:15:01Z,professional
+59036963,avito,Guich Oudaya,1550000,,3,,,2026-11-09T11:08:09Z,professional
+59004811,avito,Al Irfane,,,3,,3,2026-11-09T10:53:24Z,professional
+57882094,avito,Hay Riad,,156,4,,3,2026-11-09T10:51:36Z,professional
+59004980,avito,Agdal,900000,27,1,,,2026-11-09T10:39:38Z,professional
+56053864,avito,Hay Riad,3250000,144,3,,2,2026-11-09T09:55:26Z,professional
+57797845,avito,Agdal,3600000,175,4,,3,2026-11-09T09:55:27Z,professional
+57007630,avito,Hay Riad,8000000,340,4,,,2026-11-09T09:47:00Z,private
+53710560,avito,Autre secteur,2140000,,3,,2,2026-11-09T09:22:12Z,professional
+59004130,avito,Autre secteur,1070000,106,2,1,1,2026-11-09T02:42:47Z,professional
+58856308,avito,Souissi,,150,3,,3,2026-11-09T01:52:34Z,professional
+58856701,avito,Hay Riad,,150,2,,3,2026-11-09T01:52:16Z,professional
+58534225,avito,Souissi,3990000,162,2,,2,2026-11-08T23:54:25Z,professional
+58910193,avito,Hay Riad,9000,145,2,,2,2026-11-08T23:37:54Z,professional
+58869665,avito,Agdal,3500000,172,4,,3,2026-10-14T22:09:01Z,professional
+58868514,avito,Autre secteur,,73,2,,2,2026-10-14T19:24:02Z,private
+58778453,avito,Hay Riad,8500,90,2,,2,2026-10-14T17:54:01Z,professional
+58865401,avito,Hay Riad,4500000,166,3,1,2,2026-10-14T12:38:05Z,private
+58863885,avito,Hay Riad,26600000,78,2,1,2,2026-10-14T09:34:40Z,private
+58863873,avito,Hay Riad,2660000,78,2,1,2,2026-10-14T09:33:52Z,private
+58863804,avito,Hassan,1200000,84,2,,2,2026-10-14T09:26:41Z,private
+58861536,avito,Autre secteur,220000,,4,,,2026-10-13T19:50:15Z,private
+58856613,avito,Guich Oudaya,,,2,,1,2026-10-13T08:47:13Z,private
+58853532,avito,Autre secteur,300000,44,1,,1,2026-10-12T17:28:03Z,private
+58851357,avito,Quartier de l'Océan,3600000,369,4,,2,2026-10-12T13:07:47Z,professional
+58848804,avito,Hay Riad,5000000,188,2,,2,2026-10-11T23:26:37Z,private
+58848017,avito,Agdal,2505360,143,3,,2,2026-10-11T21:06:02Z,private
+58100289,avito,Haut Agdal,,243,3,,2,2026-10-11T16:59:41Z,professional
+56006645,avito,Hay Riad,4400000,170,3,,2,2026-10-10T21:59:36Z,professional
+58840815,avito,Souissi,3300000,124,3,1,2,2026-10-10T19:40:01Z,private
+58839427,avito,Abi Ragrag,200000,,2,,2,2026-10-10T16:30:18Z,private
+58835669,avito,Hay Riad,2950000,100,2,,2,2026-10-09T23:59:02Z,private
+58833987,avito,Hay Riad,4000000,140,3,,,2026-10-09T19:16:02Z,private
+58833769,avito,Hay Riad,,12,3,,2,2026-10-09T18:32:29Z,professional
+58832640,avito,Taqaddoum,,,,,,2026-10-09T15:45:06Z,private
+58829676,avito,Aakkari,1100000,92,2,,1,2026-10-09T09:53:04Z,professional
+58829209,avito,Agdal,1550000,44,1,,1,2026-10-09T01:23:41Z,private
+58828165,avito,Yacoub El Mansour,1360000,109,5,,2,2026-10-08T21:39:01Z,private
+58826527,avito,Taqaddoum,490000,50,2,,1,2026-10-08T17:26:01Z,private
+58826510,avito,Taqaddoum,490000,50,2,,1,2026-10-08T17:23:41Z,private
+58826346,avito,Guich Oudaya,1350000,75,3,,2,2026-10-08T16:50:42Z,professional
+58824561,avito,Agdal,5500000,280,3,,2,2026-10-08T13:07:03Z,professional
+58728349,avito,Hay Riad,5500000,,3,,2,2026-10-08T11:59:47Z,professional
+58615888,avito,Hay Riad,4800000,226,5,,2,2026-10-08T10:35:04Z,professional
+58823043,avito,Souissi,1620000,90,2,,1,2026-10-08T09:54:03Z,professional
+58817529,avito,Hay Riad,3800000,140,3,,2,2026-10-07T12:49:02Z,private
+58816726,avito,Hay Riad,4000000,,3,,2,2026-10-07T10:54:53Z,professional
+58814285,avito,Hay Riad,,80,2,1,2,2026-10-06T20:19:32Z,private
+58765865,avito,Médina de Rabat,2700000,,3,,2,2026-10-06T19:59:14Z,professional
+59014672,avito,Yacoub El Mansour,,115,3,,2,2026-11-05T16:56:02Z,professional
+59014031,avito,Hay Riad,3600000,126,3,,2,2026-11-05T15:34:02Z,private
+59012618,avito,Hay Riad,4750000,239,4,,3,2026-11-05T12:32:04Z,private
+58396046,avito,Agdal,,134,3,,2,2026-11-05T11:59:46Z,professional
+58372262,avito,Hay Riad,,138,3,,2,2026-11-05T11:52:02Z,professional
+58264864,avito,Hay Riad,3900000,145,3,,3,2026-11-05T09:56:47Z,professional
+59011129,avito,Autre secteur,15000,78,2,,2,2026-11-05T07:55:13Z,private
+59010914,avito,Yacoub El Mansour,5000000,100,2,1,0,2026-11-05T02:32:37Z,private
+54636359,avito,Diour Jamaa,1700000,115,4,,1,2026-11-04T19:30:22Z,private
+59008265,avito,Hassan,2250000,140,2,,2,2026-11-04T17:28:09Z,private
+59008064,avito,Hassan,,30,1,,1,2026-11-04T17:05:14Z,private
+59007913,avito,Hassan,1900000,120,1,,1,2026-11-04T16:45:39Z,private
+59007587,avito,Autre secteur,340000000,155,3,1,2,2026-11-04T16:02:43Z,private
+59007526,avito,Hassan,1800000,89,2,,2,2026-11-04T15:53:00Z,private
+59005757,avito,Agdal,2000000,90,2,,2,2026-11-04T12:27:53Z,private
+57838926,avito,Hassan,2600000,107,2,,2,2026-11-04T11:57:30Z,professional
+58802469,avito,Haut Agdal,2850000,115,2,,2,2026-11-04T11:46:51Z,professional
+58951718,avito,Hay Riad,3200000,114,2,,2,2026-11-04T10:57:47Z,professional
+59003926,avito,Hassan,670000,30,1,,1,2026-11-04T00:24:02Z,private
+59003675,avito,Souissi,5500000,162,3,,3,2026-11-03T23:27:01Z,private
+59000236,avito,Hay Riad,57500000,220,4,,3,2026-11-03T15:30:37Z,private
+58999124,avito,,132000,,,,,2026-11-03T12:59:03Z,private
+58796111,avito,Haut Agdal,13000,,2,,,2026-11-03T12:57:03Z,private
+58860127,avito,Hay Riad,3200000,114,3,,2,2026-11-03T12:45:20Z,professional
+58998433,avito,Yacoub El Mansour,12000000,400,,,3,2026-11-03T11:58:02Z,private
+58997636,avito,Quartier de l'Océan,120000000,111,2,1,0,2026-11-03T09:59:17Z,private
+58997528,avito,Agdal,3400000,140,2,,2,2026-11-03T09:41:37Z,private
+58996369,avito,Hassan,240000000,120,3,,2,2026-11-02T23:01:56Z,private
+58949980,avito,Agdal,2300000,,4,,,2026-11-02T21:47:29Z,professional
+58994466,avito,Hay el Fath,3300000,156,3,1,3,2026-11-02T18:40:05Z,private
+58993285,avito,Hassan,2600000,115,3,,2,2026-11-02T15:18:04Z,private
+57777160,avito,Quartier de l'Océan,1120000,94,3,,1,2026-11-02T14:32:34Z,private
+58946430,avito,Agdal,,143,3,,3,2026-11-02T13:37:59Z,professional
+58789317,avito,Agdal,2300000,230,3,,3,2026-11-02T12:39:39Z,professional
+58992078,avito,Hassan,1650000,70,2,,1,2026-11-02T12:33:01Z,private
+58545471,avito,Hay Riad,3400000,158,4,,,2026-09-28T13:46:29Z,professional
+58755838,avito,Agdal,3000,,,,,2026-09-28T13:38:05Z,private
+58754882,avito,Hay Nahda,600000,68,2,,1,2026-09-28T11:32:37Z,private
+58754508,avito,Quartier de l'Océan,13000,295,7,,2,2026-09-28T11:09:45Z,private
+58754233,avito,Quartier de l'Océan,,96,2,,1,2026-09-28T10:18:04Z,private
+58752399,avito,Quartier de l'Océan,1630000,85,3,1,2,2026-09-27T21:14:18Z,private
+58751101,avito,Yacoub El Mansour,1600000,126,3,,2,2026-09-27T17:56:49Z,private
+58742778,avito,Diour Jamaa,1600000,91,2,,2,2026-09-26T14:04:09Z,private
+58742282,avito,Aviation - Mabella,1740000,87,2,,3,2026-09-26T13:16:02Z,private
+58741857,avito,Riyad,6000000,212,4,,3,2026-09-26T11:55:02Z,professional
+58740791,avito,Diour Jamaa,1200000,,2,,2,2026-09-26T08:21:02Z,private
+58740778,avito,Hay Riad,3200000,,3,,3,2026-09-26T08:10:01Z,private
+58737518,avito,Hay Riad,3700000,147,3,,2,2026-09-25T16:02:42Z,private
+58735650,avito,Autre secteur,820000,70,3,,1,2026-09-25T12:29:01Z,private
+58735547,avito,Hay Riad,3750000,150,3,,3,2026-09-25T12:21:51Z,private
+58735539,avito,Hay Nahda,1300000,76,4,,1,2026-09-25T12:20:51Z,private
+58734186,avito,Hay el Fath,,62,2,,2,2026-09-25T09:38:44Z,private
+58733257,avito,Hassan,215000000,,3,1,,2026-09-24T22:35:22Z,private
+58731209,avito,Hay Riad,5000000,,3,,2,2026-09-24T18:18:14Z,professional
+58249196,avito,Hay Riad,,215,3,,4,2026-09-23T18:51:15Z,professional
+58721910,avito,Guich Oudaya,1600000,,3,,2,2026-09-23T12:34:01Z,private
+58670337,avito,Agdal,3700000,155,3,,2,2026-09-23T11:52:22Z,professional
+58719990,avito,Diour Jamaa,1450000,93,3,,1,2026-09-23T08:42:21Z,private
+58718397,avito,Yacoub El Mansour,700000,108,3,,1,2026-09-22T21:00:07Z,private
+58718008,avito,Yacoub El Mansour,620000,60,2,,0,2026-09-22T20:09:03Z,private
+58715218,avito,Hay el Fath,2100000,120,3,,2,2026-09-22T14:40:01Z,private
+57756677,avito,Hay Riad,4560000,202,3,,1,2026-09-22T11:30:38Z,private
+58710388,avito,Guich Oudaya,,,3,,,2026-09-21T19:45:03Z,private
+58705742,avito,Agdal,2100000,113,3,,2,2026-09-21T11:06:03Z,private
+58638530,avito,Agdal,2450000,150,4,,2,2026-09-21T09:58:09Z,professional
+58704850,avito,Autre secteur,,15,2,,1,2026-09-21T08:44:43Z,private
+58701916,avito,Hay Riad,3180000,145,3,1,3,2026-09-20T18:11:18Z,private
+58652800,avito,Hassan,280000,,1,,1,2026-09-20T17:31:15Z,professional
+57449308,avito,Agdal,2120000,95,2,,1,2026-09-20T13:49:11Z,professional
+58698459,avito,Yacoub El Mansour,1160000,166,4,,2,2026-09-20T11:32:57Z,private
+58693543,avito,Souissi,5000000,200,4,,3,2026-09-19T14:48:03Z,private
+57850028,avito,Agdal,3180000,149,3,,2,2026-09-19T12:41:27Z,professional
+58690952,avito,Autre secteur,7500000,54,3,1,2,2026-09-19T09:07:01Z,private
+58689856,avito,Agdal,1930000,113,2,,2,2026-09-18T22:26:01Z,private
+58688836,avito,Hay Riad,5300000,165,3,,2,2026-09-18T19:37:03Z,private
+58688817,avito,Hay Nahda,1900000,116,3,,2,2026-09-18T19:33:41Z,private
+58688734,avito,Kébibat,1400000,76,2,,1,2026-09-18T19:20:02Z,professional
+58686226,avito,Guich Oudaya,1150000,70,2,,2,2026-09-18T14:03:13Z,private
+58685760,avito,Agdal,8400000,601,7,1,7,2026-09-18T13:15:04Z,private
+58681524,avito,Aakkari,1790000,120,3,,2,2026-09-17T19:06:09Z,private
+58587821,avito,Souissi,4200000,186,3,,2,2026-09-17T17:43:02Z,professional
+58450636,avito,Hassan,2200000,,2,,2,2026-09-17T16:42:56Z,professional
+58679473,avito,Yacoub El Mansour,,96,2,,1,2026-09-17T14:56:36Z,private
+58677828,avito,Hay Nahda,860000,100,2,,1,2026-09-17T11:42:38Z,private
+58676921,avito,Hassan,1290000,87,2,,0,2026-09-17T10:02:07Z,private
+58673063,avito,Taqaddoum,,100,2,,1,2026-09-16T16:25:13Z,private
+58671775,avito,Diour Jamaa,2160000,180,3,,2,2026-09-16T13:55:41Z,private
+58670366,avito,Hay Riad,4500000,204,3,,3,2026-09-16T11:18:05Z,private
+58670069,avito,Kébibat,1600000,101,4,,2,2026-09-16T10:36:10Z,private
+58668388,avito,Yacoub El Mansour,400000,,1,,0,2026-09-15T22:27:35Z,private
+58667506,avito,Diour Jamaa,1700000,83,3,,2,2026-09-15T19:58:17Z,private
+57694433,avito,Agdal,3400000,150,3,,2,2026-09-15T15:52:54Z,professional
+58665516,avito,Hay Nahda,,,,,,2026-09-15T15:30:01Z,private
+58661804,avito,Hassan,,,,,,2026-09-14T23:36:01Z,private
+58659113,avito,Quartier de l'Océan,800000,49,2,,1,2026-09-14T16:16:49Z,private
+58343968,avito,Hassan,4000000,369,4,,2,2026-09-14T15:53:51Z,professional
+58657653,avito,Hay Nahda,,,,,,2026-09-14T13:21:22Z,private
+58649787,avito,Agdal,2400000,158,3,,2,2026-09-13T11:05:04Z,private
+58646015,avito,Agdal,2900000,120,2,,3,2026-09-12T19:20:08Z,private
+58644535,avito,Hay Nahda,800000,80,3,,1,2026-09-12T13:56:06Z,private
+58639693,avito,Haut Agdal,2430000,135,1,,1,2026-09-11T20:25:03Z,private
+58639577,avito,Yacoub El Mansour,400000,45,1,,1,2026-09-11T20:16:14Z,private
+58638035,avito,Agdal,2960000,128,3,,3,2026-09-11T16:00:28Z,private
+58399464,avito,Massira,850000,,2,,2,2026-09-11T14:45:34Z,professional
+58637676,avito,Autre secteur,1790000,103,2,,2,2026-09-11T14:08:16Z,private
+57656942,avito,Guich Oudaya,930000,57,1,,2,2026-09-11T13:58:53Z,private
+58030136,avito,Autre secteur,,110,3,,2,2026-09-11T11:59:43Z,private
+58634074,avito,Souissi,2800000,125,3,,2,2026-09-10T21:44:04Z,private
+58633237,avito,Agdal,3700000,270,3,,3,2026-09-10T20:27:36Z,private
+58631866,avito,Quartier de l'Océan,1630000,85,3,,2,2026-09-10T19:09:03Z,private
+58442611,avito,Hay Riad,3600000,122,3,,3,2026-09-10T13:58:09Z,private
+58627605,avito,Souissi,2800000,125,3,,2,2026-09-10T11:24:53Z,private
+58623984,avito,Quartier de l'Océan,1550000,105,2,,2,2026-09-09T18:53:19Z,private
+58621049,avito,Agdal,,95,4,,2,2026-09-08T22:58:15Z,private
+58618976,avito,Quartier de l'Océan,1600000,90,2,,2,2026-09-08T16:44:10Z,private
+58618477,avito,Hassan,,72,2,,1,2026-09-08T15:28:02Z,private
+57807474,avito,Riyad Extension,,119,3,1,3,2026-09-08T12:33:07Z,professional
+58615427,avito,Hay el Fath,1770000,,2,,,2026-09-08T09:30:04Z,professional
+57941400,avito,Autre secteur,1150000,107,4,,2,2026-09-07T16:58:10Z,professional
+58611774,avito,Agdal,2400000,77,3,,1,2026-09-07T15:25:22Z,private
+58610991,avito,Hay Riad,4500000,176,4,,2,2026-09-07T13:50:28Z,private
+58610954,avito,Hay Riad,3100000,122,3,,2,2026-09-07T13:43:23Z,private
+58610320,avito,Quartier de l'Océan,2900000,,3,,2,2026-09-07T12:33:03Z,private
+58610313,avito,Médina de Rabat,,,,,,2026-09-07T12:32:02Z,private
+58037118,avito,Kébibat,2160000,180,3,,2,2026-09-07T11:46:50Z,professional
+58225436,avito,Hay Riad,3400000,170,3,,3,2026-09-07T09:27:34Z,professional
+58605571,avito,Yacoub El Mansour,120000000,70,4,,1,2026-09-06T16:12:05Z,private
+58605302,avito,Hay Nahda,,85,2,,1,2026-09-06T15:35:03Z,private
+58358049,avito,Hassan,2500000,117,3,,2,2026-09-06T13:32:13Z,professional
+58592481,avito,Massira,180000000,100,3,,2,2026-09-04T14:03:28Z,private
+58592282,avito,Massira,180000000,100,3,,2,2026-09-04T13:35:02Z,private
+58138860,avito,Hassan,,,1,,,2026-09-04T09:59:45Z,private
+58499314,avito,Hay Riad,4500000,180,3,,3,2026-09-03T16:44:32Z,private
+58587426,avito,Hay el Fath,1690000,130,3,,2,2026-09-03T16:31:50Z,private
+58579962,avito,Agdal,2300000,,2,,,2026-09-02T15:43:04Z,private
+58533476,avito,Guich Oudaya,1120000,61,2,,1,2026-09-02T11:53:31Z,professional
+58577632,avito,Hay Nahda,780000,83,2,,2,2026-09-02T10:49:02Z,private
+58575657,avito,Diour Jamaa,300000,50,2,,1,2026-09-01T21:52:02Z,private
+58574803,avito,Yacoub El Mansour,1420000,109,3,,2,2026-09-01T19:28:05Z,private
+58573737,avito,Souissi,6600000,,4,,,2026-09-01T16:53:06Z,professional
+58812374,avito,Hay Riad,3800000,,3,,2,2026-10-06T16:23:48Z,private
+58811491,avito,Hassan,,112,2,,2,2026-10-06T14:17:21Z,private
+58809524,avito,Hay Riad,3180000,117,3,,3,2026-10-06T10:10:01Z,professional
+58808921,avito,Riyad,3000000,148,3,,2,2026-10-06T02:11:00Z,private
+58807547,avito,Haut Agdal,,,3,,3,2026-10-05T23:28:01Z,private
+57973997,avito,Autre secteur,1950000,154,2,,2,2026-10-04T18:51:13Z,professional
+58798451,avito,Kébibat,,83,2,,2,2026-10-04T16:56:12Z,private
+58748947,avito,Hassan,540000,62,1,1,1,2026-10-04T13:58:58Z,professional
+58795224,avito,Souissi,,200,3,,3,2026-10-04T09:58:01Z,private
+58795084,avito,Agdal,2400000,87240,2,,2,2026-10-04T09:19:01Z,private
+57749475,avito,El Youssoufia,1700000,95,2,1,1,2026-10-04T09:13:45Z,professional
+58791842,avito,Autre secteur,3200000,170,3,1,2,2026-10-03T17:51:41Z,private
+58790403,avito,Hay el Fath,2100000,179,3,,2,2026-10-03T14:35:02Z,private
+58789377,avito,Yacoub El Mansour,340000,50,2,,1,2026-10-03T12:44:02Z,private
+58788748,avito,Hay el Fath,1950000,94,2,,2,2026-10-03T10:59:00Z,private
+58788404,avito,El Youssoufia,1530000,85,2,,1,2026-10-03T09:34:10Z,professional
+58787288,avito,Agdal,,,4,,2,2026-10-02T22:03:02Z,professional
+58780426,avito,Autre secteur,,,20,,,2026-10-01T20:56:35Z,private
+58187375,avito,Kébibat,990000,56,1,,2,2026-10-01T20:45:44Z,private
+58778208,avito,Haut Agdal,8400000,601,7,,6,2026-10-01T16:19:10Z,private
+58729501,avito,Souissi,22000,120,2,1,2,2026-10-01T14:24:44Z,professional
+58777210,avito,Hassan,1200000,34,1,,1,2026-10-01T14:17:15Z,private
+58775839,avito,Hay Riad,5800000,230,3,,3,2026-10-01T11:40:38Z,private
+58671952,avito,Autre secteur,2700000,,2,,,2026-10-01T08:49:12Z,professional
+58770857,avito,Hay Riad,,530,5,,3,2026-09-30T15:21:46Z,private
+57901458,avito,Hay Riad,3650000,143,3,1,2,2026-09-30T12:40:15Z,professional
+58769377,avito,Hassan,2700000,137,3,,2,2026-09-30T12:30:30Z,professional
+58768072,avito,Hassan,1368000,76,2,,1,2026-09-30T10:04:50Z,professional
+58768071,avito,Hassan,864000,48,2,,1,2026-09-30T10:04:50Z,professional
+58768070,avito,Hassan,1998000,111,2,,1,2026-09-30T10:04:49Z,professional
+58767827,avito,Autre secteur,1400000,70,2,,1,2026-09-30T09:30:48Z,private
+58765882,avito,Guich Oudaya,1300000,,2,,2,2026-09-29T19:57:14Z,private
+58761176,avito,Yacoub El Mansour,,,2,,,2026-09-29T09:53:03Z,private
+58757882,avito,Hassan,2600000,103,2,,1,2026-09-28T17:26:30Z,private
+58757342,avito,Hay Riad,3800000,215,3,,2,2026-09-28T16:06:21Z,private
+58572273,avito,Hay el Fath,1800000,95,3,,2,2026-09-01T13:36:02Z,private
+58567684,avito,Agdal,1000000,33,1,1,1,2026-08-31T18:23:04Z,private
+58566693,avito,Yacoub El Mansour,,50,1,1,1,2026-08-31T15:57:28Z,private
+58565304,avito,Al Irfane,170000000,70,2,1,3,2026-08-31T13:08:06Z,private
+58563645,avito,Autre secteur,4700000,240,3,,2,2026-08-31T09:19:52Z,professional
+58563638,avito,Diour Jamaa,2150000,132,3,,1,2026-08-31T09:19:03Z,professional
+58558745,avito,Agdal,2200000,103,2,,2,2026-08-30T13:08:02Z,private
+58554741,avito,Yacoub El Mansour,440000,,2,,,2026-08-29T17:59:03Z,private
+58547308,avito,Yacoub El Mansour,1150000,112,3,,2,2026-08-28T14:55:01Z,private
+57912755,avito,Riyad Extension,1440000,100,2,,2,2026-08-28T14:46:49Z,professional
+58543756,avito,Hassan,2225000,89,3,,1,2026-08-27T21:27:14Z,private
+58146452,avito,Agdal,3900000,274,4,,3,2026-08-27T14:52:35Z,professional
+58539874,avito,Hay Riad,3800000,145,3,,2,2026-08-27T11:51:06Z,private
+58537169,avito,Yacoub El Mansour,1150000,112,2,,2,2026-08-26T20:19:40Z,private
+58534774,avito,Quartier de l'Océan,,,2,,1,2026-08-26T14:18:01Z,private
+58533750,avito,Massira,45000000,45,1,,1,2026-08-26T12:08:02Z,private
+58533598,avito,Massira,45000000,45,1,,1,2026-08-26T11:45:18Z,private
+58528053,avito,,,,,,,2026-08-25T13:51:05Z,private
+58524765,avito,Diour Jamaa,1200000,85,3,,1,2026-08-24T19:46:03Z,private
+58524631,avito,Autre secteur,,170,2,,2,2026-08-24T19:22:04Z,private
+58519593,avito,Yacoub El Mansour,,64,3,,1,2026-08-23T23:06:02Z,private
+58326513,avito,Hay Riad,2500000,120,2,,2,2026-08-23T15:51:03Z,professional
+58213693,avito,Riyad,3600000,140,3,,2,2026-08-23T14:56:07Z,professional
+58515586,avito,Autre secteur,,94,3,,1,2026-08-23T13:05:09Z,private
+58515119,avito,Agdal,4550000,320,5,,3,2026-08-23T12:14:02Z,professional
+58506055,avito,Autre secteur,3300000,160,2,,1,2026-08-21T18:31:16Z,private
+58504812,avito,Guich Oudaya,1250000,80,2,,2,2026-08-21T15:11:36Z,private
+58496535,avito,Quartier de l'Océan,1000000,58,2,,1,2026-08-20T09:22:02Z,private
+58493457,avito,Quartier de l'Océan,1900000,151,2,,2,2026-08-19T16:46:14Z,private
+58492173,avito,Agdal,1250000,70,2,,2,2026-08-19T13:21:15Z,private
+58489210,avito,Hay Nahda,1920000,120,3,,2,2026-08-18T21:29:02Z,private
+58487559,avito,Agdal,2400000,163,2,1,2,2026-08-18T16:51:02Z,private
+58487217,avito,Hay el Fath,18000000,120,2,1,1,2026-08-18T15:49:54Z,private
+58442334,avito,Souissi,6600000,156,3,,2,2026-08-18T13:34:19Z,professional
+58486024,avito,Hay Nahda,850000,90,2,,2,2026-08-18T13:13:48Z,private
+58482550,avito,Agdal,3500000,150,3,,3,2026-08-17T20:31:03Z,private
+57170999,avito,Hay Riad,3800000,,3,,,2026-08-17T19:49:46Z,professional
+58391446,avito,Hay Riad,,,1,,,2026-08-17T17:53:02Z,professional
+58477654,avito,Agdal,3650000,,2,,2,2026-08-17T09:40:05Z,private
+58477430,avito,Agdal,3650000,,2,,2,2026-08-17T08:44:01Z,private
+58476165,avito,Yacoub El Mansour,,75,2,1,1,2026-08-16T21:53:03Z,private
+58472992,avito,Souissi,,150,2,,1,2026-08-16T13:25:03Z,private
+54695245,avito,Souissi,2200000,122,3,,2,2026-08-15T18:52:38Z,professional
+58468385,avito,Hassan,25000,,3,,,2026-08-15T15:55:07Z,private
+58468289,avito,Agdal,3650000,233,2,,2,2026-08-15T15:41:02Z,private
+58464598,avito,Hay el Fath,880000,60,2,,1,2026-08-14T21:42:51Z,private
+58265783,avito,Hay Riad,4800000,165,3,1,2,2026-08-14T14:31:24Z,professional
+58461785,avito,Agdal,2900000,190,3,,2,2026-08-14T13:59:04Z,private
+58457840,avito,Mabella,850000,,2,,1,2026-08-13T18:45:46Z,private
+58455757,avito,Agdal,2250000,105,2,,1,2026-08-13T13:38:03Z,private
+58455199,avito,Autre secteur,3500000,,3,1,2,2026-08-13T12:24:03Z,private
+58453514,avito,Autre secteur,600000,62,2,,2,2026-08-13T02:27:02Z,private
+58451769,avito,Médina de Rabat,,85,3,,1,2026-08-12T19:28:42Z,private
+58441702,avito,Yacoub El Mansour,1450000,,3,,2,2026-08-11T12:07:01Z,private
+58441081,avito,Quartier de l'Océan,2000000,,3,,2,2026-08-11T11:03:26Z,private
+58350339,avito,Hay el Fath,867000,94,2,,1,2026-08-11T07:46:52Z,private
+58438581,avito,Yacoub El Mansour,,108,2,,1,2026-08-10T20:45:02Z,private
+58437719,avito,Hay Riad,3350000,158,4,,2,2026-08-10T18:27:32Z,private
+58437584,avito,Agdal,4500000,266,3,,2,2026-08-10T18:11:10Z,private
+58434024,avito,Hay Riad,4500000,,3,,2,2026-08-10T10:16:01Z,private
+58433961,avito,Hay Nahda,,120,3,,2,2026-08-10T10:05:01Z,private
+57882206,avito,Agdal,3400000,150,3,,2,2026-08-10T09:59:52Z,professional
+58433146,avito,Guich Oudaya,1600000,123,3,,1,2026-08-10T01:26:01Z,private
+50898518,avito,Agdal,3400000,155,3,,2,2026-08-09T18:48:57Z,professional
+58431154,avito,Hay Riad,4100000,156,3,,3,2026-08-09T18:22:01Z,private
+58430860,avito,Autre secteur,1000000,118,2,,1,2026-08-09T17:33:01Z,private
+58430748,avito,Quartier de l'Océan,1950000,154,2,1,2,2026-08-09T17:16:01Z,private
+58429020,avito,Quartier de l'Océan,1900000,151,2,,2,2026-08-09T13:27:02Z,private
+58427795,avito,Guich Oudaya,940000,,1,,2,2026-08-09T10:11:18Z,private
+58426942,avito,Hay Riad,,170,3,,3,2026-08-09T00:32:03Z,private
+58426053,avito,Riyad,3850000,122,3,,2,2026-08-08T20:42:03Z,private
+57558751,avito,Souissi,3330000,128,3,1,2,2026-08-08T18:50:31Z,professional
+57677261,avito,Agdal,4000000,217,3,,2,2026-08-08T08:59:53Z,professional
+58419957,avito,Hay Riad,4250000,260,4,,3,2026-08-07T21:42:34Z,private
+58416647,avito,Autre secteur,3000000,141,4,,2,2026-08-07T13:21:02Z,private
+58415168,avito,Aviation - Mabella,2560000,114,2,,2,2026-08-07T10:14:01Z,private
+58414465,avito,Hay Riad,,,2,,,2026-08-07T05:39:00Z,private
+57888205,avito,Agdal,2000000,,2,,0,2026-08-06T12:54:26Z,professional
+58408777,avito,Kébibat,,,6,,,2026-08-06T11:02:15Z,private
+58406562,avito,Hay Nahda,750000,95,2,,1,2026-08-05T21:34:01Z,private
+58310954,avito,Hassan,1550000,84,2,,1,2026-08-05T14:30:53Z,professional
+58401457,avito,Yacoub El Mansour,1700000,,4,,,2026-08-05T09:45:06Z,private
+58388536,avito,Guich Oudaya,1000000,78,2,,1,2026-08-03T11:44:01Z,private
+57707656,avito,Agdal,3500000,149,3,,3,2026-08-02T19:49:28Z,professional
+58374239,avito,Hay Nahda,800000,80,2,,1,2026-07-31T21:15:11Z,private
+58372190,avito,Hay Riad,,152,3,,3,2026-07-31T14:58:29Z,private
+58372036,avito,Hay Riad,,152,3,,3,2026-07-31T14:38:08Z,private
+58370333,avito,Agdal,3550000,201,3,,3,2026-07-31T10:29:06Z,private
+58314897,avito,Hay Riad,5000000,140,3,,3,2026-07-30T20:59:05Z,professional
+56272533,avito,Agdal,3300000,170,3,,2,2026-07-30T20:09:08Z,professional
+58366880,avito,Hay Nahda,6500,70,2,,1,2026-07-30T15:41:01Z,private
+58364696,avito,Hay Riad,3650000,147,3,,3,2026-07-30T10:40:01Z,private
+57582022,avito,Hassan,1900000,,2,,2,2026-07-30T08:33:39Z,professional
+58362169,avito,Hay Riad,3700000,147,3,,3,2026-07-29T19:34:04Z,private
+58361057,avito,Agdal,,,2,,,2026-07-29T16:40:04Z,professional
+58359383,avito,Aakkari,,,2,,,2026-07-29T12:58:58Z,private
+58357750,avito,Autre secteur,10294000,697,4,,4,2026-07-29T09:29:02Z,professional
+58352548,avito,Agdal,2500000,152,2,,2,2026-07-28T13:13:02Z,private
+58351659,avito,Agdal,800000,30,1,,2,2026-07-28T11:21:57Z,private
+58350232,avito,Hassan,,90,3,,2,2026-07-28T04:15:02Z,private
+58348345,avito,Mabella,,85,2,,2,2026-07-27T19:14:05Z,professional
+58346386,avito,Yacoub El Mansour,1080000,84,2,,1,2026-07-27T14:49:13Z,private
+58341122,avito,Agdal,5200000,332,5,,2,2026-07-26T19:34:02Z,private
+58340240,avito,Yacoub El Mansour,560000,50,4,,2,2026-07-26T17:11:44Z,private
+58328888,avito,Yacoub El Mansour,1300000,110,2,,1,2026-07-24T20:50:02Z,private
+57997274,avito,Diour Jamaa,1350000,125,3,,2,2026-07-23T15:37:37Z,professional
+58319261,avito,Hay Riad,2800000,98,2,,2,2026-07-23T14:49:18Z,private
+58311092,avito,Agdal,3350000,175,3,,3,2026-07-22T12:18:02Z,private
+58308870,avito,Yacoub El Mansour,26000000,,2,,1,2026-07-22T00:15:02Z,private
+58306840,avito,Autre secteur,710000,70,2,,,2026-07-21T18:02:04Z,private
+58306122,avito,Yacoub El Mansour,1700000,84,2,,1,2026-07-21T16:28:02Z,private
+58300575,avito,Haut Agdal,,135,3,,2,2026-07-20T20:09:02Z,private
+58299001,avito,,,,,,,2026-07-20T16:10:35Z,private
+58289938,avito,Guich Oudaya,1200000,150,3,,3,2026-07-19T08:28:01Z,private
+58285002,avito,Agdal,,93,3,,1,2026-07-18T12:00:02Z,private
+58282757,avito,Hay el Fath,1300000,78,2,,2,2026-07-17T22:02:19Z,private
+58278533,avito,Yacoub El Mansour,1100000,,4,,,2026-07-17T11:27:01Z,private
+58276602,avito,Guich Oudaya,2120000,132,2,,2,2026-07-16T23:30:01Z,private
+58274109,avito,Hay el Fath,185000000,120,2,1,1,2026-07-16T16:44:01Z,private
+58269947,avito,Médina de Rabat,2300000,152,2,,2,2026-07-16T07:22:44Z,private
+58269143,avito,Agdal,,,2,,1,2026-07-15T22:30:03Z,private
+58269012,avito,Souissi,7500000,156,3,,3,2026-07-15T22:10:01Z,professional
+58262810,avito,Diour Jamaa,2050000,118,3,,1,2026-07-15T07:34:01Z,private
+58262761,avito,Yacoub El Mansour,,,4,,1,2026-07-15T07:22:18Z,private
+58262698,avito,Autre secteur,2884050,377,15,1,7,2026-07-15T07:01:20Z,private
+58259517,avito,Hassan,1500000,112,3,,1,2026-07-14T16:39:02Z,private
+58047389,avito,Hay Riad,3600000,155,3,,3,2026-07-14T15:52:35Z,professional
+58236092,avito,Agdal,2500000,,3,,,2026-07-14T11:37:19Z,professional
+58254032,avito,Agdal,900000,27,1,,,2026-07-13T22:05:01Z,private
+58251733,avito,Abi Ragrag,,,1,,1,2026-07-13T16:38:01Z,private
+58249322,avito,Hay Riad,,130,5,,3,2026-07-13T12:19:13Z,private
+58246418,avito,,25000,,,,,2026-07-12T21:55:01Z,private
+58246242,avito,Hay Riad,3650000,147,3,,2,2026-07-12T21:23:01Z,private
+58245145,avito,Yacoub El Mansour,1050000,84,2,,1,2026-07-12T18:30:01Z,private
+58244158,avito,Hassan,2250000,140,2,,2,2026-07-12T16:39:26Z,private
+58242180,avito,Agdal,2600000,115,2,,2,2026-07-12T13:16:01Z,professional
+58237912,avito,Hay Nahda,850000,90,2,,1,2026-07-11T15:30:17Z,private
+58228023,avito,Hay Nahda,1000000,108,2,,2,2026-07-10T08:18:01Z,private
+58226461,avito,Aviation,3000000,128,3,,2,2026-07-09T18:08:02Z,private
+58225389,avito,Hay Riad,4050000,,2,1,,2026-07-09T15:27:02Z,professional
+58150916,avito,Souissi,,,5,,2,2026-06-27T12:08:03Z,private
+58148202,avito,Autre secteur,1900000,152,2,,2,2026-06-26T19:18:02Z,private
+58140063,avito,Hassan,3000000,117,3,,2,2026-06-25T14:55:04Z,private
+58138940,avito,Quartier de l'Océan,,90,1,,1,2026-06-25T12:37:02Z,private
+56368979,avito,Agdal,3600000,220,2,,3,2026-06-24T20:20:27Z,professional
+58132657,avito,Agdal,2200000,119,3,,1,2026-06-24T12:29:05Z,professional
+58131650,avito,Guich Oudaya,950000,,1,,2,2026-06-24T09:47:01Z,private
+58129040,avito,Hassan,2736000,165,2,,2,2026-06-23T19:16:01Z,private
+58124597,avito,Hay Riad,,160,3,,3,2026-06-23T11:55:02Z,professional
+58121342,avito,Guich Oudaya,2150000,112,2,,2,2026-06-22T20:24:02Z,private
+58117805,avito,Hay el Fath,2300000,110,3,1,2,2026-06-22T16:07:01Z,private
+58116152,avito,Agdal,4000000,155,4,,3,2026-06-22T14:08:03Z,professional
+58116150,avito,Riyad,3950000,174,2,,2,2026-06-22T14:08:03Z,professional
+57952221,avito,Hay Riad,3600000,160,4,,3,2026-06-22T11:45:25Z,professional
+58112001,avito,Hay el Fath,2300000,110,3,1,2,2026-06-21T20:03:02Z,private
+58109186,avito,Massira,2300000,110,3,1,2,2026-06-21T16:21:01Z,private
+57474165,avito,Autre secteur,2500000,137,3,,2,2026-06-20T08:33:26Z,professional
+58102636,avito,Autre secteur,1600000,69,2,,1,2026-06-20T00:58:01Z,private
+57907592,avito,Agdal,2500000,103,3,,1,2026-06-19T12:49:39Z,professional
+58096949,avito,Aakkari,1200000,80,2,,1,2026-06-19T09:35:02Z,professional
+58091974,avito,Agdal,1500000,75,2,,2,2026-06-18T13:12:47Z,private
+58088971,avito,Hay Riad,,96,2,,2,2026-06-17T21:40:01Z,professional
+58087224,avito,Agdal,1150000,29,1,1,1,2026-06-17T17:08:01Z,private
+57707947,avito,Quartier de l'Océan,1690000,108,3,,2,2026-06-17T12:19:50Z,private
+58079304,avito,Hay el Fath,790000,65,2,,1,2026-06-16T12:46:02Z,private
+58078235,avito,Yacoub El Mansour,,100,3,,2,2026-06-16T10:45:05Z,private
+58075193,avito,Hay Riad,3950000,174,2,1,1,2026-06-15T18:44:02Z,private
+58074685,avito,Quartier de l'Océan,1500000,100,3,,2,2026-06-15T17:10:52Z,private
+58067479,avito,Aviation - Mabella,900000,64,3,,1,2026-06-14T15:10:01Z,private
+58067235,avito,Guich Oudaya,940000,,1,,2,2026-06-14T14:39:01Z,private
+57895435,avito,Hay Riad,,160,3,,3,2026-06-14T10:44:50Z,professional
+58059934,avito,Autre secteur,,127,3,,3,2026-06-12T23:01:01Z,private
+58017783,avito,Autre secteur,2500000,125,3,1,2,2026-06-12T22:14:14Z,private
+58059593,avito,Quartier de l'Océan,1630000,90,3,1,2,2026-06-12T21:40:01Z,private
+56568661,avito,Hay Riad,2850000,,2,,2,2026-06-12T13:56:36Z,professional
+58055604,avito,Hay Riad,10000,50,1,1,2,2026-06-12T11:19:46Z,professional
+58054644,avito,Agdal,,182,2,,1,2026-06-12T09:16:04Z,private
+58052206,avito,Hay Riad,3200000,160,4,,2,2026-06-11T17:47:01Z,private
+58049060,avito,Hay el Fath,850000,69,2,,1,2026-06-11T09:58:02Z,private
+58048986,avito,Quartier de l'Océan,1300000,77,1,,1,2026-06-11T09:47:02Z,private
+58048937,avito,Riyad,5400000,209,3,,2,2026-06-11T09:39:13Z,professional
+58038967,avito,Agdal,2400000,105,2,1,1,2026-06-09T16:00:01Z,private
+58038657,avito,Hay el Fath,,131,2,,,2026-06-09T15:19:02Z,private
+58029899,avito,Yacoub El Mansour,,48,2,,1,2026-06-08T09:51:02Z,private
+58027613,avito,Hay Riad,,204,3,,3,2026-06-07T18:46:01Z,private
+58026709,avito,,1000,,,,,2026-06-07T16:09:01Z,private
+58023212,avito,Autre secteur,800000,85,3,,2,2026-06-06T22:31:01Z,private
+58022976,avito,Hay Riad,3750000,147,3,,2,2026-06-06T21:28:03Z,private
+58019700,avito,Souissi,5200000,170,2,,3,2026-06-06T12:12:01Z,private
+58019657,avito,Souissi,5200000,152,2,,4,2026-06-06T12:02:03Z,private
+57418647,avito,Aakkari,1200000,90,3,,1,2026-06-05T16:51:27Z,professional
+58015208,avito,Hay Nahda,6000,,,,,2026-06-05T14:53:05Z,private
+58013429,avito,Guich Oudaya,1090000,80,2,,1,2026-06-05T09:57:01Z,private
+58012186,avito,Autre secteur,450000,68,2,,2,2026-06-04T22:02:01Z,private
+58010418,avito,Yacoub El Mansour,,48,1,1,1,2026-06-04T16:41:01Z,private
+58009530,avito,Agdal,2980000,,2,,2,2026-06-04T14:18:01Z,private
+57671293,avito,Autre secteur,3500000,,3,1,2,2026-06-04T10:58:22Z,professional
+57838786,avito,Autre secteur,2700000,,3,,,2026-06-04T10:54:30Z,professional
+58004561,avito,Haut Agdal,3100000,140,3,,1,2026-06-03T15:55:02Z,private
+58000783,avito,Hay el Fath,185000000,120,2,,1,2026-06-02T22:06:56Z,private
+58000619,avito,Agdal,3800000,274,3,,3,2026-06-02T21:34:03Z,private
+57999548,avito,,480000,,,,,2026-06-02T18:05:02Z,private
+57998307,avito,Hay Riad,3318000,160,4,,2,2026-06-02T14:37:02Z,professional
+57972818,avito,Souissi,4900000,155,3,,3,2026-06-02T14:34:18Z,professional
+57997232,avito,Hassan,,117,3,,2,2026-06-02T12:08:04Z,private
+57997225,avito,Hay el Fath,1780000,100,2,1,2,2026-06-02T12:06:01Z,private
+57995806,avito,Riyad,3200000,118,3,,2,2026-06-02T06:38:01Z,professional
+57990102,avito,Yacoub El Mansour,400000,72,2,,1,2026-06-01T08:06:03Z,private
+57989364,avito,Diour Jamaa,,60,2,,1,2026-05-31T21:46:01Z,private
+57988011,avito,Les Orangers,950000,51,2,1,1,2026-05-31T17:24:15Z,private
+57886312,avito,Hassan,1360000,82,2,,1,2026-05-08T09:29:01Z,private
+57885563,avito,Agdal,3800000,,3,,3,2026-05-07T23:42:01Z,private
+57882914,avito,El Youssoufia,420000,50,1,,1,2026-05-07T14:29:04Z,private
+57880172,avito,Yacoub El Mansour,4000000,49,1,,1,2026-05-06T22:14:01Z,private
+57879887,avito,Riyad,5500000,228,4,,3,2026-05-06T20:56:01Z,professional
+57878182,avito,Yacoub El Mansour,,49,1,,1,2026-05-06T15:42:01Z,private
+57875240,avito,Hay el Fath,820000,,3,,1,2026-05-05T22:58:01Z,private
+57874937,avito,Agdal,,100,2,1,1,2026-05-05T21:35:29Z,private
+57874817,avito,Hay Riad,,90,2,1,1,2026-05-05T20:55:01Z,private
+57874754,avito,Hay Riad,5400000,326,3,,2,2026-05-05T20:42:01Z,professional
+57871362,avito,Agdal,2000000,120,2,,2,2026-05-05T10:44:58Z,private
+57868036,avito,Riyad,4750000,202,3,,1,2026-05-04T16:04:03Z,professional
+57851521,avito,Yacoub El Mansour,,13,1,,0,2026-04-30T20:58:05Z,private
+57816474,avito,Hay Riad,,156,3,,3,2026-04-30T17:48:26Z,professional
+57850240,avito,Hay el Fath,1400000,90,3,,2,2026-04-30T16:05:01Z,private
+57844316,avito,Yacoub El Mansour,110000000,65,4,,1,2026-04-29T12:53:02Z,private
+57843882,avito,Hassan,1650000,88,2,,2,2026-04-29T11:57:45Z,private
+57843137,avito,Hay Riad,4700000,162,3,,3,2026-04-29T09:45:03Z,private
+57842989,avito,Hassan,1450000,93,2,1,1,2026-04-29T09:19:01Z,private
+57842122,avito,Yacoub El Mansour,,,2,,1,2026-04-28T22:06:07Z,private
+57841682,avito,Quartier de l'Océan,2000000,151,2,,2,2026-04-28T20:31:02Z,private
+57840862,avito,Hay Riad,,154,3,,1,2026-04-28T17:54:55Z,professional
+56111815,avito,Autre secteur,2500000,167,3,,2,2026-04-28T15:47:12Z,professional
+57840071,avito,Hassan,1305000,87,2,,1,2026-04-28T15:18:00Z,private
+57838766,avito,Hay Riad,,117,2,,2,2026-04-28T11:31:39Z,professional
+57838765,avito,Hay Riad,,117,2,,2,2026-04-28T11:31:35Z,professional
+57838002,avito,Autre secteur,,96,2,,2,2026-04-28T09:35:01Z,private
+57697848,avito,Hay Riad,,83,2,,,2026-04-28T05:59:08Z,professional
+57836190,avito,Hay Riad,4370000,261,2,1,2,2026-04-27T19:14:01Z,private
+57835451,avito,Hay Riad,8000000,,3,,,2026-04-27T16:58:01Z,professional
+57834559,avito,Hay Riad,4700000,,3,,3,2026-04-27T14:19:02Z,private
+57833774,avito,Diour Jamaa,1800000,111,2,,1,2026-04-27T12:11:36Z,private
+57701628,avito,Hay Riad,,219,3,1,3,2026-04-27T08:53:36Z,professional
+57832082,avito,Hay Nahda,1800000,105,3,,1,2026-04-26T23:28:01Z,private
+57832070,avito,Hay Nahda,2500000,110,3,,2,2026-04-26T23:21:01Z,private
+57831117,avito,Riyad,6100000,198,3,,2,2026-04-26T19:23:01Z,professional
+57831132,avito,Hay Riad,3200000,128,3,,2,2026-04-26T19:26:01Z,private
+57819499,avito,Diour Jamaa,1500000,,2,,2,2026-04-24T11:37:00Z,professional
+57815810,avito,Souissi,3990000,162,2,,2,2026-04-23T15:14:01Z,professional
+57814073,avito,Hay Riad,4100000,160,3,1,3,2026-04-23T10:40:51Z,professional
+57813277,avito,Agdal,640000,25,1,,2,2026-04-23T07:26:12Z,private
+57809569,avito,Médina de Rabat,16000,125,1,,0,2026-04-22T12:28:02Z,private
+57809568,avito,Médina de Rabat,16000,125,1,,0,2026-04-22T12:28:01Z,private
+57808512,avito,Guich Oudaya,950000,57,1,,2,2026-04-22T09:35:01Z,private
+57807724,avito,Agdal,3110000,140,3,,1,2026-04-21T23:58:01Z,private
+57804330,avito,Souissi,3800000,,2,,2,2026-04-21T12:55:02Z,private
+57803581,avito,Hay Nahda,2450000,105,3,,2,2026-04-21T11:02:06Z,private
+57801888,avito,Agdal,2700000,120,2,,2,2026-04-20T21:34:01Z,private
+57801886,avito,Agdal,2700000,120,2,,2,2026-04-20T21:34:01Z,private
+57800700,avito,Agdal,3400000,170,3,,2,2026-04-20T17:15:38Z,professional
+57800699,avito,Agdal,3400000,170,3,,2,2026-04-20T17:15:36Z,professional
+57800584,avito,Agdal,3400000,170,3,,2,2026-04-20T16:50:01Z,professional
+57795235,avito,Yacoub El Mansour,250000,70,2,1,2,2026-04-19T15:51:28Z,private
+57793244,avito,Yacoub El Mansour,200000,70,2,,1,2026-04-19T07:56:55Z,private
+57792266,avito,Agdal,1300000,74,2,1,2,2026-04-18T20:54:02Z,private
+57787605,avito,Hay Nahda,,134,3,,2,2026-04-17T20:22:01Z,private
+57783529,avito,Guich Oudaya,1400000,72,3,,2,2026-04-17T01:47:00Z,private
+57780764,avito,Agdal,3750000,163,3,1,3,2026-04-16T14:00:07Z,private
+57779563,avito,Hay el Fath,760000,67,2,,1,2026-04-16T10:56:02Z,private
+57778629,avito,Agdal,3490000,143,3,,2,2026-04-16T06:41:01Z,professional
+57776219,avito,Riyad,4200000,184,3,,2,2026-04-15T15:44:02Z,professional
+57774147,avito,Quartier de l'Océan,1300000,95,2,,2,2026-04-15T10:34:01Z,private
+57771806,avito,Souissi,11800000,425,4,1,4,2026-04-14T18:08:03Z,professional
+57769516,avito,Hay Riad,,159,3,,2,2026-04-14T12:03:01Z,private
+57767197,avito,Hay Riad,,154,3,,3,2026-04-13T20:25:02Z,private
+57767047,avito,Autre secteur,,147,3,,2,2026-04-13T19:59:48Z,private
+57723550,avito,Souissi,3200000,141,3,,2,2026-04-13T11:53:43Z,professional
+57763832,avito,Diour Jamaa,360000,50,2,,1,2026-04-13T11:14:01Z,private
+57763825,avito,Agdal,2600000,119,3,,2,2026-04-13T11:12:56Z,private
+57762140,avito,Agdal,3500000,142,3,,3,2026-04-12T21:09:01Z,private
+57761659,avito,Yacoub El Mansour,560000,56,2,,1,2026-04-12T19:31:01Z,private
+57755806,avito,Riyad,4000000,179,2,,2,2026-04-11T14:53:02Z,professional
+57755805,avito,Riyad,6000000,231,3,,2,2026-04-11T14:53:01Z,professional
+57754219,avito,Agdal,2000000,90,2,,2,2026-04-11T10:09:39Z,private
+57754135,avito,Quartier de l'Océan,,132,2,,1,2026-04-11T09:48:01Z,private
+57753411,avito,Quartier de l'Océan,840000,42,1,,2,2026-04-10T23:39:01Z,private
+57749132,avito,Hassan,2800000,,3,1,2,2026-04-10T08:45:23Z,private
+57748678,avito,Médina de Rabat,900000,30,1,,0,2026-04-09T23:05:01Z,private
+57745914,avito,Hassan,,113,4,,1,2026-04-09T12:59:01Z,private
+57745796,avito,Agdal,2000000,85,2,,2,2026-04-09T12:35:33Z,private
+57206746,avito,Yacoub El Mansour,6500000,182,3,,2,2026-04-08T21:23:42Z,professional
+57742750,avito,Hay Nahda,500000,70,1,,1,2026-04-08T17:31:01Z,private
+57742475,avito,Quartier de l'Océan,1950000,84,2,,1,2026-04-08T16:44:01Z,private
+57741589,avito,Diour Jamaa,1400000,100,2,,1,2026-04-08T14:14:01Z,private
+57734655,avito,Hay Riad,2000000,103,2,,1,2026-04-07T08:58:01Z,private
+57732736,avito,Hassan,1600000,,2,,2,2026-04-06T19:11:01Z,professional
+57731690,avito,Guich Oudaya,700000,53,2,,2,2026-04-06T15:43:25Z,private
+57729516,avito,Diour Jamaa,1950000,110,3,,2,2026-04-06T10:14:16Z,private
+57729405,avito,Aviation - Mabella,,165,3,,3,2026-04-06T09:35:01Z,private
+57726929,avito,Hay Riad,,,,,,2026-04-05T15:42:00Z,private
+57726923,avito,Hay Riad,,,,,,2026-04-05T15:39:01Z,private
+57725214,avito,Diour Jamaa,1750000,114,3,,1,2026-04-05T10:18:22Z,private
+57722421,avito,Médina de Rabat,720000,,2,,1,2026-04-04T14:34:01Z,private
+57721214,avito,Hay Riad,3000000,120,3,1,2,2026-04-04T10:32:03Z,private
+57719636,avito,Hassan,1900000,100,2,,2,2026-04-03T20:25:02Z,private
+57719195,avito,Hassan,1900000,100,2,,2,2026-04-03T18:48:01Z,private
+57716430,avito,Agdal,,123,2,,,2026-04-03T09:47:15Z,private
+57713261,avito,Hay Riad,2950000,80,2,1,2,2026-04-02T15:05:01Z,private
+57709810,avito,Yacoub El Mansour,490000,70,2,,1,2026-04-01T20:33:07Z,private
+57708903,avito,Hassan,2900000,163,3,,2,2026-04-01T17:04:04Z,private
+57707791,avito,Hay el Fath,1350000,142,2,,2,2026-04-01T13:49:02Z,private
+57699706,avito,Hassan,1750000,85,2,1,2,2026-03-30T17:46:01Z,private
+57699599,avito,Yacoub El Mansour,600000,82,2,,1,2026-03-30T17:31:02Z,private
+57557898,avito,Hay Riad,2200000,94,2,,2,2026-03-30T16:59:36Z,professional
+57298661,avito,Hay Riad,3260000,,3,,0,2026-03-29T14:15:39Z,professional
+57690645,avito,Hay el Fath,1620000,96,2,1,2,2026-03-28T16:02:00Z,private
+57689914,avito,Hay Nahda,1600000,105,3,,2,2026-03-28T13:34:01Z,private
+57688540,avito,Hassan,,95,2,,2,2026-03-28T08:33:26Z,private
+57688180,avito,Diour Jamaa,,130,2,1,1,2026-03-27T23:43:00Z,private
+57687308,avito,Abi Ragrag,,299,2,,,2026-03-27T19:08:02Z,private
+57110036,avito,Hay Riad,3400000,140,3,,2,2026-03-27T16:56:20Z,professional
+57686666,avito,Diour Jamaa,1700000,111,2,,1,2026-03-27T16:25:01Z,private
+57684619,avito,Riyad,4200000,145,3,,2,2026-03-27T09:53:04Z,professional
+57684615,avito,Riyad,4300000,169,3,,2,2026-03-27T09:53:03Z,professional
+57680076,avito,Hay Riad,1750000,43,1,,2,2026-03-26T10:19:02Z,private
+57679006,avito,Agdal,3000000,160,2,,3,2026-03-25T22:26:01Z,professional
+57570500,avito,Hay Riad,,117,3,,3,2026-03-25T15:50:38Z,professional
+57676790,avito,Guich Oudaya,1500000,93,2,,1,2026-03-25T14:34:04Z,private
+57674497,avito,Autre secteur,,300,4,,3,2026-03-25T01:02:02Z,private
+57673714,avito,Autre secteur,,147,3,,2,2026-03-24T21:22:04Z,private
+57669942,avito,Hay Riad,3000000,120,3,1,2,2026-03-23T23:36:01Z,private
+57669813,avito,Agdal,2799999,110,2,1,2,2026-03-23T22:32:01Z,private
+57669312,avito,Autre secteur,3600000,140,3,,2,2026-03-23T20:25:00Z,private
+57669134,avito,Autre secteur,,130,3,,2,2026-03-23T19:38:01Z,private
+57663690,avito,Souissi,2900000,176,2,,3,2026-03-22T12:55:40Z,private
+57167846,avito,Hassan,,119,3,,1,2026-03-19T20:56:43Z,private
+57576081,avito,Haut Agdal,4000000,208,3,,3,2026-03-19T14:42:38Z,professional
+57297976,avito,Guich Oudaya,1350000,76,3,,2,2026-03-19T10:59:59Z,private
+57651467,avito,Aakkari,,,1,,,2026-03-18T03:52:01Z,private
+57650403,avito,Autre secteur,,145,3,,3,2026-03-17T21:02:04Z,private
+57588216,avito,Hay Riad,3500000,,3,,2,2026-03-17T18:57:54Z,professional
+57413299,avito,Hay Riad,2600000,,2,,2,2026-03-17T10:38:58Z,professional
+57596310,avito,Agdal,,139,3,,2,2026-03-17T08:54:39Z,private
+57507041,avito,Haut Agdal,3750000,196,3,,2,2026-03-15T19:56:35Z,professional
+57642872,avito,Hay Riad,3476000,158,4,,2,2026-03-15T18:41:01Z,private
+57640702,avito,Hay Riad,,118,3,1,2,2026-03-15T01:12:01Z,private
+57635459,avito,Hay Riad,4000000,179,2,,3,2026-03-13T15:35:52Z,professional
+57579536,avito,Hay Riad,3450000,,3,,2,2026-03-13T12:31:14Z,professional
+57579201,avito,Hay Riad,,,3,,2,2026-03-13T12:23:57Z,professional
+57631310,avito,Agdal,2300000,130,3,,3,2026-03-12T14:11:03Z,professional
+57629290,avito,Hay Riad,,101,3,,2,2026-03-11T22:35:04Z,private
+57628827,avito,Hay Riad,4500000,249,2,,2,2026-03-11T20:42:08Z,private
+57625777,avito,Guich Oudaya,1680000,99,2,,2,2026-03-11T00:25:01Z,private
+57624050,avito,Hassan,2250000,,,,,2026-03-10T15:50:01Z,private
+57621837,avito,Hay Nahda,760000,83,3,,2,2026-03-10T00:38:01Z,private
+57618312,avito,Agdal,,,3,,3,2026-03-09T03:49:01Z,private
+57615377,avito,Hassan,2150000,152,3,,1,2026-03-08T12:34:02Z,private
+57614891,avito,Hay Riad,,,4,,2,2026-03-08T03:47:01Z,private
+57606798,avito,Hay Riad,4000000,,4,,3,2026-03-05T22:03:01Z,private
+57605564,avito,Guich Oudaya,1200000,58,2,,2,2026-03-05T15:42:02Z,professional
+57598655,avito,Diour Jamaa,,90,2,,0,2026-03-03T18:10:01Z,private
+57598048,avito,Agdal,4200000,273,4,1,2,2026-03-03T15:35:01Z,professional
+57597175,avito,Yacoub El Mansour,720000,48,1,,0,2026-03-03T12:06:01Z,private
+57594442,avito,Hay Riad,3350000,,3,,2,2026-03-02T16:26:07Z,professional
+57593144,avito,Hay Riad,7500000,300,5,,4,2026-03-02T12:04:03Z,private
+57592430,avito,Yacoub El Mansour,1300000,97,3,,1,2026-03-02T03:41:13Z,private
+57351225,avito,Agdal,3000000,,2,,2,2026-03-01T20:44:23Z,professional
+57590981,avito,El Youssoufia,540000,83,2,,1,2026-03-01T17:30:01Z,private
+57590496,avito,Hassan,2200000,,2,,2,2026-03-01T14:45:01Z,private
+57586149,avito,Quartier de l'Océan,900000,50,1,,1,2026-02-28T00:20:01Z,private
+56041062,avito,Agdal,1900000,,2,,2,2026-02-27T16:59:09Z,private
+57574598,avito,Hay Riad,3500000,,3,,2,2026-02-24T18:25:58Z,professional
+57572549,avito,Kébibat,2000000,125,3,,3,2026-02-24T09:40:01Z,private
+57569456,avito,Hay Riad,3200000,,3,,3,2026-02-23T12:20:01Z,private
+56755337,avito,Hay Riad,3300000,141,3,,2,2026-02-23T01:58:42Z,professional
+57568358,avito,Diour Jamaa,2300000,120,3,,2,2026-02-23T00:05:40Z,private
+57562935,avito,Hassan,2900000,190,3,,2,2026-02-21T12:03:02Z,professional
+57555743,avito,Yacoub El Mansour,,42,1,,1,2026-02-18T22:46:01Z,private
+57555452,avito,Hay Nahda,600000,74,2,,2,2026-02-18T20:22:01Z,private
+57501285,avito,Hay Riad,,,3,,,2026-02-18T17:39:52Z,professional
+57554962,avito,Autre secteur,2050000,134,3,,3,2026-02-18T17:32:11Z,private
+57553489,avito,Massira,,56,2,,1,2026-02-18T12:09:31Z,private
+57550643,avito,Autre secteur,3000000,,4,,3,2026-02-17T15:07:41Z,professional
+57547599,avito,Autre secteur,1428000,96,3,,2,2026-02-16T18:05:20Z,professional
+57544367,avito,Autre secteur,1600000,,3,,,2026-02-15T22:51:01Z,private
+57544034,avito,Hassan,4100000,,3,,2,2026-02-15T21:07:01Z,professional
+57524266,avito,Agdal,,,3,1,2,2026-02-13T17:42:37Z,private
+57534879,avito,Guich Oudaya,,140,3,,2,2026-02-13T10:35:02Z,private
+57533977,avito,Hay Nahda,,47,1,,1,2026-02-12T23:00:01Z,private
+57533465,avito,Agdal,2700000,150,3,,2,2026-02-12T19:59:01Z,professional
+57531254,avito,Hay el Fath,1350000,140,2,,2,2026-02-12T11:49:01Z,private
+57525773,avito,Taqaddoum,,,1,,1,2026-02-10T23:07:13Z,private
+57524440,avito,Hay Riad,,100,2,1,2,2026-02-10T17:42:06Z,private
+57522476,avito,Agdal,2400000,145,3,,2,2026-02-10T11:52:06Z,private
+57494728,avito,Agdal,2200000,150,2,,2,2026-02-10T09:57:06Z,professional
+57515860,avito,Massira,1200000,,2,,1,2026-02-08T17:49:01Z,private
+57507052,avito,Agdal,2750000,141,3,,2,2026-02-06T09:19:01Z,private
+57503709,avito,Abi Ragrag,,,1,,0,2026-02-05T11:40:01Z,private
+57499440,avito,Hay Riad,,,4,,,2026-02-04T11:07:01Z,private
+57009369,avito,Hay Riad,5000000,184,3,,3,2026-02-04T00:52:12Z,professional
+57496379,avito,Hay Riad,4100000,153,3,,3,2026-02-03T14:36:01Z,private
+57495838,avito,Guich Oudaya,1150000,65,2,,1,2026-02-03T12:51:02Z,private
+57493500,avito,Yacoub El Mansour,,,1,,0,2026-02-02T19:19:01Z,private
+57487086,avito,Hay Riad,4100000,152,3,,2,2026-02-01T00:23:01Z,private
+57486703,avito,Agdal,3000000,,3,,2,2026-01-31T21:34:01Z,professional
+57482990,avito,Diour Jamaa,,86,2,,1,2026-01-30T18:31:01Z,private
+57482950,avito,Hay Riad,3900000,179,2,,2,2026-01-30T18:15:02Z,professional
+57479777,avito,Hay Nahda,790000,96,4,,0,2026-01-29T20:26:00Z,private
+57478773,avito,Diour Jamaa,1000000,88,2,,2,2026-01-29T15:42:02Z,private
+57477914,avito,Hay Riad,3900000,164,3,,2,2026-01-29T12:32:01Z,private
+57477680,avito,Quartier de l'Océan,,,2,,,2026-01-29T11:34:01Z,private
+57412289,avito,Agdal,2500000,,3,,2,2026-01-28T17:55:38Z,professional
+56866680,avito,Hay Riad,10000,115,2,,2,2026-01-27T23:35:32Z,professional
+57470883,avito,Agdal,,180,,,,2026-01-27T15:30:03Z,private
+57338092,avito,Guich Oudaya,1700000,96,2,,2,2026-01-27T13:24:45Z,professional
+57469886,avito,Autre secteur,3850000,190,4,,2,2026-01-27T12:09:01Z,professional
+57467044,avito,Hay Riad,2300000,101,3,,2,2026-01-26T17:04:01Z,private
+57153774,avito,Agdal,3400000,150,3,,2,2026-01-26T14:43:36Z,professional
+57463368,avito,Haut Agdal,,10,1,,,2026-01-25T20:08:01Z,private
+57459784,avito,Hay Riad,,50,10,,,2026-01-24T18:57:01Z,private
+57456824,avito,Abi Ragrag,,,3,,1,2026-01-23T23:38:01Z,private
+57456439,avito,Aakkari,400000,69,1,,1,2026-01-23T20:50:01Z,private
+57455168,avito,Hay Nahda,700000,74,2,,1,2026-01-23T14:35:01Z,private
+57454910,avito,Hay Riad,2500000,130,4,,2,2026-01-23T13:18:02Z,private
+57453685,avito,Agdal,,12,,,,2026-01-23T09:01:23Z,private
+57452928,avito,Agdal,,95,4,,2,2026-01-22T22:34:01Z,private
+57452727,avito,Hay Riad,,212,4,1,3,2026-01-22T20:59:01Z,private
+57450266,avito,Agdal,1900000,125,4,,1,2026-01-22T10:47:03Z,private
+57449785,avito,Autre secteur,,149,4,,2,2026-01-22T09:37:35Z,private
+57446412,avito,Guich Oudaya,,51,1,,1,2026-01-21T11:52:01Z,private
+57439711,avito,Diour Jamaa,1700000,1000,3,,2,2026-01-19T14:41:38Z,private
+57439173,avito,Diour Jamaa,,2961,4,,2,2026-01-19T12:48:03Z,private
+57432859,avito,Aviation - Mabella,500000,43,1,,0,2026-01-17T12:22:01Z,private
+57430557,avito,Quartier de l'Océan,,126,1,,1,2026-01-16T17:22:40Z,private
+56156416,avito,Agdal,3600000,150,3,,2,2026-01-16T10:55:03Z,professional
+57427917,avito,El Youssoufia,400000,50,2,,1,2026-01-15T22:55:01Z,private
+57426669,avito,Agdal,,,12,,1,2026-01-15T16:39:02Z,private
+57424284,avito,Agdal,2600000,120,2,,1,2026-01-14T21:40:01Z,private
+55384796,avito,Agdal,2599998,135,3,,2,2026-01-13T12:57:14Z,professional
+57417100,avito,Hay Riad,4800000,,4,,3,2026-01-13T08:00:01Z,private
+57416561,avito,Autre secteur,460000,,2,,1,2026-01-12T21:12:01Z,private
+57416097,avito,Quartier de l'Océan,1300000,80,2,,2,2026-01-12T18:51:00Z,private
+57415994,avito,Hassan,1670000,,1,,2,2026-01-12T18:19:02Z,private
+57415700,avito,Guich Oudaya,,74,3,,2,2026-01-12T16:58:06Z,professional
+57414115,avito,Souissi,,176,3,,2,2026-01-12T12:15:01Z,private
+57406600,avito,Aviation,,146,2,1,3,2026-01-10T03:26:20Z,private
+57405590,avito,Souissi,,,3,,1,2026-01-09T16:32:17Z,private
+57401994,avito,Hay Riad,3950000,,3,,3,2026-01-08T16:05:07Z,professional
+57401438,avito,Hay el Fath,1420000,140,3,,2,2026-01-08T14:11:01Z,private
+57399103,avito,Hassan,1000000,,1,,1,2026-01-07T19:51:01Z,private
+57398617,avito,Hassan,1000000,,1,,1,2026-01-07T17:46:01Z,private
+57373382,avito,Hassan,,120,2,,2,2026-01-07T14:29:49Z,private
+57397555,avito,Haut Agdal,6500000,332,4,,5,2026-01-07T14:02:59Z,private
+57397344,avito,Hay Nahda,500000,685,2,,1,2026-01-07T13:01:02Z,private
+57393579,avito,Hay Nahda,,76,3,1,1,2026-01-06T12:25:03Z,private
+56767876,avito,Quartier de l'Océan,1550000,80,2,,2,2026-05-31T12:59:40Z,private
+57984238,avito,Médina de Rabat,2300000,231,3,,3,2026-05-30T18:48:01Z,private
+57736407,avito,Hay Riad,5000000,188,3,,2,2026-05-30T14:49:45Z,professional
+57979674,avito,Quartier de l'Océan,2200000,117,2,,1,2026-05-29T14:20:02Z,private
+57977675,avito,Hay Nahda,1300000,,3,,,2026-05-28T21:13:01Z,private
+57976799,avito,Autre secteur,2000000,151,2,,2,2026-05-28T16:25:32Z,private
+57976043,avito,Yacoub El Mansour,340000,50,2,,1,2026-05-28T13:00:03Z,private
+57967171,avito,Agdal,3500000,,4,,3,2026-05-24T16:23:01Z,private
+57807485,avito,Riyad Extension,1550000,100,2,,2,2026-05-24T13:52:47Z,professional
+57965615,avito,Kébibat,1400000,76,2,1,1,2026-05-24T10:52:03Z,private
+57964050,avito,Hay Riad,3300000,130,3,,2,2026-05-23T19:56:01Z,private
+56956849,avito,Guich Oudaya,1170000,65,2,,1,2026-05-22T23:41:14Z,professional
+57888994,avito,Hay Riad,3600000,,4,,3,2026-05-22T17:47:28Z,professional
+57960585,avito,Diour Jamaa,1450000,79,3,,1,2026-05-22T17:45:01Z,private
+57959489,avito,Hay Riad,5550,,4,,,2026-05-22T13:44:01Z,private
+57801889,avito,Hay Riad,8000000,270,3,,4,2026-05-20T21:38:56Z,professional
+57951314,avito,Agdal,200000,120,3,,1,2026-05-20T16:06:01Z,private
+57951010,avito,Diour Jamaa,,96,3,,1,2026-05-20T15:10:01Z,private
+57302278,avito,Souissi,2100000,148,3,,2,2026-05-20T06:44:27Z,professional
+57947907,avito,Agdal,4500000,165,3,,2,2026-05-19T21:32:02Z,professional
+57942110,avito,Guich Oudaya,1755000,117,4,,3,2026-05-18T20:01:23Z,private
+57937339,avito,Riyad,2600000,67,2,,1,2026-05-18T00:00:08Z,professional
+57773567,avito,Hay Riad,4700000,,3,,2,2026-05-16T07:48:02Z,professional
+57920981,avito,Agdal,2000000,74,2,,1,2026-05-14T18:23:03Z,private
+57914146,avito,Autre secteur,4500000,,2,,2,2026-05-13T14:42:28Z,private
+57913662,avito,Yacoub El Mansour,3000000,160,3,1,2,2026-05-13T13:23:02Z,private
+57911695,avito,Autre secteur,400000,50,2,,2,2026-05-13T06:06:01Z,private
+57909355,avito,Agdal,,,,,,2026-05-12T16:55:01Z,private
+57905941,avito,Médina de Rabat,1875000,125,1,,1,2026-05-12T06:55:02Z,private
+57902622,avito,Diour Jamaa,2200000,113,3,,2,2026-05-11T14:08:01Z,private
+57895684,avito,Agdal,2200000,137,2,,1,2026-05-10T08:41:01Z,private
+57858388,avito,Agdal,3400000,1953400,3,,2,2026-05-09T15:36:07Z,professional
+57890794,avito,Agdal,2000000100,113,3,,2,2026-05-09T08:19:01Z,private
+57890096,avito,Riyad,4200000,156,4,,2,2026-05-08T21:56:01Z,professional
+57888805,avito,Hay Riad,3000000,120,3,1,2,2026-05-08T17:02:02Z,private
+58221893,avito,Agdal,2900000,143,3,1,3,2026-07-08T23:55:01Z,private
+58221469,avito,Hay Riad,3600000,159,3,,3,2026-07-08T22:23:01Z,private
+58221447,avito,Hay Riad,2800000,100,2,,2,2026-07-08T22:18:01Z,private
+58219327,avito,Hay Riad,,152,3,,3,2026-07-08T16:46:03Z,private
+58217073,avito,Diour Jamaa,1500000,118,3,,2,2026-07-08T12:03:02Z,private
+58215964,avito,Yacoub El Mansour,1250000,92,2,,2,2026-07-08T09:45:02Z,professional
+58213282,avito,Agdal,,95,2,,2,2026-07-07T18:04:01Z,private
+58213147,avito,Hassan,6500000,128,3,1,2,2026-07-07T17:31:01Z,private
+57999583,avito,Guich Oudaya,3500000,156,3,,3,2026-07-05T17:54:07Z,private
+58197264,avito,Guich Oudaya,1150000,70,2,,2,2026-07-05T11:00:02Z,private
+58011414,avito,Yacoub El Mansour,1000000,60,2,1,1,2026-07-04T20:01:57Z,private
+54042679,avito,Hay Riad,2900000,,3,,3,2026-07-04T15:39:32Z,professional
+58191519,avito,Hassan,1600000,69,1,,1,2026-07-04T01:09:55Z,private
+58190588,avito,Diour Jamaa,1500000,92,3,,2,2026-07-03T19:31:41Z,private
+58188073,avito,Hassan,3300000,,3,,,2026-07-03T12:58:01Z,professional
+58187269,avito,Guich Oudaya,2120000,98,3,,2,2026-07-03T11:14:02Z,private
+57653783,avito,Autre secteur,2700000,126,2,,2,2026-07-02T22:44:09Z,professional
+58000834,avito,Agdal,3300000,,3,,2,2026-07-02T22:26:07Z,professional
+58183983,avito,Yacoub El Mansour,400000,108,1,,1,2026-07-02T17:50:01Z,private
+58181069,avito,Agdal,800000,30,1,,2,2026-07-02T11:09:19Z,private
+58177309,avito,Riyad,4200000,132,3,,3,2026-07-01T17:08:02Z,professional
+58176759,avito,Agdal,20000,135,4,,2,2026-07-01T15:57:02Z,private
+58171137,avito,Mabella,17000,127,2,,2,2026-06-30T18:04:01Z,private
+58169213,avito,Agdal,1750000,119,2,,2,2026-06-30T12:23:46Z,private
+58168739,avito,Hay Riad,3999000,170,2,1,2,2026-06-30T10:47:01Z,professional
+58168214,avito,Hay Riad,800000,80,2,1,2,2026-06-30T04:54:01Z,private
+56180255,avito,Hay Riad,4500000,169,3,,2,2026-06-30T00:56:03Z,professional
+58167946,avito,Agdal,1600000,65,2,,1,2026-06-30T00:41:01Z,private
+58166773,avito,Hay Riad,3850000,145,3,,2,2026-06-29T19:48:24Z,private
+58116159,avito,Agdal,2400000,100,2,,1,2026-06-29T17:21:32Z,professional
+58159930,avito,Aakkari,1000000,69,2,,1,2026-06-28T18:55:03Z,private
+58156696,avito,Aakkari,1030000,,2,,,2026-06-28T10:33:15Z,private
+58155927,avito,Hassan,1520000,93,3,,2,2026-06-28T00:10:04Z,private
+58155837,avito,Agdal,3950000,174,2,1,2,2026-06-28T00:00:59Z,private
+58153005,avito,Autre secteur,3950000,173,2,1,2,2026-06-27T16:05:02Z,private
+57390782,avito,Hay Riad,3500000,,1,,2,2026-01-05T16:09:12Z,private
+57390712,avito,Hay Riad,4900000,,3,,3,2026-01-05T15:53:27Z,private
+57340394,avito,Souissi,5600000,220,4,,3,2026-01-05T09:55:55Z,professional
+57364775,avito,Agdal,2200000,,2,,1,2026-01-05T09:41:13Z,professional
+57388393,avito,Yacoub El Mansour,,11,1,,,2026-01-04T22:16:01Z,private
+57379252,avito,Agdal,,120,1,,2,2026-01-02T12:27:47Z,private
+57379175,avito,Hassan,,100,2,1,1,2026-01-02T12:21:02Z,private
+49875448,avito,Hay Riad,,,3,1,,2026-01-01T13:56:56Z,professional
+57371693,avito,Hay Riad,,159,3,,3,2025-12-31T03:33:00Z,private
+57242392,avito,Souissi,5100000,160,3,,3,2025-12-29T11:42:41Z,professional
+57365205,avito,Hay Riad,2650000,,2,,2,2025-12-29T11:15:01Z,private
+57363837,avito,Agdal,,100,3,1,2,2025-12-28T20:12:01Z,private
+57363344,avito,Médina de Rabat,500000,,1,1,1,2025-12-28T18:24:59Z,private
+57361385,avito,Agdal,16200000,82,2,,2,2025-12-28T09:20:00Z,private
+57358963,avito,Hay Nahda,,86,2,,1,2025-12-27T12:15:01Z,private
+57356156,avito,Hay Nahda,1100000,90,2,,1,2025-12-26T11:51:01Z,private
+52876137,avito,Agdal,3100000,200,3,,2,2025-12-25T06:59:03Z,professional
+52298738,avito,Agdal,3500000,225,4,,,2025-12-25T06:58:48Z,professional
+57350162,avito,Souissi,5500000,200,3,,2,2025-12-24T17:08:04Z,professional
+57205126,avito,Hay Riad,3300000,131,3,,2,2025-12-23T13:44:46Z,professional
+56675559,avito,Hay Riad,3500000,167,3,,3,2025-12-23T13:43:35Z,professional
+57344335,avito,Yacoub El Mansour,630000,60,2,,1,2025-12-23T09:40:10Z,private
+57116622,avito,Hay Riad,4700000,,4,,3,2025-12-22T12:59:52Z,professional
+57337791,avito,Hay Nahda,,64,2,,2,2025-12-21T13:04:01Z,private
+55325154,avito,Hay Nahda,900000,118,2,,1,2025-12-21T12:59:48Z,private
+51174892,avito,Hay Riad,7500000,255,5,1,4,2025-12-19T17:56:15Z,professional
+57331835,avito,Kébibat,1300000,,2,,2,2025-12-19T15:53:00Z,professional
+57330640,avito,Yacoub El Mansour,2800000,,3,,1,2025-12-19T11:22:01Z,private
+57330035,avito,Hay Riad,2500000,100,2,1,2,2025-12-19T08:39:01Z,professional
+57294224,avito,Hay Riad,3400000,,3,,1,2025-12-18T17:47:54Z,professional
+57324935,avito,Massira,2200000,,5,1,3,2025-12-17T17:16:32Z,private
+57324004,avito,Autre secteur,,140,3,,1,2025-12-17T14:07:34Z,private
+55225026,avito,Quartier de l'Océan,1500000,104,3,,1,2025-12-17T13:48:09Z,professional
+57270571,avito,Agdal,2300000,104,2,,1,2025-12-17T10:35:37Z,professional
+57321854,avito,Haut Agdal,3800000,,3,,2,2025-12-16T21:00:01Z,private
+57319945,avito,Hassan,300000,100,4,1,2,2025-12-16T13:10:01Z,private
+57313226,avito,Quartier de l'Océan,1850000,1511,4,,2,2025-12-14T17:07:01Z,private
+57312485,avito,Riyad,2800000,127,4,,2,2025-12-14T14:10:01Z,professional
+57312482,avito,Riyad,2850000,94,2,,2,2025-12-14T14:10:01Z,professional
+56978562,avito,Souissi,5000000,,3,,,2025-12-11T15:52:15Z,professional
+57300364,avito,Diour Jamaa,,55,1,,1,2025-12-10T22:27:01Z,private
+57300281,avito,Autre secteur,,,4,,2,2025-12-10T21:47:00Z,private
+57299347,avito,Hay Riad,,,3,,3,2025-12-10T17:01:01Z,private
+56543837,avito,Hay Riad,3600000,,3,,3,2025-12-10T13:43:33Z,professional
+57297197,avito,Riyad,5400000,218,3,,2,2025-12-10T09:41:01Z,professional
+57297190,avito,Agdal,5500000,258,4,,2,2025-12-10T09:41:01Z,professional
+57297187,avito,Riyad,3450000,124,3,,2,2025-12-10T09:40:24Z,professional
+57297186,avito,Riyad,6000000,244,4,,2,2025-12-10T09:40:24Z,professional
+57297181,avito,Souissi,7000000,255,3,,2,2025-12-10T09:40:20Z,professional
+57297177,avito,Agdal,4300000,161,2,,2,2025-12-10T09:40:11Z,professional
+57297172,avito,Riyad,4500000,201,3,,2,2025-12-10T09:40:05Z,professional
+57179344,avito,Quartier de l'Océan,1750000,86,2,,2,2025-12-09T18:59:44Z,private
+57291852,avito,Yacoub El Mansour,,100,3,,,2025-12-08T19:33:01Z,private
+57059004,avito,Riyad,,232,4,,3,2025-12-08T14:24:55Z,professional
+57072385,avito,Agdal,2100000,169,2,,1,2025-12-08T10:47:37Z,professional
+57058823,avito,Hay Al Farah,3500000,154,3,,2,2025-12-08T09:53:39Z,professional
+56966575,avito,Agdal,2400000,108,3,,2,2025-12-08T09:41:24Z,professional
+57058919,avito,Hay Riad,3600000,221,3,1,3,2025-12-08T09:21:19Z,professional
+57088821,avito,Yacoub El Mansour,1750000,104,3,,1,2025-12-08T07:19:28Z,professional
+57129422,avito,Hay Riad,,202,3,,3,2025-12-07T18:37:07Z,professional
+57120922,avito,Hay Riad,6500000,244,4,,3,2025-12-07T17:58:15Z,professional
+53767884,avito,Hay Riad,3400000,174,3,,3,2025-12-07T17:48:46Z,professional
+56546635,avito,Hay Riad,4500000,212,3,,2,2025-12-07T17:23:55Z,professional
+56562406,avito,Hay Riad,4000000,179,2,,2,2025-12-07T17:15:41Z,professional
+52582067,avito,Hay Riad,3900000,220,4,,3,2025-12-07T16:41:28Z,professional
+57117609,avito,Hay Riad,,179,2,,2,2025-12-07T15:37:10Z,professional
+56944650,avito,Yacoub El Mansour,2100000,135,4,1,3,2025-12-07T14:54:31Z,professional
+57145428,avito,Hay Riad,4500000,190,4,,3,2025-12-07T12:58:53Z,professional
+57117177,avito,Hay Riad,4500000,232,3,,2,2025-12-07T11:34:33Z,professional
+57155255,avito,Hay Riad,4500000,190,4,,3,2025-12-07T11:13:53Z,professional
+57284070,avito,Mabella,1270000,,2,,1,2025-12-06T19:24:03Z,private
+57256250,avito,Kébibat,1300000,107,2,,2,2025-12-06T12:54:39Z,professional
+57281190,avito,Hay Riad,5900000,,4,,3,2025-12-05T22:07:01Z,private
+56952678,avito,Hay Nahda,1650000,101,2,,2,2025-12-04T15:42:19Z,private
+57271957,avito,Autre secteur,2500000,155,3,,3,2025-12-03T15:08:01Z,private
+57269992,avito,Diour Jamaa,900000,56,1,,1,2025-12-03T07:15:01Z,private
+57260134,avito,Diour Jamaa,2200000,110,3,,2,2025-11-30T14:38:01Z,private
+57258123,avito,Quartier de l'Océan,1300000,95,2,,1,2025-11-29T21:06:02Z,private
+57246410,avito,Hay Nahda,,70,2,,1,2025-11-26T20:26:02Z,private
+56207271,avito,Hay Riad,2200000,55,1,,1,2025-11-26T17:22:51Z,professional
+57242551,avito,Hay el Fath,1120000,96,2,,1,2025-11-26T01:59:58Z,private
+57241371,avito,Hay Riad,2900000,,2,1,,2025-11-25T17:35:01Z,professional
+57236199,avito,Agdal,,267,5,,3,2025-11-24T14:47:02Z,private
+57231505,avito,Hay Riad,3600000,157,3,1,3,2025-11-23T13:30:49Z,private
+57229157,avito,Agdal,,120,3,,1,2025-11-22T17:01:01Z,private
+57225900,avito,Abi Ragrag,1200000,76,2,,1,2025-11-21T17:44:01Z,private
+57029983,avito,Quartier de l'Océan,1500000,85,2,,2,2025-11-21T14:47:05Z,private
+56571215,avito,Hay Riad,3600000,,3,,2,2025-11-21T11:19:21Z,professional
+56952041,avito,Hay Riad,4200000,200,4,,4,2025-11-20T20:42:08Z,professional
+57222208,avito,Kébibat,,,2,,2,2025-11-20T17:21:01Z,private
+57218903,avito,Agdal,2000000,105,3,,2,2025-11-19T21:10:02Z,private
+57217092,avito,Hassan,,55,1,,1,2025-11-19T14:11:50Z,private
+57212408,avito,Diour Jamaa,1350000,100,3,,1,2025-11-18T10:59:02Z,private
+57212302,avito,Yacoub El Mansour,,110,2,1,1,2025-11-18T10:26:01Z,private
+57211540,avito,Aakkari,,73,2,,1,2025-11-17T22:41:18Z,private
+57211539,avito,Aakkari,,44,2,,1,2025-11-17T22:41:15Z,private
+57209166,avito,Agdal,,136,3,,,2025-11-17T13:31:04Z,private
+54347841,avito,Agdal,1900000,129,3,,2,2025-11-16T19:59:17Z,professional
+57074426,avito,Hay Riad,,190,3,,3,2025-11-14T16:38:34Z,professional
+57197694,avito,Hay Riad,15000,100,2,,1,2025-11-14T11:40:56Z,private
+57059507,avito,Yacoub El Mansour,,135,3,,2,2025-11-13T09:19:46Z,professional
+57190300,avito,Hay Nahda,820000,,2,,1,2025-11-12T12:48:02Z,private
+55326138,avito,Hay Riad,4149999,194,3,,3,2025-11-10T17:03:38Z,professional
+53889952,avito,Riyad,3290000,160,3,,3,2025-11-10T16:59:23Z,professional
+54266395,avito,Hay Riad,3200000,,3,,3,2025-11-10T16:57:47Z,professional
+56810206,avito,Autre secteur,1700000,116,3,,2,2025-08-11T15:32:01Z,private
+56806189,avito,Agdal,2400000,94,2,,1,2025-08-10T17:12:01Z,private
+56787104,avito,Hay Riad,3300000,170,3,1,2,2025-08-06T05:30:21Z,professional
+56747982,avito,Agdal,4000000,158,3,1,3,2025-07-28T11:13:01Z,private
+56742519,avito,Hay Riad,3500000,130,3,,2,2025-07-26T23:28:01Z,professional
+56735670,avito,Hay Nahda,1300000,76,2,,1,2025-07-25T12:33:01Z,private
+56735141,avito,Hay Riad,8300000,406,4,,4,2025-07-25T10:45:36Z,professional
+56709116,avito,Hay Riad,3100000,93,2,,2,2025-07-20T09:29:00Z,private
+56692118,avito,Autre secteur,750000,83,3,1,1,2025-07-17T01:30:00Z,private
+54681670,avito,Agdal,1400000,75,2,1,2,2025-07-16T12:52:44Z,professional
+53956369,avito,Hassan,1400000,84,2,,2,2025-07-16T12:50:34Z,professional
+56643321,avito,Hay Riad,5030000,230,3,,4,2025-07-06T15:25:00Z,private
+56570875,avito,Hay Riad,2200000,220,3,1,3,2025-06-27T15:07:01Z,private
+56512927,avito,Agdal,2700000,161,2,,2,2025-06-04T12:29:05Z,private
+56477297,avito,Hay Riad,2000000,86,3,,1,2025-05-26T05:21:07Z,professional
+56007315,avito,Hay Riad,3300000,170,3,1,2,2025-05-13T11:10:40Z,professional
+52809125,avito,Hay Riad,2150000,120,3,,2,2025-05-10T22:56:33Z,professional
+52533600,avito,Hay Riad,2200000,91,3,,2,2025-05-10T20:24:38Z,professional
+53236417,avito,Hay Riad,2100000,116,3,,2,2025-05-10T20:13:49Z,professional
+51192099,avito,Hay Riad,2850000,150,4,,3,2025-05-10T16:59:54Z,professional
+52809118,avito,Hay Riad,2600000,121,3,,2,2025-05-10T16:55:02Z,professional
+51162649,avito,Hay Riad,3000000,116,4,,3,2025-05-10T16:39:48Z,professional
+49491752,avito,Hay Riad,5000000,250,4,,3,2025-05-10T11:32:49Z,professional
+51174909,avito,Hay Riad,2350000,120,4,,2,2025-05-10T10:34:55Z,professional
+51174895,avito,Hay Riad,3400000,156,4,,2,2025-05-10T04:55:03Z,professional
+56393824,avito,Diour Jamaa,,296,4,,2,2025-05-05T11:01:01Z,private
+56369560,avito,Hay Riad,5000000,,4,,4,2025-04-28T23:12:57Z,professional
+55390685,avito,Yacoub El Mansour,1500000,112,3,,2,2025-04-11T14:20:41Z,private
+56143901,avito,Quartier de l'Océan,1660000,89,2,1,2,2025-04-09T00:59:28Z,professional
+56254645,avito,Hassan,1800000,,2,,1,2025-03-28T13:19:26Z,private
+56121251,avito,Quartier de l'Océan,1640000,82,2,,2,2025-03-19T23:52:24Z,professional
+56218381,avito,Agdal,1350000,67,1,,1,2025-03-17T12:34:52Z,professional
+54853364,avito,Mabella,1750000,96,4,,1,2025-03-16T17:34:49Z,professional
+56195270,avito,Hassan,1350000,45,1,,1,2025-03-10T15:18:02Z,private
+56003310,avito,Hassan,,101,2,,2,2025-02-18T19:56:30Z,professional
+56003419,avito,Autre secteur,,189,3,,3,2025-02-15T20:33:06Z,professional
+56024370,avito,Hay Riad,3600000,202,3,,2,2025-01-22T12:24:58Z,professional
+56021007,avito,Hay Riad,2050000,83,2,,2,2025-01-21T15:08:09Z,professional
+53728269,avito,Hay Riad,,91,2,,2,2024-12-15T10:50:33Z,professional
+53752259,avito,Agdal,,107,2,,2,2024-12-15T09:59:11Z,professional
+53755248,avito,Hay Riad,,99,2,,2,2024-12-14T12:35:51Z,professional
+55328582,avito,Agdal,2650000,114,2,,2,2024-12-10T09:58:17Z,professional
+53737368,avito,Agdal,,134,3,,2,2024-11-24T15:51:24Z,professional
+55801603,avito,Hassan,,45,1,1,1,2024-11-21T15:27:26Z,private
+55630759,avito,Autre secteur,1270000,130,3,1,1,2024-11-14T15:54:35Z,professional
+54687881,avito,Haut Agdal,10000000,990,7,,6,2024-10-31T10:33:22Z,professional
+55668647,avito,Kébibat,990000,,2,,1,2024-10-18T11:04:05Z,professional
+55586808,avito,Hassan,1880000,,2,,2,2024-09-29T07:44:02Z,private
+55338552,avito,Hay Riad,4900000,,4,,2,2024-08-04T14:49:10Z,professional
+55186058,avito,Haut Agdal,8400000,601,8,,7,2024-07-04T11:40:24Z,professional
+51134291,avito,Hay el Fath,900000,,2,,1,2022-09-25T12:41:01Z,private
+51073665,avito,Hassan,2500000,140,3,,2,2022-09-19T09:12:26Z,private
+53158221,avito,Hay Riad,3050000,150,2,,2,2025-11-10T16:57:13Z,professional
+54287987,avito,Agdal,2750000,,4,,3,2025-11-10T16:57:01Z,professional
+53953812,avito,Riyad,4000000,220,4,,3,2025-11-10T16:56:09Z,professional
+57171076,avito,Hay Riad,,,3,,,2025-11-09T14:57:05Z,professional
+57170600,avito,Agdal,,174,3,,2,2025-11-07T12:58:02Z,private
+57162617,avito,Quartier de l'Océan,,,4,,2,2025-11-05T11:02:05Z,private
+57157703,avito,Hassan,,,2,,2,2025-11-03T21:43:02Z,professional
+57143838,avito,Massira,,123,2,,,2025-10-31T08:58:02Z,private
+57142181,avito,Agdal,3300000,,3,,2,2025-10-30T17:02:01Z,professional
+57141629,avito,Agdal,2500000,160,3,,2,2025-10-30T15:05:06Z,professional
+53865158,avito,Agdal,3300000,182,2,,2,2025-10-28T10:34:06Z,professional
+57130441,avito,Yacoub El Mansour,1200,,,,,2025-10-27T19:47:05Z,private
+57072727,avito,Agdal,,,4,,,2025-10-27T15:43:31Z,professional
+57118671,avito,Agdal,2800000,43,1,1,1,2025-10-24T17:35:58Z,private
+57113753,avito,Autre secteur,3000000,210,2,1,,2025-10-23T13:55:00Z,private
+57081500,avito,Kébibat,1700000,,2,1,2,2025-10-22T16:59:23Z,professional
+57106809,avito,Diour Jamaa,1400000,109,3,,1,2025-10-21T20:26:01Z,private
+57102359,avito,Médina de Rabat,1260000,190,2,,2,2025-10-20T19:19:02Z,private
+57090617,avito,Hay Riad,2350000,127,4,1,2,2025-10-17T19:11:31Z,private
+57081321,avito,Agdal,2600000,140,4,,2,2025-10-15T15:44:01Z,private
+57057231,avito,Agdal,3000000,115,3,1,2,2025-10-09T19:21:29Z,private
+57056977,avito,Agdal,3200000,171,4,,4,2025-10-09T18:09:01Z,private
+57042050,avito,Yacoub El Mansour,800000,135,5,,1,2025-10-06T13:53:00Z,private
+57022358,avito,Hay Nahda,600000,63,2,,1,2025-10-01T15:37:05Z,private
+57003497,avito,Hay Nahda,660000,56,2,,2,2025-09-26T20:56:09Z,private
+56997644,avito,Aakkari,,,2,,2,2025-09-25T14:43:04Z,private
+56968493,avito,Hassan,3100000,160,2,,1,2025-09-18T22:08:03Z,private
+56924623,avito,Autre secteur,,,2,,1,2025-09-08T21:44:02Z,private
+56917785,avito,Hay Riad,3300000,170,3,,2,2025-09-07T09:21:00Z,professional
+56881980,avito,Douar el Hajja,130000,,2,,1,2025-08-29T13:30:41Z,private
+56874482,avito,Yacoub El Mansour,490000,70,2,,1,2025-08-27T18:03:01Z,private
+56849688,avito,Hay Riad,2300000,96,2,,2,2025-08-21T17:41:02Z,private
+56831092,avito,Aakkari,7600000,65,2,,1,2025-08-16T22:23:01Z,private
+56824829,avito,Guich Oudaya,2800000,330,4,,3,2025-08-15T11:19:02Z,private
+56817091,avito,Souissi,,500,7,,3,2025-08-13T12:03:01Z,private
