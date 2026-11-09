@@ -1045,8 +1045,11 @@ def home_week(cities):
         cell = lambda v: "-" if v is None else str(v)
         rows.append(f'              <tr><th scope="row"><a href="/{c["slug"]}/">{e(c["name"])}</a></th><td>{n(st["n"])}</td>'
                     f'<td>{cell(new)}</td><td{" class=\"cut\"" if cuts else ""}>{cell(cuts)}</td></tr>')
-    total = (f'<tr><th scope="row">Total</th><td>{n(tot[0])}</td><td>{tot[1]}</td><td{" class=\"cut\"" if tot[2] else ""}>{tot[2]}</td></tr>')
     with_changes = [(c, st) for c, st in cities if st["changes"]]
+    # Aucune ville comparable au relevé précédent (premier relevé, changement de source) : "-" comme les villes
+    t_new, t_cuts = (str(tot[1]), tot[2]) if with_changes else ("-", None)
+    total = (f'<tr><th scope="row">Total</th><td>{n(tot[0])}</td><td>{t_new}</td>'
+             f'<td{" class=\"cut\"" if t_cuts else ""}>{"-" if t_cuts is None else t_cuts}</td></tr>')
     if with_changes:
         c, st = with_changes[0]
         span = between(st["changes"], st["date"])
@@ -1231,6 +1234,8 @@ def update_sitemap(generated):
     old = dict(re.findall(r"<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>", open(path, encoding="utf8").read()))
     urls = {SITE + "/": None, SITE + "/dashboard.html": None}
     for p in glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True):
+        if RETIRED_MARK in open(p, encoding="utf8").read():
+            continue
         rel = os.path.relpath(os.path.dirname(p), ROOT).replace(os.sep, "/")
         urls[SITE + "/" + ("" if rel == "." else rel + "/")] = None
     urls.update({SITE + k: v for k, v in generated.items()})
@@ -1265,6 +1270,68 @@ def update_dashboard(cfg):
     open(path, "w", encoding="utf8").write(s)
 
 
+RETIRED_MARK = "<!-- quartier-retire -->"
+
+
+def retire_orphans(cfg, all_stats, generated):
+    """Pages de quartier qui ne sont plus classées au dernier relevé (moins d'annonces exploitables que le seuil,
+    ou nom absent de la nouvelle source) : remplacées par une redirection vers la page de la ville, pour ne pas
+    laisser en ligne des chiffres périmés. L'URL reste valide ; la page revient dès qu'un relevé la reclasse."""
+    retired = []
+    for city in cfg["cities"]:
+        st = all_stats.get(city["slug"])
+        if not st:
+            continue
+        for page in sorted(glob.glob(os.path.join(ROOT, city["slug"], "*", "index.html"))):
+            slug = os.path.basename(os.path.dirname(page))
+            if f"/{city['slug']}/{slug}/" in generated:
+                continue
+            old = open(page, encoding="utf8").read()
+            if RETIRED_MARK in old:
+                continue
+            m = re.search(r'<h1[^>]*>Prix au m² (.+?), ', old)
+            name = re.sub(r"^(?:à l'|à la |aux |au |à )", "", html.unescape(m.group(1)).strip()) if m else slug.replace("-", " ")
+            name = cap(name)
+            # Quartier fusionné dans un autre (district_names) : redirection vers la page du quartier qui le reprend
+            merged = cfg["district_names"].get(name)
+            merged_path = f"/{city['slug']}/{slugify(merged)}/" if merged else None
+            if merged_path and merged_path in generated:
+                target = merged_path
+                where = f"{e(merged)}, {e(city['name'])}"
+                text = (f"Depuis le relevé du {long_date(st['date'])}, les annonces de {e(name)} sont comptées avec celles de "
+                        f"{e(merged)} : les deux noms désignent le même secteur.")
+            else:
+                target = f"/{city['slug']}/"
+                where = f"{e(city['name'])}, quartier par quartier"
+                text = (f"Ce quartier compte trop peu d'annonces exploitables dans le relevé du {long_date(st['date'])} "
+                        f"({st['source_name']}) pour publier une médiane fiable. Il reviendra dès qu'un relevé hebdomadaire "
+                        f"en comptera au moins {cfg['min_listings_per_quartier']}.")
+            write(f"/{city['slug']}/{slug}/", f"""<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {RETIRED_MARK}
+  <title>{e(name)}, {e(city['name'])} - Atlas Data</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{SITE}{target}">
+  <meta http-equiv="refresh" content="0; url={target}">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <main class="wrap" style="padding:48px 16px">
+    <h1>{e(name)}, {e(city['name'])}</h1>
+    <p>{text}</p>
+    <p><a href="{target}">Voir les prix au m² : {where}</a></p>
+  </main>
+</body>
+</html>
+""")
+            retired.append(f"{city['name']} : {name}")
+    if retired:
+        print("Pages de quartier redirigées : " + ", ".join(retired))
+
+
 def write(path, content):
     full = os.path.join(ROOT, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -1297,6 +1364,7 @@ def main():
         render_home(cfg, all_stats)
     else:
         print("ATTENTION : aucun relevé exploitable, accueil non régénéré.")
+    retire_orphans(cfg, all_stats, generated)
     update_dashboard(cfg)
     update_footers(cfg, all_stats)
     update_sitemap(generated)

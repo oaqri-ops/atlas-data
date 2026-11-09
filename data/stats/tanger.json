@@ -1,7 +1,7 @@
 {
- "n": 2093,
- "median": 11912,
- "median_price": 1080000,
+ "n": 2085,
+ "median": 11875,
+ "median_price": 1060000,
  "median_surface": 84,
  "min": 2857,
  "max": 100000,
@@ -23,17 +23,6 @@
    "rank": 1
   },
   {
-   "n": 35,
-   "median": 21765,
-   "median_price": 2150000,
-   "median_surface": 86,
-   "min": 6197,
-   "max": 50943,
-   "name": "Tanger City Center",
-   "slug": "tanger-city-center",
-   "rank": 2
-  },
-  {
    "n": 39,
    "median": 20710,
    "median_price": 2640000,
@@ -42,7 +31,7 @@
    "max": 33000,
    "name": "Iberie",
    "slug": "iberie",
-   "rank": 3
+   "rank": 2
   },
   {
    "n": 8,
@@ -53,7 +42,7 @@
    "max": 27922,
    "name": "Sania",
    "slug": "sania",
-   "rank": 4
+   "rank": 3
   },
   {
    "n": 44,
@@ -64,7 +53,7 @@
    "max": 41176,
    "name": "De La Plage",
    "slug": "de-la-plage",
-   "rank": 5
+   "rank": 4
   },
   {
    "n": 26,
@@ -75,7 +64,7 @@
    "max": 23596,
    "name": "Mozart",
    "slug": "mozart",
-   "rank": 6
+   "rank": 5
   },
   {
    "n": 33,
@@ -86,7 +75,7 @@
    "max": 27273,
    "name": "Administratif",
    "slug": "administratif",
-   "rank": 7
+   "rank": 6
   },
   {
    "n": 8,
@@ -95,31 +84,20 @@
    "median_surface": 95,
    "min": 11395,
    "max": 24000,
-   "name": "nouinouich",
+   "name": "Nouinouich",
    "slug": "nouinouich",
-   "rank": 8
+   "rank": 7
   },
   {
-   "n": 61,
-   "median": 15948,
+   "n": 301,
+   "median": 15986,
    "median_price": 1800000,
-   "median_surface": 112,
-   "min": 5882,
-   "max": 55249,
-   "name": "Centre",
-   "slug": "centre",
-   "rank": 9
-  },
-  {
-   "n": 213,
-   "median": 15517,
-   "median_price": 1800000,
-   "median_surface": 110,
+   "median_surface": 108,
    "min": 2857,
    "max": 79545,
    "name": "Centre-ville",
    "slug": "centre-ville",
-   "rank": 10
+   "rank": 8
   },
   {
    "n": 35,
@@ -130,7 +108,7 @@
    "max": 22946,
    "name": "Castilla",
    "slug": "castilla",
-   "rank": 11
+   "rank": 9
   },
   {
    "n": 11,
@@ -141,7 +119,7 @@
    "max": 23571,
    "name": "Moulay Youssef",
    "slug": "moulay-youssef",
-   "rank": 12
+   "rank": 10
   },
   {
    "n": 17,
@@ -152,7 +130,7 @@
    "max": 24961,
    "name": "Du Golf",
    "slug": "du-golf",
-   "rank": 13
+   "rank": 11
   },
   {
    "n": 23,
@@ -163,7 +141,7 @@
    "max": 18434,
    "name": "Branes 2",
    "slug": "branes-2",
-   "rank": 14
+   "rank": 12
   },
   {
    "n": 10,
@@ -174,7 +152,7 @@
    "max": 22000,
    "name": "Drissia",
    "slug": "drissia",
-   "rank": 15
+   "rank": 13
   },
   {
    "n": 43,
@@ -185,7 +163,7 @@
    "max": 18500,
    "name": "Val Fleuri",
    "slug": "val-fleuri",
-   "rank": 16
+   "rank": 14
   },
   {
    "n": 33,
@@ -196,7 +174,7 @@
    "max": 18015,
    "name": "Ziatene",
    "slug": "ziatene",
-   "rank": 17
+   "rank": 15
   },
   {
    "n": 10,
@@ -207,7 +185,7 @@
    "max": 16418,
    "name": "Aida",
    "slug": "aida",
-   "rank": 18
+   "rank": 16
   },
   {
    "n": 129,
@@ -218,7 +196,7 @@
    "max": 54600,
    "name": "Tanja Balia",
    "slug": "tanja-balia",
-   "rank": 19
+   "rank": 17
   },
   {
    "n": 160,
@@ -229,7 +207,7 @@
    "max": 25000,
    "name": "Marjane",
    "slug": "marjane",
-   "rank": 20
+   "rank": 18
   },
   {
    "n": 20,
@@ -240,7 +218,7 @@
    "max": 88679,
    "name": "Achakar",
    "slug": "achakar",
-   "rank": 21
+   "rank": 19
   },
   {
    "n": 92,
@@ -251,7 +229,7 @@
    "max": 90476,
    "name": "Mesnana",
    "slug": "mesnana",
-   "rank": 22
+   "rank": 20
   },
   {
    "n": 53,
@@ -262,7 +240,7 @@
    "max": 21818,
    "name": "Moujahidine",
    "slug": "moujahidine",
-   "rank": 23
+   "rank": 21
   },
   {
    "n": 48,
@@ -273,7 +251,7 @@
    "max": 27200,
    "name": "Ahlane",
    "slug": "ahlane",
-   "rank": 24
+   "rank": 22
   },
   {
    "n": 12,
@@ -284,7 +262,7 @@
    "max": 13793,
    "name": "El Majd",
    "slug": "el-majd",
-   "rank": 25
+   "rank": 23
   },
   {
    "n": 8,
@@ -295,7 +273,7 @@
    "max": 16509,
    "name": "Azib Haj Kaddour",
    "slug": "azib-haj-kaddour",
-   "rank": 26
+   "rank": 24
   },
   {
    "n": 26,
@@ -306,7 +284,7 @@
    "max": 100000,
    "name": "Zemmouri",
    "slug": "zemmouri",
-   "rank": 27
+   "rank": 25
   },
   {
    "n": 76,
@@ -317,7 +295,7 @@
    "max": 90278,
    "name": "Hay Hassani",
    "slug": "hay-hassani",
-   "rank": 28
+   "rank": 26
   },
   {
    "n": 44,
@@ -328,7 +306,7 @@
    "max": 95000,
    "name": "Aharrarine",
    "slug": "aharrarine",
-   "rank": 29
+   "rank": 27
   },
   {
    "n": 9,
@@ -339,7 +317,7 @@
    "max": 13265,
    "name": "Casabarata",
    "slug": "casabarata",
-   "rank": 30
+   "rank": 28
   },
   {
    "n": 18,
@@ -350,7 +328,7 @@
    "max": 50000,
    "name": "Al Irfane 2",
    "slug": "al-irfane-2",
-   "rank": 31
+   "rank": 29
   },
   {
    "n": 35,
@@ -361,7 +339,7 @@
    "max": 79245,
    "name": "la Nouvelle Ville Ibn Battouta",
    "slug": "la-nouvelle-ville-ibn-battouta",
-   "rank": 32
+   "rank": 30
   },
   {
    "n": 28,
@@ -372,7 +350,7 @@
    "max": 14602,
    "name": "Aouama Gharbia",
    "slug": "aouama-gharbia",
-   "rank": 33
+   "rank": 31
   },
   {
    "n": 59,
@@ -383,7 +361,7 @@
    "max": 84000,
    "name": "Boukhalef",
    "slug": "boukhalef",
-   "rank": 34
+   "rank": 32
   },
   {
    "n": 32,
@@ -394,7 +372,7 @@
    "max": 62069,
    "name": "Mghogha",
    "slug": "mghogha",
-   "rank": 35
+   "rank": 33
   },
   {
    "n": 8,
@@ -405,7 +383,7 @@
    "max": 8200,
    "name": "El Baraka",
    "slug": "el-baraka",
-   "rank": 36
+   "rank": 34
   }
  ],
  "autres_quartiers": [
