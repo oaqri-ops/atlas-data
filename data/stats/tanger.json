@@ -7,6 +7,8 @@
  "max": 53000,
  "raw": 83,
  "date": "2026-11-02",
+ "source": "sarouty",
+ "source_name": "Sarouty",
  "changes": {
   "new": 0,
   "gone": 0,

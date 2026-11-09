@@ -5,8 +5,10 @@ Atlas Data - Moroccan Real Estate Intelligence &amp; Market Analytics
 
 Chaque lundi, le workflow GitHub `Relevé hebdomadaire` (`.github/workflows/releve-hebdo.yml`) :
 
-1. lance l'actor Apify `atlasdata-labs/sarouty-scraper-morocco-real-estate` pour chaque ville de `data/cities.json`
-   et enregistre les annonces dans `data/raw/<ville>-<date>.csv` (`scripts/fetch_apify.py`) ;
+1. lance l'actor Apify `atlasdata-labs/morocco-real-estate-scraper` (appelé par son ID, clé `actor` de
+   `data/cities.json`, pour résister à un renommage) pour chaque ville, sur la source indiquée par la clé `sources`
+   (Avito depuis le 9 novembre 2026, Sarouty avant), et enregistre les annonces dans `data/raw/<ville>-<date>.csv`
+   (`scripts/fetch_apify.py`). Si un run échoue, aucun fichier n'est écrit et le site garde le relevé précédent ;
 2. régénère l'accueil (à partir de `scripts/templates/home.html`), les pages villes et quartiers, le dashboard,
    le pied de page et `sitemap.xml` (`scripts/build_site.py`) ;
 3. publie le résultat sur `main`.
@@ -21,11 +23,15 @@ et elle a sa page avec calculateur de budget, graphique des quartiers et FAQ.
 ## Évolution d'un relevé à l'autre
 
 `build_site.py` compare le dernier relevé de chaque ville au précédent (`data/raw/`), en reliant les
-annonces par leur référence Sarouty : nouvelles annonces, annonces retirées, baisses et hausses de prix,
+annonces par leur référence sur le portail source : nouvelles annonces, annonces retirées, baisses et hausses de prix,
 et variation de la médiane quand chaque relevé compte au moins 15 annonces (`MIN_LISTINGS_FOR_TREND`).
 Le résultat s'affiche sur les pages villes (section « Ce qui a changé »), les pages quartiers et les
 cartes villes de l'accueil, et il est enregistré dans `data/stats/<ville>.json` (clé `changes`).
 Garder au moins les deux derniers CSV de chaque ville.
+
+Deux relevés de sources différentes ne sont pas comparés (colonne `source` du CSV ; un CSV sans cette colonne
+vient de Sarouty) : la semaine du passage à Avito, les pages n'affichent pas de « Ce qui a changé ». Les textes
+du site citent la source du dernier relevé de chaque ville.
 
 ## Interface
 

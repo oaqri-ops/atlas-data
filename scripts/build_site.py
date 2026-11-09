@@ -53,6 +53,17 @@ def latest_raw(slug):
     return path, re.search(r"(\d{4}-\d{2}-\d{2})\.csv$", path).group(1)
 
 
+# Source du relevé : colonne "source" du CSV (Avito depuis le 9 novembre 2026). Les relevés plus
+# anciens n'ont pas cette colonne : ils viennent de Sarouty.
+SOURCE_NAMES = {"avito": "Avito", "sarouty": "Sarouty"}
+
+
+def raw_source(path):
+    with open(path, encoding="utf8") as f:
+        row = next(csv.DictReader(f), None)
+    return ((row or {}).get("source") or "sarouty").strip().lower()
+
+
 def previous_raw(slug, date):
     """Relevé précédent de la ville (le plus récent avant date), ou (None, None)."""
     files = [f for f in sorted(glob.glob(os.path.join(ROOT, "data", "raw", f"{slug}-*.csv")))
@@ -137,7 +148,9 @@ def city_stats(city, cfg):
     for i, q in enumerate(ranked):
         q["rank"] = i + 1
     stats = summarize(rows)
-    stats.update(raw=raw, date=date, rows=rows, ranked=ranked, small=small)
+    source = raw_source(path)
+    stats.update(raw=raw, date=date, rows=rows, ranked=ranked, small=small,
+                 source=source, source_name=SOURCE_NAMES.get(source, source.capitalize()))
     stats["changes"] = changes_since_previous(city, cfg, stats)
     return stats
 
@@ -150,12 +163,13 @@ MIN_LISTINGS_FOR_TREND = 15
 def changes_since_previous(city, cfg, st):
     """Ce qui a changé depuis le relevé précédent : annonces nouvelles, retirées, prix modifiés.
 
-    Les annonces sont reliées d'un relevé à l'autre par leur identifiant Sarouty. Seules les annonces
-    exploitables du relevé courant comptent comme nouvelles ; une annonce retirée est une annonce
-    exploitable du relevé précédent qui n'apparaît plus du tout.
+    Les annonces sont reliées d'un relevé à l'autre par leur référence sur le portail source. Seules les
+    annonces exploitables du relevé courant comptent comme nouvelles ; une annonce retirée est une annonce
+    exploitable du relevé précédent qui n'apparaît plus du tout. Deux relevés de sources différentes
+    (passage de Sarouty à Avito) ne sont pas comparés : leurs références ne correspondent pas.
     """
     prev_path, prev_date = previous_raw(city["slug"], st["date"])
-    if not prev_path:
+    if not prev_path or raw_source(prev_path) != st["source"]:
         return None
     prev_all = read_listings(prev_path, cfg)
     prev_ids = {r["id"] for r in prev_all if r["id"]}
@@ -476,7 +490,7 @@ def changes_block(city, st):
         <div class="block-copy">
           <h2 id="evolution-title">Ce qui a changé {e(since(ch))}</h2>
           <p>{between(ch, st['date'])} : {change_summary(ch)}.{trend_text(ch['trend'], 'de ' + e(cname))}</p>
-          <p>Les annonces sont suivies d'un relevé à l'autre par leur référence Sarouty. Une annonce retirée peut avoir été vendue, louée ou simplement dépubliée. Une variation de médiane reflète aussi les annonces qui entrent et sortent du relevé : ce n'est pas une évolution des prix de vente.</p>
+          <p>Les annonces sont suivies d'un relevé à l'autre par leur référence {st['source_name']}. Une annonce retirée peut avoir été vendue, louée ou simplement dépubliée. Une variation de médiane reflète aussi les annonces qui entrent et sortent du relevé : ce n'est pas une évolution des prix de vente.</p>
         </div>
         <div class="moves-col">
           <div class="card">{tiles}{cuts}</div>
@@ -536,7 +550,7 @@ def quartier_page(city, st, q, cfg):
         breadcrumb_ld([("Accueil", "/"), (f"Prix au m² à {cname}", f"/{city['slug']}/"), (f"Prix au m² {q['prep']}", path)]),
         dataset_ld(f"Prix demandés des appartements à vendre {q['prep']}, {cname} ({MONTHS[int(date[5:7]) - 1]} {date[:4]})",
                    f"Prix médian demandé au m², répartition des prix et surface accessible selon le budget, calculés sur {q['n']} annonces "
-                   f"d'appartements à vendre {q['prep']} ({cname}) relevées sur Sarouty le {long_date(date)}.",
+                   f"d'appartements à vendre {q['prep']} ({cname}) relevées sur {st['source_name']} le {long_date(date)}.",
                    path, f"{name}, {cname}, Maroc", date)]}
 
     if k1m == 0:
@@ -658,14 +672,14 @@ def quartier_page(city, st, q, cfg):
 
     <section class="pro-band" aria-labelledby="pro-title">
       <div class="shell">
-        <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>Chaque lundi, toutes les annonces Sarouty de {e(cname)} dans un fichier Excel : titre, agence, prix, surface, lien, et les nouvelles annonces de la semaine signalées. 29 € HT par mois, sans engagement.</p></div>
+        <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>Chaque lundi, toutes les annonces {st['source_name']} de {e(cname)} dans un fichier Excel : titre, agence, prix, surface, lien, et les nouvelles annonces de la semaine signalées. 29 € HT par mois, sans engagement.</p></div>
         <div class="pro-actions"><a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple</a><a class="btn btn-ghost" data-pro-contact data-ville="{e(cname)}" href="{mail}">Demander l'accès Pro</a></div>
       </div>
     </section>
 
     <section class="block" aria-label="Méthode">
       <div class="shell">
-        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur Sarouty : {q['n']} annonces d'appartements à vendre {e(q['prep'])}, parmi {st['n']} annonces exploitables à {e(cname)}. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente, et le relevé ne couvre pas l'ensemble du marché. Données mises à jour chaque semaine. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
+        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {q['n']} annonces d'appartements à vendre {e(q['prep'])}, parmi {st['n']} annonces exploitables à {e(cname)}. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente, et le relevé ne couvre pas l'ensemble du marché. Données mises à jour chaque semaine. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
       </div>
     </section>
   </main>
@@ -888,7 +902,7 @@ def city_page(city, st, cfg):
             {"@type": "ListItem", "position": q["rank"], "name": f"Prix au m² {prep(q['name'], cfg)}",
              "url": f"{SITE}/{city['slug']}/{q['slug']}/"} for q in ranked]},
         dataset_ld(f"Prix des appartements à vendre à {cname} par quartier ({MONTHS[int(date[5:7]) - 1]} {date[:4]})",
-                   f"Prix demandés de {st['n']} annonces d'appartements à vendre à {cname}, relevées sur Sarouty le {long_date(date)}. "
+                   f"Prix demandés de {st['n']} annonces d'appartements à vendre à {cname}, relevées sur {st['source_name']} le {long_date(date)}. "
                    f"Médianes par quartier pour les secteurs comptant au moins {cfg['min_listings_per_quartier']} annonces.",
                    path, f"{cname}, Maroc", date)]}
     faq_section, faq_ld = city_faq(city, st, cfg)
@@ -934,7 +948,7 @@ def city_page(city, st, cfg):
       <div class="shell">
         {crumbs([("Accueil", "/"), (cname, path)])}
         <h1 id="page-title">Prix immobilier à {e(cname)}, quartier par quartier</h1>
-        <p class="hero-lede">Le prix médian demandé au m² des appartements à vendre à {e(cname)}, à partir de {st['n']} annonces relevées sur Sarouty le {long_date(date)}. Les chiffres sont mis à jour chaque semaine.</p>
+        <p class="hero-lede">Le prix médian demandé au m² des appartements à vendre à {e(cname)}, à partir de {st['n']} annonces relevées sur {st['source_name']} le {long_date(date)}. Les chiffres sont mis à jour chaque semaine.</p>
         <div class="facts">
           <div class="hl"><span>Prix médian à {e(cname)}</span><strong>{n(st['median'])}</strong><small>MAD/m²</small></div>
           <div><span>Annonces analysées</span><strong>{st['n']}</strong><small>appartements à vendre</small></div>
@@ -956,7 +970,7 @@ def city_page(city, st, cfg):
 {small_block}{faq_section}
     <section class="block" aria-label="Méthode">
       <div class="shell">
-        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur Sarouty : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
+        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
       </div>
     </section>
   </main>
@@ -1091,21 +1105,22 @@ def render_home(cfg, all_stats):
     total = sum(st["n"] for _, st in cities)
     raw = sum(st["raw"] for _, st in cities)
     city_list = join_fr([c["name"] for c, _ in cities])
+    source = join_fr(sorted({st["source_name"] for _, st in cities}))
     week_rows, week_total, week_foot = home_week(cities)
 
     faq = [
         ("D'où viennent les données, et à quelle fréquence ?",
-         f"Des annonces publiques d'appartements à vendre publiées sur Sarouty à {city_list}, relevées chaque lundi. "
+         f"Des annonces publiques d'appartements à vendre publiées sur {source} à {city_list}, relevées chaque lundi. "
          "Les chiffres du site et le fichier Pro viennent du même relevé."),
         ("Collectez-vous des données personnelles ?",
          "Non. Le relevé ne collecte ni nom, ni téléphone, ni email d'agent ou de particulier. Le fichier Pro reprend l'annonce telle qu'elle est publiée : "
          "titre, agence, prix, surface, quartier et lien."),
         ("Sous quel format arrive le fichier Pro ?",
-         "Un fichier Excel (.xlsx) par ville, chaque lundi. Colonnes : référence Sarouty, titre, agence, quartier, prix demandé, surface, prix au m², "
+         f"Un fichier Excel (.xlsx) par ville, chaque lundi. Colonnes : référence {source}, titre, agence, quartier, prix demandé, surface, prix au m², "
          "chambres, meublé, date de publication, nouvelle annonce, baisse de prix et lien. Le fichier d'exemple de Guéliz montre le format exact."),
         ("Quelle différence entre l'accès gratuit et la version Pro ?",
          "Les pages villes et quartiers, le calculateur de budget et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. "
-         "La version Pro, à 29 € HT par mois, envoie chaque lundi toutes les annonces Sarouty de la ville choisie, avec leur titre, leur agence et leur lien, "
+         f"La version Pro, à 29 € HT par mois, envoie chaque lundi toutes les annonces {source} de la ville choisie, avec leur titre, leur agence et leur lien, "
          "dans un fichier Excel."),
     ]
     faq_html = "\n".join(f"          <details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
@@ -1113,7 +1128,7 @@ def render_home(cfg, all_stats):
     org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Atlas Data", "url": SITE + "/", "email": "othman@atlas-data.fr",
            "description": "Données et analyses du marché immobilier marocain, à partir d'annonces publiques.", "areaServed": "MA"}
     pro = {"@type": "Product", "@id": SITE + "/#pro", "name": "Atlas Data Pro", "brand": {"@id": SITE + "/#org"},
-           "description": (f"Chaque lundi, toutes les annonces d'appartements à vendre publiées sur Sarouty dans une ville au choix ({join_fr([c['name'] for c, _ in cities]).replace(' et ', ' ou ')}), "
+           "description": (f"Chaque lundi, toutes les annonces d'appartements à vendre publiées sur {source} dans une ville au choix ({join_fr([c['name'] for c, _ in cities]).replace(' et ', ' ou ')}), "
                            "dans un fichier Excel : titre, agence, prix demandé, surface, prix au m², lien, nouvelles annonces et baisses de prix signalées."),
            "offers": {"@type": "Offer", "url": SITE + "/#offres", "price": "29.00", "priceCurrency": "EUR",
                       "availability": "https://schema.org/InStock", "seller": {"@id": SITE + "/#org"},
@@ -1133,7 +1148,7 @@ def render_home(cfg, all_stats):
                      "chaque lundi dans un fichier Excel."),
         "LD_JSON": json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"),
         "HERO_LEDE": (f"Pour les agences et les professionnels de l'immobilier à {e(city_list)} : {n(total)} annonces d'appartements à vendre {when}, "
-                      "avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur Sarouty, pas des prix de vente."),
+                      f"avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur {source}, pas des prix de vente."),
         "WEEK_INTRO": f"Relevé du {long_date(date)}, annonces exploitables par ville.",
         "WEEK_ROWS": week_rows,
         "WEEK_TOTAL": week_total,
@@ -1149,6 +1164,7 @@ def render_home(cfg, all_stats):
                       "des loyers publiés comme des ventes, des surfaces absentes ou hors norme et des prix au m² aberrants. Les prix demandés ne sont pas des prix de vente. "
                       "Le relevé ne couvre pas l'ensemble du marché."),
         "FAQ": faq_html,
+        "SOURCE": e(source),
     }
     page = read_template("home.html")
     for k, v in tokens.items():
@@ -1238,11 +1254,14 @@ def update_dashboard(cfg):
                          "bathrooms": r["bathrooms"], "furnished": {"1": True, "0": False}.get(r["furnished"]),
                          "publication_date": r["published"] or None, "suspect_category": not r["kept"],
                          "price_per_m2": round(r["ppm2"], 2) if r["ppm2"] else None})
+    sources = sorted({SOURCE_NAMES.get(raw_source(latest_raw(c["slug"])[0]), "?") for c in cfg["cities"]
+                      if latest_raw(c["slug"])[0]})
     data = json.dumps({"cities": cities, "rows": rows}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     path = os.path.join(ROOT, "dashboard.html")
     s = open(path, encoding="utf8").read()
     s = re.sub(r'(<script type="application/json" id="market-dataset">).*?(</script>)',
                lambda m: m.group(1) + data + m.group(2), s, count=1, flags=re.S)
+    s = re.sub(r'(<span class="data-source">)[^<]*(</span>)', lambda m: m.group(1) + e(join_fr(sources)) + m.group(2), s)
     open(path, "w", encoding="utf8").write(s)
 
 
