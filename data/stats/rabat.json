@@ -1,6 +1,6 @@
 {
- "n": 650,
- "median": 19138,
+ "n": 647,
+ "median": 19048,
  "median_price": 2300000,
  "median_surface": 120,
  "min": 2857,
@@ -23,26 +23,15 @@
    "rank": 1
   },
   {
-   "n": 28,
-   "median": 25579,
-   "median_price": 4200000,
-   "median_surface": 176,
-   "min": 18182,
-   "max": 38806,
-   "name": "Riyad",
-   "slug": "riyad",
-   "rank": 2
-  },
-  {
-   "n": 139,
-   "median": 24699,
-   "median_price": 3600000,
-   "median_surface": 153,
+   "n": 164,
+   "median": 25000,
+   "median_price": 3725000,
+   "median_surface": 156,
    "min": 10000,
    "max": 40698,
    "name": "Hay Riad",
    "slug": "hay-riad",
-   "rank": 3
+   "rank": 2
   },
   {
    "n": 126,
@@ -53,7 +42,7 @@
    "max": 65116,
    "name": "Agdal",
    "slug": "agdal",
-   "rank": 4
+   "rank": 3
   },
   {
    "n": 11,
@@ -64,7 +53,7 @@
    "max": 28571,
    "name": "Haut Agdal",
    "slug": "haut-agdal",
-   "rank": 5
+   "rank": 4
   },
   {
    "n": 50,
@@ -75,7 +64,7 @@
    "max": 50781,
    "name": "Hassan",
    "slug": "hassan",
-   "rank": 6
+   "rank": 5
   },
   {
    "n": 31,
@@ -86,7 +75,7 @@
    "max": 22436,
    "name": "Guich Oudaya",
    "slug": "guich-oudaya",
-   "rank": 7
+   "rank": 6
   },
   {
    "n": 34,
@@ -97,7 +86,7 @@
    "max": 23214,
    "name": "Quartier de l'Océan",
    "slug": "quartier-de-l-ocean",
-   "rank": 8
+   "rank": 7
   },
   {
    "n": 24,
@@ -108,7 +97,7 @@
    "max": 41989,
    "name": "Hay el Fath",
    "slug": "hay-el-fath",
-   "rank": 9
+   "rank": 8
   },
   {
    "n": 27,
@@ -119,7 +108,7 @@
    "max": 20482,
    "name": "Diour Jamaa",
    "slug": "diour-jamaa",
-   "rank": 10
+   "rank": 9
   },
   {
    "n": 10,
@@ -130,7 +119,7 @@
    "max": 30508,
    "name": "Médina de Rabat",
    "slug": "medina-de-rabat",
-   "rank": 11
+   "rank": 10
   },
   {
    "n": 8,
@@ -141,7 +130,7 @@
    "max": 15306,
    "name": "Aakkari",
    "slug": "aakkari",
-   "rank": 12
+   "rank": 11
   },
   {
    "n": 42,
@@ -152,7 +141,7 @@
    "max": 81633,
    "name": "Yacoub El Mansour",
    "slug": "yacoub-el-mansour",
-   "rank": 13
+   "rank": 12
   },
   {
    "n": 26,
@@ -163,7 +152,7 @@
    "max": 23333,
    "name": "Hay Nahda",
    "slug": "hay-nahda",
-   "rank": 14
+   "rank": 13
   }
  ],
  "autres_quartiers": [
