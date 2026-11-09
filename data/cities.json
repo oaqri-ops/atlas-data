@@ -1,5 +1,8 @@
 {
-  "actor": "atlasdata-labs~sarouty-scraper-morocco-real-estate",
+  "actor": "M0jf7SrtekwPKM2iO",
+  "sources": [
+    "avito"
+  ],
   "min_listings_per_quartier": 8,
   "cities": [
     {
@@ -55,6 +58,7 @@
   "excluded_districts": [
     "indéfini",
     "Autre",
-    ""
+    "",
+    "Autre secteur"
   ]
 }
