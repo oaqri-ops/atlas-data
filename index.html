@@ -26,75 +26,113 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:ital,wght@0,400..800;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:ital,wght@0,400..800;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/site.css">
   <style>
-    /* Accueil pro : seuls les styles propres à cette page, le reste vient de site.css */
-    :root{--mono:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--line-strong:#c9ceda}
-    .hero-pro{padding:64px 0 72px}
-    .hero-pro .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,460px);align-items:center}
-    .hero-pro .hero-copy{position:static;padding-top:0}
-    .hero-pro h1{font-size:clamp(36px,4.6vw,58px);max-width:13em}
-    .hero-pro .hero-lede{max-width:34em}
-    .buyer-link{margin-top:22px;font-size:15px;color:var(--muted)}
-    .buyer-link a{color:var(--blue);font-weight:700}
-    .week{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 60px -40px rgba(15,26,51,.45);overflow:hidden}
-    .ticket-label{display:flex;justify-content:space-between;gap:12px;margin:0;padding:18px 20px 0;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-    .ticket-label span:last-child{color:var(--faint)}
-    .week h2{font:700 16px/1.3 var(--body);letter-spacing:0;margin:0;padding:8px 20px 4px}
-    .week > p{padding:0 20px 12px;font-size:14px;color:var(--muted)}
-    .week table{min-width:0;font-size:15px}
-    .week th,.week td{padding:11px 20px}
-    .week thead th{background:var(--soft);font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-    .week tbody th,.week tbody td{border-bottom:1px dashed var(--line-strong)}
-    .week td{text-align:right;font:400 14px/1.4 var(--mono);font-variant-numeric:tabular-nums}
+    /* Accueil : styles propres à cette page. Jetons et composants communs dans site.css. */
+    .home-hero{padding:88px 0 72px;background:#fff;border-bottom:1px solid var(--line);text-align:center}
+    .home-hero h1{font-size:clamp(38px,5.4vw,66px);line-height:1.04;max-width:13em;margin:0 auto}
+    .home-hero .hero-sub{max-width:40em;margin:22px auto 0;font-size:18px;line-height:1.55;color:var(--muted)}
+    .search{position:relative;max-width:640px;margin:40px auto 0;text-align:left}
+    .search label{display:block;margin-bottom:10px;font-weight:700;font-size:15px;text-align:center}
+    .search-box{display:flex;align-items:center;gap:12px;min-height:64px;padding:0 10px 0 22px;background:#fff;border:1px solid var(--line-strong);border-radius:16px;box-shadow:var(--shadow-lg)}
+    .search-box:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,91,231,.16),var(--shadow-lg)}
+    .search-box svg{flex:none;width:22px;height:22px;color:var(--muted)}
+    .search-box input{flex:1;min-width:0;height:62px;border:0;background:none;font-size:18px;color:var(--ink)}
+    .search-box input:focus{outline:none}
+    .search-box input::placeholder{color:var(--faint)}
+    .search-results{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:15;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg)}
+    .search-results[hidden]{display:none}
+    .search-results a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;padding:12px 14px;border-radius:10px;text-decoration:none;color:var(--ink)}
+    .search-results [aria-selected="true"] a,.search-results a:hover{background:var(--tint)}
+    .search-results .r-name{font-weight:700}
+    .search-results .r-name small{font-weight:400;color:var(--muted)}
+    .search-results .r-price{grid-row:span 2;align-self:center;text-align:right;font:650 20px/1.1 var(--display);font-stretch:112%;font-variant-numeric:tabular-nums}
+    .search-results .r-price small{display:block;font:400 12px/1.3 var(--body);color:var(--muted)}
+    .search-results .r-meta{font-size:13px;color:var(--muted)}
+    .search-results .r-empty{padding:14px;color:var(--muted);font-size:15px}
+    .search-hint{margin-top:12px;font-size:14px;color:var(--faint);text-align:center}
+    .city-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;margin:28px 0 0;padding:0}
+    .city-links a{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:var(--canvas);text-decoration:none;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .city-links a span{font-weight:700;color:var(--ink)}
+    .city-links a b{font-weight:600;color:var(--ink)}
+    .city-links a:hover{border-color:var(--blue);background:#fff}
+    .features{padding:24px 0 40px}
+    .feature-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center;padding:72px 0}
+    .feature-row + .feature-row{border-top:1px solid var(--line)}
+    .feature-row.flip .feature-copy{order:2}
+    .feature-copy h2{font-size:clamp(28px,3.2vw,40px);line-height:1.1}
+    .feature-copy p{margin-top:16px;font-size:17px;color:var(--muted);max-width:30em}
+    .feature-copy .btn{margin-top:28px}
+    .feature-copy .aside{margin-top:14px;font-size:14px;color:var(--faint)}
+    .panel{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .panel .card-foot{padding:14px 20px;background:var(--canvas);border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+    .panel-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:18px 20px 6px}
+    .panel-title strong{font:650 18px/1.2 var(--display);font-stretch:112%}
+    .panel-title span{font-size:13px;color:var(--faint)}
+    .calc-q{padding:22px 22px 6px;font-size:16px;color:var(--muted)}
+    .calc-q strong{color:var(--ink)}
+    .calc-rows{list-style:none;margin:0;padding:8px 10px 14px}
+    .calc-rows a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 16px;align-items:baseline;padding:14px 12px;border-radius:10px;text-decoration:none;color:var(--ink)}
+    .calc-rows a:hover{background:var(--tint)}
+    .calc-rows li + li a{border-top:1px solid var(--line);border-radius:0}
+    .calc-rows span{font-weight:700}
+    .calc-rows strong{grid-row:span 2;font:650 clamp(30px,3.6vw,44px)/1 var(--display);font-stretch:112%;color:var(--blue);font-variant-numeric:tabular-nums;text-align:right}
+    .calc-rows small{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .preview table{min-width:560px;width:100%;font-size:14px;white-space:nowrap}
+    .preview th,.preview td{padding:12px 14px}
+    .preview thead th{background:var(--canvas);font-size:13px;color:var(--muted);font-weight:600}
+    .preview td.num,.preview th.num{text-align:right;font-variant-numeric:tabular-nums}
+    .preview tbody tr:last-child td{border-bottom:0}
+    .preview .pro-col b{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:var(--tint);color:var(--blue);font-size:12px;font-weight:700;vertical-align:1px}
+    .masked span{display:inline-block;height:10px;border-radius:5px;background:#e3e7f0;vertical-align:middle}
+    .masked.t span{width:150px}.masked.l span{width:46px}
+    tr:nth-child(2n) .masked.t span{width:120px}tr:nth-child(3n) .masked.t span{width:170px}
+    .preview .table-wrap{position:relative}
+    .preview th:nth-child(2),.preview td:nth-child(2),.preview th:nth-child(8),.preview td:nth-child(8){display:none}
+    .week table{min-width:0;width:100%;font-size:15px}
+    .week th,.week td{padding:12px 20px}
+    .week thead th{background:var(--canvas);font-size:13px;font-weight:600;color:var(--muted)}
+    .week td{text-align:right;font-variant-numeric:tabular-nums}
     .week tbody th a{color:var(--ink);font-weight:700;text-decoration:none}
     .week tbody th a:hover{color:var(--blue);text-decoration:underline}
     .week td.cut{color:var(--green-ink);font-weight:700}
     .week tfoot th,.week tfoot td{border-bottom:0;font-weight:700;background:var(--tint)}
-    .week tfoot td{font-weight:500}
-    .week-foot{padding:12px 20px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
-    .city-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-    .city-card{display:flex;flex-direction:column;gap:10px;height:100%;padding:22px;border:1px solid var(--line);border-radius:12px;background:#fff;text-decoration:none;color:var(--ink)}
-    .city-card:hover{border-color:var(--blue)}
-    .city-card .qcard-name{font:800 24px/1.15 var(--display);letter-spacing:-.02em}
+    .city-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+    .city-card{display:flex;flex-direction:column;gap:10px;height:100%;padding:24px;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);text-decoration:none;color:var(--ink)}
+    .city-card:hover{box-shadow:0 0 0 2px var(--blue),var(--shadow)}
+    .city-card .qcard-name{font:650 24px/1.15 var(--display);font-stretch:112%}
+    .city-card .qcard-price strong{font:650 30px/1.1 var(--display);font-stretch:112%;color:var(--blue);font-variant-numeric:tabular-nums}
     .city-card .qcard-price span{font-size:14px;color:var(--muted)}
     .city-card dl{margin:4px 0 0;display:grid;gap:6px;font-size:14px}
     .city-card dt{color:var(--muted)}
     .city-card dd{margin:0 0 4px;font-weight:600}
     .city-card .qcard-moves{margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
     .city-card small{font-size:13px;color:var(--faint)}
-    .usages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
-    .usages h3{font-size:21px;line-height:1.25;letter-spacing:-.015em;margin-bottom:10px}
-    .usages p{color:var(--muted)}
-    .preview{position:relative;border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
-    .preview .table-wrap{position:relative}
-    .preview table{min-width:760px;font-size:14px;white-space:nowrap}
-    .preview th,.preview td{padding:12px 14px}
-    .preview thead th{background:var(--soft)}
-    .preview td.num,.preview th.num{text-align:right}
-    .preview tbody tr:last-child td{border-bottom:0}
-    .preview .pro-col{color:var(--blue)}
-    .preview .pro-col b{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:var(--tint);font-size:12px;font-weight:700;vertical-align:1px}
-    .masked span{display:inline-block;height:10px;border-radius:5px;background:linear-gradient(90deg,#dfe3ee,#eef1f7);vertical-align:middle}
-    .masked.t span{width:190px}.masked.a span{width:110px}.masked.l span{width:56px}
-    tr:nth-child(2n) .masked.t span{width:150px}tr:nth-child(3n) .masked.t span{width:210px}tr:nth-child(2n) .masked.a span{width:84px}
-    .preview-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 18px;background:var(--soft);border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-    .offers-note{margin-top:22px;padding-top:18px;border-top:1px solid #ffffff2b;font-size:15px;color:#c3cbe0;max-width:30em}
-    .offers-head{max-width:46em}
-    .offers-head p{margin-top:18px;color:#c3cbe0;font-size:17px}
-    .compare-wrap{margin-top:40px;background:#fff;border-radius:14px;overflow-x:auto;box-shadow:0 30px 60px -40px rgba(0,0,0,.6)}
+    .agency-band{background:var(--navy);color:#fff}
+    .agency-band .shell{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center;padding-top:80px;padding-bottom:80px}
+    .agency-band h2{color:#fff;font-size:clamp(28px,3.4vw,42px);line-height:1.1;max-width:17em}
+    .agency-band p{margin-top:16px;color:#c9cfdc;font-size:17px;max-width:36em}
+    .agency-price{margin-top:22px;font:650 22px/1.2 var(--display);font-stretch:112%;color:#fff}
+    .agency-price small{font:400 15px var(--body);color:#c9cfdc}
+    .agency-actions{display:flex;flex-direction:column;gap:12px;min-width:250px}
+    .agency-actions .btn-light{background:#fff;color:var(--navy)}
+    .agency-actions .btn-light:hover{background:#e8ecf7}
+    .agency-actions .btn-outline{border-color:#ffffff59;color:#fff;background:transparent}
+    .agency-actions .btn-outline:hover{border-color:#fff}
+    .offers-section .section-head{max-width:46em}
+    .compare-wrap{margin-top:8px;background:#fff;border-radius:var(--radius);overflow-x:auto;box-shadow:var(--shadow)}
     .compare{width:100%;min-width:520px;border-collapse:collapse;color:var(--ink);font-size:15px}
     .compare th,.compare td{padding:14px 22px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-    .compare thead th{padding-top:24px;font:800 22px/1.2 var(--display);letter-spacing:-.02em}
-    .compare thead th small{display:block;margin-top:6px;font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .compare thead th{padding-top:24px;font:650 22px/1.2 var(--display);font-stretch:112%}
+    .compare thead th small{display:block;margin-top:6px;font:400 14px/1.4 var(--body);color:var(--muted)}
     .compare thead th.is-pro{background:var(--blue);color:#fff}
-    .compare thead th.is-pro small{color:#d8def7}
+    .compare thead th.is-pro small{color:#dfe6fc}
     .compare tbody th{width:36%;font-weight:500;color:var(--muted)}
     .compare td.is-pro{background:var(--tint)}
-    .compare .price{font:800 32px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-    .compare .price small{display:block;margin-top:6px;font:500 14px/1.4 var(--body);letter-spacing:0;color:var(--muted)}
+    .compare .price{font:650 30px/1 var(--display);font-stretch:112%;font-variant-numeric:tabular-nums}
+    .compare .price small{display:block;margin-top:6px;font:400 14px/1.4 var(--body);color:var(--muted)}
     .compare .yes{position:relative;padding-left:48px}
     .compare .yes::before{content:"";position:absolute;left:24px;top:20px;width:12px;height:6px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
     .compare .no{color:var(--faint)}
@@ -102,30 +140,36 @@
     .compare tfoot .is-pro{display:flex;flex-direction:column;gap:10px}
     .compare tfoot .btn{width:100%}
     .compare tfoot a:not(.btn){color:var(--blue);font-weight:700}
-    .other-offers{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .faq-pro{margin-top:96px}
-    @media (max-width:1040px){.hero-pro .hero-grid{grid-template-columns:minmax(0,1fr)}.week{max-width:620px}}
-    @media (max-width:820px){.usages{grid-template-columns:minmax(0,1fr);gap:28px}.faq-pro{margin-top:72px}}
-    @media (max-width:600px){.compare th,.compare td{padding:12px 14px}.compare .yes{padding-left:36px}.compare .yes::before{left:14px;top:18px}.compare thead th{font-size:18px}.compare .price{font-size:26px}.preview table{min-width:520px}.preview th:nth-child(2),.preview td:nth-child(2),.preview th:nth-child(8),.preview td:nth-child(8){display:none}.masked.t span,tr:nth-child(n) .masked.t span{width:72px}.preview th,.preview td{padding:11px 10px}.hero-pro{padding:40px 0 56px}.hero-pro .hero-actions .btn{flex:1 1 100%}.week th,.week td{padding:10px 12px}.week h2,.week > p,.week-foot{padding-left:14px;padding-right:14px}}
-    /* Audit UX (octobre 2026) */
-    .city-card .qcard-price strong{color:var(--ink)}
-    .other-offers a{display:inline-block;padding:9px 0;margin:-9px 0}
-    @media (max-width:820px){.other-offers{grid-template-columns:minmax(0,1fr)}}
+    .offers-note{margin-top:22px;font-size:15px;color:var(--muted);max-width:40em}
+    .other-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:40px}
+    .other-offers > div{padding:24px;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+    .other-offers{padding-top:0;border-top:0}
+    .other-offers h3{font-size:20px;color:var(--ink);margin-bottom:0}
+    .other-offers p{margin-top:8px;color:var(--muted);font-size:16px}
+    .other-offers a{display:inline-block;margin-top:12px;padding:9px 0;color:var(--blue);font-weight:700}
+    .faq-pro{margin-top:0}
+    @media (max-width:1040px){.feature-row{grid-template-columns:minmax(0,1fr);gap:36px}.feature-row.flip .feature-copy{order:0}.agency-band .shell{grid-template-columns:minmax(0,1fr)}.agency-actions{flex-direction:row;flex-wrap:wrap}}
+    @media (max-width:820px){.other-offers{grid-template-columns:minmax(0,1fr)}.feature-row{padding:56px 0}}
     @media (max-width:600px){
-      .week table{width:100%;table-layout:fixed}
-      .week th,.week td{padding:10px 8px}
-      .week th:first-child{width:32%;padding-left:14px}
-      .week th:last-child,.week td:last-child{padding-right:14px}
-      .week thead th{letter-spacing:0;white-space:normal}
+      .home-hero{padding:56px 0 48px}
+      .home-hero .hero-sub{font-size:16px}
+      .search-box{min-height:56px;padding-left:16px;border-radius:14px}
+      .search-box input{height:54px;font-size:16px}
+      .city-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+      .city-links a{flex-direction:column;align-items:center;gap:0;padding:10px 8px;border-radius:12px;font-size:13px;line-height:1.35}
+      .preview table{min-width:0;width:100%}
+      .preview th:nth-child(1),.preview td:nth-child(1),.preview th:nth-child(8),.preview td:nth-child(8),.preview th:nth-child(5),.preview td:nth-child(5){display:none}
+      .preview th,.preview td{padding:11px 10px}
+      .week th,.week td{padding:10px 10px}
+      .week th:first-child{padding-left:14px}
       .compare{min-width:0;font-size:14px}
       .compare th,.compare td{padding:12px 10px}
-      .compare tbody th{width:34%}
       .compare thead th{font-size:17px}
-      .compare .yes{padding-left:30px}.compare .yes::before{left:10px}
+      .compare .yes{padding-left:30px}.compare .yes::before{left:10px;top:18px}
       .compare .price{font-size:24px}
-      .compare tfoot td{padding:16px 10px 20px}
       .compare tfoot .btn{white-space:normal;line-height:1.25;padding:10px 12px}
       .city-card dl > :nth-child(n+3){display:none}
+      .agency-actions .btn{flex:1 1 100%}
     }
   </style>
   <link rel="stylesheet" href="/assets/components.css">
@@ -140,49 +184,109 @@
         <span class="logo-word">Atlas Data</span>
       </a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <!-- villes-menu --><details class="nav-cities"><summary>Villes</summary><ul><li><a href="/marrakech/"><span>Marrakech</span><small>12 687 MAD/m²</small></a></li><li><a href="/casablanca/"><span>Casablanca</span><small>11 273 MAD/m²</small></a></li><li><a href="/rabat/"><span>Rabat</span><small>19 048 MAD/m²</small></a></li><li><a href="/tanger/"><span>Tanger</span><small>11 875 MAD/m²</small></a></li><li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details><!-- /villes-menu --><a href="#apercu">Aperçu du fichier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a>
+        <!-- villes-menu --><details class="nav-cities"><summary>Villes</summary><ul><li><a href="/marrakech/"><span>Marrakech</span><small>12 687 MAD/m²</small></a></li><li><a href="/casablanca/"><span>Casablanca</span><small>11 273 MAD/m²</small></a></li><li><a href="/rabat/"><span>Rabat</span><small>19 048 MAD/m²</small></a></li><li><a href="/tanger/"><span>Tanger</span><small>11 875 MAD/m²</small></a></li><li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details><!-- /villes-menu --><a href="#outils">Outils</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a>
       </nav>
       <a class="btn btn-primary header-cta" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data">Demander l'accès Pro</a>
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
-      <!-- villes-mobile --><p class="mobile-nav-title">Prix par ville</p><a class="mobile-nav-city" href="/marrakech/">Marrakech <small>12 687 MAD/m²</small></a><a class="mobile-nav-city" href="/casablanca/">Casablanca <small>11 273 MAD/m²</small></a><a class="mobile-nav-city" href="/rabat/">Rabat <small>19 048 MAD/m²</small></a><a class="mobile-nav-city" href="/tanger/">Tanger <small>11 875 MAD/m²</small></a><!-- /villes-mobile --><a href="#apercu">Aperçu du fichier</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a><a href="/marrakech/#budget">Calculer mon budget</a><a href="dashboard.html">Dashboard</a><a href="#contact">Contact</a>
+      <!-- villes-mobile --><p class="mobile-nav-title">Prix par ville</p><a class="mobile-nav-city" href="/marrakech/">Marrakech <small>12 687 MAD/m²</small></a><a class="mobile-nav-city" href="/casablanca/">Casablanca <small>11 273 MAD/m²</small></a><a class="mobile-nav-city" href="/rabat/">Rabat <small>19 048 MAD/m²</small></a><a class="mobile-nav-city" href="/tanger/">Tanger <small>11 875 MAD/m²</small></a><!-- /villes-mobile --><a href="#outils">Outils</a><a href="#offres">Offres</a><a href="#methode">Méthode</a><a href="#faq">Questions</a><a href="/marrakech/#budget">Calculer mon budget</a><a href="dashboard.html">Dashboard</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero hero-pro" aria-labelledby="hero-title">
-      <div class="shell hero-grid">
-        <div class="hero-copy">
-          <h1 id="hero-title">Toutes les annonces immobilières de votre ville, chaque lundi, dans un fichier Excel.</h1>
-          <p class="hero-lede">Pour les agences et les professionnels de l'immobilier à Marrakech, Casablanca, Rabat et Tanger : 13 039 annonces d'appartements à vendre au relevé du 9 novembre 2026, avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur Avito, pas des prix de vente.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple</a>
-            <a class="btn btn-ghost" href="#villes">Voir les prix par ville</a>
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="shell">
+        <h1 id="hero-title">Combien coûte le m² dans votre quartier&nbsp;?</h1>
+        <p class="hero-sub">Prix médians demandés au m², calculés sur 13 039 annonces d'appartements à vendre publiées sur Avito à Marrakech, Casablanca, Rabat et Tanger. Relevé du 9 novembre 2026, mis à jour chaque lundi.</p>
+        <div class="search" role="search">
+          <label for="q">Cherchez une ville ou un quartier</label>
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Guéliz, Maarif, Hay Riad, Malabata…" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q-results">
           </div>
-          <p class="buyer-link">Vous achetez&nbsp;? <a href="/marrakech/#budget">Calculez votre budget</a></p>
+          <ul class="search-results" id="q-results" role="listbox" aria-label="Résultats" hidden></ul>
+          <p class="search-hint">162 villes et quartiers, avec leur prix médian demandé au m².</p>
         </div>
-        <div class="week">
-          <p class="ticket-label"><span>Relevé hebdomadaire</span><span>Avito</span></p>
-          <h2>Dans le fichier de cette semaine</h2>
-          <p>Relevé du 9 novembre 2026, annonces exploitables par ville.</p>
-          <div class="table-wrap"><table>
-            <caption class="sr-only">Annonces, nouvelles annonces et baisses de prix par ville</caption>
-            <thead><tr><th scope="col">Ville</th><th scope="col" class="num">Annonces</th><th scope="col" class="num">Nouvelles</th><th scope="col" class="num">Baisses de prix</th></tr></thead>
-            <tbody>
+        <ul class="city-links" aria-label="Prix médian demandé par ville"><li><a href="/marrakech/"><span>Marrakech</span> <b>12 687</b> MAD/m²</a></li><li><a href="/casablanca/"><span>Casablanca</span> <b>11 273</b> MAD/m²</a></li><li><a href="/rabat/"><span>Rabat</span> <b>19 048</b> MAD/m²</a></li><li><a href="/tanger/"><span>Tanger</span> <b>11 875</b> MAD/m²</a></li></ul>
+      </div>
+      <script type="application/json" id="search-data">[{"n":"Marrakech","c":"","u":"/marrakech/","m":12687,"k":2663},{"n":"Av Mohammed VI","c":"Marrakech","u":"/marrakech/av-mohammed-vi/","m":26667,"k":28},{"n":"Agdal","c":"Marrakech","u":"/marrakech/agdal/","m":23750,"k":65},{"n":"Hivernage","c":"Marrakech","u":"/marrakech/hivernage/","m":21552,"k":73},{"n":"Victor Hugo","c":"Marrakech","u":"/marrakech/victor-hugo/","m":20000,"k":37},{"n":"Guéliz","c":"Marrakech","u":"/marrakech/gueliz/","m":19658,"k":539},{"n":"Centre Ville","c":"Marrakech","u":"/marrakech/centre-ville/","m":19469,"k":24},{"n":"Majorelle","c":"Marrakech","u":"/marrakech/majorelle/","m":17078,"k":28},{"n":"Semlalia","c":"Marrakech","u":"/marrakech/semlalia/","m":16437,"k":70},{"n":"Av Abdelkrim El Khattabi","c":"Marrakech","u":"/marrakech/av-abdelkrim-el-khattabi/","m":16190,"k":25},{"n":"Palmeraie","c":"Marrakech","u":"/marrakech/palmeraie/","m":16102,"k":26},{"n":"Annakhil","c":"Marrakech","u":"/marrakech/annakhil/","m":15336,"k":18},{"n":"Route d'Amezmiz","c":"Marrakech","u":"/marrakech/route-d-amezmiz/","m":15114,"k":42},{"n":"Route de Casablanca","c":"Marrakech","u":"/marrakech/route-de-casablanca/","m":14744,"k":165},{"n":"Route de Safi","c":"Marrakech","u":"/marrakech/route-de-safi/","m":13265,"k":55},{"n":"Route de Fès","c":"Marrakech","u":"/marrakech/route-de-fes/","m":12587,"k":19},{"n":"Sidi Abbad","c":"Marrakech","u":"/marrakech/sidi-abbad/","m":12164,"k":10},{"n":"Targa","c":"Marrakech","u":"/marrakech/targa/","m":12000,"k":81},{"n":"Hay Izdihar","c":"Marrakech","u":"/marrakech/hay-izdihar/","m":12000,"k":104},{"n":"Hay Charaf","c":"Marrakech","u":"/marrakech/hay-charaf/","m":11364,"k":65},{"n":"Allal El Fassi","c":"Marrakech","u":"/marrakech/allal-el-fassi/","m":11330,"k":74},{"n":"Issil","c":"Marrakech","u":"/marrakech/issil/","m":11250,"k":11},{"n":"Rouidat","c":"Marrakech","u":"/marrakech/rouidat/","m":11184,"k":9},{"n":"Bouaakkaz","c":"Marrakech","u":"/marrakech/bouaakkaz/","m":11137,"k":18},{"n":"Daoudiate","c":"Marrakech","u":"/marrakech/daoudiate/","m":11105,"k":26},{"n":"Route d'Ourika","c":"Marrakech","u":"/marrakech/route-d-ourika/","m":10834,"k":24},{"n":"Hay Targa","c":"Marrakech","u":"/marrakech/hay-targa/","m":10700,"k":14},{"n":"Amerchich","c":"Marrakech","u":"/marrakech/amerchich/","m":10000,"k":23},{"n":"Ain Mezouar","c":"Marrakech","u":"/marrakech/ain-mezouar/","m":10000,"k":44},{"n":"Mabrouka","c":"Marrakech","u":"/marrakech/mabrouka/","m":10000,"k":110},{"n":"Es Saada","c":"Marrakech","u":"/marrakech/es-saada/","m":9412,"k":37},{"n":"Azli","c":"Marrakech","u":"/marrakech/azli/","m":9071,"k":10},{"n":"Massira 1","c":"Marrakech","u":"/marrakech/massira-1/","m":8897,"k":18},{"n":"Massira 2","c":"Marrakech","u":"/marrakech/massira-2/","m":8684,"k":14},{"n":"Socoma","c":"Marrakech","u":"/marrakech/socoma/","m":8562,"k":10},{"n":"Azzouzia","c":"Marrakech","u":"/marrakech/azzouzia/","m":8438,"k":53},{"n":"Sidi Youssef Ben Ali","c":"Marrakech","u":"/marrakech/sidi-youssef-ben-ali/","m":8427,"k":11},{"n":"M'Hamid","c":"Marrakech","u":"/marrakech/m-hamid/","m":8333,"k":246},{"n":"Massira 3","c":"Marrakech","u":"/marrakech/massira-3/","m":8205,"k":21},{"n":"Massira","c":"Marrakech","u":"/marrakech/massira/","m":7802,"k":10},{"n":"Route d'Agadir - Essaouira","c":"Marrakech","u":"/marrakech/route-d-agadir-essaouira/","m":7639,"k":10},{"n":"Les Portes de Marrakech","c":"Marrakech","u":"/marrakech/les-portes-de-marrakech/","m":7457,"k":60},{"n":"Route de Ouarzazate","c":"Marrakech","u":"/marrakech/route-de-ouarzazate/","m":6667,"k":13},{"n":"Route de Tamansourt","c":"Marrakech","u":"/marrakech/route-de-tamansourt/","m":5343,"k":26},{"n":"Casablanca","c":"","u":"/casablanca/","m":11273,"k":7644},{"n":"Marina","c":"Casablanca","u":"/casablanca/marina/","m":30074,"k":12},{"n":"Casablanca Finance City","c":"Casablanca","u":"/casablanca/casablanca-finance-city/","m":24038,"k":47},{"n":"Oasis","c":"Casablanca","u":"/casablanca/oasis/","m":20729,"k":92},{"n":"Riviera","c":"Casablanca","u":"/casablanca/riviera/","m":20543,"k":24},{"n":"Triangle d'Or","c":"Casablanca","u":"/casablanca/triangle-d-or/","m":19328,"k":27},{"n":"Ferme Bretone","c":"Casablanca","u":"/casablanca/ferme-bretone/","m":19149,"k":81},{"n":"Racine","c":"Casablanca","u":"/casablanca/racine/","m":18587,"k":137},{"n":"Aïn Diab","c":"Casablanca","u":"/casablanca/ain-diab/","m":18500,"k":45},{"n":"Hermitage","c":"Casablanca","u":"/casablanca/hermitage/","m":18125,"k":19},{"n":"Franceville","c":"Casablanca","u":"/casablanca/franceville/","m":17568,"k":37},{"n":"Palmier","c":"Casablanca","u":"/casablanca/palmier/","m":17273,"k":106},{"n":"Anfa","c":"Casablanca","u":"/casablanca/anfa/","m":17118,"k":174},{"n":"Gauthier","c":"Casablanca","u":"/casablanca/gauthier/","m":16958,"k":116},{"n":"Les Princesses","c":"Casablanca","u":"/casablanca/les-princesses/","m":16406,"k":135},{"n":"C.I.L","c":"Casablanca","u":"/casablanca/c-i-l/","m":15452,"k":24},{"n":"Californie","c":"Casablanca","u":"/casablanca/californie/","m":15116,"k":145},{"n":"Maarif","c":"Casablanca","u":"/casablanca/maarif/","m":14946,"k":642},{"n":"Bachkou","c":"Casablanca","u":"/casablanca/bachkou/","m":14768,"k":42},{"n":"Val Fleuri","c":"Casablanca","u":"/casablanca/val-fleuri/","m":14500,"k":87},{"n":"Bourgogne","c":"Casablanca","u":"/casablanca/bourgogne/","m":14489,"k":230},{"n":"Quartier des Hôpitaux","c":"Casablanca","u":"/casablanca/quartier-des-hopitaux/","m":14205,"k":209},{"n":"Maârif Extension","c":"Casablanca","u":"/casablanca/maarif-extension/","m":14113,"k":119},{"n":"Abdelmoumen","c":"Casablanca","u":"/casablanca/abdelmoumen/","m":13446,"k":82},{"n":"Sidi Belyout","c":"Casablanca","u":"/casablanca/sidi-belyout/","m":13396,"k":124},{"n":"Derb Ghallef","c":"Casablanca","u":"/casablanca/derb-ghallef/","m":13174,"k":14},{"n":"2 Mars","c":"Casablanca","u":"/casablanca/2-mars/","m":12877,"k":204},{"n":"Almaz","c":"Casablanca","u":"/casablanca/almaz/","m":12532,"k":52},{"n":"Mandarona","c":"Casablanca","u":"/casablanca/mandarona/","m":12284,"k":14},{"n":"Beauséjour","c":"Casablanca","u":"/casablanca/beausejour/","m":12019,"k":102},{"n":"Mers Sultan","c":"Casablanca","u":"/casablanca/mers-sultan/","m":11814,"k":90},{"n":"Belvédère","c":"Casablanca","u":"/casablanca/belvedere/","m":11480,"k":234},{"n":"Derb Omar","c":"Casablanca","u":"/casablanca/derb-omar/","m":11330,"k":12},{"n":"La Gironde","c":"Casablanca","u":"/casablanca/la-gironde/","m":11148,"k":98},{"n":"Centre Ville","c":"Casablanca","u":"/casablanca/centre-ville/","m":11017,"k":63},{"n":"Alsace Lorraine","c":"Casablanca","u":"/casablanca/alsace-lorraine/","m":10750,"k":13},{"n":"Route d'Azemmour","c":"Casablanca","u":"/casablanca/route-d-azemmour/","m":10714,"k":25},{"n":"Hay Chrifa","c":"Casablanca","u":"/casablanca/hay-chrifa/","m":10564,"k":20},{"n":"Laimoune","c":"Casablanca","u":"/casablanca/laimoune/","m":10460,"k":8},{"n":"Roches Noires","c":"Casablanca","u":"/casablanca/roches-noires/","m":10455,"k":165},{"n":"Aïn Chock","c":"Casablanca","u":"/casablanca/ain-chock/","m":10297,"k":214},{"n":"Sidi Maarouf","c":"Casablanca","u":"/casablanca/sidi-maarouf/","m":10296,"k":217},{"n":"Nassim","c":"Casablanca","u":"/casablanca/nassim/","m":10114,"k":44},{"n":"Ben Ejdia","c":"Casablanca","u":"/casablanca/ben-ejdia/","m":10078,"k":15},{"n":"Hay Hassani","c":"Casablanca","u":"/casablanca/hay-hassani/","m":10000,"k":208},{"n":"Aïn Borja","c":"Casablanca","u":"/casablanca/ain-borja/","m":9688,"k":113},{"n":"Ain Sebaa","c":"Casablanca","u":"/casablanca/ain-sebaa/","m":9685,"k":340},{"n":"Route d'El Jadida","c":"Casablanca","u":"/casablanca/route-d-el-jadida/","m":9639,"k":11},{"n":"Hay Inara","c":"Casablanca","u":"/casablanca/hay-inara/","m":9624,"k":13},{"n":"Al Fida","c":"Casablanca","u":"/casablanca/al-fida/","m":9542,"k":32},{"n":"Al Qods","c":"Casablanca","u":"/casablanca/al-qods/","m":9395,"k":38},{"n":"Al Mostakbal","c":"Casablanca","u":"/casablanca/al-mostakbal/","m":9330,"k":10},{"n":"Hay El Farah","c":"Casablanca","u":"/casablanca/hay-el-farah/","m":9229,"k":8},{"n":"Oulfa","c":"Casablanca","u":"/casablanca/oulfa/","m":8704,"k":569},{"n":"Sbata","c":"Casablanca","u":"/casablanca/sbata/","m":8500,"k":39},{"n":"Bournazil","c":"Casablanca","u":"/casablanca/bournazil/","m":8333,"k":36},{"n":"Ben M'sick","c":"Casablanca","u":"/casablanca/ben-m-sick/","m":8311,"k":28},{"n":"Lissasfa","c":"Casablanca","u":"/casablanca/lissasfa/","m":8182,"k":75},{"n":"Hay Sadri","c":"Casablanca","u":"/casablanca/hay-sadri/","m":8170,"k":14},{"n":"Hay Mohammadi","c":"Casablanca","u":"/casablanca/hay-mohammadi/","m":8070,"k":113},{"n":"Sidi Othmane","c":"Casablanca","u":"/casablanca/sidi-othmane/","m":7576,"k":59},{"n":"Sidi Bernoussi","c":"Casablanca","u":"/casablanca/sidi-bernoussi/","m":7515,"k":274},{"n":"Hay Albaraka","c":"Casablanca","u":"/casablanca/hay-albaraka/","m":7500,"k":17},{"n":"Hay Alfalah","c":"Casablanca","u":"/casablanca/hay-alfalah/","m":7299,"k":8},{"n":"Sidi Moumen","c":"Casablanca","u":"/casablanca/sidi-moumen/","m":7115,"k":345},{"n":"Hay Moulay Rachid","c":"Casablanca","u":"/casablanca/hay-moulay-rachid/","m":6774,"k":37},{"n":"Salmia","c":"Casablanca","u":"/casablanca/salmia/","m":6693,"k":36},{"n":"Errahma","c":"Casablanca","u":"/casablanca/errahma/","m":6452,"k":201},{"n":"Al Madina Aljadida","c":"Casablanca","u":"/casablanca/al-madina-aljadida/","m":5893,"k":20},{"n":"Rabat","c":"","u":"/rabat/","m":19048,"k":647},{"n":"Souissi","c":"Rabat","u":"/rabat/souissi/","m":26016,"k":25},{"n":"Hay Riad","c":"Rabat","u":"/rabat/hay-riad/","m":25000,"k":164},{"n":"Agdal","c":"Rabat","u":"/rabat/agdal/","m":19831,"k":126},{"n":"Haut Agdal","c":"Rabat","u":"/rabat/haut-agdal/","m":19231,"k":11},{"n":"Hassan","c":"Rabat","u":"/rabat/hassan/","m":18601,"k":50},{"n":"Guich Oudaya","c":"Rabat","u":"/rabat/guich-oudaya/","m":16667,"k":31},{"n":"Quartier de l'Océan","c":"Rabat","u":"/rabat/quartier-de-l-ocean/","m":16288,"k":34},{"n":"Hay el Fath","c":"Rabat","u":"/rabat/hay-el-fath/","m":15778,"k":24},{"n":"Diour Jamaa","c":"Rabat","u":"/rabat/diour-jamaa/","m":15351,"k":27},{"n":"Médina de Rabat","c":"Rabat","u":"/rabat/medina-de-rabat/","m":15066,"k":10},{"n":"Aakkari","c":"Rabat","u":"/rabat/aakkari/","m":14644,"k":8},{"n":"Yacoub El Mansour","c":"Rabat","u":"/rabat/yacoub-el-mansour/","m":12489,"k":42},{"n":"Hay Nahda","c":"Rabat","u":"/rabat/hay-nahda/","m":9762,"k":26},{"n":"Tanger","c":"","u":"/tanger/","m":11875,"k":2085},{"n":"Malabata","c":"Tanger","u":"/tanger/malabata/","m":22364,"k":154},{"n":"Iberie","c":"Tanger","u":"/tanger/iberie/","m":20710,"k":39},{"n":"Sania","c":"Tanger","u":"/tanger/sania/","m":20564,"k":8},{"n":"De La Plage","c":"Tanger","u":"/tanger/de-la-plage/","m":19329,"k":44},{"n":"Mozart","c":"Tanger","u":"/tanger/mozart/","m":17108,"k":26},{"n":"Administratif","c":"Tanger","u":"/tanger/administratif/","m":16667,"k":33},{"n":"Nouinouich","c":"Tanger","u":"/tanger/nouinouich/","m":16396,"k":8},{"n":"Centre-ville","c":"Tanger","u":"/tanger/centre-ville/","m":15986,"k":301},{"n":"Castilla","c":"Tanger","u":"/tanger/castilla/","m":14352,"k":35},{"n":"Moulay Youssef","c":"Tanger","u":"/tanger/moulay-youssef/","m":13889,"k":11},{"n":"Du Golf","c":"Tanger","u":"/tanger/du-golf/","m":13333,"k":17},{"n":"Branes 2","c":"Tanger","u":"/tanger/branes-2/","m":12755,"k":23},{"n":"Drissia","c":"Tanger","u":"/tanger/drissia/","m":12751,"k":10},{"n":"Val Fleuri","c":"Tanger","u":"/tanger/val-fleuri/","m":12182,"k":43},{"n":"Ziatene","c":"Tanger","u":"/tanger/ziatene/","m":11957,"k":33},{"n":"Aida","c":"Tanger","u":"/tanger/aida/","m":11519,"k":10},{"n":"Tanja Balia","c":"Tanger","u":"/tanger/tanja-balia/","m":11429,"k":129},{"n":"Marjane","c":"Tanger","u":"/tanger/marjane/","m":11206,"k":160},{"n":"Achakar","c":"Tanger","u":"/tanger/achakar/","m":10950,"k":20},{"n":"Mesnana","c":"Tanger","u":"/tanger/mesnana/","m":10865,"k":92},{"n":"Moujahidine","c":"Tanger","u":"/tanger/moujahidine/","m":10735,"k":53},{"n":"Ahlane","c":"Tanger","u":"/tanger/ahlane/","m":10585,"k":48},{"n":"El Majd","c":"Tanger","u":"/tanger/el-majd/","m":10244,"k":12},{"n":"Azib Haj Kaddour","c":"Tanger","u":"/tanger/azib-haj-kaddour/","m":10204,"k":8},{"n":"Zemmouri","c":"Tanger","u":"/tanger/zemmouri/","m":10052,"k":26},{"n":"Hay Hassani","c":"Tanger","u":"/tanger/hay-hassani/","m":9606,"k":76},{"n":"Aharrarine","c":"Tanger","u":"/tanger/aharrarine/","m":8858,"k":44},{"n":"Casabarata","c":"Tanger","u":"/tanger/casabarata/","m":8750,"k":9},{"n":"Al Irfane 2","c":"Tanger","u":"/tanger/al-irfane-2/","m":8386,"k":18},{"n":"la Nouvelle Ville Ibn Battouta","c":"Tanger","u":"/tanger/la-nouvelle-ville-ibn-battouta/","m":7759,"k":35},{"n":"Aouama Gharbia","c":"Tanger","u":"/tanger/aouama-gharbia/","m":7710,"k":28},{"n":"Boukhalef","c":"Tanger","u":"/tanger/boukhalef/","m":7569,"k":59},{"n":"Mghogha","c":"Tanger","u":"/tanger/mghogha/","m":7275,"k":32},{"n":"El Baraka","c":"Tanger","u":"/tanger/el-baraka/","m":6218,"k":8}]</script>
+    </section>
+
+    <section class="features" id="outils" aria-label="Les outils Atlas Data">
+      <div class="shell">
+        <div class="feature-row">
+          <div class="feature-copy">
+            <h2>Comparez les quartiers d'une ville</h2>
+            <p>Chaque ville a sa page : les quartiers classés du plus cher au moins cher, la médiane de la ville en repère, et une page par quartier avec la répartition des prix et les types d'appartements.</p>
+            <a class="btn btn-primary" href="/casablanca/">Voir les 68 quartiers de Casablanca</a>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><strong>Casablanca</strong><span>prix médian demandé, MAD/m²</span></div>
+            <ul class="rank"><li class=""><a href="/casablanca/marina/"><span>Marina</span><span class="bar"><i style="width:100.0%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">30 074</span></a></li><li class=""><a href="/casablanca/casablanca-finance-city/"><span>Casablanca Finance City</span><span class="bar"><i style="width:79.9%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">24 038</span></a></li><li class=""><a href="/casablanca/oasis/"><span>Oasis</span><span class="bar"><i style="width:68.9%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">20 729</span></a></li><li class=""><a href="/casablanca/riviera/"><span>Riviera</span><span class="bar"><i style="width:68.3%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">20 543</span></a></li><li class=""><a href="/casablanca/triangle-d-or/"><span>Triangle d&#x27;Or</span><span class="bar"><i style="width:64.3%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">19 328</span></a></li><li class=""><a href="/casablanca/ferme-bretone/"><span>Ferme Bretone</span><span class="bar"><i style="width:63.7%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">19 149</span></a></li><li class=""><a href="/casablanca/racine/"><span>Racine</span><span class="bar"><i style="width:61.8%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">18 587</span></a></li><li class=""><a href="/casablanca/ain-diab/"><span>Aïn Diab</span><span class="bar"><i style="width:61.5%"></i><b class="ref" style="left:37.5%"></b></span><span class="v">18 500</span></a></li></ul><p class="card-foot">Les 8 quartiers les plus chers sur 68 classés, en MAD/m² demandés. <span class="rank-legend"><b class="ref-key" aria-hidden="true"></b>médiane de Casablanca (11 273 MAD/m²)</span></p>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="feature-copy">
+            <h2>Voyez ce que votre budget permet</h2>
+            <p>Entrez un budget et choisissez des quartiers : le calculateur donne la surface accessible au prix médian demandé, et le nombre d'annonces réellement à ce prix.</p>
+            <a class="btn btn-primary" href="/casablanca/#budget">Calculer mon budget</a>
+          </div>
+          <div class="panel"><p class="calc-q">Avec <strong>1&nbsp;000&nbsp;000 MAD</strong> à Casablanca, au prix médian demandé&nbsp;:</p><ul class="calc-rows"><li><a href="/casablanca/marina/"><span>Marina</span><strong>33&nbsp;m²</strong><small>30 074 MAD/m²</small></a></li><li><a href="/casablanca/alsace-lorraine/"><span>Alsace Lorraine</span><strong>93&nbsp;m²</strong><small>10 750 MAD/m²</small></a></li><li><a href="/casablanca/al-madina-aljadida/"><span>Al Madina Aljadida</span><strong>170&nbsp;m²</strong><small>5 893 MAD/m²</small></a></li></ul><p class="card-foot">Surface = budget / prix médian demandé du quartier, relevé du 9 novembre 2026.</p></div>
+        </div>
+
+        <div class="feature-row" id="apercu">
+          <div class="feature-copy">
+            <h2>Parcourez les annonces une par une</h2>
+            <p>Le dashboard filtre toutes les annonces du relevé par ville, quartier, prix, surface et chambres. Gratuit, sans inscription. Le titre, l'agence et le lien de chaque annonce sont réservés à la version Pro.</p>
+            <a class="btn btn-primary" href="dashboard.html">Ouvrir le dashboard</a>
+          </div>
+          <div class="panel preview">
+            <div class="table-wrap" style="margin:0"><table>
+              <caption class="sr-only">Extrait des annonces : les colonnes Titre, Agence et Lien sont réservées à la version Pro</caption>
+              <thead><tr><th scope="col" class="pro-col">Titre<b>Pro</b></th><th scope="col" class="pro-col">Agence<b>Pro</b></th><th scope="col">Ville</th><th scope="col">Quartier</th><th scope="col" class="num">Surface</th><th scope="col" class="num">Prix demandé (MAD)</th><th scope="col" class="num">MAD/m²</th><th scope="col" class="pro-col">Lien<b>Pro</b></th></tr></thead>
+              <tbody>
+              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Casablanca</td><td>Roches Noires</td><td class="num">100 m²</td><td class="num">1 050 000</td><td class="num">10 500</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
+              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Marrakech</td><td>Route de Safi</td><td class="num">87 m²</td><td class="num">830 000</td><td class="num">9 540</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
+              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Tanger</td><td>Tanja Balia</td><td class="num">68 m²</td><td class="num">670 000</td><td class="num">9 853</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
+              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Rabat</td><td>Hay el Fath</td><td class="num">98 m²</td><td class="num">1 900 000</td><td class="num">19 388</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
+              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Marrakech</td><td>Socoma</td><td class="num">156 m²</td><td class="num">1 100 000</td><td class="num">7 051</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
+              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Casablanca</td><td>Autre secteur</td><td class="num">70 m²</td><td class="num">550 000</td><td class="num">7 857</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
+              </tbody>
+            </table></div>
+            <p class="card-foot">Extrait du relevé du 9 novembre 2026 : 6 annonces parmi 13 039. Prix demandés, pas prix de vente.</p>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="feature-copy">
+            <h2>Recevez le relevé de votre ville chaque lundi</h2>
+            <p>Pour les agences et les professionnels de l'immobilier à Marrakech, Casablanca, Rabat et Tanger : 13 039 annonces d'appartements à vendre au relevé du 9 novembre 2026, avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur Avito, pas des prix de vente.</p>
+            <a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un fichier d'exemple</a>
+            <p class="aside">Version Pro : 29&nbsp;€ HT par mois, une ville au choix, sans engagement.</p>
+          </div>
+          <div class="panel week">
+            <div class="panel-title"><strong>Dans le fichier de cette semaine</strong><span>Avito</span></div>
+            <p class="calc-q" style="padding-top:4px">Relevé du 9 novembre 2026, annonces exploitables par ville.</p>
+            <div class="table-wrap" style="margin:0"><table>
+              <caption class="sr-only">Annonces, nouvelles annonces et baisses de prix par ville</caption>
+              <thead><tr><th scope="col">Ville</th><th scope="col" class="num">Annonces</th><th scope="col" class="num">Nouvelles</th><th scope="col" class="num">Baisses de prix</th></tr></thead>
+              <tbody>
               <tr><th scope="row"><a href="/marrakech/">Marrakech</a></th><td>2 663</td><td>-</td><td>-</td></tr>
               <tr><th scope="row"><a href="/casablanca/">Casablanca</a></th><td>7 644</td><td>-</td><td>-</td></tr>
               <tr><th scope="row"><a href="/rabat/">Rabat</a></th><td>647</td><td>-</td><td>-</td></tr>
               <tr><th scope="row"><a href="/tanger/">Tanger</a></th><td>2 085</td><td>-</td><td>-</td></tr>
-            </tbody>
-            <tfoot><tr><th scope="row">Total</th><td>13 039</td><td>-</td><td>-</td></tr></tfoot>
-          </table></div>
-          <p class="week-foot">Premier relevé : les nouvelles annonces et les baisses de prix apparaîtront au relevé suivant.</p>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td>13 039</td><td>-</td><td>-</td></tr></tfoot>
+            </table></div>
+            <p class="card-foot">Premier relevé : les nouvelles annonces et les baisses de prix apparaîtront au relevé suivant.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="villes" aria-labelledby="villes-title">
+    <section class="section section-soft" id="villes" aria-labelledby="villes-title">
       <div class="shell">
         <div class="section-head"><h2 id="villes-title">Les prix par ville</h2><p>Prix médian demandé au m² des appartements à vendre, au relevé du 9 novembre 2026. Une médiane par quartier n'est publiée qu'à partir de 8 annonces. Chaque page ville détaille ses quartiers, avec un calculateur de budget.</p></div>
         <ul class="city-cards">
@@ -194,44 +298,23 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="usages" aria-labelledby="usages-title">
+    <section class="agency-band" aria-labelledby="agences-title">
       <div class="shell">
-        <div class="section-head"><h2 id="usages-title">Ce que les agences en font</h2></div>
-        <div class="usages">
-          <div><h3>Appuyer un avis de valeur</h3><p>Face à un vendeur, montrez les prix demandés des appartements comparables du quartier, annonce par annonce, plutôt qu'une estimation de mémoire.</p></div>
-          <div><h3>Surveiller la concurrence</h3><p>Chaque lundi, les nouvelles annonces et les baisses de prix de votre ville sont signalées dans le fichier : vous voyez ce que les autres agences mettent en vente.</p></div>
-          <div><h3>Prospecter</h3><p>Repérez les biens dont le prix baisse ou qui restent en ligne depuis longtemps, grâce à la date de publication : autant de vendeurs à recontacter.</p></div>
+        <div>
+          <h2 id="agences-title">Vous êtes une agence à Marrakech, Casablanca, Rabat et Tanger&nbsp;?</h2>
+          <p>Chaque lundi, toutes les annonces Avito de votre ville dans un fichier Excel prêt à filtrer, avec le titre, l'agence, le lien, et les nouvelles annonces et baisses de prix signalées.</p>
+          <p class="agency-price">29&nbsp;€ HT par mois <small>une ville au choix, sans engagement</small></p>
+        </div>
+        <div class="agency-actions">
+          <a class="btn btn-light" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a>
+          <a class="btn btn-outline" href="#offres">Comparer gratuit et Pro</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="apercu" aria-labelledby="apercu-title">
+    <section class="section offers-section" id="offres" aria-labelledby="offres-title">
       <div class="shell">
-        <div class="section-head"><h2 id="apercu-title">Aperçu du fichier Pro</h2><p>Une ligne par annonce, avec le prix demandé, la surface et le prix au m². Le titre, l'agence et le lien de chaque annonce sont réservés à la version Pro.</p></div>
-        <div class="preview">
-          <div class="table-wrap" style="margin:0"><table>
-            <caption class="sr-only">Extrait du fichier Pro : les colonnes Titre, Agence et Lien sont masquées</caption>
-            <thead><tr><th scope="col" class="pro-col">Titre<b>Version Pro</b></th><th scope="col" class="pro-col">Agence<b>Version Pro</b></th><th scope="col">Ville</th><th scope="col">Quartier</th><th scope="col" class="num">Surface</th><th scope="col" class="num">Prix demandé (MAD)</th><th scope="col" class="num">MAD/m²</th><th scope="col" class="pro-col">Lien<b>Version Pro</b></th></tr></thead>
-            <tbody>
-              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Casablanca</td><td>Roches Noires</td><td class="num">100 m²</td><td class="num">1 050 000</td><td class="num">10 500</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
-              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Marrakech</td><td>Route de Safi</td><td class="num">87 m²</td><td class="num">830 000</td><td class="num">9 540</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
-              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Tanger</td><td>Tanja Balia</td><td class="num">68 m²</td><td class="num">670 000</td><td class="num">9 853</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
-              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Rabat</td><td>Hay el Fath</td><td class="num">98 m²</td><td class="num">1 900 000</td><td class="num">19 388</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
-              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Marrakech</td><td>Socoma</td><td class="num">156 m²</td><td class="num">1 100 000</td><td class="num">7 051</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
-              <tr><td class="masked t"><span></span><span class="sr-only">Version Pro</span></td><td class="masked a"><span></span><span class="sr-only">Version Pro</span></td><td>Casablanca</td><td>Autre secteur</td><td class="num">70 m²</td><td class="num">550 000</td><td class="num">7 857</td><td class="masked l"><span></span><span class="sr-only">Version Pro</span></td></tr>
-            </tbody>
-          </table></div>
-          <div class="preview-foot"><span>Extrait du relevé du 9 novembre 2026 : 6 annonces parmi 13 039. Prix demandés, pas prix de vente.</span><a class="btn btn-ghost" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple complet</a></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section offers" id="offres" aria-labelledby="offres-title">
-      <div class="shell">
-        <div class="offers-head">
-          <h2 id="offres-title">Atlas Data Pro, pour les agences de Marrakech, Casablanca, Rabat et Tanger</h2>
-          <p>Chaque lundi, toutes les annonces d'appartements publiées sur Avito dans votre ville, dans un fichier Excel prêt à filtrer. Repérez les nouveaux biens sans passer vos matinées sur les portails.</p>
-        </div>
+        <div class="section-head"><h2 id="offres-title">Gratuit ou Pro</h2><p>Les prix par quartier, le calculateur et le dashboard restent gratuits. La version Pro ajoute le fichier complet de votre ville, chaque lundi.</p></div>
         <div class="compare-wrap">
           <table class="compare">
             <caption class="sr-only">Ce que contient l'accès gratuit et ce qu'ajoute Atlas Data Pro</caption>
@@ -326,6 +409,46 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
     window.addEventListener('resize',function(){if(window.innerWidth>820)close()});
     document.getElementById('year').textContent=new Date().getFullYear();
+  })();
+  (function(){
+    'use strict';
+    // Recherche de l'accueil : villes et quartiers classés, réponse immédiate avec la médiane
+    var input=document.getElementById('q'),list=document.getElementById('q-results');
+    var data=JSON.parse(document.getElementById('search-data').textContent);
+    var fold=function(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()};
+    data.forEach(function(d){d.k2=fold(d.n+' '+d.c)});
+    var fmt=function(v){return String(v).replace(/\B(?=(\d{3})+(?!\d))/g,'\u202f')};
+    var esc=function(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+    var shown=[],active=-1;
+    function close(){list.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1}
+    function render(){
+      var q=fold(input.value);
+      if(!q){close();return}
+      var words=q.split(' ');
+      shown=data.filter(function(d){return words.every(function(w){return d.k2.indexOf(w)>-1})})
+        .sort(function(a,b){var sa=a.k2.indexOf(q)===0?0:1,sb=b.k2.indexOf(q)===0?0:1;return sa-sb||b.k-a.k}).slice(0,6);
+      active=-1;
+      list.innerHTML=shown.length?shown.map(function(d,i){
+        return '<li role="option" id="q-opt-'+i+'" aria-selected="false"><a href="'+d.u+'"><span class="r-name">'+esc(d.n)+(d.c?' <small>'+esc(d.c)+'</small>':' <small>ville</small>')+'</span>'+
+          '<span class="r-price">'+fmt(d.m)+'<small>MAD/m² médian</small></span><span class="r-meta">'+fmt(d.k)+' annonces analysées</span></a></li>'}).join('')
+        :'<li class="r-empty">Aucun quartier classé ne correspond. Un quartier apparaît ici dès qu\'un relevé compte au moins 8 annonces exploitables.</li>';
+      list.hidden=false;input.setAttribute('aria-expanded','true');
+    }
+    function move(step){
+      if(list.hidden||!shown.length)return;
+      active=(active+step+shown.length)%shown.length;
+      list.querySelectorAll('[role=option]').forEach(function(li,i){li.setAttribute('aria-selected',String(i===active))});
+      input.setAttribute('aria-activedescendant','q-opt-'+active);
+    }
+    input.addEventListener('input',render);
+    input.addEventListener('focus',function(){if(input.value)render()});
+    input.addEventListener('keydown',function(e){
+      if(e.key==='ArrowDown'){e.preventDefault();move(1)}
+      else if(e.key==='ArrowUp'){e.preventDefault();move(-1)}
+      else if(e.key==='Enter'&&shown.length){e.preventDefault();location.href=shown[Math.max(active,0)].u}
+      else if(e.key==='Escape'){close()}
+    });
+    document.addEventListener('click',function(e){if(!e.target.closest('.search'))close()});
   })();
   </script>
 </body>

@@ -1100,6 +1100,44 @@ def preview_rows(cities):
         for c, r in picked[:PRO_SAMPLE_ROWS])
 
 
+def search_index(cities):
+    """Villes et quartiers classés pour la recherche de l'accueil : nom, ville, lien, médiane, annonces."""
+    items = []
+    for c, st in cities:
+        items.append({"n": c["name"], "c": "", "u": f"/{c['slug']}/", "m": st["median"], "k": st["n"]})
+        for q in st["ranked"]:
+            items.append({"n": q["name"], "c": c["name"], "u": f"/{c['slug']}/{q['slug']}/", "m": q["median"], "k": q["n"]})
+    return json.dumps(items, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def city_chips(cities):
+    return "".join(f'<li><a href="/{c["slug"]}/"><span>{e(c["name"])}</span> <b>{n(st["median"])}</b> MAD/m²</a></li>'
+                   for c, st in cities)
+
+
+def feature_rank(cities):
+    """Aperçu « classement » : les 8 quartiers les plus chers de la ville qui en classe le plus."""
+    c, st = max(cities, key=lambda cs: len(cs[1]["ranked"]))
+    shown = st["ranked"][:8]
+    return c, st, (rank_list(c, shown, st["median"]) +
+                   f'<p class="card-foot">Les {len(shown)} quartiers les plus chers sur {len(st["ranked"])} classés, '
+                   f'en MAD/m² demandés. {rank_legend(c, st["median"])}</p>')
+
+
+def feature_calc(cities):
+    """Aperçu « budget » : ce qu'achète 1 million de MAD dans trois quartiers d'une même ville."""
+    c, st = max(cities, key=lambda cs: len(cs[1]["ranked"]))
+    ranked = st["ranked"]
+    picks = [ranked[0], ranked[len(ranked) // 2], ranked[-1]] if len(ranked) >= 3 else ranked
+    rows = "".join(
+        f'<li><a href="/{c["slug"]}/{q["slug"]}/"><span>{e(q["name"])}</span>'
+        f'<strong>{n(round(1_000_000 / q["median"]))}&nbsp;m²</strong><small>{n(q["median"])} MAD/m²</small></a></li>'
+        for q in picks)
+    return c, (f'<p class="calc-q">Avec <strong>1&nbsp;000&nbsp;000 MAD</strong> à {e(c["name"])}, au prix médian demandé&nbsp;:</p>'
+               f'<ul class="calc-rows">{rows}</ul>'
+               f'<p class="card-foot">Surface = budget / prix médian demandé du quartier, relevé du {long_date(st["date"])}.</p>')
+
+
 def render_home(cfg, all_stats):
     cities = home_cities(cfg, all_stats)
     dates = sorted({st["date"] for _, st in cities})
@@ -1144,6 +1182,8 @@ def render_home(cfg, all_stats):
         pro,
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]}
     or_list = join_fr([c["name"] for c, _ in cities]).replace(" et ", " ou ")
+    rank_city, rank_st, rank_html = feature_rank(cities)
+    calc_city, calc_html = feature_calc(cities)
     tokens = {
         "META_DESC": e(f"Pour les agences : chaque lundi, toutes les annonces d'appartements à vendre de {or_list} dans un fichier Excel, "
                        "avec les nouvelles annonces et les baisses de prix."),
@@ -1168,6 +1208,17 @@ def render_home(cfg, all_stats):
                       "Le relevé ne couvre pas l'ensemble du marché."),
         "FAQ": faq_html,
         "SOURCE": e(source),
+        "SEARCH_JSON": search_index(cities),
+        "SEARCH_COUNT": n(sum(1 + len(st["ranked"]) for _, st in cities)),
+        "CITY_CHIPS": city_chips(cities),
+        "HERO_SUB": (f"Prix médians demandés au m², calculés sur {n(total)} annonces d'appartements à vendre "
+                     f"publiées sur {e(source)} à {e(city_list)}. Relevé du {long_date(date)}, mis à jour chaque lundi."),
+        "RANK_CITY": e(rank_city["name"]),
+        "RANK_URL": f"/{rank_city['slug']}/",
+        "RANK_COUNT": str(len(rank_st["ranked"])),
+        "FEATURE_RANK": rank_html,
+        "CALC_URL": f"/{calc_city['slug']}/#budget",
+        "FEATURE_CALC": calc_html,
     }
     page = read_template("home.html")
     for k, v in tokens.items():

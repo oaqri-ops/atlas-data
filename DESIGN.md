@@ -2,23 +2,24 @@
 version: 1
 name: Atlas Data
 description: >
-  Data journalism for the Moroccan property market. A calm, numbers-first interface: navy ink on
-  white and cool-grey surfaces, one confident royal blue for data and primary actions, terracotta
-  and green only to say "above / below the city". Archivo (wide, heavy) for headlines and figures,
-  Roboto for reading, Roboto Mono for data labels. Every number is honest about its source, its date and its sample size.
+  Data for the Moroccan property market, light and airy since November 2026: navy ink on a pale
+  cool-grey canvas, white panels with soft shadows, one vivid blue for data and primary actions,
+  terracotta and green only to say "above / below the city". Archivo set wide (112%) and semi-bold
+  (650) for headlines and figures, Roboto for reading. Every number is honest about its source,
+  its date and its sample size.
 
 colors:
   ink: "#0f1a33"          # text, headings, dark buttons
   muted: "#4f5a6e"        # secondary text
-  faint: "#5f687a"        # captions, axis labels, metadata
-  blue: "#2340c2"         # primary action, data marks, key figure
-  blue-dark: "#1a2f94"    # primary hover
-  blue-soft: "#b7c3f1"    # secondary data marks (other neighbourhoods)
-  tint: "#eef1fa"         # selected row, result panel
-  navy: "#0f1a33"         # footer, Pro offer band
-  canvas: "#ffffff"
-  soft: "#f5f6f8"         # page heroes, alternating sections, table heads
-  line: "#e3e6ec"         # borders, dividers, grid lines
+  faint: "#6b7486"        # captions, axis labels, metadata
+  blue: "#2f5be7"         # primary action, data marks, key figure
+  blue-dark: "#2347c4"    # primary hover
+  blue-soft: "#b9c7f6"    # secondary data marks (other neighbourhoods)
+  tint: "#edf1fd"         # selected row, result panel, search result hover
+  navy: "#0f1a33"         # footer, agency band
+  canvas: "#f5f7fb"       # page background; heroes and alternate sections are white
+  white: "#ffffff"        # panels, cards, heroes
+  line: "#e3e7ef"         # borders, dividers, grid lines
   line-strong: "#c9ceda"  # input and ghost-button borders
   clay: "#b8502a"         # "above city median", live-data badge dot
   clay-ink: "#8a3a1c"
@@ -29,16 +30,13 @@ colors:
 typography:
   display:
     fontFamily: "'Archivo', 'Arial Narrow', Arial, sans-serif"
-    usage: headings, all prominent numbers, logo word
+    usage: headings, all prominent numbers, logo word. font-stretch 112%, weight 650, letter-spacing -.02em
   body:
     fontFamily: "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif"
     usage: everything else
   mono:
     fontFamily: "'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
-    usage: >
-      data labels only: eyebrows, column heads and figures of the hero ticket, offer table labels.
-      12px, weight 500, uppercase, letter-spacing .06-.08em for labels; 14px for figures. Never for
-      sentences or headings. Loaded on the home page and the dashboard (variable --mono).
+    usage: dashboard only. The home page no longer uses mono or uppercase labels (November 2026).
   scale:
     hero-h1:     { size: "clamp(40px, 5.2vw, 64px)", weight: 800, lineHeight: 1.03, letterSpacing: -0.035em }
     page-h1:     { size: "clamp(36px, 4.6vw, 58px)", weight: 800, lineHeight: 1.04, letterSpacing: -0.035em }
@@ -53,11 +51,11 @@ typography:
   numbers: "font-variant-numeric: tabular-nums everywhere a number can line up; thousands separated by a non-breaking space (18 509)"
 
 radius:
-  button: 6px
+  button: 10px
   input: 8px
-  card: 12px
-  panel: 14px      # calculator, Pro card, dialog
-  pill: 999px      # chips, badges, deltas
+  card: 14px       # cards, panels, key-figure tiles, calculator
+  search: 16px     # home search box
+  pill: 999px      # chips, presets, city links, ranking bars
 
 spacing:
   shell: 1180px max, 24px gutter (18px under 600px)
@@ -66,9 +64,9 @@ spacing:
   card-padding: 20-24px
 
 elevation:
-  card: "1px solid line, no shadow"
-  card-hover: "border blue + 0 16px 32px -24px rgba(15,26,51,.5)"
-  floating: "0 30px 60px -40px rgba(15,26,51,.45)"   # calculator, menus, dialog
+  card: "no border; 0 1px 2px rgba(15,26,51,.05), 0 10px 30px -18px rgba(15,26,51,.25)"   # --shadow
+  card-hover: "0 0 0 2px blue + card shadow"
+  floating: "0 2px 4px rgba(15,26,51,.04), 0 24px 48px -24px rgba(15,26,51,.35)"   # --shadow-lg: search, results, menus
 
 breakpoints: [1040px, 820px, 600px]
 ---
@@ -91,6 +89,16 @@ components in `assets/components.css`. When a token changes here, change it in a
    median. Green = below it, or "there are listings at this price". No other accent colours.
 5. **Explain the gap.** When a calculation is theoretical (no listing at that price), say so in the
    result itself, with the cheapest real price. Never let two statements on screen contradict each other.
+
+## Home page (November 2026)
+
+Centred hero on white: the question « Combien coûte le m² dans votre quartier ? », one line of source,
+then the search box (combobox over every city and ranked neighbourhood, built from the weekly data by
+`build_site.py`; each result shows the median and the number of listings) and one pill link per city.
+Then four feature rows, text and a live panel alternating sides: neighbourhood ranking, what 1 million
+MAD buys, a listings preview, the weekly file. Every panel shows real numbers from the latest snapshot,
+never a mock-up. Then city cards, the navy agency band (price + « Demander l'accès Pro »), the
+free / Pro comparison, method, FAQ, contact.
 
 ## Components
 
