@@ -505,3 +505,53 @@ tbody th a{display:inline-block;padding:12px 0;margin:-12px 0}
 }
 .chip span{min-height:44px;display:inline-flex;align-items:center}
 .legal summary{min-height:44px;display:flex;align-items:center}
+
+/* ---------- Refonte novembre 2026 : clair et aéré ----------
+   Fond gris bleuté pâle, blocs blancs à ombre douce, titres Archivo plus larges et moins gras,
+   bleu d'action plus vif. Ces règles passent après les précédentes et les remplacent. */
+:root{
+  --ink:#0f1a33;--navy:#0f1a33;--muted:#4f5a6e;--faint:#6b7486;
+  --blue:#2f5be7;--blue-dark:#2347c4;--tint:#edf1fd;
+  --canvas:#f5f7fb;--soft:#f5f7fb;--line:#e3e7ef;--line-strong:#c9cfdc;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(15,26,51,.05),0 10px 30px -18px rgba(15,26,51,.25);
+  --shadow-lg:0 2px 4px rgba(15,26,51,.04),0 24px 48px -24px rgba(15,26,51,.35);
+}
+body{background:var(--canvas)}
+h1,h2,h3{font-stretch:112%;font-weight:650;letter-spacing:-.02em}
+.hero h1,.page-hero h1,.section-head h2,.feature h2,.offers h2,.faq-grid h2,.contact h2,.block h2,.pro-band h2{font-weight:650;letter-spacing:-.025em}
+.logo-mark{border-radius:8px}
+.logo-word{font-weight:700;font-stretch:112%;letter-spacing:-.02em}
+.btn{min-height:46px;border-radius:10px;font-weight:600}
+.btn-ghost{border-color:var(--line-strong)}
+.site-header{background:rgba(255,255,255,.92);border-bottom-color:var(--line)}
+.page-hero{background:#fff;border-bottom:1px solid var(--line)}
+.page-hero h1{line-height:1.06}
+.hero{background:#fff}
+.block{border-top:0}
+.block + .block{border-top:1px solid var(--line)}
+.facts{border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
+.facts div{border-color:var(--line)}
+.facts strong{font-weight:650;font-stretch:112%;letter-spacing:-.02em}
+.card,.calc{border:0;border-radius:var(--radius);box-shadow:var(--shadow);background:#fff;overflow:hidden}
+.result-m2{font-weight:650}
+.presets button{border-radius:999px;padding:6px 12px}
+.section-soft{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps li{border-top:0;padding:24px;border-radius:var(--radius);background:var(--canvas)}
+.section-soft .steps li{background:var(--canvas)}
+.steps h3::before{color:var(--blue)}
+.faq-list summary{font-weight:600}
+.contact{background:#fff}
+.pro-band{background:var(--navy)}
+.pro-band .btn-primary{background:#fff;color:var(--navy)}
+.pro-band .btn-primary:hover{background:#e8ecf7}
+.pro-band .btn-ghost{background:transparent;color:#fff;border-color:#ffffff59}
+.pro-band .btn-ghost:hover{border-color:#fff}
+.rank .bar{border-radius:999px}
+.rank .bar i{border-radius:999px;background:#b9c7f6}
+.rank .me .bar i{background:var(--blue)}
+.rank li a:hover{background:var(--tint)}
+@media (max-width:600px){.btn{min-height:48px}}
+.feature-row > *{min-width:0}
+.panel .table-wrap{overflow-x:auto}
+.rank:not(.has-me) .bar i{background:var(--blue)}
