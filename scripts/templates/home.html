@@ -140,6 +140,9 @@
     .compare tfoot .is-pro{display:flex;flex-direction:column;gap:10px}
     .compare tfoot .btn{width:100%}
     .compare tfoot a:not(.btn){color:var(--blue);font-weight:700}
+    .compare-actions{display:none;flex-direction:column;gap:10px;margin-top:16px}
+    .compare-actions .btn{width:100%}
+    .compare-actions a:not(.btn){display:flex;align-items:center;justify-content:center;min-height:44px;color:var(--blue);font-weight:700}
     .offers-note{margin-top:22px;font-size:15px;color:var(--muted);max-width:40em}
     .other-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:40px}
     .other-offers > div{padding:24px;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
@@ -156,20 +159,32 @@
       .search-box{min-height:56px;padding-left:16px;border-radius:14px}
       .search-box input{height:54px;font-size:16px}
       .city-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-      .city-links a{flex-direction:column;align-items:center;gap:0;padding:10px 8px;border-radius:12px;font-size:13px;line-height:1.35}
+      .city-links li{display:flex}
+      .city-links a{flex:1;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:10px 8px;border-radius:12px;font-size:14px;line-height:1.35}
       .preview table{min-width:0;width:100%}
       .preview th:nth-child(1),.preview td:nth-child(1),.preview th:nth-child(8),.preview td:nth-child(8),.preview th:nth-child(5),.preview td:nth-child(5){display:none}
-      .preview th,.preview td{padding:11px 10px}
+      .preview th,.preview td{padding:10px 8px;white-space:normal}
+      .preview td.num{white-space:nowrap}
+      .preview th:first-child,.preview td:first-child{padding-left:14px}
       .week th,.week td{padding:10px 10px}
       .week th:first-child{padding-left:14px}
       .compare{min-width:0;font-size:14px}
-      .compare th,.compare td{padding:12px 10px}
+      .compare th,.compare td{padding:12px 8px;hyphens:auto}
+      .compare tfoot{display:none}
+      .compare-actions{display:flex}
+      .compare tbody th{width:30%;font-size:13px}
       .compare thead th{font-size:17px}
       .compare .yes{padding-left:30px}.compare .yes::before{left:10px;top:18px}
       .compare .price{font-size:24px}
       .compare tfoot .btn{white-space:normal;line-height:1.25;padding:10px 12px}
       .city-card dl > :nth-child(n+3){display:none}
       .agency-actions .btn{flex:1 1 100%}
+    }
+    @media (max-width:380px){
+      .week th,.week td,.preview th,.preview td{padding:9px 5px;font-size:13px}
+      .week th:first-child,.preview th:first-child,.preview td:first-child{padding-left:12px}
+      .week th:last-child,.week td:last-child,.preview td:last-child{padding-right:12px}
+      .week thead th{white-space:normal}
     }
   </style>
   <link rel="stylesheet" href="/assets/components.css">
@@ -321,6 +336,7 @@
             <tfoot><tr><td></td><td><a href="dashboard.html">Ouvrir le dashboard</a></td><td class="is-pro"><a class="btn btn-primary" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a><a href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un fichier d'exemple (20 annonces de Guéliz)</a></td></tr></tfoot>
           </table>
         </div>
+        <div class="compare-actions"><a class="btn btn-primary" data-pro-contact href="mailto:othman@atlas-data.fr?subject=Acc%C3%A8s%20Pro%20Atlas%20Data&amp;body=Bonjour%2C%0A%0AVille%20%C3%A0%20suivre%20%3A%20%0AVotre%20agence%20%3A%20%0A">Demander l'accès Pro</a><a href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un fichier d'exemple</a><a href="dashboard.html">Ouvrir le dashboard gratuit</a></div>
         <p class="offers-note">En préparation, au fil des relevés hebdomadaires : la durée de mise en vente des biens et les rendements locatifs par quartier.</p>
         <div class="other-offers">
           <div><h3>Sur mesure</h3><p>Une analyse adaptée à votre question : comparer des secteurs, situer un bien, préparer un projet. Sur devis, première analyse offerte.</p><a href="mailto:othman@atlas-data.fr?subject=Analyse%20de%20march%C3%A9%20Atlas%20Data">Demander une analyse</a></div>
