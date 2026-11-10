@@ -131,7 +131,9 @@ free / Pro comparison, method, FAQ, contact.
   does not zoom.
 
 - **Touch targets**: every control is at least 44px high (buttons, presets, inputs, segmented controls); links in table headers, breadcrumbs and the footer get vertical padding so their tap area reaches 44px.
-- **Scrolling charts and tables** on mobile say so in visible text ("faites glisser"), never only by being cut off.
+- **No horizontal scrolling on mobile** (checked at 360 and 390 px): tables let headers and names wrap (whole words, never mid-word), cut columns that repeat information, and charts get a mobile form instead of being cut off. The dashboard scatter plot becomes « prix au m² par tranche de surface » (median + middle half of the listings, tap to filter) under 600 px.
+- **Long lists fold on mobile**: the neighbourhood ranking and the « 1 million de MAD » table show 10 rows and a « Voir les N autres quartiers » button (`components.js`); the current neighbourhood and « Toute la ville » stay visible.
+- **Dashboard filters on mobile**: a sticky bar (« Filtres » + active-filter badge + « Ville · N annonces ») opens a full-screen panel closed by « Voir les N annonces ». Tabs become a 2 × 2 segmented control.
 
 ## Voice
 

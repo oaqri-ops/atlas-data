@@ -115,3 +115,31 @@
       function(){ b.textContent = 'Sélectionnez l\'adresse'; });
   });
 })();
+
+/* Listes longues sur mobile : classement des quartiers et tableau « 1 million de MAD » repliés à 10 lignes,
+   avec un bouton pour tout afficher. Le quartier de la page (.me) et la ligne « Toute la ville » restent visibles. */
+(function(){
+  'use strict';
+  if (!window.matchMedia || !window.matchMedia('(max-width:600px)').matches) return;
+  var SHOW = 10;
+  var lists = [].slice.call(document.querySelectorAll('.mlist, .rank.has-me, section[aria-labelledby="tableau-title"] tbody'));
+  lists.forEach(function(list){
+    var rows = [].slice.call(list.children);
+    rows.forEach(function(r){ if (/^\s*Toute la ville/.test(r.textContent)) r.classList.add('fold-keep'); });
+    var hidden = rows.filter(function(r, i){ return i >= SHOW && !r.classList.contains('me') && !r.classList.contains('fold-keep'); }).length;
+    if (hidden < 3) return;
+    list.classList.add('is-folded');
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'fold-btn'; btn.setAttribute('aria-expanded', 'false');
+    var more = 'Voir les ' + hidden + ' autres quartiers';
+    btn.textContent = more;
+    btn.addEventListener('click', function(){
+      var open = list.classList.toggle('is-folded') === false;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Réduire la liste' : more;
+      if (!open) list.closest('section, .card, .chart').scrollIntoView({block: 'start'});
+    });
+    var anchor = list.tagName === 'TBODY' ? list.closest('.table-wrap') || list.closest('table') : list;
+    anchor.insertAdjacentElement('afterend', btn);
+  });
+})();

@@ -555,3 +555,30 @@ h1,h2,h3{font-stretch:112%;font-weight:650;letter-spacing:-.02em}
 .feature-row > *{min-width:0}
 .panel .table-wrap{overflow-x:auto}
 .rank:not(.has-me) .bar i{background:var(--blue)}
+
+/* Check-up mobile (novembre 2026) */
+.logo{min-height:44px}
+.site-footer ul{gap:0}
+.site-footer ul a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+.footer-bottom a,.legal summary{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:600px){
+  .card th,.card td{padding:10px 8px;white-space:normal}
+  .card th:first-child,.card td:first-child{padding-left:14px}
+  .card th:last-child,.card td:last-child{padding-right:14px}
+  .card td.num{white-space:nowrap}
+  .card thead th,.card thead th.num{font-size:13px;line-height:1.3;vertical-align:bottom;white-space:normal}
+  .card tbody th{white-space:normal;hyphens:auto}
+}
+@media (max-width:380px){
+  .card th,.card td{padding:9px 5px;font-size:13px}
+  .card th:first-child,.card td:first-child{padding-left:12px}
+  .card th:last-child,.card td:last-child{padding-right:12px}
+}
+/* Listes repliées sur mobile (components.js) */
+.is-folded > :nth-child(n+11):not(.me):not(.fold-keep){display:none}
+.fold-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;margin:0;border:0;border-top:1px solid var(--line);background:#fff;color:var(--blue);font:700 15px var(--body);cursor:pointer}
+.chart .fold-btn{border-radius:0 0 var(--radius) var(--radius)}
+@media (max-width:600px){
+  .presets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .presets button{white-space:nowrap;min-height:44px;font-size:14px}
+}
