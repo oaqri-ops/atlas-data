@@ -1,7 +1,8 @@
 {
   "actor": "M0jf7SrtekwPKM2iO",
   "sources": [
-    "avito"
+    "avito",
+    "mubawab"
   ],
   "min_listings_per_quartier": 8,
   "cities": [
@@ -45,6 +46,56 @@
     "Centre": "Centre-ville",
     "Tanger City Center": "Centre-ville",
     "nouinouich": "Nouinouich"
+  },
+  "district_names_by_source": {
+    "_comment": "Noms de quartiers d'une source, ramenés à ceux d'Avito, par ville. Les écarts d'accents et de majuscules sont rapprochés automatiquement.",
+    "mubawab": {
+      "marrakech": {
+        "Route Casablanca": "Route de Casablanca",
+        "Ennakhil (Palmeraie)": "Palmeraie",
+        "Samlalia": "Semlalia",
+        "Route Amizmiz": "Route d'Amezmiz",
+        "Hay Mabrouka": "Mabrouka",
+        "Izdihar": "Hay Izdihar",
+        "Route de Fez": "Route de Fès",
+        "Route de l'Ourika": "Route d'Ourika",
+        "Daoudiat": "Daoudiate",
+        "Route de Tahanaout": "Route de Tahanaoute",
+        "Boulevard Med 6": "Av Mohammed VI",
+        "Sidi Youssef": "Sidi Youssef Ben Ali",
+        "Camp Al Ghoul": "El Ghoul",
+        "Hay Saada": "Es Saada",
+        "Hay Saada 1": "Es Saada"
+      },
+      "casablanca": {
+        "Les Hôpitaux": "Quartier des Hôpitaux",
+        "Bourgogne Ouest": "Bourgogne",
+        "Bourgogne Est": "Bourgogne",
+        "Val Fleury": "Val Fleuri",
+        "Ferme Bretonne (Hay Arraha)": "Ferme Bretone",
+        "Nassim 1": "Nassim",
+        "Nassim 2": "Nassim",
+        "CIL (Hay Salam)": "C.I.L",
+        "Bernoussi": "Sidi Bernoussi",
+        "Quartier Bachkou": "Bachkou",
+        "Casablanca Marina": "Marina",
+        "Derb Ghalef": "Derb Ghallef",
+        "Laymoune": "Laimoune",
+        "Benjdia": "Ben Ejdia",
+        "Salmia 2": "Salmia",
+        "Hay Alamal": "Hay Al Amal"
+      },
+      "rabat": {
+        "L'Ocean": "Quartier de l'Océan",
+        "Hassan - Centre Ville": "Hassan",
+        "Hay Al Fath": "Hay el Fath",
+        "Akkari": "Aakkari",
+        "Médina": "Médina de Rabat"
+      },
+      "tanger": {
+        "Ziaten": "Ziatene"
+      }
+    }
   },
   "district_prepositions": {
     "Centre-ville": "au centre-ville",
