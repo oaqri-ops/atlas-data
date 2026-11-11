@@ -7,8 +7,9 @@ Chaque lundi, le workflow GitHub `Relevé hebdomadaire` (`.github/workflows/rele
 
 1. lance l'actor Apify `atlasdata-labs/morocco-real-estate-scraper` (appelé par son ID, clé `actor` de
    `data/cities.json`, pour résister à un renommage) pour chaque ville, sur la source indiquée par la clé `sources`
-   (Avito depuis le 9 novembre 2026, Sarouty avant), et enregistre les annonces dans `data/raw/<ville>-<date>.csv`
-   (`scripts/fetch_apify.py`). Si un run échoue, aucun fichier n'est écrit et le site garde le relevé précédent ;
+   (Avito et Mubawab ; Avito seul du 9 au 16 novembre 2026, Sarouty avant), et enregistre les annonces dans
+   `data/raw/<ville>-<date>.csv` (`scripts/fetch_apify.py`). Si un run échoue, ou si une source ne renvoie aucune
+   annonce pour une ville, aucun fichier n'est écrit et le site garde le relevé précédent ;
 2. régénère l'accueil (à partir de `scripts/templates/home.html`), les pages villes et quartiers, le dashboard,
    le pied de page et `sitemap.xml` (`scripts/build_site.py`) ;
 3. publie le résultat sur `main`.
@@ -30,8 +31,18 @@ cartes villes de l'accueil, et il est enregistré dans `data/stats/<ville>.json`
 Garder au moins les deux derniers CSV de chaque ville.
 
 Deux relevés de sources différentes ne sont pas comparés (colonne `source` du CSV ; un CSV sans cette colonne
-vient de Sarouty) : la semaine du passage à Avito, les pages n'affichent pas de « Ce qui a changé ». Les textes
-du site citent la source du dernier relevé de chaque ville.
+vient de Sarouty) : la semaine du passage à Avito, et celle de l'ajout de Mubawab, les pages n'affichent pas de
+« Ce qui a changé ». Les textes du site citent les sources du dernier relevé de chaque ville.
+
+## Plusieurs sources dans un relevé
+
+Une agence publie souvent le même bien sur Avito et sur Mubawab. `read_listings` garde une seule copie : même
+quartier, même prix, même surface, la copie Avito est gardée (`SOURCE_PRIORITY`). Pour que ce rapprochement et
+les classements par quartier marchent, les noms de quartiers de Mubawab sont ramenés à ceux d'Avito :
+automatiquement quand seuls les accents ou les majuscules diffèrent (« Maârif », « Maarif »), et par la table
+`district_names_by_source` de `data/cities.json`, ville par ville, sinon (« Route Casablanca » → « Route de
+Casablanca »). Un quartier Mubawab absent de la table reste sous son nom : à vérifier après chaque nouveau
+relevé (quartiers en double sur les pages villes).
 
 ## Interface
 

@@ -1,8 +1,10 @@
 """Relevé hebdomadaire : lance l'actor Apify pour chaque ville et enregistre les annonces
 dans data/raw/<ville>-<date>.csv.
 
-La source (Avito depuis novembre 2026) est réglée dans data/cities.json (clé "sources"). La colonne
-"source" du CSV permet à build_site.py de ne pas comparer deux relevés de sources différentes.
+Les sources (Avito et Mubawab depuis novembre 2026) sont réglées dans data/cities.json (clé "sources").
+La colonne "source" du CSV permet à build_site.py de retirer les annonces publiées sur deux portails et de ne
+pas comparer deux relevés de sources différentes. Si une source ne renvoie rien pour une ville, aucun
+fichier n'est écrit : un relevé sans elle ferait bouger les médianes sans que le marché ait bougé.
 
 Usage : APIFY_TOKEN=... python scripts/fetch_apify.py [--date AAAA-MM-JJ]
 """
@@ -20,7 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://api.apify.com/v2"
 FIELDS = ["id", "source", "district", "price_mad", "surface_m2", "bedrooms", "furnished", "bathrooms",
           "publication_date", "seller_type"]
-MAX_ITEMS = 30000          # garde-fou par ville (Casablanca compte environ 12 000 appartements à vendre sur Avito)
+MAX_ITEMS = 40000          # garde-fou par ville, toutes sources (Casablanca : environ 12 000 annonces sur Avito, 5 000 sur Mubawab)
 RUN_TIMEOUT = 20 * 60      # secondes, par ville
 PAGE = 5000                # annonces par requête de lecture du dataset
 
@@ -80,6 +82,10 @@ def main():
         items, status = run_actor(cfg["actor"], token, city["location"], sources)
         if not items:
             sys.exit(f"{city['name']} : aucune annonce ({status}). Aucun fichier écrit.")
+        found = {it.get("source") for it in items}
+        missing = [s for s in sources if s not in found]
+        if missing:
+            sys.exit(f"{city['name']} : aucune annonce {', '.join(missing)} ({status}). Aucun fichier écrit.")
         results.append((city, items, status))
     for city, items, status in results:
         path = os.path.join(ROOT, "data", "raw", f"{city['slug']}-{args.date}.csv")

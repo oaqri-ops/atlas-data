@@ -9,6 +9,7 @@ Les pages existantes ne sont jamais supprimées.
 
 Usage : python scripts/build_site.py
 """
+import collections
 import csv
 import datetime
 import glob
@@ -53,15 +54,28 @@ def latest_raw(slug):
     return path, re.search(r"(\d{4}-\d{2}-\d{2})\.csv$", path).group(1)
 
 
-# Source du relevé : colonne "source" du CSV (Avito depuis le 9 novembre 2026). Les relevés plus
-# anciens n'ont pas cette colonne : ils viennent de Sarouty.
-SOURCE_NAMES = {"avito": "Avito", "sarouty": "Sarouty"}
+# Source du relevé : colonne "source" du CSV (Avito depuis le 9 novembre 2026, Avito et Mubawab ensuite).
+# Les relevés plus anciens n'ont pas cette colonne : ils viennent de Sarouty. Un relevé peut mêler
+# plusieurs sources : sa "source" est alors leur liste, "avito+mubawab".
+SOURCE_NAMES = {"avito": "Avito", "sarouty": "Sarouty", "mubawab": "Mubawab"}
+# Quand une même annonce est publiée sur deux portails, la copie gardée est celle de la source la
+# mieux placée ici (Avito donne la date de publication et le type de vendeur, Mubawab non).
+SOURCE_PRIORITY = ["avito", "sarouty", "mubawab"]
+
+
+def row_source(r):
+    return ((r.get("source") or "sarouty").strip().lower())
 
 
 def raw_source(path):
     with open(path, encoding="utf8") as f:
-        row = next(csv.DictReader(f), None)
-    return ((row or {}).get("source") or "sarouty").strip().lower()
+        found = {row_source(r) for r in csv.DictReader(f)}
+    return "+".join(sorted(found)) or "sarouty"
+
+
+def source_label(source):
+    """'avito+mubawab' -> 'Avito et Mubawab'."""
+    return join_fr([SOURCE_NAMES.get(s, s.capitalize()) for s in source.split("+")])
 
 
 def previous_raw(slug, date):
@@ -81,26 +95,59 @@ def to_int(v):
 
 
 def read_listings(path, cfg):
-    """Toutes les annonces du relevé ; kept=True pour celles qui entrent dans les statistiques."""
+    """Toutes les annonces du relevé ; kept=True pour celles qui entrent dans les statistiques.
+
+    Doublons retirés : dans une même source, même quartier, prix, surface et chambres ; entre deux sources
+    (une agence qui publie le même bien sur Avito et sur Mubawab), même quartier, prix et surface, car les
+    portails ne comptent pas les chambres de la même façon. La copie de la source prioritaire est gardée.
+    "key" relie une annonce d'un relevé à l'autre : sa référence, préfixée par sa source, car deux
+    portails peuvent utiliser le même numéro.
+    """
     names = cfg["district_names"]
-    rows, seen = [], set()
+    city = re.sub(r"-\d{4}-\d{2}-\d{2}\.csv$", "", os.path.basename(path))
+    by_source = {src: (m.get(city) or {}) for src, m in (cfg.get("district_names_by_source") or {}).items()
+                 if isinstance(m, dict)}
+    rows = []
     with open(path, encoding="utf8") as f:
         for r in csv.DictReader(f):
+            source = row_source(r)
             district = " ".join((r.get("district") or "").split())
+            district = by_source.get(source, {}).get(district, district)
             district = names.get(district, district)
             price, surface = to_int(r.get("price_mad")), to_int(r.get("surface_m2"))
             ppm2 = price / surface if price and surface else None
-            bedrooms = to_int(r.get("bedrooms"))
             kept = bool(ppm2 and price >= MIN_PRICE and MIN_SURFACE <= surface <= MAX_SURFACE
                         and PPM2_RANGE[0] <= ppm2 <= PPM2_RANGE[1])
-            key = (district.lower(), price, surface, bedrooms)
-            if kept and key in seen:
-                kept = False
-            seen.add(key)
-            rows.append({"id": r.get("id") or "", "district": district, "price": price, "surface": surface,
-                         "ppm2": ppm2, "bedrooms": bedrooms, "furnished": r.get("furnished") or "",
+            rows.append({"id": r.get("id") or "", "key": f"{source}:{r.get('id') or ''}" if r.get("id") else "",
+                         "source": source, "district": district, "price": price, "surface": surface,
+                         "ppm2": ppm2, "bedrooms": to_int(r.get("bedrooms")), "furnished": r.get("furnished") or "",
                          "bathrooms": to_int(r.get("bathrooms")), "published": (r.get("publication_date") or "")[:10],
                          "kept": kept})
+    rank = {s: i for i, s in enumerate(SOURCE_PRIORITY)}
+    # Même quartier écrit avec d'autres accents ou majuscules ("Maârif", "Maarif") : orthographe de la source
+    # prioritaire, la plus fréquente
+    spelled = {}
+    for r in sorted(rows, key=lambda r: rank.get(r["source"], len(rank))):
+        spelled.setdefault(r["source"], collections.Counter())[r["district"]] += 1
+    canonical, top = {}, None
+    for source in sorted(spelled, key=lambda s: rank.get(s, len(rank))):
+        if top is None:
+            top = source
+            canonical = {slugify(name): name for name, _ in reversed(spelled[source].most_common())}
+            continue
+        for r in rows:
+            if r["source"] == source and r["district"]:
+                r["district"] = canonical.get(slugify(r["district"]), r["district"])
+    same, cross = set(), {}
+    for r in sorted((r for r in rows if r["kept"]), key=lambda r: rank.get(r["source"], len(rank))):
+        district = r["district"].lower()
+        key = (r["source"], district, r["price"], r["surface"], r["bedrooms"])
+        other = cross.get((district, r["price"], r["surface"]))
+        if key in same or (other and other != r["source"]):
+            r["kept"] = False
+            continue
+        same.add(key)
+        cross.setdefault((district, r["price"], r["surface"]), r["source"])
     return rows
 
 
@@ -150,7 +197,7 @@ def city_stats(city, cfg):
     stats = summarize(rows)
     source = raw_source(path)
     stats.update(raw=raw, date=date, rows=rows, ranked=ranked, small=small,
-                 source=source, source_name=SOURCE_NAMES.get(source, source.capitalize()))
+                 source=source, source_name=source_label(source))
     stats["changes"] = changes_since_previous(city, cfg, stats)
     return stats
 
@@ -166,16 +213,17 @@ def changes_since_previous(city, cfg, st):
     Les annonces sont reliées d'un relevé à l'autre par leur référence sur le portail source. Seules les
     annonces exploitables du relevé courant comptent comme nouvelles ; une annonce retirée est une annonce
     exploitable du relevé précédent qui n'apparaît plus du tout. Deux relevés de sources différentes
-    (passage de Sarouty à Avito) ne sont pas comparés : leurs références ne correspondent pas.
+    (passage de Sarouty à Avito, ajout de Mubawab) ne sont pas comparés : l'écart viendrait du changement
+    de source, pas du marché.
     """
     prev_path, prev_date = previous_raw(city["slug"], st["date"])
     if not prev_path or raw_source(prev_path) != st["source"]:
         return None
     prev_all = read_listings(prev_path, cfg)
-    prev_ids = {r["id"] for r in prev_all if r["id"]}
-    prev_kept = {r["id"]: r for r in prev_all if r["kept"] and r["id"]}
+    prev_ids = {r["key"] for r in prev_all if r["key"]}
+    prev_kept = {r["key"]: r for r in prev_all if r["kept"] and r["key"]}
     cur_path, _ = latest_raw(city["slug"])
-    cur_ids = {r["id"] for r in read_listings(cur_path, cfg) if r["id"]}
+    cur_ids = {r["key"] for r in read_listings(cur_path, cfg) if r["key"]}
     excluded = set(cfg["excluded_districts"])
 
     def scope(rows, district):
@@ -184,11 +232,11 @@ def changes_since_previous(city, cfg, st):
     def block(district=None):
         cur = scope(st["rows"], district)
         prev = scope(list(prev_kept.values()), district)
-        new = [r for r in cur if r["id"] and r["id"] not in prev_ids]
-        gone = [r for r in prev if r["id"] not in cur_ids]
+        new = [r for r in cur if r["key"] and r["key"] not in prev_ids]
+        gone = [r for r in prev if r["key"] not in cur_ids]
         cuts, rises = [], []
         for r in cur:
-            p = prev_kept.get(r["id"])
+            p = prev_kept.get(r["key"])
             if p and p["price"] and r["price"] and r["price"] != p["price"]:
                 move = {"id": r["id"], "district": r["district"], "surface": r["surface"], "bedrooms": r["bedrooms"],
                         "before": p["price"], "after": r["price"], "pct": r["price"] / p["price"] - 1}
@@ -490,7 +538,7 @@ def changes_block(city, st):
         <div class="block-copy">
           <h2 id="evolution-title">Ce qui a changé {e(since(ch))}</h2>
           <p>{between(ch, st['date'])} : {change_summary(ch)}.{trend_text(ch['trend'], 'de ' + e(cname))}</p>
-          <p>Les annonces sont suivies d'un relevé à l'autre par leur référence {st['source_name']}. Une annonce retirée peut avoir été vendue, louée ou simplement dépubliée. Une variation de médiane reflète aussi les annonces qui entrent et sortent du relevé : ce n'est pas une évolution des prix de vente.</p>
+          <p>Les annonces sont suivies d'un relevé à l'autre par leur référence sur {st['source_name']}. Une annonce retirée peut avoir été vendue, louée ou simplement dépubliée. Une variation de médiane reflète aussi les annonces qui entrent et sortent du relevé : ce n'est pas une évolution des prix de vente.</p>
         </div>
         <div class="moves-col">
           <div class="card">{tiles}{cuts}</div>
@@ -970,7 +1018,7 @@ def city_page(city, st, cfg):
 {small_block}{faq_section}
     <section class="block" aria-label="Méthode">
       <div class="shell">
-        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
+        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons{' (y compris les annonces publiées sur deux portails)' if '+' in st['source'] else ''}, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
       </div>
     </section>
   </main>
@@ -1146,7 +1194,7 @@ def render_home(cfg, all_stats):
     total = sum(st["n"] for _, st in cities)
     raw = sum(st["raw"] for _, st in cities)
     city_list = join_fr([c["name"] for c, _ in cities])
-    source = join_fr(sorted({st["source_name"] for _, st in cities}))
+    source = join_fr(sorted({SOURCE_NAMES.get(s, s.capitalize()) for _, st in cities for s in st["source"].split("+")}))
     week_rows, week_total, week_foot = home_week(cities)
 
     faq = [
@@ -1310,8 +1358,8 @@ def update_dashboard(cfg):
                          "bathrooms": r["bathrooms"], "furnished": {"1": True, "0": False}.get(r["furnished"]),
                          "publication_date": r["published"] or None, "suspect_category": not r["kept"],
                          "price_per_m2": round(r["ppm2"], 2) if r["ppm2"] else None})
-    sources = sorted({SOURCE_NAMES.get(raw_source(latest_raw(c["slug"])[0]), "?") for c in cfg["cities"]
-                      if latest_raw(c["slug"])[0]})
+    sources = sorted({SOURCE_NAMES.get(s, s.capitalize()) for c in cfg["cities"] if latest_raw(c["slug"])[0]
+                      for s in raw_source(latest_raw(c["slug"])[0]).split("+")})
     data = json.dumps({"cities": cities, "rows": rows}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     path = os.path.join(ROOT, "dashboard.html")
     s = open(path, encoding="utf8").read()
