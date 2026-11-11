@@ -10,7 +10,8 @@ Chaque lundi, le workflow GitHub `Relevé hebdomadaire` (`.github/workflows/rele
    (Avito et Mubawab ; Avito seul du 9 au 16 novembre 2026, Sarouty avant), et enregistre les annonces dans
    `data/raw/<ville>-<date>.csv` (`scripts/fetch_apify.py`). Si un run échoue, ou si une source ne renvoie aucune
    annonce pour une ville, aucun fichier n'est écrit et le site garde le relevé précédent ;
-2. régénère l'accueil (à partir de `scripts/templates/home.html`), les pages villes et quartiers, le dashboard,
+2. régénère l'accueil (à partir de `scripts/templates/home.html`), les pages villes et quartiers, le dashboard
+   (ses annonces sont dans `data/dashboard/<ville>.json`, chargé quand la ville est choisie),
    le pied de page et `sitemap.xml` (`scripts/build_site.py`) ;
 3. publie le résultat sur `main`.
 

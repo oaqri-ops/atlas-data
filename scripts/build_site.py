@@ -592,6 +592,11 @@ def quartier_page(city, st, q, cfg):
             f"relevées le {long_date(date)}.")
 
     title = f"Prix m² {name}, {cname} : {n(q['median'])} MAD/m² ({short_month(date)})"
+    # Google coupe vers 60-65 caractères : sans le mois, puis sans la ville, pour les noms longs
+    if len(title) > 65:
+        title = f"Prix m² {name}, {cname} : {n(q['median'])} MAD/m²"
+    if len(title) > 65:
+        title = f"Prix m² {name} : {n(q['median'])} MAD/m²"
     desc = (f"Prix au m² des appartements à vendre {q['prep']} ({cname}) : {n(q['median'])} MAD/m² en médiane "
             f"sur {q['n']} annonces. Budget et comparaison des quartiers.")
     ld = {"@context": "https://schema.org", "@graph": [
@@ -942,8 +947,10 @@ def city_page(city, st, cfg):
         span = f"de {n(ranked[-1]['median'])} MAD/m² {prep(ranked[-1]['name'], cfg)} à {n(ranked[0]['median'])} MAD/m² {prep(ranked[0]['name'], cfg)}"
     else:
         span = f"{n(st['median'])} MAD/m² en médiane"
-    desc = (f"Prix au m² des appartements à {cname} : {span}, prix demandés sur {st['n']} annonces. "
-            "Calculez la surface accessible avec votre budget.")
+    desc = f"Prix au m² des appartements à {cname} : {span}, prix demandés sur {st['n']} annonces."
+    # Google coupe vers 155-160 caractères : l'appel au calculateur seulement s'il tient
+    if len(desc) + 34 <= 158:
+        desc += " Calculez votre surface accessible."
     ld = {"@context": "https://schema.org", "@graph": [
         breadcrumb_ld([("Accueil", "/"), (f"Prix au m² à {cname}", path)]),
         {"@type": "ItemList", "name": f"Prix au m² par quartier à {cname}", "itemListElement": [
@@ -1233,8 +1240,8 @@ def render_home(cfg, all_stats):
     rank_city, rank_st, rank_html = feature_rank(cities)
     calc_city, calc_html = feature_calc(cities)
     tokens = {
-        "META_DESC": e(f"Pour les agences : chaque lundi, toutes les annonces d'appartements à vendre de {or_list} dans un fichier Excel, "
-                       "avec les nouvelles annonces et les baisses de prix."),
+        "META_DESC": e(f"Prix au m² des appartements à {city_list}, quartier par quartier, chaque lundi. "
+                       "Pour les agences : toutes les annonces en Excel."),
         "OG_DESC": e(f"{n(total)} annonces d'appartements à vendre {when}, ville par ville : prix demandés, nouvelles annonces et baisses de prix, "
                      "chaque lundi dans un fichier Excel."),
         "LD_JSON": json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"),
@@ -1338,6 +1345,10 @@ def update_sitemap(generated):
         rel = os.path.relpath(os.path.dirname(p), ROOT).replace(os.sep, "/")
         urls[SITE + "/" + ("" if rel == "." else rel + "/")] = None
     urls.update({SITE + k: v for k, v in generated.items()})
+    # L'accueil et le dashboard changent à chaque relevé
+    latest = max((v for v in generated.values() if v), default=None)
+    for u in (SITE + "/", SITE + "/dashboard.html"):
+        urls[u] = urls[u] or latest
     order = sorted(urls, key=lambda u: (u.count("/"), u))
     lines = [f"  <url><loc>{u}</loc><lastmod>{urls[u] or old.get(u, '2026-10-17')}</lastmod></url>" for u in order]
     open(path, "w", encoding="utf8").write('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -1346,21 +1357,28 @@ def update_sitemap(generated):
 
 
 def update_dashboard(cfg):
-    cities, rows = [], []
+    cities = []
     for c in cfg["cities"]:
         path, date = latest_raw(c["slug"])
         if not path:
             continue
         cities.append({"slug": c["slug"], "name": c["name"], "date": date, "date_label": long_date(date)})
+        rows = []
         for r in read_listings(path, cfg):
-            rows.append({"city": c["slug"], "source_listing_id": r["id"], "district": r["district"] or "indéfini",
+            rows.append({"source_listing_id": r["id"], "district": r["district"] or "indéfini",
                          "price_mad": r["price"], "surface_m2": r["surface"], "bedrooms": r["bedrooms"],
                          "bathrooms": r["bathrooms"], "furnished": {"1": True, "0": False}.get(r["furnished"]),
                          "publication_date": r["published"] or None, "suspect_category": not r["kept"],
                          "price_per_m2": round(r["ppm2"], 2) if r["ppm2"] else None})
+        # Annonces d'une ville dans un fichier à part, chargé par le dashboard quand la ville est choisie :
+        # la page reste légère (toutes les villes intégrées dans la page pesaient 5 Mo).
+        out = os.path.join(ROOT, "data", "dashboard", f"{c['slug']}.json")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, "w", encoding="utf8") as f:
+            json.dump({"city": c["slug"], "date": date, "rows": rows}, f, ensure_ascii=False, separators=(",", ":"))
     sources = sorted({SOURCE_NAMES.get(s, s.capitalize()) for c in cfg["cities"] if latest_raw(c["slug"])[0]
                       for s in raw_source(latest_raw(c["slug"])[0]).split("+")})
-    data = json.dumps({"cities": cities, "rows": rows}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    data = json.dumps({"cities": cities}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     path = os.path.join(ROOT, "dashboard.html")
     s = open(path, encoding="utf8").read()
     s = re.sub(r'(<script type="application/json" id="market-dataset">).*?(</script>)',
