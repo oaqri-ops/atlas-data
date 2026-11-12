@@ -1034,6 +1034,74 @@ def city_page(city, st, cfg):
 """ + footer(cfg)
 
 
+# ---------- page 404 ----------
+
+def page_404(cfg, all_stats):
+    """Page servie par GitHub Pages pour toute adresse inconnue : mêmes en-tête et pied de page que le site,
+    et les prix du dernier relevé (une version figée gardait l'ancien design et des prix périmés).
+    Liens absolus : la page s'affiche à n'importe quelle adresse."""
+    cards = []
+    for c in cfg["cities"]:
+        st = all_stats.get(c["slug"])
+        if not st:
+            continue
+        top = "".join(f'<li><a href="/{c["slug"]}/{q["slug"]}/">{e(q["name"])}</a> <span>{n(q["median"])} MAD/m²</span></li>'
+                      for q in sorted(st["ranked"], key=lambda q: -q["n"])[:4])
+        cards.append(f'<li class="nf-city"><a class="nf-city-name" href="/{c["slug"]}/">{e(c["name"])}</a>'
+                     f'<p><strong>{n(st["median"])} MAD/m²</strong> en médiane, {len(st["ranked"])} quartiers</p>'
+                     f'<ul>{top}</ul></li>')
+    dates = sorted({st["date"] for st in all_stats.values()})
+    when = f"Relevé du {long_date(dates[-1])}." if dates else ""
+    first = cfg["cities"][0]["slug"]
+    return f"""<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="noindex">
+  <title>Page introuvable - Atlas Data</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:ital,wght@0,400..800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <script src="/assets/components.js" defer></script>
+  <style>
+    .nf-cities{{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}}
+    .nf-city{{border:1px solid var(--line);border-radius:12px;background:#fff;padding:20px 22px}}
+    .nf-city-name{{display:inline-flex;align-items:center;min-height:44px;font:800 22px/1.2 var(--display);letter-spacing:-.02em;color:var(--ink);text-decoration:none}}
+    .nf-city-name:hover{{color:var(--blue);text-decoration:underline}}
+    .nf-city p{{color:var(--muted);font-size:15px}}
+    .nf-city p strong{{color:var(--blue);font-variant-numeric:tabular-nums}}
+    .nf-city ul{{list-style:none;margin:12px 0 0;padding:12px 0 0;border-top:1px solid var(--line)}}
+    .nf-city li{{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px}}
+    .nf-city li a{{display:inline-flex;align-items:center;min-height:44px;color:var(--ink)}}
+    .nf-city li span{{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}}
+    .nf-actions{{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}}
+    .nf-when{{margin-top:20px;font-size:14px;color:var(--muted)}}
+  </style>
+</head>
+<body>
+{read_template("header.html")}
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="shell">
+        <h1 id="page-title">Cette page n'existe pas</h1>
+        <p class="hero-lede">Le lien est peut-être ancien ou mal recopié. Un quartier peut aussi disparaître une semaine quand il compte trop peu d'annonces. Voici les prix au m² du dernier relevé :</p>
+        <p class="nf-actions"><a class="btn btn-primary" href="/{first}/#budget">Calculer mon budget</a><a class="btn btn-ghost" href="/">Accueil</a><a class="btn btn-ghost" href="/dashboard.html">Dashboard</a></p>
+        <ul class="nf-cities">{"".join(cards)}</ul>
+        <p class="nf-when">{when}</p>
+      </div>
+    </section>
+  </main>
+
+""" + footer(cfg)
+
+
 # ---------- accueil (étude Marrakech) ----------
 
 HOME_SCALE = 40_000
@@ -1479,6 +1547,8 @@ def main():
               f"{len(st['ranked'])} quartiers : {', '.join(q['name'] + ' (' + str(q['n']) + ')' for q in st['ranked'])}")
     if all_stats:
         render_home(cfg, all_stats)
+        with open(os.path.join(ROOT, "404.html"), "w", encoding="utf8") as f:
+            f.write(page_404(cfg, all_stats))
     else:
         print("ATTENTION : aucun relevé exploitable, accueil non régénéré.")
     retire_orphans(cfg, all_stats, generated)
