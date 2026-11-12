@@ -145,6 +145,7 @@ def read_listings(path, cfg):
         other = cross.get((district, r["price"], r["surface"]))
         if key in same or (other and other != r["source"]):
             r["kept"] = False
+            r["cross_dup"] = bool(other and other != r["source"])
             continue
         same.add(key)
         cross.setdefault((district, r["price"], r["surface"]), r["source"])
@@ -196,6 +197,7 @@ def city_stats(city, cfg):
         q["rank"] = i + 1
     stats = summarize(rows)
     source = raw_source(path)
+    stats["cross_dups"] = sum(1 for r in read_listings(path, cfg) if r.get("cross_dup"))
     stats.update(raw=raw, date=date, rows=rows, ranked=ranked, small=small,
                  source=source, source_name=source_label(source))
     stats["changes"] = changes_since_previous(city, cfg, stats)
@@ -572,6 +574,16 @@ def set_city_nav(page, cfg):
 
 # ---------- pages ----------
 
+def pro_pitch(cname, st):
+    """Argument Pro d'une ville : la pige du lundi. « Sans doublons » seulement quand le relevé mêle plusieurs portails."""
+    if "+" in st["source"]:
+        return (f"La pige {st['source_name']} de {e(cname)} chaque lundi, dans un seul fichier Excel : un bien publié sur les deux "
+                f"portails n'y compte qu'une fois. Titre, agence, prix, surface et lien de chaque annonce, avec les nouvelles annonces "
+                f"et les baisses de prix de la semaine.")
+    return (f"La pige {st['source_name']} de {e(cname)} chaque lundi, dans un fichier Excel : titre, agence, prix, surface et lien "
+            f"de chaque annonce, avec les nouvelles annonces et les baisses de prix de la semaine.")
+
+
 def quartier_page(city, st, q, cfg):
     name, cname, date = q["name"], city["name"], st["date"]
     path = f"/{city['slug']}/{q['slug']}/"
@@ -725,7 +737,7 @@ def quartier_page(city, st, q, cfg):
 
     <section class="pro-band" aria-labelledby="pro-title">
       <div class="shell">
-        <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>Chaque lundi, toutes les annonces {st['source_name']} de {e(cname)} dans un fichier Excel : titre, agence, prix, surface, lien, et les nouvelles annonces de la semaine signalées. 29 € HT par mois, sans engagement.</p></div>
+        <div><h2 id="pro-title">Vous êtes une agence {e(q['prep'])}&nbsp;?</h2><p>{pro_pitch(cname, st)} 29 € HT par mois, sans engagement.</p></div>
         <div class="pro-actions"><a class="btn btn-primary" href="/exemples/atlas-data-pro-exemple-gueliz.xlsx" download>Télécharger un exemple</a><a class="btn btn-ghost" data-pro-contact data-ville="{e(cname)}" href="{mail}">Demander l'accès Pro</a></div>
       </div>
     </section>
@@ -1271,6 +1283,9 @@ def render_home(cfg, all_stats):
     city_list = join_fr([c["name"] for c, _ in cities])
     source = join_fr(sorted({SOURCE_NAMES.get(s, s.capitalize()) for _, st in cities for s in st["source"].split("+")}))
     week_rows, week_total, week_foot = home_week(cities)
+    # Plusieurs portails dans le relevé (Avito et Mubawab) : l'offre Pro parle de pige multiportail sans doublons
+    multi = any("+" in st["source"] for _, st in cities)
+    dups = sum(st.get("cross_dups", 0) for _, st in cities)
 
     faq = [
         ("D'où viennent les données, et à quelle fréquence ?",
@@ -1280,13 +1295,17 @@ def render_home(cfg, all_stats):
          "Non. Le relevé ne collecte ni nom, ni téléphone, ni email d'agent ou de particulier. Le fichier Pro reprend l'annonce telle qu'elle est publiée : "
          "titre, agence, prix, surface, quartier et lien."),
         ("Sous quel format arrive le fichier Pro ?",
-         f"Un fichier Excel (.xlsx) par ville, chaque lundi. Colonnes : référence {source}, titre, agence, quartier, prix demandé, surface, prix au m², "
+         f"Un fichier Excel (.xlsx) par ville, chaque lundi. Colonnes : {'portail et référence de l’annonce' if multi else 'référence ' + source}, titre, agence, quartier, prix demandé, surface, prix au m², "
          "chambres, meublé, date de publication, nouvelle annonce, baisse de prix et lien. Le fichier d'exemple de Guéliz montre le format exact."),
         ("Quelle différence entre l'accès gratuit et la version Pro ?",
          "Les pages villes et quartiers, le calculateur de budget et le dashboard sont gratuits et sans inscription, avec un aperçu de 10 annonces. "
          f"La version Pro, à 29 € HT par mois, envoie chaque lundi toutes les annonces {source} de la ville choisie, avec leur titre, leur agence et leur lien, "
          "dans un fichier Excel."),
     ]
+    if multi:
+        faq.insert(1, ("Que devient un bien publié à la fois sur Avito et sur Mubawab ?",
+                       f"Il ne compte qu'une fois : même quartier, même prix et même surface, c'est l'annonce Avito qui est gardée. "
+                       f"Au relevé du {long_date(date)}, {n(dups)} annonces Mubawab étaient aussi publiées sur Avito."))
     faq_html = "\n".join(f"          <details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
 
     org = {"@type": "Organization", "@id": SITE + "/#org", "name": "Atlas Data", "url": SITE + "/", "email": "othman@atlas-data.fr",
@@ -1313,8 +1332,21 @@ def render_home(cfg, all_stats):
         "OG_DESC": e(f"Combien coûte le m² dans votre quartier ? Prix médians à {city_list}, "
                      f"sur {n(total)} annonces, mis à jour chaque lundi."),
         "LD_JSON": json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"),
-        "HERO_LEDE": (f"Pour les agences et les professionnels de l'immobilier à {e(city_list)} : {n(total)} annonces d'appartements à vendre {when}, "
-                      f"avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur {source}, pas des prix de vente."),
+        "HERO_LEDE": (f"Pour les agences de {e(city_list)} : {n(total)} annonces d'appartements à vendre {when} sur {source}"
+                      + (", un bien publié sur les deux portails compté une seule fois. " if multi else ". ")
+                      + "Les nouvelles annonces et les baisses de prix sont signalées d'un relevé à l'autre. "
+                      "Ce sont des prix demandés, pas des prix de vente."),
+        "AGENCY_H2": f"La pige {e(source)} de votre ville, chaque lundi",
+        "AGENCY_P": (f"Pour les agences de {e(city_list)}. "
+                     + (f"Les annonces des deux portails arrivent dans un seul fichier Excel, prêt à filtrer : titre, agence, prix, surface et lien. "
+                        f"Au dernier relevé, {n(dups)} biens publiés à la fois sur Avito et sur Mubawab n'y comptent qu'une fois. "
+                        if multi else
+                        f"Toutes les annonces {e(source)} de votre ville arrivent dans un fichier Excel, prêt à filtrer : titre, agence, prix, surface et lien. ")
+                     + "Les nouvelles annonces et les baisses de prix depuis lundi dernier sont signalées."),
+        "PRO_HEAD_P": ("Les prix par quartier, le calculateur et le dashboard restent gratuits. La version Pro ajoute la pige complète de votre ville : "
+                       + (f"toutes les annonces {e(source)}, sans doublons, " if multi else f"toutes les annonces {e(source)}, ")
+                       + "dans un fichier Excel chaque lundi."),
+        "PRO_ROW_ANNONCES": f"Toutes les annonces {e(source)} de votre ville" + (", sans doublons" if multi else ""),
         "WEEK_INTRO": f"Relevé du {long_date(date)}, annonces exploitables par ville.",
         "WEEK_ROWS": week_rows,
         "WEEK_TOTAL": week_total,
