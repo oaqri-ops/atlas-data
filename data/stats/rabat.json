@@ -5,6 +5,7 @@
  "median_surface": 120,
  "min": 2857,
  "max": 81633,
+ "cross_dups": 0,
  "raw": 1137,
  "date": "2026-11-09",
  "source": "avito",
