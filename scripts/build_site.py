@@ -145,6 +145,7 @@ def read_listings(path, cfg):
         other = cross.get((district, r["price"], r["surface"]))
         if key in same or (other and other != r["source"]):
             r["kept"] = False
+            r["dup"] = True
             r["cross_dup"] = bool(other and other != r["source"])
             continue
         same.add(key)

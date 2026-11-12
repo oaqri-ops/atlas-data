@@ -45,6 +45,21 @@ automatiquement quand seuls les accents ou les majuscules diffèrent (« Maârif
 Casablanca »). Un quartier Mubawab absent de la table reste sous son nom : à vérifier après chaque nouveau
 relevé (quartiers en double sur les pages villes).
 
+## Fichier Pro
+
+`scripts/fichier_pro.py` prépare le fichier Excel du lundi pour les abonnés Pro, une ville à la fois ou toutes
+(`--toutes`). Il reprend les annonces du dernier run de l'actor pour la ville (titre, agence, lien), retire les doublons
+avec la même règle que le site (un bien publié sur Avito et sur Mubawab n'apparaît qu'une fois, l'annonce Avito est
+gardée) et signale les nouvelles annonces et les baisses de prix par rapport au fichier précédent.
+
+```bash
+APIFY_TOKEN=... python scripts/fichier_pro.py --toutes
+```
+
+Les fichiers sont écrits dans `~/atlas-data-pro` (option `--sortie`), avec l'état de chaque semaine dans
+`~/atlas-data-pro/.etat/` : garder ce dossier d'une semaine à l'autre. Le script refuse d'écrire dans le dépôt, qui est
+publié tel quel sur atlas-data.fr.
+
 ## Interface
 
 `DESIGN.md` décrit le système visuel (couleurs, typographie, composants, règles). Le menu « Villes » et
