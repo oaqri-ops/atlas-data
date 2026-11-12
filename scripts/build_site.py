@@ -1310,8 +1310,8 @@ def render_home(cfg, all_stats):
     tokens = {
         "META_DESC": e(f"Prix au m² des appartements à {city_list}, quartier par quartier, chaque lundi. "
                        "Pour les agences : toutes les annonces en Excel."),
-        "OG_DESC": e(f"{n(total)} annonces d'appartements à vendre {when}, ville par ville : prix demandés, nouvelles annonces et baisses de prix, "
-                     "chaque lundi dans un fichier Excel."),
+        "OG_DESC": e(f"Combien coûte le m² dans votre quartier ? Prix médians à {city_list}, "
+                     f"sur {n(total)} annonces, mis à jour chaque lundi."),
         "LD_JSON": json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"),
         "HERO_LEDE": (f"Pour les agences et les professionnels de l'immobilier à {e(city_list)} : {n(total)} annonces d'appartements à vendre {when}, "
                       f"avec les nouvelles annonces et les baisses de prix signalées. Ce sont les prix demandés sur {source}, pas des prix de vente."),
