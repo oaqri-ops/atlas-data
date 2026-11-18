@@ -1,12 +1,12 @@
 {
- "n": 3084,
+ "n": 3074,
  "median": 13000,
  "median_price": 1250000,
  "median_surface": 89,
  "min": 2000,
  "max": 100000,
- "cross_dups": 187,
- "raw": 5286,
+ "cross_dups": 186,
+ "raw": 5262,
  "date": "2026-11-18",
  "source": "avito+mubawab",
  "source_name": "Avito et Mubawab",
@@ -35,9 +35,9 @@
    "rank": 2
   },
   {
-   "n": 225,
-   "median": 23125,
-   "median_price": 2400000,
+   "n": 224,
+   "median": 23073,
+   "median_price": 2412500,
    "median_surface": 110,
    "min": 2500,
    "max": 70588,
@@ -68,10 +68,10 @@
    "rank": 5
   },
   {
-   "n": 48,
-   "median": 18395,
-   "median_price": 2261000,
-   "median_surface": 116,
+   "n": 47,
+   "median": 18487,
+   "median_price": 2300000,
+   "median_surface": 115,
    "min": 10787,
    "max": 37097,
    "name": "Mozart",
@@ -79,7 +79,7 @@
    "rank": 6
   },
   {
-   "n": 448,
+   "n": 446,
    "median": 17696,
    "median_price": 1972500,
    "median_surface": 108,
@@ -101,17 +101,6 @@
    "rank": 8
   },
   {
-   "n": 71,
-   "median": 16111,
-   "median_price": 2100000,
-   "median_surface": 128,
-   "min": 3333,
-   "max": 27273,
-   "name": "Administratif",
-   "slug": "administratif",
-   "rank": 9
-  },
-  {
    "n": 13,
    "median": 16092,
    "median_price": 2200000,
@@ -120,6 +109,17 @@
    "max": 37313,
    "name": "manar",
    "slug": "manar",
+   "rank": 9
+  },
+  {
+   "n": 70,
+   "median": 16056,
+   "median_price": 2100000,
+   "median_surface": 128,
+   "min": 3333,
+   "max": 26190,
+   "name": "Administratif",
+   "slug": "administratif",
    "rank": 10
   },
   {
@@ -310,10 +310,10 @@
    "rank": 27
   },
   {
-   "n": 206,
+   "n": 204,
    "median": 11444,
    "median_price": 960000,
-   "median_surface": 80,
+   "median_surface": 78,
    "min": 4167,
    "max": 25000,
    "name": "Marjane",
@@ -321,9 +321,9 @@
    "rank": 28
   },
   {
-   "n": 121,
-   "median": 11382,
-   "median_price": 810000,
+   "n": 120,
+   "median": 11279,
+   "median_price": 805000,
    "median_surface": 70,
    "min": 6531,
    "max": 90476,
@@ -376,8 +376,8 @@
    "rank": 33
   },
   {
-   "n": 116,
-   "median": 9917,
+   "n": 117,
+   "median": 10000,
    "median_price": 750000,
    "median_surface": 76,
    "min": 5882,
@@ -431,9 +431,9 @@
    "rank": 38
   },
   {
-   "n": 39,
+   "n": 38,
    "median": 8125,
-   "median_price": 530000,
+   "median_price": 515000,
    "median_surface": 64,
    "min": 4545,
    "max": 14602,

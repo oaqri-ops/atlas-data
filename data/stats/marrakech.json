@@ -1,12 +1,12 @@
 {
- "n": 4859,
+ "n": 4856,
  "median": 15476,
  "median_price": 1220000,
  "median_surface": 79,
  "min": 2000,
  "max": 100000,
- "cross_dups": 459,
- "raw": 7363,
+ "cross_dups": 460,
+ "raw": 7364,
  "date": "2026-11-18",
  "source": "avito+mubawab",
  "source_name": "Avito et Mubawab",
@@ -90,8 +90,8 @@
    "rank": 7
   },
   {
-   "n": 1122,
-   "median": 20246,
+   "n": 1121,
+   "median": 20238,
    "median_price": 1500000,
    "median_surface": 78,
    "min": 2000,
@@ -178,8 +178,8 @@
    "rank": 15
   },
   {
-   "n": 139,
-   "median": 16429,
+   "n": 138,
+   "median": 16396,
    "median_price": 2000000,
    "median_surface": 115,
    "min": 2217,
@@ -321,17 +321,6 @@
    "rank": 28
   },
   {
-   "n": 59,
-   "median": 11429,
-   "median_price": 860000,
-   "median_surface": 75,
-   "min": 7000,
-   "max": 18182,
-   "name": "Hay Charaf",
-   "slug": "hay-charaf",
-   "rank": 29
-  },
-  {
    "n": 49,
    "median": 11429,
    "median_price": 1000000,
@@ -340,6 +329,17 @@
    "max": 18627,
    "name": "Daoudiate",
    "slug": "daoudiate",
+   "rank": 29
+  },
+  {
+   "n": 59,
+   "median": 11429,
+   "median_price": 860000,
+   "median_surface": 75,
+   "min": 7000,
+   "max": 18182,
+   "name": "Hay Charaf",
+   "slug": "hay-charaf",
    "rank": 30
   },
   {
@@ -365,17 +365,6 @@
    "rank": 32
   },
   {
-   "n": 75,
-   "median": 11053,
-   "median_price": 790000,
-   "median_surface": 68,
-   "min": 3514,
-   "max": 62162,
-   "name": "Ain Mezouar",
-   "slug": "ain-mezouar",
-   "rank": 33
-  },
-  {
    "n": 29,
    "median": 11023,
    "median_price": 910000,
@@ -384,6 +373,17 @@
    "max": 61875,
    "name": "Bouaakkaz",
    "slug": "bouaakkaz",
+   "rank": 33
+  },
+  {
+   "n": 74,
+   "median": 10995,
+   "median_price": 785000,
+   "median_surface": 68,
+   "min": 3514,
+   "max": 62162,
+   "name": "Ain Mezouar",
+   "slug": "ain-mezouar",
    "rank": 34
   },
   {

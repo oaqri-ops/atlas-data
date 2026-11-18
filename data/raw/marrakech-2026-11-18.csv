@@ -1,12 +1,13 @@
 id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication_date,seller_type
 8385229,mubawab,Guéliz,149000,60,2,1,2,,
+8418308,mubawab,Route Amizmiz,1240000,41,1,,1,,
 8257821,mubawab,Guéliz,877000,32,1,,1,,
 8413438,mubawab,Guéliz,1700000,105,2,,3,,
 8304905,mubawab,Mhamid,500000,57,3,,2,,
-8022549,mubawab,Guéliz,648000,44,1,,1,,
 8275966,mubawab,Guéliz,16500000,95,2,1,2,,
 8450351,mubawab,Ouasis,1200000,60,2,,2,,
 8448202,mubawab,Sidi Youssef,610000,58,2,1,1,,
+8436477,mubawab,Boulevard Med 6,2800000,108,3,,2,,
 8328263,mubawab,Guéliz,1485000,55,1,,1,,
 8263156,mubawab,Majorelle,1615000,85,2,,2,,
 8022547,mubawab,Guéliz,1072600,77,2,,2,,
@@ -21,18 +22,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8295966,mubawab,Agdal,2900000,211,2,,2,,
 8380638,mubawab,Guéliz,3150000,105,2,1,1,,
 8442372,mubawab,Agdal,2500000,95,3,1,2,,
-8422648,mubawab,Boulevard Med 6,3490000,117,2,1,3,,
-8432598,mubawab,Amelkis,1700000,87,2,,2,,
 8453142,mubawab,Guéliz,2250000,78,2,1,2,,
 8450891,mubawab,Guéliz,1850000,86,2,1,2,,
 8447604,mubawab,Hivernage,901711,60,2,,2,,
 8444773,mubawab,Mhamid,550000,62,3,,1,,
 8364979,mubawab,Guéliz,1350000,42,1,1,1,,
 8338102,mubawab,Guéliz,1180000,31,1,1,1,,
-8380290,mubawab,Guéliz,1056000,44,1,,1,,
+8447432,mubawab,,3300000,148,2,,2,,
+8401828,mubawab,Izdihar,820000,70,3,,1,,
+8421012,mubawab,Route Amizmiz,1252000,41,1,,1,,
 8257822,mubawab,Guéliz,999000,38,1,,1,,
 8304906,mubawab,Mhamid,520000,58,3,,2,,
-8138778,mubawab,Guéliz,1188600,83,3,,3,,
 7992020,mubawab,Ennakhil (Palmeraie),2100000,146,3,,2,,
 8445566,mubawab,Hay Targa,1700000,96,2,,1,,
 8432114,mubawab,Hivernage,12000000,420,4,,4,,
@@ -43,6 +43,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8304903,mubawab,Mhamid,510000,60,3,,2,,
 8311902,mubawab,Guéliz,952000,56,2,,1,,
 8154983,mubawab,Guéliz,828000,60,1,,1,,
+8422648,mubawab,Boulevard Med 6,3490000,117,2,1,3,,
 8401097,mubawab,Guéliz,1200000,57,1,,1,,
 8450776,mubawab,Guéliz,1650000,95,1,,1,,
 8430000,mubawab,Guéliz,2200000,131,2,,3,,
@@ -51,55 +52,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8354925,mubawab,Guéliz,2520000,74,1,,1,,
 8449752,mubawab,Samlalia,1150000,47,1,1,1,,
 8358790,mubawab,Hivernage,1223000,73,1,,1,,
-8420318,mubawab,Route de Safi,1450000,117,3,,2,,
+8450898,mubawab,Mhamid,490000,62,2,,1,,
+8436108,mubawab,Route Casablanca,1250000,71,2,1,1,,
+8432598,mubawab,Amelkis,1700000,87,2,,2,,
+8380290,mubawab,Guéliz,1056000,44,1,,1,,
 8444269,mubawab,Route de l'Ourika,4200000,237,5,,6,,
 8239377,mubawab,Guéliz,2278000,134,3,,2,,
 8268260,mubawab,Majorelle,846000,47,1,,1,,
 8443386,mubawab,Guéliz,1400000,84,1,1,2,,
-8438345,mubawab,Route Casablanca,1300000,76,2,1,2,,
-8452736,mubawab,Guéliz,2416000,151,2,1,2,,
-8366703,mubawab,Route de l'Ourika,1450000,105,2,,1,,
-59085703,avito,Guéliz,1200000,50,,,,2026-11-17T13:56:22Z,professional
-58202914,avito,Centre Ville,1487400,81,3,,1,2026-11-17T15:36:55Z,professional
-58832916,avito,Route d'Amezmiz,1316000,55,1,,1,2026-11-17T15:25:41Z,private
-58036192,avito,M'Hamid,430000,63,2,,0,2026-11-18T10:59:20Z,professional
-58036193,avito,M'Hamid,400000,55,2,,0,2026-11-18T10:59:18Z,professional
-57403153,avito,Autre secteur,530000,70,2,1,1,2026-11-18T10:59:29Z,professional
-53696929,avito,M'Hamid,460000,71,3,,2,2026-11-18T10:58:01Z,professional
-56223074,avito,M'Hamid,830000,95,3,,2,2026-11-18T10:58:52Z,professional
-59004982,avito,Guéliz,1090000,,2,,1,2026-11-18T10:56:41Z,professional
-58716620,avito,Guéliz,25000,103,1,,0,2026-11-18T10:55:47Z,professional
-58881992,avito,Semlalia,1150000,47,1,,1,2026-11-18T10:55:37Z,professional
-58874805,avito,Semlalia,1600000,107,3,,1,2026-11-18T10:55:05Z,professional
-59036722,avito,Semlalia,1700000,66,1,,1,2026-11-18T10:54:55Z,professional
-57302855,avito,Route de Casablanca,975000,,2,,1,2026-11-18T10:53:24Z,professional
-57568134,avito,Victor Hugo,1500000,136,3,,2,2026-11-18T10:53:24Z,professional
-59065545,avito,Guéliz,969000,51,1,,1,2026-11-18T10:53:20Z,professional
-58991022,avito,Route de Casablanca,2500000,128,3,1,2,2026-11-18T10:51:41Z,professional
-58953312,avito,Guéliz,1500000,53,1,1,1,2026-11-18T10:51:19Z,professional
-57551501,avito,Hivernage,2016000,96,3,,1,2026-11-18T10:50:12Z,professional
-54252844,avito,Av Mohammed VI,1830000,116,2,,0,2026-11-18T10:49:01Z,professional
-58952928,avito,Harti,1800000,89,2,1,1,2026-11-18T10:50:01Z,professional
-53715307,avito,Guéliz,,48,1,,1,2026-11-18T10:48:46Z,professional
-59024392,avito,Sidi Youssef Ben Ali,1600000,140,,,,2026-11-18T10:49:47Z,professional
-58988674,avito,Guéliz,12000,67,2,1,1,2026-11-18T10:46:44Z,professional
-58782218,avito,Autre secteur,1580000,80,2,,2,2026-11-18T10:45:56Z,professional
-57816224,avito,Guéliz,,56,1,,1,2026-11-18T10:44:54Z,professional
-56747564,avito,Semlalia,1200000,117,2,,2,2026-11-18T10:44:23Z,professional
-58163023,avito,Hay Charaf,2000000,110,3,1,2,2026-11-18T10:39:57Z,professional
-58631745,avito,Semlalia,780000,,1,,1,2026-11-18T10:37:21Z,professional
-57734847,avito,Hivernage,4300000,166,3,1,2,2026-11-18T10:36:04Z,professional
-58881089,avito,Es Saada,410000,,2,,,2026-11-18T10:36:11Z,professional
-58768902,avito,Guéliz,3800000,240,4,1,3,2026-11-18T10:30:41Z,professional
-58027259,avito,Sidi Abbad,1175000,67,2,,2,2026-11-18T10:31:27Z,private
-58571339,avito,Semlalia,1500000,84,2,,2,2026-11-18T10:29:25Z,professional
-58638577,avito,Guéliz,972000,,1,,1,2026-11-18T10:25:45Z,professional
-57606723,avito,Victor Hugo,1350000,58,1,,2,2026-11-18T10:24:54Z,professional
-59016412,avito,Hay Izdihar,850000,65,2,1,1,2026-11-18T10:23:51Z,professional
-58677629,avito,Guéliz,18500,67,2,,1,2026-11-18T10:22:02Z,professional
+8428964,mubawab,Route Amizmiz,1314000,47,1,,1,,
 8257823,mubawab,Guéliz,999000,38,1,,1,,
 8304908,mubawab,Mhamid,801000,90,4,,2,,
-8138790,mubawab,Guéliz,890400,62,2,,2,,
 8421922,mubawab,Samlalia,946000,43,1,1,1,,
 8358828,mubawab,Guéliz,969000,51,1,1,1,,
 8275783,mubawab,Guéliz,3240000,120,3,1,2,,
@@ -110,6 +73,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8304904,mubawab,Mhamid,576000,64,3,,2,,
 8154985,mubawab,Guéliz,676000,52,1,,1,,
 8140934,mubawab,Route Casablanca,1515000,134,2,,1,,
+8420318,mubawab,Route de Safi,1450000,117,3,,2,,
 8450274,mubawab,Hivernage,2900000,100,2,,2,,
 8383873,mubawab,Hay Targa,1650000,96,2,1,2,,
 8365181,mubawab,Guéliz,175000,63,1,,1,,
@@ -119,18 +83,16 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8430191,mubawab,Amerchich,1300000,156,3,,2,,
 8382608,mubawab,Azzouzia,850000,108,3,,2,,
 8423373,mubawab,Hay Targa,560000,54,2,1,1,,
-8430840,mubawab,Azzouzia,760000,81,3,,2,,
+8438345,mubawab,Route Casablanca,1300000,76,2,1,2,,
+8452736,mubawab,Guéliz,2416000,151,2,1,2,,
+8366703,mubawab,Route de l'Ourika,1450000,105,2,,1,,
 8453431,mubawab,Route Casablanca,1100000,83,2,,1,,
 8380295,mubawab,Guéliz,1275000,51,1,,1,,
 8454867,mubawab,Agdal,1442000,78,2,,1,,
 8424590,mubawab,Guéliz,1410000,47,1,,2,,
-8424515,mubawab,Route d'Agadir - Essaouira,949000,73,2,,2,,
-8424536,mubawab,Guéliz,1400000,64,1,,1,,
-8416391,mubawab,Guéliz,1400000,61,2,,1,,
-8374323,mubawab,Guéliz,3483000,221,3,,2,,
+8428980,mubawab,Route Amizmiz,1316000,45,1,,1,,
 8257825,mubawab,Guéliz,969000,35,1,,1,,
 8304909,mubawab,Mhamid,740000,87,4,,2,,
-8140933,mubawab,Route Casablanca,1515000,137,2,,1,,
 8415259,mubawab,Hivernage,2200000,106,3,1,2,,
 8404525,mubawab,Agdal,3200000,104,2,1,2,,
 8387787,mubawab,Camp Al Ghoul,903000,43,1,1,1,,
@@ -141,6 +103,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8304907,mubawab,Mhamid,520000,58,3,,2,,
 8154987,mubawab,Guéliz,1080300,78,2,,2,,
 8140935,mubawab,Route Casablanca,1515000,137,2,,1,,
+8430840,mubawab,Azzouzia,760000,81,3,,2,,
 8383283,mubawab,Guéliz,1250000,45,1,1,1,,
 8329259,mubawab,Sanaoubar,660000,57,2,,1,,
 8440379,mubawab,Agdal,1580000,61,1,1,2,,
@@ -150,18 +113,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8219122,mubawab,Guéliz,320000,159,4,,4,,
 8359190,mubawab,Route Casablanca,133000,98,2,,1,,
 8434340,mubawab,Majorelle,190000,104,2,1,2,,
-8434431,mubawab,Samlalia,108000,70,2,1,1,,
+8424515,mubawab,Route d'Agadir - Essaouira,949000,73,2,,2,,
+8424536,mubawab,Guéliz,1400000,64,1,,1,,
+8416391,mubawab,Guéliz,1400000,61,2,,1,,
+8374323,mubawab,Guéliz,3483000,221,3,,2,,
 8448881,mubawab,Guéliz,139000,49,1,1,1,,
 8448879,mubawab,Hivernage,207000,61,1,,1,,
 8448434,mubawab,,110000,82,2,,1,,
 8444394,mubawab,Les Portes de Marrakech,63000,,1,,1,,
-8444385,mubawab,Route de Fez,380000,147,3,1,3,,
-8268261,mubawab,Majorelle,1098000,61,2,,1,,
-8359716,mubawab,Route Casablanca,1450000,74,2,1,2,,
-8413738,mubawab,Hivernage,1500000,56,1,1,1,,
+8428983,mubawab,Route Amizmiz,1321000,45,1,,1,,
 8257826,mubawab,Guéliz,1258000,42,1,,1,,
 8304911,mubawab,Mhamid,599800,64,4,,2,,
-8140936,mubawab,Route Casablanca,1567000,137,2,,1,,
 8440297,mubawab,Majorelle,1675000,63,1,,1,,
 8371911,mubawab,Boulevard Med 6,3000000,100,3,1,2,,
 8450304,mubawab,Guéliz,2900000,109,3,1,2,,
@@ -172,6 +134,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8154989,mubawab,Guéliz,889750,69,2,,2,,
 8140937,mubawab,Route Casablanca,1546000,137,2,,1,,
 8453917,mubawab,Route Casablanca,999000,54,1,,1,,
+8434431,mubawab,Samlalia,108000,70,2,1,1,,
 8434443,mubawab,Route Casablanca,157000,86,2,,2,,
 8454395,mubawab,Ain Mezouar,9200000,148,2,1,2,,
 8436955,mubawab,Agdal,2950000,90,3,1,2,,
@@ -181,18 +144,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8444011,mubawab,Ennakhil (Palmeraie),1550000,65,2,1,1,,
 8452810,mubawab,Ennakhil (Palmeraie),1400000,78,2,1,1,,
 8405006,mubawab,Guéliz,1300000,41,2,1,1,,
-8197855,mubawab,Samlalia,840000,40,1,,1,,
+8444385,mubawab,Route de Fez,380000,147,3,1,3,,
+8268261,mubawab,Majorelle,1098000,61,2,,1,,
+8359716,mubawab,Route Casablanca,1450000,74,2,1,2,,
+8413738,mubawab,Hivernage,1500000,56,1,1,1,,
 8451389,mubawab,Hivernage,4300000,118,2,,1,,
 8235411,mubawab,Route de l'Ourika,1100000,75,1,1,1,,
 8432630,mubawab,Riad Al Atlas,2300000,90,2,,2,,
 8424413,mubawab,Boulevard Med 6,,48,1,,1,,
-8448150,mubawab,Guéliz,1365000,55,1,,1,,
-8454738,mubawab,Izdihar,1050000,106,2,,1,,
-8454711,mubawab,Boulevard Med 6,3500000,110,2,1,2,,
-8414520,mubawab,Route Casablanca,,58,1,1,1,,
+8435353,mubawab,Route Amizmiz,1278000,42,1,,1,,
 8257828,mubawab,Guéliz,877000,32,1,,1,,
 8304912,mubawab,Mhamid,620000,83,4,,2,,
-8140939,mubawab,Route Casablanca,1546000,134,2,,1,,
 8426652,mubawab,Camp Al Ghoul,1559000,76,2,1,1,,
 8335580,mubawab,Hay Targa,1450000,81,2,,2,,
 8450892,mubawab,Agdal,340000,100,2,1,2,,
@@ -203,6 +165,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8454781,mubawab,Route Casablanca,1137380,53,1,,1,,
 8414644,mubawab,Hay Al Bahja,1821000,111,2,,1,,
 8414629,mubawab,Hay Al Hassani,1475000,70,1,,1,,
+8197855,mubawab,Samlalia,840000,40,1,,1,,
 8009738,mubawab,Route Amizmiz,1900000,81,2,,2,,
 8009864,mubawab,Route Casablanca,860000,49,1,,1,,
 8044393,mubawab,Guéliz,2100000,127,2,1,2,,
@@ -212,18 +175,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8417773,mubawab,Route Casablanca,1400000,59,1,1,,,
 8453531,mubawab,Guéliz,1370000,76,2,1,1,,
 8317692,mubawab,Samlalia,1500000,76,2,1,1,,
-8436477,mubawab,Boulevard Med 6,2800000,108,3,,2,,
+8448150,mubawab,Guéliz,1365000,55,1,,1,,
+8454738,mubawab,Izdihar,1050000,106,2,,1,,
+8454711,mubawab,Boulevard Med 6,3500000,110,2,1,2,,
+8414520,mubawab,Route Casablanca,,58,1,1,1,,
 8450635,mubawab,Ain Mezouar,1800000,99,3,1,2,,
 8425919,mubawab,Ennakhil (Palmeraie),2000000,112,2,1,2,,
 8427832,mubawab,Agdal,2400000,90,2,,2,,
 8452623,mubawab,Agdal,2300000,87,2,,2,,
-8375379,mubawab,Route Casablanca,1300000,80,2,,1,,
-8257932,mubawab,Hivernage,1600000,67,1,1,1,,
-8378923,mubawab,Guéliz,2200000,100,2,1,1,,
-8425691,mubawab,Agdal,2100000,77,2,1,2,,
-8418308,mubawab,Route Amizmiz,1240000,41,1,,1,,
-8453918,mubawab,Route Casablanca,2255000,82,2,,2,,
-8414642,mubawab,Hay Al Bahja,1091000,74,1,,1,,
+8435356,mubawab,Route Amizmiz,1308000,48,1,,1,,
+8022549,mubawab,Guéliz,648000,44,1,,1,,
+8140933,mubawab,Route Casablanca,1515000,137,2,,1,,
 8440331,mubawab,Guéliz,1475000,55,1,,1,,
 8440309,mubawab,Guéliz,1537500,46,1,,1,,
 8442152,mubawab,Guéliz,1700000,64,1,,1,,
@@ -244,17 +206,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8449782,mubawab,Hivernage,4160000,113,2,,2,,
 8382370,mubawab,Guéliz,2400000,100,3,1,2,,
 8315784,mubawab,Ennakhil (Palmeraie),2550000,272,3,,2,,
+8375379,mubawab,Route Casablanca,1300000,80,2,,1,,
+8257932,mubawab,Hivernage,1600000,67,1,1,1,,
+8378923,mubawab,Guéliz,2200000,100,2,1,1,,
+8425691,mubawab,Agdal,2100000,77,2,1,2,,
 8358654,mubawab,Guéliz,1600000,88,2,,1,,
 8447888,mubawab,Guéliz,1200000,65,2,,1,,
 8435454,mubawab,Route Amizmiz,1400000,80,2,,1,,
 8371516,mubawab,Hivernage,1800000,115,2,,2,,
-8448680,mubawab,Guéliz,1600000,90,2,,1,,
-8374317,mubawab,Guéliz,1512000,56,1,,1,,
-8454375,mubawab,Route Casablanca,1500000,87,2,1,2,,
-8440135,mubawab,Samlalia,1550000,90,2,,2,,
-8421012,mubawab,Route Amizmiz,1252000,41,1,,1,,
-8454523,mubawab,Route Casablanca,869500,47,1,,1,,
-8414643,mubawab,Hay Al Bahja,1460000,81,2,,1,,
+8435357,mubawab,Route Amizmiz,1252000,42,1,,1,,
+8138778,mubawab,Guéliz,1188600,83,3,,3,,
+8140936,mubawab,Route Casablanca,1567000,137,2,,1,,
 8382992,mubawab,Guéliz,950000,32,1,,1,,
 8417620,mubawab,Hivernage,215000,100,2,1,1,,
 8368634,mubawab,Guéliz,950000,43,1,,1,,
@@ -274,17 +236,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8273125,mubawab,Hay Yasmina,3500000,138,2,1,2,,
 8043711,mubawab,Hivernage,1900000,65,2,1,1,,
 7944863,mubawab,Boulevard Med 6,2800000,155,2,1,2,,
+8448680,mubawab,Guéliz,1600000,90,2,,1,,
+8374317,mubawab,Guéliz,1512000,56,1,,1,,
+8454375,mubawab,Route Casablanca,1500000,87,2,1,2,,
+8440135,mubawab,Samlalia,1550000,90,2,,2,,
 8144799,mubawab,Route Casablanca,820000,40,1,,1,,
 8268262,mubawab,Majorelle,774000,43,1,,1,,
 8406460,mubawab,Samlalia,2500000,186,3,,2,,
 8268249,mubawab,Majorelle,1197000,63,2,,2,,
-8403746,mubawab,Ennakhil (Palmeraie),1050000,79,1,,1,,
-8454587,mubawab,Ennakhil (Palmeraie),1500000,75,2,,1,,
-8318492,mubawab,Ennakhil (Palmeraie),2950000,399,3,,2,,
-8454578,mubawab,Ennakhil (Palmeraie),2050000,117,2,,1,,
-8428964,mubawab,Route Amizmiz,1314000,47,1,,1,,
-8454779,mubawab,Route Casablanca,1086500,44,1,,1,,
-8414628,mubawab,Hay Al Hassani,927000,45,1,,1,,
+8435362,mubawab,Route Amizmiz,1280000,45,1,,1,,
+8138790,mubawab,Guéliz,890400,62,2,,2,,
+8140939,mubawab,Route Casablanca,1546000,134,2,,1,,
 8138091,mubawab,Route de Ouarzazate,880000,205,2,,2,,
 8447168,mubawab,Agdal,2150000,75,2,,2,,
 8363437,mubawab,Guéliz,2200000,100,2,,1,,
@@ -305,17 +267,17 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8421456,mubawab,Route Amizmiz,2500000,,3,1,2,,
 8330693,mubawab,Agdal,2300000,75,2,,2,,
 8453422,mubawab,Hivernage,1400000,43,1,1,1,,
+8403746,mubawab,Ennakhil (Palmeraie),1050000,79,1,,1,,
+8454587,mubawab,Ennakhil (Palmeraie),1500000,75,2,,1,,
+8318492,mubawab,Ennakhil (Palmeraie),2950000,399,3,,2,,
+8454578,mubawab,Ennakhil (Palmeraie),2050000,117,2,,1,,
 8268252,mubawab,Majorelle,738000,41,1,,1,,
 8454563,mubawab,Ennakhil (Palmeraie),1300000,88,1,,1,,
 8454545,mubawab,Route Casablanca,1390000,105,3,,1,,
 8454548,mubawab,Massira 1,800000,81,2,,1,,
-8454514,mubawab,Guéliz,1500000,79,2,1,2,,
-8454516,mubawab,Guéliz,2214000,82,2,,,,
-8454515,mubawab,Guéliz,2320000,80,2,1,,,
-8446410,mubawab,Guéliz,1500000,67,2,,1,,
-8428980,mubawab,Route Amizmiz,1316000,45,1,,1,,
-8454780,mubawab,Route Casablanca,1128500,61,1,,1,,
-8414630,mubawab,Hay Al Hassani,3247000,70,2,,2,,
+8435365,mubawab,Route Amizmiz,1289000,45,1,,1,,
+8453918,mubawab,Route Casablanca,2255000,82,2,,2,,
+8414642,mubawab,Hay Al Bahja,1091000,74,1,,1,,
 7998377,mubawab,Guéliz,1850000,100,2,1,2,,
 8355910,mubawab,Agdal,1300000,58,1,,1,,
 8441665,mubawab,Guéliz,1890000,91,2,1,2,,
@@ -336,20 +298,20 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8417268,mubawab,Hivernage,139000,50,1,1,1,,
 8451998,mubawab,Agdal,2300000,80,2,1,2,,
 8442773,mubawab,Agdal,320000,148,2,1,2,,
+8454514,mubawab,Guéliz,1500000,79,2,1,2,,
+8454516,mubawab,Guéliz,2214000,82,2,,,,
+8454515,mubawab,Guéliz,2320000,80,2,1,,,
+8446410,mubawab,Guéliz,1500000,67,2,,1,,
 8443772,mubawab,Guéliz,1150000,40,1,1,1,,
 8212672,mubawab,Guéliz,1200000,59,1,,1,,
 8454469,mubawab,Route Casablanca,920000,62,1,1,1,,
-7629060,mubawab,Guéliz,980000,50,1,,1,,
-8311898,mubawab,Guéliz,1394000,82,2,,1,,
-8454449,mubawab,Guéliz,2400000,120,2,,1,,
-8454426,mubawab,Guéliz,1300000,68,2,1,1,,
-8428983,mubawab,Route Amizmiz,1321000,45,1,,1,,
-8454785,mubawab,Route Casablanca,1147000,62,1,,1,,
+8435367,mubawab,Route Amizmiz,1289000,45,1,,1,,
+8454523,mubawab,Route Casablanca,869500,47,1,,1,,
+8414643,mubawab,Hay Al Bahja,1460000,81,2,,1,,
+8414628,mubawab,Hay Al Hassani,927000,45,1,,1,,
 8435942,mubawab,Guéliz,1643000,59,1,,1,,
 7915631,mubawab,Guéliz,1754000,71,1,,1,,
 8430951,mubawab,Azli,1020000,48,2,,1,,
-8242537,mubawab,Route Casablanca,864000,36,1,,1,,
-8420665,mubawab,Route Casablanca,728000,52,1,,1,,
 8289253,mubawab,Route Casablanca,1600000,85,2,1,2,,
 8454793,mubawab,Route Casablanca,1276500,69,1,,1,,
 8435945,mubawab,Guéliz,2183000,88,2,,2,,
@@ -366,21 +328,21 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8449772,mubawab,Route de Safi,1200000,71,2,,2,,
 8342022,mubawab,Samlalia,2600000,191,2,,2,,
 8129785,mubawab,Guéliz,1550000,83,2,,2,,
+7629060,mubawab,Guéliz,980000,50,1,,1,,
+8311898,mubawab,Guéliz,1394000,82,2,,1,,
+8454449,mubawab,Guéliz,2400000,120,2,,1,,
+8454426,mubawab,Guéliz,1300000,68,2,1,1,,
 8268248,mubawab,Majorelle,1064000,56,2,,2,,
 8454407,mubawab,Route de Safi,1600000,118,4,1,2,,
 8361204,mubawab,Ennakhil (Palmeraie),1700000,114,2,,3,,
 8361336,mubawab,Route Casablanca,850000,83,2,,1,,
-8372821,mubawab,Camp Al Ghoul,2400000,80,2,1,2,,
-8453910,mubawab,Camp Al Ghoul,1200000,54,1,1,2,,
-8454292,mubawab,Douar Dlam,850000,65,2,,1,,
-8431054,mubawab,Route de Fez,1380000,153,1,,1,,
-8435353,mubawab,Route Amizmiz,1278000,42,1,,1,,
-8454787,mubawab,Route Casablanca,1147000,62,1,,1,,
+8454779,mubawab,Route Casablanca,1086500,44,1,,1,,
+8414630,mubawab,Hay Al Hassani,3247000,70,2,,2,,
 8435948,mubawab,Guéliz,1940000,70,2,,1,,
 7915665,mubawab,Guéliz,3116000,146,3,,2,,
 8430967,mubawab,Azli,1100000,65,2,,1,,
-8242625,mubawab,Route Casablanca,1200000,50,1,,1,,
-8420666,mubawab,Route Casablanca,742000,53,1,,1,,
+8242537,mubawab,Route Casablanca,864000,36,1,,1,,
+8420665,mubawab,Route Casablanca,728000,52,1,,1,,
 7115910,mubawab,Mhamid,460000,71,3,,1,,
 8454795,mubawab,Route Casablanca,1332000,61,1,,1,,
 8435946,mubawab,Guéliz,2345000,85,2,,2,,
@@ -397,22 +359,22 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8439116,mubawab,Route Casablanca,2170000,107,3,,2,,
 8303154,mubawab,Guéliz,1499000,100,3,,2,,
 8264383,mubawab,Hivernage,2850000,149,3,,2,,
+8372821,mubawab,Camp Al Ghoul,2400000,80,2,1,2,,
+8453910,mubawab,Camp Al Ghoul,1200000,54,1,1,2,,
+8454292,mubawab,Douar Dlam,850000,65,2,,1,,
+8431054,mubawab,Route de Fez,1380000,153,1,,1,,
 8427172,mubawab,Route Casablanca,860000,62,2,1,1,,
 8453033,mubawab,Guéliz,1100000,55,1,,2,,
 8371026,mubawab,Guéliz,1200000,64,2,,1,,
 8414610,mubawab,Guéliz,1650000,53,1,1,1,,
-8328260,mubawab,Guéliz,1173000,46,1,,1,,
-8441974,mubawab,Guéliz,3013000,131,2,1,3,,
-8417967,mubawab,Ouasis,1050000,48,1,,1,,
-8330845,mubawab,Ouasis,1900000,92,3,1,2,,
-8435356,mubawab,Route Amizmiz,1308000,48,1,,1,,
-8454790,mubawab,Route Casablanca,1276500,69,1,,1,,
+8454780,mubawab,Route Casablanca,1128500,61,1,,1,,
 7915669,mubawab,Guéliz,1730000,96,1,,1,,
 8430978,mubawab,Azli,1212000,72,2,,1,,
-8242626,mubawab,Route Casablanca,1224000,51,1,,1,,
-8420673,mubawab,Route Casablanca,975000,75,2,,2,,
+8242625,mubawab,Route Casablanca,1200000,50,1,,1,,
+8420666,mubawab,Route Casablanca,742000,53,1,,1,,
 7127717,mubawab,Mhamid,430000,64,2,,1,,
 8105338,mubawab,Boulevard Med 6,1300000,58,1,1,2,,
+8216910,mubawab,Agdal,2410000,101,2,,2,,
 8435947,mubawab,Guéliz,1778000,64,2,,2,,
 7915664,mubawab,Guéliz,1450000,56,1,,1,,
 8430970,mubawab,Azli,1180000,70,2,,1,,
@@ -428,22 +390,22 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8365878,mubawab,Riad Al Atlas,2134000,97,2,,2,,
 8359675,mubawab,Riad Al Atlas,1250000,50,1,,1,,
 8336446,mubawab,Agdal,2400000,76,2,1,2,,
+8328260,mubawab,Guéliz,1173000,46,1,,1,,
+8441974,mubawab,Guéliz,3013000,131,2,1,3,,
+8417967,mubawab,Ouasis,1050000,48,1,,1,,
+8330845,mubawab,Ouasis,1900000,92,3,1,2,,
 8416393,mubawab,Guéliz,1900000,93,2,,1,,
 8272238,mubawab,Mhamid,480000,58,2,,1,,
 8454251,mubawab,Guéliz,1580000,80,1,,1,,
 8454246,mubawab,Guéliz,1370000,54,1,,1,,
-8000099,mubawab,Hivernage,1185000,69,2,,2,,
-8440028,mubawab,Route Casablanca,800000,45,1,1,1,,
-8374318,mubawab,Guéliz,1176000,54,1,,1,,
-8434184,mubawab,Guéliz,1250000,53,1,1,1,,
-8435357,mubawab,Route Amizmiz,1252000,42,1,,1,,
-8454792,mubawab,Route Casablanca,1276500,69,1,,1,,
+8454785,mubawab,Route Casablanca,1147000,62,1,,1,,
+8242626,mubawab,Route Casablanca,1224000,51,1,,1,,
+8420673,mubawab,Route Casablanca,975000,75,2,,2,,
 8106408,mubawab,Boulevard Med 6,1700000,75,2,,2,,
-8216910,mubawab,Agdal,2410000,101,2,,2,,
+8216911,mubawab,Agdal,2690000,116,2,,2,,
 7861568,mubawab,Mhamid,656000,82,3,,1,,
 8153312,mubawab,Guéliz,841800,61,1,,1,,
 8374315,mubawab,Guéliz,989000,43,1,,1,,
-8311905,mubawab,Guéliz,1000000,65,2,,1,,
 8435949,mubawab,Guéliz,2763500,110,3,,2,,
 7915667,mubawab,Guéliz,1600000,62,1,,1,,
 8430973,mubawab,Azli,1215000,70,2,,1,,
@@ -459,21 +421,21 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8437164,mubawab,Guéliz,82000,37,1,,1,,
 8446664,mubawab,Boulevard Med 6,2915000,95,3,,,,
 8446364,mubawab,Ennakhil (Palmeraie),3750000,212,3,1,3,,
+8000099,mubawab,Hivernage,1185000,69,2,,2,,
+8440028,mubawab,Route Casablanca,800000,45,1,1,1,,
+8374318,mubawab,Guéliz,1176000,54,1,,1,,
+8434184,mubawab,Guéliz,1250000,53,1,1,1,,
 8375872,mubawab,Guéliz,3450000,167,3,,2,,
 8349481,mubawab,Guéliz,2150000,100,2,1,1,,
 8444713,mubawab,Guéliz,1350000,54,1,,1,,
-8380298,mubawab,Guéliz,1056000,44,1,,1,,
-8438869,mubawab,Agdal,3000000,85,2,1,2,,
-8391022,mubawab,Camp Al Ghoul,2000000,85,2,1,2,,
-8281277,mubawab,Agdal,229000,75,2,1,2,,
-8435362,mubawab,Route Amizmiz,1280000,45,1,,1,,
-8454797,mubawab,Route Casablanca,1349000,40,1,,1,,
+8454787,mubawab,Route Casablanca,1147000,62,1,,1,,
 8106410,mubawab,Boulevard Med 6,2600000,105,3,1,2,,
-8216911,mubawab,Agdal,2690000,116,2,,2,,
 8216690,mubawab,Mhamid,683000,91,3,,1,,
 8154984,mubawab,Guéliz,849400,62,1,,1,,
+8311905,mubawab,Guéliz,1000000,65,2,,1,,
 8272234,mubawab,Mhamid,480000,58,2,,1,,
 8267867,mubawab,Majorelle,1349000,71,2,,2,,
+8380300,mubawab,Guéliz,1300000,53,1,,1,,
 7915670,mubawab,Guéliz,2300000,126,3,,2,,
 8430980,mubawab,Azli,1248000,72,2,,1,,
 8242630,mubawab,Route Casablanca,1848000,84,2,,1,,
@@ -489,22 +451,22 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8380292,mubawab,Guéliz,1248000,52,1,,1,,
 8446911,mubawab,Guéliz,2000000,116,2,,1,,
 8342370,mubawab,Guéliz,1775000,131,3,,3,,
+8380298,mubawab,Guéliz,1056000,44,1,,1,,
+8438869,mubawab,Agdal,3000000,85,2,1,2,,
+8391022,mubawab,Camp Al Ghoul,2000000,85,2,1,2,,
+8281277,mubawab,Agdal,229000,75,2,1,2,,
 8418722,mubawab,Guéliz,2350000,98,2,,2,,
 8281397,mubawab,Camp Al Ghoul,149000,77,2,1,2,,
 8323171,mubawab,Guéliz,195000,100,2,1,2,,
 8327514,mubawab,Guéliz,167000,96,2,1,1,,
-8452578,mubawab,Guéliz,,200,3,,3,,
-8442648,mubawab,Guéliz,1270000,75,2,,2,,
-8454085,mubawab,Route de l'Ourika,1130000,64,1,,1,,
-8454082,mubawab,Hay Targa,1700000,90,2,1,2,,
-8435365,mubawab,Route Amizmiz,1289000,45,1,,1,,
+8454790,mubawab,Route Casablanca,1276500,69,1,,1,,
 8219407,mubawab,Mhamid,656000,82,3,,2,,
 8154986,mubawab,Guéliz,1131600,82,2,,2,,
 8268247,mubawab,Majorelle,1254000,66,2,,2,,
-8380300,mubawab,Guéliz,1300000,53,1,,1,,
 8235125,mubawab,Route Casablanca,985000,78,2,,2,,
 8158291,mubawab,Guéliz,818100,45,1,,1,,
 8328264,mubawab,Guéliz,1396500,57,1,,1,,
+8448148,mubawab,Guéliz,1196000,53,1,,1,,
 8242631,mubawab,Route Casablanca,2376000,108,3,,2,,
 8420669,mubawab,Route Casablanca,793000,61,2,,1,,
 7115908,mubawab,Mhamid,400000,52,2,,1,,
@@ -520,19 +482,18 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8158287,mubawab,Guéliz,960000,60,1,,1,,
 8263152,mubawab,Guéliz,1180000,60,2,,1,,
 8416392,mubawab,Guéliz,1500000,77,1,,1,,
+8452578,mubawab,Guéliz,,200,3,,3,,
+8442648,mubawab,Guéliz,1270000,75,2,,2,,
+8454085,mubawab,Route de l'Ourika,1130000,64,1,,1,,
+8454082,mubawab,Hay Targa,1700000,90,2,1,2,,
 8395317,mubawab,Hivernage,4498000,173,2,1,2,,
 8299589,mubawab,El Hara,3500000,137,3,,3,,
 8249623,mubawab,Route Casablanca,1300000,82,2,,1,,
 8452141,mubawab,Boulevard Med 6,3100000,82,3,1,2,,
-8443700,mubawab,Guéliz,1000000,55,1,,1,,
-8374324,mubawab,Guéliz,3483000,221,2,,2,,
-8439393,mubawab,Route de Tahanaout,5300000,450,5,,5,,
-8436385,mubawab,Guéliz,2050000,96,2,1,2,,
-8435367,mubawab,Route Amizmiz,1289000,45,1,,1,,
+8454792,mubawab,Route Casablanca,1276500,69,1,,1,,
 8154988,mubawab,Guéliz,1051050,77,2,,2,,
 8268250,mubawab,Majorelle,969000,51,2,,2,,
 8158295,mubawab,Guéliz,1225000,75,2,,1,,
-8448148,mubawab,Guéliz,1196000,53,1,,1,,
 8242632,mubawab,Route Casablanca,3234000,147,3,,2,,
 8420670,mubawab,Route Casablanca,845000,65,2,,1,,
 7115909,mubawab,Mhamid,460000,71,3,,1,,
@@ -544,6 +505,10 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8380297,mubawab,Guéliz,2000000,103,1,,1,,
 8000139,mubawab,Hivernage,680000,40,1,,1,,
 8158289,mubawab,Guéliz,818100,45,1,,1,,
+8443700,mubawab,Guéliz,1000000,55,1,,1,,
+8374324,mubawab,Guéliz,3483000,221,2,,2,,
+8439393,mubawab,Route de Tahanaout,5300000,450,5,,5,,
+8436385,mubawab,Guéliz,2050000,96,2,1,2,,
 8332716,mubawab,Route de Safi,1250000,76,2,1,2,,
 8431766,mubawab,Ennakhil (Palmeraie),1600000,115,2,,2,,
 8454004,mubawab,Samlalia,2125000,1136,2,1,2,,
@@ -556,9 +521,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8349188,mubawab,Agdal,1700000,76,2,,2,,
 8311903,mubawab,Guéliz,1003000,59,2,,1,,
 8147839,mubawab,Route Casablanca,820000,43,1,,1,,
-8149102,mubawab,Route Casablanca,851000,46,1,,1,,
-8453904,mubawab,Ennakhil (Palmeraie),1600000,131,2,,2,,
-8430554,mubawab,Hivernage,3100000,101,3,1,2,,
+8454797,mubawab,Route Casablanca,1349000,40,1,,1,,
 8154990,mubawab,Guéliz,1504200,109,3,,3,,
 8268251,mubawab,Majorelle,1634000,86,2,,2,,
 8158300,mubawab,Guéliz,818100,45,1,,1,,
@@ -571,6 +534,9 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8380299,mubawab,Guéliz,1248000,52,1,,1,,
 8000157,mubawab,Hivernage,1190000,70,2,,1,,
 8158290,mubawab,Guéliz,818100,45,1,,1,,
+8149102,mubawab,Route Casablanca,851000,46,1,,1,,
+8453904,mubawab,Ennakhil (Palmeraie),1600000,131,2,,2,,
+8430554,mubawab,Hivernage,3100000,101,3,1,2,,
 8261900,mubawab,Guéliz,3600000,209,3,,1,,
 8436047,mubawab,Izdihar,1350000,95,2,1,2,,
 8158298,mubawab,Guéliz,818100,45,1,,1,,
@@ -586,10 +552,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8359510,mubawab,Hivernage,1232000,77,2,,2,,
 8354986,mubawab,Guéliz,1100000,50,1,,1,,
 8359558,mubawab,Route Casablanca,2013000,122,3,,2,,
-8443766,mubawab,Guéliz,2700000,108,3,,2,,
-8268254,mubawab,Majorelle,720000,40,1,,1,,
-8386668,mubawab,Daoudiat,1200000,87,3,,2,,
-8359537,mubawab,Hivernage,2048000,128,3,,3,,
 8268253,mubawab,Majorelle,1026000,57,2,,1,,
 8420672,mubawab,Route Casablanca,962000,74,2,,1,,
 7461638,mubawab,Mhamid,400000,52,2,,1,,
@@ -598,6 +560,10 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8216689,mubawab,Mhamid,656000,82,3,,2,,
 8257829,mubawab,Guéliz,2460000,77,2,,2,,
 8158296,mubawab,Guéliz,818100,45,1,,1,,
+8443766,mubawab,Guéliz,2700000,108,3,,2,,
+8268254,mubawab,Majorelle,720000,40,1,,1,,
+8386668,mubawab,Daoudiat,1200000,87,3,,2,,
+8359537,mubawab,Hivernage,2048000,128,3,,3,,
 8374316,mubawab,Guéliz,1350000,50,1,,1,,
 8248376,mubawab,Route Casablanca,1400000,75,2,1,2,,
 8297895,mubawab,Samlalia,841000,58,1,,1,,
@@ -617,16 +583,16 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8132129,mubawab,Guéliz,,48,1,,1,,
 8337483,mubawab,Agdal,2300000,87,2,,2,,
 8420465,mubawab,Guéliz,2600000,139,3,,1,,
-8442068,mubawab,Samlalia,920000,44,1,,1,,
-8453654,mubawab,Ouasis,1500000,153,4,,2,,
-8272222,mubawab,Mhamid,840000,110,3,,2,,
-8268255,mubawab,Majorelle,846000,47,1,,1,,
 8268259,mubawab,Majorelle,720000,40,1,,1,,
 8420674,mubawab,Route Casablanca,770000,48,1,,2,,
 7461643,mubawab,Mhamid,460000,71,3,,1,,
 8218855,mubawab,Boulevard Med 6,2800000,133,3,,2,,
 8219376,mubawab,Agdal,1830000,84,2,,2,,
 8216691,mubawab,Mhamid,683000,91,3,,1,,
+8442068,mubawab,Samlalia,920000,44,1,,1,,
+8453654,mubawab,Ouasis,1500000,153,4,,2,,
+8272222,mubawab,Mhamid,840000,110,3,,2,,
+8268255,mubawab,Majorelle,846000,47,1,,1,,
 8080719,mubawab,Route Casablanca,640000,45,1,1,1,,
 8103097,mubawab,Route Casablanca,700000,42,1,1,1,,
 8445698,mubawab,Samlalia,1550000,101,3,1,1,,
@@ -648,14 +614,14 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8332425,mubawab,Route de Safi,1000000,84,2,,1,,
 8391471,mubawab,Route de Safi,1500000,117,3,1,2,,
 8452414,mubawab,Hay Targa,700000,55,2,,1,,
-8453536,mubawab,Guéliz,1550000,67,2,,1,,
-8342638,mubawab,Guéliz,280000,89,2,,2,,
-8426313,mubawab,Guéliz,215000,87,2,1,2,,
-7862940,mubawab,Route Casablanca,1800000,135,3,,2,,
 8420675,mubawab,Route Casablanca,1196000,92,3,,2,,
 7461645,mubawab,Mhamid,430000,64,2,,1,,
 8218856,mubawab,Boulevard Med 6,1300000,63,1,,2,,
 8219406,mubawab,Mhamid,656000,82,3,,2,,
+8453536,mubawab,Guéliz,1550000,67,2,,1,,
+8342638,mubawab,Guéliz,280000,89,2,,2,,
+8426313,mubawab,Guéliz,215000,87,2,1,2,,
+7862940,mubawab,Route Casablanca,1800000,135,3,,2,,
 8441484,mubawab,Route Casablanca,2500000,128,3,1,2,,
 8415643,mubawab,Route Casablanca,811200,50,1,,1,,
 8349683,mubawab,Guéliz,2400000,84,2,1,2,,
@@ -679,12 +645,12 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8453342,mubawab,Guéliz,1300000,84,2,,2,,
 8444301,mubawab,Route Amizmiz,1250000,115,2,,1,,
 8421523,mubawab,Hivernage,3150000,133,2,1,2,,
+8218858,mubawab,Boulevard Med 6,2500000,75,3,,2,,
+8219408,mubawab,Mhamid,656001,82,2,,2,,
 8452264,mubawab,Guéliz,1130000,36,1,1,1,,
 8453341,mubawab,Agdal,2600000,94,3,1,3,,
 8380301,mubawab,Guéliz,1350000,53,1,,1,,
 8303135,mubawab,Boulevard Med 6,2800000,180,3,1,3,,
-8218858,mubawab,Boulevard Med 6,2500000,75,3,,2,,
-8219408,mubawab,Mhamid,656001,82,2,,2,,
 8453283,mubawab,Route Casablanca,500000,56,2,,1,,
 8306707,mubawab,Guéliz,2100000,84,2,,2,,
 8431529,mubawab,Mhamid,705000,76,2,,1,,
@@ -710,12 +676,12 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8339023,mubawab,Amelkis,1550000,87,2,,2,,
 8342394,mubawab,Route de Fez,1800000,87,2,1,2,,
 8453151,mubawab,Guéliz,1440000,64,1,,1,,
+8218859,mubawab,Boulevard Med 6,2500000,90,3,,2,,
+8219409,mubawab,Mhamid,656000,82,3,,2,,
 8436037,mubawab,Hivernage,3500000,200,3,,3,,
 8453143,mubawab,Massira 1,1300000,233,3,,2,,
 8448145,mubawab,Guéliz,2665000,198,2,1,1,,
 8418867,mubawab,Route d'Agadir - Essaouira,548000,80,3,1,1,,
-8218859,mubawab,Boulevard Med 6,2500000,90,3,,2,,
-8219409,mubawab,Mhamid,656000,82,3,,2,,
 8311901,mubawab,Guéliz,1152000,64,2,,1,,
 8453082,mubawab,Mhamid,540000,60,3,,1,,
 7569889,mubawab,Guéliz,1377000,51,1,,1,,
@@ -826,7 +792,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8451836,mubawab,Route de Tahanaout,2400000,114,2,,2,,
 8451818,mubawab,Route de l'Ourika,1130000,64,1,,1,,
 8451814,mubawab,Guéliz,1568000,76,2,1,1,,
-8450898,mubawab,Mhamid,490000,62,2,,1,,
 8451652,mubawab,Route Amizmiz,1105000,123,2,,1,,
 8451731,mubawab,Guéliz,1300000,50,1,1,1,,
 8297894,mubawab,Samlalia,725000,50,1,,1,,
@@ -894,7 +859,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8386678,mubawab,Guéliz,2200000,100,2,1,1,,
 8349692,mubawab,Agdal,2940000,158,2,,2,,
 8352595,mubawab,Hivernage,1050000,45,1,,1,,
-8447432,mubawab,,3300000,148,2,,2,,
 8387121,mubawab,Camp Al Ghoul,1200000,56,1,,2,,
 8345656,mubawab,Route de Tahanaout,2900000,135,2,,2,,
 8450651,mubawab,Route de Safi,1500000,84,2,1,1,,
@@ -913,7 +877,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8251899,mubawab,Route de Tahanaout,2300000,70,2,1,1,,
 8432358,mubawab,Guéliz,1690000,60,2,1,2,,
 8449991,mubawab,Hay Mabrouka,600000,56,2,,1,,
-8436108,mubawab,Route Casablanca,1250000,71,2,1,1,,
 8444085,mubawab,Guéliz,800000,45,1,1,1,,
 8450210,mubawab,Guéliz,,272,5,,4,,
 8406350,mubawab,Samlalia,1200000,93,2,,1,,
@@ -1031,7 +994,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8323704,mubawab,Hay Targa,1500000,87,2,1,2,,
 8412866,mubawab,Route de Tahanaout,2500000,100,3,,2,,
 8404940,mubawab,Route Casablanca,1100000,75,2,,1,,
-8401828,mubawab,Izdihar,820000,70,3,,1,,
 8422913,mubawab,Hivernage,1260000,78,1,1,1,,
 7893078,mubawab,Ennakhil (Palmeraie),5800000,270,3,1,2,,
 8432006,mubawab,Camp Al Ghoul,1410700,76,2,,2,,
@@ -2783,13 +2745,97 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 8286020,mubawab,Sanaoubar,700000,57,2,,1,,
 8273537,mubawab,Samlalia,810000,35,1,,1,,
 8286013,mubawab,Samlalia,1420000,85,2,,2,,
-59023317,avito,Route de Tahanaoute,2350000,130,2,,2,2026-11-17T23:23:30Z,private
+58881992,avito,Semlalia,1150000,47,1,,1,2026-11-18T10:55:37Z,professional
+58738664,avito,M'Hamid,400000,67,3,,2,2026-11-18T10:03:20Z,professional
+57816224,avito,Guéliz,,56,1,,1,2026-11-18T10:44:54Z,professional
+59099664,avito,Mabrouka,520000,50,2,1,1,2026-11-18T11:39:01Z,private
+58959516,avito,Hay Izdihar,1050000,84,2,,1,2026-11-18T11:34:23Z,professional
+59085055,avito,Guéliz,900000,65,2,1,1,2026-11-18T11:32:59Z,professional
+57744976,avito,Hay Charaf,1115000,122,3,,1,2026-11-18T11:31:14Z,professional
+57872317,avito,Victor Hugo,1600000,111,1,,1,2026-11-18T11:30:13Z,professional
+58549583,avito,Autre secteur,730000,76,2,,2,2026-11-18T11:30:07Z,professional
+59099588,avito,M'Hamid,,,2,,1,2026-11-18T11:30:59Z,private
+58974685,avito,Guéliz,,,3,1,2,2026-11-18T11:26:27Z,professional
+58850147,avito,Guéliz,1700000,84,3,1,2,2026-11-18T11:18:04Z,professional
+59099492,avito,M'Hamid,500000,66,2,,1,2026-11-18T11:18:01Z,private
+58127959,avito,Victor Hugo,2850000,111,2,,2,2026-11-18T11:15:45Z,professional
+58173887,avito,Route de Casablanca,1370000,72,1,,1,2026-11-18T11:11:21Z,professional
+56592436,avito,Route d'Amezmiz,1130000,110,3,,0,2026-11-18T11:02:25Z,professional
+58036192,avito,M'Hamid,430000,63,2,,0,2026-11-18T10:59:20Z,professional
+58036193,avito,M'Hamid,400000,55,2,,0,2026-11-18T10:59:18Z,professional
+57403153,avito,Autre secteur,530000,70,2,1,1,2026-11-18T10:59:29Z,professional
+53696929,avito,M'Hamid,460000,71,3,,2,2026-11-18T10:58:01Z,professional
+56223074,avito,M'Hamid,830000,95,3,,2,2026-11-18T10:58:52Z,professional
+59004982,avito,Guéliz,1090000,,2,,1,2026-11-18T10:56:41Z,professional
+58716620,avito,Guéliz,25000,103,1,,0,2026-11-18T10:55:47Z,professional
+58874805,avito,Semlalia,1600000,107,3,,1,2026-11-18T10:55:05Z,professional
+59036722,avito,Semlalia,1700000,66,1,,1,2026-11-18T10:54:55Z,professional
+57302855,avito,Route de Casablanca,975000,,2,,1,2026-11-18T10:53:24Z,professional
+57568134,avito,Victor Hugo,1500000,136,3,,2,2026-11-18T10:53:24Z,professional
+59065545,avito,Guéliz,969000,51,1,,1,2026-11-18T10:53:20Z,professional
+58991022,avito,Route de Casablanca,2500000,128,3,1,2,2026-11-18T10:51:41Z,professional
+58953312,avito,Guéliz,1500000,53,1,1,1,2026-11-18T10:51:19Z,professional
+57551501,avito,Hivernage,2016000,96,3,,1,2026-11-18T10:50:12Z,professional
+54252844,avito,Av Mohammed VI,1830000,116,2,,0,2026-11-18T10:49:01Z,professional
+58952928,avito,Harti,1800000,89,2,1,1,2026-11-18T10:50:01Z,professional
+53715307,avito,Guéliz,,48,1,,1,2026-11-18T10:48:46Z,professional
+59024392,avito,Sidi Youssef Ben Ali,1600000,140,,,,2026-11-18T10:49:47Z,professional
+58988674,avito,Guéliz,12000,67,2,1,1,2026-11-18T10:46:44Z,professional
+58782218,avito,Autre secteur,1580000,80,2,,2,2026-11-18T10:45:56Z,professional
+58992291,avito,Guéliz,1750000,71,1,1,1,2026-11-17T13:38:41Z,private
+56747564,avito,Semlalia,1200000,117,2,,2,2026-11-18T10:44:23Z,professional
+58163023,avito,Hay Charaf,2000000,110,3,1,2,2026-11-18T10:39:57Z,professional
+58631745,avito,Semlalia,780000,,1,,1,2026-11-18T10:37:21Z,professional
+57734847,avito,Hivernage,4300000,166,3,1,2,2026-11-18T10:36:04Z,professional
+58881089,avito,Es Saada,410000,,2,,,2026-11-18T10:36:11Z,professional
+58768902,avito,Guéliz,3800000,240,4,1,3,2026-11-18T10:30:41Z,professional
+58027259,avito,Sidi Abbad,1175000,67,2,,2,2026-11-18T10:31:27Z,private
+58571339,avito,Semlalia,1500000,84,2,,2,2026-11-18T10:29:25Z,professional
+58638577,avito,Guéliz,972000,,1,,1,2026-11-18T10:25:45Z,professional
+57606723,avito,Victor Hugo,1350000,58,1,,2,2026-11-18T10:24:54Z,professional
+59016412,avito,Hay Izdihar,850000,65,2,1,1,2026-11-18T10:23:51Z,professional
+58677629,avito,Guéliz,18500,67,2,,1,2026-11-18T10:22:02Z,professional
+59094158,avito,Centre Ville,,51,4,,2,2026-11-18T10:22:44Z,private
+57462903,avito,Guéliz,1300000,56,1,,1,2026-11-18T10:18:23Z,professional
+58721789,avito,Route de Ouarzazate,2500000,239,2,1,2,2026-11-18T10:17:54Z,professional
+58874069,avito,Mabrouka,650000,54,2,1,1,2026-11-18T10:15:18Z,professional
+58533407,avito,Route de Casablanca,1400000,114,2,,2,2026-11-18T10:13:09Z,professional
+58216408,avito,Autre secteur,2300000,,2,1,2,2026-11-18T09:59:07Z,professional
+58551609,avito,Es Saada,3100000,188,3,,3,2026-11-18T09:59:05Z,professional
+57686340,avito,Av Abdelkrim El Khattabi,1250000,71,2,1,1,2026-11-18T09:56:42Z,professional
+59076277,avito,Hay Izdihar,7000,68,2,1,2,2026-11-18T09:59:04Z,professional
+59098768,avito,Autre secteur,2900000,110,2,,1,2026-11-18T09:59:03Z,private
+59076329,avito,Guéliz,8500,60,1,1,1,2026-11-18T09:56:32Z,professional
+59098727,avito,Autre secteur,1200000,69,1,1,1,2026-11-18T09:55:26Z,professional
+59039724,avito,Les Portes de Marrakech,850000,97,2,,2,2026-11-18T09:58:22Z,professional
+58873831,avito,Guéliz,946000,55,1,,1,2026-11-18T09:55:23Z,professional
+57315475,avito,Route de Casablanca,790000,48,1,,1,2026-11-18T09:56:02Z,professional
+58186198,avito,Amerchich,1400000,106,2,,1,2026-11-18T09:43:16Z,professional
+59039707,avito,Les Portes de Marrakech,900000,97,2,,2,2026-11-18T09:44:04Z,professional
+58953120,avito,Av Abdelkrim El Khattabi,1853000,109,2,,1,2026-11-18T09:39:53Z,professional
+59094378,avito,Guéliz,2500000,98,2,,2,2026-11-18T09:37:33Z,professional
+59018905,avito,Guéliz,1500000,67,2,1,1,2026-11-18T09:32:17Z,professional
+57905672,avito,Bab Doukkala,1200000,122,2,,1,2026-11-17T11:48:26Z,professional
+58769639,avito,Majorelle,1450000,95,2,1,2,2026-11-17T13:50:51Z,private
+58202914,avito,Centre Ville,1487400,81,3,,1,2026-11-17T15:36:55Z,professional
 58884849,avito,Agdal,2800000,108,3,,2,2026-11-18T09:25:43Z,professional
+56240441,avito,Autre secteur,580000,66,2,,1,2026-11-18T09:21:26Z,professional
+59098562,avito,Route de Tamansourt,200000,50,1,,1,2026-11-18T09:17:06Z,private
+57216492,avito,Guéliz,1600000,97,2,,1,2026-11-18T08:57:04Z,professional
+58972010,avito,Victor Hugo,1100000,50,1,,1,2026-11-18T08:56:19Z,professional
+59098511,avito,Guéliz,1000000,60,1,,2,2026-11-18T08:52:03Z,private
+59098504,avito,Guéliz,577500,33,1,,1,2026-11-18T08:45:01Z,private
+59098494,avito,Semlalia,1180000,64,2,,1,2026-11-18T08:41:01Z,private
+58035769,avito,Guéliz,2006000,118,3,,2,2026-11-18T08:06:40Z,professional
+58958119,avito,Guéliz,1260000,70,2,,1,2026-11-18T07:53:54Z,professional
+58978455,avito,Massira 2,,72,2,,1,2026-11-18T07:52:53Z,private
+58950449,avito,Hivernage,1200000,45,1,1,1,2026-11-18T01:04:43Z,professional
 59050306,avito,Route de Casablanca,1419000,86,2,,,2026-11-18T00:39:59Z,professional
 59097998,avito,Av Mohammed VI,2350000,132,2,1,2,2026-11-18T00:22:01Z,private
 59097547,avito,Mabrouka,570000,56,2,1,1,2026-11-18T00:00:04Z,private
 59097473,avito,M'Hamid,590000,66,2,,1,2026-11-17T23:46:10Z,private
 59097412,avito,Hay Izdihar,1250000,85,2,,1,2026-11-17T23:43:19Z,professional
+59023317,avito,Route de Tahanaoute,2350000,130,2,,2,2026-11-17T23:23:30Z,private
 59096789,avito,Allal El Fassi,5000,96,2,,2,2026-11-17T22:57:24Z,professional
 59082943,avito,Hivernage,1400000,47,1,1,1,2026-11-17T22:53:21Z,professional
 59096627,avito,M'Hamid,,150,3,,2,2026-11-17T22:30:48Z,private
@@ -2807,6 +2853,7 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58907473,avito,Hay Izdihar,950000,85,2,1,1,2026-11-17T20:57:11Z,professional
 58907572,avito,Route d'Ourika,2100000,115,2,1,2,2026-11-17T20:54:00Z,professional
 58907498,avito,Majorelle,950000,51,1,,1,2026-11-17T20:53:42Z,professional
+59072497,avito,M'Hamid,792000,66,2,,1,2026-11-17T12:46:36Z,professional
 58484501,avito,Autre secteur,590000,55,2,,1,2026-11-17T20:52:47Z,professional
 58907184,avito,Guéliz,1500000,67,2,1,1,2026-11-17T20:51:55Z,professional
 58907487,avito,Majorelle,851000,53,1,,1,2026-11-17T20:51:32Z,professional
@@ -2819,41 +2866,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58616731,avito,Guéliz,1200000,60,2,,1,2026-11-17T19:59:44Z,professional
 58997646,avito,Hay Charaf,1020000,76,2,,1,2026-11-17T19:59:01Z,professional
 58951191,avito,Amerchich,900000,112,3,,1,2026-11-17T19:55:03Z,professional
-58974685,avito,Guéliz,,,3,1,2,2026-11-17T16:25:06Z,professional
-59072497,avito,M'Hamid,792000,66,2,,1,2026-11-17T12:46:36Z,professional
-59094158,avito,Centre Ville,,51,4,,2,2026-11-18T10:22:44Z,private
-57462903,avito,Guéliz,1300000,56,1,,1,2026-11-18T10:18:23Z,professional
-58721789,avito,Route de Ouarzazate,2500000,239,2,1,2,2026-11-18T10:17:54Z,professional
-58874069,avito,Mabrouka,650000,54,2,1,1,2026-11-18T10:15:18Z,professional
-58533407,avito,Route de Casablanca,1400000,114,2,,2,2026-11-18T10:13:09Z,professional
-58738664,avito,M'Hamid,400000,67,3,,2,2026-11-18T10:03:20Z,professional
-58216408,avito,Autre secteur,2300000,,2,1,2,2026-11-18T09:59:07Z,professional
-58551609,avito,Es Saada,3100000,188,3,,3,2026-11-18T09:59:05Z,professional
-57686340,avito,Av Abdelkrim El Khattabi,1250000,71,2,1,1,2026-11-18T09:56:42Z,professional
-59076277,avito,Hay Izdihar,7000,68,2,1,2,2026-11-18T09:59:04Z,professional
-59098768,avito,Autre secteur,2900000,110,2,,1,2026-11-18T09:59:03Z,private
-59076329,avito,Guéliz,8500,60,1,1,1,2026-11-18T09:56:32Z,professional
-59098727,avito,Autre secteur,1200000,69,1,1,1,2026-11-18T09:55:26Z,professional
-59039724,avito,Les Portes de Marrakech,850000,97,2,,2,2026-11-18T09:58:22Z,professional
-58873831,avito,Guéliz,946000,55,1,,1,2026-11-18T09:55:23Z,professional
-57315475,avito,Route de Casablanca,790000,48,1,,1,2026-11-18T09:56:02Z,professional
-58186198,avito,Amerchich,1400000,106,2,,1,2026-11-18T09:43:16Z,professional
-59039707,avito,Les Portes de Marrakech,900000,97,2,,2,2026-11-18T09:44:04Z,professional
-58953120,avito,Av Abdelkrim El Khattabi,1853000,109,2,,1,2026-11-18T09:39:53Z,professional
-59094378,avito,Guéliz,2500000,98,2,,2,2026-11-18T09:37:33Z,professional
-59018905,avito,Guéliz,1500000,67,2,1,1,2026-11-18T09:32:17Z,professional
-58582189,avito,Autre secteur,1100000,100,3,,2,2026-11-18T09:29:15Z,professional
-56240441,avito,Autre secteur,580000,66,2,,1,2026-11-18T09:21:26Z,professional
-59098562,avito,Route de Tamansourt,200000,50,1,,1,2026-11-18T09:17:06Z,private
-57216492,avito,Guéliz,1600000,97,2,,1,2026-11-18T08:57:04Z,professional
-58972010,avito,Victor Hugo,1100000,50,1,,1,2026-11-18T08:56:19Z,professional
-59098511,avito,Guéliz,1000000,60,1,,2,2026-11-18T08:52:03Z,private
-59098504,avito,Guéliz,577500,33,1,,1,2026-11-18T08:45:01Z,private
-59098494,avito,Semlalia,1180000,64,2,,1,2026-11-18T08:41:01Z,private
-58035769,avito,Guéliz,2006000,118,3,,2,2026-11-18T08:06:40Z,professional
-58958119,avito,Guéliz,1260000,70,2,,1,2026-11-18T07:53:54Z,professional
-58978455,avito,Massira 2,,72,2,,1,2026-11-18T07:52:53Z,private
-58950449,avito,Hivernage,1200000,45,1,1,1,2026-11-18T01:04:43Z,professional
+58055408,avito,Autre secteur,600000,56,2,,1,2026-11-17T19:55:48Z,professional
+56259750,avito,Guéliz,1550000,84,2,,2,2026-11-17T19:56:55Z,professional
+58954713,avito,Issil,1600000,84,2,,2,2026-11-17T19:52:53Z,professional
+58754365,avito,Semlalia,700000,56,2,,1,2026-11-17T19:51:31Z,professional
+58950930,avito,Azzouzia,620000,65,2,,1,2026-11-17T19:44:55Z,professional
+57878809,avito,Semlalia,950000,94,2,,1,2026-11-17T19:44:06Z,professional
+56468559,avito,Hivernage,2500000,146,3,1,2,2026-11-17T19:44:00Z,professional
+55811696,avito,Guéliz,1550000,84,2,,2,2026-11-17T19:44:00Z,professional
+58730668,avito,Semlalia,2400000,263,4,,3,2026-11-17T19:39:38Z,professional
+55811861,avito,Guéliz,1550000,84,2,,3,2026-11-17T19:41:55Z,professional
+58929321,avito,Les Portes de Marrakech,390000,50,2,,1,2026-11-17T19:38:57Z,professional
+57243806,avito,Autre secteur,1000000,107,3,,1,2026-11-17T19:37:42Z,professional
+56259699,avito,Guéliz,1640000,83,2,,2,2026-11-17T19:39:02Z,professional
+58853837,avito,Semlalia,990000,80,2,,1,2026-11-17T19:33:24Z,professional
+56259751,avito,Guéliz,1600000,84,2,,2,2026-11-17T19:35:35Z,professional
+56653339,avito,Route de Casablanca,940000,61,1,,1,2026-11-17T19:29:12Z,professional
+59061234,avito,Les Portes de Marrakech,350000,57,2,,1,2026-11-17T19:30:19Z,professional
+58738255,avito,Semlalia,1199000,82,2,,1,2026-11-17T19:26:41Z,professional
+58299906,avito,Hay Izdihar,1300000,85,2,1,1,2026-11-17T19:27:21Z,professional
+57243811,avito,Assif,1600000,106,2,,2,2026-11-17T19:21:50Z,professional
+58951546,avito,Autre secteur,1250000,106,2,1,2,2026-11-17T19:17:40Z,professional
+59069239,avito,Allal El Fassi,1950000,102,2,1,2,2026-11-17T19:17:07Z,professional
+58891257,avito,Hivernage,2000000,163,3,,2,2026-11-17T19:12:35Z,professional
+57575925,avito,Agdal,1900000,95,2,1,2,2026-11-17T19:11:41Z,professional
+59095596,avito,M'Hamid,800000,78,2,1,2,2026-11-17T19:11:10Z,private
+58875776,avito,Azzouzia,850000,85,2,,1,2026-11-17T19:05:09Z,professional
+59004275,avito,Hay Targa,450000,67,2,,1,2026-11-17T19:04:22Z,professional
+57878695,avito,Semlalia,2600000,191,2,,2,2026-11-17T19:01:27Z,professional
+58981793,avito,Route de Safi,1200000,76,2,,2,2026-11-17T18:59:44Z,professional
+59054548,avito,Guéliz,915000,,1,1,1,2026-11-17T18:59:36Z,private
+58764652,avito,Victor Hugo,1100000,50,1,1,2,2026-11-17T18:55:31Z,professional
+59000776,avito,Guéliz,1500000,,2,,1,2026-11-17T18:50:53Z,professional
+58578037,avito,Route d'Amezmiz,1375000,63,1,1,1,2026-11-17T18:47:44Z,private
+57226160,avito,Autre secteur,1920000,107,2,,1,2026-11-17T18:43:41Z,professional
+59094152,avito,Centre Ville,,125,1,,1,2026-11-17T18:46:06Z,private
 57345251,avito,Victor Hugo,3600000,133,3,,2,2026-11-17T18:41:35Z,professional
 58969214,avito,Guéliz,1150000,40,1,,1,2026-11-17T18:36:56Z,professional
 59095369,avito,Centre Ville,1290000,,3,,,2026-11-17T18:38:55Z,private
@@ -2877,6 +2924,40 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58951341,avito,Hivernage,15000,248,2,1,2,2026-11-17T17:55:09Z,professional
 56100540,avito,Semlalia,820000,45,1,,1,2026-11-17T17:57:26Z,professional
 59095015,avito,Hay Izdihar,1050000,106,2,,1,2026-11-17T17:54:08Z,professional
+59094223,avito,Jemaa El Fna,,200,3,,,2026-11-17T16:08:01Z,private
+58634969,avito,Autre secteur,1100000,150,3,,3,2026-11-17T15:57:03Z,professional
+59061273,avito,Route de Casablanca,550000,50,2,,1,2026-11-17T15:55:33Z,professional
+58173889,avito,Hivernage,1350000,49,1,,2,2026-11-17T15:51:27Z,professional
+59094133,avito,Route de Safi,1350000,90,2,1,2,2026-11-17T15:53:04Z,private
+58024538,avito,Autre secteur,820000,95,3,,1,2026-11-17T15:47:51Z,professional
+58934376,avito,Guéliz,1600000,63,2,1,1,2026-11-17T15:48:57Z,private
+59061336,avito,Victor Hugo,3500000,140,2,,,2026-11-17T15:42:36Z,professional
+59094012,avito,M'Hamid,920000,116,3,,2,2026-11-17T15:33:02Z,private
+58791499,avito,Centre Ville,3000000,146,2,1,2,2026-11-17T15:30:45Z,professional
+58832916,avito,Route d'Amezmiz,1316000,55,1,,1,2026-11-17T15:25:41Z,private
+59093980,avito,Route de Casablanca,1500000,87,2,1,2,2026-11-17T15:25:29Z,private
+59054560,avito,Guéliz,1250000,100,2,,0,2026-11-17T15:23:04Z,private
+59093895,avito,Guéliz,2400000,120,2,,1,2026-11-17T15:13:20Z,private
+59067475,avito,Guéliz,4800000,210,3,1,3,2026-11-17T14:59:23Z,professional
+56642202,avito,Route de Tamansourt,230000,,2,,1,2026-11-17T14:58:10Z,professional
+58473852,avito,Av Mohammed V,1250000,,1,,,2026-11-17T14:57:43Z,professional
+46008282,avito,Daoudiate,810000,81,3,,1,2026-11-17T14:54:24Z,professional
+59093758,avito,Ain Mezouar,,65,2,,2,2026-11-17T14:55:25Z,private
+58803538,avito,Hay Targa,700000,55,2,,1,2026-11-17T14:54:28Z,professional
+59079532,avito,Hivernage,1450000,70,2,1,1,2026-11-17T14:53:31Z,private
+57554919,avito,Route de Casablanca,1600000,118,4,,2,2026-11-17T14:45:50Z,professional
+58617721,avito,Route de Safi,950000,61,2,1,1,2026-11-17T14:47:21Z,professional
+59093625,avito,Route de Casablanca,520000,50,2,,1,2026-11-17T14:46:23Z,private
+44440836,avito,Guéliz,9200000,50,1,,1,2026-11-17T14:35:19Z,professional
+59093466,avito,Victor Hugo,1570000,80,1,,2,2026-11-17T14:32:11Z,professional
+59093450,avito,Victor Hugo,1380000,54,1,,1,2026-11-17T14:29:08Z,professional
+56867870,avito,Mabrouka,630000,45,1,1,1,2026-11-17T14:29:03Z,professional
+59093335,avito,Av Mohammed VI,1200000,70,1,,1,2026-11-17T14:10:06Z,private
+46529671,avito,Guéliz,896000,56,2,,1,2026-11-17T13:58:56Z,professional
+31864611,avito,Hay Charaf,1200000,105,2,,1,2026-11-17T13:57:54Z,professional
+59072963,avito,Route de Casablanca,1170000,78,2,1,1,2026-11-17T13:57:10Z,professional
+59006439,avito,Hay Izdihar,880000,88,2,,1,2026-11-17T13:57:10Z,professional
+32308717,avito,Allal El Fassi,100000,110,2,,2,2026-11-17T13:56:27Z,professional
 58898976,avito,Sidi Youssef Ben Ali,550000,66,2,1,1,2026-11-17T17:51:05Z,professional
 59095006,avito,Route de Casablanca,460000,50,2,,,2026-11-17T17:53:04Z,private
 57433270,avito,M'Hamid,920000,95,3,,2,2026-11-17T17:45:04Z,professional
@@ -2911,84 +2992,14 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57757647,avito,Guéliz,2800000,111,2,,2,2026-11-17T16:19:42Z,professional
 57224150,avito,Route de Casablanca,810000,,1,,1,2026-11-17T16:16:38Z,professional
 58952830,avito,Guéliz,9000,67,1,,1,2026-11-17T16:08:30Z,professional
-59094223,avito,Jemaa El Fna,,200,3,,,2026-11-17T16:08:01Z,private
-58634969,avito,Autre secteur,1100000,150,3,,3,2026-11-17T15:57:03Z,professional
-59061273,avito,Route de Casablanca,550000,50,2,,1,2026-11-17T15:55:33Z,professional
-58173889,avito,Hivernage,1350000,49,1,,2,2026-11-17T15:51:27Z,professional
-59094133,avito,Route de Safi,1350000,90,2,1,2,2026-11-17T15:53:04Z,private
-58024538,avito,Autre secteur,820000,95,3,,1,2026-11-17T15:47:51Z,professional
-58934376,avito,Guéliz,1600000,63,2,1,1,2026-11-17T15:48:57Z,private
-59061336,avito,Victor Hugo,3500000,140,2,,,2026-11-17T15:42:36Z,professional
-59094012,avito,M'Hamid,920000,116,3,,2,2026-11-17T15:33:02Z,private
-58791499,avito,Centre Ville,3000000,146,2,1,2,2026-11-17T15:30:45Z,professional
-59054548,avito,Guéliz,915000,,1,1,1,2026-11-17T18:59:36Z,private
-57905672,avito,Bab Doukkala,1200000,122,2,,1,2026-11-17T11:48:26Z,professional
-56259750,avito,Guéliz,1550000,84,2,,2,2026-11-17T19:56:55Z,professional
-58954713,avito,Issil,1600000,84,2,,2,2026-11-17T19:52:53Z,professional
-58754365,avito,Semlalia,700000,56,2,,1,2026-11-17T19:51:31Z,professional
-58950930,avito,Azzouzia,620000,65,2,,1,2026-11-17T19:44:55Z,professional
-57878809,avito,Semlalia,950000,94,2,,1,2026-11-17T19:44:06Z,professional
-56468559,avito,Hivernage,2500000,146,3,1,2,2026-11-17T19:44:00Z,professional
-55811696,avito,Guéliz,1550000,84,2,,2,2026-11-17T19:44:00Z,professional
-58730668,avito,Semlalia,2400000,263,4,,3,2026-11-17T19:39:38Z,professional
-55811861,avito,Guéliz,1550000,84,2,,3,2026-11-17T19:41:55Z,professional
-58929321,avito,Les Portes de Marrakech,390000,50,2,,1,2026-11-17T19:38:57Z,professional
-57243806,avito,Autre secteur,1000000,107,3,,1,2026-11-17T19:37:42Z,professional
-56259699,avito,Guéliz,1640000,83,2,,2,2026-11-17T19:39:02Z,professional
-58853837,avito,Semlalia,990000,80,2,,1,2026-11-17T19:33:24Z,professional
-56259751,avito,Guéliz,1600000,84,2,,2,2026-11-17T19:35:35Z,professional
-56653339,avito,Route de Casablanca,940000,61,1,,1,2026-11-17T19:29:12Z,professional
-56592436,avito,Route d'Amezmiz,1130000,110,3,,0,2026-11-17T19:28:33Z,professional
-59061234,avito,Les Portes de Marrakech,350000,57,2,,1,2026-11-17T19:30:19Z,professional
-58738255,avito,Semlalia,1199000,82,2,,1,2026-11-17T19:26:41Z,professional
-58299906,avito,Hay Izdihar,1300000,85,2,1,1,2026-11-17T19:27:21Z,professional
-57243811,avito,Assif,1600000,106,2,,2,2026-11-17T19:21:50Z,professional
-58951546,avito,Autre secteur,1250000,106,2,1,2,2026-11-17T19:17:40Z,professional
-59069239,avito,Allal El Fassi,1950000,102,2,1,2,2026-11-17T19:17:07Z,professional
-58891257,avito,Hivernage,2000000,163,3,,2,2026-11-17T19:12:35Z,professional
-57575925,avito,Agdal,1900000,95,2,1,2,2026-11-17T19:11:41Z,professional
-59095596,avito,M'Hamid,800000,78,2,1,2,2026-11-17T19:11:10Z,private
-58875776,avito,Azzouzia,850000,85,2,,1,2026-11-17T19:05:09Z,professional
-59004275,avito,Hay Targa,450000,67,2,,1,2026-11-17T19:04:22Z,professional
-57878695,avito,Semlalia,2600000,191,2,,2,2026-11-17T19:01:27Z,professional
-58981793,avito,Route de Safi,1200000,76,2,,2,2026-11-17T18:59:44Z,professional
-58764652,avito,Victor Hugo,1100000,50,1,1,2,2026-11-17T18:55:31Z,professional
-59000776,avito,Guéliz,1500000,,2,,1,2026-11-17T18:50:53Z,professional
-58578037,avito,Route d'Amezmiz,1375000,63,1,1,1,2026-11-17T18:47:44Z,private
-57226160,avito,Autre secteur,1920000,107,2,,1,2026-11-17T18:43:41Z,professional
-59094152,avito,Centre Ville,,125,1,,1,2026-11-17T18:46:06Z,private
-59093980,avito,Route de Casablanca,1500000,87,2,1,2,2026-11-17T15:25:29Z,private
-59054560,avito,Guéliz,1250000,100,2,,0,2026-11-17T15:23:04Z,private
-59093895,avito,Guéliz,2400000,120,2,,1,2026-11-17T15:13:20Z,private
-59067475,avito,Guéliz,4800000,210,3,1,3,2026-11-17T14:59:23Z,professional
-56642202,avito,Route de Tamansourt,230000,,2,,1,2026-11-17T14:58:10Z,professional
-58473852,avito,Av Mohammed V,1250000,,1,,,2026-11-17T14:57:43Z,professional
-46008282,avito,Daoudiate,810000,81,3,,1,2026-11-17T14:54:24Z,professional
-59093758,avito,Ain Mezouar,,65,2,,2,2026-11-17T14:55:25Z,private
-58803538,avito,Hay Targa,700000,55,2,,1,2026-11-17T14:54:28Z,professional
-59079532,avito,Hivernage,1450000,70,2,1,1,2026-11-17T14:53:31Z,private
-57554919,avito,Route de Casablanca,1600000,118,4,,2,2026-11-17T14:45:50Z,professional
-58617721,avito,Route de Safi,950000,61,2,1,1,2026-11-17T14:47:21Z,professional
-59093625,avito,Route de Casablanca,520000,50,2,,1,2026-11-17T14:46:23Z,private
-44440836,avito,Guéliz,9200000,50,1,,1,2026-11-17T14:35:19Z,professional
-59093466,avito,Victor Hugo,1570000,80,1,,2,2026-11-17T14:32:11Z,professional
-59093450,avito,Victor Hugo,1380000,54,1,,1,2026-11-17T14:29:08Z,professional
-56867870,avito,Mabrouka,630000,45,1,1,1,2026-11-17T14:29:03Z,professional
-59093335,avito,Av Mohammed VI,1200000,70,1,,1,2026-11-17T14:10:06Z,private
-46529671,avito,Guéliz,896000,56,2,,1,2026-11-17T13:58:56Z,professional
-31864611,avito,Hay Charaf,1200000,105,2,,1,2026-11-17T13:57:54Z,professional
-59072963,avito,Route de Casablanca,1170000,78,2,1,1,2026-11-17T13:57:10Z,professional
-59006439,avito,Hay Izdihar,880000,88,2,,1,2026-11-17T13:57:10Z,professional
-32308717,avito,Allal El Fassi,100000,110,2,,2,2026-11-17T13:56:27Z,professional
-59032020,avito,Palmeraie,1400000,59,2,,1,2026-11-17T13:58:01Z,private
 59086020,avito,Targa,475000,51,2,,1,2026-11-17T13:58:00Z,professional
 58260609,avito,Mabrouka,650000,64,2,,1,2026-11-17T13:55:15Z,professional
+59085703,avito,Guéliz,1200000,50,,,,2026-11-17T13:56:22Z,professional
 58254497,avito,Allal El Fassi,1200000,82,2,,1,2026-11-17T13:55:03Z,professional
 53243419,avito,Guéliz,,78,2,,2,2026-11-17T13:51:38Z,professional
 58875869,avito,Issil,600000,66,2,,2,2026-11-17T13:54:35Z,professional
 57485474,avito,Autre secteur,935000,85,2,,1,2026-11-17T13:54:16Z,professional
 51716330,avito,Hay Charaf,750000,75,1,1,2,2026-11-17T13:53:25Z,professional
-58769639,avito,Majorelle,1450000,95,2,1,2,2026-11-17T13:50:51Z,private
 58920267,avito,Guéliz,2700000,116,2,,2,2026-11-17T13:47:50Z,professional
 59093213,avito,M'Hamid,,,2,,1,2026-11-17T13:49:38Z,private
 57491688,avito,Autre secteur,950000,100,3,,1,2026-11-17T13:47:10Z,professional
@@ -2996,7 +3007,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58709291,avito,Victor Hugo,1150000,50,1,1,1,2026-11-17T13:45:01Z,professional
 32297476,avito,Route de Casablanca,10000,90,2,,1,2026-11-17T13:44:45Z,professional
 57593122,avito,Av Abdelkrim El Khattabi,870000,47,1,,1,2026-11-17T13:43:09Z,professional
-58992291,avito,Guéliz,1750000,71,1,1,1,2026-11-17T13:38:41Z,private
 59073088,avito,Route de Tahanaoute,1700000,46,1,1,1,2026-11-17T13:35:50Z,professional
 30911984,avito,Amerchich,7000,82,1,,1,2026-11-17T13:35:30Z,professional
 57786124,avito,Route d'Amezmiz,1240000,51,1,,1,2026-11-17T13:35:11Z,private
@@ -3047,23 +3057,14 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 59052809,avito,Route de Casablanca,8000,87,2,1,2,2026-11-17T11:53:19Z,professional
 58090320,avito,Allal El Fassi,600000,47,1,,1,2026-11-17T11:50:59Z,professional
 59018553,avito,Guéliz,1150000,40,1,1,1,2026-11-17T11:50:47Z,professional
-57997444,avito,Guéliz,1300000,60,2,1,0,2026-11-17T11:47:36Z,professional
+57997444,avito,Guéliz,1300000,68,2,1,0,2026-11-17T11:47:36Z,professional
 59084860,avito,Agdal,,94,3,1,2,2026-11-17T11:47:27Z,professional
 58834197,avito,Palmeraie,1550000,126,2,,2,2026-11-17T11:46:58Z,professional
 57764279,avito,Route de Casablanca,870000,,1,,1,2026-11-17T11:46:01Z,professional
 57880962,avito,Guéliz,3300000,139,3,,2,2026-11-17T11:45:56Z,professional
-58959516,avito,Hay Izdihar,1050000,84,2,,1,2026-11-17T11:45:34Z,professional
 55850957,avito,Route de Casablanca,710000,,1,,1,2026-11-17T11:43:42Z,professional
 58619417,avito,Guéliz,799000,35,1,,1,2026-11-17T11:41:42Z,professional
 58632187,avito,Hay Izdihar,540000,62,2,,1,2026-11-17T11:41:18Z,professional
-58612805,avito,Ain Mezouar,1100000,77,1,1,1,2026-11-17T11:40:54Z,professional
-59085055,avito,Guéliz,900000,65,2,1,1,2026-11-17T11:32:59Z,professional
-57744976,avito,Hay Charaf,1115000,122,3,,1,2026-11-17T11:31:14Z,professional
-57872317,avito,Victor Hugo,1600000,111,1,,1,2026-11-17T11:30:13Z,professional
-58549583,avito,Autre secteur,730000,76,2,,2,2026-11-17T11:30:07Z,professional
-58850147,avito,Guéliz,1700000,84,3,1,2,2026-11-17T11:18:04Z,professional
-58127959,avito,Victor Hugo,2850000,111,2,,2,2026-11-17T11:15:45Z,professional
-58173887,avito,Route de Casablanca,1370000,72,1,,1,2026-11-17T11:11:21Z,professional
 58035714,avito,Guéliz,1150000,67,1,1,1,2026-11-17T10:22:33Z,professional
 58397758,avito,Route de Safi,17000,47,1,,1,2026-11-17T09:46:57Z,professional
 59091014,avito,M'Hamid,4000,63,2,1,1,2026-11-17T09:21:07Z,private
@@ -3266,41 +3267,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 59056565,avito,M'Hamid,650000,65,2,,1,2026-11-11T20:28:29Z,private
 57782059,avito,Amerchich,660000,47,1,,1,2026-11-11T19:25:56Z,professional
 58523601,avito,Azzouzia,840000,84,3,,1,2026-11-11T19:08:48Z,professional
-58854128,avito,Guéliz,1300000,44,1,,1,2026-11-11T18:56:20Z,professional
-58564761,avito,Guéliz,945000,35,1,,1,2026-11-11T18:54:19Z,professional
-59056050,avito,Mabrouka,520000,62,2,,1,2026-11-11T18:56:01Z,private
-56515882,avito,Route de Casablanca,780000,,1,,,2026-11-11T18:37:45Z,professional
-59055947,avito,Hay Izdihar,1100000,78,2,,1,2026-11-11T18:37:01Z,professional
-59008678,avito,Guéliz,1600000,105,3,1,1,2026-11-11T18:23:36Z,professional
-59008651,avito,Route de Casablanca,700000,46,1,,1,2026-11-11T18:21:05Z,professional
-56564778,avito,Guéliz,1200000,59,1,1,1,2026-11-11T18:04:14Z,professional
-59055660,avito,Route de Tamansourt,360000,59,2,,1,2026-11-11T17:30:02Z,private
-59055511,avito,Route de Casablanca,1400000,55,2,1,0,2026-11-11T16:56:37Z,private
-59055422,avito,Targa,500000,56,2,,1,2026-11-11T16:41:07Z,private
-59054822,avito,Route de Casablanca,1250000,100,2,1,1,2026-11-11T15:27:01Z,private
-59054633,avito,Les Portes de Marrakech,600000,69,2,,1,2026-11-11T15:04:03Z,private
-59054551,avito,M'Hamid,,65,2,,1,2026-11-11T14:55:39Z,private
-59054151,avito,Route de Casablanca,1020000,,2,1,2,2026-11-11T14:19:09Z,private
-58622163,avito,Agdal,2600000,,3,,2,2026-11-11T13:48:49Z,professional
-59053857,avito,Autre secteur,470000,,2,,1,2026-11-11T13:45:01Z,private
-59053851,avito,Sidi Youssef Ben Ali,1600000,155,3,,2,2026-11-11T13:44:05Z,private
-59053826,avito,Route de Casablanca,1060000,60,2,1,2,2026-11-11T13:42:04Z,private
-59053772,avito,Centre Ville,490000,50,2,,1,2026-11-11T13:38:03Z,professional
-59053768,avito,Autre secteur,1000000,91,3,,2,2026-11-11T13:37:09Z,private
-59053737,avito,Route de Casablanca,,53,2,,1,2026-11-11T13:35:02Z,private
-57917864,avito,Guéliz,1450000,,1,,1,2026-11-11T13:26:52Z,professional
-59053441,avito,Guéliz,720000,58,2,,2,2026-11-11T12:56:02Z,private
-58012475,avito,Route d'Amezmiz,1250000,50,1,,0,2026-11-11T12:39:58Z,professional
-58079065,avito,Route d'Amezmiz,2450000,97,2,,2,2026-11-11T12:10:08Z,professional
-59052669,avito,Autre secteur,2300000,97,2,1,2,2026-11-11T11:29:04Z,private
-59051676,avito,Autre secteur,2900000,94,3,,2,2026-11-11T09:52:10Z,professional
-57372719,avito,Autre secteur,2300000,84,2,1,2,2026-11-11T09:25:09Z,professional
-58401673,avito,Semlalia,21000,40,1,,1,2026-11-11T08:39:50Z,professional
-57938120,avito,Autre secteur,14000,87,3,,1,2026-11-11T08:36:38Z,professional
-59050870,avito,Ain Mezouar,540000,56,2,,1,2026-11-11T07:18:01Z,private
-59050304,avito,Les Portes de Marrakech,,85,3,,0,2026-11-11T00:33:02Z,private
-59049996,avito,Ain Mezouar,700000,64,2,,1,2026-11-11T00:05:10Z,private
-59049818,avito,M'Hamid,800000,,1,,,2026-11-10T23:56:07Z,private
 59049458,avito,Route de Safi,830000,87,3,1,2,2026-11-10T23:42:03Z,private
 59048488,avito,M'Hamid,580000,60,2,,2,2026-11-10T21:05:01Z,private
 59048125,avito,Massira,740000,100,2,,2,2026-11-10T20:22:43Z,private
@@ -3406,6 +3372,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 59027508,avito,Route de Tahanaoute,2700000,160,2,1,2,2026-11-07T18:03:02Z,private
 58816170,avito,Allal El Fassi,1250000,82,2,,1,2026-11-07T17:41:55Z,professional
 59027303,avito,M'Hamid,4800000,60,2,,1,2026-11-07T17:33:36Z,private
+58854128,avito,Guéliz,1300000,44,1,,1,2026-11-11T18:56:20Z,professional
+58564761,avito,Guéliz,945000,35,1,,1,2026-11-11T18:54:19Z,professional
+59056050,avito,Mabrouka,520000,62,2,,1,2026-11-11T18:56:01Z,private
+56515882,avito,Route de Casablanca,780000,,1,,,2026-11-11T18:37:45Z,professional
+59055947,avito,Hay Izdihar,1100000,78,2,,1,2026-11-11T18:37:01Z,professional
+59008678,avito,Guéliz,1600000,105,3,1,1,2026-11-11T18:23:36Z,professional
+59008651,avito,Route de Casablanca,700000,46,1,,1,2026-11-11T18:21:05Z,professional
+56564778,avito,Guéliz,1200000,59,1,1,1,2026-11-11T18:04:14Z,professional
+59055660,avito,Route de Tamansourt,360000,59,2,,1,2026-11-11T17:30:02Z,private
+59055511,avito,Route de Casablanca,1400000,55,2,1,0,2026-11-11T16:56:37Z,private
+59055422,avito,Targa,500000,56,2,,1,2026-11-11T16:41:07Z,private
+59054822,avito,Route de Casablanca,1250000,100,2,1,1,2026-11-11T15:27:01Z,private
+59054633,avito,Les Portes de Marrakech,600000,69,2,,1,2026-11-11T15:04:03Z,private
+59054551,avito,M'Hamid,,65,2,,1,2026-11-11T14:55:39Z,private
+59054151,avito,Route de Casablanca,1020000,,2,1,2,2026-11-11T14:19:09Z,private
+58622163,avito,Agdal,2600000,,3,,2,2026-11-11T13:48:49Z,professional
+59053857,avito,Autre secteur,470000,,2,,1,2026-11-11T13:45:01Z,private
+59053851,avito,Sidi Youssef Ben Ali,1600000,155,3,,2,2026-11-11T13:44:05Z,private
+59053826,avito,Route de Casablanca,1060000,60,2,1,2,2026-11-11T13:42:04Z,private
+59053772,avito,Centre Ville,490000,50,2,,1,2026-11-11T13:38:03Z,professional
+59053768,avito,Autre secteur,1000000,91,3,,2,2026-11-11T13:37:09Z,private
+59053737,avito,Route de Casablanca,,53,2,,1,2026-11-11T13:35:02Z,private
+57917864,avito,Guéliz,1450000,,1,,1,2026-11-11T13:26:52Z,professional
+59053441,avito,Guéliz,720000,58,2,,2,2026-11-11T12:56:02Z,private
+58012475,avito,Route d'Amezmiz,1250000,50,1,,0,2026-11-11T12:39:58Z,professional
+58079065,avito,Route d'Amezmiz,2450000,97,2,,2,2026-11-11T12:10:08Z,professional
+59052669,avito,Autre secteur,2300000,97,2,1,2,2026-11-11T11:29:04Z,private
+59051676,avito,Autre secteur,2900000,94,3,,2,2026-11-11T09:52:10Z,professional
+57372719,avito,Autre secteur,2300000,84,2,1,2,2026-11-11T09:25:09Z,professional
+58401673,avito,Semlalia,21000,40,1,,1,2026-11-11T08:39:50Z,professional
+57938120,avito,Autre secteur,14000,87,3,,1,2026-11-11T08:36:38Z,professional
+59050870,avito,Ain Mezouar,540000,56,2,,1,2026-11-11T07:18:01Z,private
+59050304,avito,Les Portes de Marrakech,,85,3,,0,2026-11-11T00:33:02Z,private
+59049996,avito,Ain Mezouar,700000,64,2,,1,2026-11-11T00:05:10Z,private
+59049818,avito,M'Hamid,800000,,1,,,2026-11-10T23:56:07Z,private
 59027281,avito,Route de Safi,1000000,88,2,1,1,2026-11-07T17:30:44Z,private
 59026852,avito,Hay Al Haouz,280000,,3,,,2026-11-07T16:28:03Z,private
 59026607,avito,Ain Mezouar,,65,2,,2,2026-11-07T15:47:37Z,private
@@ -3441,9 +3442,9 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 59020317,avito,Guéliz,920000,51,1,,1,2026-11-06T15:26:01Z,private
 59019596,avito,Autre secteur,25000,18,1,,1,2026-11-06T14:01:34Z,private
 58920204,avito,Guéliz,1550000,68,2,,1,2026-11-06T13:36:03Z,professional
-58972587,avito,Route de Casablanca,9000,50,1,,1,2026-11-06T11:53:57Z,professional
-59018412,avito,Route de Casablanca,2100000,147,3,,3,2026-11-06T11:33:02Z,private
-59018396,avito,Hay Charaf,620000,58,3,,2,2026-11-06T11:31:02Z,private
+59009246,avito,Victor Hugo,,103,2,,1,2026-11-04T19:56:01Z,private
+59009029,avito,Mabrouka,540000,60,2,1,1,2026-11-04T19:05:01Z,professional
+59008993,avito,Route de Casablanca,1800000,117,3,1,2,2026-11-04T18:59:03Z,private
 59008948,avito,Route de Fès,1440000,95,2,1,1,2026-11-04T18:53:14Z,private
 59008865,avito,Route de Casablanca,1650000,88,2,,2,2026-11-04T18:48:01Z,private
 56430435,avito,Guéliz,1200000,59,1,,1,2026-11-04T18:12:27Z,professional
@@ -3476,9 +3477,9 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 59002626,avito,Hay Charaf,900000,83,2,1,2,2026-11-03T20:43:14Z,private
 59002437,avito,Autre secteur,2900000,110,2,1,2,2026-11-03T20:14:07Z,private
 59002412,avito,Autre secteur,2000000,84,2,,2,2026-11-03T20:10:01Z,private
-58955998,avito,Guéliz,1700000,72,1,1,1,2026-11-03T18:56:35Z,professional
-59001839,avito,Route de Fès,1540000,85,2,1,1,2026-11-03T18:55:34Z,private
-59001302,avito,Guéliz,839740,39,1,,1,2026-11-03T17:57:01Z,private
+58972587,avito,Route de Casablanca,9000,50,1,,1,2026-11-06T11:53:57Z,professional
+59018412,avito,Route de Casablanca,2100000,147,3,,3,2026-11-06T11:33:02Z,private
+59018396,avito,Hay Charaf,620000,58,3,,2,2026-11-06T11:31:02Z,private
 59018211,avito,Ain Mezouar,600000,68,2,,1,2026-11-06T10:57:14Z,private
 57448300,avito,Massira 1,700000,81,2,1,1,2026-11-06T10:53:41Z,professional
 57809394,avito,Palmeraie,1450000,85,1,1,1,2026-11-06T10:49:43Z,professional
@@ -3511,9 +3512,9 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 55708561,avito,Guéliz,935000,55,1,,1,2026-11-04T21:56:30Z,professional
 59009875,avito,El Ghoul,1100000,49,1,1,1,2026-11-04T21:25:46Z,private
 59009327,avito,Hivernage,1900000,65,2,1,1,2026-11-04T20:09:02Z,private
-59009246,avito,Victor Hugo,,103,2,,1,2026-11-04T19:56:01Z,private
-59009029,avito,Mabrouka,540000,60,2,1,1,2026-11-04T19:05:01Z,professional
-59008993,avito,Route de Casablanca,1800000,117,3,1,2,2026-11-04T18:59:03Z,private
+58955998,avito,Guéliz,1700000,72,1,1,1,2026-11-03T18:56:35Z,professional
+59001839,avito,Route de Fès,1540000,85,2,1,1,2026-11-03T18:55:34Z,private
+59001302,avito,Guéliz,839740,39,1,,1,2026-11-03T17:57:01Z,private
 58955474,avito,Targa,690000,66,2,,1,2026-11-03T17:56:48Z,professional
 59001215,avito,Targa,1700000,96,2,,,2026-11-03T17:44:01Z,professional
 58804761,avito,Es Saada,490000,52,2,,1,2026-11-03T17:37:31Z,professional
@@ -3549,41 +3550,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58236109,avito,Guéliz,1000000,70,1,1,2,2026-11-02T17:39:52Z,professional
 58914523,avito,Guéliz,1600000,51,1,1,1,2026-11-02T15:47:27Z,professional
 58993107,avito,Ain Mezouar,570000,60,2,,1,2026-11-02T14:49:02Z,private
-58985020,avito,Guéliz,2400000,175,3,1,3,2026-11-01T12:29:00Z,professional
-58985013,avito,Semlalia,1600000,96,2,,2,2026-11-01T12:27:02Z,private
-58984788,avito,Guéliz,980000,72,2,1,1,2026-11-01T12:05:25Z,private
-58984351,avito,M'Hamid,620000,52,2,1,1,2026-11-01T11:00:02Z,private
-58983954,avito,Hay Charaf,580000,60,2,,1,2026-11-01T09:13:40Z,private
-58983729,avito,Les Portes de Marrakech,380000,67,2,,2,2026-11-01T04:43:00Z,private
-58983542,avito,M'Hamid,480000,53,2,,1,2026-11-01T00:58:02Z,private
-58983488,avito,Autre secteur,,52,3,1,1,2026-11-01T00:34:02Z,private
-58982951,avito,Massira 3,420000,,2,,1,2026-10-31T22:17:02Z,private
-58982894,avito,Ain Mezouar,570000,65,2,,1,2026-10-31T22:03:02Z,private
-58982804,avito,M'Hamid,590000,64,3,,1,2026-10-31T21:46:02Z,private
-58982785,avito,Les Portes de Marrakech,390000,52,3,,1,2026-10-31T21:39:02Z,private
-58982710,avito,Akioud,6000,58,2,,1,2026-10-31T21:27:00Z,private
-58982695,avito,Hay Izdihar,660000,57,2,1,2,2026-10-31T21:24:03Z,professional
-58982244,avito,Route de Casablanca,750000,53,1,1,2,2026-10-31T20:12:01Z,private
-58981913,avito,Mabrouka,1120000,84,2,1,2,2026-10-31T19:26:20Z,professional
-58981903,avito,Victor Hugo,3200000,110,3,1,3,2026-10-31T19:25:13Z,private
-58981403,avito,M'Hamid,490000,,2,,2,2026-10-31T17:45:04Z,private
-58981284,avito,Mabrouka,420000,50,2,,1,2026-10-31T17:20:02Z,private
-56960914,avito,Hay Izdihar,780000,54,2,,1,2026-10-31T13:59:47Z,professional
-58728604,avito,Guéliz,1500000,85,1,1,1,2026-10-31T13:59:30Z,professional
-58170099,avito,Route de Casablanca,,125,2,,2,2026-10-31T12:56:13Z,professional
-58979199,avito,Route de Safi,1100000,91,2,1,1,2026-10-31T12:55:08Z,private
-56127572,avito,Targa,1240000,66,2,1,2,2026-10-31T11:43:12Z,professional
-58978441,avito,Issil,,108,2,,2,2026-10-31T10:36:02Z,private
-58978438,avito,Guéliz,1750000,67,1,,1,2026-10-31T10:35:39Z,private
-58978373,avito,Mabrouka,650000,,2,,,2026-10-31T10:26:03Z,private
-58977673,avito,M'Hamid,480000,58,2,,1,2026-10-31T02:52:01Z,private
-58977632,avito,M'Hamid,550000,62,2,,1,2026-10-31T02:29:01Z,private
-58976958,avito,Mabrouka,1300000,98,3,1,2,2026-10-30T22:31:02Z,private
-58741049,avito,Autre secteur,1450000,97,2,1,1,2026-10-30T19:25:07Z,professional
-57444642,avito,Av Abdelkrim El Khattabi,1600000,85,2,,2,2026-10-30T18:55:39Z,professional
-58975743,avito,Mabrouka,,84,2,1,2,2026-10-30T18:44:01Z,professional
-58975715,avito,Hay Izdihar,670000,64,2,1,1,2026-10-30T18:39:05Z,professional
-58975221,avito,Route de Casablanca,795000,53,1,1,1,2026-10-30T17:37:19Z,professional
 58992926,avito,Guéliz,2350000,142,3,,2,2026-11-02T14:24:02Z,private
 58992581,avito,Hivernage,1500000,56,1,,1,2026-11-02T13:46:03Z,private
 58992388,avito,Hay Izdihar,700000,57,2,1,2,2026-11-02T13:26:14Z,professional
@@ -3619,6 +3585,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58934347,avito,Mabrouka,600000,69,2,,1,2026-11-01T14:47:45Z,professional
 58939460,avito,Azzouzia,510000,51,1,1,1,2026-11-01T13:53:35Z,private
 58985563,avito,Route d'Amezmiz,2600000,97,3,1,2,2026-11-01T13:29:18Z,private
+58985020,avito,Guéliz,2400000,175,3,1,3,2026-11-01T12:29:00Z,professional
+58985013,avito,Semlalia,1600000,96,2,,2,2026-11-01T12:27:02Z,private
+58984788,avito,Guéliz,980000,72,2,1,1,2026-11-01T12:05:25Z,private
+58984351,avito,M'Hamid,620000,52,2,1,1,2026-11-01T11:00:02Z,private
+58983954,avito,Hay Charaf,580000,60,2,,1,2026-11-01T09:13:40Z,private
+58983729,avito,Les Portes de Marrakech,380000,67,2,,2,2026-11-01T04:43:00Z,private
+58983542,avito,M'Hamid,480000,53,2,,1,2026-11-01T00:58:02Z,private
+58983488,avito,Autre secteur,,52,3,1,1,2026-11-01T00:34:02Z,private
+58982951,avito,Massira 3,420000,,2,,1,2026-10-31T22:17:02Z,private
+58982894,avito,Ain Mezouar,570000,65,2,,1,2026-10-31T22:03:02Z,private
+58982804,avito,M'Hamid,590000,64,3,,1,2026-10-31T21:46:02Z,private
+58982785,avito,Les Portes de Marrakech,390000,52,3,,1,2026-10-31T21:39:02Z,private
+58982710,avito,Akioud,6000,58,2,,1,2026-10-31T21:27:00Z,private
+58982695,avito,Hay Izdihar,660000,57,2,1,2,2026-10-31T21:24:03Z,professional
+58982244,avito,Route de Casablanca,750000,53,1,1,2,2026-10-31T20:12:01Z,private
+58981913,avito,Mabrouka,1120000,84,2,1,2,2026-10-31T19:26:20Z,professional
+58981903,avito,Victor Hugo,3200000,110,3,1,3,2026-10-31T19:25:13Z,private
+58981403,avito,M'Hamid,490000,,2,,2,2026-10-31T17:45:04Z,private
+58981284,avito,Mabrouka,420000,50,2,,1,2026-10-31T17:20:02Z,private
+56960914,avito,Hay Izdihar,780000,54,2,,1,2026-10-31T13:59:47Z,professional
+58728604,avito,Guéliz,1500000,85,1,1,1,2026-10-31T13:59:30Z,professional
+58170099,avito,Route de Casablanca,,125,2,,2,2026-10-31T12:56:13Z,professional
+58979199,avito,Route de Safi,1100000,91,2,1,1,2026-10-31T12:55:08Z,private
+56127572,avito,Targa,1240000,66,2,1,2,2026-10-31T11:43:12Z,professional
+58978441,avito,Issil,,108,2,,2,2026-10-31T10:36:02Z,private
+58978438,avito,Guéliz,1750000,67,1,,1,2026-10-31T10:35:39Z,private
+58978373,avito,Mabrouka,650000,,2,,,2026-10-31T10:26:03Z,private
+58977673,avito,M'Hamid,480000,58,2,,1,2026-10-31T02:52:01Z,private
+58977632,avito,M'Hamid,550000,62,2,,1,2026-10-31T02:29:01Z,private
+58976958,avito,Mabrouka,1300000,98,3,1,2,2026-10-30T22:31:02Z,private
+58741049,avito,Autre secteur,1450000,97,2,1,1,2026-10-30T19:25:07Z,professional
+57444642,avito,Av Abdelkrim El Khattabi,1600000,85,2,,2,2026-10-30T18:55:39Z,professional
+58975743,avito,Mabrouka,,84,2,1,2,2026-10-30T18:44:01Z,professional
+58975715,avito,Hay Izdihar,670000,64,2,1,1,2026-10-30T18:39:05Z,professional
+58975221,avito,Route de Casablanca,795000,53,1,1,1,2026-10-30T17:37:19Z,professional
 58975191,avito,Guéliz,1587500,46,1,,1,2026-10-30T17:35:55Z,private
 58975052,avito,Autre secteur,1500000,95,2,,1,2026-10-30T17:16:02Z,professional
 58928100,avito,Guéliz,1200000,58,2,1,1,2026-10-30T15:45:09Z,professional
@@ -3721,41 +3722,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58942715,avito,Allal El Fassi,18000,,,,,2026-10-25T21:05:02Z,private
 58942651,avito,Victor Hugo,1800000,132,2,,1,2026-10-25T20:54:03Z,private
 57403327,avito,Mabrouka,730000,80,2,,1,2026-10-25T20:41:44Z,professional
-58942068,avito,Av Mohammed VI,1750000,81,2,1,2,2026-10-25T18:57:02Z,private
-58894874,avito,Hay Izdihar,1200000,100,2,,1,2026-10-25T17:59:43Z,private
-58941407,avito,Massira 3,400000,61,2,,2,2026-10-25T17:17:05Z,private
-58940914,avito,Azzouzia,430000,54,2,,1,2026-10-25T16:13:02Z,private
-58940411,avito,Allal El Fassi,90000000,76,2,1,2,2026-10-25T15:11:35Z,private
-58845066,avito,Route d'Amezmiz,700000,101,2,,1,2026-10-25T14:55:27Z,private
-58939334,avito,Allal El Fassi,1200000,177,3,,3,2026-10-25T13:07:02Z,private
-58730601,avito,Targa,1000000,120,3,,2,2026-10-25T12:56:29Z,private
-58939098,avito,Berrima,2900000,33,2,1,2,2026-10-25T12:40:03Z,private
-58938826,avito,Azzouzia,,50,2,,1,2026-10-25T12:02:01Z,private
-58938428,avito,Majorelle,1230000,64,2,,2,2026-10-25T10:37:02Z,private
-58938403,avito,Guéliz,2050000,90,3,1,2,2026-10-25T10:31:02Z,private
-58938300,avito,Allal El Fassi,1800000,108,2,,2,2026-10-25T10:00:08Z,private
-58938257,avito,Guéliz,1040000,36,1,1,1,2026-10-25T09:40:03Z,private
-58937974,avito,Les Portes de Marrakech,500000,52,2,,1,2026-10-25T07:35:04Z,private
-58937766,avito,Les Portes de Marrakech,480000,62,2,1,2,2026-10-25T02:21:02Z,private
-58937464,avito,Route de Tamansourt,540000,60,2,1,2,2026-10-25T00:01:01Z,private
-58937444,avito,Les Portes de Marrakech,390000,52,2,,2,2026-10-24T23:54:01Z,private
-58937370,avito,M'Hamid,5300000,49,2,1,1,2026-10-24T23:44:04Z,private
-58937235,avito,Guéliz,2130000,115,3,,2,2026-10-24T23:13:38Z,private
-58859543,avito,Agdal,1400000,63,1,1,1,2026-10-24T21:11:04Z,professional
-58732674,avito,Allal El Fassi,1700,86,1,,2,2026-10-24T20:52:46Z,professional
-58936214,avito,Route d'Amezmiz,1200000,100,2,,1,2026-10-24T20:19:02Z,private
-58935349,avito,M'Hamid,600000,70,3,,1,2026-10-24T17:44:03Z,private
-58935315,avito,Annakhil,,66,2,,1,2026-10-24T17:36:03Z,private
-57596509,avito,Guéliz,900000,43,1,,1,2026-10-24T15:59:04Z,private
-58934432,avito,Guéliz,1480000,84,3,,3,2026-10-24T15:26:03Z,private
-58934390,avito,Rouidat,700000,56,3,,,2026-10-24T15:18:02Z,private
-57244162,avito,Hay Izdihar,750000,59,2,,1,2026-10-24T13:58:19Z,professional
-56841514,avito,Mabrouka,580000,62,2,,2,2026-10-24T13:53:40Z,professional
-58933577,avito,Route de Tamansourt,2500,,,,,2026-10-24T13:51:03Z,private
-58933164,avito,Guéliz,2150000,76,2,,2,2026-10-24T12:46:03Z,private
-58521556,avito,Av Mohammed V,1800000,69,1,1,1,2026-10-24T11:57:43Z,professional
-58319548,avito,Hivernage,1200000,41,1,1,1,2026-10-24T11:55:40Z,professional
-58932319,avito,Les Portes de Marrakech,3900000,143,3,,2,2026-10-24T10:35:02Z,private
 58616519,avito,Guéliz,1130000,45,1,1,1,2026-10-24T09:59:24Z,professional
 58932077,avito,Semlalia,2300000,91,2,,2,2026-10-24T09:46:46Z,professional
 58932025,avito,Bouaakkaz,1370000,136,3,1,2,2026-10-24T09:39:01Z,private
@@ -3791,44 +3757,44 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58924165,avito,Route de Tamansourt,380000,59,2,1,1,2026-10-22T23:45:43Z,private
 58923198,avito,M'Hamid,620000,55,2,1,1,2026-10-22T20:32:13Z,private
 58922932,avito,Hivernage,1250000,58,2,,1,2026-10-22T19:47:02Z,private
+58942068,avito,Av Mohammed VI,1750000,81,2,1,2,2026-10-25T18:57:02Z,private
+58894874,avito,Hay Izdihar,1200000,100,2,,1,2026-10-25T17:59:43Z,private
+58941407,avito,Massira 3,400000,61,2,,2,2026-10-25T17:17:05Z,private
+58940914,avito,Azzouzia,430000,54,2,,1,2026-10-25T16:13:02Z,private
+58940411,avito,Allal El Fassi,90000000,76,2,1,2,2026-10-25T15:11:35Z,private
+58845066,avito,Route d'Amezmiz,700000,101,2,,1,2026-10-25T14:55:27Z,private
+58939334,avito,Allal El Fassi,1200000,177,3,,3,2026-10-25T13:07:02Z,private
+58730601,avito,Targa,1000000,120,3,,2,2026-10-25T12:56:29Z,private
+58939098,avito,Berrima,2900000,33,2,1,2,2026-10-25T12:40:03Z,private
+58938826,avito,Azzouzia,,50,2,,1,2026-10-25T12:02:01Z,private
+58938428,avito,Majorelle,1230000,64,2,,2,2026-10-25T10:37:02Z,private
+58938403,avito,Guéliz,2050000,90,3,1,2,2026-10-25T10:31:02Z,private
+58938300,avito,Allal El Fassi,1800000,108,2,,2,2026-10-25T10:00:08Z,private
+58938257,avito,Guéliz,1040000,36,1,1,1,2026-10-25T09:40:03Z,private
+58937974,avito,Les Portes de Marrakech,500000,52,2,,1,2026-10-25T07:35:04Z,private
+58937766,avito,Les Portes de Marrakech,480000,62,2,1,2,2026-10-25T02:21:02Z,private
+58937464,avito,Route de Tamansourt,540000,60,2,1,2,2026-10-25T00:01:01Z,private
+58937444,avito,Les Portes de Marrakech,390000,52,2,,2,2026-10-24T23:54:01Z,private
+58937370,avito,M'Hamid,5300000,49,2,1,1,2026-10-24T23:44:04Z,private
+58937235,avito,Guéliz,2130000,115,3,,2,2026-10-24T23:13:38Z,private
+58859543,avito,Agdal,1400000,63,1,1,1,2026-10-24T21:11:04Z,professional
+58732674,avito,Allal El Fassi,1700,86,1,,2,2026-10-24T20:52:46Z,professional
+58936214,avito,Route d'Amezmiz,1200000,100,2,,1,2026-10-24T20:19:02Z,private
+58935349,avito,M'Hamid,600000,70,3,,1,2026-10-24T17:44:03Z,private
+58935315,avito,Annakhil,,66,2,,1,2026-10-24T17:36:03Z,private
+57596509,avito,Guéliz,900000,43,1,,1,2026-10-24T15:59:04Z,private
+58934432,avito,Guéliz,1480000,84,3,,3,2026-10-24T15:26:03Z,private
+58934390,avito,Rouidat,700000,56,3,,,2026-10-24T15:18:02Z,private
+57244162,avito,Hay Izdihar,750000,59,2,,1,2026-10-24T13:58:19Z,professional
+56841514,avito,Mabrouka,580000,62,2,,2,2026-10-24T13:53:40Z,professional
+58933577,avito,Route de Tamansourt,2500,,,,,2026-10-24T13:51:03Z,private
+58933164,avito,Guéliz,2150000,76,2,,2,2026-10-24T12:46:03Z,private
+58521556,avito,Av Mohammed V,1800000,69,1,1,1,2026-10-24T11:57:43Z,professional
+58319548,avito,Hivernage,1200000,41,1,1,1,2026-10-24T11:55:40Z,professional
+58932319,avito,Les Portes de Marrakech,3900000,143,3,,2,2026-10-24T10:35:02Z,private
 58922418,avito,Route de Tamansourt,380000,59,2,1,1,2026-10-22T18:24:02Z,private
 58921796,avito,Guéliz,2300000,80,2,1,2,2026-10-22T16:45:02Z,private
 58921399,avito,Autre secteur,650000,69,2,,1,2026-10-22T15:58:02Z,private
-58910710,avito,Guéliz,1500000,81,2,1,2,2026-10-21T07:17:04Z,private
-58910476,avito,Hay Izdihar,1200000,97,2,1,2,2026-10-21T01:03:02Z,private
-58910034,avito,Guéliz,1150000,43,1,1,1,2026-10-20T22:52:02Z,private
-58909755,avito,Es Saada,,50,2,,1,2026-10-20T22:07:12Z,private
-58909715,avito,Guéliz,1100000,56,1,,2,2026-10-20T22:01:02Z,private
-58909702,avito,M'Hamid,280000,48,1,,1,2026-10-20T22:00:02Z,private
-58909200,avito,Autre secteur,1190000,76,2,,2,2026-10-20T20:20:03Z,professional
-58909146,avito,Mabrouka,640000,64,2,1,1,2026-10-20T20:08:03Z,private
-58909041,avito,Av Abdelkrim El Khattabi,1290000,89,2,,2,2026-10-20T19:53:02Z,private
-58908706,avito,M'Hamid,490000,,2,,2,2026-10-20T19:00:23Z,private
-58908606,avito,Route d'Amezmiz,18000,97,3,1,2,2026-10-20T18:40:07Z,professional
-58908390,avito,M'Hamid,500000,63,2,,1,2026-10-20T18:14:00Z,private
-58908270,avito,Ain Mezouar,500000,60,2,,1,2026-10-20T17:58:30Z,private
-58907883,avito,Guéliz,,100,3,1,1,2026-10-20T16:48:02Z,private
-56624446,avito,Bouaakkaz,950000,85,2,,2,2026-10-20T15:28:54Z,professional
-58907238,avito,Allal El Fassi,22000000,,2,,2,2026-10-20T15:09:07Z,private
-57820089,avito,Route de Casablanca,540000,54,2,1,1,2026-10-20T13:13:07Z,professional
-58905381,avito,Hivernage,2300000,63,1,,1,2026-10-20T11:47:04Z,private
-58905338,avito,Hivernage,1900000,,1,,1,2026-10-20T11:41:50Z,private
-58904674,avito,M'Hamid,480000,54,2,,1,2026-10-20T10:02:04Z,private
-58904631,avito,Autre secteur,,161,2,1,1,2026-10-20T09:57:11Z,private
-58904078,avito,Hay Charaf,900000,63,2,1,1,2026-10-20T06:34:02Z,private
-58902683,avito,Agdal,2850000,120,2,1,2,2026-10-19T20:54:01Z,private
-58902376,avito,Azli,3000,,1,,0,2026-10-19T20:02:52Z,private
-58902173,avito,Palmeraie,,,,,,2026-10-19T19:33:02Z,private
-58902162,avito,Guéliz,1100000,60,2,1,2,2026-10-19T19:30:12Z,private
-58902133,avito,,7000,120,2,,1,2026-10-19T19:28:25Z,private
-58902073,avito,,,47,2,,1,2026-10-19T19:19:43Z,private
-58901513,avito,Hay Charaf,580000,60,2,,1,2026-10-19T17:53:18Z,private
-58901246,avito,Route d'Amezmiz,2800000,150,2,1,2,2026-10-19T17:12:04Z,private
-58901153,avito,Targa,530000,,2,,1,2026-10-19T16:59:41Z,private
-58852631,avito,Mabrouka,4000,125,3,,2,2026-10-19T15:54:28Z,professional
-58900668,avito,Agdal,2350000,80,2,1,2,2026-10-19T15:42:01Z,private
-57857796,avito,Guéliz,900000,45,1,,1,2026-10-19T15:16:53Z,professional
-58900460,avito,Autre secteur,25000,40,1,,2,2026-10-19T15:05:21Z,private
 58188765,avito,Agdal,2900000,100,3,,,2026-10-22T15:52:46Z,professional
 58921366,avito,Agdal,2200000,94,2,1,2,2026-10-22T15:52:05Z,private
 58921288,avito,M'Hamid,840000,120,3,,2,2026-10-22T15:42:57Z,private
@@ -3864,6 +3830,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58911506,avito,Guéliz,17000,74,2,1,2,2026-10-21T10:31:05Z,private
 58911405,avito,Hay Massira,650000,71,2,,0,2026-10-21T10:23:02Z,private
 58911070,avito,Mabrouka,2200000,236,3,,2,2026-10-21T09:41:25Z,professional
+58910710,avito,Guéliz,1500000,81,2,1,2,2026-10-21T07:17:04Z,private
+58910476,avito,Hay Izdihar,1200000,97,2,1,2,2026-10-21T01:03:02Z,private
+58910034,avito,Guéliz,1150000,43,1,1,1,2026-10-20T22:52:02Z,private
+58909755,avito,Es Saada,,50,2,,1,2026-10-20T22:07:12Z,private
+58909715,avito,Guéliz,1100000,56,1,,2,2026-10-20T22:01:02Z,private
+58909702,avito,M'Hamid,280000,48,1,,1,2026-10-20T22:00:02Z,private
+58909200,avito,Autre secteur,1190000,76,2,,2,2026-10-20T20:20:03Z,professional
+58909146,avito,Mabrouka,640000,64,2,1,1,2026-10-20T20:08:03Z,private
+58909041,avito,Av Abdelkrim El Khattabi,1290000,89,2,,2,2026-10-20T19:53:02Z,private
+58908706,avito,M'Hamid,490000,,2,,2,2026-10-20T19:00:23Z,private
+58908606,avito,Route d'Amezmiz,18000,97,3,1,2,2026-10-20T18:40:07Z,professional
+58908390,avito,M'Hamid,500000,63,2,,1,2026-10-20T18:14:00Z,private
+58908270,avito,Ain Mezouar,500000,60,2,,1,2026-10-20T17:58:30Z,private
+58907883,avito,Guéliz,,100,3,1,1,2026-10-20T16:48:02Z,private
+56624446,avito,Bouaakkaz,950000,85,2,,2,2026-10-20T15:28:54Z,professional
+58907238,avito,Allal El Fassi,22000000,,2,,2,2026-10-20T15:09:07Z,private
+57820089,avito,Route de Casablanca,540000,54,2,1,1,2026-10-20T13:13:07Z,professional
+58905381,avito,Hivernage,2300000,63,1,,1,2026-10-20T11:47:04Z,private
+58905338,avito,Hivernage,1900000,,1,,1,2026-10-20T11:41:50Z,private
+58904674,avito,M'Hamid,480000,54,2,,1,2026-10-20T10:02:04Z,private
+58904631,avito,Autre secteur,,161,2,1,1,2026-10-20T09:57:11Z,private
+58904078,avito,Hay Charaf,900000,63,2,1,1,2026-10-20T06:34:02Z,private
+58902683,avito,Agdal,2850000,120,2,1,2,2026-10-19T20:54:01Z,private
+58902376,avito,Azli,3000,,1,,0,2026-10-19T20:02:52Z,private
+58902173,avito,Palmeraie,,,,,,2026-10-19T19:33:02Z,private
+58902162,avito,Guéliz,1100000,60,2,1,2,2026-10-19T19:30:12Z,private
+58902133,avito,,7000,120,2,,1,2026-10-19T19:28:25Z,private
+58902073,avito,,,47,2,,1,2026-10-19T19:19:43Z,private
+58901513,avito,Hay Charaf,580000,60,2,,1,2026-10-19T17:53:18Z,private
+58901246,avito,Route d'Amezmiz,2800000,150,2,1,2,2026-10-19T17:12:04Z,private
+58901153,avito,Targa,530000,,2,,1,2026-10-19T16:59:41Z,private
+58852631,avito,Mabrouka,4000,125,3,,2,2026-10-19T15:54:28Z,professional
+58900668,avito,Agdal,2350000,80,2,1,2,2026-10-19T15:42:01Z,private
+57857796,avito,Guéliz,900000,45,1,,1,2026-10-19T15:16:53Z,professional
+58900460,avito,Autre secteur,25000,40,1,,2,2026-10-19T15:05:21Z,private
 58900024,avito,Targa,1320000,87,2,1,2,2026-10-19T14:13:02Z,private
 58899747,avito,Route d'Amezmiz,1200000,102,2,1,1,2026-10-19T13:46:01Z,private
 58899577,avito,Assif,740000,64,2,,1,2026-10-19T13:18:02Z,private
@@ -4001,79 +4002,9 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58373386,avito,M'Hamid,650000,60,2,,1,2026-10-11T09:57:35Z,professional
 58842694,avito,M'Hamid,510000,61,2,,1,2026-10-11T09:05:01Z,private
 58842435,avito,Route de Safi,500000,73,2,,1,2026-10-11T01:21:02Z,private
-58842230,avito,Hay Charaf,1200000,99,2,,2,2026-10-10T23:43:01Z,professional
-58841264,avito,Agdal,1800000,,2,,2,2026-10-10T20:55:02Z,private
-51662184,avito,Centre Ville,,69,1,,1,2026-10-10T19:44:19Z,professional
-58840708,avito,Hivernage,1100000,36,1,,1,2026-10-10T19:19:21Z,private
-58840305,avito,Route de Casablanca,,47,2,,1,2026-10-10T18:31:02Z,private
-58840291,avito,Guéliz,6000,,,,,2026-10-10T18:27:04Z,private
-58029591,avito,Guéliz,,71,1,1,1,2026-10-10T16:37:57Z,professional
-58838031,avito,Les Portes de Marrakech,400000,54,2,,1,2026-10-10T13:20:06Z,private
-58837816,avito,Guéliz,1100000,72,2,,1,2026-10-10T13:04:05Z,private
-58837410,avito,Les Portes de Marrakech,425000,60,2,,2,2026-10-10T12:23:46Z,private
-58836935,avito,,,,,,,2026-10-10T11:18:01Z,private
-58836175,avito,Targa,520000,54,2,,1,2026-10-10T09:10:02Z,private
-58835720,avito,Guéliz,,200,2,,2,2026-10-10T00:21:01Z,private
-58835549,avito,M'Hamid,620000,65,2,,2,2026-10-09T23:19:01Z,private
-58834852,avito,Autre secteur,,120,3,,2,2026-10-09T21:23:22Z,private
-58832931,avito,Guéliz,1700000,103,2,,,2026-10-09T16:26:02Z,private
-58832711,avito,Targa,445000,60,3,,1,2026-10-09T15:54:22Z,private
-58832142,avito,Hay Izdihar,1741250,121,3,,3,2026-10-09T14:42:02Z,private
-58831782,avito,Allal El Fassi,1150000,81,2,,1,2026-10-09T14:03:30Z,private
-57190572,avito,Palmeraie,2550000,143,3,,2,2026-10-09T13:58:22Z,professional
-58831729,avito,Guéliz,710000,69,2,,1,2026-10-09T13:58:01Z,private
-58831719,avito,M'Hamid,460000,52,2,,1,2026-10-09T13:56:33Z,private
-58256469,avito,Guéliz,2015000,80,2,1,2,2026-10-09T13:39:35Z,professional
-58831479,avito,Guéliz,2200000,104,2,1,2,2026-10-09T13:32:55Z,private
-58831460,avito,Allal El Fassi,1300000,81,2,,1,2026-10-09T13:31:02Z,private
-58622742,avito,Route de Casablanca,7000,140,4,,2,2026-10-09T12:51:40Z,professional
-58830754,avito,Hay Izdihar,1155000,70,2,,2,2026-10-09T11:55:24Z,private
-58830642,avito,Hay Izdihar,630000,36,1,,1,2026-10-09T11:47:01Z,private
-58830501,avito,Guéliz,7000,,,,,2026-10-09T11:25:02Z,private
-58622387,avito,Autre secteur,1460000,86,2,,1,2026-10-09T10:54:29Z,private
-58829687,avito,Autre secteur,1200000,82,2,,1,2026-10-09T09:53:35Z,professional
-57917838,avito,Guéliz,2400000,84,2,,2,2026-10-09T08:57:20Z,professional
-58829048,avito,Guéliz,1850000,92,2,,2,2026-10-09T00:06:03Z,private
-58828846,avito,Autre secteur,1500000,86,2,1,1,2026-10-08T23:05:02Z,private
-58828792,avito,M'Hamid,500000,54,2,,1,2026-10-08T22:53:11Z,private
 58827730,avito,Guéliz,1750000,84,3,,2,2026-10-08T20:23:01Z,professional
 58827735,avito,Guéliz,1450000,49,1,1,1,2026-10-08T20:24:01Z,private
 58827714,avito,Guéliz,3500000,100,2,,1,2026-10-08T20:20:03Z,private
-58811937,avito,Route de Safi,,240,5,,2,2026-10-06T15:29:38Z,private
-58811711,avito,Mabrouka,540000,68,2,1,1,2026-10-06T14:51:03Z,private
-58811567,avito,Route de Casablanca,800000,53,1,1,1,2026-10-06T14:30:04Z,private
-58811372,avito,Ain Mezouar,400000,39,1,,1,2026-10-06T13:57:01Z,private
-58811010,avito,Autre secteur,700000,63,2,,1,2026-10-06T13:07:07Z,private
-58810753,avito,Allal El Fassi,,249,2,,2,2026-10-06T12:38:34Z,private
-58809965,avito,M'Hamid,450000,,,,,2026-10-06T11:09:59Z,private
-58808835,avito,Guéliz,2200000,74,2,,2,2026-10-06T01:38:25Z,private
-58808712,avito,Route de Casablanca,1200000,55,2,1,1,2026-10-06T01:29:30Z,professional
-58808350,avito,Route de Casablanca,,200,1,,,2026-10-06T00:54:17Z,private
-58807503,avito,Route d'Amezmiz,340000,56,2,,0,2026-10-05T23:21:35Z,private
-58807202,avito,Agdal,2800000,95,3,1,2,2026-10-05T22:38:01Z,private
-58806751,avito,Afaq,,70,2,,,2026-10-05T21:25:07Z,private
-58806501,avito,Assif,3600000,276,11,,4,2026-10-05T20:54:02Z,private
-58806261,avito,Massira 3,500000,78,2,,1,2026-10-05T20:33:07Z,private
-58806093,avito,Rouidat,960000,,3,,,2026-10-05T20:16:05Z,private
-58805965,avito,Agdal,1450000,70,1,1,0,2026-10-05T20:02:03Z,private
-58804760,avito,Mabrouka,530000,51,2,1,1,2026-10-05T15:49:01Z,private
-58804587,avito,Annakhil,730000,56,2,,1,2026-10-05T15:20:05Z,private
-58804333,avito,Guéliz,780000,74,1,,1,2026-10-05T14:57:01Z,private
-58803963,avito,Av Abdelkrim El Khattabi,1853000,109,2,,1,2026-10-05T14:14:11Z,private
-58803867,avito,Guéliz,864000,,1,1,1,2026-10-05T14:02:52Z,private
-58803830,avito,Les Portes de Marrakech,430000,60,2,,2,2026-10-05T13:58:29Z,private
-58803827,avito,Victor Hugo,3800000,242,3,,2,2026-10-05T13:58:15Z,private
-58803791,avito,Victor Hugo,1600000,79,2,1,1,2026-10-05T13:54:46Z,private
-58588446,avito,Autre secteur,2400000,77,2,1,2,2026-10-05T13:44:12Z,professional
-55602294,avito,Mabrouka,620000,78,1,,1,2026-10-05T12:39:28Z,professional
-58802800,avito,Autre secteur,,,5,,,2026-10-05T11:46:14Z,private
-58802080,avito,Route d'Ourika,1520000,118,2,,1,2026-10-05T09:56:02Z,private
-58753763,avito,Targa,11500,103,,,,2026-10-05T09:24:32Z,private
-58104728,avito,Semlalia,21000,46,1,,1,2026-10-05T08:23:13Z,professional
-58801498,avito,Guéliz,1450000,80,2,1,1,2026-10-05T01:18:01Z,private
-58801362,avito,M'Hamid,,67,2,,1,2026-10-04T23:53:50Z,private
-58595568,avito,Guéliz,1650000,104,2,1,2,2026-10-04T21:47:57Z,professional
-58800462,avito,Victor Hugo,1250000,56,1,1,0,2026-10-04T21:44:58Z,private
 58827606,avito,Guéliz,1200000,50,1,,1,2026-10-08T20:01:01Z,private
 58827523,avito,Centre Ville,,49,1,1,1,2026-10-08T19:47:03Z,private
 57030483,avito,Semlalia,840000,37,1,,1,2026-10-08T18:51:22Z,professional
@@ -4109,6 +4040,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58812871,avito,Es Saada,,56,2,,,2026-10-06T17:21:20Z,private
 58812500,avito,Es Saada,520000,56,2,,1,2026-10-06T16:53:52Z,private
 58535376,avito,Guéliz,2550000,134,3,1,3,2026-10-06T15:36:15Z,professional
+58811937,avito,Route de Safi,,240,5,,2,2026-10-06T15:29:38Z,private
+58811711,avito,Mabrouka,540000,68,2,1,1,2026-10-06T14:51:03Z,private
+58811567,avito,Route de Casablanca,800000,53,1,1,1,2026-10-06T14:30:04Z,private
+58811372,avito,Ain Mezouar,400000,39,1,,1,2026-10-06T13:57:01Z,private
+58811010,avito,Autre secteur,700000,63,2,,1,2026-10-06T13:07:07Z,private
+58810753,avito,Allal El Fassi,,249,2,,2,2026-10-06T12:38:34Z,private
+58809965,avito,M'Hamid,450000,,,,,2026-10-06T11:09:59Z,private
+58808835,avito,Guéliz,2200000,74,2,,2,2026-10-06T01:38:25Z,private
+58808712,avito,Route de Casablanca,1200000,55,2,1,1,2026-10-06T01:29:30Z,professional
+58808350,avito,Route de Casablanca,,200,1,,,2026-10-06T00:54:17Z,private
+58807503,avito,Route d'Amezmiz,340000,56,2,,0,2026-10-05T23:21:35Z,private
+58807202,avito,Agdal,2800000,95,3,1,2,2026-10-05T22:38:01Z,private
+58806751,avito,Afaq,,70,2,,,2026-10-05T21:25:07Z,private
+58806501,avito,Assif,3600000,276,11,,4,2026-10-05T20:54:02Z,private
+58806261,avito,Massira 3,500000,78,2,,1,2026-10-05T20:33:07Z,private
+58806093,avito,Rouidat,960000,,3,,,2026-10-05T20:16:05Z,private
+58805965,avito,Agdal,1450000,70,1,1,0,2026-10-05T20:02:03Z,private
+58804760,avito,Mabrouka,530000,51,2,1,1,2026-10-05T15:49:01Z,private
+58804587,avito,Annakhil,730000,56,2,,1,2026-10-05T15:20:05Z,private
+58804333,avito,Guéliz,780000,74,1,,1,2026-10-05T14:57:01Z,private
+58803963,avito,Av Abdelkrim El Khattabi,1853000,109,2,,1,2026-10-05T14:14:11Z,private
+58803867,avito,Guéliz,864000,,1,1,1,2026-10-05T14:02:52Z,private
+58803830,avito,Les Portes de Marrakech,430000,60,2,,2,2026-10-05T13:58:29Z,private
+58803827,avito,Victor Hugo,3800000,242,3,,2,2026-10-05T13:58:15Z,private
+58803791,avito,Victor Hugo,1600000,79,2,1,1,2026-10-05T13:54:46Z,private
+58588446,avito,Autre secteur,2400000,77,2,1,2,2026-10-05T13:44:12Z,professional
+55602294,avito,Mabrouka,620000,78,1,,1,2026-10-05T12:39:28Z,professional
+58802800,avito,Autre secteur,,,5,,,2026-10-05T11:46:14Z,private
+58802080,avito,Route d'Ourika,1520000,118,2,,1,2026-10-05T09:56:02Z,private
+58753763,avito,Targa,11500,103,,,,2026-10-05T09:24:32Z,private
+58104728,avito,Semlalia,21000,46,1,,1,2026-10-05T08:23:13Z,professional
+58801498,avito,Guéliz,1450000,80,2,1,1,2026-10-05T01:18:01Z,private
+58801362,avito,M'Hamid,,67,2,,1,2026-10-04T23:53:50Z,private
+58595568,avito,Guéliz,1650000,104,2,1,2,2026-10-04T21:47:57Z,professional
+58800462,avito,Victor Hugo,1250000,56,1,1,0,2026-10-04T21:44:58Z,private
 58799822,avito,Agdal,2690000,95,3,1,2,2026-10-04T20:09:48Z,private
 58799748,avito,Hay Charaf,460000,62,2,,1,2026-10-04T20:03:01Z,private
 58036161,avito,Route de Ouarzazate,1500000,113,2,1,2,2026-10-04T18:47:28Z,professional
@@ -4141,6 +4107,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58792339,avito,Hivernage,1450000,76,2,1,1,2026-10-03T18:33:03Z,private
 58792302,avito,Ancienne Médina,,60,6,,3,2026-10-03T18:30:07Z,private
 58792052,avito,Targa,,52,2,,1,2026-10-03T18:11:02Z,private
+58842230,avito,Hay Charaf,1200000,99,2,,2,2026-10-10T23:43:01Z,professional
+58841264,avito,Agdal,1800000,,2,,2,2026-10-10T20:55:02Z,private
+51662184,avito,Centre Ville,,69,1,,1,2026-10-10T19:44:19Z,professional
+58840708,avito,Hivernage,1100000,36,1,,1,2026-10-10T19:19:21Z,private
+58840305,avito,Route de Casablanca,,47,2,,1,2026-10-10T18:31:02Z,private
+58840291,avito,Guéliz,6000,,,,,2026-10-10T18:27:04Z,private
+58029591,avito,Guéliz,,71,1,1,1,2026-10-10T16:37:57Z,professional
+58838031,avito,Les Portes de Marrakech,400000,54,2,,1,2026-10-10T13:20:06Z,private
+58837816,avito,Guéliz,1100000,72,2,,1,2026-10-10T13:04:05Z,private
+58837410,avito,Les Portes de Marrakech,425000,60,2,,2,2026-10-10T12:23:46Z,private
+58836935,avito,,,,,,,2026-10-10T11:18:01Z,private
+58836175,avito,Targa,520000,54,2,,1,2026-10-10T09:10:02Z,private
+58835720,avito,Guéliz,,200,2,,2,2026-10-10T00:21:01Z,private
+58835549,avito,M'Hamid,620000,65,2,,2,2026-10-09T23:19:01Z,private
+58834852,avito,Autre secteur,,120,3,,2,2026-10-09T21:23:22Z,private
+58832931,avito,Guéliz,1700000,103,2,,,2026-10-09T16:26:02Z,private
+58832711,avito,Targa,445000,60,3,,1,2026-10-09T15:54:22Z,private
+58832142,avito,Hay Izdihar,1741250,121,3,,3,2026-10-09T14:42:02Z,private
+58831782,avito,Allal El Fassi,1150000,81,2,,1,2026-10-09T14:03:30Z,private
+57190572,avito,Palmeraie,2550000,143,3,,2,2026-10-09T13:58:22Z,professional
+58831729,avito,Guéliz,710000,69,2,,1,2026-10-09T13:58:01Z,private
+58831719,avito,M'Hamid,460000,52,2,,1,2026-10-09T13:56:33Z,private
+58256469,avito,Guéliz,2015000,80,2,1,2,2026-10-09T13:39:35Z,professional
+58831479,avito,Guéliz,2200000,104,2,1,2,2026-10-09T13:32:55Z,private
+58831460,avito,Allal El Fassi,1300000,81,2,,1,2026-10-09T13:31:02Z,private
+58622742,avito,Route de Casablanca,7000,140,4,,2,2026-10-09T12:51:40Z,professional
+58830754,avito,Hay Izdihar,1155000,70,2,,2,2026-10-09T11:55:24Z,private
+58830642,avito,Hay Izdihar,630000,36,1,,1,2026-10-09T11:47:01Z,private
+58830501,avito,Guéliz,7000,,,,,2026-10-09T11:25:02Z,private
+58622387,avito,Autre secteur,1460000,86,2,,1,2026-10-09T10:54:29Z,private
+58829687,avito,Autre secteur,1200000,82,2,,1,2026-10-09T09:53:35Z,professional
+57917838,avito,Guéliz,2400000,84,2,,2,2026-10-09T08:57:20Z,professional
+58829048,avito,Guéliz,1850000,92,2,,2,2026-10-09T00:06:03Z,private
+58828846,avito,Autre secteur,1500000,86,2,1,1,2026-10-08T23:05:02Z,private
+58828792,avito,M'Hamid,500000,54,2,,1,2026-10-08T22:53:11Z,private
 58791746,avito,M'Hamid,,54,2,,1,2026-10-03T17:40:13Z,private
 58791297,avito,Guéliz,1500000,85,2,1,1,2026-10-03T16:48:06Z,private
 58585883,avito,Guéliz,1149000,68,2,1,2,2026-10-03T16:40:23Z,professional
@@ -4179,41 +4180,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58779932,avito,Allal El Fassi,945000,18,2,1,1,2026-10-01T19:51:22Z,private
 58779595,avito,Guéliz,1100000,74,2,,1,2026-10-01T19:08:21Z,private
 58779482,avito,Route de Casablanca,1350000,114,3,,1,2026-10-01T18:54:47Z,private
-58769357,avito,Guéliz,2300000,88,2,,1,2026-09-30T12:28:53Z,professional
-58768919,avito,Hay Al Massar,6000,500,18,,4,2026-09-30T11:45:39Z,private
-58564527,avito,Palmeraie,1650000,125,2,,1,2026-09-30T11:38:25Z,professional
-58564301,avito,Guéliz,1200000,,1,1,2,2026-09-30T11:23:31Z,professional
-58768599,avito,Rouidat,872000,75,2,,1,2026-09-30T11:11:05Z,private
-58768551,avito,Guéliz,1500000,80,2,1,1,2026-09-30T11:06:03Z,professional
-58768454,avito,Autre secteur,550000,85,2,,2,2026-09-30T10:51:02Z,private
-58768214,avito,Guéliz,1750000,107,2,,2,2026-09-30T10:25:25Z,private
-58767863,avito,Agdal,2630000,98,3,1,2,2026-09-30T09:33:29Z,private
-58767526,avito,Daoudiate,850000,60,7,,4,2026-09-30T04:33:02Z,private
-58767297,avito,Guéliz,12000,100,2,1,2,2026-09-30T00:05:06Z,professional
-58766762,avito,Azzouzia,500000,64,2,,1,2026-09-29T22:17:03Z,private
-58766554,avito,Route de Casablanca,1050000,65,2,1,1,2026-09-29T21:37:01Z,private
-58765309,avito,Semlalia,1700000,109,2,,2,2026-09-29T18:50:04Z,private
-58764956,avito,Guéliz,1650000,102,3,1,2,2026-09-29T17:42:43Z,private
-58764025,avito,Victor Hugo,9500,,,,,2026-09-29T15:46:57Z,private
-58763960,avito,Massira 2,450000,75,2,,1,2026-09-29T15:42:32Z,private
-58763686,avito,Les Portes de Marrakech,,60,2,,1,2026-09-29T15:24:57Z,private
-58763014,avito,Autre secteur,6000,62,,,,2026-09-29T14:15:48Z,private
-58762837,avito,Hay Al Haouz,200000,86,3,1,1,2026-09-29T13:36:24Z,private
-58762625,avito,Autre secteur,,,2,,1,2026-09-29T13:07:50Z,private
-58762243,avito,Av Mohammed VI,10500,96,2,1,2,2026-09-29T12:35:46Z,private
-58762009,avito,Semlalia,9500,,,,,2026-09-29T12:12:40Z,private
-58761945,avito,Route d'Amezmiz,8500,,,,,2026-09-29T11:54:06Z,private
-58761460,avito,Guéliz,,89,2,,1,2026-09-29T10:48:16Z,private
-58761366,avito,Av Mohammed VI,,38,1,,1,2026-09-29T10:27:36Z,private
-58761180,avito,Route de Casablanca,1400000,,2,,1,2026-09-29T09:55:38Z,private
-58760793,avito,Es Saada,800000,,2,,1,2026-09-29T07:22:02Z,private
-58760491,avito,Es Saada,400000,60,2,,1,2026-09-29T00:33:02Z,private
-58760368,avito,Route de Tamansourt,3500,,,,,2026-09-28T23:53:59Z,private
-58760305,avito,Route de Tamansourt,170000,40,1,,1,2026-09-28T23:47:04Z,private
-58759567,avito,Les Portes de Marrakech,320000,57,2,,1,2026-09-28T21:19:02Z,private
-58759369,avito,Guéliz,,98,2,,2,2026-09-28T20:49:00Z,private
-58758688,avito,Guéliz,480000,58,2,,1,2026-09-28T19:08:02Z,private
-58758562,avito,Semlalia,1500000,83,2,,2,2026-09-28T18:39:39Z,private
 58779412,avito,Masmoudi,540000,63,2,,1,2026-10-01T18:49:16Z,professional
 58779384,avito,Route de Safi,1450000,78,2,,0,2026-10-01T18:45:16Z,private
 58779266,avito,Route de Casablanca,,,1,,,2026-10-01T18:17:41Z,private
@@ -4249,6 +4215,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58770081,avito,Hay Izdihar,660000,57,2,1,2,2026-09-30T13:50:02Z,professional
 58770003,avito,Autre secteur,16000,,3,,1,2026-09-30T13:43:30Z,professional
 58769919,avito,M'Hamid,,,2,1,1,2026-09-30T13:37:05Z,private
+58769357,avito,Guéliz,2300000,88,2,,1,2026-09-30T12:28:53Z,professional
+58768919,avito,Hay Al Massar,6000,500,18,,4,2026-09-30T11:45:39Z,private
+58564527,avito,Palmeraie,1650000,125,2,,1,2026-09-30T11:38:25Z,professional
+58564301,avito,Guéliz,1200000,,1,1,2,2026-09-30T11:23:31Z,professional
+58768599,avito,Rouidat,872000,75,2,,1,2026-09-30T11:11:05Z,private
+58768551,avito,Guéliz,1500000,80,2,1,1,2026-09-30T11:06:03Z,professional
+58768454,avito,Autre secteur,550000,85,2,,2,2026-09-30T10:51:02Z,private
+58768214,avito,Guéliz,1750000,107,2,,2,2026-09-30T10:25:25Z,private
+58767863,avito,Agdal,2630000,98,3,1,2,2026-09-30T09:33:29Z,private
+58767526,avito,Daoudiate,850000,60,7,,4,2026-09-30T04:33:02Z,private
+58767297,avito,Guéliz,12000,100,2,1,2,2026-09-30T00:05:06Z,professional
+58766762,avito,Azzouzia,500000,64,2,,1,2026-09-29T22:17:03Z,private
+58766554,avito,Route de Casablanca,1050000,65,2,1,1,2026-09-29T21:37:01Z,private
+58765309,avito,Semlalia,1700000,109,2,,2,2026-09-29T18:50:04Z,private
+58764956,avito,Guéliz,1650000,102,3,1,2,2026-09-29T17:42:43Z,private
+58764025,avito,Victor Hugo,9500,,,,,2026-09-29T15:46:57Z,private
+58763960,avito,Massira 2,450000,75,2,,1,2026-09-29T15:42:32Z,private
+58763686,avito,Les Portes de Marrakech,,60,2,,1,2026-09-29T15:24:57Z,private
+58763014,avito,Autre secteur,6000,62,,,,2026-09-29T14:15:48Z,private
+58762837,avito,Hay Al Haouz,200000,86,3,1,1,2026-09-29T13:36:24Z,private
+58762625,avito,Autre secteur,,,2,,1,2026-09-29T13:07:50Z,private
+58762243,avito,Av Mohammed VI,10500,96,2,1,2,2026-09-29T12:35:46Z,private
+58762009,avito,Semlalia,9500,,,,,2026-09-29T12:12:40Z,private
+58761945,avito,Route d'Amezmiz,8500,,,,,2026-09-29T11:54:06Z,private
+58761460,avito,Guéliz,,89,2,,1,2026-09-29T10:48:16Z,private
+58761366,avito,Av Mohammed VI,,38,1,,1,2026-09-29T10:27:36Z,private
+58761180,avito,Route de Casablanca,1400000,,2,,1,2026-09-29T09:55:38Z,private
+58760793,avito,Es Saada,800000,,2,,1,2026-09-29T07:22:02Z,private
+58760491,avito,Es Saada,400000,60,2,,1,2026-09-29T00:33:02Z,private
+58760368,avito,Route de Tamansourt,3500,,,,,2026-09-28T23:53:59Z,private
+58760305,avito,Route de Tamansourt,170000,40,1,,1,2026-09-28T23:47:04Z,private
+58759567,avito,Les Portes de Marrakech,320000,57,2,,1,2026-09-28T21:19:02Z,private
+58759369,avito,Guéliz,,98,2,,2,2026-09-28T20:49:00Z,private
+58758688,avito,Guéliz,480000,58,2,,1,2026-09-28T19:08:02Z,private
+58758562,avito,Semlalia,1500000,83,2,,2,2026-09-28T18:39:39Z,private
 58219500,avito,Assif,1150000,107,3,,,2026-09-28T16:42:20Z,professional
 58756631,avito,Semlalia,1350000,110,2,,1,2026-09-28T14:43:38Z,private
 58756605,avito,Semlalia,1320000,110,2,,1,2026-09-28T14:37:49Z,private
@@ -4389,41 +4390,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58691067,avito,Route de Tamansourt,250000,40,1,1,1,2026-09-19T09:44:52Z,private
 56978528,avito,Hay Charaf,750000,63,2,,1,2026-09-19T09:32:58Z,private
 58690506,avito,Victor Hugo,2400000,100,2,1,2,2026-09-19T07:26:02Z,private
-58671714,avito,M'Hamid,,130,3,1,2,2026-09-16T13:42:02Z,private
-58671678,avito,M'Hamid,,130,3,1,2,2026-09-16T13:38:06Z,private
-58670946,avito,Hay Charaf,890000,65,2,,1,2026-09-16T12:13:34Z,private
-58670381,avito,M'Hamid,600000,62,2,1,2,2026-09-16T11:21:02Z,private
-58670373,avito,Allal El Fassi,1150000,113,3,,2,2026-09-16T11:20:02Z,private
-58669894,avito,Les Portes de Marrakech,420000,58,2,,1,2026-09-16T10:19:10Z,private
-58618647,avito,Guéliz,1620000,84,3,,2,2026-09-16T09:43:52Z,private
-58667154,avito,Guéliz,1280000,58,1,1,1,2026-09-15T18:58:10Z,private
-58666759,avito,Autre secteur,,70,2,,1,2026-09-15T18:00:27Z,private
-58666620,avito,Guéliz,1400000,43,1,1,1,2026-09-15T17:41:09Z,private
-58665655,avito,Sidi Youssef Ben Ali,,70,2,,1,2026-09-15T15:44:08Z,private
-58665556,avito,Sidi Youssef Ben Ali,800000,96,3,,2,2026-09-15T15:32:03Z,private
-58665144,avito,M'Hamid,560000,76,2,,2,2026-09-15T14:44:19Z,private
-58665142,avito,Hay Targa,530000,63,3,,2,2026-09-15T14:44:03Z,private
-58665080,avito,Autre secteur,550000,70,2,,1,2026-09-15T14:35:22Z,private
-57374133,avito,Sidi Abbad,1400000,125,3,,2,2026-09-15T12:58:48Z,professional
-58663967,avito,Autre secteur,,52,2,,1,2026-09-15T12:28:03Z,private
-58663931,avito,Route d'Agadir - Essaouira,520000,70,2,,2,2026-09-15T12:23:07Z,private
-58663753,avito,Guéliz,1150000,95,1,,0,2026-09-15T11:54:20Z,private
-58543697,avito,Autre secteur,580000,60,2,,1,2026-09-15T11:49:20Z,professional
-58663233,avito,Les Portes de Marrakech,,56,2,,1,2026-09-15T11:00:21Z,private
-58661029,avito,Mabrouka,600000,54,2,1,1,2026-09-14T20:58:03Z,private
-58661016,avito,Hay Izdihar,680000,58,2,1,1,2026-09-14T20:56:01Z,private
-58659403,avito,Les Portes de Marrakech,,58,2,,1,2026-09-14T16:47:09Z,private
-58659141,avito,Guéliz,,65,2,1,2,2026-09-14T16:20:02Z,private
-58612102,avito,M'Hamid,720000,91,2,1,2,2026-09-14T16:08:02Z,professional
-58658981,avito,Route d'Amezmiz,680000,,3,1,1,2026-09-14T15:57:06Z,private
-58658861,avito,Ancienne Médina,900000,57,2,,1,2026-09-14T15:41:01Z,private
-58658646,avito,Allal El Fassi,780000,78,3,,1,2026-09-14T15:15:03Z,private
-58658210,avito,Ain Mezouar,,65,3,,1,2026-09-14T14:24:02Z,private
-58657884,avito,Ain Mezouar,710000,,2,,1,2026-09-14T13:50:09Z,private
-58657360,avito,Ain Mezouar,710000,,2,,1,2026-09-14T12:47:00Z,private
-58464184,avito,Route de Safi,1690000,100,3,1,2,2026-09-14T12:09:39Z,private
-58609781,avito,Route de Safi,1400000,75,2,1,1,2026-09-14T11:56:23Z,professional
-58564276,avito,Guéliz,1450000,56,1,,1,2026-09-14T11:11:27Z,private
 58690505,avito,Victor Hugo,3000000,142,2,,3,2026-09-19T07:23:01Z,private
 58689655,avito,Route d'Amezmiz,3400000,102,2,1,2,2026-09-18T21:51:01Z,private
 58689318,avito,Route d'Ourika,180000,45,1,1,1,2026-09-18T20:59:56Z,private
@@ -4459,6 +4425,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58672918,avito,Autre secteur,650000,56,2,,1,2026-09-16T16:04:34Z,professional
 58672478,avito,Annakhil,2800000,116,2,1,2,2026-09-16T15:21:08Z,private
 58672153,avito,Autre secteur,650000,66,2,1,0,2026-09-16T14:41:33Z,private
+58671714,avito,M'Hamid,,130,3,1,2,2026-09-16T13:42:02Z,private
+58671678,avito,M'Hamid,,130,3,1,2,2026-09-16T13:38:06Z,private
+58670946,avito,Hay Charaf,890000,65,2,,1,2026-09-16T12:13:34Z,private
+58670381,avito,M'Hamid,600000,62,2,1,2,2026-09-16T11:21:02Z,private
+58670373,avito,Allal El Fassi,1150000,113,3,,2,2026-09-16T11:20:02Z,private
+58669894,avito,Les Portes de Marrakech,420000,58,2,,1,2026-09-16T10:19:10Z,private
+58618647,avito,Guéliz,1620000,84,3,,2,2026-09-16T09:43:52Z,private
+58667154,avito,Guéliz,1280000,58,1,1,1,2026-09-15T18:58:10Z,private
+58666759,avito,Autre secteur,,70,2,,1,2026-09-15T18:00:27Z,private
+58666620,avito,Guéliz,1400000,43,1,1,1,2026-09-15T17:41:09Z,private
+58665655,avito,Sidi Youssef Ben Ali,,70,2,,1,2026-09-15T15:44:08Z,private
+58665556,avito,Sidi Youssef Ben Ali,800000,96,3,,2,2026-09-15T15:32:03Z,private
+58665144,avito,M'Hamid,560000,76,2,,2,2026-09-15T14:44:19Z,private
+58665142,avito,Hay Targa,530000,63,3,,2,2026-09-15T14:44:03Z,private
+58665080,avito,Autre secteur,550000,70,2,,1,2026-09-15T14:35:22Z,private
+57374133,avito,Sidi Abbad,1400000,125,3,,2,2026-09-15T12:58:48Z,professional
+58663967,avito,Autre secteur,,52,2,,1,2026-09-15T12:28:03Z,private
+58663931,avito,Route d'Agadir - Essaouira,520000,70,2,,2,2026-09-15T12:23:07Z,private
+58663753,avito,Guéliz,1150000,95,1,,0,2026-09-15T11:54:20Z,private
+58543697,avito,Autre secteur,580000,60,2,,1,2026-09-15T11:49:20Z,professional
+58663233,avito,Les Portes de Marrakech,,56,2,,1,2026-09-15T11:00:21Z,private
+58661029,avito,Mabrouka,600000,54,2,1,1,2026-09-14T20:58:03Z,private
+58661016,avito,Hay Izdihar,680000,58,2,1,1,2026-09-14T20:56:01Z,private
+58659403,avito,Les Portes de Marrakech,,58,2,,1,2026-09-14T16:47:09Z,private
+58659141,avito,Guéliz,,65,2,1,2,2026-09-14T16:20:02Z,private
+58612102,avito,M'Hamid,720000,91,2,1,2,2026-09-14T16:08:02Z,professional
+58658981,avito,Route d'Amezmiz,680000,,3,1,1,2026-09-14T15:57:06Z,private
+58658861,avito,Ancienne Médina,900000,57,2,,1,2026-09-14T15:41:01Z,private
+58658646,avito,Allal El Fassi,780000,78,3,,1,2026-09-14T15:15:03Z,private
+58658210,avito,Ain Mezouar,,65,3,,1,2026-09-14T14:24:02Z,private
+58657884,avito,Ain Mezouar,710000,,2,,1,2026-09-14T13:50:09Z,private
+58657360,avito,Ain Mezouar,710000,,2,,1,2026-09-14T12:47:00Z,private
+58464184,avito,Route de Safi,1690000,100,3,1,2,2026-09-14T12:09:39Z,private
+58609781,avito,Route de Safi,1400000,75,2,1,1,2026-09-14T11:56:23Z,professional
+58564276,avito,Guéliz,1450000,56,1,,1,2026-09-14T11:11:27Z,private
 58656485,avito,Sidi Abbad,960000,96,2,,2,2026-09-14T11:04:04Z,private
 58656452,avito,Sidi Abbad,960000,96,2,,2,2026-09-14T10:59:00Z,private
 58656312,avito,Guéliz,,,1,1,1,2026-09-14T10:39:05Z,professional
@@ -4809,6 +4810,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58475958,avito,Targa,1600000,166,3,,2,2026-08-16T21:21:06Z,private
 58475288,avito,Massira 1,600000,74,2,,1,2026-08-16T19:18:22Z,private
 58475117,avito,Route de Safi,610000,56,2,,1,2026-08-16T18:41:55Z,private
+58474846,avito,Agdal,2250000,92,2,1,2,2026-08-16T17:57:19Z,private
+58473792,avito,Av Mohammed V,1700000,67,2,,,2026-08-16T15:08:04Z,professional
+58473667,avito,Hay Izdihar,,7180,2,,1,2026-08-16T14:50:57Z,private
+58473222,avito,Sidi Youssef Ben Ali,,90,6,,3,2026-08-16T13:54:40Z,private
+58473179,avito,Semlalia,900000,45,1,1,1,2026-08-16T13:52:02Z,private
+58472709,avito,Guéliz,420000,39,1,,1,2026-08-16T12:42:02Z,private
+58472339,avito,Ain Mezouar,420000,39,1,,1,2026-08-16T12:04:00Z,private
+58277181,avito,Guéliz,1150000,68,1,,1,2026-08-16T11:59:54Z,private
+58472284,avito,,52000000,59,,,,2026-08-16T11:52:03Z,private
+58470362,avito,Allal El Fassi,,,,,,2026-08-15T21:29:04Z,private
+58470159,avito,Les Portes de Marrakech,31000,55,2,,1,2026-08-15T20:51:07Z,private
+58469461,avito,Massira 1,67000,60,2,1,1,2026-08-15T18:37:02Z,private
+57545116,avito,Les Portes de Marrakech,560000,70,,,,2026-08-15T17:54:58Z,professional
+58468416,avito,Les Portes de Marrakech,340000,57,2,,2,2026-08-15T16:00:10Z,private
+58466676,avito,M'Hamid,,55,2,,1,2026-08-15T11:44:13Z,private
+58465966,avito,Targa,500000,56,2,,1,2026-08-15T09:56:10Z,private
+57658657,avito,Guéliz,1267000,51,1,,1,2026-08-15T09:36:33Z,professional
+58465728,avito,Guéliz,790000,56,2,1,2,2026-08-15T09:11:01Z,professional
+58465713,avito,Guéliz,1050000,84,2,,0,2026-08-15T09:08:01Z,professional
+58465709,avito,Guéliz,1000000,90,2,1,1,2026-08-15T09:06:02Z,professional
+58464556,avito,Les Portes de Marrakech,380000,53,2,,2,2026-08-14T21:31:01Z,private
+57634442,avito,Guéliz,1296000,48,1,,1,2026-08-14T21:20:09Z,professional
+58464463,avito,,1280000,52,1,1,1,2026-08-14T21:13:02Z,private
+58463548,avito,Massira 1,39000,50,1,,1,2026-08-14T18:32:07Z,private
+57635559,avito,Azzouzia,780000,90,2,,1,2026-08-14T17:57:54Z,professional
+58463292,avito,Hay Izdihar,,74,2,,2,2026-08-14T17:58:06Z,private
+58462771,avito,Azzouzia,400000,48,1,,1,2026-08-14T16:24:02Z,private
+58462609,avito,Hay Izdihar,1600000,101,2,1,2,2026-08-14T15:56:02Z,private
+58461162,avito,Les Portes de Marrakech,430000,62,2,,2,2026-08-14T12:27:02Z,private
+58460489,avito,M'Hamid,,96,2,,2,2026-08-14T10:59:01Z,private
+58460266,avito,Route de Casablanca,2990000,141,3,1,2,2026-08-14T10:23:02Z,private
+58458938,avito,Guéliz,2190000,85,2,1,2,2026-08-13T22:00:02Z,professional
+58458145,avito,Hivernage,,97,2,,0,2026-08-13T19:33:03Z,private
+58458068,avito,Av Mohammed VI,2400000,100,3,,2,2026-08-13T19:28:07Z,private
+58457937,avito,Autre secteur,700000,,2,,0,2026-08-13T19:05:01Z,private
 58457759,avito,Issil,2000000,118,2,1,2,2026-08-13T18:30:00Z,private
 58456412,avito,Guéliz,3000000,135,3,,2,2026-08-13T15:02:02Z,professional
 58400822,avito,Hay Charaf,820000,63,2,1,1,2026-08-13T13:51:58Z,professional
@@ -4914,41 +4950,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58397667,avito,Es Saada,160000,58,2,,1,2026-08-04T15:56:12Z,private
 58397569,avito,Route de Casablanca,1450000,78,2,1,1,2026-08-04T15:48:04Z,professional
 58365300,avito,Allal El Fassi,,92,3,,1,2026-08-04T13:59:49Z,professional
-58474846,avito,Agdal,2250000,92,2,1,2,2026-08-16T17:57:19Z,private
-58473792,avito,Av Mohammed V,1700000,67,2,,,2026-08-16T15:08:04Z,professional
-58473667,avito,Hay Izdihar,,7180,2,,1,2026-08-16T14:50:57Z,private
-58473222,avito,Sidi Youssef Ben Ali,,90,6,,3,2026-08-16T13:54:40Z,private
-58473179,avito,Semlalia,900000,45,1,1,1,2026-08-16T13:52:02Z,private
-58472709,avito,Guéliz,420000,39,1,,1,2026-08-16T12:42:02Z,private
-58472339,avito,Ain Mezouar,420000,39,1,,1,2026-08-16T12:04:00Z,private
-58277181,avito,Guéliz,1150000,68,1,,1,2026-08-16T11:59:54Z,private
-58472284,avito,,52000000,59,,,,2026-08-16T11:52:03Z,private
-58470362,avito,Allal El Fassi,,,,,,2026-08-15T21:29:04Z,private
-58470159,avito,Les Portes de Marrakech,31000,55,2,,1,2026-08-15T20:51:07Z,private
-58469461,avito,Massira 1,67000,60,2,1,1,2026-08-15T18:37:02Z,private
-57545116,avito,Les Portes de Marrakech,560000,70,,,,2026-08-15T17:54:58Z,professional
-58468416,avito,Les Portes de Marrakech,340000,57,2,,2,2026-08-15T16:00:10Z,private
-58466676,avito,M'Hamid,,55,2,,1,2026-08-15T11:44:13Z,private
-58465966,avito,Targa,500000,56,2,,1,2026-08-15T09:56:10Z,private
-57658657,avito,Guéliz,1267000,51,1,,1,2026-08-15T09:36:33Z,professional
-58465728,avito,Guéliz,790000,56,2,1,2,2026-08-15T09:11:01Z,professional
-58465713,avito,Guéliz,1050000,84,2,,0,2026-08-15T09:08:01Z,professional
-58465709,avito,Guéliz,1000000,90,2,1,1,2026-08-15T09:06:02Z,professional
-58464556,avito,Les Portes de Marrakech,380000,53,2,,2,2026-08-14T21:31:01Z,private
-57634442,avito,Guéliz,1296000,48,1,,1,2026-08-14T21:20:09Z,professional
-58464463,avito,,1280000,52,1,1,1,2026-08-14T21:13:02Z,private
-58463548,avito,Massira 1,39000,50,1,,1,2026-08-14T18:32:07Z,private
-57635559,avito,Azzouzia,780000,90,2,,1,2026-08-14T17:57:54Z,professional
-58463292,avito,Hay Izdihar,,74,2,,2,2026-08-14T17:58:06Z,private
-58462771,avito,Azzouzia,400000,48,1,,1,2026-08-14T16:24:02Z,private
-58462609,avito,Hay Izdihar,1600000,101,2,1,2,2026-08-14T15:56:02Z,private
-58461162,avito,Les Portes de Marrakech,430000,62,2,,2,2026-08-14T12:27:02Z,private
-58460489,avito,M'Hamid,,96,2,,2,2026-08-14T10:59:01Z,private
-58460266,avito,Route de Casablanca,2990000,141,3,1,2,2026-08-14T10:23:02Z,private
-58458938,avito,Guéliz,2190000,85,2,1,2,2026-08-13T22:00:02Z,professional
-58458145,avito,Hivernage,,97,2,,0,2026-08-13T19:33:03Z,private
-58458068,avito,Av Mohammed VI,2400000,100,3,,2,2026-08-13T19:28:07Z,private
-58457937,avito,Autre secteur,700000,,2,,0,2026-08-13T19:05:01Z,private
 58396657,avito,Les Portes de Marrakech,,76,2,,2,2026-08-04T14:01:01Z,private
 58396295,avito,Mabrouka,780000,78,2,,1,2026-08-04T13:17:01Z,private
 58395492,avito,Autre secteur,600000,53,2,,1,2026-08-04T11:34:03Z,private
@@ -5054,41 +5055,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58352639,avito,Guéliz,950000,45,1,,,2026-07-28T13:20:02Z,private
 58352416,avito,Autre secteur,260000,50,2,,1,2026-07-28T13:03:04Z,private
 58350936,avito,Autre secteur,560000,68,2,,1,2026-07-28T09:57:20Z,professional
-58333785,avito,Issil,2100000,112,3,1,1,2026-07-25T16:31:02Z,private
-58333479,avito,Hay Izdihar,,,2,,,2026-07-25T15:46:38Z,private
-58133820,avito,Targa,1522500,87,2,,1,2026-07-25T09:45:15Z,professional
-58330705,avito,Guéliz,,55,1,,1,2026-07-25T09:13:44Z,private
-58330699,avito,Targa,980000,75,2,,1,2026-07-25T09:13:07Z,private
-58330202,avito,Route d'Agadir - Essaouira,,,10,1,6,2026-07-25T06:50:02Z,private
-58329859,avito,Hay Izdihar,,,,,,2026-07-25T00:31:01Z,private
-58329776,avito,Guéliz,2200000,70,2,,1,2026-07-24T23:58:45Z,private
-58329767,avito,Guéliz,1850000,55,1,,1,2026-07-24T23:56:03Z,private
-58329745,avito,Guéliz,1950000,55,1,,1,2026-07-24T23:48:01Z,private
-58329737,avito,Guéliz,,,1,,,2026-07-24T23:45:02Z,private
-58329716,avito,Guéliz,2000000,105,1,1,1,2026-07-24T23:39:43Z,private
-58327858,avito,Av Mohammed VI,2050000,,3,,,2026-07-24T18:32:09Z,private
-58327830,avito,Amelkis,1750000,157,1,,1,2026-07-24T18:27:56Z,professional
-58326385,avito,Daoudiate,780000,71,2,1,1,2026-07-24T15:14:51Z,private
-58326294,avito,Victor Hugo,1650000,79,2,1,0,2026-07-24T15:03:03Z,private
-58326041,avito,Hay Izdihar,800000,62,,,,2026-07-24T14:20:05Z,private
-58323340,avito,Route de Casablanca,500000,54,2,,0,2026-07-24T08:12:05Z,private
-58322993,avito,Route de Ouarzazate,,80,2,,2,2026-07-24T01:31:04Z,private
-58322930,avito,Guéliz,,90,2,,1,2026-07-24T00:53:01Z,private
-58322815,avito,Semlalia,1100000,92,2,,1,2026-07-23T23:58:02Z,private
-58322762,avito,Guéliz,2500000,,3,,3,2026-07-23T23:45:01Z,private
-58322730,avito,Guéliz,1600000,,3,,2,2026-07-23T23:36:02Z,private
-58320506,avito,Hay Izdihar,,88,2,,2,2026-07-23T17:19:14Z,private
-58320284,avito,Autre secteur,2199000,101,3,1,1,2026-07-23T16:59:05Z,professional
-58320301,avito,Targa,1600000,121,2,,2,2026-07-23T17:00:04Z,private
-58318801,avito,Mabrouka,520000,50,2,,1,2026-07-23T13:52:02Z,private
-58316780,avito,Guéliz,1200000,,1,1,2,2026-07-23T09:46:28Z,private
-58316635,avito,Mabrouka,600000,,2,,,2026-07-23T09:33:10Z,private
-57658624,avito,Guéliz,1077000,49,1,,1,2026-07-23T08:24:59Z,professional
-58315452,avito,Guéliz,1560000,54,2,,1,2026-07-22T22:51:00Z,private
-58315318,avito,Route de Casablanca,1200000,86,2,1,2,2026-07-22T22:31:08Z,private
-58315076,avito,Hay Izdihar,700000,57,2,1,2,2026-07-22T21:45:26Z,professional
-57638397,avito,Guéliz,1482000,57,1,,1,2026-07-22T21:28:46Z,professional
-57790009,avito,Hay Izdihar,1155000,77,2,,2,2026-07-22T21:19:18Z,professional
 58350592,avito,Mabrouka,600000,55,2,,0,2026-07-28T08:35:02Z,private
 58350281,avito,Guéliz,3000000,100,,,,2026-07-28T06:30:01Z,private
 58350262,avito,Autre secteur,720000,54,2,,2,2026-07-28T05:27:02Z,private
@@ -5121,9 +5087,9 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58137881,avito,Targa,1350000,75,2,,2,2026-07-25T19:51:36Z,professional
 58137883,avito,Targa,1751000,103,2,,2,2026-07-25T19:49:44Z,professional
 58137722,avito,Targa,1683000,99,2,,2,2026-07-25T18:30:19Z,professional
-56800824,avito,Hay Charaf,15000,75,2,,1,2026-07-25T17:49:25Z,professional
-58131588,avito,Amerchich,450000,62,2,,1,2026-07-25T17:37:16Z,professional
-57970636,avito,Guéliz,,,3,,2,2026-07-25T16:55:11Z,private
+58315076,avito,Hay Izdihar,700000,57,2,1,2,2026-07-22T21:45:26Z,professional
+57638397,avito,Guéliz,1482000,57,1,,1,2026-07-22T21:28:46Z,professional
+57790009,avito,Hay Izdihar,1155000,77,2,,2,2026-07-22T21:19:18Z,professional
 57634732,avito,Guéliz,1000000,37,1,,1,2026-07-22T20:49:39Z,professional
 57765962,avito,Guéliz,1476000,82,1,,2,2026-07-22T20:10:51Z,professional
 57638403,avito,Guéliz,1500000,60,1,,1,2026-07-22T19:33:54Z,professional
@@ -5191,6 +5157,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58286651,avito,M'Hamid,460000,63,2,1,1,2026-07-18T15:37:01Z,private
 58286578,avito,Socoma,,108,3,,1,2026-07-18T15:24:02Z,private
 58285929,avito,M'Hamid,550000,78,2,,1,2026-07-18T13:41:57Z,private
+56800824,avito,Hay Charaf,15000,75,2,,1,2026-07-25T17:49:25Z,professional
+58131588,avito,Amerchich,450000,62,2,,1,2026-07-25T17:37:16Z,professional
+57970636,avito,Guéliz,,,3,,2,2026-07-25T16:55:11Z,private
+58333785,avito,Issil,2100000,112,3,1,1,2026-07-25T16:31:02Z,private
+58333479,avito,Hay Izdihar,,,2,,,2026-07-25T15:46:38Z,private
+58133820,avito,Targa,1522500,87,2,,1,2026-07-25T09:45:15Z,professional
+58330705,avito,Guéliz,,55,1,,1,2026-07-25T09:13:44Z,private
+58330699,avito,Targa,980000,75,2,,1,2026-07-25T09:13:07Z,private
+58330202,avito,Route d'Agadir - Essaouira,,,10,1,6,2026-07-25T06:50:02Z,private
+58329859,avito,Hay Izdihar,,,,,,2026-07-25T00:31:01Z,private
+58329776,avito,Guéliz,2200000,70,2,,1,2026-07-24T23:58:45Z,private
+58329767,avito,Guéliz,1850000,55,1,,1,2026-07-24T23:56:03Z,private
+58329745,avito,Guéliz,1950000,55,1,,1,2026-07-24T23:48:01Z,private
+58329737,avito,Guéliz,,,1,,,2026-07-24T23:45:02Z,private
+58329716,avito,Guéliz,2000000,105,1,1,1,2026-07-24T23:39:43Z,private
+58327858,avito,Av Mohammed VI,2050000,,3,,,2026-07-24T18:32:09Z,private
+58327830,avito,Amelkis,1750000,157,1,,1,2026-07-24T18:27:56Z,professional
+58326385,avito,Daoudiate,780000,71,2,1,1,2026-07-24T15:14:51Z,private
+58326294,avito,Victor Hugo,1650000,79,2,1,0,2026-07-24T15:03:03Z,private
+58326041,avito,Hay Izdihar,800000,62,,,,2026-07-24T14:20:05Z,private
+58323340,avito,Route de Casablanca,500000,54,2,,0,2026-07-24T08:12:05Z,private
+58322993,avito,Route de Ouarzazate,,80,2,,2,2026-07-24T01:31:04Z,private
+58322930,avito,Guéliz,,90,2,,1,2026-07-24T00:53:01Z,private
+58322815,avito,Semlalia,1100000,92,2,,1,2026-07-23T23:58:02Z,private
+58322762,avito,Guéliz,2500000,,3,,3,2026-07-23T23:45:01Z,private
+58322730,avito,Guéliz,1600000,,3,,2,2026-07-23T23:36:02Z,private
+58320506,avito,Hay Izdihar,,88,2,,2,2026-07-23T17:19:14Z,private
+58320284,avito,Autre secteur,2199000,101,3,1,1,2026-07-23T16:59:05Z,professional
+58320301,avito,Targa,1600000,121,2,,2,2026-07-23T17:00:04Z,private
+58318801,avito,Mabrouka,520000,50,2,,1,2026-07-23T13:52:02Z,private
+58316780,avito,Guéliz,1200000,,1,1,2,2026-07-23T09:46:28Z,private
+58316635,avito,Mabrouka,600000,,2,,,2026-07-23T09:33:10Z,private
+57658624,avito,Guéliz,1077000,49,1,,1,2026-07-23T08:24:59Z,professional
+58315452,avito,Guéliz,1560000,54,2,,1,2026-07-22T22:51:00Z,private
+58315318,avito,Route de Casablanca,1200000,86,2,1,2,2026-07-22T22:31:08Z,private
 58284024,avito,Guéliz,1200000,70,1,1,1,2026-07-18T09:25:00Z,private
 58283191,avito,Hay Al Hassani,630000,71,2,,1,2026-07-17T23:53:01Z,private
 58282950,avito,M'Hamid,,58,2,,1,2026-07-17T22:40:09Z,private
@@ -5474,76 +5475,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58102540,avito,Av Mohammed VI,2350000,96,2,,2,2026-06-20T00:15:28Z,private
 58059821,avito,Route de Casablanca,1350000,72,2,,1,2026-06-19T22:56:58Z,professional
 58102287,avito,Guéliz,880000,72,1,,1,2026-06-19T22:38:40Z,private
-58037008,avito,Guéliz,,225,2,,1,2026-06-09T11:36:14Z,private
-58036909,avito,Hivernage,8200000,,2,,1,2026-06-09T11:23:01Z,professional
-58036880,avito,Guéliz,,200,3,,2,2026-06-09T11:18:58Z,private
-58036832,avito,Palmeraie,2000000,112,2,,1,2026-06-09T11:11:42Z,professional
-58036833,avito,M'Hamid,600000,72,2,,1,2026-06-09T11:11:50Z,private
-58036816,avito,Guéliz,,101,2,,1,2026-06-09T11:10:31Z,private
-58036758,avito,Guéliz,,105,2,,2,2026-06-09T11:03:31Z,private
-58036654,avito,Guéliz,,129,2,,2,2026-06-09T10:51:41Z,private
-58036285,avito,Guéliz,,225,2,,2,2026-06-09T09:54:06Z,private
-57849496,avito,Guéliz,1600000,106,2,,1,2026-06-09T09:48:01Z,professional
-58036205,avito,M'Hamid,,52,2,,1,2026-06-09T09:47:02Z,private
-58035979,avito,Guéliz,3500000,127,2,1,2,2026-06-09T09:25:02Z,private
-58035467,avito,Mabrouka,580000,54,2,,1,2026-06-09T02:21:00Z,private
-58035464,avito,Mabrouka,580000,54,2,,1,2026-06-09T02:14:01Z,private
-58034287,avito,M'Hamid,590000,63,2,,1,2026-06-08T20:17:01Z,private
-58034105,avito,Hay Charaf,,67,2,,2,2026-06-08T19:44:24Z,private
-56297430,avito,Route de Casablanca,480000,51,2,,1,2026-06-08T16:55:26Z,professional
-58032517,avito,Semlalia,1200000,93,2,,1,2026-06-08T15:52:01Z,private
-58031166,avito,Guéliz,1350000,60,1,1,1,2026-06-08T12:47:02Z,private
-57991350,avito,Guéliz,2500000,112,2,1,2,2026-06-08T12:23:23Z,private
-58030848,avito,Guéliz,,126,3,1,,2026-06-08T12:07:41Z,private
-58030845,avito,Guéliz,,98,1,1,,2026-06-08T12:07:29Z,private
-58030628,avito,Guéliz,,80,2,1,1,2026-06-08T11:49:03Z,private
-58030571,avito,Guéliz,,82,2,1,1,2026-06-08T11:43:01Z,private
-58028126,avito,Mabrouka,600000,50,2,1,1,2026-06-07T20:22:02Z,private
-58027799,avito,Massira 2,550000,69,2,,1,2026-06-07T19:13:40Z,private
-58027791,avito,Route de Fès,330000,80,2,1,1,2026-06-07T19:12:04Z,private
-58027527,avito,Les Portes de Marrakech,550000,75,2,,1,2026-06-07T18:30:02Z,private
-57987593,avito,Guéliz,850000,43,1,,1,2026-06-07T17:43:23Z,private
-57689998,avito,Mabrouka,700000,81,2,,1,2026-06-07T17:12:16Z,professional
-57892864,avito,Route de Casablanca,600000,57,2,1,1,2026-06-07T16:26:37Z,professional
-58026780,avito,M'Hamid,580000,74,2,,1,2026-06-07T16:21:22Z,private
-58025039,avito,Hay Charaf,17500,66,2,1,1,2026-06-07T12:21:02Z,private
-58023986,avito,Sidi Abbad,1523000,87,3,,2,2026-06-07T09:02:07Z,private
-58022210,avito,Allal El Fassi,800000,,,,,2026-06-06T18:51:16Z,private
-58075645,avito,Mabrouka,480000,56,2,,1,2026-06-15T19:47:01Z,private
-58075120,avito,Guéliz,1000000,43,1,,1,2026-06-15T18:30:43Z,private
-58033358,avito,Mabrouka,760000,73,2,,1,2026-06-15T17:51:15Z,professional
-58073624,avito,Sidi Abbad,2000000,99,2,,2,2026-06-15T14:39:02Z,private
-58071359,avito,Route d'Ourika,,160,4,1,2,2026-06-15T09:43:02Z,private
-58029696,avito,Guéliz,8000,92,1,,1,2026-06-15T08:53:05Z,professional
-58071074,avito,Mabrouka,480000,,2,,1,2026-06-15T08:30:01Z,private
-58069954,avito,Route d'Agadir - Essaouira,450000,75,3,,2,2026-06-14T21:36:01Z,private
-58069797,avito,Agdal,2050000,96,2,1,2,2026-06-14T21:05:03Z,private
-58068512,avito,Route de Casablanca,700000,71,3,,2,2026-06-14T17:32:02Z,private
-58068500,avito,Route de Casablanca,560000,58,2,,1,2026-06-14T17:30:01Z,private
-56242205,avito,Hivernage,2000000,62,1,,1,2026-06-14T16:57:50Z,professional
-58066134,avito,M'Hamid,,100,2,,1,2026-06-14T11:16:01Z,private
-58065140,avito,Massira 3,280000,43,1,,1,2026-06-13T21:59:01Z,private
-58064967,avito,M'Hamid,1300,,,,,2026-06-13T21:20:04Z,private
-58064948,avito,M'Hamid,470000,64,3,,1,2026-06-13T21:16:01Z,private
-58064393,avito,Allal El Fassi,20000,81,2,1,2,2026-06-13T19:27:02Z,private
-58063141,avito,Agdal,2400000,80,2,,,2026-06-13T15:35:41Z,professional
-58063073,avito,Hay Charaf,18500,44,1,1,1,2026-06-13T15:23:01Z,private
-58061826,avito,M'Hamid,520000,71,3,,0,2026-06-13T12:32:02Z,private
-57917581,avito,Guéliz,17500,50,1,,0,2026-06-13T09:49:03Z,private
-58059942,avito,Guéliz,,,2,1,2,2026-06-12T23:05:00Z,private
-58059818,avito,Guéliz,,98,1,,0,2026-06-12T22:23:00Z,private
-58059380,avito,Massira 2,,69,2,1,1,2026-06-12T21:12:01Z,private
-58058565,avito,Hay Charaf,,50,1,,1,2026-06-12T19:18:01Z,private
-57449730,avito,Victor Hugo,1600000,82,2,1,1,2026-06-12T18:47:51Z,professional
-57274849,avito,Guéliz,1900000,117,2,,2,2026-06-12T18:07:50Z,professional
-57766132,avito,Guéliz,1760000,92,2,1,2,2026-06-12T16:25:11Z,private
-58057232,avito,Hay Charaf,18500,72,2,1,2,2026-06-12T15:38:07Z,private
-58056262,avito,Guéliz,740000,66,2,1,1,2026-06-12T13:09:01Z,private
-58056088,avito,Hivernage,3250000,139,2,1,2,2026-06-12T12:37:02Z,private
-57686747,avito,Route de Casablanca,2450000,189,3,,3,2026-06-12T11:23:30Z,professional
-58055478,avito,Mabrouka,730000,64,2,1,1,2026-06-12T11:10:02Z,private
-58055142,avito,Allal El Fassi,600000,110,3,,2,2026-06-12T10:31:02Z,private
-57975714,avito,Agdal,2050000,97,3,1,2,2026-06-12T08:34:02Z,private
 58101318,avito,Route de Safi,,65,2,1,1,2026-06-19T19:13:06Z,private
 57951761,avito,Hay Charaf,980000,78,2,,2,2026-06-19T17:47:07Z,professional
 58100183,avito,Hivernage,2900000,166,3,,2,2026-06-19T16:20:01Z,private
@@ -5579,6 +5510,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58077490,avito,Guéliz,6490000,350,5,,3,2026-06-16T08:33:35Z,private
 58077208,avito,Guéliz,1240000,,,,,2026-06-16T07:29:01Z,private
 58075819,avito,Route de Tamansourt,,132,3,,,2026-06-15T20:26:01Z,private
+58075645,avito,Mabrouka,480000,56,2,,1,2026-06-15T19:47:01Z,private
+58075120,avito,Guéliz,1000000,43,1,,1,2026-06-15T18:30:43Z,private
+58033358,avito,Mabrouka,760000,73,2,,1,2026-06-15T17:51:15Z,professional
+58073624,avito,Sidi Abbad,2000000,99,2,,2,2026-06-15T14:39:02Z,private
+58071359,avito,Route d'Ourika,,160,4,1,2,2026-06-15T09:43:02Z,private
+58029696,avito,Guéliz,8000,92,1,,1,2026-06-15T08:53:05Z,professional
+58071074,avito,Mabrouka,480000,,2,,1,2026-06-15T08:30:01Z,private
+58069954,avito,Route d'Agadir - Essaouira,450000,75,3,,2,2026-06-14T21:36:01Z,private
+58069797,avito,Agdal,2050000,96,2,1,2,2026-06-14T21:05:03Z,private
+58068512,avito,Route de Casablanca,700000,71,3,,2,2026-06-14T17:32:02Z,private
+58068500,avito,Route de Casablanca,560000,58,2,,1,2026-06-14T17:30:01Z,private
+56242205,avito,Hivernage,2000000,62,1,,1,2026-06-14T16:57:50Z,professional
+58066134,avito,M'Hamid,,100,2,,1,2026-06-14T11:16:01Z,private
+58065140,avito,Massira 3,280000,43,1,,1,2026-06-13T21:59:01Z,private
+58064967,avito,M'Hamid,1300,,,,,2026-06-13T21:20:04Z,private
+58064948,avito,M'Hamid,470000,64,3,,1,2026-06-13T21:16:01Z,private
+58064393,avito,Allal El Fassi,20000,81,2,1,2,2026-06-13T19:27:02Z,private
+58063141,avito,Agdal,2400000,80,2,,,2026-06-13T15:35:41Z,professional
+58063073,avito,Hay Charaf,18500,44,1,1,1,2026-06-13T15:23:01Z,private
+58061826,avito,M'Hamid,520000,71,3,,0,2026-06-13T12:32:02Z,private
+57917581,avito,Guéliz,17500,50,1,,0,2026-06-13T09:49:03Z,private
+58059942,avito,Guéliz,,,2,1,2,2026-06-12T23:05:00Z,private
+58059818,avito,Guéliz,,98,1,,0,2026-06-12T22:23:00Z,private
+58059380,avito,Massira 2,,69,2,1,1,2026-06-12T21:12:01Z,private
+58058565,avito,Hay Charaf,,50,1,,1,2026-06-12T19:18:01Z,private
+57449730,avito,Victor Hugo,1600000,82,2,1,1,2026-06-12T18:47:51Z,professional
+57274849,avito,Guéliz,1900000,117,2,,2,2026-06-12T18:07:50Z,professional
+57766132,avito,Guéliz,1760000,92,2,1,2,2026-06-12T16:25:11Z,private
+58057232,avito,Hay Charaf,18500,72,2,1,2,2026-06-12T15:38:07Z,private
+58056262,avito,Guéliz,740000,66,2,1,1,2026-06-12T13:09:01Z,private
+58056088,avito,Hivernage,3250000,139,2,1,2,2026-06-12T12:37:02Z,private
+57686747,avito,Route de Casablanca,2450000,189,3,,3,2026-06-12T11:23:30Z,professional
+58055478,avito,Mabrouka,730000,64,2,1,1,2026-06-12T11:10:02Z,private
+58055142,avito,Allal El Fassi,600000,110,3,,2,2026-06-12T10:31:02Z,private
+57975714,avito,Agdal,2050000,97,3,1,2,2026-06-12T08:34:02Z,private
 57648626,avito,Hay Izdihar,1450000,97,3,1,1,2026-06-11T18:45:53Z,professional
 57652250,avito,Majorelle,1700000,103,3,,2,2026-06-11T18:36:50Z,professional
 58051592,avito,M'Hamid,300000,51,1,,1,2026-06-11T15:59:56Z,private
@@ -5614,6 +5580,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 58037864,avito,Semlalia,1520000,81,2,,2,2026-06-09T13:34:01Z,private
 58037080,avito,M'Hamid,560000,60,2,,1,2026-06-09T11:41:44Z,professional
 58037028,avito,Allal El Fassi,1200000,120,2,,2,2026-06-09T11:38:02Z,professional
+58037008,avito,Guéliz,,225,2,,1,2026-06-09T11:36:14Z,private
+58036909,avito,Hivernage,8200000,,2,,1,2026-06-09T11:23:01Z,professional
+58036880,avito,Guéliz,,200,3,,2,2026-06-09T11:18:58Z,private
+58036832,avito,Palmeraie,2000000,112,2,,1,2026-06-09T11:11:42Z,professional
+58036833,avito,M'Hamid,600000,72,2,,1,2026-06-09T11:11:50Z,private
+58036816,avito,Guéliz,,101,2,,1,2026-06-09T11:10:31Z,private
+58036758,avito,Guéliz,,105,2,,2,2026-06-09T11:03:31Z,private
+58036654,avito,Guéliz,,129,2,,2,2026-06-09T10:51:41Z,private
+58036285,avito,Guéliz,,225,2,,2,2026-06-09T09:54:06Z,private
+57849496,avito,Guéliz,1600000,106,2,,1,2026-06-09T09:48:01Z,professional
+58036205,avito,M'Hamid,,52,2,,1,2026-06-09T09:47:02Z,private
+58035979,avito,Guéliz,3500000,127,2,1,2,2026-06-09T09:25:02Z,private
+58035467,avito,Mabrouka,580000,54,2,,1,2026-06-09T02:21:00Z,private
+58035464,avito,Mabrouka,580000,54,2,,1,2026-06-09T02:14:01Z,private
+58034287,avito,M'Hamid,590000,63,2,,1,2026-06-08T20:17:01Z,private
+58034105,avito,Hay Charaf,,67,2,,2,2026-06-08T19:44:24Z,private
+56297430,avito,Route de Casablanca,480000,51,2,,1,2026-06-08T16:55:26Z,professional
+58032517,avito,Semlalia,1200000,93,2,,1,2026-06-08T15:52:01Z,private
+58031166,avito,Guéliz,1350000,60,1,1,1,2026-06-08T12:47:02Z,private
+57991350,avito,Guéliz,2500000,112,2,1,2,2026-06-08T12:23:23Z,private
+58030848,avito,Guéliz,,126,3,1,,2026-06-08T12:07:41Z,private
+58030845,avito,Guéliz,,98,1,1,,2026-06-08T12:07:29Z,private
+58030628,avito,Guéliz,,80,2,1,1,2026-06-08T11:49:03Z,private
+58030571,avito,Guéliz,,82,2,1,1,2026-06-08T11:43:01Z,private
+58028126,avito,Mabrouka,600000,50,2,1,1,2026-06-07T20:22:02Z,private
+58027799,avito,Massira 2,550000,69,2,,1,2026-06-07T19:13:40Z,private
+58027791,avito,Route de Fès,330000,80,2,1,1,2026-06-07T19:12:04Z,private
+58027527,avito,Les Portes de Marrakech,550000,75,2,,1,2026-06-07T18:30:02Z,private
+57987593,avito,Guéliz,850000,43,1,,1,2026-06-07T17:43:23Z,private
+57689998,avito,Mabrouka,700000,81,2,,1,2026-06-07T17:12:16Z,professional
+57892864,avito,Route de Casablanca,600000,57,2,1,1,2026-06-07T16:26:37Z,professional
+58026780,avito,M'Hamid,580000,74,2,,1,2026-06-07T16:21:22Z,private
+58025039,avito,Hay Charaf,17500,66,2,1,1,2026-06-07T12:21:02Z,private
+58023986,avito,Sidi Abbad,1523000,87,3,,2,2026-06-07T09:02:07Z,private
+58022210,avito,Allal El Fassi,800000,,,,,2026-06-06T18:51:16Z,private
 58022108,avito,Guéliz,,55,2,1,1,2026-06-06T18:36:01Z,private
 58021073,avito,Guéliz,1650000,50,1,1,1,2026-06-06T15:30:01Z,private
 57944362,avito,Hay Izdihar,1300000,98,2,1,1,2026-06-06T13:58:48Z,professional
@@ -5684,41 +5685,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57922393,avito,Guéliz,,125,2,1,2,2026-05-28T23:26:35Z,private
 57921598,avito,Guéliz,2300000,250,3,1,2,2026-05-28T20:55:07Z,private
 57976702,avito,M'Hamid,730000,,2,,,2026-05-28T15:51:01Z,private
-57959738,avito,Guéliz,20000000,100,2,1,2,2026-05-22T14:34:02Z,private
-57958802,avito,Route d'Amezmiz,400000,56,2,,2,2026-05-22T10:50:04Z,private
-57957990,avito,Route de Tamansourt,200000,50,2,,1,2026-05-22T04:56:01Z,private
-57957604,avito,Mabrouka,520000,,2,,1,2026-05-21T22:36:02Z,private
-57956837,avito,Autre secteur,,,3,,1,2026-05-21T18:51:01Z,private
-57956787,avito,Mabrouka,730000,90,2,,0,2026-05-21T18:38:02Z,private
-57956352,avito,Guéliz,,88,2,1,2,2026-05-21T17:18:01Z,private
-57955493,avito,Guéliz,1400000,88,2,,2,2026-05-21T14:18:02Z,private
-57955479,avito,Guéliz,1600000,86,2,,1,2026-05-21T14:15:03Z,private
-57955013,avito,Route de Casablanca,650000,65,2,,1,2026-05-21T12:52:01Z,private
-57613120,avito,Route de Casablanca,2240000,107,3,1,2,2026-05-21T11:55:21Z,professional
-57534851,avito,Guéliz,2320000,116,2,,1,2026-05-21T11:48:37Z,professional
-57954606,avito,Massira 3,480000,,2,,1,2026-05-21T11:37:01Z,private
-57951994,avito,Mabrouka,600000,78,2,,1,2026-05-20T18:28:23Z,private
-57951542,avito,Les Portes de Marrakech,550000,73,2,,2,2026-05-20T16:55:01Z,private
-57950885,avito,Guéliz,3000000,175,3,,3,2026-05-20T14:47:01Z,private
-57950763,avito,Autre secteur,520000,70,2,,1,2026-05-20T14:21:01Z,private
-57950517,avito,Targa,360000,62,2,,1,2026-05-20T13:42:03Z,private
-57950072,avito,Guéliz,1620000,54,1,,1,2026-05-20T12:04:01Z,private
-57949838,avito,Hivernage,1100000,,,,,2026-05-20T11:33:01Z,private
-57947847,avito,M'Hamid,550000,54,2,1,1,2026-05-19T21:10:00Z,private
-57947040,avito,Massira 3,420000,50,2,,0,2026-05-19T18:08:35Z,private
-57946613,avito,Victor Hugo,1750000,80,2,1,1,2026-05-19T16:43:01Z,private
-57946588,avito,M'Hamid,460000,60,2,,1,2026-05-19T16:37:30Z,private
-57945999,avito,M'Hamid,,93,3,,2,2026-05-19T14:56:04Z,private
-57944959,avito,Semlalia,1000000,56,1,,1,2026-05-19T12:14:03Z,professional
-57219726,avito,Agdal,2100000,104,2,,2,2026-05-19T08:48:53Z,professional
-57943061,avito,Bouaakkaz,1400000,110,3,1,2,2026-05-18T23:38:01Z,private
-57942566,avito,Route de Casablanca,490000,55,2,,1,2026-05-18T21:29:02Z,professional
-57941300,avito,M'Hamid,,55,2,,1,2026-05-18T17:30:01Z,private
-57940562,avito,Hay Izdihar,1078000,77,2,,2,2026-05-18T15:39:01Z,private
-57940381,avito,Ain Mezouar,660000,62,2,1,1,2026-05-18T15:15:02Z,professional
-57940324,avito,Guéliz,,86,2,,2,2026-05-18T15:06:01Z,private
-57940047,avito,Agdal,2300000,85,2,,2,2026-05-18T14:29:01Z,private
-57939951,avito,Route de Casablanca,1500000,98,2,,2,2026-05-18T14:18:01Z,professional
 57975656,avito,Semlalia,940000,,2,,,2026-05-28T11:14:01Z,private
 57483002,avito,Route de Casablanca,1400000,98,2,,1,2026-05-28T10:44:17Z,professional
 57447780,avito,Victor Hugo,1600000,82,2,1,1,2026-05-28T09:01:04Z,professional
@@ -5754,38 +5720,38 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57960209,avito,Guéliz,2230000,82,2,1,2,2026-05-22T16:24:01Z,private
 57960204,avito,Autre secteur,2230000,82,2,1,2,2026-05-22T16:22:01Z,private
 57959899,avito,Guéliz,2000000,100,2,1,1,2026-05-22T15:01:06Z,private
-57939407,avito,Route de Casablanca,430000,61,2,,1,2026-05-18T13:05:01Z,private
-57891516,avito,Av Mohammed VI,2200000,104,2,1,2,2026-05-18T11:49:40Z,professional
-57938849,avito,Hay Charaf,15000,94,3,,1,2026-05-18T11:39:39Z,professional
-57938758,avito,Route de Casablanca,850000,53,2,1,2,2026-05-18T11:34:03Z,private
-57936074,avito,Azzouzia,580000,79,2,,2,2026-05-17T18:45:03Z,private
-57935072,avito,Palmeraie,2500000,107,2,1,2,2026-05-17T15:28:14Z,private
-57934309,avito,Route de Casablanca,1250000,70,1,1,2,2026-05-17T13:19:01Z,private
-57933964,avito,Agdal,2500000,82,2,,2,2026-05-17T12:17:05Z,private
-57933539,avito,Targa,690000,,2,,,2026-05-17T10:56:01Z,private
-57932552,avito,Palmeraie,,120,2,1,1,2026-05-16T22:30:34Z,private
-57930767,avito,Route de Casablanca,540000,52,2,1,1,2026-05-16T16:31:08Z,private
-57928969,avito,M'Hamid,,,,,,2026-05-16T11:21:01Z,private
-57928940,avito,M'Hamid,,,,,,2026-05-16T11:14:01Z,private
-57713584,avito,Route de Tahanaoute,2000000,80,2,,1,2026-05-16T08:50:29Z,professional
-57884502,avito,Les Portes de Marrakech,390000,63,2,,1,2026-05-16T08:32:13Z,professional
-57928316,avito,Amerchich,850000,97,3,,1,2026-05-16T08:24:02Z,private
-57928201,avito,M'Hamid,,62,2,1,1,2026-05-16T08:07:46Z,private
-57927809,avito,Route de Casablanca,800000,88,2,,0,2026-05-15T23:44:01Z,private
-57927336,avito,Hay Izdihar,660000,57,2,1,2,2026-05-15T21:22:00Z,professional
-57927304,avito,Guéliz,1600000,86,2,1,1,2026-05-15T21:15:09Z,professional
-57927286,avito,M'Hamid,900000,93,,,,2026-05-15T21:10:03Z,private
-57925218,avito,Les Portes de Marrakech,140000,64,2,,1,2026-05-15T15:07:01Z,private
-57924763,avito,Centre Ville,5900000,171,2,,2,2026-05-15T13:55:01Z,private
-57807411,avito,Targa,1200000,106,3,,2,2026-05-15T13:28:41Z,private
-57924499,avito,Autre secteur,1470000,73,1,1,1,2026-05-15T13:02:32Z,private
-57924450,avito,Autre secteur,1323000,50,1,1,1,2026-05-15T12:49:00Z,private
-57922461,avito,Guéliz,1850000,96,3,1,2,2026-05-14T23:50:01Z,private
-57921368,avito,M'Hamid,600000,57,2,,1,2026-05-14T19:22:01Z,private
-57921297,avito,Allal El Fassi,870000,87,2,,1,2026-05-14T19:06:01Z,private
-57921164,avito,M'Hamid,370000,58,2,,1,2026-05-14T18:42:03Z,private
-57920357,avito,Guéliz,75000,,,,,2026-05-14T16:36:06Z,private
-57920338,avito,Guéliz,2000000,92,2,1,2,2026-05-14T16:32:04Z,private
+57959738,avito,Guéliz,20000000,100,2,1,2,2026-05-22T14:34:02Z,private
+57958802,avito,Route d'Amezmiz,400000,56,2,,2,2026-05-22T10:50:04Z,private
+57957990,avito,Route de Tamansourt,200000,50,2,,1,2026-05-22T04:56:01Z,private
+57957604,avito,Mabrouka,520000,,2,,1,2026-05-21T22:36:02Z,private
+57956837,avito,Autre secteur,,,3,,1,2026-05-21T18:51:01Z,private
+57956787,avito,Mabrouka,730000,90,2,,0,2026-05-21T18:38:02Z,private
+57956352,avito,Guéliz,,88,2,1,2,2026-05-21T17:18:01Z,private
+57955493,avito,Guéliz,1400000,88,2,,2,2026-05-21T14:18:02Z,private
+57955479,avito,Guéliz,1600000,86,2,,1,2026-05-21T14:15:03Z,private
+57955013,avito,Route de Casablanca,650000,65,2,,1,2026-05-21T12:52:01Z,private
+57613120,avito,Route de Casablanca,2240000,107,3,1,2,2026-05-21T11:55:21Z,professional
+57534851,avito,Guéliz,2320000,116,2,,1,2026-05-21T11:48:37Z,professional
+57954606,avito,Massira 3,480000,,2,,1,2026-05-21T11:37:01Z,private
+57951994,avito,Mabrouka,600000,78,2,,1,2026-05-20T18:28:23Z,private
+57951542,avito,Les Portes de Marrakech,550000,73,2,,2,2026-05-20T16:55:01Z,private
+57950885,avito,Guéliz,3000000,175,3,,3,2026-05-20T14:47:01Z,private
+57950763,avito,Autre secteur,520000,70,2,,1,2026-05-20T14:21:01Z,private
+57950517,avito,Targa,360000,62,2,,1,2026-05-20T13:42:03Z,private
+57950072,avito,Guéliz,1620000,54,1,,1,2026-05-20T12:04:01Z,private
+57949838,avito,Hivernage,1100000,,,,,2026-05-20T11:33:01Z,private
+57947847,avito,M'Hamid,550000,54,2,1,1,2026-05-19T21:10:00Z,private
+57947040,avito,Massira 3,420000,50,2,,0,2026-05-19T18:08:35Z,private
+57946613,avito,Victor Hugo,1750000,80,2,1,1,2026-05-19T16:43:01Z,private
+57946588,avito,M'Hamid,460000,60,2,,1,2026-05-19T16:37:30Z,private
+57945999,avito,M'Hamid,,93,3,,2,2026-05-19T14:56:04Z,private
+57944959,avito,Semlalia,1000000,56,1,,1,2026-05-19T12:14:03Z,professional
+57219726,avito,Agdal,2100000,104,2,,2,2026-05-19T08:48:53Z,professional
+57943061,avito,Bouaakkaz,1400000,110,3,1,2,2026-05-18T23:38:01Z,private
+57942566,avito,Route de Casablanca,490000,55,2,,1,2026-05-18T21:29:02Z,professional
+57941300,avito,M'Hamid,,55,2,,1,2026-05-18T17:30:01Z,private
+57940562,avito,Hay Izdihar,1078000,77,2,,2,2026-05-18T15:39:01Z,private
+57940381,avito,Ain Mezouar,660000,62,2,1,1,2026-05-18T15:15:02Z,professional
 57918658,avito,Autre secteur,120000000,72,2,1,1,2026-05-14T12:03:18Z,private
 57764655,avito,Hivernage,2400000,100,2,1,2,2026-05-14T10:36:53Z,professional
 57917801,avito,Victor Hugo,17900,58,1,,1,2026-05-14T10:08:02Z,private
@@ -5821,6 +5787,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57824629,avito,Ain Mezouar,1900000,100,3,1,2,2026-05-10T12:17:21Z,professional
 57895910,avito,Guéliz,,,,,,2026-05-10T10:15:12Z,private
 57895715,avito,Guéliz,,,,,,2026-05-10T08:59:00Z,private
+57940324,avito,Guéliz,,86,2,,2,2026-05-18T15:06:01Z,private
+57940047,avito,Agdal,2300000,85,2,,2,2026-05-18T14:29:01Z,private
+57939951,avito,Route de Casablanca,1500000,98,2,,2,2026-05-18T14:18:01Z,professional
+57939407,avito,Route de Casablanca,430000,61,2,,1,2026-05-18T13:05:01Z,private
+57891516,avito,Av Mohammed VI,2200000,104,2,1,2,2026-05-18T11:49:40Z,professional
+57938849,avito,Hay Charaf,15000,94,3,,1,2026-05-18T11:39:39Z,professional
+57938758,avito,Route de Casablanca,850000,53,2,1,2,2026-05-18T11:34:03Z,private
+57936074,avito,Azzouzia,580000,79,2,,2,2026-05-17T18:45:03Z,private
+57935072,avito,Palmeraie,2500000,107,2,1,2,2026-05-17T15:28:14Z,private
+57934309,avito,Route de Casablanca,1250000,70,1,1,2,2026-05-17T13:19:01Z,private
+57933964,avito,Agdal,2500000,82,2,,2,2026-05-17T12:17:05Z,private
+57933539,avito,Targa,690000,,2,,,2026-05-17T10:56:01Z,private
+57932552,avito,Palmeraie,,120,2,1,1,2026-05-16T22:30:34Z,private
+57930767,avito,Route de Casablanca,540000,52,2,1,1,2026-05-16T16:31:08Z,private
+57928969,avito,M'Hamid,,,,,,2026-05-16T11:21:01Z,private
+57928940,avito,M'Hamid,,,,,,2026-05-16T11:14:01Z,private
+57713584,avito,Route de Tahanaoute,2000000,80,2,,1,2026-05-16T08:50:29Z,professional
+57884502,avito,Les Portes de Marrakech,390000,63,2,,1,2026-05-16T08:32:13Z,professional
+57928316,avito,Amerchich,850000,97,3,,1,2026-05-16T08:24:02Z,private
+57928201,avito,M'Hamid,,62,2,1,1,2026-05-16T08:07:46Z,private
+57927809,avito,Route de Casablanca,800000,88,2,,0,2026-05-15T23:44:01Z,private
+57927336,avito,Hay Izdihar,660000,57,2,1,2,2026-05-15T21:22:00Z,professional
+57927304,avito,Guéliz,1600000,86,2,1,1,2026-05-15T21:15:09Z,professional
+57927286,avito,M'Hamid,900000,93,,,,2026-05-15T21:10:03Z,private
+57925218,avito,Les Portes de Marrakech,140000,64,2,,1,2026-05-15T15:07:01Z,private
+57924763,avito,Centre Ville,5900000,171,2,,2,2026-05-15T13:55:01Z,private
+57807411,avito,Targa,1200000,106,3,,2,2026-05-15T13:28:41Z,private
+57924499,avito,Autre secteur,1470000,73,1,1,1,2026-05-15T13:02:32Z,private
+57924450,avito,Autre secteur,1323000,50,1,1,1,2026-05-15T12:49:00Z,private
+57922461,avito,Guéliz,1850000,96,3,1,2,2026-05-14T23:50:01Z,private
+57921368,avito,M'Hamid,600000,57,2,,1,2026-05-14T19:22:01Z,private
+57921297,avito,Allal El Fassi,870000,87,2,,1,2026-05-14T19:06:01Z,private
+57921164,avito,M'Hamid,370000,58,2,,1,2026-05-14T18:42:03Z,private
+57920357,avito,Guéliz,75000,,,,,2026-05-14T16:36:06Z,private
+57920338,avito,Guéliz,2000000,92,2,1,2,2026-05-14T16:32:04Z,private
 57895634,avito,Agdal,2600000,110,2,1,2,2026-05-10T07:54:42Z,private
 57894991,avito,Guéliz,3800000,181,3,,3,2026-05-09T22:41:01Z,private
 57894636,avito,M'Hamid,680000,71,2,,1,2026-05-09T21:24:01Z,private
@@ -5894,6 +5895,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57857704,avito,Hay Izdihar,700000,70,2,,2,2026-05-02T13:16:01Z,professional
 57857581,avito,Guéliz,830000,45,1,,1,2026-05-02T12:46:01Z,professional
 57856970,avito,Guéliz,2320000,80,2,,2,2026-05-02T11:05:01Z,professional
+55643174,avito,Autre secteur,720000,75,2,,1,2026-05-02T10:59:07Z,professional
+57855851,avito,Guéliz,1400000,76,2,,1,2026-05-01T22:09:04Z,private
+57855588,avito,Hivernage,1200000,41,1,1,1,2026-05-01T21:01:01Z,private
+57854333,avito,Guéliz,580000,43,1,,0,2026-05-01T16:04:01Z,private
+57853829,avito,Socoma,560000,63,2,,1,2026-05-01T14:20:02Z,private
+57118825,avito,Victor Hugo,880000,45,1,1,1,2026-05-01T11:57:15Z,professional
+57853088,avito,Guéliz,,72,1,1,1,2026-05-01T11:41:02Z,private
+57853085,avito,Zone Industrielle Sidi Ghanem,46000,52,2,,1,2026-05-01T11:41:01Z,private
+57850928,avito,Autre secteur,,84,3,1,1,2026-04-30T18:37:03Z,private
+57849788,avito,Massira 3,320000,54,2,,1,2026-04-30T14:32:37Z,private
+57849718,avito,Guéliz,1800000,96,2,,1,2026-04-30T14:15:04Z,private
+57849690,avito,Mabrouka,700000,,1,,,2026-04-30T14:08:01Z,private
+57849572,avito,M'Hamid,570000,60,3,,,2026-04-30T13:43:03Z,private
+57849538,avito,M'Hamid,520000,67,2,,,2026-04-30T13:36:02Z,private
+57849119,avito,M'Hamid,,60,2,1,1,2026-04-30T12:37:29Z,private
+57848038,avito,Guéliz,,70,1,1,1,2026-04-30T08:53:01Z,private
+57774663,avito,Mabrouka,550000,64,3,,2,2026-04-30T05:46:25Z,professional
+57778597,avito,Guéliz,990000,35,1,,1,2026-04-30T04:51:48Z,private
+57847436,avito,Ain Mezouar,540000,,2,,,2026-04-29T23:30:01Z,private
+57847362,avito,Route de Casablanca,1469000,120,3,,2,2026-04-29T22:55:01Z,private
+57846461,avito,Guéliz,1600000,86,2,1,1,2026-04-29T19:45:20Z,professional
+57846390,avito,Hay Izdihar,680000,57,2,1,2,2026-04-29T19:33:32Z,professional
+57845229,avito,Semlalia,940000,,2,,,2026-04-29T15:37:01Z,private
+57845101,avito,Ain Mezouar,650000,185,2,,1,2026-04-29T15:09:03Z,private
+57845048,avito,Allal El Fassi,880000,85,2,,2,2026-04-29T15:01:03Z,private
+57844947,avito,Hay Izdihar,1500000,76,2,1,2,2026-04-29T14:43:01Z,private
+57843820,avito,M'Hamid,240000,60,1,,1,2026-04-29T11:53:03Z,private
+57843601,avito,Hay Izdihar,820000,63,1,,1,2026-04-29T11:18:02Z,professional
+57843030,avito,M'Hamid,600000,60,2,,1,2026-04-29T09:25:01Z,private
+57842587,avito,M'Hamid,410000,56,2,,1,2026-04-29T05:30:01Z,private
+57842023,avito,M'Hamid,820000,61,2,,1,2026-04-28T21:45:02Z,private
+57842008,avito,M'Hamid,,80,3,1,1,2026-04-28T21:42:02Z,private
+57839264,avito,Ain Mezouar,470000,59,2,,1,2026-04-28T13:09:01Z,private
+57584074,avito,Victor Hugo,1200000,50,1,,1,2026-04-28T08:38:20Z,professional
+56277376,avito,Targa,1500000,98,2,1,2,2026-04-27T22:54:12Z,private
 57837065,avito,M'Hamid,,69,,,,2026-04-27T22:21:02Z,private
 57836009,avito,Route de Casablanca,470000,51,2,,,2026-04-27T18:39:02Z,private
 57835105,avito,Autre secteur,2500000,180,3,1,3,2026-04-27T15:48:02Z,private
@@ -5964,41 +6000,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57812441,avito,M'Hamid,410000,,1,,1,2026-04-22T20:49:01Z,private
 57812275,avito,M'Hamid,500000,,2,,1,2026-04-22T20:21:02Z,private
 57812245,avito,M'Hamid,520000,,2,,1,2026-04-22T20:12:02Z,private
-55643174,avito,Autre secteur,720000,75,2,,1,2026-05-02T10:59:07Z,professional
-57855851,avito,Guéliz,1400000,76,2,,1,2026-05-01T22:09:04Z,private
-57855588,avito,Hivernage,1200000,41,1,1,1,2026-05-01T21:01:01Z,private
-57854333,avito,Guéliz,580000,43,1,,0,2026-05-01T16:04:01Z,private
-57853829,avito,Socoma,560000,63,2,,1,2026-05-01T14:20:02Z,private
-57118825,avito,Victor Hugo,880000,45,1,1,1,2026-05-01T11:57:15Z,professional
-57853088,avito,Guéliz,,72,1,1,1,2026-05-01T11:41:02Z,private
-57853085,avito,Zone Industrielle Sidi Ghanem,46000,52,2,,1,2026-05-01T11:41:01Z,private
-57850928,avito,Autre secteur,,84,3,1,1,2026-04-30T18:37:03Z,private
-57849788,avito,Massira 3,320000,54,2,,1,2026-04-30T14:32:37Z,private
-57849718,avito,Guéliz,1800000,96,2,,1,2026-04-30T14:15:04Z,private
-57849690,avito,Mabrouka,700000,,1,,,2026-04-30T14:08:01Z,private
-57849572,avito,M'Hamid,570000,60,3,,,2026-04-30T13:43:03Z,private
-57849538,avito,M'Hamid,520000,67,2,,,2026-04-30T13:36:02Z,private
-57849119,avito,M'Hamid,,60,2,1,1,2026-04-30T12:37:29Z,private
-57848038,avito,Guéliz,,70,1,1,1,2026-04-30T08:53:01Z,private
-57774663,avito,Mabrouka,550000,64,3,,2,2026-04-30T05:46:25Z,professional
-57778597,avito,Guéliz,990000,35,1,,1,2026-04-30T04:51:48Z,private
-57847436,avito,Ain Mezouar,540000,,2,,,2026-04-29T23:30:01Z,private
-57847362,avito,Route de Casablanca,1469000,120,3,,2,2026-04-29T22:55:01Z,private
-57846461,avito,Guéliz,1600000,86,2,1,1,2026-04-29T19:45:20Z,professional
-57846390,avito,Hay Izdihar,680000,57,2,1,2,2026-04-29T19:33:32Z,professional
-57845229,avito,Semlalia,940000,,2,,,2026-04-29T15:37:01Z,private
-57845101,avito,Ain Mezouar,650000,185,2,,1,2026-04-29T15:09:03Z,private
-57845048,avito,Allal El Fassi,880000,85,2,,2,2026-04-29T15:01:03Z,private
-57844947,avito,Hay Izdihar,1500000,76,2,1,2,2026-04-29T14:43:01Z,private
-57843820,avito,M'Hamid,240000,60,1,,1,2026-04-29T11:53:03Z,private
-57843601,avito,Hay Izdihar,820000,63,1,,1,2026-04-29T11:18:02Z,professional
-57843030,avito,M'Hamid,600000,60,2,,1,2026-04-29T09:25:01Z,private
-57842587,avito,M'Hamid,410000,56,2,,1,2026-04-29T05:30:01Z,private
-57842023,avito,M'Hamid,820000,61,2,,1,2026-04-28T21:45:02Z,private
-57842008,avito,M'Hamid,,80,3,1,1,2026-04-28T21:42:02Z,private
-57839264,avito,Ain Mezouar,470000,59,2,,1,2026-04-28T13:09:01Z,private
-57584074,avito,Victor Hugo,1200000,50,1,,1,2026-04-28T08:38:20Z,professional
-56277376,avito,Targa,1500000,98,2,1,2,2026-04-27T22:54:12Z,private
 57811852,avito,Guéliz,1970000,106,2,,2,2026-04-22T18:54:15Z,private
 57810867,avito,Agdal,3250000,138,3,,2,2026-04-22T15:50:42Z,private
 57810197,avito,Guéliz,1476000,62,1,,1,2026-04-22T14:01:35Z,private
@@ -6069,41 +6070,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57787435,avito,Route d'Amezmiz,1550000,60,1,1,1,2026-04-17T19:38:01Z,private
 57787356,avito,Es Saada,420000,54,2,1,1,2026-04-17T19:12:02Z,private
 57786968,avito,Guéliz,1600000,86,2,,1,2026-04-17T17:58:17Z,professional
-57750249,avito,Guéliz,1700000,91,3,1,2,2026-04-10T12:16:02Z,private
-57066844,avito,Majorelle,1000000,110,2,,2,2026-04-10T09:59:22Z,professional
-57749409,avito,M'Hamid,,80,2,1,1,2026-04-10T09:43:01Z,private
-57748544,avito,M'Hamid,480000,60,2,,1,2026-04-09T22:21:01Z,private
-57747449,avito,Guéliz,,159,3,,2,2026-04-09T18:08:02Z,private
-57746659,avito,Guéliz,1500000,86,2,1,1,2026-04-09T15:24:46Z,professional
-57746469,avito,Route de Casablanca,560000,56,2,,1,2026-04-09T14:51:01Z,private
-57745714,avito,Guéliz,680000,86,2,,2,2026-04-09T12:26:34Z,professional
-57744972,avito,Autre secteur,2450000,140,2,1,1,2026-04-09T09:57:01Z,professional
-57744553,avito,M'Hamid,460000,50,2,,1,2026-04-09T08:11:53Z,private
-57744552,avito,M'Hamid,460000,50,2,,1,2026-04-09T08:11:49Z,private
-57744522,avito,Mabrouka,800000,85,2,1,2,2026-04-09T07:53:01Z,private
-57744374,avito,Route de Casablanca,,63,2,,2,2026-04-09T02:13:00Z,private
-57743247,avito,Route de Safi,750000,,2,,,2026-04-08T19:09:01Z,private
-57743166,avito,Es Saada,320000,50,2,,1,2026-04-08T18:51:23Z,private
-57742569,avito,Es Saada,600000,50,2,1,1,2026-04-08T17:03:11Z,private
-57741284,avito,Guéliz,2400000,250,3,,1,2026-04-08T13:26:01Z,private
-57741093,avito,Mabrouka,720000,72,2,,,2026-04-08T12:46:02Z,private
-57741022,avito,Route de Safi,680000,57,2,1,2,2026-04-08T12:40:44Z,professional
-57740887,avito,Guéliz,1500000,86,2,1,1,2026-04-08T12:27:25Z,professional
-57740756,avito,Route de Safi,670000,61,2,,2,2026-04-08T11:59:01Z,private
-57740690,avito,Hay Charaf,630000,61,2,,2,2026-04-08T11:44:11Z,private
-57740619,avito,Route de Safi,1380000,83,2,1,2,2026-04-08T11:32:02Z,professional
-57740371,avito,Agdal,2450000,130,3,,2,2026-04-08T10:50:01Z,private
-57740283,avito,M'Hamid,460000,49,2,,1,2026-04-08T10:28:01Z,private
-57739229,avito,Allal El Fassi,540000,,2,,,2026-04-07T23:33:01Z,private
-57738365,avito,Autre secteur,,100,2,1,2,2026-04-07T20:02:24Z,private
-57737918,avito,Guéliz,850000,49,1,,1,2026-04-07T18:27:05Z,private
-57737417,avito,Agdal,2100000,80,2,,1,2026-04-07T16:40:10Z,private
-57736993,avito,Targa,490000,,2,,,2026-04-07T15:32:01Z,private
-57736973,avito,Targa,500000,,2,,,2026-04-07T15:29:02Z,private
-57731898,avito,M'Hamid,700000,120,2,,0,2026-04-06T16:24:01Z,private
-57731032,avito,Hay Izdihar,700000,57,2,1,2,2026-04-06T13:58:56Z,professional
-57730860,avito,Guéliz,1500000,86,2,1,1,2026-04-06T13:43:30Z,professional
-57730211,avito,Daoudiate,720000,81,2,,1,2026-04-06T11:59:01Z,private
+57675203,avito,Guéliz,1230000,76,2,1,2,2026-04-17T17:34:23Z,private
+57705933,avito,Daoudiate,1100000,65,1,1,1,2026-04-17T14:55:16Z,professional
+57785520,avito,Guéliz,1100000,,2,1,1,2026-04-17T13:57:37Z,private
+57785325,avito,Autre secteur,540000,60,2,,1,2026-04-17T13:24:01Z,private
+57785163,avito,,1200000,130,2,1,2,2026-04-17T12:45:36Z,private
+57784168,avito,Agdal,1500000,60,1,,1,2026-04-17T09:32:53Z,private
+57783573,avito,Mabrouka,700000,72,2,,2,2026-04-17T03:32:01Z,private
+57782988,avito,Mabrouka,620000,,2,,,2026-04-16T21:34:01Z,private
+57782956,avito,Route de Casablanca,600000,43,1,1,1,2026-04-16T21:26:01Z,private
+57782247,avito,Targa,1800000,130,3,1,2,2026-04-16T18:33:00Z,private
+57781894,avito,Daoudiate,1100000,84,2,,1,2026-04-16T17:24:03Z,professional
+57781911,avito,Annakhil,750000,64,2,1,2,2026-04-16T17:26:46Z,private
+57780398,avito,Agdal,2400000,,2,,2,2026-04-16T13:09:52Z,private
+55919000,avito,Targa,1900000,115,2,,2,2026-04-16T11:54:56Z,professional
+57777091,avito,Guéliz,2100000,96,2,1,2,2026-04-15T18:31:01Z,private
+57646393,avito,Guéliz,1600000,86,2,1,1,2026-04-15T16:56:56Z,professional
+57775561,avito,Guéliz,,76,2,,1,2026-04-15T13:57:01Z,private
+57775080,avito,Hay Charaf,,122,2,,2,2026-04-15T12:49:01Z,private
+57083678,avito,Route de Casablanca,1550000,55,1,,1,2026-04-15T10:34:52Z,professional
+57470399,avito,Victor Hugo,950000,67,2,,1,2026-04-14T21:47:57Z,professional
+57770969,avito,Majorelle,1230000,57,1,1,1,2026-04-14T15:36:01Z,private
+57770035,avito,Mabrouka,530000,,2,,,2026-04-14T13:19:03Z,private
+57769821,avito,Agdal,2400000,80,2,,2,2026-04-14T12:45:20Z,private
+57769714,avito,Guéliz,1600000,86,2,1,2,2026-04-14T12:37:12Z,professional
+57769713,avito,Hay Izdihar,680000,57,2,1,2,2026-04-14T12:37:04Z,professional
+57769678,avito,Targa,450000,,2,,,2026-04-14T12:33:04Z,private
+57769323,avito,Route de Fès,1950000,,2,,,2026-04-14T11:26:01Z,private
+57768732,avito,Autre secteur,890000,118,2,,1,2026-04-14T09:44:08Z,professional
+57767816,avito,Azzouzia,,71,3,,1,2026-04-13T22:40:03Z,private
+57767731,avito,Azzouzia,,115,5,,2,2026-04-13T22:17:01Z,private
+57766892,avito,M'Hamid,,54,2,1,1,2026-04-13T19:32:00Z,private
+57766666,avito,Autre secteur,,,1,,,2026-04-13T18:50:01Z,private
+57766656,avito,Route de Fès,,128,3,,2,2026-04-13T18:47:01Z,private
+57766654,avito,M'Hamid,71000,73,2,,1,2026-04-13T18:47:00Z,private
+57766604,avito,M'Hamid,49000,70,2,,2,2026-04-13T18:37:51Z,private
 57766593,avito,Guéliz,105000,95,3,,2,2026-04-13T18:36:02Z,private
 57766579,avito,M'Hamid,60000,71,2,,1,2026-04-13T18:33:02Z,private
 57765550,avito,Route d'Amezmiz,170000,64,2,,2,2026-04-13T16:05:02Z,private
@@ -6139,6 +6140,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57753273,avito,Targa,,107,2,,2,2026-04-10T22:46:01Z,private
 57753039,avito,Guéliz,4250000,165,2,,2,2026-04-10T21:24:26Z,private
 57751789,avito,Autre secteur,650000,70,2,1,0,2026-04-10T17:02:01Z,private
+57750249,avito,Guéliz,1700000,91,3,1,2,2026-04-10T12:16:02Z,private
+57066844,avito,Majorelle,1000000,110,2,,2,2026-04-10T09:59:22Z,professional
+57749409,avito,M'Hamid,,80,2,1,1,2026-04-10T09:43:01Z,private
+57748544,avito,M'Hamid,480000,60,2,,1,2026-04-09T22:21:01Z,private
+57747449,avito,Guéliz,,159,3,,2,2026-04-09T18:08:02Z,private
+57746659,avito,Guéliz,1500000,86,2,1,1,2026-04-09T15:24:46Z,professional
+57746469,avito,Route de Casablanca,560000,56,2,,1,2026-04-09T14:51:01Z,private
+57745714,avito,Guéliz,680000,86,2,,2,2026-04-09T12:26:34Z,professional
+57744972,avito,Autre secteur,2450000,140,2,1,1,2026-04-09T09:57:01Z,professional
+57744553,avito,M'Hamid,460000,50,2,,1,2026-04-09T08:11:53Z,private
+57744552,avito,M'Hamid,460000,50,2,,1,2026-04-09T08:11:49Z,private
+57744522,avito,Mabrouka,800000,85,2,1,2,2026-04-09T07:53:01Z,private
+57744374,avito,Route de Casablanca,,63,2,,2,2026-04-09T02:13:00Z,private
+57743247,avito,Route de Safi,750000,,2,,,2026-04-08T19:09:01Z,private
+57743166,avito,Es Saada,320000,50,2,,1,2026-04-08T18:51:23Z,private
+57742569,avito,Es Saada,600000,50,2,1,1,2026-04-08T17:03:11Z,private
+57741284,avito,Guéliz,2400000,250,3,,1,2026-04-08T13:26:01Z,private
+57741093,avito,Mabrouka,720000,72,2,,,2026-04-08T12:46:02Z,private
+57741022,avito,Route de Safi,680000,57,2,1,2,2026-04-08T12:40:44Z,professional
+57740887,avito,Guéliz,1500000,86,2,1,1,2026-04-08T12:27:25Z,professional
+57740756,avito,Route de Safi,670000,61,2,,2,2026-04-08T11:59:01Z,private
+57740690,avito,Hay Charaf,630000,61,2,,2,2026-04-08T11:44:11Z,private
+57740619,avito,Route de Safi,1380000,83,2,1,2,2026-04-08T11:32:02Z,professional
+57740371,avito,Agdal,2450000,130,3,,2,2026-04-08T10:50:01Z,private
+57740283,avito,M'Hamid,460000,49,2,,1,2026-04-08T10:28:01Z,private
+57739229,avito,Allal El Fassi,540000,,2,,,2026-04-07T23:33:01Z,private
+57738365,avito,Autre secteur,,100,2,1,2,2026-04-07T20:02:24Z,private
+57737918,avito,Guéliz,850000,49,1,,1,2026-04-07T18:27:05Z,private
+57737417,avito,Agdal,2100000,80,2,,1,2026-04-07T16:40:10Z,private
+57736993,avito,Targa,490000,,2,,,2026-04-07T15:32:01Z,private
+57736973,avito,Targa,500000,,2,,,2026-04-07T15:29:02Z,private
+57731898,avito,M'Hamid,700000,120,2,,0,2026-04-06T16:24:01Z,private
+57731032,avito,Hay Izdihar,700000,57,2,1,2,2026-04-06T13:58:56Z,professional
+57730860,avito,Guéliz,1500000,86,2,1,1,2026-04-06T13:43:30Z,professional
+57730211,avito,Daoudiate,720000,81,2,,1,2026-04-06T11:59:01Z,private
 57729427,avito,Azzouzia,6900,,1,,1,2026-04-06T09:42:04Z,private
 57728219,avito,M'Hamid,460000,72,2,,1,2026-04-05T20:50:01Z,private
 57727579,avito,Guéliz,1500000,86,2,1,2,2026-04-05T18:13:23Z,professional
@@ -6244,41 +6280,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57687532,avito,Les Portes de Marrakech,,53,2,,1,2026-03-27T20:05:55Z,private
 57687520,avito,Massira 1,,97,2,,2,2026-03-27T20:02:09Z,private
 57686645,avito,Sidi Youssef Ben Ali,,,3,,1,2026-03-27T16:21:56Z,private
-57675541,avito,Mabrouka,700000,,2,,,2026-03-25T11:36:01Z,private
-57675424,avito,Hay Izdihar,700000,57,2,1,2,2026-03-25T11:27:11Z,professional
-57556242,avito,Av Mohammed VI,,84,2,,2,2026-03-25T10:55:20Z,professional
-57674674,avito,Route de Safi,,56,2,,1,2026-03-25T03:42:01Z,private
-57674458,avito,Guéliz,1300000,74,2,1,1,2026-03-25T00:52:02Z,private
-57673762,avito,Hay Izdihar,700000,58,2,,1,2026-03-24T21:32:03Z,private
-57673760,avito,Hay Izdihar,700000,58,2,,1,2026-03-24T21:32:03Z,private
-57670737,avito,Autre secteur,1300000,90,3,,1,2026-03-24T09:49:30Z,professional
-57670746,avito,M'Hamid,,60,2,1,1,2026-03-24T09:52:01Z,private
-57669523,avito,Guéliz,1500000,86,2,1,1,2026-03-23T21:08:10Z,professional
-57669454,avito,Hay Izdihar,700000,57,2,,2,2026-03-23T20:45:50Z,professional
-57667600,avito,Guéliz,,60,2,,2,2026-03-23T14:07:01Z,private
-57666809,avito,Es Saada,1000000,79,2,1,0,2026-03-23T11:36:02Z,private
-57666773,avito,M'Hamid,610000,77,2,,2,2026-03-23T11:27:01Z,private
-57581707,avito,Allal El Fassi,950000,98,2,,2,2026-03-23T00:44:18Z,professional
-57665794,avito,Av Abdelkrim El Khattabi,1300000,,2,,1,2026-03-22T23:19:28Z,private
-57665402,avito,Autre secteur,,50,2,,,2026-03-22T20:42:01Z,private
-57665047,avito,Azzouzia,580000,74,2,,1,2026-03-22T18:32:01Z,private
-57664779,avito,Agdal,2400000,84,2,,,2026-03-22T17:31:01Z,professional
-57664688,avito,Agdal,2900000,100,3,,,2026-03-22T17:03:00Z,professional
-57664651,avito,Ain Mezouar,540000,,2,,,2026-03-22T16:51:00Z,private
-57664129,avito,Hay Izdihar,700000,58,2,1,2,2026-03-22T14:42:53Z,professional
-57662613,avito,Agdal,2300000,115,3,,2,2026-03-21T22:48:01Z,private
-57074699,avito,M'Hamid,720000,150,4,,2,2026-03-21T19:21:37Z,private
-57661932,avito,Akioud,610000,88,2,,2,2026-03-21T19:15:02Z,private
-57660750,avito,Route de Casablanca,1450000,94,2,,2,2026-03-21T13:45:01Z,private
-57659496,avito,Hay Massira,410000,57,2,,1,2026-03-20T22:27:01Z,private
-57657740,avito,Route de Tamansourt,650000,74,2,,2,2026-03-20T01:31:01Z,private
-57656514,avito,Centre Ville,2200000,105,2,,2,2026-03-19T14:45:18Z,private
-57656155,avito,Hay Targa,600000,55,1,,1,2026-03-19T13:01:00Z,private
-56315514,avito,Hivernage,850000,79,2,,1,2026-03-19T11:24:03Z,professional
-57655614,avito,Allal El Fassi,850000,,2,,,2026-03-19T10:45:00Z,private
-57654795,avito,Hay Charaf,840000,84,2,,0,2026-03-19T00:24:01Z,private
-57654454,avito,M'Hamid,460000,56,2,,1,2026-03-18T22:32:01Z,private
-57653514,avito,Semlalia,350000,,2,,,2026-03-18T16:47:01Z,private
 57686636,avito,M'Hamid,,68,2,,1,2026-03-27T16:19:01Z,private
 57686231,avito,Route de Fès,650000,77,1,,2,2026-03-27T15:11:01Z,private
 57686194,avito,Allal El Fassi,850000,105,2,,2,2026-03-27T15:05:01Z,private
@@ -6314,41 +6315,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57677462,avito,Ain Mezouar,540000,68,2,,,2026-03-25T16:29:01Z,private
 57676967,avito,Hay Charaf,,160,3,,2,2026-03-25T15:05:02Z,private
 57675897,avito,Guéliz,1500000,86,2,1,1,2026-03-25T12:04:08Z,professional
-57675203,avito,Guéliz,1230000,76,2,1,2,2026-04-17T17:34:23Z,private
-57705933,avito,Daoudiate,1100000,65,1,1,1,2026-04-17T14:55:16Z,professional
-57785520,avito,Guéliz,1100000,,2,1,1,2026-04-17T13:57:37Z,private
-57785325,avito,Autre secteur,540000,60,2,,1,2026-04-17T13:24:01Z,private
-57785163,avito,,1200000,130,2,1,2,2026-04-17T12:45:36Z,private
-57784168,avito,Agdal,1500000,60,1,,1,2026-04-17T09:32:53Z,private
-57783573,avito,Mabrouka,700000,72,2,,2,2026-04-17T03:32:01Z,private
-57782988,avito,Mabrouka,620000,,2,,,2026-04-16T21:34:01Z,private
-57782956,avito,Route de Casablanca,600000,43,1,1,1,2026-04-16T21:26:01Z,private
-57782247,avito,Targa,1800000,130,3,1,2,2026-04-16T18:33:00Z,private
-57781894,avito,Daoudiate,1100000,84,2,,1,2026-04-16T17:24:03Z,professional
-57781911,avito,Annakhil,750000,64,2,1,2,2026-04-16T17:26:46Z,private
-57780398,avito,Agdal,2400000,,2,,2,2026-04-16T13:09:52Z,private
-55919000,avito,Targa,1900000,115,2,,2,2026-04-16T11:54:56Z,professional
-57777091,avito,Guéliz,2100000,96,2,1,2,2026-04-15T18:31:01Z,private
-57646393,avito,Guéliz,1600000,86,2,1,1,2026-04-15T16:56:56Z,professional
-57775561,avito,Guéliz,,76,2,,1,2026-04-15T13:57:01Z,private
-57775080,avito,Hay Charaf,,122,2,,2,2026-04-15T12:49:01Z,private
-57083678,avito,Route de Casablanca,1550000,55,1,,1,2026-04-15T10:34:52Z,professional
-57470399,avito,Victor Hugo,950000,67,2,,1,2026-04-14T21:47:57Z,professional
-57770969,avito,Majorelle,1230000,57,1,1,1,2026-04-14T15:36:01Z,private
-57770035,avito,Mabrouka,530000,,2,,,2026-04-14T13:19:03Z,private
-57769821,avito,Agdal,2400000,80,2,,2,2026-04-14T12:45:20Z,private
-57769714,avito,Guéliz,1600000,86,2,1,2,2026-04-14T12:37:12Z,professional
-57769713,avito,Hay Izdihar,680000,57,2,1,2,2026-04-14T12:37:04Z,professional
-57769678,avito,Targa,450000,,2,,,2026-04-14T12:33:04Z,private
-57769323,avito,Route de Fès,1950000,,2,,,2026-04-14T11:26:01Z,private
-57768732,avito,Autre secteur,890000,118,2,,1,2026-04-14T09:44:08Z,professional
-57767816,avito,Azzouzia,,71,3,,1,2026-04-13T22:40:03Z,private
-57767731,avito,Azzouzia,,115,5,,2,2026-04-13T22:17:01Z,private
-57766892,avito,M'Hamid,,54,2,1,1,2026-04-13T19:32:00Z,private
-57766666,avito,Autre secteur,,,1,,,2026-04-13T18:50:01Z,private
-57766656,avito,Route de Fès,,128,3,,2,2026-04-13T18:47:01Z,private
-57766654,avito,M'Hamid,71000,73,2,,1,2026-04-13T18:47:00Z,private
-57766604,avito,M'Hamid,49000,70,2,,2,2026-04-13T18:37:51Z,private
+57675541,avito,Mabrouka,700000,,2,,,2026-03-25T11:36:01Z,private
+57675424,avito,Hay Izdihar,700000,57,2,1,2,2026-03-25T11:27:11Z,professional
+57556242,avito,Av Mohammed VI,,84,2,,2,2026-03-25T10:55:20Z,professional
+57674674,avito,Route de Safi,,56,2,,1,2026-03-25T03:42:01Z,private
+57674458,avito,Guéliz,1300000,74,2,1,1,2026-03-25T00:52:02Z,private
+57673762,avito,Hay Izdihar,700000,58,2,,1,2026-03-24T21:32:03Z,private
+57673760,avito,Hay Izdihar,700000,58,2,,1,2026-03-24T21:32:03Z,private
+57670737,avito,Autre secteur,1300000,90,3,,1,2026-03-24T09:49:30Z,professional
+57670746,avito,M'Hamid,,60,2,1,1,2026-03-24T09:52:01Z,private
+57669523,avito,Guéliz,1500000,86,2,1,1,2026-03-23T21:08:10Z,professional
+57669454,avito,Hay Izdihar,700000,57,2,,2,2026-03-23T20:45:50Z,professional
+57667600,avito,Guéliz,,60,2,,2,2026-03-23T14:07:01Z,private
+57666809,avito,Es Saada,1000000,79,2,1,0,2026-03-23T11:36:02Z,private
+57666773,avito,M'Hamid,610000,77,2,,2,2026-03-23T11:27:01Z,private
+57581707,avito,Allal El Fassi,950000,98,2,,2,2026-03-23T00:44:18Z,professional
+57665794,avito,Av Abdelkrim El Khattabi,1300000,,2,,1,2026-03-22T23:19:28Z,private
+57665402,avito,Autre secteur,,50,2,,,2026-03-22T20:42:01Z,private
+57665047,avito,Azzouzia,580000,74,2,,1,2026-03-22T18:32:01Z,private
+57664779,avito,Agdal,2400000,84,2,,,2026-03-22T17:31:01Z,professional
+57664688,avito,Agdal,2900000,100,3,,,2026-03-22T17:03:00Z,professional
+57664651,avito,Ain Mezouar,540000,,2,,,2026-03-22T16:51:00Z,private
+57664129,avito,Hay Izdihar,700000,58,2,1,2,2026-03-22T14:42:53Z,professional
+57662613,avito,Agdal,2300000,115,3,,2,2026-03-21T22:48:01Z,private
+57074699,avito,M'Hamid,720000,150,4,,2,2026-03-21T19:21:37Z,private
+57661932,avito,Akioud,610000,88,2,,2,2026-03-21T19:15:02Z,private
+57660750,avito,Route de Casablanca,1450000,94,2,,2,2026-03-21T13:45:01Z,private
+57659496,avito,Hay Massira,410000,57,2,,1,2026-03-20T22:27:01Z,private
+57657740,avito,Route de Tamansourt,650000,74,2,,2,2026-03-20T01:31:01Z,private
+57656514,avito,Centre Ville,2200000,105,2,,2,2026-03-19T14:45:18Z,private
+57656155,avito,Hay Targa,600000,55,1,,1,2026-03-19T13:01:00Z,private
+56315514,avito,Hivernage,850000,79,2,,1,2026-03-19T11:24:03Z,professional
+57655614,avito,Allal El Fassi,850000,,2,,,2026-03-19T10:45:00Z,private
+57654795,avito,Hay Charaf,840000,84,2,,0,2026-03-19T00:24:01Z,private
+57654454,avito,M'Hamid,460000,56,2,,1,2026-03-18T22:32:01Z,private
+57653514,avito,Semlalia,350000,,2,,,2026-03-18T16:47:01Z,private
 57653086,avito,Route de Safi,750000,,2,,,2026-03-18T14:56:01Z,private
 57652780,avito,Ain Mezouar,540000,,2,,,2026-03-18T13:44:01Z,private
 57652694,avito,Mabrouka,1250000,,3,,,2026-03-18T13:22:01Z,private
@@ -6521,9 +6522,79 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57448237,avito,Agdal,2500000,76,2,,1,2026-02-21T09:52:48Z,professional
 57562150,avito,Mabrouka,470000,,2,1,1,2026-02-21T00:13:01Z,private
 57561773,avito,Azzouzia,2000000,120,3,1,1,2026-02-20T21:44:01Z,private
+57548975,avito,Hay Izdihar,550000,78,2,,0,2026-02-17T09:03:05Z,private
+57521706,avito,Targa,520000,52,1,,1,2026-02-17T08:54:55Z,private
+57548464,avito,Route d'Ourika,3000000,110,2,,2,2026-02-16T22:10:01Z,professional
+57548456,avito,Guéliz,1500000,76,1,,1,2026-02-16T22:07:18Z,private
+57547852,avito,Allal El Fassi,900000,,2,,,2026-02-16T19:18:01Z,private
+57547567,avito,M'Hamid,640000,78,3,,1,2026-02-16T17:58:33Z,private
+57547534,avito,Allal El Fassi,1000000,81,2,,2,2026-02-16T17:54:05Z,private
+57547176,avito,Route d'Amezmiz,650000,,2,,,2026-02-16T16:39:01Z,private
+57547122,avito,Allal El Fassi,850000,,1,,,2026-02-16T16:34:02Z,private
+57546984,avito,Guéliz,1250000,,2,,,2026-02-16T16:11:11Z,private
+57546846,avito,Route de Safi,980000,,2,,,2026-02-16T15:42:04Z,private
+57546840,avito,Guéliz,1300000,50,1,,1,2026-02-16T15:41:20Z,private
+57546821,avito,Allal El Fassi,1120000,98,2,,2,2026-02-16T15:39:03Z,professional
+57546827,avito,Guéliz,4950000,212,3,1,3,2026-02-16T15:40:24Z,private
+57546771,avito,Guéliz,2532400,105,2,,1,2026-02-16T15:29:59Z,private
+57546603,avito,Guéliz,,36,1,,,2026-02-16T14:58:02Z,private
+57546186,avito,Ain Mezouar,540000,,2,,,2026-02-16T14:09:03Z,private
+57545613,avito,Autre secteur,,82,2,,1,2026-02-16T12:16:01Z,private
+57545206,avito,Daoudiate,1100000,98,2,1,2,2026-02-16T11:02:02Z,professional
+56957999,avito,Daoudiate,1350000,96,2,1,1,2026-02-16T10:49:49Z,private
+57545008,avito,Route de Casablanca,600000,,2,1,,2026-02-16T10:01:01Z,private
+57544647,avito,Hay Charaf,760000,70,2,,1,2026-02-16T00:58:01Z,private
+57543007,avito,Agdal,2850000,84,2,1,2,2026-02-15T17:24:52Z,private
+57542890,avito,Guéliz,1850000,90,2,1,1,2026-02-15T17:14:01Z,private
+57542885,avito,Guéliz,2200000,136,2,1,1,2026-02-15T17:11:39Z,private
+57540633,avito,Allal El Fassi,950000,70,1,1,2,2026-02-14T20:50:03Z,private
+57539827,avito,Guéliz,20000000,153,3,,3,2026-02-14T15:21:01Z,private
+57426103,avito,Guéliz,1480000,59,1,1,1,2026-02-14T14:58:08Z,private
+57538929,avito,M'Hamid,790000,79,3,,1,2026-02-14T11:55:00Z,private
+57538910,avito,Ain Mezouar,1750000,105,2,,,2026-02-14T11:49:01Z,private
+57538088,avito,Route de Casablanca,,,2,,1,2026-02-14T03:30:00Z,private
+57538078,avito,Allal El Fassi,900000,,2,,,2026-02-14T02:23:01Z,private
+57538073,avito,Amerchich,700000,,2,,,2026-02-14T02:08:00Z,private
+57538059,avito,Hay Izdihar,1300000,,2,,,2026-02-14T01:43:01Z,private
+57538056,avito,Ain Mezouar,1290000,,3,,,2026-02-14T01:39:01Z,private
 57165249,avito,Daoudiate,1050000,126,2,,1,2026-02-20T19:40:36Z,private
 57560238,avito,Hay Izdihar,1300000,,2,,,2026-02-20T13:11:01Z,private
 57559815,avito,Majorelle,2000000,110,2,1,1,2026-02-20T11:55:02Z,private
+57559781,avito,Ain Mezouar,1290000,,3,,,2026-02-20T11:42:02Z,private
+57559760,avito,Route d'Amezmiz,650000,,2,,,2026-02-20T11:34:13Z,private
+57559709,avito,Semlalia,1500000,95,2,,,2026-02-20T11:19:01Z,private
+57559419,avito,M'Hamid,560000,,3,,1,2026-02-20T09:54:19Z,private
+57559064,avito,Allal El Fassi,850000,,1,1,,2026-02-20T00:19:01Z,private
+57559042,avito,Victor Hugo,1250000,,2,,,2026-02-20T00:06:01Z,private
+57558932,avito,Route de Safi,980000,,2,,,2026-02-19T23:35:01Z,private
+57558904,avito,Route de Casablanca,600000,,2,1,,2026-02-19T23:16:01Z,private
+57558799,avito,Ain Mezouar,540000,,2,,,2026-02-19T22:52:27Z,private
+57558629,avito,Amerchich,,100,3,,2,2026-02-19T21:47:01Z,private
+57558591,avito,Guéliz,1850000,84,2,1,2,2026-02-19T21:35:19Z,private
+57558570,avito,Ain Mezouar,540000,,2,,,2026-02-19T21:29:01Z,private
+57558492,avito,Azli,,62,2,,1,2026-02-19T21:06:01Z,private
+57558100,avito,M'Hamid,790000,84,3,,1,2026-02-19T18:06:45Z,private
+57558058,avito,Les Portes de Marrakech,360000,60,2,,1,2026-02-19T17:34:02Z,private
+57557693,avito,Guéliz,1500000,86,2,1,1,2026-02-19T15:16:01Z,professional
+57556466,avito,Hay Massira,900000,89,2,,1,2026-02-19T10:32:25Z,private
+57556180,avito,Hay Andalous,,50,1,,1,2026-02-19T09:26:01Z,private
+57555904,avito,Centre Ville,2000000,90,2,1,1,2026-02-19T00:08:01Z,private
+57555801,avito,Azzouzia,5600000,65,2,1,1,2026-02-18T23:21:00Z,private
+57554586,avito,Autre secteur,,444,2,,2,2026-02-18T16:05:02Z,private
+57243569,avito,Agdal,2500000,95,3,,2,2026-02-18T14:54:48Z,professional
+56456793,avito,Guéliz,720000,35,1,,1,2026-02-18T14:54:20Z,professional
+57552903,avito,Guéliz,1300000,60,1,,1,2026-02-18T10:21:01Z,private
+57552236,avito,Autre secteur,1850000,85,2,1,2,2026-02-17T22:33:01Z,private
+57551140,avito,Guéliz,2500000,130,3,,2,2026-02-17T16:57:01Z,private
+57550956,avito,Allal El Fassi,1200000,82,2,,1,2026-02-17T16:15:01Z,private
+57550947,avito,Guéliz,,80,2,,1,2026-02-17T16:12:01Z,private
+57550855,avito,Guéliz,,40,1,1,1,2026-02-17T15:47:58Z,private
+57549845,avito,Guéliz,1100000,82,1,,1,2026-02-17T12:26:01Z,private
+57549087,avito,Route de Casablanca,1150000,,2,,1,2026-02-17T09:55:01Z,professional
+57548991,avito,Semlalia,1300000,,3,,,2026-02-17T09:15:01Z,private
+57538052,avito,Route d'Amezmiz,650000,,2,,,2026-02-14T01:34:00Z,private
+57538045,avito,Semlalia,1500000,,2,,,2026-02-14T01:24:01Z,private
+57538039,avito,Victor Hugo,1250000,,2,,,2026-02-14T01:09:01Z,private
 57538019,avito,Ain Mezouar,540000,,2,,,2026-02-14T00:53:00Z,private
 57538015,avito,Route de Safi,980000,,2,,,2026-02-14T00:46:01Z,private
 57537947,avito,Route de Casablanca,600000,,2,1,,2026-02-13T23:33:00Z,private
@@ -6594,41 +6665,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57516570,avito,Victor Hugo,1250000,,2,,,2026-02-08T21:19:02Z,private
 57516209,avito,Semlalia,1300000,,3,,,2026-02-08T19:32:02Z,private
 57516157,avito,Massira 3,600000,70,2,,1,2026-02-08T19:12:02Z,private
-57559781,avito,Ain Mezouar,1290000,,3,,,2026-02-20T11:42:02Z,private
-57559760,avito,Route d'Amezmiz,650000,,2,,,2026-02-20T11:34:13Z,private
-57559709,avito,Semlalia,1500000,95,2,,,2026-02-20T11:19:01Z,private
-57559419,avito,M'Hamid,560000,,3,,1,2026-02-20T09:54:19Z,private
-57559064,avito,Allal El Fassi,850000,,1,1,,2026-02-20T00:19:01Z,private
-57559042,avito,Victor Hugo,1250000,,2,,,2026-02-20T00:06:01Z,private
-57558932,avito,Route de Safi,980000,,2,,,2026-02-19T23:35:01Z,private
-57558904,avito,Route de Casablanca,600000,,2,1,,2026-02-19T23:16:01Z,private
-57558799,avito,Ain Mezouar,540000,,2,,,2026-02-19T22:52:27Z,private
-57558629,avito,Amerchich,,100,3,,2,2026-02-19T21:47:01Z,private
-57558591,avito,Guéliz,1850000,84,2,1,2,2026-02-19T21:35:19Z,private
-57558570,avito,Ain Mezouar,540000,,2,,,2026-02-19T21:29:01Z,private
-57558492,avito,Azli,,62,2,,1,2026-02-19T21:06:01Z,private
-57558100,avito,M'Hamid,790000,84,3,,1,2026-02-19T18:06:45Z,private
-57558058,avito,Les Portes de Marrakech,360000,60,2,,1,2026-02-19T17:34:02Z,private
-57557693,avito,Guéliz,1500000,86,2,1,1,2026-02-19T15:16:01Z,professional
-57556466,avito,Hay Massira,900000,89,2,,1,2026-02-19T10:32:25Z,private
-57556180,avito,Hay Andalous,,50,1,,1,2026-02-19T09:26:01Z,private
-57555904,avito,Centre Ville,2000000,90,2,1,1,2026-02-19T00:08:01Z,private
-57555801,avito,Azzouzia,5600000,65,2,1,1,2026-02-18T23:21:00Z,private
-57554586,avito,Autre secteur,,444,2,,2,2026-02-18T16:05:02Z,private
-57243569,avito,Agdal,2500000,95,3,,2,2026-02-18T14:54:48Z,professional
-56456793,avito,Guéliz,720000,35,1,,1,2026-02-18T14:54:20Z,professional
-57552903,avito,Guéliz,1300000,60,1,,1,2026-02-18T10:21:01Z,private
-57552236,avito,Autre secteur,1850000,85,2,1,2,2026-02-17T22:33:01Z,private
-57551140,avito,Guéliz,2500000,130,3,,2,2026-02-17T16:57:01Z,private
-57550956,avito,Allal El Fassi,1200000,82,2,,1,2026-02-17T16:15:01Z,private
-57550947,avito,Guéliz,,80,2,,1,2026-02-17T16:12:01Z,private
-57550855,avito,Guéliz,,40,1,1,1,2026-02-17T15:47:58Z,private
-57549845,avito,Guéliz,1100000,82,1,,1,2026-02-17T12:26:01Z,private
-57549087,avito,Route de Casablanca,1150000,,2,,1,2026-02-17T09:55:01Z,professional
-57548991,avito,Semlalia,1300000,,3,,,2026-02-17T09:15:01Z,private
-57548975,avito,Hay Izdihar,550000,78,2,,0,2026-02-17T09:03:05Z,private
-57521706,avito,Targa,520000,52,1,,1,2026-02-17T08:54:55Z,private
-57548464,avito,Route d'Ourika,3000000,110,2,,2,2026-02-16T22:10:01Z,professional
 57516131,avito,Route de Safi,980000,,2,,,2026-02-08T19:03:02Z,private
 57516090,avito,Allal El Fassi,900000,,2,,,2026-02-08T18:53:01Z,private
 57515892,avito,Av Mohammed VI,2400000,75,2,,2,2026-02-08T17:53:16Z,private
@@ -6909,41 +6945,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57366506,avito,Guéliz,780000,39,1,,1,2025-12-29T14:58:49Z,private
 57365173,avito,M'Hamid,,62,2,1,1,2025-12-29T11:07:01Z,private
 57339724,avito,Targa,,192,3,,2,2025-12-29T09:41:36Z,private
-57548456,avito,Guéliz,1500000,76,1,,1,2026-02-16T22:07:18Z,private
-57547852,avito,Allal El Fassi,900000,,2,,,2026-02-16T19:18:01Z,private
-57547567,avito,M'Hamid,640000,78,3,,1,2026-02-16T17:58:33Z,private
-57547534,avito,Allal El Fassi,1000000,81,2,,2,2026-02-16T17:54:05Z,private
-57547176,avito,Route d'Amezmiz,650000,,2,,,2026-02-16T16:39:01Z,private
-57547122,avito,Allal El Fassi,850000,,1,,,2026-02-16T16:34:02Z,private
-57546984,avito,Guéliz,1250000,,2,,,2026-02-16T16:11:11Z,private
-57546846,avito,Route de Safi,980000,,2,,,2026-02-16T15:42:04Z,private
-57546840,avito,Guéliz,1300000,50,1,,1,2026-02-16T15:41:20Z,private
-57546821,avito,Allal El Fassi,1120000,98,2,,2,2026-02-16T15:39:03Z,professional
-57546827,avito,Guéliz,4950000,212,3,1,3,2026-02-16T15:40:24Z,private
-57546771,avito,Guéliz,2532400,105,2,,1,2026-02-16T15:29:59Z,private
-57546603,avito,Guéliz,,36,1,,,2026-02-16T14:58:02Z,private
-57546186,avito,Ain Mezouar,540000,,2,,,2026-02-16T14:09:03Z,private
-57545613,avito,Autre secteur,,82,2,,1,2026-02-16T12:16:01Z,private
-57545206,avito,Daoudiate,1100000,98,2,1,2,2026-02-16T11:02:02Z,professional
-56957999,avito,Daoudiate,1350000,96,2,1,1,2026-02-16T10:49:49Z,private
-57545008,avito,Route de Casablanca,600000,,2,1,,2026-02-16T10:01:01Z,private
-57544647,avito,Hay Charaf,760000,70,2,,1,2026-02-16T00:58:01Z,private
-57543007,avito,Agdal,2850000,84,2,1,2,2026-02-15T17:24:52Z,private
-57542890,avito,Guéliz,1850000,90,2,1,1,2026-02-15T17:14:01Z,private
-57542885,avito,Guéliz,2200000,136,2,1,1,2026-02-15T17:11:39Z,private
-57540633,avito,Allal El Fassi,950000,70,1,1,2,2026-02-14T20:50:03Z,private
-57539827,avito,Guéliz,20000000,153,3,,3,2026-02-14T15:21:01Z,private
-57426103,avito,Guéliz,1480000,59,1,1,1,2026-02-14T14:58:08Z,private
-57538929,avito,M'Hamid,790000,79,3,,1,2026-02-14T11:55:00Z,private
-57538910,avito,Ain Mezouar,1750000,105,2,,,2026-02-14T11:49:01Z,private
-57538088,avito,Route de Casablanca,,,2,,1,2026-02-14T03:30:00Z,private
-57538078,avito,Allal El Fassi,900000,,2,,,2026-02-14T02:23:01Z,private
-57538073,avito,Amerchich,700000,,2,,,2026-02-14T02:08:00Z,private
-57538059,avito,Hay Izdihar,1300000,,2,,,2026-02-14T01:43:01Z,private
-57538056,avito,Ain Mezouar,1290000,,3,,,2026-02-14T01:39:01Z,private
-57538052,avito,Route d'Amezmiz,650000,,2,,,2026-02-14T01:34:00Z,private
-57538045,avito,Semlalia,1500000,,2,,,2026-02-14T01:24:01Z,private
-57538039,avito,Victor Hugo,1250000,,2,,,2026-02-14T01:09:01Z,private
+57363163,avito,Route d'Agadir - Essaouira,125000,63,2,,1,2025-12-28T17:21:01Z,private
+57362632,avito,M'Hamid,420000,58,2,,1,2025-12-28T14:46:01Z,private
+57361324,avito,Afaq,,6,1,,1,2025-12-28T03:51:01Z,private
+57361038,avito,Hay Massira,,80,2,1,1,2025-12-27T21:55:29Z,private
+57360437,avito,Ain Mezouar,1290000,,3,,,2025-12-27T18:23:01Z,private
+57360429,avito,Hay Izdihar,1300000,107,2,,0,2025-12-27T18:17:01Z,private
+57359855,avito,Targa,1600000,120,2,1,2,2025-12-27T15:17:03Z,private
+57359795,avito,Allal El Fassi,850000,64,1,,,2025-12-27T15:07:01Z,private
+57359730,avito,Allal El Fassi,900000,,2,,,2025-12-27T14:40:01Z,private
+57358807,avito,Semlalia,1500000,,2,,,2025-12-27T11:10:01Z,private
+57358760,avito,Mabrouka,890000,,2,,,2025-12-27T10:49:01Z,private
+57358735,avito,Hay Izdihar,680000,58,2,1,2,2025-12-27T10:36:01Z,professional
+57355147,avito,Es Saada,450000,59,2,,1,2025-12-26T08:11:00Z,private
+57354994,avito,Guéliz,2800000,203,3,,2,2025-12-25T23:39:06Z,private
+57354408,avito,Mabrouka,,80,2,,2,2025-12-25T19:57:55Z,private
+57352626,avito,Autre secteur,,60,2,,1,2025-12-25T12:18:01Z,private
+57352608,avito,Autre secteur,,63,2,,0,2025-12-25T12:13:05Z,private
+57352435,avito,Palmeraie,440000,60,1,1,0,2025-12-25T11:39:01Z,private
+57351170,avito,Route de Tamansourt,,,1,,,2025-12-24T22:31:00Z,private
+56914155,avito,Rouidat,850000,76,2,1,2,2025-12-24T17:50:19Z,private
+57349762,avito,Route d'Amezmiz,600000,61,2,1,1,2025-12-24T15:54:31Z,private
+57348892,avito,M'Hamid,,68,2,1,1,2025-12-24T12:24:02Z,private
+57347040,avito,Guéliz,800000,40,1,,1,2025-12-24T08:08:51Z,private
+57346768,avito,Allal El Fassi,1400000,118,2,,1,2025-12-23T23:04:01Z,private
+57346185,avito,Hay Izdihar,1300000,,2,,,2025-12-23T17:24:01Z,private
+57346139,avito,Ain Mezouar,1290000,129,2,,,2025-12-23T17:01:01Z,private
+57345943,avito,Route de Casablanca,850000,,1,1,1,2025-12-23T15:44:01Z,private
+57345794,avito,Targa,1600000,,2,,,2025-12-23T14:59:02Z,private
+57345288,avito,Mabrouka,580000,71,2,,,2025-12-23T13:13:01Z,private
+57345249,avito,Allal El Fassi,900000,,2,,,2025-12-23T13:03:01Z,private
+57344207,avito,Guéliz,,79,2,,1,2025-12-23T09:12:02Z,private
+57343465,avito,Hay Massira,800000,81,2,,2,2025-12-22T21:43:00Z,private
+57343089,avito,M'Hamid,600000,65,2,,1,2025-12-22T19:37:02Z,private
+57342944,avito,M'Hamid,550000,64,2,1,1,2025-12-22T19:09:10Z,private
+57280253,avito,El Ghoul,480000,55,2,,1,2025-12-22T11:40:03Z,private
 57340780,avito,M'Hamid,,78,3,1,1,2025-12-22T11:10:01Z,private
 57339269,avito,M'Hamid,,116,2,,1,2025-12-21T19:00:02Z,private
 57338262,avito,Allal El Fassi,900000,,2,,,2025-12-21T14:17:00Z,private
@@ -7119,41 +7155,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57193047,avito,Massira 2,,92,2,,2,2025-11-13T07:24:00Z,private
 57185181,avito,Route de Casablanca,995000,100,6,1,2,2025-11-11T10:03:02Z,professional
 57182021,avito,Hay Izdihar,938000,67,2,,2,2025-11-10T13:23:07Z,private
-57066315,avito,Massira 2,180000,92,3,,2,2025-10-12T06:49:08Z,private
-56847552,avito,Annakhil,1500000,77,1,,1,2025-10-11T16:46:36Z,private
-57064194,avito,Massira 2,,92,3,,2,2025-10-11T14:30:03Z,private
-57057909,avito,Massira 2,,92,3,,2,2025-10-09T23:01:00Z,private
-54429115,avito,Mabrouka,850000,63,2,1,2,2025-10-08T16:51:35Z,professional
-56011994,avito,Av Mohammed VI,1710000,93,2,,2,2025-10-07T15:59:32Z,private
-57045766,avito,Guéliz,850000,58,1,,1,2025-10-07T10:46:13Z,professional
-57044270,avito,M'Hamid,,60,2,,1,2025-10-06T21:05:01Z,private
-56983533,avito,Mabrouka,950000,78,2,,2,2025-10-06T14:44:39Z,professional
-57041369,avito,Targa,1400000,114,3,,2,2025-10-06T11:55:00Z,private
-57041156,avito,M'Hamid,550000,54,1,,1,2025-10-06T11:25:05Z,professional
-57040177,avito,Massira,470000,68,2,,1,2025-10-06T08:49:01Z,private
-57005797,avito,Allal El Fassi,900000,80,2,,1,2025-10-04T14:12:01Z,private
-57031825,avito,Hay Izdihar,860000,78,2,1,1,2025-10-04T01:33:00Z,private
-56866815,avito,Hay Charaf,672000,47,1,,1,2025-09-30T08:58:43Z,professional
-57013121,avito,M'Hamid,1600000,231,4,,3,2025-09-29T12:03:03Z,private
-57008985,avito,M'Hamid,400000,53,2,,1,2025-09-28T12:15:33Z,private
-56974028,avito,Hivernage,1440000,80,2,,1,2025-09-27T11:35:00Z,professional
-57001833,avito,Av Mohammed VI,2350000,90,2,,2,2025-09-26T14:18:41Z,private
-56999023,avito,M'Hamid,600000,80,2,,1,2025-09-25T19:59:00Z,private
-56997655,avito,Hay Charaf,940000,72,2,,2,2025-09-25T14:44:03Z,professional
-56990573,avito,Amerchich,12000000,126,2,1,2,2025-09-23T23:51:00Z,private
-56989126,avito,Autre secteur,3325000,133,3,,2,2025-09-23T17:25:04Z,professional
-56988438,avito,Autre secteur,2958000,116,3,,2,2025-09-23T15:25:06Z,professional
-56955720,avito,Av Mohammed VI,265000000,100,3,1,2,2025-09-23T09:59:52Z,professional
-56955723,avito,Av Mohammed VI,250000000,106,3,1,2,2025-09-23T09:18:10Z,professional
-56955679,avito,Av Mohammed VI,2700000,90,3,1,2,2025-09-23T08:57:59Z,professional
-56982421,avito,Guéliz,3900000,,5,1,3,2025-09-22T11:15:08Z,professional
-56945722,avito,Route de Casablanca,480000,52,2,,1,2025-09-21T10:45:00Z,professional
-56976797,avito,Amelkis,50000,130,2,1,1,2025-09-20T21:49:44Z,private
-56126107,avito,Agdal,2000000,100,2,1,2,2025-09-19T11:36:18Z,professional
-56966876,avito,Autre secteur,490000,79,3,,1,2025-09-18T15:25:04Z,professional
-56964879,avito,Daoudiate,,,5,,3,2025-09-18T09:32:02Z,private
-56963451,avito,Route de Tamansourt,240000,58,2,,1,2025-09-17T19:44:01Z,private
-56282267,avito,Guéliz,1190000,65,1,1,2,2025-09-17T15:54:08Z,professional
 57172369,avito,Route de Casablanca,910000,46,1,,1,2025-11-07T20:30:01Z,private
 57169410,avito,Guéliz,5000000,350,5,,4,2025-11-07T07:47:01Z,private
 57161665,avito,Guéliz,1100000,54,1,1,1,2025-11-04T23:45:13Z,professional
@@ -7189,6 +7190,41 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 57068279,avito,Hivernage,8000,,1,,0,2025-10-12T15:48:49Z,professional
 57067555,avito,Av Mohammed VI,2400000,78,2,1,1,2025-10-12T13:26:04Z,professional
 57039558,avito,Guéliz,2000000,111,2,1,2,2025-10-12T09:59:08Z,professional
+57066315,avito,Massira 2,180000,92,3,,2,2025-10-12T06:49:08Z,private
+56847552,avito,Annakhil,1500000,77,1,,1,2025-10-11T16:46:36Z,private
+57064194,avito,Massira 2,,92,3,,2,2025-10-11T14:30:03Z,private
+57057909,avito,Massira 2,,92,3,,2,2025-10-09T23:01:00Z,private
+54429115,avito,Mabrouka,850000,63,2,1,2,2025-10-08T16:51:35Z,professional
+56011994,avito,Av Mohammed VI,1710000,93,2,,2,2025-10-07T15:59:32Z,private
+57045766,avito,Guéliz,850000,58,1,,1,2025-10-07T10:46:13Z,professional
+57044270,avito,M'Hamid,,60,2,,1,2025-10-06T21:05:01Z,private
+56983533,avito,Mabrouka,950000,78,2,,2,2025-10-06T14:44:39Z,professional
+57041369,avito,Targa,1400000,114,3,,2,2025-10-06T11:55:00Z,private
+57041156,avito,M'Hamid,550000,54,1,,1,2025-10-06T11:25:05Z,professional
+57040177,avito,Massira,470000,68,2,,1,2025-10-06T08:49:01Z,private
+57005797,avito,Allal El Fassi,900000,80,2,,1,2025-10-04T14:12:01Z,private
+57031825,avito,Hay Izdihar,860000,78,2,1,1,2025-10-04T01:33:00Z,private
+56866815,avito,Hay Charaf,672000,47,1,,1,2025-09-30T08:58:43Z,professional
+57013121,avito,M'Hamid,1600000,231,4,,3,2025-09-29T12:03:03Z,private
+57008985,avito,M'Hamid,400000,53,2,,1,2025-09-28T12:15:33Z,private
+56974028,avito,Hivernage,1440000,80,2,,1,2025-09-27T11:35:00Z,professional
+57001833,avito,Av Mohammed VI,2350000,90,2,,2,2025-09-26T14:18:41Z,private
+56999023,avito,M'Hamid,600000,80,2,,1,2025-09-25T19:59:00Z,private
+56997655,avito,Hay Charaf,940000,72,2,,2,2025-09-25T14:44:03Z,professional
+56990573,avito,Amerchich,12000000,126,2,1,2,2025-09-23T23:51:00Z,private
+56989126,avito,Autre secteur,3325000,133,3,,2,2025-09-23T17:25:04Z,professional
+56988438,avito,Autre secteur,2958000,116,3,,2,2025-09-23T15:25:06Z,professional
+56955720,avito,Av Mohammed VI,265000000,100,3,1,2,2025-09-23T09:59:52Z,professional
+56955723,avito,Av Mohammed VI,250000000,106,3,1,2,2025-09-23T09:18:10Z,professional
+56955679,avito,Av Mohammed VI,2700000,90,3,1,2,2025-09-23T08:57:59Z,professional
+56982421,avito,Guéliz,3900000,,5,1,3,2025-09-22T11:15:08Z,professional
+56945722,avito,Route de Casablanca,480000,52,2,,1,2025-09-21T10:45:00Z,professional
+56976797,avito,Amelkis,50000,130,2,1,1,2025-09-20T21:49:44Z,private
+56126107,avito,Agdal,2000000,100,2,1,2,2025-09-19T11:36:18Z,professional
+56966876,avito,Autre secteur,490000,79,3,,1,2025-09-18T15:25:04Z,professional
+56964879,avito,Daoudiate,,,5,,3,2025-09-18T09:32:02Z,private
+56963451,avito,Route de Tamansourt,240000,58,2,,1,2025-09-17T19:44:01Z,private
+56282267,avito,Guéliz,1190000,65,1,1,2,2025-09-17T15:54:08Z,professional
 56100882,avito,Guéliz,940000,53,1,1,1,2025-09-17T14:45:10Z,professional
 56959824,avito,Av Abdelkrim El Khattabi,,127,3,,3,2025-09-17T01:20:01Z,private
 56957030,avito,Route de Casablanca,660000,100,,,,2025-09-16T13:01:04Z,private
@@ -7294,41 +7330,6 @@ id,source,district,price_mad,surface_m2,bedrooms,furnished,bathrooms,publication
 56127181,avito,Targa,920000,90,2,,2,2025-02-18T12:50:02Z,professional
 56114911,avito,Route de Tamansourt,240000,50,2,1,1,2025-02-15T10:57:02Z,private
 55947570,avito,Guéliz,1000000,43,1,,1,2025-01-30T23:33:24Z,professional
-57363163,avito,Route d'Agadir - Essaouira,125000,63,2,,1,2025-12-28T17:21:01Z,private
-57362632,avito,M'Hamid,420000,58,2,,1,2025-12-28T14:46:01Z,private
-57361324,avito,Afaq,,6,1,,1,2025-12-28T03:51:01Z,private
-57361038,avito,Hay Massira,,80,2,1,1,2025-12-27T21:55:29Z,private
-57360437,avito,Ain Mezouar,1290000,,3,,,2025-12-27T18:23:01Z,private
-57360429,avito,Hay Izdihar,1300000,107,2,,0,2025-12-27T18:17:01Z,private
-57359855,avito,Targa,1600000,120,2,1,2,2025-12-27T15:17:03Z,private
-57359795,avito,Allal El Fassi,850000,64,1,,,2025-12-27T15:07:01Z,private
-57359730,avito,Allal El Fassi,900000,,2,,,2025-12-27T14:40:01Z,private
-57358807,avito,Semlalia,1500000,,2,,,2025-12-27T11:10:01Z,private
-57358760,avito,Mabrouka,890000,,2,,,2025-12-27T10:49:01Z,private
-57358735,avito,Hay Izdihar,680000,58,2,1,2,2025-12-27T10:36:01Z,professional
-57355147,avito,Es Saada,450000,59,2,,1,2025-12-26T08:11:00Z,private
-57354994,avito,Guéliz,2800000,203,3,,2,2025-12-25T23:39:06Z,private
-57354408,avito,Mabrouka,,80,2,,2,2025-12-25T19:57:55Z,private
-57352626,avito,Autre secteur,,60,2,,1,2025-12-25T12:18:01Z,private
-57352608,avito,Autre secteur,,63,2,,0,2025-12-25T12:13:05Z,private
-57352435,avito,Palmeraie,440000,60,1,1,0,2025-12-25T11:39:01Z,private
-57351170,avito,Route de Tamansourt,,,1,,,2025-12-24T22:31:00Z,private
-56914155,avito,Rouidat,850000,76,2,1,2,2025-12-24T17:50:19Z,private
-57349762,avito,Route d'Amezmiz,600000,61,2,1,1,2025-12-24T15:54:31Z,private
-57348892,avito,M'Hamid,,68,2,1,1,2025-12-24T12:24:02Z,private
-57347040,avito,Guéliz,800000,40,1,,1,2025-12-24T08:08:51Z,private
-57346768,avito,Allal El Fassi,1400000,118,2,,1,2025-12-23T23:04:01Z,private
-57346185,avito,Hay Izdihar,1300000,,2,,,2025-12-23T17:24:01Z,private
-57346139,avito,Ain Mezouar,1290000,129,2,,,2025-12-23T17:01:01Z,private
-57345943,avito,Route de Casablanca,850000,,1,1,1,2025-12-23T15:44:01Z,private
-57345794,avito,Targa,1600000,,2,,,2025-12-23T14:59:02Z,private
-57345288,avito,Mabrouka,580000,71,2,,,2025-12-23T13:13:01Z,private
-57345249,avito,Allal El Fassi,900000,,2,,,2025-12-23T13:03:01Z,private
-57344207,avito,Guéliz,,79,2,,1,2025-12-23T09:12:02Z,private
-57343465,avito,Hay Massira,800000,81,2,,2,2025-12-22T21:43:00Z,private
-57343089,avito,M'Hamid,600000,65,2,,1,2025-12-22T19:37:02Z,private
-57342944,avito,M'Hamid,550000,64,2,1,1,2025-12-22T19:09:10Z,private
-57280253,avito,El Ghoul,480000,55,2,,1,2025-12-22T11:40:03Z,private
 55929926,avito,Hivernage,1550000,,1,1,1,2025-01-26T09:29:00Z,professional
 56013014,avito,Agdal,,600,5,1,5,2025-01-19T15:44:01Z,private
 56009492,avito,Victor Hugo,3700000,249,3,,3,2025-01-18T15:29:01Z,professional
