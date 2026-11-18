@@ -1,821 +1,1148 @@
 {
- "n": 7644,
- "median": 11273,
- "median_price": 1150000,
- "median_surface": 93,
+ "n": 11164,
+ "median": 12556,
+ "median_price": 1300000,
+ "median_surface": 98,
  "min": 2000,
  "max": 100000,
- "cross_dups": 0,
- "raw": 11948,
- "date": "2026-11-09",
- "source": "avito",
- "source_name": "Avito",
+ "cross_dups": 1221,
+ "raw": 16807,
+ "date": "2026-11-18",
+ "source": "avito+mubawab",
+ "source_name": "Avito et Mubawab",
  "changes": null,
  "quartiers": [
   {
-   "n": 12,
-   "median": 30074,
-   "median_price": 5040000,
-   "median_surface": 168,
+   "n": 39,
+   "median": 33803,
+   "median_price": 5471000,
+   "median_surface": 150,
    "min": 12245,
-   "max": 37313,
+   "max": 48077,
    "name": "Marina",
    "slug": "marina",
    "rank": 1
   },
   {
-   "n": 47,
-   "median": 24038,
-   "median_price": 2790000,
-   "median_surface": 120,
-   "min": 3571,
-   "max": 44681,
-   "name": "Casablanca Finance City",
-   "slug": "casablanca-finance-city",
+   "n": 129,
+   "median": 24222,
+   "median_price": 4000000,
+   "median_surface": 185,
+   "min": 6034,
+   "max": 48529,
+   "name": "Aïn Diab",
+   "slug": "ain-diab",
    "rank": 2
   },
   {
-   "n": 92,
-   "median": 20729,
-   "median_price": 1600000,
-   "median_surface": 83,
-   "min": 2045,
-   "max": 35500,
-   "name": "Oasis",
-   "slug": "oasis",
+   "n": 141,
+   "median": 24138,
+   "median_price": 2730000,
+   "median_surface": 120,
+   "min": 3571,
+   "max": 45736,
+   "name": "Casablanca Finance City",
+   "slug": "casablanca-finance-city",
    "rank": 3
   },
   {
-   "n": 24,
-   "median": 20543,
-   "median_price": 1325000,
-   "median_surface": 60,
-   "min": 13559,
-   "max": 28125,
+   "n": 55,
+   "median": 21429,
+   "median_price": 1459000,
+   "median_surface": 65,
+   "min": 11413,
+   "max": 31000,
    "name": "Riviera",
    "slug": "riviera",
    "rank": 4
   },
   {
-   "n": 27,
-   "median": 19328,
-   "median_price": 3270000,
-   "median_surface": 185,
-   "min": 11856,
-   "max": 57419,
-   "name": "Triangle d'Or",
-   "slug": "triangle-d-or",
+   "n": 208,
+   "median": 21254,
+   "median_price": 1600000,
+   "median_surface": 78,
+   "min": 2045,
+   "max": 35500,
+   "name": "Oasis",
+   "slug": "oasis",
    "rank": 5
   },
   {
-   "n": 81,
-   "median": 19149,
-   "median_price": 1960000,
-   "median_surface": 100,
-   "min": 7895,
-   "max": 36765,
+   "n": 169,
+   "median": 20306,
+   "median_price": 1900000,
+   "median_surface": 99,
+   "min": 10152,
+   "max": 31731,
    "name": "Ferme Bretone",
    "slug": "ferme-bretone",
    "rank": 6
   },
   {
-   "n": 137,
-   "median": 18587,
-   "median_price": 3100000,
-   "median_surface": 175,
-   "min": 11340,
-   "max": 32456,
-   "name": "Racine",
-   "slug": "racine",
+   "n": 91,
+   "median": 18857,
+   "median_price": 3600000,
+   "median_surface": 192,
+   "min": 8133,
+   "max": 29957,
+   "name": "Triangle d'Or",
+   "slug": "triangle-d-or",
    "rank": 7
   },
   {
-   "n": 45,
-   "median": 18500,
-   "median_price": 2850000,
-   "median_surface": 151,
-   "min": 6034,
-   "max": 47945,
-   "name": "Aïn Diab",
-   "slug": "ain-diab",
+   "n": 46,
+   "median": 18829,
+   "median_price": 2550000,
+   "median_surface": 128,
+   "min": 9449,
+   "max": 28085,
+   "name": "Ain Diab Extension",
+   "slug": "ain-diab-extension",
    "rank": 8
   },
   {
-   "n": 19,
-   "median": 18125,
-   "median_price": 1100000,
-   "median_surface": 75,
+   "n": 344,
+   "median": 18652,
+   "median_price": 3300000,
+   "median_surface": 180,
+   "min": 2546,
+   "max": 80000,
+   "name": "Racine",
+   "slug": "racine",
+   "rank": 9
+  },
+  {
+   "n": 14,
+   "median": 18495,
+   "median_price": 3910000,
+   "median_surface": 198,
+   "min": 2500,
+   "max": 29375,
+   "name": "Racine Extension",
+   "slug": "racine-extension",
+   "rank": 10
+  },
+  {
+   "n": 304,
+   "median": 18362,
+   "median_price": 1700000,
+   "median_surface": 103,
+   "min": 10145,
+   "max": 53049,
+   "name": "Les Princesses",
+   "slug": "les-princesses",
+   "rank": 11
+  },
+  {
+   "n": 238,
+   "median": 18354,
+   "median_price": 1625000,
+   "median_surface": 100,
+   "min": 8582,
+   "max": 33158,
+   "name": "Palmier",
+   "slug": "palmier",
+   "rank": 12
+  },
+  {
+   "n": 76,
+   "median": 18074,
+   "median_price": 1450000,
+   "median_surface": 84,
+   "min": 10435,
+   "max": 33980,
+   "name": "Franceville",
+   "slug": "franceville",
+   "rank": 13
+  },
+  {
+   "n": 27,
+   "median": 17595,
+   "median_price": 1240000,
+   "median_surface": 84,
    "min": 8607,
    "max": 28947,
    "name": "Hermitage",
    "slug": "hermitage",
-   "rank": 9
-  },
-  {
-   "n": 37,
-   "median": 17568,
-   "median_price": 1400000,
-   "median_surface": 80,
-   "min": 11856,
-   "max": 26829,
-   "name": "Franceville",
-   "slug": "franceville",
-   "rank": 10
-  },
-  {
-   "n": 106,
-   "median": 17273,
-   "median_price": 1580000,
-   "median_surface": 103,
-   "min": 3500,
-   "max": 33158,
-   "name": "Palmier",
-   "slug": "palmier",
-   "rank": 11
-  },
-  {
-   "n": 174,
-   "median": 17118,
-   "median_price": 2300000,
-   "median_surface": 136,
-   "min": 2778,
-   "max": 92025,
-   "name": "Anfa",
-   "slug": "anfa",
-   "rank": 12
-  },
-  {
-   "n": 116,
-   "median": 16958,
-   "median_price": 2825000,
-   "median_surface": 170,
-   "min": 4933,
-   "max": 27544,
-   "name": "Gauthier",
-   "slug": "gauthier",
-   "rank": 13
-  },
-  {
-   "n": 135,
-   "median": 16406,
-   "median_price": 1700000,
-   "median_surface": 112,
-   "min": 7778,
-   "max": 32432,
-   "name": "Les Princesses",
-   "slug": "les-princesses",
    "rank": 14
   },
   {
-   "n": 24,
-   "median": 15452,
-   "median_price": 1900000,
-   "median_surface": 140,
-   "min": 10000,
-   "max": 21000,
-   "name": "C.I.L",
-   "slug": "c-i-l",
+   "n": 272,
+   "median": 17417,
+   "median_price": 2800000,
+   "median_surface": 168,
+   "min": 4933,
+   "max": 35238,
+   "name": "Gauthier",
+   "slug": "gauthier",
    "rank": 15
   },
   {
-   "n": 145,
-   "median": 15116,
-   "median_price": 1850000,
-   "median_surface": 125,
-   "min": 7823,
-   "max": 24018,
-   "name": "Californie",
-   "slug": "californie",
+   "n": 233,
+   "median": 17391,
+   "median_price": 2150000,
+   "median_surface": 136,
+   "min": 2350,
+   "max": 92025,
+   "name": "Anfa",
+   "slug": "anfa",
    "rank": 16
   },
   {
-   "n": 642,
-   "median": 14946,
-   "median_price": 1700000,
-   "median_surface": 121,
-   "min": 2857,
-   "max": 48077,
-   "name": "Maarif",
-   "slug": "maarif",
+   "n": 52,
+   "median": 17052,
+   "median_price": 1827500,
+   "median_surface": 99,
+   "min": 10000,
+   "max": 35000,
+   "name": "C.I.L",
+   "slug": "c-i-l",
    "rank": 17
   },
   {
-   "n": 42,
-   "median": 14768,
-   "median_price": 1541452,
-   "median_surface": 104,
-   "min": 9057,
-   "max": 25000,
-   "name": "Bachkou",
-   "slug": "bachkou",
+   "n": 273,
+   "median": 16000,
+   "median_price": 1900000,
+   "median_surface": 125,
+   "min": 7823,
+   "max": 27273,
+   "name": "Californie",
+   "slug": "californie",
    "rank": 18
   },
   {
-   "n": 87,
-   "median": 14500,
-   "median_price": 2000000,
-   "median_surface": 140,
-   "min": 8000,
-   "max": 30000,
-   "name": "Val Fleuri",
-   "slug": "val-fleuri",
+   "n": 16,
+   "median": 15623,
+   "median_price": 2055000,
+   "median_surface": 138,
+   "min": 11538,
+   "max": 25000,
+   "name": "Plateau (Al Batha)",
+   "slug": "plateau-al-batha",
    "rank": 19
   },
   {
-   "n": 230,
-   "median": 14489,
-   "median_price": 1500000,
-   "median_surface": 104,
-   "min": 2221,
-   "max": 41667,
-   "name": "Bourgogne",
-   "slug": "bourgogne",
+   "n": 11,
+   "median": 15385,
+   "median_price": 1250000,
+   "median_surface": 97,
+   "min": 11464,
+   "max": 24370,
+   "name": "Moulay Youssef",
+   "slug": "moulay-youssef",
    "rank": 20
   },
   {
-   "n": 209,
-   "median": 14205,
-   "median_price": 1800000,
-   "median_surface": 134,
-   "min": 6842,
-   "max": 25490,
-   "name": "Quartier des Hôpitaux",
-   "slug": "quartier-des-hopitaux",
+   "n": 413,
+   "median": 15357,
+   "median_price": 1580000,
+   "median_surface": 104,
+   "min": 2221,
+   "max": 100000,
+   "name": "Bourgogne",
+   "slug": "bourgogne",
    "rank": 21
   },
   {
-   "n": 119,
-   "median": 14113,
-   "median_price": 1500000,
+   "n": 748,
+   "median": 15246,
+   "median_price": 1700000,
    "median_surface": 121,
-   "min": 7843,
-   "max": 23611,
-   "name": "Maârif Extension",
-   "slug": "maarif-extension",
+   "min": 2857,
+   "max": 98333,
+   "name": "Maarif",
+   "slug": "maarif",
    "rank": 22
   },
   {
-   "n": 82,
-   "median": 13446,
-   "median_price": 1475000,
-   "median_surface": 122,
+   "n": 171,
+   "median": 15244,
+   "median_price": 1960000,
+   "median_surface": 130,
+   "min": 8000,
+   "max": 31053,
+   "name": "Val Fleuri",
+   "slug": "val-fleuri",
+   "rank": 23
+  },
+  {
+   "n": 64,
+   "median": 14918,
+   "median_price": 1591452,
+   "median_surface": 106,
+   "min": 9057,
+   "max": 26042,
+   "name": "Bachkou",
+   "slug": "bachkou",
+   "rank": 24
+  },
+  {
+   "n": 226,
+   "median": 14381,
+   "median_price": 1600000,
+   "median_surface": 120,
+   "min": 7549,
+   "max": 30556,
+   "name": "Maârif Extension",
+   "slug": "maarif-extension",
+   "rank": 25
+  },
+  {
+   "n": 349,
+   "median": 14113,
+   "median_price": 1800000,
+   "median_surface": 134,
+   "min": 6536,
+   "max": 30000,
+   "name": "Quartier des Hôpitaux",
+   "slug": "quartier-des-hopitaux",
+   "rank": 26
+  },
+  {
+   "n": 88,
+   "median": 13918,
+   "median_price": 1462500,
+   "median_surface": 121,
    "min": 2090,
    "max": 54000,
    "name": "Abdelmoumen",
    "slug": "abdelmoumen",
-   "rank": 23
+   "rank": 27
   },
   {
-   "n": 124,
-   "median": 13396,
-   "median_price": 1825000,
+   "n": 35,
+   "median": 13860,
+   "median_price": 1780000,
    "median_surface": 131,
-   "min": 6565,
+   "min": 8011,
+   "max": 25714,
+   "name": "Burger",
+   "slug": "burger",
+   "rank": 28
+  },
+  {
+   "n": 37,
+   "median": 13665,
+   "median_price": 1550000,
+   "median_surface": 114,
+   "min": 9714,
+   "max": 17054,
+   "name": "Derb Ghallef",
+   "slug": "derb-ghallef",
+   "rank": 29
+  },
+  {
+   "n": 128,
+   "median": 13560,
+   "median_price": 1800000,
+   "median_surface": 130,
+   "min": 6607,
    "max": 35714,
    "name": "Sidi Belyout",
    "slug": "sidi-belyout",
-   "rank": 24
+   "rank": 30
   },
   {
-   "n": 14,
-   "median": 13174,
-   "median_price": 1380000,
-   "median_surface": 115,
-   "min": 9714,
-   "max": 16667,
-   "name": "Derb Ghallef",
-   "slug": "derb-ghallef",
-   "rank": 25
+   "n": 20,
+   "median": 13367,
+   "median_price": 1650000,
+   "median_surface": 127,
+   "min": 6296,
+   "max": 25714,
+   "name": "Tantonville",
+   "slug": "tantonville",
+   "rank": 31
   },
   {
-   "n": 204,
-   "median": 12877,
+   "n": 18,
+   "median": 13229,
+   "median_price": 1087500,
+   "median_surface": 80,
+   "min": 3000,
+   "max": 22614,
+   "name": "Laimoune",
+   "slug": "laimoune",
+   "rank": 32
+  },
+  {
+   "n": 72,
+   "median": 13035,
+   "median_price": 1205500,
+   "median_surface": 93,
+   "min": 5965,
+   "max": 63636,
+   "name": "Almaz",
+   "slug": "almaz",
+   "rank": 33
+  },
+  {
+   "n": 203,
+   "median": 13000,
    "median_price": 1700000,
    "median_surface": 133,
    "min": 3167,
    "max": 28378,
    "name": "2 Mars",
    "slug": "2-mars",
-   "rank": 26
+   "rank": 34
   },
   {
-   "n": 52,
-   "median": 12532,
-   "median_price": 1175000,
-   "median_surface": 92,
-   "min": 5965,
-   "max": 16810,
-   "name": "Almaz",
-   "slug": "almaz",
-   "rank": 27
-  },
-  {
-   "n": 14,
-   "median": 12284,
-   "median_price": 1178000,
-   "median_surface": 98,
-   "min": 9474,
-   "max": 21368,
-   "name": "Mandarona",
-   "slug": "mandarona",
-   "rank": 28
-  },
-  {
-   "n": 102,
-   "median": 12019,
-   "median_price": 1450000,
-   "median_surface": 113,
+   "n": 156,
+   "median": 12763,
+   "median_price": 1500000,
+   "median_surface": 120,
    "min": 6566,
    "max": 38000,
    "name": "Beauséjour",
    "slug": "beausejour",
-   "rank": 29
+   "rank": 35
   },
   {
-   "n": 90,
-   "median": 11814,
-   "median_price": 1300000,
-   "median_surface": 116,
+   "n": 25,
+   "median": 12500,
+   "median_price": 1190000,
+   "median_surface": 97,
+   "min": 8358,
+   "max": 20946,
+   "name": "Mandarona",
+   "slug": "mandarona",
+   "rank": 36
+  },
+  {
+   "n": 143,
+   "median": 12437,
+   "median_price": 1480000,
+   "median_surface": 117,
    "min": 2800,
    "max": 100000,
    "name": "Mers Sultan",
    "slug": "mers-sultan",
-   "rank": 30
+   "rank": 37
   },
   {
-   "n": 234,
-   "median": 11480,
-   "median_price": 1250000,
+   "n": 357,
+   "median": 12000,
+   "median_price": 1300000,
    "median_surface": 108,
    "min": 2000,
    "max": 100000,
    "name": "Belvédère",
    "slug": "belvedere",
-   "rank": 31
+   "rank": 38
   },
   {
-   "n": 12,
-   "median": 11330,
-   "median_price": 930000,
-   "median_surface": 94,
-   "min": 2083,
-   "max": 15385,
-   "name": "Derb Omar",
-   "slug": "derb-omar",
-   "rank": 32
+   "n": 17,
+   "median": 11947,
+   "median_price": 1500000,
+   "median_surface": 122,
+   "min": 6866,
+   "max": 16705,
+   "name": "Liberté",
+   "slug": "liberte",
+   "rank": 39
   },
   {
-   "n": 98,
-   "median": 11148,
-   "median_price": 1192500,
-   "median_surface": 98,
-   "min": 6446,
+   "n": 77,
+   "median": 11880,
+   "median_price": 1200000,
+   "median_surface": 100,
+   "min": 2667,
+   "max": 35714,
+   "name": "Centre Ville",
+   "slug": "centre-ville",
+   "rank": 40
+  },
+  {
+   "n": 24,
+   "median": 11711,
+   "median_price": 1575000,
+   "median_surface": 134,
+   "min": 8380,
+   "max": 19444,
+   "name": "Alsace Lorraine",
+   "slug": "alsace-lorraine",
+   "rank": 41
+  },
+  {
+   "n": 16,
+   "median": 11109,
+   "median_price": 1350000,
+   "median_surface": 122,
+   "min": 8920,
+   "max": 17241,
+   "name": "Fonciere",
+   "slug": "fonciere",
+   "rank": 42
+  },
+  {
+   "n": 8,
+   "median": 11097,
+   "median_price": 1900000,
+   "median_surface": 164,
+   "min": 7661,
+   "max": 16575,
+   "name": "Lusitania",
+   "slug": "lusitania",
+   "rank": 43
+  },
+  {
+   "n": 136,
+   "median": 11073,
+   "median_price": 1187500,
+   "median_surface": 102,
+   "min": 5800,
    "max": 16667,
    "name": "La Gironde",
    "slug": "la-gironde",
-   "rank": 33
+   "rank": 44
   },
   {
-   "n": 63,
-   "median": 11017,
-   "median_price": 1150000,
-   "median_surface": 100,
-   "min": 2667,
-   "max": 32857,
-   "name": "Centre Ville",
-   "slug": "centre-ville",
-   "rank": 34
+   "n": 18,
+   "median": 11068,
+   "median_price": 1275000,
+   "median_surface": 118,
+   "min": 2083,
+   "max": 23913,
+   "name": "Derb Omar",
+   "slug": "derb-omar",
+   "rank": 45
   },
   {
-   "n": 13,
-   "median": 10750,
-   "median_price": 1750000,
-   "median_surface": 158,
-   "min": 8380,
-   "max": 15000,
-   "name": "Alsace Lorraine",
-   "slug": "alsace-lorraine",
-   "rank": 35
+   "n": 28,
+   "median": 10963,
+   "median_price": 1050000,
+   "median_surface": 94,
+   "min": 8500,
+   "max": 13883,
+   "name": "Hay Chrifa",
+   "slug": "hay-chrifa",
+   "rank": 46
   },
   {
-   "n": 25,
-   "median": 10714,
-   "median_price": 950000,
+   "n": 10,
+   "median": 10940,
+   "median_price": 975000,
+   "median_surface": 96,
+   "min": 9167,
+   "max": 42254,
+   "name": "Al Osra",
+   "slug": "al-osra",
+   "rank": 47
+  },
+  {
+   "n": 26,
+   "median": 10800,
+   "median_price": 1076250,
+   "median_surface": 108,
+   "min": 7345,
+   "max": 17436,
+   "name": "Ben Ejdia",
+   "slug": "ben-ejdia",
+   "rank": 48
+  },
+  {
+   "n": 26,
+   "median": 10795,
+   "median_price": 1025000,
    "median_surface": 96,
    "min": 2917,
    "max": 21277,
    "name": "Route d'Azemmour",
    "slug": "route-d-azemmour",
-   "rank": 36
+   "rank": 49
   },
   {
-   "n": 20,
-   "median": 10564,
-   "median_price": 1065000,
-   "median_surface": 104,
-   "min": 8571,
-   "max": 13473,
-   "name": "Hay Chrifa",
-   "slug": "hay-chrifa",
-   "rank": 37
+   "n": 302,
+   "median": 10774,
+   "median_price": 950000,
+   "median_surface": 87,
+   "min": 5000,
+   "max": 96774,
+   "name": "Sidi Maarouf",
+   "slug": "sidi-maarouf",
+   "rank": 50
   },
   {
-   "n": 8,
-   "median": 10460,
-   "median_price": 1075000,
-   "median_surface": 94,
-   "min": 3000,
-   "max": 14711,
-   "name": "Laimoune",
-   "slug": "laimoune",
-   "rank": 38
-  },
-  {
-   "n": 165,
-   "median": 10455,
+   "n": 205,
+   "median": 10690,
    "median_price": 1050000,
    "median_surface": 95,
    "min": 3168,
    "max": 81761,
    "name": "Roches Noires",
    "slug": "roches-noires",
-   "rank": 39
+   "rank": 51
   },
   {
-   "n": 214,
-   "median": 10297,
-   "median_price": 927000,
+   "n": 227,
+   "median": 10390,
+   "median_price": 950000,
    "median_surface": 87,
    "min": 2889,
    "max": 96552,
    "name": "Aïn Chock",
    "slug": "ain-chock",
-   "rank": 40
+   "rank": 52
   },
   {
-   "n": 217,
-   "median": 10296,
-   "median_price": 850000,
-   "median_surface": 82,
-   "min": 5000,
-   "max": 96774,
-   "name": "Sidi Maarouf",
-   "slug": "sidi-maarouf",
-   "rank": 41
-  },
-  {
-   "n": 44,
-   "median": 10114,
-   "median_price": 931000,
-   "median_surface": 91,
+   "n": 79,
+   "median": 10294,
+   "median_price": 990000,
+   "median_surface": 93,
    "min": 4700,
-   "max": 14000,
+   "max": 71264,
    "name": "Nassim",
    "slug": "nassim",
-   "rank": 42
+   "rank": 53
   },
   {
-   "n": 15,
-   "median": 10078,
-   "median_price": 1000000,
-   "median_surface": 111,
-   "min": 7345,
-   "max": 15714,
-   "name": "Ben Ejdia",
-   "slug": "ben-ejdia",
-   "rank": 43
-  },
-  {
-   "n": 208,
-   "median": 10000,
-   "median_price": 1050000,
-   "median_surface": 94,
-   "min": 4464,
-   "max": 28571,
+   "n": 242,
+   "median": 10230,
+   "median_price": 1000325,
+   "median_surface": 88,
+   "min": 4407,
+   "max": 92537,
    "name": "Hay Hassani",
    "slug": "hay-hassani",
-   "rank": 44
+   "rank": 54
   },
   {
-   "n": 113,
-   "median": 9688,
-   "median_price": 930000,
+   "n": 18,
+   "median": 10055,
+   "median_price": 935000,
+   "median_surface": 84,
+   "min": 5882,
+   "max": 13067,
+   "name": "Hay Inara",
+   "slug": "hay-inara",
+   "rank": 55
+  },
+  {
+   "n": 405,
+   "median": 10000,
+   "median_price": 810000,
+   "median_surface": 76,
+   "min": 4400,
+   "max": 100000,
+   "name": "Ain Sebaa",
+   "slug": "ain-sebaa",
+   "rank": 56
+  },
+  {
+   "n": 132,
+   "median": 9815,
+   "median_price": 945000,
    "median_surface": 94,
    "min": 3200,
    "max": 75000,
    "name": "Aïn Borja",
    "slug": "ain-borja",
-   "rank": 45
+   "rank": 57
   },
   {
-   "n": 340,
-   "median": 9685,
-   "median_price": 769500,
-   "median_surface": 74,
-   "min": 4919,
-   "max": 100000,
-   "name": "Ain Sebaa",
-   "slug": "ain-sebaa",
-   "rank": 46
+   "n": 10,
+   "median": 9741,
+   "median_price": 545000,
+   "median_surface": 64,
+   "min": 5400,
+   "max": 14960,
+   "name": "Al Mostakbal",
+   "slug": "al-mostakbal",
+   "rank": 58
   },
   {
    "n": 11,
    "median": 9639,
    "median_price": 800000,
-   "median_surface": 83,
+   "median_surface": 90,
    "min": 5000,
    "max": 20833,
    "name": "Route d'El Jadida",
    "slug": "route-d-el-jadida",
-   "rank": 47
+   "rank": 59
   },
   {
    "n": 13,
-   "median": 9624,
-   "median_price": 920000,
-   "median_surface": 93,
-   "min": 5882,
-   "max": 11828,
-   "name": "Hay Inara",
-   "slug": "hay-inara",
-   "rank": 48
+   "median": 9615,
+   "median_price": 695000,
+   "median_surface": 66,
+   "min": 6909,
+   "max": 13740,
+   "name": "Hay Zobir",
+   "slug": "hay-zobir",
+   "rank": 60
+  },
+  {
+   "n": 21,
+   "median": 9406,
+   "median_price": 720000,
+   "median_surface": 76,
+   "min": 3909,
+   "max": 15565,
+   "name": "Beausite",
+   "slug": "beausite",
+   "rank": 61
   },
   {
    "n": 32,
-   "median": 9542,
+   "median": 9208,
    "median_price": 665000,
    "median_surface": 76,
    "min": 3964,
    "max": 13281,
    "name": "Al Fida",
    "slug": "al-fida",
-   "rank": 49
+   "rank": 62
   },
   {
-   "n": 38,
-   "median": 9395,
-   "median_price": 855000,
+   "n": 658,
+   "median": 9091,
+   "median_price": 620000,
+   "median_surface": 65,
+   "min": 2909,
+   "max": 100000,
+   "name": "Oulfa",
+   "slug": "oulfa",
+   "rank": 63
+  },
+  {
+   "n": 9,
+   "median": 9080,
+   "median_price": 800000,
+   "median_surface": 88,
+   "min": 7619,
+   "max": 25000,
+   "name": "Hay Al Amal",
+   "slug": "hay-al-amal",
+   "rank": 64
+  },
+  {
+   "n": 61,
+   "median": 9014,
+   "median_price": 840000,
    "median_surface": 88,
    "min": 5472,
    "max": 15000,
    "name": "Al Qods",
    "slug": "al-qods",
-   "rank": 50
+   "rank": 65
   },
   {
-   "n": 10,
-   "median": 9330,
-   "median_price": 520000,
-   "median_surface": 61,
-   "min": 5400,
-   "max": 11667,
-   "name": "Al Mostakbal",
-   "slug": "al-mostakbal",
-   "rank": 51
+   "n": 44,
+   "median": 8571,
+   "median_price": 625000,
+   "median_surface": 66,
+   "min": 5806,
+   "max": 37000,
+   "name": "Bournazil",
+   "slug": "bournazil",
+   "rank": 66
   },
   {
-   "n": 8,
-   "median": 9229,
-   "median_price": 770000,
-   "median_surface": 78,
-   "min": 5000,
-   "max": 11765,
-   "name": "Hay El Farah",
-   "slug": "hay-el-farah",
-   "rank": 52
-  },
-  {
-   "n": 569,
-   "median": 8704,
-   "median_price": 580000,
-   "median_surface": 62,
-   "min": 2909,
-   "max": 100000,
-   "name": "Oulfa",
-   "slug": "oulfa",
-   "rank": 53
-  },
-  {
-   "n": 39,
+   "n": 37,
    "median": 8500,
-   "median_price": 580000,
+   "median_price": 635000,
    "median_surface": 70,
    "min": 3692,
    "max": 18056,
    "name": "Sbata",
    "slug": "sbata",
-   "rank": 54
+   "rank": 67
   },
   {
-   "n": 36,
-   "median": 8333,
-   "median_price": 590000,
-   "median_surface": 66,
-   "min": 5806,
-   "max": 10400,
-   "name": "Bournazil",
-   "slug": "bournazil",
-   "rank": 55
-  },
-  {
-   "n": 28,
-   "median": 8311,
+   "n": 29,
+   "median": 8387,
    "median_price": 620000,
    "median_surface": 69,
    "min": 4697,
    "max": 15517,
    "name": "Ben M'sick",
    "slug": "ben-m-sick",
-   "rank": 56
+   "rank": 68
   },
   {
-   "n": 75,
-   "median": 8182,
+   "n": 29,
+   "median": 8333,
+   "median_price": 720000,
+   "median_surface": 84,
+   "min": 4545,
+   "max": 12621,
+   "name": "Al Azhar",
+   "slug": "al-azhar",
+   "rank": 69
+  },
+  {
+   "n": 129,
+   "median": 8158,
+   "median_price": 680000,
+   "median_surface": 82,
+   "min": 2800,
+   "max": 20833,
+   "name": "Hay Mohammadi",
+   "slug": "hay-mohammadi",
+   "rank": 70
+  },
+  {
+   "n": 83,
+   "median": 8092,
    "median_price": 580000,
-   "median_surface": 66,
+   "median_surface": 72,
    "min": 3125,
    "max": 90076,
    "name": "Lissasfa",
    "slug": "lissasfa",
-   "rank": 57
+   "rank": 71
   },
   {
-   "n": 14,
-   "median": 8170,
-   "median_price": 595000,
-   "median_surface": 88,
-   "min": 5960,
-   "max": 10000,
-   "name": "Hay Sadri",
-   "slug": "hay-sadri",
-   "rank": 58
+   "n": 9,
+   "median": 8000,
+   "median_price": 450000,
+   "median_surface": 55,
+   "min": 5273,
+   "max": 14646,
+   "name": "Al Farah Dar Essalam",
+   "slug": "al-farah-dar-essalam",
+   "rank": 72
   },
   {
-   "n": 113,
-   "median": 8070,
-   "median_price": 680000,
-   "median_surface": 82,
-   "min": 2800,
-   "max": 13333,
-   "name": "Hay Mohammadi",
-   "slug": "hay-mohammadi",
-   "rank": 59
+   "n": 307,
+   "median": 7647,
+   "median_price": 600000,
+   "median_surface": 77,
+   "min": 2264,
+   "max": 100000,
+   "name": "Sidi Bernoussi",
+   "slug": "sidi-bernoussi",
+   "rank": 73
   },
   {
-   "n": 59,
-   "median": 7576,
-   "median_price": 580000,
+   "n": 69,
+   "median": 7600,
+   "median_price": 600000,
    "median_surface": 72,
    "min": 2708,
    "max": 22535,
    "name": "Sidi Othmane",
    "slug": "sidi-othmane",
-   "rank": 60
+   "rank": 74
   },
   {
-   "n": 274,
-   "median": 7515,
-   "median_price": 580000,
-   "median_surface": 75,
-   "min": 2264,
-   "max": 100000,
-   "name": "Sidi Bernoussi",
-   "slug": "sidi-bernoussi",
-   "rank": 61
-  },
-  {
-   "n": 17,
-   "median": 7500,
-   "median_price": 560000,
-   "median_surface": 74,
-   "min": 6164,
-   "max": 9048,
-   "name": "Hay Albaraka",
-   "slug": "hay-albaraka",
-   "rank": 62
+   "n": 16,
+   "median": 7488,
+   "median_price": 595000,
+   "median_surface": 92,
+   "min": 3667,
+   "max": 9123,
+   "name": "Hay Sadri",
+   "slug": "hay-sadri",
+   "rank": 75
   },
   {
    "n": 8,
-   "median": 7299,
-   "median_price": 550000,
-   "median_surface": 82,
-   "min": 5000,
-   "max": 8750,
-   "name": "Hay Alfalah",
-   "slug": "hay-alfalah",
-   "rank": 63
+   "median": 7389,
+   "median_price": 465000,
+   "median_surface": 72,
+   "min": 3500,
+   "max": 12800,
+   "name": "Zone Industrielle",
+   "slug": "zone-industrielle",
+   "rank": 76
   },
   {
-   "n": 345,
-   "median": 7115,
-   "median_price": 500000,
-   "median_surface": 69,
+   "n": 17,
+   "median": 7200,
+   "median_price": 560000,
+   "median_surface": 74,
+   "min": 5397,
+   "max": 9697,
+   "name": "Anassi",
+   "slug": "anassi",
+   "rank": 77
+  },
+  {
+   "n": 379,
+   "median": 7182,
+   "median_price": 520000,
+   "median_surface": 70,
    "min": 2083,
    "max": 66667,
    "name": "Sidi Moumen",
    "slug": "sidi-moumen",
-   "rank": 64
+   "rank": 78
   },
   {
-   "n": 37,
-   "median": 6774,
-   "median_price": 460000,
-   "median_surface": 67,
-   "min": 3079,
-   "max": 11628,
-   "name": "Hay Moulay Rachid",
-   "slug": "hay-moulay-rachid",
-   "rank": 65
+   "n": 9,
+   "median": 7143,
+   "median_price": 500000,
+   "median_surface": 80,
+   "min": 5000,
+   "max": 8750,
+   "name": "Hay Alfalah",
+   "slug": "hay-alfalah",
+   "rank": 79
   },
   {
-   "n": 36,
-   "median": 6693,
-   "median_price": 585000,
+   "n": 22,
+   "median": 6993,
+   "median_price": 520000,
+   "median_surface": 74,
+   "min": 5705,
+   "max": 9048,
+   "name": "Hay Albaraka",
+   "slug": "hay-albaraka",
+   "rank": 80
+  },
+  {
+   "n": 43,
+   "median": 6719,
+   "median_price": 590000,
    "median_surface": 78,
    "min": 5263,
    "max": 11047,
    "name": "Salmia",
    "slug": "salmia",
-   "rank": 66
+   "rank": 81
   },
   {
-   "n": 201,
-   "median": 6452,
-   "median_price": 400000,
-   "median_surface": 62,
-   "min": 3571,
+   "n": 37,
+   "median": 6667,
+   "median_price": 460000,
+   "median_surface": 68,
+   "min": 3079,
+   "max": 11628,
+   "name": "Hay Moulay Rachid",
+   "slug": "hay-moulay-rachid",
+   "rank": 82
+  },
+  {
+   "n": 199,
+   "median": 6471,
+   "median_price": 390000,
+   "median_surface": 60,
+   "min": 4074,
    "max": 60714,
    "name": "Errahma",
    "slug": "errahma",
-   "rank": 67
+   "rank": 83
   },
   {
-   "n": 20,
-   "median": 5893,
-   "median_price": 350000,
-   "median_surface": 66,
+   "n": 27,
+   "median": 6240,
+   "median_price": 420000,
+   "median_surface": 65,
    "min": 3313,
-   "max": 8649,
+   "max": 20455,
    "name": "Al Madina Aljadida",
    "slug": "al-madina-aljadida",
-   "rank": 68
+   "rank": 84
+  },
+  {
+   "n": 8,
+   "median": 6100,
+   "median_price": 365000,
+   "median_surface": 71,
+   "min": 3500,
+   "max": 6727,
+   "name": "Zone Industrielle Moulay Rachid",
+   "slug": "zone-industrielle-moulay-rachid",
+   "rank": 85
   }
  ],
  "autres_quartiers": [
   {
-   "name": "Fonciere",
-   "n": 6
+   "name": "Ahl Loghlam (Hay Assalam)",
+   "n": 7
+  },
+  {
+   "name": "Al Hadika",
+   "n": 7
+  },
+  {
+   "name": "Derb Ben Houmane",
+   "n": 7
+  },
+  {
+   "name": "El Manar El Hank",
+   "n": 7
+  },
+  {
+   "name": "Hay Almassira 2",
+   "n": 7
+  },
+  {
+   "name": "Hay El Farah",
+   "n": 7
+  },
+  {
+   "name": "Lahraouiyine",
+   "n": 7
+  },
+  {
+   "name": "Le Domaine D'Anfa",
+   "n": 7
   },
   {
    "name": "Hay Laymouna",
    "n": 6
   },
   {
-   "name": "Tantonville",
+   "name": "Hay Moulay Rachid 1",
    "n": 6
+  },
+  {
+   "name": "La Floride",
+   "n": 6
+  },
+  {
+   "name": "La Vilette",
+   "n": 6
+  },
+  {
+   "name": "Lekrimat",
+   "n": 6
+  },
+  {
+   "name": "Oasis sud",
+   "n": 6
+  },
+  {
+   "name": "Tacharouk (Hay Al Walaa)",
+   "n": 6
+  },
+  {
+   "name": "Zone Industrielle Oukacha",
+   "n": 6
+  },
+  {
+   "name": "Hay Arsalan",
+   "n": 5
+  },
+  {
+   "name": "Derb Chorfa",
+   "n": 4
   },
   {
    "name": "Florida",
    "n": 4
   },
   {
-   "name": "Moulay Youssef",
+   "name": "Hay Al Fadl",
    "n": 4
-  },
-  {
-   "name": "Zone Industrielle",
-   "n": 4
-  },
-  {
-   "name": "Zone Industrielle Moulay Rachid",
-   "n": 4
-  },
-  {
-   "name": "El Manar El Hank",
-   "n": 3
-  },
-  {
-   "name": "Hay Al Amal",
-   "n": 3
   },
   {
    "name": "Hay Almassira 1",
+   "n": 4
+  },
+  {
+   "name": "Hay Almassira 3",
+   "n": 4
+  },
+  {
+   "name": "Hay Salama",
+   "n": 4
+  },
+  {
+   "name": "Sidi El Khadir",
+   "n": 4
+  },
+  {
+   "name": "Dar Lamane",
    "n": 3
+  },
+  {
+   "name": "Garage Allal",
+   "n": 3
+  },
+  {
+   "name": "Habbous",
+   "n": 3
+  },
+  {
+   "name": "Hay Al Fath",
+   "n": 3
+  },
+  {
+   "name": "Hay Antaria",
+   "n": 3
+  },
+  {
+   "name": "Hay Arrahma",
+   "n": 3
+  },
+  {
+   "name": "Hay Idrissia",
+   "n": 3
+  },
+  {
+   "name": "Jamila 5",
+   "n": 3
+  },
+  {
+   "name": "Michouar",
+   "n": 3
+  },
+  {
+   "name": "Polo",
+   "n": 3
+  },
+  {
+   "name": "Sour Jdid",
+   "n": 3
+  },
+  {
+   "name": "Al Andalous",
+   "n": 2
   },
   {
    "name": "Al Batha",
    "n": 2
   },
   {
-   "name": "Hay Almassira 2",
+   "name": "Ancienne Medina",
    "n": 2
   },
   {
-   "name": "Hay Almassira 3",
+   "name": "Anfa Supérieur",
    "n": 2
   },
   {
-   "name": "Hay Moulay Rachid 1",
+   "name": "Derb Khalid",
+   "n": 2
+  },
+  {
+   "name": "Derb Loubila",
+   "n": 2
+  },
+  {
+   "name": "Derb Mesfioui",
+   "n": 2
+  },
+  {
+   "name": "Derb Salama",
+   "n": 2
+  },
+  {
+   "name": "Derb Tolba",
+   "n": 2
+  },
+  {
+   "name": "Hay Adil",
+   "n": 2
+  },
+  {
+   "name": "Hay Alfarah",
+   "n": 2
+  },
+  {
+   "name": "Hay Almasjid",
+   "n": 2
+  },
+  {
+   "name": "Hay Chifa",
+   "n": 2
+  },
+  {
+   "name": "Hay Moulay Abdellah",
    "n": 2
   },
   {
@@ -823,7 +1150,99 @@
    "n": 2
   },
   {
+   "name": "Hay Moulay Rachid 5",
+   "n": 2
+  },
+  {
+   "name": "Hay Rajaa",
+   "n": 2
+  },
+  {
+   "name": "Hay Tarik",
+   "n": 2
+  },
+  {
+   "name": "Hay Tasahol",
+   "n": 2
+  },
+  {
+   "name": "Port",
+   "n": 2
+  },
+  {
+   "name": "Quartier Al Woroud",
+   "n": 2
+  },
+  {
+   "name": "Al Ahd Al Jadid",
+   "n": 1
+  },
+  {
+   "name": "Al Hassania",
+   "n": 1
+  },
+  {
+   "name": "Bin Lamdoun",
+   "n": 1
+  },
+  {
+   "name": "Chaâbi",
+   "n": 1
+  },
+  {
+   "name": "City Dar Es Salaam",
+   "n": 1
+  },
+  {
+   "name": "Derb Abdellah",
+   "n": 1
+  },
+  {
+   "name": "Derb Al Madania",
+   "n": 1
+  },
+  {
+   "name": "Derb Carlotti",
+   "n": 1
+  },
+  {
+   "name": "Derb Douam",
+   "n": 1
+  },
+  {
+   "name": "Derb El Mitre",
+   "n": 1
+  },
+  {
+   "name": "Derb Koréa",
+   "n": 1
+  },
+  {
+   "name": "Derb Lahjar",
+   "n": 1
+  },
+  {
+   "name": "Derb Milan (Hay Omar Bnou Alkhattab)",
+   "n": 1
+  },
+  {
    "name": "Habous",
+   "n": 1
+  },
+  {
+   "name": "Hay Alfoqara",
+   "n": 1
+  },
+  {
+   "name": "Hay Laalou",
+   "n": 1
+  },
+  {
+   "name": "Hay Laâyoune",
+   "n": 1
+  },
+  {
+   "name": "Hay Lmkansa",
    "n": 1
   },
   {
@@ -835,15 +1254,19 @@
    "n": 1
   },
   {
-   "name": "Hay Moulay Rachid 5",
-   "n": 1
-  },
-  {
    "name": "Hay Moulay Rachid 6",
    "n": 1
   },
   {
-   "name": "Hay Rajaa",
+   "name": "Hay Palestine",
+   "n": 1
+  },
+  {
+   "name": "Hay Rmila",
+   "n": 1
+  },
+  {
+   "name": "Hay Smara",
    "n": 1
   },
   {
@@ -851,11 +1274,15 @@
    "n": 1
   },
   {
-   "name": "Les Crêtes",
+   "name": "Jamila 2",
    "n": 1
   },
   {
-   "name": "Lusitania",
+   "name": "Jamila 6",
+   "n": 1
+  },
+  {
+   "name": "Les Crêtes",
    "n": 1
   },
   {
@@ -863,15 +1290,15 @@
    "n": 1
   },
   {
-   "name": "Polo",
-   "n": 1
-  },
-  {
-   "name": "Sour Jdid",
+   "name": "Riad El Ali",
    "n": 1
   },
   {
    "name": "Val d'Anfa",
+   "n": 1
+  },
+  {
+   "name": "Yasmina",
    "n": 1
   }
  ]

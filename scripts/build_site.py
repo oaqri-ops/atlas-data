@@ -94,6 +94,12 @@ def to_int(v):
         return None
 
 
+def district_key(name):
+    """Clé de rapprochement des noms de quartiers entre portails : sans accents, majuscules, espaces ni
+    apostrophes (« M'Hamid » et « Mhamid », « Maârif » et « Maarif »)."""
+    return re.sub(r"[^a-z0-9]", "", slugify(name))
+
+
 def read_listings(path, cfg):
     """Toutes les annonces du relevé ; kept=True pour celles qui entrent dans les statistiques.
 
@@ -133,11 +139,11 @@ def read_listings(path, cfg):
     for source in sorted(spelled, key=lambda s: rank.get(s, len(rank))):
         if top is None:
             top = source
-            canonical = {slugify(name): name for name, _ in reversed(spelled[source].most_common())}
+            canonical = {district_key(name): name for name, _ in reversed(spelled[source].most_common())}
             continue
         for r in rows:
             if r["source"] == source and r["district"]:
-                r["district"] = canonical.get(slugify(r["district"]), r["district"])
+                r["district"] = canonical.get(district_key(r["district"]), r["district"])
     same, cross = set(), {}
     for r in sorted((r for r in rows if r["kept"]), key=lambda r: rank.get(r["source"], len(rank))):
         district = r["district"].lower()
@@ -1192,7 +1198,12 @@ def home_week(cities):
         foot = (f"Nouvelles annonces et baisses de prix : {span[0].lower() + span[1:]}. "
                 "Prix demandés, pas prix de vente.")
     else:
-        foot = "Premier relevé : les nouvelles annonces et les baisses de prix apparaîtront au relevé suivant."
+        prev = [previous_raw(c["slug"], st["date"])[0] for c, st in cities]
+        if any(prev):
+            foot = (f"Premier relevé sur {source_label(cities[0][1]['source'])} : les nouvelles annonces et les baisses de prix "
+                    "apparaîtront au relevé suivant.")
+        else:
+            foot = "Premier relevé : les nouvelles annonces et les baisses de prix apparaîtront au relevé suivant."
     return "\n".join(rows), total, foot
 
 
