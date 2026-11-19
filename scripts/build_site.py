@@ -185,6 +185,24 @@ def bedroom_groups(rows):
     return {k: summarize(v) for k, v in sorted(groups.items()) if len(v) >= 5}
 
 
+# Un quartier publié le reste tant qu'il compte au moins KEEP_LISTINGS annonces : sans ce maintien, un quartier
+# autour du seuil apparaît et disparaît d'une semaine à l'autre, et Google réindexe sa page à chaque fois.
+KEEP_LISTINGS = 5
+
+
+def kept_page(city, q, cfg):
+    """True si le quartier a déjà une page publiée (non redirigée) et compte au moins KEEP_LISTINGS annonces."""
+    if q["n"] < min(KEEP_LISTINGS, cfg["min_listings_per_quartier"]):
+        return False
+    page = os.path.join(ROOT, city["slug"], q["slug"], "index.html")
+    return os.path.exists(page) and RETIRED_MARK not in open(page, encoding="utf8").read()
+
+
+def rank_rule(cfg):
+    """« au moins 8 annonces (5 pour un quartier déjà publié) »"""
+    return f"au moins {cfg['min_listings_per_quartier']} annonces ({KEEP_LISTINGS} pour un quartier déjà publié)"
+
+
 def city_stats(city, cfg):
     path, date = latest_raw(city["slug"])
     raw, rows = clean(path, cfg)
@@ -197,7 +215,7 @@ def city_stats(city, cfg):
     for name, qrows in by_q.items():
         q = summarize(qrows)
         q.update(name=name, slug=slugify(name), rows=qrows)
-        (ranked if q["n"] >= cfg["min_listings_per_quartier"] else small).append(q)
+        (ranked if q["n"] >= cfg["min_listings_per_quartier"] or kept_page(city, q, cfg) else small).append(q)
     ranked.sort(key=lambda q: -q["median"])
     small.sort(key=lambda q: (-q["n"], q["name"]))
     for i, q in enumerate(ranked):
@@ -209,6 +227,82 @@ def city_stats(city, cfg):
                  source=source, source_name=source_label(source))
     stats["changes"] = changes_since_previous(city, cfg, stats)
     return stats
+
+
+# ---------- historique ----------
+
+SHORT_MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
+HISTORY_MIN = 5  # annonces minimum pour afficher la médiane d'un quartier dans l'historique
+_history_cache = {}
+
+
+def city_history(city, cfg):
+    """Tous les relevés de la ville, du plus récent au plus ancien : date, source, annonces et médiane de la ville,
+    et par quartier (clé district_key) : nom, annonces, médiane."""
+    if city["slug"] in _history_cache:
+        return _history_cache[city["slug"]]
+    excluded = set(cfg["excluded_districts"])
+    out = []
+    for path in sorted(glob.glob(os.path.join(ROOT, "data", "raw", f"{city['slug']}-*.csv")), reverse=True):
+        date = re.search(r"(\d{4}-\d{2}-\d{2})\.csv$", path).group(1)
+        rows = [r for r in read_listings(path, cfg) if r["kept"]]
+        if not rows:
+            continue
+        by_q = {}
+        for r in rows:
+            if r["district"] and r["district"] not in excluded:
+                by_q.setdefault(district_key(r["district"]), []).append(r)
+        out.append({"date": date, "source": raw_source(path), "n": len(rows),
+                    "median": round(statistics.median(r["ppm2"] for r in rows)),
+                    "quartiers": {k: (v[0]["district"], len(v), round(statistics.median(r["ppm2"] for r in v))) for k, v in by_q.items()}})
+    _history_cache[city["slug"]] = out
+    return out
+
+
+def history_block(city, cfg, name=None):
+    """Tableau des relevés successifs (ville, ou un quartier si name). Les changements de source sont signalés :
+    deux relevés de sources différentes ne mesurent pas la même offre."""
+    hist = city_history(city, cfg)
+    key = district_key(name) if name else None
+    lines, prev_source = [], None
+    for h in hist:
+        if key:
+            got = h["quartiers"].get(key)
+            n_, med = (got[1], got[2]) if got else (0, None)
+        else:
+            n_, med = h["n"], h["median"]
+        cell = f"{n(med)}" if med and n_ >= (HISTORY_MIN if key else 1) else "-"
+        y, m, d = h["date"].split("-")
+        short = f"{int(d)}{NBSP}{SHORT_MONTHS[int(m) - 1]}{NBSP}{y}"
+        lines.append(f'<tr><th scope="row" style="white-space:nowrap">{short}</th><td>{e(source_label(h["source"]))}</td>'
+                     f'<td class="num">{n_ if n_ else "-"}</td><td class="num">{cell}</td></tr>')
+    if len(lines) < 2:
+        return ""
+    changes = []
+    for newer, older in zip(hist, hist[1:]):
+        if newer["source"] != older["source"]:
+            changes.append(f"{source_label(newer['source'])} à partir du {long_date(newer['date'])}")
+    where = f"{prep(name, cfg)}" if name else f"à {city['name']}"
+    note = (f"Les médianes ne se comparent qu'entre relevés de la même source. Changement de source : {' ; '.join(changes)}."
+            if changes else "Tous ces relevés viennent de la même source.")
+    hid = "historique-title"
+    return f"""
+    <section class="block" aria-labelledby="{hid}">
+      <div class="shell block-grid">
+        <div class="block-copy">
+          <h2 id="{hid}">L'évolution des prix {e(where)}</h2>
+          <p>Le prix médian demandé au m² {e(where)} à chaque relevé hebdomadaire depuis le {e(long_date(hist[-1]['date']))}{', pour les relevés comptant au moins ' + str(HISTORY_MIN) + ' annonces dans le quartier' if name else ''}. {e(note)}</p>
+        </div>
+        <div class="card">
+          <div class="table-wrap"><table>
+            <caption class="sr-only">Prix médian demandé au m² {e(where)}, relevé par relevé</caption>
+            <thead><tr><th scope="col">Relevé</th><th scope="col">Source</th><th scope="col" class="num">Annonces</th><th scope="col" class="num">MAD/m²</th></tr></thead>
+            <tbody>{"".join(lines)}</tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+"""
 
 
 # Une variation de médiane n'est publiée qu'au-delà de ce nombre d'annonces dans chaque relevé :
@@ -604,9 +698,9 @@ def quartier_page(city, st, q, cfg):
     position = ("le quartier le plus cher" if q["rank"] == 1 else
                 f"le {ordinal(q['rank'])} quartier le plus cher") + f" de {cname}"
     if len(ranked) == 1:
-        lede_rank = f"{name} est le seul quartier de {cname} à compter au moins {cfg['min_listings_per_quartier']} annonces dans ce relevé. "
+        lede_rank = f"{name} est le seul quartier de {cname} à compter {rank_rule(cfg)} dans ce relevé. "
     else:
-        lede_rank = f"{name} est {position} parmi les {len(ranked)} quartiers qui comptent au moins {cfg['min_listings_per_quartier']} annonces. "
+        lede_rank = f"{name} est {position} parmi les {len(ranked)} quartiers qui comptent {rank_rule(cfg)}. "
     lede = (f"{lede_rank}Voici ce que disent les prix demandés de {q['n']} annonces d'appartements à vendre, "
             f"relevées le {long_date(date)}.")
 
@@ -618,6 +712,8 @@ def quartier_page(city, st, q, cfg):
         title = f"Prix m² {name} : {n(q['median'])} MAD/m²"
     desc = (f"Prix au m² des appartements à vendre {q['prep']} ({cname}) : {n(q['median'])} MAD/m² en médiane "
             f"sur {q['n']} annonces. Budget et comparaison des quartiers.")
+    if len(desc) > 160:  # noms de quartier longs : sans la dernière phrase
+        desc = desc.rsplit(" Budget", 1)[0]
     ld = {"@context": "https://schema.org", "@graph": [
         breadcrumb_ld([("Accueil", "/"), (f"Prix au m² à {cname}", f"/{city['slug']}/"), (f"Prix au m² {q['prep']}", path)]),
         dataset_ld(f"Prix demandés des appartements à vendre {q['prep']}, {cname} ({MONTHS[int(date[5:7]) - 1]} {date[:4]})",
@@ -730,11 +826,12 @@ def quartier_page(city, st, q, cfg):
         </div>
         <div class="card">
           {rank_list(city, ranked, st['median'], q)}
-          <p class="card-foot">Prix médian demandé en MAD/m², quartiers d'au moins {cfg['min_listings_per_quartier']} annonces. {rank_legend(city, st['median'])}</p>
+          <p class="card-foot">Prix médian demandé en MAD/m², quartiers d'{rank_rule(cfg)}. {rank_legend(city, st['median'])}</p>
         </div>
       </div>
     </section>
 
+{history_block(city, cfg, name)}
     <section class="block" id="questions" aria-labelledby="faq-title">
       <div class="shell faq-grid">
         <h2 id="faq-title">{e(name)} : vos questions</h2>
@@ -751,7 +848,7 @@ def quartier_page(city, st, q, cfg):
 
     <section class="block" aria-label="Méthode">
       <div class="shell">
-        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {q['n']} annonces d'appartements à vendre {e(q['prep'])}, parmi {st['n']} annonces exploitables à {e(cname)}. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente, et le relevé ne couvre pas l'ensemble du marché. Données mises à jour chaque semaine. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
+        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {q['n']} annonces d'appartements à vendre {e(q['prep'])}, parmi {st['n']} annonces exploitables à {e(cname)}. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente, et le relevé ne couvre pas l'ensemble du marché. Données mises à jour chaque semaine. <a href="/methode/">En savoir plus sur la méthode</a>.</p>
       </div>
     </section>
   </main>
@@ -961,7 +1058,7 @@ def city_page(city, st, cfg):
     path = f"/{city['slug']}/"
     for q in ranked:
         q["prep"] = prep(q["name"], cfg)
-    title = f"Prix au m² à {cname} par quartier ({short_month(date)}) - Atlas Data"
+    title = f"Prix au m² à {cname} par quartier en {date[:4]} - Atlas Data"
     if len(ranked) >= 2:
         span = f"de {n(ranked[-1]['median'])} MAD/m² {prep(ranked[-1]['name'], cfg)} à {n(ranked[0]['median'])} MAD/m² {prep(ranked[0]['name'], cfg)}"
     else:
@@ -992,7 +1089,7 @@ def city_page(city, st, cfg):
     if len(ranked) >= 2:
         spread = ranked[0]["median"] / ranked[-1]["median"] - 1
         rank_text = (f"Entre {named(ranked[0]['name'], cfg)} et {named(ranked[-1]['name'], cfg)}, le prix médian demandé au m² varie de {round(spread * 100)}{NBSP}%. "
-                     f"Seuls les quartiers comptant au moins {cfg['min_listings_per_quartier']} annonces sont classés : en dessous, une seule annonce suffirait à déplacer la médiane.")
+                     f"Seuls les quartiers comptant {rank_rule(cfg)} sont classés : en dessous, une seule annonce suffirait à déplacer la médiane.")
     elif ranked:
         rank_text = (f"Dans ce relevé, seul {ranked[0]['name']} compte au moins {cfg['min_listings_per_quartier']} annonces. "
                      f"Les autres quartiers de {cname} sont listés plus bas avec leur nombre d'annonces, sans médiane.")
@@ -1041,14 +1138,156 @@ def city_page(city, st, cfg):
         </table></div></div>
       </div>
     </section>
-{small_block}{faq_section}
+{small_block}{history_block(city, cfg)}{faq_section}
     <section class="block" aria-label="Méthode">
       <div class="shell">
-        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons{' (y compris les annonces publiées sur deux portails)' if '+' in st['source'] else ''}, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/#methode">En savoir plus sur la méthode</a>.</p>
+        <p class="note"><strong>Méthode.</strong> Relevé du {long_date(date)} sur {st['source_name']} : {st['raw']} annonces collectées, {st['n']} exploitables après retrait des doublons{' (y compris les annonces publiées sur deux portails)' if '+' in st['source'] else ''}, des loyers publiés comme des ventes, des surfaces de plus de {n(MAX_SURFACE)} m² et des prix au m² hors de la fourchette {n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD. Prix au m² = prix demandé / surface publiée. Les prix demandés ne sont pas des prix de vente. <a href="/methode/">En savoir plus sur la méthode</a>.</p>
       </div>
     </section>
   </main>
   <script src="/assets/city.js" defer></script>
+
+""" + footer(cfg)
+
+
+# ---------- pages Méthode et À propos ----------
+
+def prose_section(sid, title, paragraphs):
+    body = "".join(f"<p>{p}</p>" for p in paragraphs)
+    return f"""
+    <section class="block" aria-labelledby="{sid}">
+      <div class="shell"><div class="prose"><h2 id="{sid}">{title}</h2>{body}</div></div>
+    </section>"""
+
+
+PROSE_CSS = """<style>.prose{max-width:46em}.prose h2{font-size:clamp(24px,2.6vw,32px);line-height:1.15}
+.prose p{margin-top:14px;font-size:17px;color:var(--muted)}.prose p strong{color:var(--ink)}
+.prose table{margin-top:18px;min-width:0}</style>"""
+
+
+def methode_page(cfg, all_stats):
+    cities = [(c, all_stats[c["slug"]]) for c in cfg["cities"] if c["slug"] in all_stats]
+    date = max(st["date"] for _, st in cities)
+    source = source_label(cities[0][1]["source"])
+    raw = sum(st["raw"] for _, st in cities)
+    kept = sum(st["n"] for _, st in cities)
+    dups = sum(st.get("cross_dups", 0) for _, st in cities)
+    multi = "+" in cities[0][1]["source"]
+    rows = "".join(f'<tr><th scope="row"><a href="/{c["slug"]}/">{e(c["name"])}</a></th><td class="num">{n(st["raw"])}</td>'
+                   f'<td class="num">{n(st["n"])}</td><td class="num">{len(st["ranked"])}</td><td class="num">{n(st["median"])}</td></tr>'
+                   for c, st in cities)
+    path = "/methode/"
+    title = "Méthode : comment sont calculés les prix au m² - Atlas Data"
+    desc = (f"Sources, nettoyage des annonces, retrait des doublons et calcul des médianes : comment Atlas Data mesure les prix "
+            f"demandés au m² au Maroc, chaque lundi.")
+    ld = {"@context": "https://schema.org", "@graph": [
+        breadcrumb_ld([("Accueil", "/"), ("Méthode", path)]),
+        {"@type": "WebPage", "name": title, "url": SITE + path, "inLanguage": "fr", "dateModified": date,
+         "publisher": {"@type": "Organization", "name": "Atlas Data", "url": SITE + "/"}}]}
+    sections = [
+        prose_section("m-source", "D'où viennent les annonces", [
+            f"Chaque lundi, Atlas Data relève les annonces publiques d'appartements à vendre publiées sur {e(source)} à "
+            f"{e(join_fr([c['name'] for c, _ in cities]))}. Le relevé passe par un programme de collecte publié sur Apify, "
+            "qui lit les pages de résultats des portails comme le ferait un visiteur.",
+            "Les sources ont changé depuis le premier relevé : Sarouty jusqu'au 2 novembre 2026, Avito le 9 novembre 2026, "
+            "puis Avito et Mubawab depuis le 18 novembre 2026. Les tableaux d'évolution signalent ces changements, car deux "
+            "portails n'affichent pas la même offre.",
+            "<strong>Aucune donnée personnelle n'est collectée</strong> : ni nom, ni téléphone, ni email d'agent ou de particulier, "
+            "ni la description de l'annonce."]),
+        prose_section("m-nettoyage", "Les annonces retirées avant le calcul", [
+            f"Au relevé du {long_date(date)}, {n(raw)} annonces ont été collectées et {n(kept)} gardées pour les statistiques. "
+            "Sont retirées :",
+            f"<strong>les doublons</strong> : sur un même portail, le même quartier, le même prix, la même surface et le même nombre "
+            "de chambres ; entre deux portails, le même quartier, le même prix et la même surface (une agence publie souvent le même "
+            "bien sur Avito et sur Mubawab), en gardant l'annonce Avito"
+            + (f". {n(dups)} biens étaient publiés sur les deux portails à ce relevé ;" if multi else " ;"),
+            f"<strong>les annonces inexploitables</strong> : prix sous {n(MIN_PRICE)} MAD (souvent un loyer publié comme une vente), "
+            f"surface absente, sous {MIN_SURFACE} m² ou au-delà de {n(MAX_SURFACE)} m², prix au m² hors de la fourchette "
+            f"{n(PPM2_RANGE[0])} à {n(PPM2_RANGE[1])} MAD."]),
+        prose_section("m-calcul", "Le calcul des prix", [
+            "<strong>Prix au m² = prix demandé / surface publiée</strong>, annonce par annonce. Le chiffre publié est la "
+            "<strong>médiane</strong> : la moitié des annonces est au-dessus, l'autre moitié en dessous. Elle résiste mieux qu'une "
+            "moyenne aux quelques annonces très chères ou mal saisies.",
+            f"Une médiane par quartier n'est publiée qu'à partir de {cfg['min_listings_per_quartier']} annonces. Un quartier déjà "
+            f"publié le reste tant qu'il en compte au moins {KEEP_LISTINGS}, pour éviter qu'une page disparaisse et revienne d'une "
+            "semaine à l'autre. Sous 15 annonces, la page le signale : une seule annonce peut alors déplacer la médiane.",
+            "Les portails n'écrivent pas toujours les quartiers de la même façon. Les noms de Mubawab sont ramenés à ceux d'Avito "
+            "(« Route Casablanca » devient « Route de Casablanca », « Maârif » devient « Maarif ») pour qu'un quartier ne soit compté "
+            "qu'une fois."]),
+        prose_section("m-suivi", "D'un relevé à l'autre", [
+            "Les annonces sont suivies par leur référence sur le portail. Une annonce absente du relevé précédent est « nouvelle » ; "
+            "une annonce du relevé précédent qui n'apparaît plus est « retirée » (vendue, louée ou simplement dépubliée) ; une "
+            "annonce dont le prix a baissé est signalée avec l'écart.",
+            "La variation de la médiane n'est publiée que si chaque relevé compte au moins 15 annonces, et jamais entre deux relevés "
+            "de sources différentes."]),
+        prose_section("m-limites", "Ce que les chiffres ne disent pas", [
+            "<strong>Ce sont des prix demandés, pas des prix de vente.</strong> Ils décrivent l'offre publiée, avant négociation. "
+            "Ils sont souvent plus élevés que les estimations publiées par d'autres sites, qui cherchent à approcher le prix de vente.",
+            "Le relevé ne couvre pas tout le marché : seulement les appartements à vendre publiés sur ces portails, sans les ventes "
+            "entre particuliers hors ligne ni les programmes neufs vendus directement par les promoteurs.",
+            "Une variation de médiane d'une semaine à l'autre reflète aussi les annonces qui entrent et sortent du relevé : ce n'est "
+            "pas une évolution des prix de vente."]),
+    ]
+    table = f"""
+    <section class="block" aria-labelledby="m-chiffres">
+      <div class="shell"><div class="prose"><h2 id="m-chiffres">Le relevé du {e(long_date(date))} en chiffres</h2></div>
+        <div class="card" style="max-width:46em;margin-top:18px"><div class="table-wrap"><table>
+          <caption class="sr-only">Annonces collectées et exploitables par ville</caption>
+          <thead><tr><th scope="col">Ville</th><th scope="col" class="num">Collectées</th><th scope="col" class="num">Exploitables</th><th scope="col" class="num">Quartiers</th><th scope="col" class="num">Médiane MAD/m²</th></tr></thead>
+          <tbody>{rows}</tbody></table></div></div>
+      </div>
+    </section>"""
+    return head(title, desc, path, ld, og_type="website").replace("</head>", PROSE_CSS + "\n</head>") + read_template("header.html") + f"""  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="shell">
+        {crumbs([("Accueil", "/"), ("Méthode", path)])}
+        <h1 id="page-title">Comment les prix au m² sont calculés</h1>
+        <p class="hero-lede">Les sources, les annonces retirées, le calcul des médianes et leurs limites. Mis à jour à chaque relevé, le dernier date du {e(long_date(date))}.</p>
+      </div>
+    </section>{"".join(sections[:2])}{table}{"".join(sections[2:])}
+  </main>
+
+""" + footer(cfg)
+
+
+def apropos_page(cfg, all_stats):
+    cities = [c for c in cfg["cities"] if c["slug"] in all_stats]
+    names = join_fr([c["name"] for c in cities])
+    path = "/a-propos/"
+    title = "À propos d'Atlas Data, données immobilières du Maroc"
+    desc = f"Atlas Data publie chaque lundi les prix demandés au m² des appartements à {names}, quartier par quartier."
+    ld = {"@context": "https://schema.org", "@graph": [
+        breadcrumb_ld([("Accueil", "/"), ("À propos", path)]),
+        {"@type": "AboutPage", "name": title, "url": SITE + path, "inLanguage": "fr",
+         "about": {"@type": "Organization", "name": "Atlas Data", "url": SITE + "/", "email": "othman@atlas-data.fr"}}]}
+    sections = [
+        prose_section("a-quoi", "Ce que fait Atlas Data", [
+            f"Atlas Data relève chaque lundi les annonces publiques d'appartements à vendre à {e(names)} et publie gratuitement "
+            "le prix médian demandé au m² de chaque ville et de chaque quartier, un calculateur de budget et un dashboard des annonces.",
+            "Pour les agences, la version Pro envoie chaque lundi toutes les annonces de leur ville dans un fichier Excel, avec les "
+            "nouvelles annonces et les baisses de prix de la semaine. Des analyses sur mesure sont proposées sur devis, et les données "
+            "brutes sont disponibles pour les développeurs sur Apify."]),
+        prose_section("a-pourquoi", "Pourquoi", [
+            "Au Maroc, les prix de l'immobilier sont difficiles à lire : les annonces sont réparties entre plusieurs portails, souvent "
+            "en double, et les prix de vente réels ne sont pas publiés. Atlas Data rassemble l'offre publiée, la nettoie et la mesure "
+            "de la même façon chaque semaine, avec une méthode publique."]),
+        prose_section("a-indep", "Indépendance", [
+            "Atlas Data n'est affilié ni à Avito, ni à Mubawab, ni à Sarouty, ni à aucune agence. Les chiffres publiés viennent des "
+            "annonces telles qu'elles sont affichées, sans données personnelles. "
+            '<a href="/methode/">Voir la méthode</a>.']),
+        prose_section("a-contact", "Contact", [
+            'Une question sur les chiffres, une erreur à signaler ou une demande d\'accès Pro : '
+            '<a href="mailto:othman@atlas-data.fr">othman@atlas-data.fr</a>. Les réponses sont faites directement.']),
+    ]
+    return head(title, desc, path, ld, og_type="website").replace("</head>", PROSE_CSS + "\n</head>") + read_template("header.html") + f"""  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="shell">
+        {crumbs([("Accueil", "/"), ("À propos", path)])}
+        <h1 id="page-title">À propos d'Atlas Data</h1>
+        <p class="hero-lede">Les prix demandés de l'immobilier marocain, quartier par quartier, mesurés chaque lundi à partir d'annonces publiques.</p>
+      </div>
+    </section>{"".join(sections)}
+  </main>
 
 """ + footer(cfg)
 
@@ -1593,6 +1832,9 @@ def main():
         render_home(cfg, all_stats)
         with open(os.path.join(ROOT, "404.html"), "w", encoding="utf8") as f:
             f.write(page_404(cfg, all_stats))
+        write("/methode/", methode_page(cfg, all_stats))
+        write("/a-propos/", apropos_page(cfg, all_stats))
+        generated["/methode/"] = generated["/a-propos/"] = max(st["date"] for st in all_stats.values())
     else:
         print("ATTENTION : aucun relevé exploitable, accueil non régénéré.")
     retire_orphans(cfg, all_stats, generated)
