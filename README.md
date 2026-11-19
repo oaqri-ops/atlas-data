@@ -18,6 +18,9 @@ Chaque lundi, le workflow GitHub `Relevé hebdomadaire` (`.github/workflows/rele
 Le workflow a besoin du secret `APIFY_TOKEN` (Settings › Secrets and variables › Actions).
 Il peut aussi être lancé à la main depuis l'onglet Actions (« Run workflow »).
 
+Communes rattachées : la clé `extra_locations` d'une ville (Bouskoura et Dar Bouazza pour Casablanca) lance un run de plus
+par commune ; ses annonces sont publiées comme un quartier de la ville, car les portails n'y distinguent pas de quartiers.
+
 Ajouter une ville : une ligne dans `data/cities.json`, avec `"generate": true`. Elle apparaît ensuite
 sur l'accueil (tableau de la semaine, cartes villes, aperçu Pro), dans le menu « Villes » et le pied de page,
 et elle a sa page avec calculateur de budget, graphique des quartiers et FAQ.

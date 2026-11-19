@@ -16,6 +16,10 @@
       "slug": "casablanca",
       "name": "Casablanca",
       "location": "Casablanca",
+      "extra_locations": [
+        "Bouskoura",
+        "Dar Bouazza"
+      ],
       "generate": true
     },
     {

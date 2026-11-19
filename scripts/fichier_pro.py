@@ -61,13 +61,15 @@ def dataset_items(dataset_id, token):
         offset += PAGE
 
 
-def latest_run_dataset(cfg, city, token):
-    """Dataset du dernier run réussi lancé pour cette ville avec les sources du relevé (data/cities.json)."""
+def latest_run_dataset(cfg, city, token, location=None):
+    """Dataset du dernier run réussi lancé pour cette ville (ou une de ses communes rattachées, location)
+    avec les sources du relevé (data/cities.json)."""
+    location = location or city["location"]
     sources = sorted(cfg.get("sources") or ["avito"])
     runs = api("GET", f"/acts/{cfg['actor']}/runs", token, desc="true", limit=100, status="SUCCEEDED")["data"]["items"]
     for run in runs:
         record = api("GET", f"/key-value-stores/{run['defaultKeyValueStoreId']}/records/INPUT", token)
-        if record.get("locations") == [city["location"]] and sorted(record.get("sources") or []) == sources:
+        if record.get("locations") == [location] and sorted(record.get("sources") or []) == sources:
             return run["defaultDatasetId"], run["startedAt"][:10]
     sys.exit(f"{city['name']} : aucun run réussi récent avec les sources {sources}. Utilisez --dataset.")
 
@@ -262,6 +264,13 @@ def main():
                 dataset, run_date = latest_run_dataset(cfg, city, token)
                 date = date or run_date
             items = dataset_items(dataset, token)
+            if not args.dataset:
+                # Communes rattachées (Bouskoura, Dar Bouazza) : publiées comme un quartier de la ville
+                for extra in city.get("extra_locations") or []:
+                    extra_dataset, _ = latest_run_dataset(cfg, city, token, extra)
+                    for it in dataset_items(extra_dataset, token):
+                        it["district"] = extra
+                        items.append(it)
         if not items:
             sys.exit(f"{city['name']} : aucune annonce.")
         make_file(cfg, city, items, date or datetime.date.today().isoformat(), out)

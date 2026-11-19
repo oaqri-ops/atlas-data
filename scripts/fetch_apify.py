@@ -86,6 +86,17 @@ def main():
         missing = [s for s in sources if s not in found]
         if missing:
             sys.exit(f"{city['name']} : aucune annonce {', '.join(missing)} ({status}). Aucun fichier écrit.")
+        # Communes rattachées à la ville (Bouskoura, Dar Bouazza pour Casablanca) : un run chacune, publiées
+        # comme un quartier de la ville, car les portails n'y distinguent pas (ou presque pas) de quartiers.
+        for extra in city.get("extra_locations") or []:
+            more, more_status = run_actor(cfg["actor"], token, extra, sources)
+            got = {it.get("source") for it in more}
+            if not more or any(s not in got for s in sources):
+                sys.exit(f"{city['name']} ({extra}) : sources manquantes ({more_status}). Aucun fichier écrit.")
+            for it in more:
+                it["district"] = extra
+            items += more
+            status += f" + {extra} : {more_status}"
         results.append((city, items, status))
     for city, items, status in results:
         path = os.path.join(ROOT, "data", "raw", f"{city['slug']}-{args.date}.csv")
