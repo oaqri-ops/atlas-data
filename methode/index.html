@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Méthode : comment sont calculés les prix au m² - Atlas Data</title>
+  <meta name="description" content="Sources, nettoyage des annonces, retrait des doublons et calcul des médianes : comment Atlas Data mesure les prix demandés au m² au Maroc, chaque lundi.">
+  <link rel="canonical" href="https://atlas-data.fr/methode/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Atlas Data">
+  <meta property="og:title" content="Méthode : comment sont calculés les prix au m² - Atlas Data">
+  <meta property="og:description" content="Sources, nettoyage des annonces, retrait des doublons et calcul des médianes : comment Atlas Data mesure les prix demandés au m² au Maroc, chaque lundi.">
+  <meta property="og:image" content="https://atlas-data.fr/og-image.png">
+  <meta property="og:url" content="https://atlas-data.fr/methode/">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atlas-data.fr/"}, {"@type": "ListItem", "position": 2, "name": "Méthode", "item": "https://atlas-data.fr/methode/"}]}, {"@type": "WebPage", "name": "Méthode : comment sont calculés les prix au m² - Atlas Data", "url": "https://atlas-data.fr/methode/", "inLanguage": "fr", "dateModified": "2026-11-18", "publisher": {"@type": "Organization", "name": "Atlas Data", "url": "https://atlas-data.fr/"}}]}</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Roboto:ital,wght@0,400..800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <script src="/assets/components.js" defer></script>
+<style>.prose{max-width:46em}.prose h2{font-size:clamp(24px,2.6vw,32px);line-height:1.15}
+.prose p{margin-top:14px;font-size:17px;color:var(--muted)}.prose p strong{color:var(--ink)}
+.prose table{margin-top:18px;min-width:0}</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header" id="top">
+    <div class="shell header-row">
+      <a href="/" class="logo" aria-label="Atlas Data, accueil"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span><span class="logo-word">Atlas Data</span></a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a><a href="/marrakech/#budget">Calculer mon budget</a><!-- villes-menu --><details class="nav-cities"><summary>Villes</summary><ul><li><a href="/marrakech/"><span>Marrakech</span><small>15 476 MAD/m²</small></a></li><li><a href="/casablanca/"><span>Casablanca</span><small>12 547 MAD/m²</small></a></li><li><a href="/rabat/"><span>Rabat</span><small>19 808 MAD/m²</small></a></li><li><a href="/tanger/"><span>Tanger</span><small>13 000 MAD/m²</small></a></li><li class="nav-cities-all"><a href="/dashboard.html">Toutes les annonces dans le dashboard</a></li></ul></details><!-- /villes-menu --><a href="/#offres">Offres</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="/dashboard.html">Ouvrir le dashboard</a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
+      <a href="/">Accueil</a><a href="/marrakech/#budget">Calculer mon budget</a><!-- villes-mobile --><p class="mobile-nav-title">Prix par ville</p><a class="mobile-nav-city" href="/marrakech/">Marrakech <small>15 476 MAD/m²</small></a><a class="mobile-nav-city" href="/casablanca/">Casablanca <small>12 547 MAD/m²</small></a><a class="mobile-nav-city" href="/rabat/">Rabat <small>19 808 MAD/m²</small></a><a class="mobile-nav-city" href="/tanger/">Tanger <small>13 000 MAD/m²</small></a><!-- /villes-mobile --><a href="/dashboard.html">Dashboard</a><a href="/#offres">Offres</a><a href="mailto:othman@atlas-data.fr">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="shell">
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Méthode</span></nav>
+        <h1 id="page-title">Comment les prix au m² sont calculés</h1>
+        <p class="hero-lede">Les sources, les annonces retirées, le calcul des médianes et leurs limites. Mis à jour à chaque relevé, le dernier date du 18 novembre 2026.</p>
+      </div>
+    </section>
+    <section class="block" aria-labelledby="m-source">
+      <div class="shell"><div class="prose"><h2 id="m-source">D'où viennent les annonces</h2><p>Chaque lundi, Atlas Data relève les annonces publiques d'appartements à vendre publiées sur Avito et Mubawab à Marrakech, Casablanca, Rabat et Tanger. Le relevé passe par un programme de collecte publié sur Apify, qui lit les pages de résultats des portails comme le ferait un visiteur.</p><p>Les sources ont changé depuis le premier relevé : Sarouty jusqu'au 2 novembre 2026, Avito le 9 novembre 2026, puis Avito et Mubawab depuis le 18 novembre 2026. Les tableaux d'évolution signalent ces changements, car deux portails n'affichent pas la même offre.</p><p><strong>Aucune donnée personnelle n'est collectée</strong> : ni nom, ni téléphone, ni email d'agent ou de particulier, ni la description de l'annonce.</p></div></div>
+    </section>
+    <section class="block" aria-labelledby="m-nettoyage">
+      <div class="shell"><div class="prose"><h2 id="m-nettoyage">Les annonces retirées avant le calcul</h2><p>Au relevé du 18 novembre 2026, 30 979 annonces ont été collectées et 20 050 gardées pour les statistiques. Sont retirées :</p><p><strong>les doublons</strong> : sur un même portail, le même quartier, le même prix, la même surface et le même nombre de chambres ; entre deux portails, le même quartier, le même prix et la même surface (une agence publie souvent le même bien sur Avito et sur Mubawab), en gardant l'annonce Avito. 1 948 biens étaient publiés sur les deux portails à ce relevé ;</p><p><strong>les annonces inexploitables</strong> : prix sous 100 000 MAD (souvent un loyer publié comme une vente), surface absente, sous 15 m² ou au-delà de 1 000 m², prix au m² hors de la fourchette 2 000 à 100 000 MAD.</p></div></div>
+    </section>
+    <section class="block" aria-labelledby="m-chiffres">
+      <div class="shell"><div class="prose"><h2 id="m-chiffres">Le relevé du 18 novembre 2026 en chiffres</h2></div>
+        <div class="card" style="max-width:46em;margin-top:18px"><div class="table-wrap"><table>
+          <caption class="sr-only">Annonces collectées et exploitables par ville</caption>
+          <thead><tr><th scope="col">Ville</th><th scope="col" class="num">Collectées</th><th scope="col" class="num">Exploitables</th><th scope="col" class="num">Quartiers</th><th scope="col" class="num">Médiane MAD/m²</th></tr></thead>
+          <tbody><tr><th scope="row"><a href="/marrakech/">Marrakech</a></th><td class="num">7 364</td><td class="num">4 856</td><td class="num">49</td><td class="num">15 476</td></tr><tr><th scope="row"><a href="/casablanca/">Casablanca</a></th><td class="num">16 816</td><td class="num">11 154</td><td class="num">84</td><td class="num">12 547</td></tr><tr><th scope="row"><a href="/rabat/">Rabat</a></th><td class="num">1 537</td><td class="num">966</td><td class="num">16</td><td class="num">19 808</td></tr><tr><th scope="row"><a href="/tanger/">Tanger</a></th><td class="num">5 262</td><td class="num">3 074</td><td class="num">43</td><td class="num">13 000</td></tr></tbody></table></div></div>
+      </div>
+    </section>
+    <section class="block" aria-labelledby="m-calcul">
+      <div class="shell"><div class="prose"><h2 id="m-calcul">Le calcul des prix</h2><p><strong>Prix au m² = prix demandé / surface publiée</strong>, annonce par annonce. Le chiffre publié est la <strong>médiane</strong> : la moitié des annonces est au-dessus, l'autre moitié en dessous. Elle résiste mieux qu'une moyenne aux quelques annonces très chères ou mal saisies.</p><p>Une médiane par quartier n'est publiée qu'à partir de 8 annonces. Un quartier déjà publié le reste tant qu'il en compte au moins 5, pour éviter qu'une page disparaisse et revienne d'une semaine à l'autre. Sous 15 annonces, la page le signale : une seule annonce peut alors déplacer la médiane.</p><p>Les portails n'écrivent pas toujours les quartiers de la même façon. Les noms de Mubawab sont ramenés à ceux d'Avito (« Route Casablanca » devient « Route de Casablanca », « Maârif » devient « Maarif ») pour qu'un quartier ne soit compté qu'une fois.</p></div></div>
+    </section>
+    <section class="block" aria-labelledby="m-suivi">
+      <div class="shell"><div class="prose"><h2 id="m-suivi">D'un relevé à l'autre</h2><p>Les annonces sont suivies par leur référence sur le portail. Une annonce absente du relevé précédent est « nouvelle » ; une annonce du relevé précédent qui n'apparaît plus est « retirée » (vendue, louée ou simplement dépubliée) ; une annonce dont le prix a baissé est signalée avec l'écart.</p><p>La variation de la médiane n'est publiée que si chaque relevé compte au moins 15 annonces, et jamais entre deux relevés de sources différentes.</p></div></div>
+    </section>
+    <section class="block" aria-labelledby="m-limites">
+      <div class="shell"><div class="prose"><h2 id="m-limites">Ce que les chiffres ne disent pas</h2><p><strong>Ce sont des prix demandés, pas des prix de vente.</strong> Ils décrivent l'offre publiée, avant négociation. Ils sont souvent plus élevés que les estimations publiées par d'autres sites, qui cherchent à approcher le prix de vente.</p><p>Le relevé ne couvre pas tout le marché : seulement les appartements à vendre publiés sur ces portails, sans les ventes entre particuliers hors ligne ni les programmes neufs vendus directement par les promoteurs.</p><p>Une variation de médiane d'une semaine à l'autre reflète aussi les annonces qui entrent et sortent du relevé : ce n'est pas une évolution des prix de vente.</p></div></div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-about"><a href="/" class="logo" aria-label="Atlas Data, accueil"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5.5 26 16 5l10.5 21M10.4 17.2h11.2" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg></span><span class="logo-word">Atlas Data</span></a><p>Données et analyses du marché immobilier marocain, à partir d'annonces publiques.</p></div>
+        <nav aria-labelledby="f-quartiers"><h2 id="f-quartiers">Prix par ville</h2><ul><li><a href="/marrakech/">Marrakech</a></li><li><a href="/casablanca/">Casablanca</a></li><li><a href="/rabat/">Rabat</a></li><li><a href="/tanger/">Tanger</a></li></ul></nav>
+        <nav aria-labelledby="f-outils"><h2 id="f-outils">Outils</h2><ul><li><a href="/marrakech/#budget">Calculer mon budget</a></li><li><a href="/marrakech/#analyse">Étude Marrakech</a></li><li><a href="/dashboard.html">Dashboard</a></li><li><a href="/methode/">Méthode</a></li><li><a href="/a-propos/">À propos</a></li></ul></nav>
+        <nav aria-labelledby="f-offres"><h2 id="f-offres">Offres</h2><ul><li><a href="/#offres">Atlas Data Pro</a></li><li><a href="/#offres">Analyse sur mesure</a></li><li><a href="mailto:othman@atlas-data.fr">Contact</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Atlas Data. Données issues d'annonces publiques. Atlas Data n'est affilié ni à Avito, ni à Mubawab, ni à Sarouty, ni aux autres plateformes citées.</p>
+        <p><a href="/#mentions-legales">Mentions légales</a></p>
+      </div>
+    </div>
+  </footer>
+  <script>
+  (function(){var t=document.querySelector('.menu-toggle'),n=document.getElementById('mobile-nav');function c(){n.hidden=true;t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Ouvrir le menu')}t.addEventListener('click',function(){var o=n.hidden;n.hidden=!o;t.setAttribute('aria-expanded',String(o));t.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu')});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});window.addEventListener('resize',function(){if(window.innerWidth>820)c()})})();
+  </script>
+</body>
+</html>
